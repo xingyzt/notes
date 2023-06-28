@@ -126,7 +126,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Standard filters:
 
 |   | name | center | bandwidth |
-| − | −−−− | −−−−−− | −−−−−−−−− |
+| - | ---- | ------ | --------- |
 | U |  UV  | 365 nm |   68 nm   |
 | B | blue | 440 nm |   98 nm   |
 | V |visual| 550 nm |   89 nm   |
