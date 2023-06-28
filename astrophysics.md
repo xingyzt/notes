@@ -1,3 +1,5 @@
+# Carroll & Ostlie, Introduction to Modern Astrophysics: Xing's notes
+
 ## 1. The Celestial Sphere
 
 ### Altitude-Azimuth Coordinate System
@@ -122,11 +124,13 @@ P = (2〈S〉A cos²θ)/c, reflection
 * In practice, detectors only measure certain ranges, to varying
   degrees of sensitivity
 * Standard filters:
-.___ ______ ________ ___________
+
 |   | name | center | bandwidth |
+| - | ---- | ------ | --------- |
 | U |  UV  | 365 nm |   68 nm   |
 | B | blue | 440 nm |   98 nm   |
-| V | vis. | 550 nm |   89 nm   |
+| V |visual| 550 nm |   89 nm   |
+
 * Isolated letters are apparent; M_letter is absolute
 * U-B color index: U - B = M_U - M_B
 * B-V color index: B - V = M_B - M_V, smaller is bluer
