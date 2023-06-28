@@ -69,9 +69,9 @@ east on the horizon
 
 ### Kepler’s Laws
 
-1. r = (L²/μ²)/[GM(1 + e cos θ)]
-2. (dA/dt) = L/(2μ), constant
-3. P² = ka³, k = 4π²/[G(M+m)], k = 1 using years and AU
+1. r = (L²/μ²)/GM(1 + e cos θ)
+2. dA/dt = L/2μ, constant
+3. P² = ka³, k = 4π²/G(M+m), k = 1 using years and AU
 
 ### Orbital equations
 
@@ -115,7 +115,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Wien’s displacement: λT = 0.002897755 (m·K), for peak wavelength
 * Stefan−Boltzmann: L = 4πR²σT⁴,
   where T is effective temperature of the star’s surface,
-  and σ = 5.670400E−8 W/m²K⁴
+  and σ = 5.670⁻⁸ W/m²K⁴
 * Planck’s function: B(T) = (2hc²/λ⁵)/(e^(hc/λkT) − 1)
 
 ### Color index
@@ -126,7 +126,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Standard filters:
 
 |   | name | center | bandwidth |
-| - | ---- | ------ | --------- |
+| − | −−−− | −−−−−− | −−−−−−−−− |
 | U |  UV  | 365 nm |   68 nm   |
 | B | blue | 440 nm |   98 nm   |
 | V |visual| 550 nm |   89 nm   |
@@ -199,7 +199,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 ### Compton scattering
 
 * Relativistic scattering of electrons by high−energy photons
-* Photon loses wavelength Δλ = h(1 − cos θ)/mc, e− mass m = 9.109E−31 kg
+* Photon loses wavelength Δλ = h(1 − cos θ)/mc, e− mass m = 9.109⁻³¹ kg
 
 ### Bohr’s semiclassical atom
 
@@ -209,7 +209,7 @@ P = (2〈S〉A cos²θ)/c, reflection
   coulombic attraction
 * Kinetic energy of atom: K = μv²/2 = e²/8πε₀r = nħ²/2μr²
 * Allowed orbital radii: r = a₀n²,
-  Bohr radius a₀ = 4πε₀ħ²/μe² ≈ 5.292E−11 m
+  Bohr radius a₀ = 4πε₀ħ²/μe² ≈ 5.292⁻¹¹ m
 * Allowed energy levels: E = −E₀/n², E₀ ≈ 13.6 eV
 
 ### deBroglie waves
@@ -220,7 +220,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 ### Heisenberg’s Uncertainty Principle
 
 * Δx Δp ≥ ħ/2, estimated as Δx Δp ≅ ħ, equivalent to ΔE Δt ≈ ħ
-* Reduced Planck constant: ħ = h/2π = 1.054E−34 J·s = 6.582E−16 eV·s
+* Reduced Planck constant: ħ = h/2π = 1.054⁻³⁴ J·s = 6.582⁻¹⁶ eV·s
 * Allows for quantum tunnelling when barrier is within a few wavelengths wide
   * e.x. total internal reflection can be disrupted by placing a another    prism sufficiently close to the boundary
 
@@ -267,3 +267,112 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Allowed transitions triggered by collisions or occur spontaneously ~10⁻⁸ s
 * Some forbidden transitions occur in very low gas densities
   * e.x. diffuse interstellar medium; outer stellar atmospheres
+
+## 6. Telescopes
+
+### Basic optics
+
+* Index of refraction: n ≡ c/ν, wavelength dependent
+* Snell's law: n₁ sin θ₁ = n₂ sin θ₂
+* Lensmaker's formula: P = 1/f = (n - 1)[ (1/R₁) + (1/R₂) ],
+  P is optical power, f is focal length, R are radii of curvature
+* Focal length is wavelength-independent for mirrors
+* A lens projects angular separation onto a plate (focal plane)
+* Linear separation of point sources on focal plane increases with focal length:
+  dθ/dy = 1/f
+
+### Resolution
+
+* Single-slit diffraction of wavefronts through aperture limits resolving power
+* Airy disk: bright spot around central maximum
+* Destructive interference creates minimums: sin θ = mλ/D, m = 1, 2, 3, ...
+* Images are “unresolved” when one's central maximum overlaps with
+  another's 1st minimum
+* Rayleigh criterion defines arbitrary min resolvable distance
+  of a circular aperture: θ = 1.22λ/D, D is aperture diameter
+  * Possible to differentiate sources within Rayleigh criterion through careful
+         analysis of diffraction patterns
+* Actual ground-based optical resolution worse than ideal due to
+  refraction from atmospheric turbulence, unless corected by adaptive optics
+* Only lenses suffer from chromatic aberration;
+  somewhat reduceable with correcting lenses
+* Spherical lenses and mirrors suffer from spherical aberration;
+  mitigated by paraboloids, which are harder to produce
+* Paraboloid lenses and mirrors suffer from coma: elongation of off-axis images
+* Astigmatism: different parts of a lens or mirror converge an image
+  at different locations; correction may result in curvature of field issues
+
+### Brightness
+
+* Illumination: J ∝ 1/F², the amount of light energy per second focused onto a unit
+  area of the resolved image
+* Focal ratio: F ≡ f/D
+  * Larger aperture increases resolution and illumination
+  * Longer focal length increases image size but decreases illumination
+  * For fixed focal ratio, larger telescope diameter increases resolution but
+         not illumination
+
+### Optical telescopes
+
+* Refracting:
+  * Objective lens focus as much light as possible onto the focal plane
+  * Sensor is placed on focal plane or eyepiece is placed at its focal length away
+  * Angular magnification: m = f_objective / f_eye
+  * Issues:
+    * Lens can only be supported near the edge, so gravity deforms heavy ones
+         * Entire volume must be fabricated precisely
+         * Slow thermal response and thermal expansion
+         * Chromatic aberrations
+* Reflecting:
+  * Replaces refractor’s objective lens with a mirror
+  * Minimizes weight, support, and distortion issues,
+    esp. with active support system
+  * Main issue: Prime focus of the mirror is in the path of the incoming light
+         * Newtonian: flat diagonal secondary mirror;
+           suffers from faraway eyepiece that introduces torque
+         * Cassegrain: parabolic (or hyperbolic for Ritchey-Chrétien) primary mirror;
+           secondary mirror (usually convex to increase focal length) reflects back
+                through a hole in the primary’s center
+         * Coudé: mirror system directs light to an instruments room;
+           very long focal length
+         * Schmidt: spheroidal primary mirror minimizing coma;
+           correcting lens to remove spherical aberrations;
+                provides wide field of view (degrees vs arcminutes) with low distortion
+* Mounts:
+  * Equatorial: polar axis, easy to adjust, hard to build for massive telecopes
+  * Altitude-azimuth: easy to build, generally needs computer adjustments
+* Adaptive optics: small deformable mirror with many piezoelectric actuators
+         counteract atmospheric distortions, constantly calibrated via a guide star
+* Charge-coupled device (CCD) detects ~100% of incident photons with a linear
+  response across wide wavelength and intensity (dynamic) ranges
+
+### Radio telescopes
+
+* Strength measured is spectral flux density: S(ν)
+* Typical radio source has S ≈ 1 jansky (Jy) = 10⁻²⁶ W/(m²·Hz);
+  weak sources ≈ mJy
+* Integrate S over area and bandwidth for total power received
+* Long wavelengths require large apertures, but less manufacturing precision
+* Addition of other telescopes enables interferometry;
+  reduces side lobes and narrows main lobe of antenna sensitivity pattern
+* Interferometry determines angle of source from phase difference between antennae
+* Pointing angle: θ | sin θ = L/d,
+  L is difference in wavefront’s distances to the antennae;
+  d is baseline distance between antennae
+* Very long baseline interferometry can span multiple continents
+
+### IR/UV/X/γ astronomy
+
+* Water vapor is primary contributor to IR absorption; thus low-humidity
+         mountain peaks, balloons and aircraft observatories are used
+* IR observation also requires very cold telescopes and detectors
+* Glass is opaque to UV; UV telescopes need very precise reflecting surfaces
+* X-ray and gamma-ray photons penetrate traditional mirrors;
+  instead imaged by graze-incidence (near 90° incidence) reflections, or by
+  Bragg scattering through crystal lattice inteference
+
+# Part II. The Nature of Stars
+
+## 7. Binary Systems and Stellar Parameters
+
+## 8. Classification of Stellar Spectra
