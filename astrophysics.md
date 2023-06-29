@@ -279,6 +279,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Focal length is wavelength-independent for mirrors
 * A lens projects angular separation onto a plate (focal plane)
 * Linear separation of point sources on focal plane increases with focal length:
+
   dθ/dy = 1/f
 
 ### Resolution
@@ -374,5 +375,70 @@ P = (2〈S〉A cos²θ)/c, reflection
 # Part II. The Nature of Stars
 
 ## 7. Binary Systems and Stellar Parameters
+
+* In many cases, allows the calculation of stellar masses, highlighting a
+  well-defined mass-luminosity relation for the large majority of stars
+
+### Classifications
+
+* Optical double: Fake binaries that just look close
+* (The rest of the classes are not mutually exclusive)
+* Visual: Both stars are resolved
+* Astrometric: Visual oscillatory motion of one star implies companion
+* Eclipsing: Periodic variation in light curves reveal two stars
+* Spectrum: Different spectral classes / Doppler effect reveal superimposed spectra
+* Spectroscopic: Doppler effect in spectra reveal oscillation of
+  radial velocity curves
+
+### Mass determination of visual binaries
+
+* Mass ratio from ratio of subtended angles: m₁/m₂ = r₂/r₁ = α₂/α₁
+* If distance to system and inclination are known, masses can be determined:
+  m₁ + m₂ = (4π²/G) (d / cos i)³ (α³/P²),
+  where i is the angle of inclination between the orbit and the sky’s planes
+
+### Mass determination of spectroscopic binaries
+
+* Mainly detected from binaries with high inclinations
+* “Double-line” if both spectra are visible; “single-line” otherwise
+* Radial velocity curves cross at the radial velocity of the center of mass
+* Radial velocity curve amplitudes scaled uniformly by sin i
+* Eccentricity skews the curves, but close binaries tend to quickly
+  circularize from tidal forces
+* Mass ratio: m₁/m₂ = v₂/v₁, where v are radial velocities
+* If inclination is known, masses can be determined:
+  m₁ + m₂ = (P/2πG) (v₁ + v₂)³/(sin³ i),
+* If only one radial velocity is known (single-line binary),
+  then mass ratio cannot be found,
+  but the mass function still provides rough constraints:
+  (m₂ sin i)³/(m₁ + m₂)² = (P/2πG) v₁³
+
+### Temperature ratio and radii determination of eclipsing binaries
+
+* Two dips in the light curve:
+  * Primary eclipse: hotter star passes behind cooler one
+  * Secondary eclipse: cooler star passes behind warmer one
+  * Size doesn’t matter
+* If smaller star (T₁) is hotter, temperature ratio from brightness is:
+  (B₀ − B₁)/(B₀ − B₂) = (T₁/T₂)⁴
+* Unless extremely close binary, inclination must be ~90°,
+  thus allowing accurate mass and velocity determination
+* Radius of star: r = vΔt/2,
+  where v is relative velocity,
+  and Δt is transit time for the smaller star or eclipse time for the larger
+
+### Computer modeling
+
+* May incorporate tidal deformations, surface tempreature variations,
+  flux distributions, etc
+* Generates synthetic light curves to compare against observational data
+
+### Extrasolar planets (exoplanets)
+
+* Direct observation very difficult due to vast luminosity differences
+* Indirect methods: spectral radial velocities, astrometric wobbles, and eclipses
+* First exoplanet around a Sun-like star discovered in 1995
+* Many rapidly followed due to dramatic advances in detector technology,
+  large-aperture telescopes, and long-term observing campaigns
 
 ## 8. Classification of Stellar Spectra
