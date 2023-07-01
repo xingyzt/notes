@@ -112,10 +112,10 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 ### Blackbody radiation
 
-* Wien’s displacement: λT = 0.002897755 (m·K), for peak wavelength
+* Wien’s displacement: λT = 0.002898 m·K, for peak wavelength
 * Stefan−Boltzmann: L = 4πR²σT⁴,
   where T is effective temperature of the star’s surface,
-  and σ = 5.670⁻⁸ W/m²K⁴
+  and σ = 5.670 × 10⁻⁸ W/m²K⁴
 * Planck’s function: B(T) = (2hc²/λ⁵)/(e^(hc/λkT) − 1)
 
 ### Color index
@@ -220,7 +220,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 ### Heisenberg’s Uncertainty Principle
 
 * Δx Δp ≥ ħ/2, estimated as Δx Δp ≅ ħ, equivalent to ΔE Δt ≈ ħ
-* Reduced Planck constant: ħ = h/2π = 1.054⁻³⁴ J·s = 6.582⁻¹⁶ eV·s
+* Reduced Planck constant: ħ = h/2π = 1.054 × 10⁻³⁴ J·s = 6.582 × 10⁻¹⁶ eV·s
 * Allows for quantum tunnelling when barrier is within a few wavelengths wide
   * e.x. total internal reflection can be disrupted by placing a another    prism sufficiently close to the boundary
 
@@ -279,7 +279,6 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Focal length is wavelength-independent for mirrors
 * A lens projects angular separation onto a plate (focal plane)
 * Linear separation of point sources on focal plane increases with focal length:
-
   dθ/dy = 1/f
 
 ### Resolution
@@ -329,14 +328,14 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Minimizes weight, support, and distortion issues,
     esp. with active support system
   * Main issue: Prime focus of the mirror is in the path of the incoming light
-         * Newtonian: flat diagonal secondary mirror;
+    * Newtonian: flat diagonal secondary mirror;
            suffers from faraway eyepiece that introduces torque
-         * Cassegrain: parabolic (or hyperbolic for Ritchey-Chrétien) primary mirror;
+    * Cassegrain: parabolic (or hyperbolic for Ritchey-Chrétien) primary mirror;
            secondary mirror (usually convex to increase focal length) reflects back
                 through a hole in the primary’s center
-         * Coudé: mirror system directs light to an instruments room;
+    * Coudé: mirror system directs light to an instruments room;
            very long focal length
-         * Schmidt: spheroidal primary mirror minimizing coma;
+    * Schmidt: spheroidal primary mirror minimizing coma;
            correcting lens to remove spherical aberrations;
                 provides wide field of view (degrees vs arcminutes) with low distortion
 * Mounts:
@@ -442,3 +441,80 @@ P = (2〈S〉A cos²θ)/c, reflection
   large-aperture telescopes, and long-term observing campaigns
 
 ## 8. Classification of Stellar Spectra
+
+### Harvard spectral types
+
+* Pickering and Fleming initially labeled alphabetically by strength of H absorption lines
+* Different strengths due to different temperatures causing different electron
+  ionization levels and orbitals
+  * H I (neutral H)’s visible spectral (Balmer) lines strongest at A0
+    (effective T = 9520 K)
+  * He I (neutral He)’s visible spectral lines strongest at B2
+    (effective T = 22,000 K)
+  * Ca II (singly ionized Ca)’s visible spectral lines strongest at K0
+    (effective T = 5250 K)
+* Cannon rearranged by temperature (OBAFGJM, O hottest)
+  and added decimal subdivisions: A0 hotter than A9
+* Additional spectral types for very cool stars and brown dwarfs: OBAFGKM + LT
+
+### Spectral physics
+
+* Statistical mechanics studies macroscopic behavior of stellar atmospheres
+* Maxwell−Boltzmann velocity distribution: ρ(v) = √(m/2πkT)³ e^(−mv²/2kT) 4πv²
+  * Restricted to gasses in thermodynamic equilibrium with density less than ≈1 kg/m³
+  * Most probable speed: v = √(2kT/m)
+  * Root-mean-square speed: v = √(3kT/m), due to right-skewed exponential tail
+* Electrons’ orbital energies are affected by their atoms’ kinetic energies
+  through collisions: higher orbitals are less likely to be occupied
+* Probability ratio of electron states: P(s₁)/P(s₂) = e^[−(E₁−E₂)/kT]
+  * As thermal energy kT → 0, P(higher energy state) → 0; confined to lowest state
+  * As kT → ∞, probability ratios of states → 1; all states are equally likely
+* Statistical weights of some energy levels increased by degenerate orbitals
+* Boltzmann equation, the probability ratio of electron energies:
+  P(E₁)/P(E₂) = (g₁/g₂) e^[−(E₁−E₂)/kT],
+  where g is the statistical weight, or number of states with that energy
+* Balmer lines require exitations from the first excited state N₂
+* Greater fraction of H I are in the excited state N₂ at higher temperatures;
+  However, at the same time, significant fractions of H I are ionized to H II
+* Partition function, the number of possible electron states weighted by energy,
+  varies by ionization state of the atom, thus affecting the probability of
+  atoms at different ionization states: Z = Σ_j[ g_j e^[−(E_j−E₁)/kT] ]
+  * For H I, the ground state (with two orbitals s=±½) dominates for most temperatures: Z ≅ 2
+  * For H II, no electrons means only one possible configuration: Z = 1
+* Saha equation, the probability ratio of ionization states:
+  N₊/N = (2Z₊/nZ) √(2πmkT/h²)³ e^(−χ/kT), where m is e− mass
+  * Very sensitive to ionization energy χ, as kT only ranges around 0.5−2 eV
+  * Also effected by free e− density n: presence of ionized He II&III increases free e− density,
+* Combining the Boltzmann and Saha equations shows varying narrow partial ionization
+  zones for different atoms and ionization states
+  * For H, there is significant fraction of electrons in the first excited state for
+    temperatures between 8300−11300 K, matching the peaking of Balmer lines ≅ 9900 K
+
+### Hertzsprung−Russell diagram
+
+* Hertzsprung discovered type G and cooler stars had a range of magnitudes;
+  termed the brighter ones giants; Russell termed the dimmer ones dwarfs
+* H−R diagram plots absolute magnitude (brighter upward) against
+  spectral type (warmer leftward)
+* 80−90% of stars lie as dwarfs in a main sequence from upper left to lower right
+  * Width of main sequence due to varying ages and compositions
+* Simple luminosity-temperature relation reveals fundamental dependence on mass
+* Iso-radius lines run diagonally roughly parallel to main sequence
+  * Warmer, more massive stars have a lower average density
+* Supergiants such as Betelgeuse occupy extreme upper right
+
+### Morgan−Keenan luminosity classes
+
+* Maury noted subtle line width variations amongst stars with similar effective
+  temperatures and different luminosities; found by Hertzsprung to differentiate
+  main-sequence stars and giants
+* Morgan and Keenan published atlas appending Roman numeral luminosity classes
+  to Harvard spectral types
+  * Ia/Ib for supergiants
+  * V for main requence
+  * VI for metal-deficient subdwarfs
+  * Excludes white dwarfs, class D
+* Luminosity classes roughly correlates with absolute magnitudes:
+  enables placement of star on H−R diagram entirely from its spectrum
+* Spectroscopic parallax: calculating distance modulus from the
+  spectrally determined absolute magnitude
