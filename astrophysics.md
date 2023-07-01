@@ -113,7 +113,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 ### Blackbody radiation
 
 * Wien’s displacement: λT = 0.002898 m·K, for peak wavelength
-* Stefan−Boltzmann: L = 4πR²σT⁴,
+* Stefan–Boltzmann: L = 4πR²σT⁴,
   where T is effective temperature of the star’s surface,
   and σ = 5.670 × 10⁻⁸ W/m²K⁴
 * Planck’s function: B(T) = (2hc²/λ⁵)/(e^(hc/λkT) − 1)
@@ -283,23 +283,20 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 ### Resolution
 
-* Single-slit diffraction of wavefronts through aperture limits resolving power
-* Airy disk: bright spot around central maximum
+* Single-slit diffraction of wavefronts through aperture limits resolving power* Airy disk: bright spot around central maximum
 * Destructive interference creates minimums: sin θ = mλ/D, m = 1, 2, 3, ...
 * Images are “unresolved” when one's central maximum overlaps with
   another's 1st minimum
 * Rayleigh criterion defines arbitrary min resolvable distance
   of a circular aperture: θ = 1.22λ/D, D is aperture diameter
-  * Possible to differentiate sources within Rayleigh criterion through careful
-         analysis of diffraction patterns
+  * Possible to differentiate sources within Rayleigh criterion through careful         analysis of diffraction patterns
 * Actual ground-based optical resolution worse than ideal due to
   refraction from atmospheric turbulence, unless corected by adaptive optics
 * Only lenses suffer from chromatic aberration;
   somewhat reduceable with correcting lenses
 * Spherical lenses and mirrors suffer from spherical aberration;
   mitigated by paraboloids, which are harder to produce
-* Paraboloid lenses and mirrors suffer from coma: elongation of off-axis images
-* Astigmatism: different parts of a lens or mirror converge an image
+* Paraboloid lenses and mirrors suffer from coma: elongation of off-axis images* Astigmatism: different parts of a lens or mirror converge an image
   at different locations; correction may result in curvature of field issues
 
 ### Brightness
@@ -339,8 +336,7 @@ P = (2〈S〉A cos²θ)/c, reflection
            correcting lens to remove spherical aberrations;
                 provides wide field of view (degrees vs arcminutes) with low distortion
 * Mounts:
-  * Equatorial: polar axis, easy to adjust, hard to build for massive telecopes
-  * Altitude-azimuth: easy to build, generally needs computer adjustments
+  * Equatorial: polar axis, easy to adjust, hard to build for massive telecopes  * Altitude-azimuth: easy to build, generally needs computer adjustments
 * Adaptive optics: small deformable mirror with many piezoelectric actuators
          counteract atmospheric distortions, constantly calibrated via a guide star
 * Charge-coupled device (CCD) detects ~100% of incident photons with a linear
@@ -490,23 +486,21 @@ P = (2〈S〉A cos²θ)/c, reflection
   * For H, there is significant fraction of electrons in the first excited state for
     temperatures between 8300−11300 K, matching the peaking of Balmer lines ≅ 9900 K
 
-### Hertzsprung−Russell diagram
+### Hertzsprung–Russell diagram
 
 * Hertzsprung discovered type G and cooler stars had a range of magnitudes;
   termed the brighter ones giants; Russell termed the dimmer ones dwarfs
-* H−R diagram plots absolute magnitude (brighter upward) against
+* H–R diagram plots absolute magnitude (brighter upward) against
   spectral type (warmer leftward)
-* 80−90% of stars lie as dwarfs in a main sequence from upper left to lower right
+* 80–90% of stars lie as dwarfs in a main sequence from upper left to lower right
   * Width of main sequence due to varying ages and compositions
-* Simple luminosity-temperature relation reveals fundamental dependence on mass
-* Iso-radius lines run diagonally roughly parallel to main sequence
+* Simple luminosity–temperature relation reveals fundamental dependence on mass* Iso-radius lines run diagonally roughly parallel to main sequence
   * Warmer, more massive stars have a lower average density
 * Supergiants such as Betelgeuse occupy extreme upper right
 
 ### Morgan−Keenan luminosity classes
 
-* Maury noted subtle line width variations amongst stars with similar effective
-  temperatures and different luminosities; found by Hertzsprung to differentiate
+* Maury noted subtle line width variations amongst stars with similar effective  temperatures and different luminosities; found by Hertzsprung to differentiate
   main-sequence stars and giants
 * Morgan and Keenan published atlas appending Roman numeral luminosity classes
   to Harvard spectral types
@@ -518,3 +512,103 @@ P = (2〈S〉A cos²θ)/c, reflection
   enables placement of star on H−R diagram entirely from its spectrum
 * Spectroscopic parallax: calculating distance modulus from the
   spectrally determined absolute magnitude
+
+## 9. Stellar Atmospheres
+
+* Line blanketing: dense series of metallic absorption lines significantly
+  decrease intensity relative to ideal blackbody at certain wavelengths
+
+### Radiation field
+
+* Radiation energy originates from thermonuclear reactions,
+  gravitational contraction, and core cooling
+* But observed light comes from gasses in atmosphere, not the opaque interior
+* Temperature, density, and composition of atmospheric layers determine
+  spectral features
+* Specific ray intensity:
+  I(λ) ≡ ∂I/∂λ ≡ [ (∂E/∂λ) dλ ] / [ dλ dt dA cos θ dΩ ],
+  power transmitted at a certain wavelength within a certain solid angle
+* Mean intensity:〈I(λ)〉= I(λ) for isotropic field; = B(λ) for blackbody
+* Specific energy density: u(λ) dλ = (4π/c)〈I(λ)〉dλ
+  * Total energy density for blackbody: u = 4σT⁴/c
+  * Blackbody radiation pressure is u/3
+* Specific radiative flux:
+  F(λ) dλ = ∫ I(λ) dλ cos θ dΩ,
+  net energy at a certain wavelength flowing towards one single direction
+* For a resolved source, specific ray intensity is measured,
+  thus detector distance does not affect measured intensity,
+  though the angular size decreases
+* For an unresolved source, specific radiative flux is measured,
+  falling off with 1/r²
+
+### Temperature
+
+* Mean free path: average distance traveled by particles and photons
+  between collisions
+* Multiple descriptions of temperature:
+  * Effective temperature: obtained from the Stefan–Boltzmann law
+  * Excitation temperature: defined by the Boltzmann equation
+  * Ionization temperature: defined by the Saha equation
+  * Kinetic temperature: defined by the Maxwell–Boltzmann distribution
+  * Color temperature: defined by fitting the Planck function on the spectrum
+* Effective temperature is a global descriptor;
+  rest apply locally, varying by gas location and other conditions
+* All local temperature definitions result in the same value
+  at thermodynamic equilibrium
+* Local thermodynamic equilibrium (LTE) occurs when temperature change is
+  very gradual compared to the mean free path length: H « L
+  * Temperature scale height: H(T) ≡ T/|dT/dr|
+  * Mean free path: l = 1/nσ,
+    where n is atomic density and σ ≡ π(2a₀)² is collision cross section
+
+### Opacity
+
+* Both scattering and pure absorption reduce the intensity of directed light:
+  dI = −κρI ds, where κ is a absorption coefficient (opacity) dependent on
+  ray wavelength and gas composition, density, and temperature
+* Characteristic distance l = 1/kρ is equivalent to main free path for photons
+* Pure absorption decreases intensity exponentially: I = I₀ e^(−τ),
+  where τ is optical depth with dτ = −κρ ds
+* Optical depth is equivalent to the number of mean free path lengths along the  path of a ray; gas is “optically thick” if τ » 1, “optically thin” if t « 1
+* Sources of opacity classified by initial and final quantum states of the
+  interacting electrons:
+  * Bound–bound transitions (excitation and de-excitation)
+    * Small except for wavelengths corresponding to specific excitation energies;
+    * If de-excitation returns to the initial state through emission,
+      the photon is essentially scattered
+    * If multiple photons are emitted from one absorption, the average photon
+      energy is reduced
+    * If de-excitation is instead triggered by collision, then the energy is
+      converted into kinetic/thermal
+  * Bound-free absorption (photoionization) and free–bound emission (recombination)
+    * Wavelength-dependent cross section comparable to that of collisions
+    * Adds to continuum opacity, as any photon above an electron’s
+      ionization energy may be absorbed
+    * Recombination emits one or more photons,
+      again reducing average photon energy and scattering
+  * Free–free absorption and bremsstrahlung (“braking radiation”) emission
+    * Free electron gains speed from absorption, or loses speed from emission
+    * Must take place next to an ion to conserve both energy and momentum
+    * Adds to continuum opacity
+  * Free electron (Thomson) scattering
+    * Photon is scattered when the electron is made to oscillate in its EM field
+    * Very tiny wavelength-independent cross section
+    * Only dominates in stellar interiors and the hottest atmospheres,
+      where near-total ionization eliminates bound-electron processes
+  * Loosely-bound electron (Compton/Rayleigh) scattering
+    * Compton if λ « a₀;
+      very small change in scattered photon wavelength, much like Thomson
+    * Rayleigh if λ » a₀;
+      proportional to 1/λ⁴,
+      so only significant in UV for supergiant stars’ extended envelopes,
+      cool main-sequence stars, and planet atmospheres
+* Balmer jump: to be continued...
+
+
+## 10. The Interiors of Stars
+
+## 11. The Sun
+
+## 12. The Interstellar Medium and Star Formation
+
+## 13. Main Sequence and Post-Main-Sequence Stellar Evolution
