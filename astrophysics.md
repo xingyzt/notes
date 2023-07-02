@@ -2,7 +2,7 @@
 
 ## 1. The Celestial Sphere
 
-### Altitude−Azimuth Coordinate System
+### Altitude–Azimuth Coordinate System
 
 * Local to observer location and day of year
 * Altitude: h, measured from horizon towards zenith.
@@ -101,7 +101,7 @@ east on the horizon
 m − M = 5 log₁₀(d) − 5
 * For equally distant stars, ratio of radiant fluxes equals
   ratio of luminosities, thus: L₂/L₁ = 100^[(M₁ − M₂)/5],
-* M_sun = +4.74, L_sun = 3.839E26 W
+* M_sun = +4.74, L_sun = 3.839 × 10²⁶ W
 
 ### Light
 
@@ -191,15 +191,15 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 ### Photoelectric effect
 
-* Shining light onto metal ejects e− with energy ∝ frequency, not intensity
-* Max kinetic energy of an ejected e−: K = hν − Φ
-* Work function Φ is the metal’s min e− binding energy
+* Shining light onto metal ejects e⁻ with energy ∝ frequency, not intensity
+* Max kinetic energy of an ejected e⁻: K = hν − Φ
+* Work function Φ is the metal’s min e⁻ binding energy
 * Demonstrates quantization of light into packets of energy hν
 
 ### Compton scattering
 
 * Relativistic scattering of electrons by high−energy photons
-* Photon loses wavelength Δλ = h(1 − cos θ)/mc, e− mass m = 9.109⁻³¹ kg
+* Photon loses wavelength Δλ = h(1 − cos θ)/mc, e⁻ mass m = 9.109⁻³¹ kg
 
 ### Bohr’s semiclassical atom
 
@@ -449,7 +449,7 @@ P = (2〈S〉A cos²θ)/c, reflection
     (effective T = 22,000 K)
   * Ca II (singly ionized Ca)’s visible spectral lines strongest at K0
     (effective T = 5250 K)
-* Cannon rearranged by temperature (OBAFGJM, O hottest)
+* Cannon rearranged by temperature (OBAFGKM, O hottest)
   and added decimal subdivisions: A0 hotter than A9
 * Additional spectral types for very cool stars and brown dwarfs: OBAFGKM + LT
 
@@ -478,9 +478,9 @@ P = (2〈S〉A cos²θ)/c, reflection
   * For H I, the ground state (with two orbitals s=±½) dominates for most temperatures: Z ≅ 2
   * For H II, no electrons means only one possible configuration: Z = 1
 * Saha equation, the probability ratio of ionization states:
-  N₊/N = (2Z₊/nZ) √(2πmkT/h²)³ e^(−χ/kT), where m is e− mass
+  N₊/N = (2Z₊/nZ) √(2πmkT/h²)³ e^(−χ/kT), where m is e⁻ mass
   * Very sensitive to ionization energy χ, as kT only ranges around 0.5−2 eV
-  * Also effected by free e− density n: presence of ionized He II&III increases free e− density,
+  * Also effected by free e⁻ number density n: presence of ionized He II&III increases free e⁻ number density,
 * Combining the Boltzmann and Saha equations shows varying narrow partial ionization
   zones for different atoms and ionization states
   * For H, there is significant fraction of electrons in the first excited state for
@@ -494,6 +494,8 @@ P = (2〈S〉A cos²θ)/c, reflection
   spectral type (warmer leftward)
 * 80–90% of stars lie as dwarfs in a main sequence from upper left to lower right
   * Width of main sequence due to varying ages and compositions
+* Initial theory was stars evolved from upper left to lower right;
+  terminology of “earlier” (warmer) and “later” (cooler) stars remain
 * Simple luminosity–temperature relation reveals fundamental dependence on mass* Iso-radius lines run diagonally roughly parallel to main sequence
   * Warmer, more massive stars have a lower average density
 * Supergiants such as Betelgeuse occupy extreme upper right
@@ -559,8 +561,7 @@ P = (2〈S〉A cos²θ)/c, reflection
   very gradual compared to the mean free path length: H « L
   * Temperature scale height: H(T) ≡ T/|dT/dr|
   * Mean free path: l = 1/nσ,
-    where n is atomic density and σ ≡ π(2a₀)² is collision cross section
-
+    where n is atomic number density and σ ≡ π(2a₀)² is collision cross section
 ### Opacity
 
 * Both scattering and pure absorption reduce the intensity of directed light:
@@ -570,6 +571,8 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Pure absorption decreases intensity exponentially: I = I₀ e^(−τ),
   where τ is optical depth with dτ = −κρ ds
 * Optical depth is equivalent to the number of mean free path lengths along the  path of a ray; gas is “optically thick” if τ » 1, “optically thin” if t « 1
+* Balmer jump: opacity of stellar material suddenly increases for wavelengths
+  below the ionization energy of H I in the first excited state
 * Sources of opacity classified by initial and final quantum states of the
   interacting electrons:
   * Bound–bound transitions (excitation and de-excitation)
@@ -602,8 +605,75 @@ P = (2〈S〉A cos²θ)/c, reflection
       proportional to 1/λ⁴,
       so only significant in UV for supergiant stars’ extended envelopes,
       cool main-sequence stars, and planet atmospheres
-* Balmer jump: to be continued...
+* Electron scattering and photoionization of He are primary sources of continuum opacity
+  for type O
+* Photoionization of H and free–free absorption primary sources for types B–A
+* Photoionization of H⁻ is primary source for type F0 and cooler
+  * Very low binding energy of 0.754 eV (λ = 1640 nm) for bound–free opacity
+  * Also contributes to free–free absorption at longer wavelengths
+* Molecules survive in planetary and cooler stellar atmospheres
+  * High opacity from large number of discrete absorption lines
+  * May break apart during absorption through photodissociation
+* Rosseland mean opacity: weighted harmonic mean of opacity across all wavelengths,
+  accounting for rate of change of the blackbody spectrum with temperature;
+  1/κ ≡ [ ∫ (1/κ_ν) (∂B_ν/∂T) dν ] / [ ∫ (∂B_ν/∂T) dν ]
+  * Obeys Kramer’s opacity law: κ ∝ ρ/(T^3.5)
+  * No analytic solution, but approximations exist for bound–free and free–free opacities
+  * κ_bf ∝ (g_bf/t) Z(1+X) ρ/(T^3.5), k_ff ∝ g_ff (1−Z)(1+X) ρ/(T^3.5)
+    * X, Y, and Z are mass fractions of H, He, and metals respectively
+    * g_bf and g_ff are Gaunt factors correcting for quantum effects; ≈1 for visible and UV
+    * t is the guillotine factor, typically ranging 1–100
 
+### Radiative transfer
+
+* No net energy change occurs in any layer of a star that is in steady-state equilibrium
+* Emission processes complement each of the primary absorptino processes,
+  resulting in randomly-directed scattering
+* In a random walk with N steps of average size l, d = l√N
+* On average, a photon from optical depth τ needs τ² steps to reach the surface* Photons from τ ≈ 1 may escape without scattering,
+  with the average observed photon being emitted from τ ≈ ⅔, independent of angle
+* Higher opacity corresponds to shorter pathlength for the same optical depth,
+  thus absorption lines must come from outer, cooler layers
+* Limb darkening: line of sight reaches τ = ⅔ in cooler, dimmer layers when
+  observing closer to the edge of the disk
+
+### Transfer equation
+
+* Todo
+* Eddington approximation: T⁴ ≈ ¾ T_eff⁴ (τ + ⅔)
+* The star has its effective temperature at optical depth τ ≈ 2/3
+* Todo
+
+### Spectral line profile
+
+* Core of line is formed at higher and cooler layer;
+  formation descends down to continuum region at wings of the line
+* Line is spectrally thin if radiant flux F(λ) is never 0
+* Equivalent width: W = ∫ 1 − (F(λ)/F₀) dλ,
+  where the integrand is the depth of the line at wavelength λ
+* Broadening processes:
+  * Natural: uncertainty principle means momentary occupancy of
+    an excited state for small Δt amplifies uncertainty of orbital energy
+    ΔE ≈ ħ/Δt, resulting in uncertainty of wavelength
+    Δλ ≈ (λ²/2πc) [(1/Δt₀) + (1/Δt₁)], where Δt are lifetimes in the two states  * Doppler: random thermodynamic motion results in nonrelativistic Doppler shift
+    Δλ ≈ (2λ/c) √(2kT/m)
+    * in giant and supergiant stars, random large-scale turbulence increases to
+      Δλ ≈ (2λ/c) √(2kT/m + v²), where v is the most probable turbulence speed
+    * coherent mass motions such as rotation, pulsation and mass loss also
+      substantial factors
+  * Pressure: collisions with neutral atoms and pressure from nearby
+    ion electrical fields may perturb the orbitals with
+    Δλ = λ²/πcΔt₀, where Δt₀ ≈ 1/[ nσ√(2kT/m) ] is the average collision time
+    * Dependence on atomic number density explains narrower lines of sparser
+      giant and supergiant extended atmospheres used for the
+      Morgan–Keenan classification
+* Damping (Lorentz) profile: shape of lines from natural and pressure broadening,
+  characteristic of radiation from electric charge in damped harmonic motion
+* Voigt profile: total line profile from both Doppler and damping profiles,
+  with Doppler dominating at the core and damping dominating at wings
+* Schuster–Schwarzchild model: assumes photosphere is a blackbody
+  and atoms above it create absorption lines
+* Column density
 
 ## 10. The Interiors of Stars
 
