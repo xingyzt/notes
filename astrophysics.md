@@ -1,5 +1,7 @@
 # Carroll & Ostlie, Introduction to Modern Astrophysics: Xing’s notes
 
+* Notation: (a/bc)d = (a/(b·c))·d
+
 ## 1. The Celestial Sphere
 
 ### Altitude–Azimuth Coordinate System
@@ -91,7 +93,7 @@ east on the horizon
 
 * Originally compiled by Hipparchus: 1 for brightest, 6 for dimmest
 * Modern definition: F₂/F₁ = 100^[(m₁ − m₂)/5]
-* Where radiant flux is density of emitted light: F = L/4πr²
+  * Where radiant flux is density of emitted light: F = L/4πr²
 
 ### Absolute magnitude
 
@@ -113,9 +115,9 @@ P = (2〈S〉A cos²θ)/c, reflection
 ### Blackbody radiation
 
 * Wien’s displacement: λT = 0.002898 m·K, for peak wavelength
-* Stefan–Boltzmann: L = 4πR²σT⁴,
-  where T is effective temperature of the star’s surface,
-  and σ = 5.670 × 10⁻⁸ W/m²K⁴
+* Stefan–Boltzmann: L = 4πR²σT⁴
+  * Where T is effective temperature of the star’s surface,
+    and σ = 5.670 × 10⁻⁸ W/m²K⁴
 * Planck’s function: B(T) = (2hc²/λ⁵)/(e^(hc/λkT) − 1)
 
 ### Color index
@@ -283,20 +285,23 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 ### Resolution
 
-* Single-slit diffraction of wavefronts through aperture limits resolving power* Airy disk: bright spot around central maximum
+* Single-slit diffraction of wavefronts through aperture limits resolving power
+* Airy disk: bright spot around central maximum
 * Destructive interference creates minimums: sin θ = mλ/D, m = 1, 2, 3, ...
 * Images are “unresolved” when one's central maximum overlaps with
   another's 1st minimum
 * Rayleigh criterion defines arbitrary min resolvable distance
   of a circular aperture: θ = 1.22λ/D, D is aperture diameter
-  * Possible to differentiate sources within Rayleigh criterion through careful         analysis of diffraction patterns
+  * Possible to differentiate sources within Rayleigh criterion through careful
+    analysis of diffraction patterns
 * Actual ground-based optical resolution worse than ideal due to
   refraction from atmospheric turbulence, unless corected by adaptive optics
 * Only lenses suffer from chromatic aberration;
   somewhat reduceable with correcting lenses
 * Spherical lenses and mirrors suffer from spherical aberration;
   mitigated by paraboloids, which are harder to produce
-* Paraboloid lenses and mirrors suffer from coma: elongation of off-axis images* Astigmatism: different parts of a lens or mirror converge an image
+* Paraboloid lenses and mirrors suffer from coma: elongation of off-axis images
+* Astigmatism: different parts of a lens or mirror converge an image
   at different locations; correction may result in curvature of field issues
 
 ### Brightness
@@ -307,7 +312,7 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Larger aperture increases resolution and illumination
   * Longer focal length increases image size but decreases illumination
   * For fixed focal ratio, larger telescope diameter increases resolution but
-         not illumination
+  not illumination
 
 ### Optical telescopes
 
@@ -317,28 +322,29 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Angular magnification: m = f_objective / f_eye
   * Issues:
     * Lens can only be supported near the edge, so gravity deforms heavy ones
-         * Entire volume must be fabricated precisely
-         * Slow thermal response and thermal expansion
-         * Chromatic aberrations
+  * Entire volume must be fabricated precisely
+  * Slow thermal response and thermal expansion
+  * Chromatic aberrations
 * Reflecting:
   * Replaces refractor’s objective lens with a mirror
   * Minimizes weight, support, and distortion issues,
     esp. with active support system
   * Main issue: Prime focus of the mirror is in the path of the incoming light
     * Newtonian: flat diagonal secondary mirror;
-           suffers from faraway eyepiece that introduces torque
+    suffers from faraway eyepiece that introduces torque
     * Cassegrain: parabolic (or hyperbolic for Ritchey-Chrétien) primary mirror;
-           secondary mirror (usually convex to increase focal length) reflects back
-                through a hole in the primary’s center
+    secondary mirror (usually convex to increase focal length) reflects back
+  through a hole in the primary’s center
     * Coudé: mirror system directs light to an instruments room;
-           very long focal length
+    very long focal length
     * Schmidt: spheroidal primary mirror minimizing coma;
-           correcting lens to remove spherical aberrations;
-                provides wide field of view (degrees vs arcminutes) with low distortion
+    correcting lens to remove spherical aberrations;
+  provides wide field of view (degrees vs arcminutes) with low distortion
 * Mounts:
-  * Equatorial: polar axis, easy to adjust, hard to build for massive telecopes  * Altitude-azimuth: easy to build, generally needs computer adjustments
+  * Equatorial: polar axis, easy to adjust, hard to build for massive telecopes
+  * Altitude-azimuth: easy to build, generally needs computer adjustments
 * Adaptive optics: small deformable mirror with many piezoelectric actuators
-         counteract atmospheric distortions, constantly calibrated via a guide star
+  counteract atmospheric distortions, constantly calibrated via a guide star
 * Charge-coupled device (CCD) detects ~100% of incident photons with a linear
   response across wide wavelength and intensity (dynamic) ranges
 
@@ -360,7 +366,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 ### IR/UV/X/γ astronomy
 
 * Water vapor is primary contributor to IR absorption; thus low-humidity
-         mountain peaks, balloons and aircraft observatories are used
+  mountain peaks, balloons and aircraft observatories are used
 * IR observation also requires very cold telescopes and detectors
 * Glass is opaque to UV; UV telescopes need very precise reflecting surfaces
 * X-ray and gamma-ray photons penetrate traditional mirrors;
@@ -389,8 +395,8 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 * Mass ratio from ratio of subtended angles: m₁/m₂ = r₂/r₁ = α₂/α₁
 * If distance to system and inclination are known, masses can be determined:
-  m₁ + m₂ = (4π²/G) (d / cos i)³ (α³/P²),
-  where i is the angle of inclination between the orbit and the sky’s planes
+  m₁ + m₂ = (4π²/G) (d / cos i)³ (α³/P²)
+  * Where i is the angle of inclination between the orbit and the sky’s planes
 
 ### Mass determination of spectroscopic binaries
 
@@ -400,7 +406,8 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Radial velocity curve amplitudes scaled uniformly by sin i
 * Eccentricity skews the curves, but close binaries tend to quickly
   circularize from tidal forces
-* Mass ratio: m₁/m₂ = v₂/v₁, where v are radial velocities
+* Mass ratio: m₁/m₂ = v₂/v₁
+  * Where v are radial velocities
 * If inclination is known, masses can be determined:
   m₁ + m₂ = (P/2πG) (v₁ + v₂)³/(sin³ i),
 * If only one radial velocity is known (single-line binary),
@@ -418,9 +425,9 @@ P = (2〈S〉A cos²θ)/c, reflection
   (B₀ − B₁)/(B₀ − B₂) = (T₁/T₂)⁴
 * Unless extremely close binary, inclination must be ~90°,
   thus allowing accurate mass and velocity determination
-* Radius of star: r = vΔt/2,
-  where v is relative velocity,
-  and Δt is transit time for the smaller star or eclipse time for the larger
+* Radius of star: r = vΔt/2
+  * Where v is relative velocity,
+    and Δt is transit time for the smaller star or eclipse time for the larger
 
 ### Computer modeling
 
@@ -437,6 +444,9 @@ P = (2〈S〉A cos²θ)/c, reflection
   large-aperture telescopes, and long-term observing campaigns
 
 ## 8. Classification of Stellar Spectra
+
+* Stars emit a continuous spectra (the continuum)
+  with absorption lines in certain wavelengths
 
 ### Harvard spectral types
 
@@ -467,8 +477,8 @@ P = (2〈S〉A cos²θ)/c, reflection
   * As kT → ∞, probability ratios of states → 1; all states are equally likely
 * Statistical weights of some energy levels increased by degenerate orbitals
 * Boltzmann equation, the probability ratio of electron energies:
-  P(E₁)/P(E₂) = (g₁/g₂) e^[−(E₁−E₂)/kT],
-  where g is the statistical weight, or number of states with that energy
+  P(E₁)/P(E₂) = (g₁/g₂) e^[−(E₁−E₂)/kT]
+  * Where g is the statistical weight, or number of states with that energy
 * Balmer lines require exitations from the first excited state N₂
 * Greater fraction of H I are in the excited state N₂ at higher temperatures;
   However, at the same time, significant fractions of H I are ionized to H II
@@ -478,7 +488,8 @@ P = (2〈S〉A cos²θ)/c, reflection
   * For H I, the ground state (with two orbitals s=±½) dominates for most temperatures: Z ≅ 2
   * For H II, no electrons means only one possible configuration: Z = 1
 * Saha equation, the probability ratio of ionization states:
-  N₊/N = (2Z₊/nZ) √(2πmkT/h²)³ e^(−χ/kT), where m is e⁻ mass
+  N₊/N = (2Z₊/nZ) √(2πmkT/h²)³ e^(−χ/kT)
+  * Where m is e⁻ mass
   * Very sensitive to ionization energy χ, as kT only ranges around 0.5−2 eV
   * Also effected by free e⁻ number density n: presence of ionized He II&III increases free e⁻ number density,
 * Combining the Boltzmann and Saha equations shows varying narrow partial ionization
@@ -496,13 +507,15 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Width of main sequence due to varying ages and compositions
 * Initial theory was stars evolved from upper left to lower right;
   terminology of “earlier” (warmer) and “later” (cooler) stars remain
-* Simple luminosity–temperature relation reveals fundamental dependence on mass* Iso-radius lines run diagonally roughly parallel to main sequence
+* Simple luminosity–temperature relation reveals fundamental dependence on mass
+* Iso-radius lines run diagonally roughly parallel to main sequence
   * Warmer, more massive stars have a lower average density
 * Supergiants such as Betelgeuse occupy extreme upper right
 
 ### Morgan−Keenan luminosity classes
 
-* Maury noted subtle line width variations amongst stars with similar effective  temperatures and different luminosities; found by Hertzsprung to differentiate
+* Maury noted subtle line width variations amongst stars with similar effective
+  temperatures and different luminosities; found by Hertzsprung to differentiate
   main-sequence stars and giants
 * Morgan and Keenan published atlas appending Roman numeral luminosity classes
   to Harvard spectral types
@@ -561,16 +574,19 @@ P = (2〈S〉A cos²θ)/c, reflection
   very gradual compared to the mean free path length: H « L
   * Temperature scale height: H(T) ≡ T/|dT/dr|
   * Mean free path: l = 1/nσ,
-    where n is atomic number density and σ ≡ π(2a₀)² is collision cross section
+    * Where n is atomic number density and σ ≡ π(2a₀)² is collision cross section
+
 ### Opacity
 
 * Both scattering and pure absorption reduce the intensity of directed light:
-  dI = −κρI ds, where κ is a absorption coefficient (opacity) dependent on
-  ray wavelength and gas composition, density, and temperature
+  dI = −κρI ds
+  * Where κ is a absorption coefficient (opacity) dependent on
+    ray wavelength and gas composition, density, and temperature
 * Characteristic distance l = 1/kρ is equivalent to main free path for photons
-* Pure absorption decreases intensity exponentially: I = I₀ e^(−τ),
-  where τ is optical depth with dτ = −κρ ds
-* Optical depth is equivalent to the number of mean free path lengths along the  path of a ray; gas is “optically thick” if τ » 1, “optically thin” if t « 1
+* Pure absorption decreases intensity exponentially: I = I₀ e^(−τ)
+  * Where τ is optical depth with dτ = −κρ ds
+* Optical depth is equivalent to the number of mean free path lengths along the
+  path of a ray; gas is “optically thick” if τ » 1, “optically thin” if t « 1
 * Balmer jump: opacity of stellar material suddenly increases for wavelengths
   below the ionization energy of H I in the first excited state
 * Sources of opacity classified by initial and final quantum states of the
@@ -627,35 +643,43 @@ P = (2〈S〉A cos²θ)/c, reflection
 ### Radiative transfer
 
 * No net energy change occurs in any layer of a star that is in steady-state equilibrium
-* Emission processes complement each of the primary absorptino processes,
+* Emission processes complement each of the primary absorption processes,
   resulting in randomly-directed scattering
+* Specific intensity: dI = −κρI ds + jρ ds
+   * Where κ is the absorption and j is the emission coefficient; both are λ-dependent
+* Equation of radiative transfer: −(1/κρ) dI/ds = dI/dτ = I − S
+  * Where source function: S ≡ j/κ
+  * Expresses how light beam composition tends to resemble the local source of photons
+* In local thermodynamic equilibrium, S = B, the blackbody Planck function
+  * Integrating over all wavelengths, S = B = σT⁴/π
+  * If τ » 1, I = B as well
+* Radiation differential “driving” net radiative flux of photons flowing to the surface:
+  dP/dτ = −F/c
+* Radiative flux throughout star is constant: F = σT_eff⁴
 * In a random walk with N steps of average size l, d = l√N
-* On average, a photon from optical depth τ needs τ² steps to reach the surface* Photons from τ ≈ 1 may escape without scattering,
-  with the average observed photon being emitted from τ ≈ ⅔, independent of angle
+* On average, a photon from optical depth τ needs τ² steps to reach the surface
+  * Photons from τ ≈ 1 may escape without scattering
+* Eddington approximation: T⁴ ≈ ¾ T_eff⁴ (τ + ⅔)
+  * Star has its effective temperature at optical depth τ ≈ ⅔
+  * Average observed photon is emitted from τ ≈ ⅔, independent of angle
 * Higher opacity corresponds to shorter pathlength for the same optical depth,
   thus absorption lines must come from outer, cooler layers
 * Limb darkening: line of sight reaches τ = ⅔ in cooler, dimmer layers when
   observing closer to the edge of the disk
-
-### Transfer equation
-
-* Todo
-* Eddington approximation: T⁴ ≈ ¾ T_eff⁴ (τ + ⅔)
-* The star has its effective temperature at optical depth τ ≈ 2/3
-* Todo
 
 ### Spectral line profile
 
 * Core of line is formed at higher and cooler layer;
   formation descends down to continuum region at wings of the line
 * Line is spectrally thin if radiant flux F(λ) is never 0
-* Equivalent width: W = ∫ 1 − (F(λ)/F₀) dλ,
-  where the integrand is the depth of the line at wavelength λ
+* Equivalent width: W = ∫ 1 − (F(λ)/F₀) dλ
+  * Where the integrand is the depth of the line at wavelength λ
 * Broadening processes:
   * Natural: uncertainty principle means momentary occupancy of
     an excited state for small Δt amplifies uncertainty of orbital energy
     ΔE ≈ ħ/Δt, resulting in uncertainty of wavelength
-    Δλ ≈ (λ²/2πc) [(1/Δt₀) + (1/Δt₁)], where Δt are lifetimes in the two states  * Doppler: random thermodynamic motion results in nonrelativistic Doppler shift
+    Δλ ≈ (λ²/2πc) [(1/Δt₀) + (1/Δt₁)], where Δt are lifetimes in the two states
+  * Doppler: random thermodynamic motion results in nonrelativistic Doppler shift
     Δλ ≈ (2λ/c) √(2kT/m)
     * in giant and supergiant stars, random large-scale turbulence increases to
       Δλ ≈ (2λ/c) √(2kT/m + v²), where v is the most probable turbulence speed
@@ -673,7 +697,22 @@ P = (2〈S〉A cos²θ)/c, reflection
   with Doppler dominating at the core and damping dominating at wings
 * Schuster–Schwarzchild model: assumes photosphere is a blackbody
   and atoms above it create absorption lines
-* Column density
+* Number of atoms involved in absorption per surface area: fN
+  * Where oscillator strength f is the relative likelihood of each transition,
+    and column density N is the area density of absorbing atoms in a column from the surface to the observer
+* Curve of growth for line width as a function of column density:
+  * Initially optically thin core: W ∝ N
+  * Then, saturated core with optically thin wings: W ∝ √(ln N)
+  * For high N, pressure-broadening profile dominates wings: W ∝ √N
+* Applying Boltzmann and Saha equations to curve of growth finds total number of atoms above continuum layer
+  * Applying Boltzmann equation also finds excitation temperature
+  * Applying Saha equation also finds either e⁻ pressure or ionization temperature from the other
+
+### Computer modeling
+
+* Construction of an atmospheric model with extensive physics fine-tuned to observations
+  can provide information on line profile, chemical composition, effective temperature,
+  surface gravity, etc
 
 ## 10. The Interiors of Stars
 
