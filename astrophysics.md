@@ -1,6 +1,6 @@
 # Carroll & Ostlie, Introduction to Modern Astrophysics: Xing’s notes
 
-* Notation: (a/bc)d = (a/(b·c))·d
+* _Notation: (a/bc)d = (a/(b·c))·d_
 
 ## 1. The Celestial Sphere
 
@@ -103,7 +103,7 @@ east on the horizon
 m − M = 5 log₁₀(d) − 5
 * For equally distant stars, ratio of radiant fluxes equals
   ratio of luminosities, thus: L₂/L₁ = 100^[(M₁ − M₂)/5],
-* M_sun = +4.74, L_sun = 3.839 × 10²⁶ W
+* M☉ = +4.74, L☉ = 3.839 × 10²⁶ W
 
 ### Light
 
@@ -142,7 +142,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 ## 4. Special Relativity
 
-* (Notation: prime (′) means observed, unprimed means rest)
+* _Notation: prime (′) means observed, unprimed means rest_
 
 ### Einstein’s postulates:
 
@@ -208,13 +208,13 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Assumes quantization of angular momentum: L = μvr = nħ,
   n is principle quantum number
 * However, still puts electrons in classical circular orbits modeled by
-  coulombic attraction
-* Kinetic energy of atom: K = μv²/2 = e²/8πε₀r = nħ²/2μr²
+  Coulombic attraction
+* Kinetic energy of atom: K = μv²/2 = e²/8πϵ₀r = nħ²/2μr²
 * Allowed orbital radii: r = a₀n²,
-  Bohr radius a₀ = 4πε₀ħ²/μe² ≈ 5.292⁻¹¹ m
+  Bohr radius a₀ = 4πϵ₀ħ²/μe² ≈ 5.292⁻¹¹ m
 * Allowed energy levels: E = −E₀/n², E₀ ≈ 13.6 eV
 
-### deBroglie waves
+### De Broglie waves
 
 * Generalizes photon wavelength-frequency-momentum relation to all partilces
 * ν = E/h, λ = h/p
@@ -352,7 +352,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 * Strength measured is spectral flux density: S(ν)
 * Typical radio source has S ≈ 1 jansky (Jy) = 10⁻²⁶ W/(m²·Hz);
-  weak sources ≈ mJy
+  weak sources ~mJy
 * Integrate S over area and bandwidth for total power received
 * Long wavelengths require large apertures, but less manufacturing precision
 * Addition of other telescopes enables interferometry;
@@ -467,7 +467,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 * Statistical mechanics studies macroscopic behavior of stellar atmospheres
 * Maxwell−Boltzmann velocity distribution: ρ(v) = √(m/2πkT)³ e^(−mv²/2kT) 4πv²
-  * Restricted to gasses in thermodynamic equilibrium with density less than ≈1 kg/m³
+  * Restricted to gasses in thermodynamic equilibrium with density ≤ ~1 kg/m³
   * Most probable speed: v = √(2kT/m)
   * Root-mean-square speed: v = √(3kT/m), due to right-skewed exponential tail
 * Electrons’ orbital energies are affected by their atoms’ kinetic energies
@@ -637,7 +637,7 @@ P = (2〈S〉A cos²θ)/c, reflection
   * No analytic solution, but approximations exist for bound–free and free–free opacities
   * κ_bf ∝ (g_bf/t) Z(1+X) ρ/(T^3.5), k_ff ∝ g_ff (1−Z)(1+X) ρ/(T^3.5)
     * X, Y, and Z are mass fractions of H, He, and metals respectively
-    * g_bf and g_ff are Gaunt factors correcting for quantum effects; ≈1 for visible and UV
+    * g_bf and g_ff are Gaunt factors correcting for quantum effects; ~1 for visible and UV
     * t is the guillotine factor, typically ranging 1–100
 
 ### Radiative transfer
@@ -716,7 +716,103 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 ## 10. The Interiors of Stars
 
+* Direct observation only possible with neutrinos and the occasional supernovae
+* Study requires physically accurate computer models that match observable surface features
+
+### Hydrostatic equilibrium
+
+* Equilibrium condition requires pressure gradient to counteract gravity: dP/dr = −ρg
+  * Local gravity: g ≡ GMρ/r², where M is mass enclosed within r
+* Mass conservation equation: dM/dr = 4πr²ρ
+* Total pressure: P = ρkT/μm_H + aT⁴/3
+  * Where first term is ideal gas law and second term is radiation pressure
+  * Mean relative molecular weight: μ ≡ m_avg/m_H
+
+### Kelvin–Helmholtz mechanism
+
+* Contraction releases gravitational energy: ΔE ≈ (3/10) GM²/R
+* Kelvin–Helmholtz timescale of star: t = ΔE/L ≈ 10⁷ years for Sun
+
+### Nuclear fusion
+
+* Releases difference in strong nuclear force binding energy:
+  * E = Δmc² = [ Z m_p + (A−Z) m_n − m_nucleus ] c²
+* Timescale of ~10¹⁰ years for sun
+* Must overcome Coulombic repulsion between + nucleons: ~10⁶ eV at r ≈ 10⁻¹⁵ m
+* Thermal energy of gas: E = μv²/2 = p²/2μ
+  * Where μ is reduced mass and v is average relative velocity
+* Requires impossibly high temperatures in classical physics:
+  E = (3/2) kT = q₁q₂/4πrϵ₀ → T ≈ 10¹⁰ K for H–H fusion
+* With quantum tunneling (de Broglie λ = h/p ≈ r):
+  E = (h/λ)²/2μ = q₁q₂/4πλϵ₀ → T ≈ 10⁷ K, consistent with solar core temperature estimates
+* Reaction rate depends on velocity (wavelength) distribution, densities, and
+  cross-sectional area of particles 1 and 2: r = ∫ n₁ n₂ σ(E) v(E) (n(E)/n) dE
+  * Power-law approximation: r = r₀X₁X₂(ρ^α´)(T^β),
+    * Where X are mass fractions, α´ ≈ 2, and β ranging from ~1 to ≥40
+* Velocity distribution follows Maxwell–Boltzmann
+* Cross section: σ(E) = (S/E) e^(−b/√E)
+  * Where de Broglie area is πλ² ∝ 1/p² ∝ 1/E,
+    and tunneling across barrier of energy U is e^(‐2π²U/E) ∝ e^(−b/√E),
+    with b ∝ q₁q₂√μ
+  * S may be slow-varying function of E, or may have sharp peaks from resonance of
+    specific energy levels within the nucleus
+* Electron screening from sea of free e⁻ partially hides nuclei,
+  reducing effective charge and Coulomb barrier,
+  sometimes enhancing He production by 10–50%
+* Likelihood of nuclear reaction: e^(−b/√E) e^(−E/kT)
+  * Product of velocity distribution’s high-energy tail and the quantum tunneling terms
+  * Most likely energy is named Gamow peak: E₀ = (bkT/2)^(2/3)
+* Luminosity gradient equation: dL/dr = 4πr²ρ,
+  * Where L is luminosity enclosed in r, and ϵ is power released per mass
+
+### Nucleosynthesis
+
+* _Notation: ⁴₂He, where 4 is mass number and 2 is proton number_
+* Simultaneous 4-body collision 4 ¹₁H + ? → ⁴₂He + ? extremely unlikely
+* Reaction chain of 2-body interactions more probable
+* Interactions must obey conservation laws:
+  electric charge, nucleon number, and lepton number
+* Proton–proton chain (H-burning): 4 ¹₁H → ⁴₂He + 2e⁺ + 2ν_(e⁻) + 2γ
+  * Three branches (see Fig. 10.8)
+  * In Sun, 69% PP I, 31% PP II, 0.3% PP III
+  * Near T = 1.5 × 10⁷ K: ϵ ≈ ϵ₀ ρ (X_H)² (T/10⁶)⁴
+    * Where ϵ₀ = 1.08 × 10⁻¹² W·m³/kg²
+* CNO cycle (H-burning): C, N, and O are catalysts
+  * Two main branches, with the second only occuring ~0.04% of the time
+  * Near T = 1.5 × 10⁷ K: ϵ ≈ ϵ₀ ρ (X_H) (X_CNO) (T/10⁶)²⁰
+    * Where ϵ₀ = 8.24 × 10⁻³¹ W·m³/kg²
+    * Much more temperature-dependent, only dominating in more massive stars
+* Triple-α process (He burning): 2 ⁴₂He ↔ ⁸₄Be, ⁸₄Be + ⁴₂He → ¹²₆C + γ
+  * First step produces an extremely unstable ⁸₄Be,
+    thus combined is essentially a 3-body interaction: r ∝ (ρY)³
+  * ϵ ≈ ϵ₀ ρ² Y³ (T/10⁸)⁴¹
+    * Incredibly strong temperature dependence
+* α process (C & O burning): ¹²₆C + ⁴₂He → ¹⁶₈O + γ, ¹⁶₈O + ⁴₂He → ²⁰₁₀Ne + γ
+  * α capture becomes prohibitive at higher Z due to higher Coulomb barrier
+  * C–C burning near 6 × 10⁸ K and O–O burning near 10⁹K can produce
+    Na, Mg, Si, P, and S; some are endothermic but are normally less likely
+* Binding energy per nucleon: E/A
+  * Relative to atomic number A, local maxima are very stable
+  * Magic nuclei: some elements (⁴₂He, ¹⁶₈O) have unusually high E/A
+  * Broad peak around ⁵⁶₂₆Fe, the most stable nuclei
+
+### Energy transport and thermodynamics
+
+* Three mechanisms: radiation of photons (affected by opacity),
+  convection, and conduction (generally insignificant)
+* Radiative temperature gradient: dT/dr = −(3/4ac) (κρ/T³) L/4πr²
+* If temperature gradient becomes too steep, convection takes hold
+* Convection is much more complicated than radiation
+  * Strongly coupled to the star’s dynamic behavior
+  * 3D Navier–Stokes with turbulence is hard compute
+  * Pressure scale height, convection’s characteristic length scale,
+    is big: H ≡ −P dr/dP ≈ P/ρg ≈ R☉/10
+* dU = dQ − dW
+* TODO: Fuck thermodynamics I'm temporarily skipping this
+
 ## 11. The Sun
+
+*
 
 ## 12. The Interstellar Medium and Star Formation
 
