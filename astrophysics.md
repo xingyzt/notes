@@ -467,7 +467,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 * Statistical mechanics studies macroscopic behavior of stellar atmospheres
 * Maxwell−Boltzmann velocity distribution: ρ(v) = √(m/2πkT)³ e^(−mv²/2kT) 4πv²
-  * Restricted to gasses in thermodynamic equilibrium with density ≤ ~1 kg/m³
+  * Restricted to gasses in thermodynamic equilibrium with density ≲ 1 kg/m³
   * Most probable speed: v = √(2kT/m)
   * Root-mean-square speed: v = √(3kT/m), due to right-skewed exponential tail
 * Electrons’ orbital energies are affected by their atoms’ kinetic energies
@@ -682,6 +682,7 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Doppler: random thermodynamic motion results in nonrelativistic Doppler shift
     Δλ ≈ (2λ/c) √(2kT/m)
     * in giant and supergiant stars, random large-scale turbulence increases to
+
       Δλ ≈ (2λ/c) √(2kT/m + v²), where v is the most probable turbulence speed
     * coherent mass motions such as rotation, pulsation and mass loss also
       substantial factors
@@ -731,6 +732,10 @@ P = (2〈S〉A cos²θ)/c, reflection
 ### Kelvin–Helmholtz mechanism
 
 * Contraction releases gravitational energy: ΔE ≈ (3/10) GM²/R
+* Gravitational energy contribution: ϵ = −dQ/dt = −T dS/dt
+  * Where specific entropy: dS ≡ dQ/T
+  * Contraction produces heat and decreases entropy;
+    vise versa for expansion
 * Kelvin–Helmholtz timescale of star: t = ΔE/L ≈ 10⁷ years for Sun
 
 ### Nuclear fusion
@@ -763,7 +768,8 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Product of velocity distribution’s high-energy tail and the quantum tunneling terms
   * Most likely energy is named Gamow peak: E₀ = (bkT/2)^(2/3)
 * Luminosity gradient equation: dL/dr = 4πr²ρ,
-  * Where L is luminosity enclosed in r, and ϵ is power released per mass
+  * Where L is luminosity enclosed in r,
+    and ϵ is specific power (power released per mass)
 
 ### Nucleosynthesis
 
@@ -806,9 +812,83 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Strongly coupled to the star’s dynamic behavior
   * 3D Navier–Stokes with turbulence is hard compute
   * Pressure scale height, convection’s characteristic length scale,
-    is big: H ≡ −P dr/dP ≈ P/ρg ≈ R☉/10
-* dU = dQ − dW
-* TODO: Fuck thermodynamics I'm temporarily skipping this
+    is big: H ≡ −P dr/dP ≈ P/ρg ≈ R*/10
+* First law of thermodynamics: dU = dQ − dW = dQ − P dV
+  * U is a state function; Q and W are not — dQ and dW are inexact differentials
+* Specific heat capacity: C ≡ ∂Q/∂T, C_P = C_V + nR
+  * C_P is at constant pressure; C_V is at constant volume
+  * Heat capacity ratio (adiabatic index): γ ≡ C_P / C_V
+  * γ = 5/3 for a monoatomic gas;
+    approaches 1 in a partial ionization zone as both specific heats increase
+* Isochoric process (dV = 0): dU = dQ = C_V dT
+* Adiabatic process (dQ = 0): dU = −P dV
+  * Gas law: P ∝ 1 / V^γ ∝ ρ^γ ∝ T^[γ/(γ−1)]
+  * Speed of sound: v = √(B/ρ) = √(γP/ρ)
+    * Where bulk modulus: B ≡ −V ∂P/∂V | dQ = 0
+* Adiabatic temperature gradient:
+  dT/dr = −[1 − (1/γ)] (μ m_H / k) GM/r² = −g / C_P
+* If the surrounding temperature gradient is steeper than the bubble’s,
+  even just slightly, the condition becomes superadiabatic,
+  and nearly all luminosity is transferred outwards adiabatically,
+  via convection instead of radiation
+* In general, convection occurs if a region
+  1. has high opacity (surrounding dT/dr ∝ κ),
+  2. is ionizing and raising the specific heat capacity (bubble dT/dr ∝ 1 / C_P), or
+  3. has a highly temperature-dependent fusion process
+* First two conditions can occur simultaneously;
+  third only occurs deep in the interior with the CNO or triple-α processes
+* Convective flux under mixing-length theory:
+  F = ρ C_P (k / μ m_H) √[(T/g) δ(dT/dr)]³ √β α²
+  * Where 0.5 ≲ α ≲ 3 and 0 ≲ β ≲ 1 are free parameters
+    * α ≡ l/H, the ratio of the mixing length
+      (distance traveled by bubble before thermaliing with surrounding)
+      and the pressure scale height
+    * β | βv² is the average kinetic energy of the bubble as it travels over l
+
+### Stellar model building
+
+* Basic stellar models need constructive relations for P, κ, and ϵ:
+  expressing them in terms of density, temperature, and composition
+  * P (pressure) generally modelable with ideal gas law and radiation pressure,
+    but is more complex in certain stars’ deep interiors
+  * κ (mean opacity) calculated explicitly from tabular data or fitting functions
+  * ϵ (specific power) calculated analytically from reaction networks
+* Boundary conditions:
+  * As r → 0, enclosed M and L both → 0
+  * And ignoring extended atmospheres and mass loss:
+    as r → R*, T, P, and ρ all → 0
+* Vogt–Russell theorem:
+  due to a star’s dependence on nuclear burning,
+  its mass and internal composition uniquely determine
+  its radius, luminosity, internal structure, and subsequent evolution
+  * Ignores smaller influences such as magnetic fields and rotation
+* General modeling numeric integrates shell-by-shell
+  with the system of differential equations,
+  often from from a transition point towards both the surface and the center
+* Polytropes: simplified stellar models in which P(ρ) ∝ ρ^γ
+* Lane–Emden equation: (1/ξ²) (d/dξ)[ξ² d(D_n)/dξ] = −(D_n)^n
+  * Where the polytropic index: n | γ ≡ (n+1)/n
+  * TODO: too complicated
+
+### Main sequence
+
+* Vast majority of stars have H mass fraction X ≈ 0.7 and metal mass fraction 0 ≲ Z ≲ 0.03
+* Changes in core composition affects observed surface features
+* Very light stars (M ≲ 0.08 M☉) are not hot enough to let fusion
+  stabilize against gravitational contraction
+  * Highly opaque and fully convective
+* Lower-initiation-energy p–p chain dominates for low-mass stars
+  * Shallow core thermal gradient leads to radiative core
+  * High shell opacity leads to convective shell
+* Highly-temperature-dependent CNO cycle dominates for high-mass stars (M ≳ 1.2 M☉)
+  * Steep core thermal gradient leads to convective core
+  * Low shell opacity leads to radiative shell
+* Very massive stars (M ≳ 90 M☉) have rapid core thermal oscillations
+  affecting fusion rates
+* Very massive stars may also have radiation pressure exceed gas pressure at
+  outer layers, with maximum stable luminosity given by Eddington limit:
+  L ≤ 4πGcM/κ
+* Main-sequence lifetimes decrease with increasing luminosity
 
 ## 11. The Sun
 
@@ -817,3 +897,19 @@ P = (2〈S〉A cos²θ)/c, reflection
 ## 12. The Interstellar Medium and Star Formation
 
 ## 13. Main Sequence and Post-Main-Sequence Stellar Evolution
+
+## 14. Stellar Pulsation
+
+## 15. The Fate of Massive Stars
+
+## 16. The Degenerate Remnants of Stars
+
+## 17. General Relativity and Black Holes
+
+## 18. Closed Binary Star Systems
+
+# III. The Solar System
+
+# IV. Galaxies and the Universe
+
+To be continued...
