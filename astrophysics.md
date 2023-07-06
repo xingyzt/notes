@@ -682,7 +682,6 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Doppler: random thermodynamic motion results in nonrelativistic Doppler shift
     Δλ ≈ (2λ/c) √(2kT/m)
     * in giant and supergiant stars, random large-scale turbulence increases to
-
       Δλ ≈ (2λ/c) √(2kT/m + v²), where v is the most probable turbulence speed
     * coherent mass motions such as rotation, pulsation and mass loss also
       substantial factors
@@ -831,6 +830,7 @@ P = (2〈S〉A cos²θ)/c, reflection
   even just slightly, the condition becomes superadiabatic,
   and nearly all luminosity is transferred outwards adiabatically,
   via convection instead of radiation
+  * Equivalent criterion: d(ln P)/d(ln T) &lt; γ/(γ − 1) = 2.5 for ideal monoatomic gas
 * In general, convection occurs if a region
   1. has high opacity (surrounding dT/dr ∝ κ),
   2. is ionizing and raising the specific heat capacity (bubble dT/dr ∝ 1 / C_P), or
@@ -892,7 +892,178 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 ## 11. The Sun
 
-*
+* Loosely treated as two parts:
+  an optically thin atmosphere and an optically thick core
+* Transition is ~600 km thick
+
+### Solar interior
+
+* Hydrogen burning below R ≲ 0.3 R☉; convection above R ≳ 0.7 R☉
+* Heterogeneous composition due to nucleosynthesis, convection, and elmental diffusion
+* ⁴₂He is more abundant than ¹₁H below R ≲ 0.1 R☉
+* ³₂He abundance peaks at the top of the hydrogen-burning region,
+  where cooler temperatures slow the ³₂He–³₂He reaction
+* Convection zone turbulence creates homogeneous composition
+* Peak energy generation region is shell around r ≈ 0.1 R☉
+  * dL/dr affected by shell volume and fuel availability,
+    both smaller at the very center, as well as temperature and pressure
+* Surface Li abundance somewhat less than expected for the current solar model
+* Mikheyev–Smirnov–Wolfenstein effect: neutrino oscillation between the
+  e⁻, μ, and τ flavors explains the solar neutrino problem of only ⅓ as many
+  e⁻ neutrinos as expected being detected from the solar core
+
+### Photosphere
+
+* Where optical photons originate
+* Starts 100 km below where τ(500 nm) = 1, extending ~600 km
+* Temperature drops from ~9400 K at base to ≳4400 K at top
+* Continuum opacity partly due to H⁻ near base of photosphere,
+  as the far more abundant neutral H cannot contribute much to the continuum
+* Absorption lines produced in higher, cooler, more opaque regions of the photosphere
+* Granulation: patches of bright and dark regions (~700 km) at base of photosphere due to
+  underlying convection zone; Doppler shifts (~0.4 km/s) cause wiggles in absorption lines
+  * Characteristic lifetime (~10 minutes) corresponds to the time a
+    convection eddy takes to rise and fall 1 mixing length
+* Differential rotation: Doppler shifts at solar limb and solar oscillations
+  show the solar rotation varies by latitude and by radius
+  * Period of 25 days at equator lengths to 36 days at poles
+  * Tachocline: base of convection zone where differing rotation rates converge,
+    resulting in strong shear theorized to create plasma which
+    generate the solar magnetic field
+
+### Chromosphere
+
+* Where temperature begins rising again, from 4400 to ~10,000 K
+* Starts 525 km above where τ(500 nm) = 1, extending ~1600 km
+* Density and intensity ~10⁻⁴ of the photosphere
+* Low density and high temperature produce certain absorption and emission lines,
+* As the blackbody continuum emission peaks ~500 nm, visible-spectrum emission lines are
+  only clearly seen in a flash spectrum of the limb near total eclipse
+* Strength of Hα emission line allows filters to selectively observe the chromosphere structure
+* Supergranulation: patches of ~30,000 km wide from underlying convection
+* Spicules: vertical gas filaments extending upwards for ~10,000 km,
+  ejecting mass at ~15 km/s
+
+### Transition region
+
+* Starts ~2100 km above τ(500 nm) = 1, extending to the corona
+* Temperature rises rapidly to 10⁵ K in 100 km, then slowly to >10⁶ K
+* Selectively observed in various UV bands (e.g. Lyman α at 20,000 K)
+
+### Corona
+
+* Faint region (≲10¹⁵ particles/m³) with vaguely defined outer boundary
+* High-temperature, high-thermal-conductivity, approximately isothermal plasma
+* Quiet corona near sunspot minimum (low solar activity)
+  * More extended at equator than poles, consistent with nearly dipole magnetic field
+* Active corona near sunspot maximum
+  * More complex magnetic field shape and structure
+* Essentially transparent to most EM radiation
+* Not in local thermodynamic equilibrium thus no strictly definable temperature,
+  but estimated to be ≳ 2 × 10⁶ K
+* Parker wind model: not in hydrostatic equilibrium as pressure does not vanish at infinity,
+  implying solar wind
+* K (Kontinuierlich/continuous) corona:
+  * From free e⁻ scattering of photospheric light primary between 1 and 2.3 R☉
+  * Spectral lines essentially blended into continuum from high-velocity Doppler broadening
+* F (Fraunhofer) corona:
+  * From  dust scattering of photospheric light beyond 2.3 R☉
+  * Slower dust grains have less Doppler broadening and leave detectable Fraunhofer lines
+  * Merges with zodiacal light from interplanetary dust
+* E (emission) corona:
+  * From highly ionized coronal atoms, very rich in emission lines in the X-ray spectrum
+  * Low number density enable forbidden transitions between metastable energy levels,
+    as well as low-energy free-free transitions that produce radio waves
+  * Radio waves also produced by relativistic electrons’ synchrotron radiation
+
+### Solar wind
+
+* Stream of escaped ions and electrons
+* Deflects comets’ ion tails differently than pure radiation pressure on their dust tails
+* Trapped into Van Allen belts by planetary magnetospheres and
+  create aurorae upon reaching atmosphere
+* Fast solar wind: ~750 km/s, produced from open magnetic fields
+  * Associated with coronal holes — darker, cooler coronal regions
+* Slow solar wind: ~300 km/s, produced by coronal streamers around closed magnetic fields;
+  * Associated with X-ray bright spots from trapped spiralling charges
+* Heliopause: outer limit of the Sun’s EM influence;
+  where solar wind meets the interstellar medium and produces a termination shock
+* Heliosheath: beyond the termination shock,
+  particles slow, magnetic field strengthens, and density increases
+
+### Magnetohydrodynamics (MHD)
+
+* Longitudinal pressure waves propagate outward from top of convection zone
+* Drastic drop in medium density turn waves supersonic, creating shock fronts
+  that drastically heat up chromospheric gas as they dissipate
+* Magnetic energy density and pressure: u = P = B²/2μ₀
+* Transverse Alfvén waves propagate from oscillations in magnetic field lines
+* Resistive Joule heating from electrical currents in Alfvén waves also
+  contributes to temperature rise, in particular the steep gradient of the transition region
+* Open magnetic field lines are dragged by stellar rotation across interplanetary space,
+  slowing stars down significantly over their lifetimes
+
+### Sunspots
+
+* Zeeman splitting indicates strong magnetic fields,
+  which inhibit convective motion below and create dark spots
+* Umbra: darkest portion with vertical field lines; diameter ≲ 30,000 km
+* Penumbra: border with filament-like structure with field lines becoming horizontal
+* Generally located in groups,
+  with one dominant sunspot leading several in the direction of rotation
+  * Lead sunspots in the same hemisphere always have the same polarity
+    during an 11-year cycle
+  * Opposite polarity in the other hemisphere
+* Frequency follows 11-year cycle, starting from sunspot minimum
+* Butterfly diagram: average latitude starts near ±40°, migrating to the equator over cycle
+* Solar polarity reverses during sunspot minimum, thus technically 22-year cycle
+* Long-term variations include the Maunder minimum spanning 1645–1715
+
+### Plages
+
+* Chromospheric regions of higher density and bright Hα emission
+* Located near sunspots, forming before they appear and vanishing after they disappear
+* Caused by magnetic fields
+
+### Flares
+
+* Eruptive events releasing 10¹⁷–10²⁵ J of energy over timespans from milliseconds to over an hour
+* May reach 100,000 km in length
+* Develop in sunspot groups with intense stored magnetic energy
+* Reconnection of magnetic field lines creates a sheet of current in the plasma,
+  Joule heating the gas up to 10⁷ K
+* Charged particles are accelerated away from the reconnection point
+  * Hα line becomes locally in emission from ejected particles
+    recombining by the base of the field lines
+  * Solar cosmic rays from particles ejected towards outer space
+* Nonthermal radio waves from synchrotron radiation around field lines
+* Soft X-rays from high temperatures in loop below reconnection point
+* Hard X- and γ-rays from surface nuclear reactions,
+  including spallation of heavy nuclei:
+  ¹₁H + ¹⁶₈O → ¹²₆C + ⁴₂He + ¹₁H + γ
+
+### Prominences
+
+* Quiescent prominence:
+  * Curtains of cooler (~8000 K) ionized gas collected along magnetic field lines
+  * May be stable for weeks
+  * Appear as dark filaments against the disk
+* Eruptive/active prominence:
+  * Suddenly destabilized magnetic field configuration
+  * Energy converted into lifting prominence away from the Sun
+
+### Coronal mass ejections (CMEs)
+
+* Ejects 5 × 10¹² – 5 × 10¹³ kg of material at speeds of 400–1000 km/s
+* ~1/day, more frequent near sunspot maximum
+* 70% correlated with eruptive prominences; 40% correlated with flares
+
+### Magnetic activity in other stars
+
+* Flare stars: M-type main-sequence stars whose occasional rapid fluctuation in brightness
+  may be due to large flares on their relatively dimr surface
+* Starspots may be used to measure stellar rotation
+* Magnetic field lines measured from Zeeman broadening correlate with luminosity variations
 
 ## 12. The Interstellar Medium and Star Formation
 
