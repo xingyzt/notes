@@ -461,7 +461,7 @@ P = (2〈S〉A cos²θ)/c, reflection
     (effective T = 5250 K)
 * Cannon rearranged by temperature (OBAFGKM, O hottest)
   and added decimal subdivisions: A0 hotter than A9
-* Additional spectral types for very cool stars and brown dwarfs: OBAFGKM + LT
+* Additional spectral types for very cool stars and brown dwarfs: OBAFGKMLT
 
 ### Spectral physics
 
@@ -976,6 +976,7 @@ P = (2〈S〉A cos²θ)/c, reflection
     as well as low-energy free-free transitions that produce radio waves
   * Radio waves also produced by relativistic electrons’ synchrotron radiation
 
+
 ### Solar wind
 
 * Stream of escaped ions and electrons
@@ -1107,7 +1108,7 @@ P = (2〈S〉A cos²θ)/c, reflection
     on average to occur per atom
   * Only possible (although still rare) for H I in low-density diffuse ISM
   * Optically thin, thus optical depth ∝ H column density
-* H₂ hard to directly observe except for robovibrational bands;
+* H₂ hard to directly observe except for rovibrational bands;
   tracer molecules and their isotopomers used instead
 * Optically thick dust shields H₂ from UV photodissociation,
   as well as enhancing H₂ formation
@@ -1115,7 +1116,7 @@ P = (2〈S〉A cos²θ)/c, reflection
   displaced by H₂ when dust becomes optically thick
 * Shells of H I clouds surround molecular clouds of H₂
 
-### Structure
+### Interstellar cloud structure
 
 * Most diffuse ISM are hydrogen clouds of ground state H I,
   only absorbing UV photons and emitting in 21-cm line
@@ -1132,14 +1133,14 @@ P = (2〈S〉A cos²θ)/c, reflection
 | thing                   | T (K) |  M (M☉) |   A_V |       n (m⁻³)     | D (pc) |
 |-------------------------|-------|---------|-------|-------------------|--------|
 | diffuse molecular cloud | 15~50 |   3~100 | 1~5   | 5 × 10⁸ ~ 5 × 10⁹ |   1~10 |
-| giant molecular cloud   |  ~15  | 10⁵~10⁶ |       | 1 × 10⁸ ~ 3 × 10⁸ |    ~50 |
-| dark cloud complex      |  ~10  |    ~10⁴ |  ~5   |         ~ 5 × 10⁸ |    ~10 |
-| clump                   |  ~10  |    ~30  |  ~10  |         ~ 1 × 10⁹ |   1~5  |
-| dense core              |  ~10  |    ~10  |  ≳10  |         ~ 1 × 10¹⁰|    ~0.1|
-| hot core                |100~300|  10~1000|50~1000|1 × 10¹³ ~ 1 × 10¹⁵|0.05~0.1|
+| giant molecular cloud   |  ~15  | 10⁵~10⁶ |  ≳1   | 1 × 10⁸ ~ 3 × 10⁸ |    ~50 |
+| · dark cloud complex    |  ~10  |    ~10⁴ |  ~5   |         ~ 5 × 10⁸ |    ~10 |
+| · clump                 |  ~10  |    ~30  |  ~10  |         ~ 1 × 10⁹ |   1~5  |
+| · dense core            |  ~10  |    ~10  |  ≳10  |         ~ 1 × 10¹⁰|    ~0.1|
+| · hot core              |100~300|  10~1000|50~1000|1 × 10¹³ ~ 1 × 10¹⁵|0.05~0.1|
 | Bok globule             |  ~10  |   1~1000|  ~10  |         ≳ 1 × 10¹⁰|    ≲1  |
 
-### Heating and cooling
+### Interstellar cloud heating and cooling
 
 * Primarily heated by cosmic ray protons
   * E ranges 10–10¹⁴ MeV, with 10³–10⁸ MeV common
@@ -1153,11 +1154,122 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 ### Protostar formation
 
-* Jeans criterion:
+* Protostars: pre-nuclear-burning objects formed from molecular clouds
+* Deviation from hydrostatic equilibrium means imbalance in the virial theorem:
+  2K &lt; |U| ⇒ gravitational collapse
+* Jeans criterion, minimum necessary for spontaneous collapse:
   * Jeans mass: M ≈ √[ (5kT/Gμ)³ (3/4πρ₀) ]
   * Jeans length: R ≈ √(15kT/4πGμρ₀)
-* Bonnor–Ebert mass: M = c_BE v⁴ / √(P₀G³)
-  * Where v ≡ √(kT/μ) and c_BE ≈ 1.18
+  * Neglecting rotation, turbulence, magnetic fields,
+    and pressure of surrounding gas
+* Bonnor–Ebert criterion accounts for external pressure P₀
+  * Bonnor–Ebert mass: M = c_BE v⁴ / √(P₀G³)
+  * Where isothermal sound speed v ≡ √(kT/μ),
+    and constant c_BE ≈ 1.18
+* Low-pressure, optically thin first phase of collapse essentially isothermal and in free-fall
+  * Free-fall timescale: t = √(3π/32Gρ₀)
+* Homologous collapse:
+  Initially uniform spherical cloud would uniformly contract and condense
+* Inside-out collapse:
+  Somewhat centrally condensed cloud will have
+  shorter free-fall time and thus condense faster near center
+* Significant rotation results in disk-like structure
+* Magnetic pressure keeps clouds balanced; eddy braking slows collapse
+  * Critical mass with magnetic pressure: M = c_B πR²B/√G
+  * Supercritical mass achieved by merger of subcritical clouds,
+    or (more commonly) regional lessening of magnetic field
+* Ambipolar diffusion: neutral particles drift gravitationally,
+  but are slowed by collisions with magnetically-frozen charged particles
+* Fragmentation: increasing density with constant T reduces Jeans mass,
+  causing density inhomogeneities to collapse locally,
+  forming large numbers of small protostars in place of a single massive one
+* Increasing density purely adiabatically increases Jeans mass
+* Fragmentation stops as center becomes optically thick when ~10⁻¹⁰ kg/m³,
+  trapping radiation and making collapse more adiabatic
+* Central region reaches near hydrostatic equilibrium and becomes protostar
+  * Larger dust photosphere has radius and effective temperature where τ = ⅔,
+    putting star on H–R diagram
+  * ~10 AU wide for collapse from 1 M☉ cloud
+
+### Protostar evolution
+
+* Surrounding material still in free-fall until meeting protostellar core,
+  releasing significant kinetic energy at shock front as they slow from
+  supersonic speeds
+  * Emits blackbody radiation predominantly in IR
+  * Luminosity increases with temperature for several thousand years
+* Dust begins to vaporize and opacity drops ~1000 K
+  * Substatially reduces photosphere radius to nearly the surface of the
+    hydrostatic core
+  * Increases effective temperature with little change in luminosity
+* H₂ dissociates ~2000 K,
+  absorbing thermal energy otherwise used to maintain hydrostatic equilibrium,
+  triggering second collapse
+* Core radius decreases to ~1.3 R☉ for collapse from 1 M☉ cloud, while
+  core mass « 1 M☉, indicating ongoing accretion at a second shock front
+* Hot core begins burning deuterium (²₁H), producing ~60% of luminosity,
+  which stays roughly constant
+* Deuterium burn-out leads to sharp drop in luminosity with small decrease
+  in effective temperature, leading to pre-main-sequence star
+
+### Protostar observation
+
+* Direct observation shielded by thick dust of molecular cloud,
+  and made rare by relatively short free-fall time
+* Small IR sources embedded in dense cores or Bok globules indicate collapse
+* Infalling material around embedded IR objects show twin spectral splitting
+  from Doppler effect
+
+### Pre-main-sequence evolution
+
+* Increasing temperatures lead to H⁻ opacity dominating in outer layers,
+  creating envelope to become deeply convective
+* Hayashi track: convection constrains H–R path to near vertical line
+  * Luminosity decreases with slight increase in temperature
+    as protostar slows collapse and reaches hydrostatic equilibrium
+* Formation of ~1 M☉ stars:
+  * Completely convective from high H⁻ opacity for the first ~10⁶ years of collapse,
+    slowed little by scarce deuterium burning
+  * Rising central temperature decreases opacity and creates expanding radiative core
+  * Core begins generating energy from first steps in the
+      PP I chain (2 ¹₁H → ³₂He) and CNO cycle (¹²₆C + ¹₁H → ¹⁴₇N),
+  * Surface luminosity increases with temperature again and moves star off Hayashi track
+  * Core burning comes to increasingly dominate luminosity generation
+  * CNO reactions give core steep temperature gradient and some convection
+  * Core expansion from intense nuclear energy production expends gravitational energy,
+    lowering luminosity and effective temperature to main-sequence values
+  * After exhaustion of ¹²₆C for CNO, core reaches temperature
+    for full PP I chain burning
+* Formation of ≲ 0.5 M☉ stars:
+  * Central temperature never reaches efficient ¹²₆C-burning temperatures
+    for upward branch between Hayashi track and main sequence
+  * Fully convection: temperature stays sufficiently low and opacity sufficiently high
+    to never develop radiative core
+* Formation of brown dwarfs (0.013 ~ 0.072 M☉):
+  * Low nuclear burning rate cannot form main-sequence star
+  * Li burning ≳ 0.06 M☉
+  * Deuterium burning ≳ 0.013 M☉ (~13 Jupiter masses)
+  * Spectral types L and T
+* Formation of massive stars:
+  * High central temperatures leads to early, high-luminosity departure from Hayashi track
+  * Evolve nearly horizontally across H–R diagram
+  * Full CNO cycle becomes dominant H-burning mechanism,
+    with steep thermal gradient keeping core convective
+* These classical models neglect rotation, turbulence, magnetic fields,
+  initial inhomogeneities, strong stellar winds, ionizing stellar radiation,
+  pressure-free protostellar collapse, likely smaller initial radii,
+  and upper limits to massive star accretion,
+* Birth line: evolutionary theories with smaller initial radii
+  place upper limit on observed protostar luminosity
+* Some observations suggest massive starts ≳ 10 M☉ may
+  instead form from mergers or with accretion disk
+  due to limiting feedback mechanism on non-rotational accretion
+
+### Zero-age main sequence (ZAMS)
+
+*
+
+### Stellar formation effects on medium
 
 ## 13. Main Sequence and Post-Main-Sequence Stellar Evolution
 
