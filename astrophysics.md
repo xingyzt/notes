@@ -128,7 +128,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Standard filters:
 
 |   | name | center | bandwidth |
-| - | ---- | ------ | --------- |
+|---|------|--------|-----------|
 | U |  UV  | 365 nm |   68 nm   |
 | B | blue | 440 nm |   98 nm   |
 | V |visual| 550 nm |   89 nm   |
@@ -724,9 +724,9 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Equilibrium condition requires pressure gradient to counteract gravity: dP/dr = −ρg
   * Local gravity: g ≡ GMρ/r², where M is mass enclosed within r
 * Mass conservation equation: dM/dr = 4πr²ρ
-* Total pressure: P = ρkT/μm_H + aT⁴/3
+* Total pressure: P = ρkT/μ + aT⁴/3
   * Where first term is ideal gas law and second term is radiation pressure
-  * Mean relative molecular weight: μ ≡ m_avg/m_H
+  * With as mean molecular weight
 
 ### Kelvin–Helmholtz mechanism
 
@@ -825,7 +825,7 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Speed of sound: v = √(B/ρ) = √(γP/ρ)
     * Where bulk modulus: B ≡ −V ∂P/∂V | dQ = 0
 * Adiabatic temperature gradient:
-  dT/dr = −[1 − (1/γ)] (μ m_H / k) GM/r² = −g / C_P
+  dT/dr = −[1 − (1/γ)] (μ/k) GM/r² = −g / C_P
 * If the surrounding temperature gradient is steeper than the bubble’s,
   even just slightly, the condition becomes superadiabatic,
   and nearly all luminosity is transferred outwards adiabatically,
@@ -838,7 +838,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 * First two conditions can occur simultaneously;
   third only occurs deep in the interior with the CNO or triple-α processes
 * Convective flux under mixing-length theory:
-  F = ρ C_P (k / μ m_H) √[(T/g) δ(dT/dr)]³ √β α²
+  F = ρ C_P (k/μ) √[(T/g) δ(dT/dr)]³ √β α²
   * Where 0.5 ≲ α ≲ 3 and 0 ≲ β ≲ 1 are free parameters
     * α ≡ l/H, the ratio of the mixing length
       (distance traveled by bubble before thermaliing with surrounding)
@@ -1066,6 +1066,98 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Magnetic field lines measured from Zeeman broadening correlate with luminosity variations
 
 ## 12. The Interstellar Medium and Star Formation
+
+### Interstellar medium (ISM)
+
+* Gas and dust between the stars
+* 70% H, ~30% He, rest metals (C, Si, etc)
+* Used in star formation; returned by stellar winds and explosive events
+
+### Dust
+
+* ~1% of molecular clouds by mass, but significant in light absorption and cloud chemistry
+* Likely facilitate formation of many molecules besides H₂,
+  including solid CO, H₂O, etc that give the grains icy mantles
+* Formed in dense envelopes of very cool stars, from supernovae and stellar winds
+* Unexpected abundance of large grains an area of active research
+* Responsible for interstellar extinction, a λ-dependent increase in apparent magnitude
+  from scattering and absorption of starlight: A = Δm
+  * Approximately equal to the optical depth: A ≈ 1.086τ
+  * Visual band extinction commonly used as reference: A_V
+* Mie theory applies to IR–visible range
+  * Shorter wavelengths are scattered more (though spectral lines go unaltered),
+    causing interstellar reddening along direct line of sight,
+    and blue tones in reflection nebulae
+ * Extinction coefficient: Q(λ) ≡ σ(λ)/σ_g
+ * With dust grain radius: r such that grain cross section: σ_g = πr²
+ * Where photon cross section approaches 0 for λ » r and a constant for λ « r:
+   σ(λ) ∝ r³/λ for λ ≳ r, and σ(λ) ∝ r² for λ « r
+* Color excesses relative to Mie prediction grow for shorter wavelengths
+* Bump at 217.5 nm corresponding to resonance of graphite,
+  along with IR emission bands corresponding to C–C and C–H bond vibrations,
+  indicate presence of polycyclic aromatic hydrocarbons  (PAHs)
+* Near-IR absorption bands indicate presence of silicate grains
+* Slight, λ-dependent polarization due to anisotropic, somewhat aligned dust grains;
+  alignment most likely due to interactions with a weak magnetic field
+
+### Hydrogen
+
+* 21-cm line: anti-aligned spins ↑↓ has slightly less energy than aligned spins ↑↑
+  * Very stable, “forbidden” transition that takes millions of years
+    on average to occur per atom
+  * Only possible (although still rare) for H I in low-density diffuse ISM
+  * Optically thin, thus optical depth ∝ H column density
+* H₂ hard to directly observe except for robovibrational bands;
+  tracer molecules and their isotopomers used instead
+* Optically thick dust shields H₂ from UV photodissociation,
+  as well as enhancing H₂ formation
+* H I generally proportional in number to dust when A_V ≲ 1;
+  displaced by H₂ when dust becomes optically thick
+* Shells of H I clouds surround molecular clouds of H₂
+
+### Structure
+
+* Most diffuse ISM are hydrogen clouds of ground state H I,
+  only absorbing UV photons and emitting in 21-cm line
+* Diffuse/translucent molecular clouds:
+  irregularly shaped; similar in conditions to H I clouds;
+  primarily atomic H with regional concentrations of H₂
+* Giant molecular clouds (GMCs): enormous complexes with clumpy structure
+  * Contains slightly denser dark cloud complexes, denser clumps and dense cores,
+    and very dense, star-forming hot cores
+* Bok globules:
+  almost-spherical clouds located outside of larger molecular complexes;
+  possibly dense cores stripped of surrounding gas by stellar winds
+
+| thing                   | T (K) |  M (M☉) |   A_V |       n (m⁻³)     | D (pc) |
+|-------------------------|-------|---------|-------|-------------------|--------|
+| diffuse molecular cloud | 15~50 |   3~100 | 1~5   | 5 × 10⁸ ~ 5 × 10⁹ |   1~10 |
+| giant molecular cloud   |  ~15  | 10⁵~10⁶ |       | 1 × 10⁸ ~ 3 × 10⁸ |    ~50 |
+| dark cloud complex      |  ~10  |    ~10⁴ |  ~5   |         ~ 5 × 10⁸ |    ~10 |
+| clump                   |  ~10  |    ~30  |  ~10  |         ~ 1 × 10⁹ |   1~5  |
+| dense core              |  ~10  |    ~10  |  ≳10  |         ~ 1 × 10¹⁰|    ~0.1|
+| hot core                |100~300|  10~1000|50~1000|1 × 10¹³ ~ 1 × 10¹⁵|0.05~0.1|
+| Bok globule             |  ~10  |   1~1000|  ~10  |         ≳ 1 × 10¹⁰|    ≲1  |
+
+### Heating and cooling
+
+* Primarily heated by cosmic ray protons
+  * E ranges 10–10¹⁴ MeV, with 10³–10⁸ MeV common
+  * Ionizes H and H₂, ejecting e⁻’s that distribute thermal energy
+    throughout ISM via collisions with molecules
+* Also heated by UV starlight ionizing C and dust grains,
+  X-ray starlight ionizing H, dust grains absorbing starlight,
+  and shocks from supernovae and strong stellar winds
+* Primarily cooled by IR radiation from post-collision de-excitations,
+  particularly those of C⁺ and CO after colliding with H and H₂, respectively
+
+### Protostar formation
+
+* Jeans criterion:
+  * Jeans mass: M ≈ √[ (5kT/Gμ)³ (3/4πρ₀) ]
+  * Jeans length: R ≈ √(15kT/4πGμρ₀)
+* Bonnor–Ebert mass: M = c_BE v⁴ / √(P₀G³)
+  * Where v ≡ √(kT/μ) and c_BE ≈ 1.18
 
 ## 13. Main Sequence and Post-Main-Sequence Stellar Evolution
 
