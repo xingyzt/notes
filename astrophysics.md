@@ -1183,6 +1183,9 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Fragmentation: increasing density with constant T reduces Jeans mass,
   causing density inhomogeneities to collapse locally,
   forming large numbers of small protostars in place of a single massive one
+* Initial mass function (IMF):
+  number of stars formed per mass interval strongly mass-dependent,
+  with abundance of low-mass stars
 * Increasing density purely adiabatically increases Jeans mass
 * Fragmentation stops as center becomes optically thick when ~10⁻¹⁰ kg/m³,
   trapping radiation and making collapse more adiabatic
@@ -1239,7 +1242,7 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Core expansion from intense nuclear energy production expends gravitational energy,
     lowering luminosity and effective temperature to main-sequence values
   * After exhaustion of ¹²₆C for CNO, core reaches temperature
-    for full PP I chain burning
+    for hydrostatic hydrogen burning via the full PP I chain
 * Formation of ≲ 0.5 M☉ stars:
   * Central temperature never reaches efficient ¹²₆C-burning temperatures
     for upward branch between Hayashi track and main sequence
@@ -1255,7 +1258,55 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Evolve nearly horizontally across H–R diagram
   * Full CNO cycle becomes dominant H-burning mechanism,
     with steep thermal gradient keeping core convective
-* These classical models neglect rotation, turbulence, magnetic fields,
+* Zero-age main sequence (ZAMS): when stars begin equilibrium hydrogen burning
+
+### Stellar formation effects on medium
+
+* OB associations: star groups dominated by O and B main-sequence stars
+* Massive O and B protostars will first vaporize surrounding dust,
+  then dissociate molecules, and finally ionize immediate surroundings
+  into an H II region within an H I region
+* H II regions: H I ionized into H II by protostar UV radiation fluoresce in visible light
+  during recombination, creating emission nebulae
+  in the visible spectrum during recombination
+  * Strömgren radius of H II region: r ≈ ³√(3N/4παn²)
+  * Where N is rate of ionizing photon production,
+    α is likelihood of recombination, and n is number density of protons and electrons
+* Radiation pressure from cluster of highly luminous O and B stars
+  drives significant mass loss, disperses surrounding cloud (halting star formation),
+  and weakens gravitational bound of star group (generally unbinding them)
+* Circumstellar disks
+  * Formed by spin-up of cloud transferring angular momentum away from collapsing star,
+    possibly via stellar winds coupled to magnetic fields from within the convection zones
+  * Continuous spectrum from reflection of protostar light
+  * May be accretion or debris disks, possibly forming protoplanets
+  * Proplyds: protoplanetary disks ≳ 10²⁵ kg
+* Herbig–Haro objects:
+  narrow beams of supersonic gas jets ejected from poles of young protostars
+  * Collision with ISM results in excitations, producing bright emission lines
+* T Tauri stars:
+  low-mass (0.5~2 M☉) pre-main-sequence objects in intermediate phase
+  between IR source and main-sequence star
+  * Large irregular variations in luminosity with timescales ~ days
+  * Strong H, Ca II, and Fe emission and Li absorption
+  * Often forbidden [O I] and [S II] indicative of extremely low gas densities
+  * Some lines have a P Cygni profile indicative of significant mass loss ~10⁻⁸ M☉/year:
+    blueshifted absorption trough before an emission peak and
+    a redshifted emission tail
+  * P Cygni profile sometimes inverts, indicating significant mass accretion in
+    a very unstable environment
+* FU Orionis stars:
+  T Tauri stars undergoing extreme mass accretion (~10⁻⁴ M☉/year)
+  and increase in luminosity (≳4 magnitudes)
+  * Circumstellar disk instabilities dump ~0.01 M☉ of material
+    onto central star over ~100 years
+  * Inner disk outshines centural star by 100–1000×
+  * May occur to a T Tauri star several times over its lifetime
+* Herbig Ae/Be stars: type A and B pre-main-sequence stars with strong emission lines
+
+### Modifications to classical model
+
+* Classical model neglects rotation, turbulence, magnetic fields,
   initial inhomogeneities, strong stellar winds, ionizing stellar radiation,
   pressure-free protostellar collapse, likely smaller initial radii,
   and upper limits to massive star accretion,
@@ -1264,12 +1315,9 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Some observations suggest massive starts ≳ 10 M☉ may
   instead form from mergers or with accretion disk
   due to limiting feedback mechanism on non-rotational accretion
-
-### Zero-age main sequence (ZAMS)
-
-*
-
-### Stellar formation effects on medium
+* Classical model predicts inverse relation of collapse time and mass,
+  implying massive stars would disperse surrounding cloud before
+  any low-mass stars can form
 
 ## 13. Main Sequence and Post-Main-Sequence Stellar Evolution
 
