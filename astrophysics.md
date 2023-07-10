@@ -751,8 +751,8 @@ P = (2〈S〉A cos²θ)/c, reflection
   E = (h/λ)²/2μ = q₁q₂/4πλϵ₀ → T ≈ 10⁷ K, consistent with solar core temperature estimates
 * Reaction rate depends on velocity (wavelength) distribution, densities, and
   cross-sectional area of particles 1 and 2: r = ∫ n₁ n₂ σ(E) v(E) (n(E)/n) dE
-  * Power-law approximation: r = r₀X₁X₂(ρ^α´)(T^β),
-    * Where X are mass fractions, α´ ≈ 2, and β ranging from ~1 to ≥40
+  * Power-law approximation: r = r₀X₁X₂(ρ^α′)(T^β),
+    * Where X are mass fractions, α′ ≈ 2, and β ranging from ~1 to ≥40
 * Velocity distribution follows Maxwell–Boltzmann
 * Cross section: σ(E) = (S/E) e^(−b/√E)
   * Where de Broglie area is πλ² ∝ 1/p² ∝ 1/E,
@@ -975,7 +975,6 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Low number density enable forbidden transitions between metastable energy levels,
     as well as low-energy free-free transitions that produce radio waves
   * Radio waves also produced by relativistic electrons’ synchrotron radiation
-
 
 ### Solar wind
 
@@ -1320,6 +1319,91 @@ P = (2〈S〉A cos²θ)/c, reflection
   any low-mass stars can form
 
 ## 13. Main Sequence and Post-Main-Sequence Stellar Evolution
+
+* Generally dominated by nuclear reaction timescale
+* Kelvin–Helmholtz timescale relevant when transitioning between nuclear sources
+
+### Main sequence
+
+* Low- and intermediate-mass stars (0.3~1.2 M☉):
+  * Initially, core burns H, predominantly via PP chain
+    * Radiative due to low temperature dependence
+    * Core burning radius, density, and temperature rise due to fusion’s increase of
+      mean molecular weight causing contraction and release of gravitational energy
+    * Surface luminosity, radius, and effective temperature consequently rise over lifetime
+  * Temperature high enough to burn thick H shell around core immediately after core H depletion
+    * Core now isothermal and predominantly He, growing as He ash rains down from shell
+    * Shell H burning generates more power than core H burning, but some of it is
+      converted into gravitational potential through slow expansion of envelope
+    * Effective temperature decreases slightly
+  * Schönberg–Chandrasekhar limit, max mass fraction of an isothermal core
+    in hydrostatic equilibrium supported by ideal gas pressure:
+    M′/M ≲ 0.37 (μ/μ′)²
+    * Where M′ and μ′ are mass and mean molecular weights of the core
+    * Derived from hydrostatic pressure: dP/dM = –Gm/4πr⁴
+  * After reaching SC limit, core contracts on Kelvin–Helmholtz timescale
+    unless mass is low enough to be supported by temperature-independent
+    electron degeneracy pressure: P ∝ ρ^(5/3)
+* Massive stars (≳1.2 M☉):
+  * Initially, core nearly homogeneous due to convective mixing
+  * Convection zone decreases in mass during H burning
+    * Shrinks faster for more massive stars,
+      disappearing entirely before H exhaustion for stars ≳ 10 M☉
+    * Leaves slight composition gradient
+  * After near-exhaustion of core H (X ≈ 0.05 for M ≈ 5 M☉), entire star contracts
+    on Kelvin–Helmholtz timescale while increasing luminosity and effective temperature
+
+### Subgiant branch (SGB)
+
+* Low- and intermediate-mass stars:
+  * Rapid core contraction releases gravitational energy,
+    expanding envelope and decreasing effective temperature
+  * Raised H shell temperature and density rapidly increases power generation,
+    again expanding envelope
+* Massive stars:
+  * Rising temperatures eventually trigger rapid ignition of thick H shell around core,
+    forcing slight expansion of star envelope,
+    momentarily decreasing luminosity and temperature
+
+### Red giant branch (RGB)
+
+* Low- and intermediate-mass stars:
+  * Near-surface convection zone created for
+    due to H⁻ ions increasing photospheric opacity
+* All stars:
+  * Star rises along Hayashi-like track as convection zone broadens
+  * First dredge-up: convection sinks elements from surface (Li, ¹²₆C, etc)
+    and surfaces products of nuclear processes (³₂He, ¹⁴₇N, etc)
+  * He fusion begins at upper tip of RGB
+
+### Helium fusion
+
+* Low- and intermediate-mass stars (≲1.8 M☉):
+  * He core becomes strongly electron-degenerate
+  * Significant neutrino losses create negative temperature gradient near center
+  * Helium flash: explosive initiation of triple-α process in He core in seconds
+    * Core is rapidly lifted out of degeneracy outside-in, with
+      strong temperature dependence of triple-α driving extreme thermal runaway
+    * Briefly generates ~10¹¹ L☉ of power, but most is absorbed in thermalizing core
+* All stars;
+  * Core expands from He burning, pushing H-burning shell outward
+  * Luminosity abruptly decreases due to cooling of H-burning shell
+  * Effective temperature begins to increase due to envelope contraction
+
+### Horizontal branch (HB)
+
+* Low- and intermediate-mass stars:
+  *
+
+### Asymptotic giant branch (AGB)
+
+* Massive stars
+  * Early AGB (E-AGB)
+  * Thermal-pulse AGB (TP-AGB)
+
+### Third dredge-up and carbon stars
+
+### Stellar clusters
 
 ## 14. Stellar Pulsation
 
