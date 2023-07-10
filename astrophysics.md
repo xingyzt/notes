@@ -1323,9 +1323,9 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Generally dominated by nuclear reaction timescale
 * Kelvin–Helmholtz timescale relevant when transitioning between nuclear sources
 
-### Main sequence
+### Main sequence (MS)
 
-* Low- and intermediate-mass stars (0.3~1.2 M☉):
+* Stars 0.3~1.2 M☉:
   * Initially, core burns H, predominantly via PP chain
     * Radiative due to low temperature dependence
     * Core burning radius, density, and temperature rise due to fusion’s increase of
@@ -1344,7 +1344,7 @@ P = (2〈S〉A cos²θ)/c, reflection
   * After reaching SC limit, core contracts on Kelvin–Helmholtz timescale
     unless mass is low enough to be supported by temperature-independent
     electron degeneracy pressure: P ∝ ρ^(5/3)
-* Massive stars (≳1.2 M☉):
+* Stars ≳ 1.2 M☉:
   * Initially, core nearly homogeneous due to convective mixing
   * Convection zone decreases in mass during H burning
     * Shrinks faster for more massive stars,
@@ -1355,7 +1355,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 ### Subgiant branch (SGB)
 
-* Low- and intermediate-mass stars:
+* Low-mass stars:
   * Rapid core contraction releases gravitational energy,
     expanding envelope and decreasing effective temperature
   * Raised H shell temperature and density rapidly increases power generation,
@@ -1371,17 +1371,16 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Near-surface convection zone created for
     due to H⁻ ions increasing photospheric opacity
 * All stars:
-  * Star rises along Hayashi-like track as convection zone broadens
+  * Star rises along Hayashi track as convection zone dominates star interior
   * First dredge-up: convection sinks elements from surface (Li, ¹²₆C, etc)
     and surfaces products of nuclear processes (³₂He, ¹⁴₇N, etc)
-  * He fusion begins at upper tip of RGB
 
-### Helium fusion
+### Red giant tip / start of helium fusion
 
-* Low- and intermediate-mass stars (≲1.8 M☉):
+* Stars ≲ 1.8 M☉:
   * He core becomes strongly electron-degenerate
   * Significant neutrino losses create negative temperature gradient near center
-  * Helium flash: explosive initiation of triple-α process in He core in seconds
+  * Helium core flash: explosive initiation of triple-α process in He core in seconds
     * Core is rapidly lifted out of degeneracy outside-in, with
       strong temperature dependence of triple-α driving extreme thermal runaway
     * Briefly generates ~10¹¹ L☉ of power, but most is absorbed in thermalizing core
@@ -1390,20 +1389,109 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Luminosity abruptly decreases due to cooling of H-burning shell
   * Effective temperature begins to increase due to envelope contraction
 
-### Horizontal branch (HB)
+### Horizontal branch (HB) / blue loop
 
-* Low- and intermediate-mass stars:
-  *
+* Stars ≲ 15 M☉:
+  * Envelope contraction raises effective temperature
+    and compresses H-burning shell, increasing power generation
+  * Deep convection zone rises towards surface while triple-α makes core convective as well
+  * Many develop instabilities in outer envelope, leading to periodic pulsations
+  * Increase in mean molecular mass eventually causes core contraction,
+    expanding envelope and lowering effective temperature
+  * Depletion of core He rapidly accelerates core contraction
+    * Core now mostly C and O, becoming very degenerate and
+      cooling through significant neutrino production
+  * Contraction and heating of surrounding He shell initiates He shell burning,
+    in turn forcing expansion and cooling of surrounding H shell,
+    temporarily halting H shell burning
+* Stars ≳ 15 M☉ do not experience the blue loop
 
-### Asymptotic giant branch (AGB)
+### Early asymptotic giant branch (E-AGB)
 
-* Massive stars
-  * Early AGB (E-AGB)
-  * Thermal-pulse AGB (TP-AGB)
+* All stars:
+  * He-burning shell generates most power while H-burning shell is nearly inactive
+  * Convective envelope absorbs energy and expands, lowering effective temperature
+  * Second dredge-up: convection deepens again,
+    bringing He and N from interior onto H-rich envelope
+  * Star back on Hayashi track, approaching previous RGB path asymptotically from the left
+  * Rapid mass loss due to low surface gravity
 
-### Third dredge-up and carbon stars
+### Thermally-pulsating AGB (TP-AGB)
+
+* All stars:
+  * As He-burning shell nears exhaustion, H shell reignites
+  * He ash from H-burning shell builds up and makes base of He shell slightly degenerate,
+    eventually triggering helium shell flash
+  * Convection zone established between He- and H-burning shells
+  * He-burning expands and cools H-burning shell, gradually turning it off
+  * Process repeats with growing amplitude after every pulse
+  * Cycle evident from abrupt changes in surface luminosity
+  * Period ranges from ~10³ years for stars ~5 M☉ to 10⁵ years for stars ~0.6 M☉;
+    Long-period variables (LPVs) such as Mira variables have 100~700-day periods
+* Stars ≳ 2 M☉
+  * Third dredge-up: convection envelope merges with inter-shell convection zone
+    and surfaces material from C-synthesizing region
+  * Inverting number ratio of O and C in stellar atmosphere creates carbon stars,
+    with spectral type C overlapping the traditional K and M
+    * Spectral type S inbetween M and C has approximately equal O and C abundances
+  * Mass loss in cool temperatures (~3000 K) expels into ISM
+    silicate grains from O-rich atmospheres and graphite grains from C-rich atmospheres
+  * S-process nucleosynthesis:
+    nuclei in deep interior capture neutrons produced by nuclear burning,
+    at a slow enough rate to radioactively decay before their next capture
+  * S and C-type stars dredge up elements with no stable isotopes (e.g. Tc) into atmosphere,
+    indicating active s-process
+
+### Late and post-AGB
+
+* Stars ≲ 8 M☉:
+  * He-burning increases mass of CO core, causing contraction until
+    electron degeneracy pressure dominates
+  * Mass loss accelerates with decreasing mass and increasing radius,
+    developing ~10⁻⁴ M☉/year superwind
+    * Precise mechanism unknown
+    * Energizes shroud of optically thick dust clouds into OH/IR sources:
+      the OH molecules emit IR as masers
+  * Mass loss prevents catastrophic core collapse from Chandrasekhar limit,
+    allowing stars between 4~8 M☉ to additionally synthesize Ne and Mg in cores
+  * Surrounding dust cloud eventually becomes optically thin from expansion,
+    revealing an F or G supergiant
+  * AGB phase ends as envelope is expelled, moving star nearly horizontally blueward
+  * Luminosity drops rapidly as H and He-burning shells lose pressure and extinguish,
+    revealing hot, degenerate C–O or ONeMg core: a white dwarf
+  * Planetary nebula: expanding shell of gas around white dwarf
+    * Emitting visible spectrum due to UV from central star remnant
+    * Complex morphologies due to preferentially equatorial ejection
+    * Receding at 10~30 km/s, with character length scales of ~0.3 pc
+* Stars ≳ 8 M☉: see Ch. 15
+
+### Stellar populations
+
+* Stars give ISM back material enriched with more heavy elements than given
+* Population III: stars formed soon after the Big Bang with virtually no metals (Z = 0)
+  * Found in extreme deep field observations to primordial galaxies
+* Population II: succeeding generations of metal-poor stars (Z ≳ 0)
+  * Found outside galactic disk and in globular clusters
+* Population I: current generations of metal-rich stars (Z ≈ 0.03)
+  * Found inside galactic disk and in open clusters
 
 ### Stellar clusters
+
+* Stars formed from the same cloud, with similar compositions and birth times
+  * Globular clusters: Population II, larger and older
+  * Galactic / open clusters: Population I, smaller and younger
+* Graphed onto color-magnitude diagrams:
+  H–R diagrams with B–V indices rather than effective temperatures,
+  and apparent instead of absolute magnitudes if distance is not known
+* Distance generally calculated with spectroscopic parallax
+* Isochrone: curve fitting all stars of a cluster at a certain age
+* Main-sequence turn-off point:
+  color and magnitude where stars are currently leaving main sequence
+  * Reflects age of cluster as point becomes redder and less luminous over time,
+* Hertzsprung gap: absence of stars between late main sequence and red giant regions
+  due to rapid Kelvin–Helmholtz-timescale intermediate evolution
+* Blue stragglers: group of stars found above turn-off point, possibly
+  due to mass exchange with binary companion or collision between stars
 
 ## 14. Stellar Pulsation
 
