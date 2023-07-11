@@ -1426,8 +1426,8 @@ P = (2〈S〉A cos²θ)/c, reflection
   * He-burning expands and cools H-burning shell, gradually turning it off
   * Process repeats with growing amplitude after every pulse
   * Cycle evident from abrupt changes in surface luminosity
-  * Period ranges from ~10³ years for stars ~5 M☉ to 10⁵ years for stars ~0.6 M☉;
-    Long-period variables (LPVs) such as Mira variables have 100~700-day periods
+  * Period ranges from ~10³ years for stars ~5 M☉ to 10⁵ years for stars ~0.6 M☉
+    * Long-Period Variables (LPVs) such as Mira have 100-700-day periods
 * Stars ≳ 2 M☉
   * Third dredge-up: convection envelope merges with inter-shell convection zone
     and surfaces material from C-synthesizing region
@@ -1494,6 +1494,98 @@ P = (2〈S〉A cos²θ)/c, reflection
   due to mass exchange with binary companion or collision between stars
 
 ## 14. Stellar Pulsation
+
+### Observations
+
+* Pulsating stars dim and brighten as radius and temperature change
+* Long-Period Variables (LPVs; prototype: ο Ceti / Mira):
+  thermally-pulsating asymptotic giants with 100–700-day periods and somewhat irregular light curves
+  * May pulsate in either fundamental or first overtone mode
+* Classical Cepheids (prototype: δ Cephei):
+  supergiant Ib stars with 1–50-day periods proportional to their average luminosities
+  * Period–luminosity relation (Leavitt’s law):
+    V = –2.81 log_10(P) – 1.43,
+    H = –3.234 log_10(P) + 16.079
+    * Where P is period in days
+    * Measuring magnitude in the IR H-band mitigates some interstellar extinction
+  * Period–luminosity–color relation:
+    H = –3.428 log_10(P) + 1.54(J – K_s) + 15.637
+    * Where J–K_s is an IR color index
+    * Adding color term improves data fit
+  * Used as “standard candles” for measuring intergalactic distances
+  * Luminosity variation primarily due to ~1000 K variation in temperature,
+    with a phase lag of maximum luminosity occuring behind minimum radius
+  * Vast majority pulsate in fundamental mode
+* W Virginis stars:
+  Population II Cepheids, around 4× less luminous than classical Cepheids of the same period
+  * Vast majority pulsate in fundamental mode
+* RR Lyrae stars:
+  horizontal-branch Population II stars with 1.5–24-hour periods,
+  all having nearly the same luminosity
+  * May pulsate in either fundamental or first overtone mode
+* δ Scuti variables:
+  evolved F stars near the main sequence, with both radial and nonradial oscillations
+  on 1–3-hour periods
+* ZZ Ceti stars: pulsating white dwarfs with 100–1000-second periods
+* Instability strip: narrow, nearly vertical region on H–R diagram,
+  right of the main sequence, where most pulsating stars are found,
+  including the above types
+* β Cephei stars: luminous (class III–V) blue variables with 3–7-hour periods;
+  found in H–R’s upper left, outside the instability strip
+
+### Radial pulsation mechanisms
+
+* Radial oscillations result from resonance of sound waves in interior with speed: v = √(γP/ρ)
+  * Where γ is adiabatic index
+* Period–mean density relation: Π ≈ √(3π/2γGρ)
+  * Denser stars (e.g. white dwarfs) pulsate faster (than e.g. supergiants)
+* Multiple radial modes of pulsation as the sound waves are standing
+  * Fundamental mode: node at star center, antinode at surface
+  * Each overtone adds a node between center and surface
+* Surface amplitudes decreases with overtone:
+    δr/R ≈ 0.07 for fundamental, ≲ 0.01 for first, ≈ 0 for second
+* Eddington modeled stars as heat engines:
+  layers doing positive net work on surroundings drive oscillations;
+  those doing negative net work dampen them
+  * Positive work done if layer absorbs heat around max compression;
+    releases heat and reaches max pressure during expansion
+* Nuclear ϵ-mechanism:
+  compressing center raises temperature and density, increasing power generation
+  * Amplitude usually too small to drive pulsation
+  * May contribute to preventing formation of ≳ 90 M☉ stars
+* Opacity κ and γ mechanisms:
+  compressing layer increases opacity and traps heat, driving expansion
+  * For most layers, opacity decreases with increased temperature from compression
+  * κ-mechanism: in partial ionization zones however,
+    some compression energy goes into further ionization instead of direct heating,
+    letting opacity increase with the higher density
+  * γ-mechanism: heat prefers to flow into partial ionization zone in compression
+    due to its lower relative temperature, reinforcing the κ-mechanism
+* Most stars have two main ionization zones
+  * Hydrogen partial ionization zone: broader and closer to surface;
+    ionizes H I → H II and He I → He II at characteristic temperature of 1–1.5 × 10⁴ K;
+    changing depths during pulsation accounts for phase lag in classical Cepheids and RR Lyrae
+  * He II partial ionization zone: narrower and deeper;
+    ionizes He II → He III at characterstic temperature of 4 × 10⁴ K;
+    primarily responsible for driving oscillations within instability strip
+* Temperature-dependent depths of ionization zones determine pulsation properties:
+  * Blue edge of instability strip (~7500 K):
+    high temperatures puts ionization zone too close to low-density surface,
+    where there is insufficient mass to effectively drive oscillations
+  * First overtone may be excited ~6500 K
+  * Fundamental mode takes hold ~5500 K
+  * Red edge of instability strip (~5000 K):
+    heat transfer by convection bypasses high-opacity ionization zones
+    and quenches pulsation
+* β Cephei stars pulsate due to iron ionization zone
+  * Effective temperature (20,000~30,000 K) too high for H and He ionization zones
+  * κ and γ mechanisms rely on Fe opacity bump near 10⁵ K
+
+### Radial pulsation modeling
+
+### Nonradial pulsation mechanisms
+
+### Helio- and asteroseismology
 
 ## 15. The Fate of Massive Stars
 
