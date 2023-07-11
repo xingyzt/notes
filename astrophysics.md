@@ -62,9 +62,8 @@ east on the horizon
 
 ### Ellipses
 
-* Semi−major axis: a
-* Semi−minor axis: b
-* Eccentricity: e | ae = d/2, where d = distance between foci
+* Semi−major axis a; Semi−minor axis b
+* Eccentricity e: ae = d/2, where d = distance between foci
 * b² = a² (1 − e²)
 * Polar equation: r = a (1 − e²) / (1 + e cos θ)
 * Area: A = πab
@@ -257,7 +256,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Dirac's relativistic Schrödinger's equation divided particles
   into fermions and bosons
   * Also predicted antiparticles: opposite electric changes and magnetic moments
-* Fermions have spins of odd * ħ/2; Bosons have spins of integer * ħ
+* Fermions have spins of odd × ħ/2; Bosons have spins of integer × ħ
 * Pauli exclusion principle: No two fermions can share the same set
   of 4 quantum numbers (n, l, m_l, m_s)
 
@@ -358,7 +357,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Addition of other telescopes enables interferometry;
   reduces side lobes and narrows main lobe of antenna sensitivity pattern
 * Interferometry determines angle of source from phase difference between antennae
-* Pointing angle: θ | sin θ = L/d,
+* Pointing angle θ: sin θ = L/d,
   L is difference in wavefront’s distances to the antennae;
   d is baseline distance between antennae
 * Very long baseline interferometry can span multiple continents
@@ -843,7 +842,7 @@ P = (2〈S〉A cos²θ)/c, reflection
     * α ≡ l/H, the ratio of the mixing length
       (distance traveled by bubble before thermaliing with surrounding)
       and the pressure scale height
-    * β | βv² is the average kinetic energy of the bubble as it travels over l
+    * β: βv² is the average kinetic energy of the bubble as it travels over l
 
 ### Stellar model building
 
@@ -867,7 +866,7 @@ P = (2〈S〉A cos²θ)/c, reflection
   often from from a transition point towards both the surface and the center
 * Polytropes: simplified stellar models in which P(ρ) ∝ ρ^γ
 * Lane–Emden equation: (1/ξ²) (d/dξ)[ξ² d(D_n)/dξ] = −(D_n)^n
-  * Where the polytropic index: n | γ ≡ (n+1)/n
+  * Where the polytropic index n: γ ≡ (n+1)/n
   * TODO: too complicated
 
 ### Main sequence
@@ -927,7 +926,7 @@ P = (2〈S〉A cos²θ)/c, reflection
 * Differential rotation: Doppler shifts at solar limb and solar oscillations
   show the solar rotation varies by latitude and by radius
   * Period of 25 days at equator lengths to 36 days at poles
-  * Tachocline: base of convection zone where differing rotation rates converge,
+  * Tachocline: base of convection zone (~0.65 R☉) where differing rotation rates converge,
     resulting in strong shear theorized to create plasma which
     generate the solar magnetic field
 
@@ -1535,11 +1534,12 @@ P = (2〈S〉A cos²θ)/c, reflection
 
 ### Radial pulsation mechanisms
 
-* Radial oscillations result from resonance of sound waves in interior with speed: v = √(γP/ρ)
-  * Where γ is adiabatic index
+* Oscillations result from standing sound waves in interior
+  * Sound waves in medium with adiabatic index γ travel at: v = √(γP/ρ)
+  * No displacement at nodes; maximum displacement at antinodes
 * Period–mean density relation: Π ≈ √(3π/2γGρ)
   * Denser stars (e.g. white dwarfs) pulsate faster (than e.g. supergiants)
-* Multiple radial modes of pulsation as the sound waves are standing
+* Modes given by conical harmonics
   * Fundamental mode: node at star center, antinode at surface
   * Each overtone adds a node between center and surface
 * Surface amplitudes decreases with overtone:
@@ -1581,11 +1581,58 @@ P = (2〈S〉A cos²θ)/c, reflection
   * Effective temperature (20,000~30,000 K) too high for H and He ionization zones
   * κ and γ mechanisms rely on Fe opacity bump near 10⁵ K
 
-### Radial pulsation modeling
+### Pulsation model
+
+* Newton’s second law must be used instead of hydrostatic equilibrium model
+  to account for oscillation of mass shells:
+  ρ (d²r/dt²) = – (GMρ/r²) – (dP/dr)
+* Nonlinear evaluation can model complex, nonsinusoidal behavior of large-amplitude pulsations,
+  but is very computationally expensive
+* Linearizable by approximating with small amplitudes,
+  but results in sinusoidal oscillations with no amplitude information
+* Adiabatic approximation also used to minimize complexity,
+  but nonlinear, nonadiabatic models are necessary for some variable stars
+* One-zone linear, adiabatic model: Π = 2π / √[ (4π/3) Gρ(3γ–4) ]
+* Dynamic stability: star collapses of γ &lt; 4/3
 
 ### Nonradial pulsation mechanisms
 
-### Helio- and asteroseismology
+* Some regions of surface expand while others contract
+* Oscillations result from standing sound waves with latitudinal nodal circles
+  and traveling sound waves with longitudinal nodal circles
+  * No displacement at nodal circles
+* Angular modes given by real parts of spherical harmonic functions: Y^m_l(θ, φ)
+  * There are l nodal circles: |m| longitudes and l – |m| latitudes
+  * Where l ∈ Z⁺ and m ∈ [–l, l]
+  * Traveling waves take |m| · Π long to travel around star,
+    with direction dependent on sign of m
+* Pressure waves: p-modes
+  * Confined to low depths, revealing conditions in stellar surface layers
+  * Both radial and angular nodes
+  * Acoustic frequency: S = √(γP/ρ) √(l²+l)/r
+  * Frequencies split by prograde and retrograde wave motion
+    proportional to star rotation rate Ω: ΔS ∝ mΩ
+* Internal gravity waves: g-modes
+  * Reveals movement of stellar material in deep interior
+  * Only have angular nodes
+  * Brunt–Väisälä (bouyancy) frequency: N = √(–Ag)
+  * Confined to radiative zones, where A &lt; 0: A ≡ (1/γP)(dP/dr) – (1/ρ)(dρ/dr)
+* Surface gravity waves: f-modes
+  * Frequency inbetween p- and g-modes
+
+### Helioseismology and asteroseismology
+
+* All observed solar oscillations are in the p-mode, with 3–8-minute periods and
+  very short (high l) horizontal wavelengths
+* Likely driven by turbulent energy of convection zone
+* Latitide-dependent rotation rate revealed by m-dependent frequency splitting
+* Depth-dependent rotation rate revealed by l-dependent attenuation below convection zone
+* Thick convection zone prevents surface observation of of g-modes
+* δ Scuti stars tend to pulsate in low-overtone radial modes, low-order p-modes,
+  and possibly g-modes
+* Rapidly oscillating peculiar A stars (roAp) primarily pulsate in higher-order
+  p-modes, with the pulsation axis aligned with their strong magnetic fields
+  instead of the rotation axis
 
 ## 15. The Fate of Massive Stars
 
