@@ -1,8 +1,13 @@
 ---
 layout: default
 title: Xing’s notes on Carroll & Ostlie, Introduction to Modern Astrophysics
-theme: modernist
 ---
+<aside>
+* Table of contents
+{:toc}
+ </aside>
+
+<main>
 
 {% raw %}
 
@@ -1705,3 +1710,5 @@ Xing’s notes
 To be continued...
 
 {% endraw %}
+                                               
+                                               </main>
