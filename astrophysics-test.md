@@ -1,3 +1,11 @@
+---
+layout: default
+title: Xing’s notes on Carroll & Ostlie, Introduction to Modern Astrophysics
+---
+
+
+{% raw %}
+
 # Carroll & Ostlie, Introduction to Modern Astrophysics
 
 Xing’s notes
@@ -537,7 +545,7 @@ Xing’s notes
 * Temperature, density, and composition of atmospheric layers determine
   spectral features
 * Specific ray intensity:
-  $I(\lambda) \;d\lambda \equiv {\partial I\over\partial\lambda} = {\frac{\partial E}{\partial\lambda} d\lambda  \over d\lambda \;dt\;dA \cos \theta \;d\Omega }$,
+  $I(\lambda) \;d\lambda \equiv {\partial I\over\partial\lambda} = {{\partial E \over \partial\lambda} d\lambda  \over d\lambda \;dt\;dA \cos \theta \;d\Omega }$,
   power transmitted at a certain wavelength within a certain solid angle
 * Mean intensity $\langle I(\lambda) \rangle = I(\lambda)$ for isotropic field; $= B(\lambda)$ for blackbody
 * Specific energy density $u(\lambda) \;d\lambda = {4\pi\over c} \langle I(\lambda) \rangle \;d\lambda$
@@ -1587,7 +1595,7 @@ Xing’s notes
   but results in sinusoidal oscillations with no amplitude information
 * Adiabatic approximation also used to minimize complexity,
   but nonlinear, nonadiabatic models are necessary for some variable stars
-* One-zone linear, adiabatic model: $\Pi = {2\pi \over \sqrt{\frac{4\pi}3 G\rho(3\gamma–4) }}$
+* One-zone linear, adiabatic model: $\Pi = {2\pi \over \sqrt{{4\pi \over 3} G\rho(3\gamma–4) }}$
 * **Dynamic stability**: star collapses if $\gamma < {4\over3}$
 
 ### Nonradial pulsation mechanisms
@@ -1695,3 +1703,5 @@ Xing’s notes
 # IV. Galaxies and the Universe
 
 To be continued...
+
+{% endraw %}
