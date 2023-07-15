@@ -6,9 +6,25 @@
     <meta name=viewport content='width=device-width, initial-scale=1'>
     <style>
 
+:root {
+  --text: #416;
+  --text-accent: #102;
+  --link: #146;
+  --link-accent: #012;
+  --deco: #84e;
+  --bg: #ecf;
+  --bg-accent: #daf;
+}
+
 @media (prefers-color-scheme: dark) {
-  html {
-    filter: invert(1) hue-rotate(180deg);
+  :root {
+    --text: #daf;
+    --text-accent: #ecf;
+    --link: #adf;
+    --link-accent: #cef;
+    --deco: #84e;
+    --bg: #416;
+    --bg-accent: #417;
   }
 }
 
@@ -57,19 +73,19 @@ body {
   max-width: 100%;
   box-sizing: border-box;
   padding: 1rem;
-  background: #dbf;
-  color: #213;
+  background: var(--bg);
+  color: var(--text);
 }
 
 h1 {
   text-align: center;
 }
 h2 {
-  border-bottom: 1px solid #426;
+  border-bottom: 1px solid var(--deco);
 }
 strong {
   font-weight: normal;
-  text-decoration: dashed underline #426;
+  text-decoration: dashed underline var(--deco);
 }
 
 details {
@@ -82,7 +98,7 @@ details {
   padding: 1rem;
   overflow-y: scroll;
   top: 0;
-  background: #ecfd;
+  background: var(--bg-accent);
   z-index: 1000;
 }
 
@@ -91,24 +107,29 @@ summary {
   user-select: none;
   position: sticky;
   top: 0;
-  background: #ecf;
+  background: var(--bg-accent);
 }
 
-a {
+a, summary {
   text-decoration: none;
-  color: #158;
+  color: var(--link);
 }
 
-a:visited {
-  color: #628;
-}
-
-a:hover, a:focus {
+a:hover, a:focus, summary:hover, summary:focus {
   text-decoration: underline;
+  color: var(--link-accent);
 }
+a:active, summary:active {
+  background: var(--link);
+  color: var(--bg-accent);
+}
+
 ul, ol {
   margin-left: 0rem;
   padding-left: 1rem;
+}
+li:hover {
+  color: var(--text-accent);
 }
 
 #markdown-toc {
@@ -123,9 +144,8 @@ ul, ol {
 #markdown-toc ul > li {
  font-size: 0.9em;
  padding-left: 0.2rem;
- border-left: 1px dashed #158;
+ border-left: 1px dashed var(--deco);
 }
-    
     
     
     </style>
