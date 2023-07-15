@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
     <style>
 @font-face {
     font-family: 'cmu';
@@ -33,15 +34,22 @@
     font-weight: bold;
     font-style: italic;
 }
-
+html {
+  width: 100%;
+}
 html, body {
   font-size: 16px;
   font-family: cmu, serif;
+  height: 100%;
 }
 body {
-  max-width: 40rem;
+  width: 40rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 3rem;
   margin: 0 auto;
   background: #dbf;
+  color: #213;
 }
     </style>
   </head>
