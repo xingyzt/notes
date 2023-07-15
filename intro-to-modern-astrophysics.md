@@ -3,6 +3,7 @@ layout: default
 title: Xing’s notes on Carroll & Ostlie, Introduction to Modern Astrophysics
 ---
 
+* Table of contents
 {:toc}
 
 {% raw %}
