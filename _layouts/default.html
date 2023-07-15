@@ -5,7 +5,6 @@
     <title>{{ page.title }}</title>
     <meta name=viewport content='width=device-width, initial-scale=1'>
     <style>
-
 :root {
   --text: #416;
   --text-accent: #102;
@@ -60,19 +59,22 @@
 
 html {
   width: 100%;
-  margin: 0;
-  padding: 0;
+  height: 100%;
 }
 html, body {
   font-size: 14px;
   font-family: cmu, serif;
-  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+html * {
+  box-sizing: border-box;
 }
 body {
   width: 50rem;
-  max-width: 100%;
-  box-sizing: border-box;
+  height: auto;
   padding: 1rem;
+  max-width: 100%;
   background: var(--bg);
   color: var(--text);
 }
@@ -82,6 +84,10 @@ h1 {
 }
 h2 {
   border-bottom: 1px solid var(--deco);
+  background: var(--bg);
+  position: sticky;
+  z-index: 100;
+  top: 0;
 }
 strong {
   font-weight: normal;
@@ -94,7 +100,6 @@ details {
   width: 20rem;
   max-width: 100%;
   max-height: 100%;
-  box-sizing: border-box;
   padding: 1rem;
   overflow-y: scroll;
   top: 0;
@@ -132,6 +137,15 @@ li:hover {
   color: var(--text-accent);
 }
 
+table {
+  border: 1px solid var(--deco);
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px dashed var(--deco);
+  text-align: center;
+}
+
 #markdown-toc {
   padding-left: 0;
 }
@@ -146,7 +160,6 @@ li:hover {
  padding-left: 0.2rem;
  border-left: 1px dashed var(--deco);
 }
-    
     
     </style>
   </head>
