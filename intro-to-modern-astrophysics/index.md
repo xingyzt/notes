@@ -11,7 +11,7 @@ Xing’s notes
   <summary>Table of Contents</summary>
 * Table of contents
 {:toc}
-</detalis>
+</details>
 
 # I. The Tools of Astronomy
 
