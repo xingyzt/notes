@@ -5,6 +5,7 @@
     <title>{{ page.title }}</title>
     <meta name=viewport content='width=device-width, initial-scale=1'>
     <style>
+
 @font-face {
     font-family: 'cmu';
     src: url('/notes/assets/cmunrm.woff') format('woff');
@@ -46,18 +47,75 @@ html, body {
   height: 100%;
 }
 body {
-  width: 40rem;
+  width: 50rem;
   max-width: 100%;
   box-sizing: border-box;
   padding: 1rem;
-  margin: 0 auto;
   background: #dbf;
   color: #213;
 }
-#markdown-toc {
-  margin-left: 0;
+
+h1 {
+  text-align: center;
+}
+h2 {
+  border-bottom: 1px solid #426;
+}
+
+details {
+  position: fixed;
+  right: 0;
+  width: 20rem;
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  overflow-y: scroll;
+  top: 0;
+  background: #ecfd;
+  z-index: 1000;
+}
+
+summary {
+  cursor: pointer;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  background: #ecf;
+}
+
+a {
+  text-decoration: none;
+  color: #158;
+}
+
+a:visited {
+  color: #628;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+ul, ol {
+  margin-left: 0rem;
   padding-left: 1rem;
 }
+
+#markdown-toc {
+  padding-left: 0;
+}
+#markdown-toc ul {
+  padding-left: 0.2rem;
+}
+#markdown-toc li {
+ list-style: none;
+}
+#markdown-toc ul > li {
+ font-size: 0.9em;
+ padding-left: 0.2rem;
+ border-left: 1px dashed #158;
+}
+    
     </style>
   </head>
   <body>
