@@ -3,9 +3,6 @@ layout: default
 title: Xing’s notes on Carroll & Ostlie, Introduction to Modern Astrophysics
 ---
 
-* Table of contents
-{:toc}
-
 {% raw %}
 
 # Carroll & Ostlie, Introduction to Modern Astrophysics
@@ -71,7 +68,7 @@ Xing’s notes
 
 ### Ellipses
 
-* **Semi−major axis** $a$; **Semi−minor axis** $$b
+* **Semi−major axis** $a$; **Semi−minor axis** $b$
 * **Eccentricity** $e : ae = {d\over2}$, where $d$ is distance between foci
 * $b^2 = a^2 (1 − e^2)$
 * Polar form $r = {a (1 − e^2) \over 1 + e \cos \theta}$
@@ -109,7 +106,7 @@ Xing’s notes
   $m − M = 5 \log_{10}d − 5$
 * For equally distant stars, ratio of radiant fluxes equals
   ratio of luminosities, thus ${L_2 \over L_1} = 100^{(M_1 − M_2)/5}$
-* $M_☉ = +4.74, L_☉ = 3.839 \times 10^{26} \text{ W}$
+* $M__\odot = +4.74, L__\odot = 3.839 \times 10^{26} \text{ W}$
 
 ### Light
 
@@ -878,16 +875,16 @@ Xing’s notes
 
 * Vast majority of stars have $\text{H}$ mass fraction $X \approx 0.7$ and metal mass fraction $0 \lesssim Z \lesssim 0.03$
 * Changes in core composition affects observed surface features
-* Very light stars ($M \lesssim 0.08 M_☉$) are not hot enough to let fusion
+* Very light stars ($M \lesssim 0.08 M_\odot$) are not hot enough to let fusion
   stabilize against gravitational contraction
   * Highly opaque and fully convective
-* Lower-initiation-energy p–p chain dominates for low-mass stars
+* Lower-initiation-energy PP chain dominates for low-mass stars
   * Shallow core thermal gradient leads to radiative core
   * High shell opacity leads to convective shell
-* Highly-temperature-dependent CNO cycle dominates for high-mass stars (M ≳ 1.2 M☉)
+* Highly-temperature-dependent CNO cycle dominates for high-mass stars ($M \gtrsim 1.2 M_\odot$)
   * Steep core thermal gradient leads to convective core
   * Low shell opacity leads to radiative shell
-* Very massive stars (M ≳ 90 M☉) have rapid core thermal oscillations
+* Very massive stars ($M \gtrsim 90 M_\odot$) have rapid core thermal oscillations
   affecting fusion rates
 * Very massive stars may also have radiation pressure exceed gas pressure at
   outer layers, with maximum stable luminosity given by **Eddington limit**:
@@ -902,9 +899,9 @@ Xing’s notes
 
 ### Solar interior
 
-* Hydrogen burning below R ≲ 0.3 R☉; convection above R ≳ 0.7 R☉
+* Hydrogen burning below $R \lesssim 0.3 R_\odot$; convection above $R \gtrsim 0.7 R_\odot$
 * Heterogeneous composition due to nucleosynthesis, convection, and elmental diffusion
-* $^4_2\text{He}$ is more abundant than $^1_1\text{H}$ below R ≲ 0.1 R☉
+* $^4_2\text{He}$ is more abundant than $^1_1\text{H}$ below $R \lesssim 0.1 R_\odot$
 * $^3_2\text{He}$ abundance peaks at the top of the hydrogen-burning region,
   where cooler temperatures slow the $^3_2\text{He}–^3_2\text{He}$ reaction
 * Convection zone turbulence creates homogeneous composition
@@ -920,18 +917,18 @@ Xing’s notes
 
 * Where optical photons originate
 * Starts 100 km below where $\tau_\text{500 nm} = 1$, extending ~600 km
-* Temperature drops from ~9400 K at base to ≳4400 K at top
+* Temperature drops from ~9400 K at base to \gtrsim4400 K at top
 * Continuum opacity partly due to $\text{H}^-$ near base of photosphere,
   as the far more abundant neutral $\text{H I}$ cannot contribute much to the continuum
 * Absorption lines produced in higher, cooler, more opaque regions of the photosphere
-* Granulation: patches of bright and dark regions (~700 km) at base of photosphere due to
+* **Granulation**: patches of bright and dark regions (~700 km) at base of photosphere due to
   underlying convection zone; Doppler shifts (~0.4 km/s) cause wiggles in absorption lines
   * Characteristic lifetime (~10 minutes) corresponds to the time a
     convection eddy takes to rise and fall 1 mixing length
-* Differential rotation: Doppler shifts at solar limb and solar oscillations
+* **Differential rotation**: Doppler shifts at solar limb and solar oscillations
   show the solar rotation varies by latitude and by radius
   * Period of 25 days at equator lengths to 36 days at poles
-  * Tachocline: base of convection zone ($\approx 0.65 R_☉$) where differing rotation rates converge,
+  * **Tachocline**: base of convection zone ($\approx 0.65 R__\odot$) where differing rotation rates converge,
     resulting in strong shear theorized to create plasma which
     generate the solar magnetic field
 
@@ -944,8 +941,8 @@ Xing’s notes
 * As the blackbody continuum emission peaks ~500 nm, visible-spectrum emission lines are
   only clearly seen in a flash spectrum of the limb near total eclipse
 * Strength of $\text{H}\alpha$ emission line allows filters to selectively observe the chromosphere structure
-* Supergranulation: patches of ~30,000 km wide from underlying convection
-* Spicules: vertical gas filaments extending upwards for ~10,000 km,
+* **Supergranulation**: patches of ~30,000 km wide from underlying convection
+* **Spicules**: vertical gas filaments extending upwards for ~10,000 km,
   ejecting mass at ~15 km/s
 
 ### Transition region
@@ -956,7 +953,7 @@ Xing’s notes
 
 ### Corona
 
-* Faint region (≲10^1⁵ particles\overm^3) with vaguely defined outer boundary
+* Faint region ($\lesssim 10^{15} \text{ particles/m}^3$) with vaguely defined outer boundary
 * High-temperature, high-thermal-conductivity, approximately isothermal plasma
 * Quiet corona near sunspot minimum (low solar activity)
   * More extended at equator than poles, consistent with nearly dipole magnetic field
@@ -964,17 +961,17 @@ Xing’s notes
   * More complex magnetic field shape and structure
 * Essentially transparent to most EM radiation
 * Not in local thermodynamic equilibrium thus no strictly definable temperature,
-  but estimated to be ≳ 2 \times 10⁶ K
+  but estimated to be $\gtrsim 2 \times 10^6 \text{ K}$
 * Parker wind model: not in hydrostatic equilibrium as pressure does not vanish at infinity,
   implying solar wind
 * Kontinuierlich/continuous **K corona**:
-  * From free e^- scattering of photospheric light primary between 1 and 2.3 R☉
+  * From free electron scattering of photospheric light primary between $1 \sim 2.3 R_\odot$
   * Spectral lines essentially blended into continuum from high-velocity Doppler broadening
 * Fraunhofer **F corona**:
-  * From  dust scattering of photospheric light beyond 2.3 R☉
+  * From  dust scattering of photospheric light beyond 2.3 R_\odot
   * Slower dust grains have less Doppler broadening and leave detectable Fraunhofer lines
   * Merges with zodiacal light from interplanetary dust
-* Emission E corona:
+* Emission **E corona**:
   * From highly ionized coronal atoms, very rich in emission lines in the X-ray spectrum
   * Low number density enable forbidden transitions between metastable energy levels,
     as well as low-energy free-free transitions that produce radio waves
@@ -990,9 +987,9 @@ Xing’s notes
   * Associated with coronal holes — darker, cooler coronal regions
 * Slow solar wind: ~300 km/s, produced by coronal streamers around closed magnetic fields;
   * Associated with X-ray bright spots from trapped spiralling charges
-* Heliopause: outer limit of the Sun’s EM influence;
-  where solar wind meets the interstellar medium and produces a termination shock
-* Heliosheath: beyond the termination shock,
+* **Heliopause**: outer limit of the Sun’s EM influence;
+  where solar wind meets the interstellar medium and produces a **termination shock**
+* **Heliosheath**: beyond the termination shock,
   particles slow, magnetic field strengthens, and density increases
 
 ### Magnetohydrodynamics (MHD)
@@ -1011,7 +1008,7 @@ Xing’s notes
 
 * Zeeman splitting indicates strong magnetic fields,
   which inhibit convective motion below and create dark spots
-* Umbra: darkest portion with vertical field lines; diameter ≲ 30,000 km
+* Umbra: darkest portion with vertical field lines; diameter \lesssim 30,000 km
 * Penumbra: border with filament-like structure with field lines becoming horizontal
 * Generally located in groups,
   with one dominant sunspot leading several in the direction of rotation
@@ -1019,7 +1016,7 @@ Xing’s notes
     during an 11-year cycle
   * Opposite polarity in the other hemisphere
 * Frequency follows 11-year cycle, starting from sunspot minimum
-* Butterfly diagram: average latitude starts near ±40^\circ, migrating to the equator over cycle
+* **Butterfly diagram**: average latitude starts near ±40^\circ, migrating to the equator over cycle
 * Solar polarity reverses during sunspot minimum, thus technically 22-year cycle
 * Long-term variations include the Maunder minimum spanning 1645–1715
 
@@ -1043,28 +1040,28 @@ Xing’s notes
 * Nonthermal radio waves from synchrotron radiation around field lines
 * Soft X-rays from high temperatures in loop below reconnection point
 * Hard X- and gamma-rays from surface nuclear reactions,
-  including spallation of heavy nuclei:
-  $^1_1\text{H} + {\;}^{16}_8\text{O} \to ^{12}_6\text{C} + {\;}^4_2\text{He} + {\;}^1_1\text{H} + \gamma
+  including **spallation** of heavy nuclei:
+  $^1_1\text{H} + {\;}^{16}_8\text{O} \to ^{12}_6\text{C} + {\;}^4_2\text{He} + {\;}^1_1\text{H} + \gamma$
 
 ### Prominences
 
-* Quiescent prominence:
+* **Quiescent prominence**:
   * Curtains of cooler (~8000 K) ionized gas collected along magnetic field lines
   * May be stable for weeks
   * Appear as dark filaments against the disk
-* Eruptive\overactive prominence:
+* Eruptive/**active prominence**:
   * Suddenly destabilized magnetic field configuration
   * Energy converted into lifting prominence away from the Sun
 
 ### Coronal mass ejections (CMEs)
 
-* Ejects $5 \times 10^{12} – 5 \times 10^{13} \text{ kg}$ of material at speeds of 400–1000 km/s
+* Ejects $5 \times 10^{12} \sim 5 \times 10^{13} \text{ kg}$ of material at speeds of 400–1000 km/s
 * ~1/day, more frequent near sunspot maximum
 * 70% correlated with eruptive prominences; 40% correlated with flares
 
 ### Magnetic activity in other stars
 
-* Flare stars: M-type main-sequence stars whose occasional rapid fluctuation in brightness
+* **Flare stars**: M-type main-sequence stars whose occasional rapid fluctuation in brightness
   may be due to large flares on their relatively dimr surface
 * Starspots may be used to measure stellar rotation
 * Magnetic field lines measured from Zeeman broadening correlate with luminosity variations
@@ -1084,18 +1081,18 @@ Xing’s notes
   including solid $\text{CO}$, $\text{H}_2\text{O}$, etc that give the grains icy mantles
 * Formed in dense envelopes of very cool stars, from supernovae and stellar winds
 * Unexpected abundance of large grains an area of active research
-* Responsible for interstellar extinction, a $\lambda$-dependent increase in apparent magnitude
+* Responsible for **interstellar extinction**, a $\lambda$-dependent increase in apparent magnitude
   from scattering and absorption of starlight: $A = \Delta m$
   * Approximately equal to the optical depth: $A \approx 1.086\tau$
   * Visual band extinction commonly used as reference: $A_V$
-* Mie theory applies to IR–visible range
+* **Mie theory** applies to IR–visible range
   * Shorter wavelengths are scattered more (though spectral lines go unaltered),
     causing interstellar reddening along direct line of sight,
     and blue tones in reflection nebulae
   * Extinction coefficient: $Q(\lambda) \equiv {\sigma(\lambda)\over\sigma_g}$
   * With dust grain radius: $r$ such that grain cross section: $\sigma_g = \pi r^2$
   * Where photon cross section approaches 0 for $\lambda \gg r$ and a constant for $\lambda \ll r$:
-    $\sigma(\lambda) \propto {r^3\over\lambda}$ for $\lambda ≳ r$, and $\sigma(\lambda) \propto r^2$ for $\lambda \ll r$
+    $\sigma(\lambda) \propto {r^3\over\lambda}$ for $\lambda \gtrsim r$, and $\sigma(\lambda) \propto r^2$ for $\lambda \ll r$
 * Color excesses relative to Mie prediction grow for shorter wavelengths
 * Bump at 217.5 nm corresponding to resonance of graphite,
   along with IR emission bands corresponding to C–C and C–H bond vibrations,
@@ -1109,13 +1106,13 @@ Xing’s notes
 * **21-cm line**: anti-aligned spins ↑↓ has slightly less energy than aligned spins ↑↑
   * Very stable, “forbidden” transition that takes millions of years
     on average to occur per atom
-  * Only possible (although still rare) for H I in low-density diffuse ISM
-  * Optically thin, thus optical depth \propto H column density
+  * Only possible (although still rare) for $\text{H I}$ in low-density diffuse ISM
+  * Optically thin, thus optical depth $\propto H$ column density
 * $\text{H}_2$ hard to directly observe except for rovibrational bands;
   tracer molecules and their isotopomers used instead
 * Optically thick dust shields $\text{H}_2$ from UV photodissociation,
   as well as enhancing $\text{H}_2$ formation
-* $\text{H I}$ generally proportional in number to dust when $A_V ≲ 1$;
+* $\text{H I}$ generally proportional in number to dust when $A_V \lesssim 1$;
   displaced by $\text{H}_2$ when dust becomes optically thick
 * Shells of $\text{H I}$ clouds surround molecular clouds of $\text{H}_2$
 
@@ -1133,15 +1130,15 @@ Xing’s notes
   almost-spherical clouds located outside of larger molecular complexes;
   possibly dense cores stripped of surrounding gas by stellar winds
 
-| thing                   | T (K)   | M (M☉)  | A_V     | n (m^-^3)                        | D (pc)   |
-| ----------------------- | ------- | ------- | ------- | -------------------------------- | -------- |
-| diffuse molecular cloud | 15~50   | 3~100   | 1~5     | 5 \times 10⁸ ~ 5 \times 10⁹      | 1~10     |
-| giant molecular cloud   | ~15     | 10⁵~10⁶ | ≳1      | 1 \times 10⁸ ~ 3 \times 10⁸      | ~50      |
-| · dark cloud complex    | ~10     | ~10^4   | ~5      | ~ 5 \times 10⁸                   | ~10      |
-| · clump                 | ~10     | ~30     | ~10     | ~ 1 \times 10⁹                   | 1~5      |
-| · dense core            | ~10     | ~10     | ≳10     | ~ 1 \times 10^1⁰                 | ~0.1     |
-| · hot core              | 100~300 | 10~1000 | 50~1000 | 1 \times 10^1^3 ~ 1 \times 10^1⁵ | 0.05~0.1 |
-| Bok globule             | ~10     | 1~1000  | ~10     | ≳ 1 \times 10^1⁰                 | ≲1       |
+| thing                   | $T\;(\text{K})$ | $M\;(M_\odot)$ | $A_V$        | $n\;(\text{m}^{-3})$                     | $D\;(\text{pc})$ |
+| ----------------------- | --------------- | -------------- | ------------ | ---------------------------------------- | ---------------- |
+| diffuse molecular cloud | $15\sim50$      | $3\sim100$     | $1\sim5$     | $5 \times 10^8 \sim 5 \times 10^9$       | $1\sim10$        |
+| giant molecular cloud   | $\sim15$        | $10^5\sim10^6$ | $\gtrsim1$   | $1 \times 10^8 \sim 3 \times 10^8$       | $\sim50$         |
+| · dark cloud complex    | $\sim10$        | $\sim10^4$     | $\sim5$      | $\sim5 \times 10^8$                      | $\sim10$         |
+| · clump                 | $\sim10$        | $\sim30$       | $\sim10$     | $\sim 1 \times 10^9$                     | $1\sim5$         |
+| · dense core            | $\sim10$        | $\sim10$       | $\gtrsim10$  | $\sim 1 \times 10^{10}$                  | $\sim0.1$        |
+| · hot core              | $100\sim300$    | $10\sim1000$   | $50\sim1000$ | $1 \times 10^{13} \sim 1 \times 10^{15}$ | $0.05\sim0.1$    |
+| Bok globule             | $10\sim$        | $1\sim1000$    | $\sim10$     | $\gtrsim 1 \times 10^{10}$               | $\lesssim1$      |
 
 ### Interstellar cloud heating and cooling
 
@@ -1166,36 +1163,36 @@ Xing’s notes
   * Neglecting rotation, turbulence, magnetic fields,
     and pressure of surrounding gas
 * Bonnor–Ebert criterion accounts for external pressure $P_0$
-  * Bonnor–Ebert mass: $M = { c_BE v^4 \over \sqrt{P_0 G^3} }$
+  * **Bonnor–Ebert mass**: $M = { c_BE v^4 \over \sqrt{P_0 G^3} }$
   * Where isothermal sound speed $v \equiv \sqrt{kT\over\mu}$,
     and constant $c_\text{BE} \approx 1.18$
 * Low-pressure, optically thin first phase of collapse essentially isothermal and in free-fall
   * Free-fall timescale $t = \sqrt{3\pi \over 32G\rho_0}$
-* Homologous collapse:
+* **Homologous collapse**:
   Initially uniform spherical cloud would uniformly contract and condense
 * Inside-out collapse:
   Somewhat centrally condensed cloud will have
   shorter free-fall time and thus condense faster near center
 * Significant rotation results in disk-like structure
 * Magnetic pressure keeps clouds balanced; eddy braking slows collapse
-  * Critical mass with magnetic pressure: M = c_B \piR^2B\over\sqrtG
+  * Critical mass with magnetic pressure: $M = {c_B \pi R^2 B \over \sqrt G}$
   * Supercritical mass achieved by merger of subcritical clouds,
     or (more commonly) regional lessening of magnetic field
-* Ambipolar diffusion: neutral particles drift gravitationally,
+* **Ambipolar diffusion**: neutral particles drift gravitationally,
   but are slowed by collisions with magnetically-frozen charged particles
-* Fragmentation: increasing density with constant T reduces Jeans mass,
+* **Fragmentation**: increasing density with constant $T$ reduces Jeans mass,
   causing density inhomogeneities to collapse locally,
   forming large numbers of small protostars in place of a single massive one
-* Initial mass function (IMF):
+* **Initial mass function** (IMF):
   number of stars formed per mass interval strongly mass-dependent,
   with abundance of low-mass stars
 * Increasing density purely adiabatically increases Jeans mass
-* Fragmentation stops as center becomes optically thick when ~10^-^1⁰ kg\overm^3,
+* Fragmentation stops as center becomes optically thick when $\sim10^{-10} \text{ kg}\;\text{m}^{-3}$,
   trapping radiation and making collapse more adiabatic
 * Central region reaches near hydrostatic equilibrium and becomes protostar
-  * Larger dust photosphere has radius and effective temperature where \tau = ⅔,
+  * Larger dust photosphere has radius and effective temperature where $\tau = {2\over3}$,
     putting star on H–R diagram
-  * ~10 AU wide for collapse from 1 M☉ cloud
+  * ~10 AU wide for collapse from $1 M_\odot$ cloud
 
 ### Protostar evolution
 
@@ -1208,12 +1205,12 @@ Xing’s notes
   * Substatially reduces photosphere radius to nearly the surface of the
     hydrostatic core
   * Increases effective temperature with little change in luminosity
-* H_2 dissociates ~2000 K,
+* $\text{H}_2$ dissociates ~2000 K,
   absorbing thermal energy otherwise used to maintain hydrostatic equilibrium,
   triggering second collapse
-* Core radius decreases to ~1.3 R☉ for collapse from 1 M☉ cloud, while
-  core mass « 1 M☉, indicating ongoing accretion at a second shock front
-* Hot core begins burning deuterium (^2_1H), producing ~60% of luminosity,
+* Core radius decreases to $\sim1.3 R_\odot$ for collapse from $1 M_\odot$ cloud, while
+  core mass $\ll 1 M_\odot$, indicating ongoing accretion at a second shock front
+* Hot core begins burning deuterium ($^2_1\text{H}$), producing ~60% of luminosity,
   which stays roughly constant
 * Deuterium burn-out leads to sharp drop in luminosity with small decrease
   in effective temperature, leading to pre-main-sequence star
@@ -1233,28 +1230,28 @@ Xing’s notes
 * **Hayashi track**: convection constrains H–R path to near vertical line
   * Luminosity decreases with slight increase in temperature
     as protostar slows collapse and reaches hydrostatic equilibrium
-* Formation of ~1 M☉ stars:
+* Formation of $\sim1 M_\odot$ stars:
   * Completely convective from high $\text{H}^-$ opacity for the first ~10⁶ years of collapse,
     slowed little by scarce deuterium burning
   * Rising central temperature decreases opacity and creates expanding radiative core
   * Core begins generating energy from first steps in the
-      PP I chain ($2 {\;}^1_1\text{H} \to {\;}^3_2\text{He}) and CNO cycle (^{12}_6\text{C} + {\;}^1_1\text{H} \to ^{14}_7\text{N}$),
+      PP I chain ($2 {\;}^1_1\text{H} \to {\;}^3_2\text{He}$) and CNO cycle ($^{12}_6\text{C} + {\;}^1_1\text{H} \to ^{14}_7\text{N}$),
   * Surface luminosity increases with temperature again and moves star off Hayashi track
   * Core burning comes to increasingly dominate luminosity generation
   * CNO reactions give core steep temperature gradient and some convection
   * Core expansion from intense nuclear energy production expends gravitational energy,
     lowering luminosity and effective temperature to main-sequence values
-  * After exhaustion of ^1^2₆C for CNO, core reaches temperature
+  * After exhaustion of $^{12}_6\text{C}$ for CNO, core reaches temperature
     for hydrostatic hydrogen burning via the full PP I chain
-* Formation of ≲ 0.5 M☉ stars:
-  * Central temperature never reaches efficient ^1^2₆C-burning temperatures
+* Formation of $\lesssim 0.5 M_\odot$ stars:
+  * Central temperature never reaches efficient $^{12}_6\text{C}$-burning temperatures
     for upward branch between Hayashi track and main sequence
   * Fully convection: temperature stays sufficiently low and opacity sufficiently high
     to never develop radiative core
-* Formation of brown dwarfs (0.013 ~ 0.072 M☉):
+* Formation of brown dwarfs ($0.013 \sim 0.072 M_\odot$):
   * Low nuclear burning rate cannot form main-sequence star
-  * Li burning ≳ 0.06 M☉
-  * Deuterium burning ≳ 0.013 M☉ (~13 Jupiter masses)
+  * $\text{Li}$ burning $\gtrsim 0.06 M_\odot$
+  * Deuterium burning $\gtrsim 0.013 M_\odot$ (~13 Jupiter masses)
   * Spectral types L and T
 * Formation of massive stars:
   * High central temperatures leads to early, high-luminosity departure from Hayashi track
@@ -1268,13 +1265,13 @@ Xing’s notes
 * **OB associations**: star groups dominated by O and B main-sequence stars
 * Massive O and B protostars will first vaporize surrounding dust,
   then dissociate molecules, and finally ionize immediate surroundings
-  into an H II region within an H I region
-* **H II regions**: H I ionized into H II by protostar UV radiation fluoresce in visible light
+  into an $\text{H II}$ region within an $\text{H I}$ region
+* **$\text{H II}$ regions**: $\text{H I}$ ionized into $\text{H II}$ by protostar UV radiation fluoresce in visible light
   during recombination, creating emission nebulae
   in the visible spectrum during recombination
-  * **Strömgren radius** of H II region: r \approx ^3\sqrt(3N\over4\pi\alphan^2)
-  * Where N is rate of ionizing photon production,
-    \alpha is likelihood of recombination, and n is number density of protons and electrons
+  * **Strömgren radius** of $\text{H II}$ region: $r \approx \sqrt[3]{3N \over 4\pi\alpha n^2}$
+  * Where $N$ is rate of ionizing photon production,
+    $\alpha$ is likelihood of recombination, and n is number density of protons and electrons
 * Radiation pressure from cluster of highly luminous O and B stars
   drives significant mass loss, disperses surrounding cloud (halting star formation),
   and weakens gravitational bound of star group (generally unbinding them)
@@ -1283,12 +1280,12 @@ Xing’s notes
     possibly via stellar winds coupled to magnetic fields from within the convection zones
   * Continuous spectrum from reflection of protostar light
   * May be accretion or debris disks, possibly forming protoplanets
-  * **Proplyds**: protoplanetary disks ≳ 10^2⁵ kg
+  * **Proplyds**: protoplanetary disks $\gtrsim 10^{25} \text{ kg}$
 * **Herbig–Haro objects**:
   narrow beams of supersonic gas jets ejected from poles of young protostars
   * Collision with ISM results in excitations, producing bright emission lines
 * **T Tauri stars**:
-  low-mass (0.5~2 M☉) pre-main-sequence objects in intermediate phase
+  low-mass ($0.5\sim2 M_\odot$) pre-main-sequence objects in intermediate phase
   between IR source and main-sequence star
   * Large irregular variations in luminosity with timescales ~ days
   * Strong H, Ca II, and Fe emission and Li absorption
@@ -1300,7 +1297,7 @@ Xing’s notes
     a very unstable environment
 * **FU Orionis stars**:
   T Tauri stars undergoing extreme mass accretion ($\approx 10^{-4} M_odot/\text{year}$)
-  and increase in luminosity (≳4 magnitudes)
+  and increase in luminosity ($\gtrsim4$ magnitudes)
   * Circumstellar disk instabilities dump $\approx 0.01 M_\odot$ of material
     onto central star over ~100 years
   * Inner disk outshines centural star by $100–1000\times$
@@ -1315,7 +1312,7 @@ Xing’s notes
   and upper limits to massive star accretion,
 * Birth line: evolutionary theories with smaller initial radii
   place upper limit on observed protostar luminosity
-* Some observations suggest massive starts ≳ 10 M☉ may
+* Some observations suggest massive starts $\gtrsim 10 M_\odot$ may
   instead form from mergers or with accretion disk
   due to limiting feedback mechanism on non-rotational accretion
 * Classical model predicts inverse relation of collapse time and mass,
@@ -1329,7 +1326,7 @@ Xing’s notes
 
 ### Main sequence (MS)
 
-* Stars 0.3~1.2 M☉:
+* Stars $0.3\sim1.2 M_\odot$:
   * Initially, core burns H, predominantly via PP chain
     * Radiative due to low temperature dependence
     * Core burning radius, density, and temperature rise due to fusion’s increase of
@@ -1348,11 +1345,11 @@ Xing’s notes
   * After reaching SC limit, core contracts on Kelvin–Helmholtz timescale
     unless mass is low enough to be supported by temperature-independent
     electron degeneracy pressure: $P \propto \rho^{5\over3}$
-* Stars ≳ 1.2 M☉:
+* Stars $\gtrsim 1.2 M_\odot$:
   * Initially, core nearly homogeneous due to convective mixing
   * Convection zone decreases in mass during H burning
     * Shrinks faster for more massive stars,
-      disappearing entirely before H exhaustion for stars ≳ 10 M☉
+      disappearing entirely before H exhaustion for stars \gtrsim 10 M_\odot
     * Leaves slight composition gradient
   * After near-exhaustion of core H ($X \approx 0.05$ for $M \approx 5 M_\odot$), entire star contracts
     on Kelvin–Helmholtz timescale while increasing luminosity and effective temperature
@@ -1381,7 +1378,7 @@ Xing’s notes
 
 ### Red giant tip / start of helium fusion
 
-* Stars ≲ 1.8 M☉:
+* Stars $\lesssim 1.8 M_\odot$:
   * He core becomes strongly electron-degenerate
   * Significant neutrino losses create negative temperature gradient near center
   * Helium core flash: explosive initiation of triple-alpha process in He core in seconds
@@ -1395,7 +1392,7 @@ Xing’s notes
 
 ### Horizontal branch (HB) / blue loop
 
-* Stars ≲ 15 M☉:
+* Stars $\lesssim 15 M_\odot$:
   * Envelope contraction raises effective temperature
     and compresses H-burning shell, increasing power generation
   * Deep convection zone rises towards surface while triple-\alpha makes core convective as well
@@ -1408,7 +1405,7 @@ Xing’s notes
   * Contraction and heating of surrounding He shell initiates He shell burning,
     in turn forcing expansion and cooling of surrounding H shell,
     temporarily halting H shell burning
-* Stars ≳ 15 M☉ do not experience the blue loop
+* Stars $\gtrsim 15 M_\odot$ do not experience the blue loop
 
 ### Early asymptotic giant branch (E-AGB)
 
@@ -1430,9 +1427,9 @@ Xing’s notes
   * He-burning expands and cools H-burning shell, gradually turning it off
   * Process repeats with growing amplitude after every pulse
   * Cycle evident from abrupt changes in surface luminosity
-  * Period ranges from ~10^3 years for stars ~5 M☉ to 10⁵ years for stars ~0.6 M☉
+  * Period ranges from $\sim10^3 \text{ years}$ for stars $\sim5 M_\odot$ to $10^5 \text{ years}$ for stars $\sim0.6 M_\odot$
     * Long-Period Variables (LPVs) such as Mira have 100-700-day periods
-* Stars ≳ 2 M☉
+* Stars $\gtrsim 2 M_\odot$
   * **Third dredge-up**: convection envelope merges with inter-shell convection zone
     and surfaces material from C-synthesizing region
   * Inverting number ratio of O and C in stellar atmosphere creates carbon stars,
@@ -1448,16 +1445,16 @@ Xing’s notes
 
 ### Late and post-AGB
 
-* Stars ≲ 8 M☉:
+* Stars $\lesssim 8 M_\odot$:
   * He-burning increases mass of CO core, causing contraction until
     electron degeneracy pressure dominates
   * Mass loss accelerates with decreasing mass and increasing radius,
-    developing ~10^-^4 M☉\overyear superwind
+    developing $\sim10^{-4} M_\odot/\text{year}$ superwind
     * Precise mechanism unknown
     * Energizes shroud of optically thick dust clouds into OH\overIR sources:
-      the OH molecules emit IR as masers
+      the $\text{OH}$ molecules emit IR as masers
   * Mass loss prevents catastrophic core collapse from Chandrasekhar limit,
-    allowing stars between 4~8 M☉ to additionally synthesize Ne and Mg in cores
+    allowing stars between $4\sim8 M_\odot$ to additionally synthesize $\text{Ne}$ and $\text{Mg}$ in cores
   * Surrounding dust cloud eventually becomes optically thin from expansion,
     revealing an F or G supergiant
   * AGB phase ends as envelope is expelled, moving star nearly horizontally blueward
@@ -1466,15 +1463,15 @@ Xing’s notes
   * Planetary nebula: expanding shell of gas around white dwarf
     * Emitting visible spectrum due to UV from central star remnant
     * Complex morphologies due to preferentially equatorial ejection
-    * Receding at 10~30 km\overs, with character length scales of ~0.3 pc
-* Stars ≳ 8 M☉: see Ch. 15
+    * Receding at 10~30 km/s, with character length scales of ~0.3 pc
+* Stars $\gtrsim 8 M_\odot$: see Ch. 15
 
 ### Stellar populations
 
 * Stars give ISM back material enriched with more heavy elements than given
 * **Population III**: stars formed soon after the Big Bang with virtually no metals ($Z = 0$)
   * Found in extreme deep field observations to primordial galaxies
-* **Population II**: succeeding generations of metal-poor stars (Z ≳ 0)
+* **Population II**: succeeding generations of metal-poor stars ($Z \gtrsim 0$)
   * Found outside galactic disk and in globular clusters
 * **Population I**: current generations of metal-rich stars ($Z \approx 0.03$)
   * Found inside galactic disk and in open clusters
@@ -1531,10 +1528,10 @@ Xing’s notes
   evolved F stars near the main sequence, with both radial and nonradial oscillations
   on 1–3-hour periods
 * **ZZ Ceti stars**: pulsating white dwarfs with 100–1000-second periods
-* Instability strip: narrow, nearly vertical region on H–R diagram,
+* **Instability strip**: narrow, nearly vertical region on H–R diagram,
   right of the main sequence, where most pulsating stars are found,
   including the above types
-* **$\beta$ Cephei stars***: luminous (class III–V) blue variables with 3–7-hour periods;
+* **$\beta$ Cephei stars**: luminous (class III–V) blue variables with 3–7-hour periods;
   found in H–R’s upper left, outside the instability strip
 
 ### Radial pulsation mechanisms
@@ -1548,7 +1545,7 @@ Xing’s notes
   * Fundamental mode: node at star center, antinode at surface
   * Each overtone adds a node between center and surface
 * Surface amplitudes decreases with overtone:
-   ${\delta r\over R} \approx 0.07$ for fundamental, ≲ 0.01 for first, $\approx 0$ for second
+   ${\delta r\over R} \approx 0.07$ for fundamental, $\lesssim 0.01$ for first, $\approx 0$ for second
 * Eddington modeled stars as heat engines:
   layers doing positive net work on surroundings drive oscillations;
   those doing negative net work dampen them
@@ -1557,7 +1554,7 @@ Xing’s notes
 * **Nuclear $\epsilon$-mechanism**:
   compressing center raises temperature and density, increasing power generation
   * Amplitude usually too small to drive pulsation
-  * May contribute to preventing formation of ≳ 90 M☉ stars
+  * May contribute to preventing formation of $\gtrsim 90 M_\odot$ stars
 * Opacity $\kappa$ and $\gamma$ mechanisms:
   compressing layer increases opacity and traps heat, driving expansion
   * For most layers, opacity decreases with increased temperature from compression
@@ -1590,7 +1587,7 @@ Xing’s notes
 
 * Newton’s second law must be used instead of hydrostatic equilibrium model
   to account for oscillation of mass shells:
-  $\rho {d^2r \over dt^2} = – {GM\rho \over r^2} – {dP \over dr}
+  $\rho {d^2r \over dt^2} = – {GM\rho \over r^2} – {dP \over dr}$
 * Nonlinear evaluation can model complex, nonsinusoidal behavior of large-amplitude pulsations,
   but is very computationally expensive
 * Linearizable by approximating with small amplitudes,
@@ -1614,13 +1611,13 @@ Xing’s notes
 * Pressure waves: **p-modes**
   * Confined to low depths, revealing conditions in stellar surface layers
   * Both radial and angular nodes
-  * Acoustic frequency: S = \sqrt(\gammaP\over\rho) \sqrt(l^2+l)\overr
+  * Acoustic frequency $S = \sqrt{\gamma P \over \rho} {\sqrt{l(l+1)} \over r}$
   * Frequencies split by prograde and retrograde wave motion
-    proportional to star rotation rate \Omega: \DeltaS \propto m\Omega
+    proportional to star rotation rate: $\Delta S \propto m\Omega$
 * Internal gravity waves: **g-modes**
   * Reveals movement of stellar material in deep interior
   * Only have angular nodes
-  * Brunt–Väisälä (bouyancy) frequency: $N = \sqrt{–Ag}$
+  * **Brunt–Väisälä bouyancy frequency**: $N = \sqrt{–Ag}$
   * Confined to radiative zones, where $A < 0$: $A \equiv {1\over\gamma P} {dP \over dr} – {1\over\rho} {d\rho \over dr}$
 * Surface gravity waves: **f-modes**
   * Frequency inbetween p- and g-modes
@@ -1635,7 +1632,7 @@ Xing’s notes
 * Thick convection zone prevents surface observation of of g-modes
 * $\delta$ Scuti stars tend to pulsate in low-overtone radial modes, low-order p-modes,
   and possibly g-modes
-* Rapidly oscillating peculiar A stars (roAp) primarily pulsate in higher-order
+* **Rapidly oscillating peculiar A stars** (roAp) primarily pulsate in higher-order
   p-modes, with the pulsation axis aligned with their strong magnetic fields
   instead of the rotation axis
 
@@ -1643,25 +1640,25 @@ Xing’s notes
 
 ### Post-main-sequence evolution:
 
-| M (M☉) | path to supernova            |
-| ------ | ---------------------------- |
-| ≳85    | O →  Of → LBV → WN → WC → SN |
-| 40~85  | O →  Of →  WN → WC → SN      |
-| 25~40  | O → RSG →  WN → WC → SN      |
-| 20~25  | o → RSG →  WN → SN           |
-| 10~20  | O → RSG → BSG → SN           |
+| $M\;(M_\odot)$ | path to supernova            |
+| -------------- | ---------------------------- |
+| $\gtrsim85$    | O →  Of → LBV → WN → WC → SN |
+| $40\sim85$     | O →  Of →  WN → WC → SN      |
+| $25\sim40$     | O → RSG →  WN → WC → SN      |
+| $20\sim25$     | o → RSG →  WN → SN           |
+| $10\sim20$     | O → RSG → BSG → SN           |
 
-* Luminous blue variables (LBVs; prototype: S Doradus):
+* **Luminous blue variables** (LBVs; prototype: S Doradus):
   massive stars whose brightness suddenly erupt from time to time
-  * Effective temperatures between 15,000~30,000 K, masses ≳ 85 M☉,
-    and luminosities ≳10⁶ L☉ approaching the Eddington limit
+  * Effective temperatures between 15,000~30,000 K, masses $\gtrsim 85 M_\odot$,
+    and luminosities $\gtrsim10^6 L_\odot$ approaching the Eddington limit
   * Possible mechanisms behind behavior include
     envelope mass loss from temporarily exceeding Eddington limit,
     atmospheric pulsation instabilities, and binary companions
-* Wolf–Rayet stars (WR):
+* **Wolf–Rayet stars** (WR):
   very hot, rapidly rotating stars with unusually strong broad emission lines and high mass loss
-  * Effective temperatures between 25,000~100,000 K, masses ≳ 20 M☉,
-    mass loss rates ≳ 10^-⁵ M☉\overyear, and equatorial rotation speed ~300 km\overs
+  * Effective temperatures between 25,000~100,000 K, masses $\gtrsim 20 M_\odot$,
+    mass loss rates $\gtrsim 10^{-5} M_\odot/\text{year}$, and equatorial rotation speed ~300 km/s
   * Atypical spectral composition due to mass loss progressive stripping away outermost layers:
     WNs emission lines dominate in He and N; WCs in He and C; WOs in O
 * Blue supergiants (BSG)
