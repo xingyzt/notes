@@ -6,6 +6,12 @@
     <meta name=viewport content='width=device-width, initial-scale=1'>
     <style>
 
+@media (prefers-color-scheme: dark) {
+  html {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
+
 @font-face {
     font-family: 'cmu';
     src: url('/notes/assets/cmunrm.woff') format('woff');
@@ -61,6 +67,10 @@ h1 {
 h2 {
   border-bottom: 1px solid #426;
 }
+strong {
+  font-weight: normal;
+  text-decoration: dashed underline #426;
+}
 
 details {
   position: fixed;
@@ -115,6 +125,8 @@ ul, ol {
  padding-left: 0.2rem;
  border-left: 1px dashed #158;
 }
+    
+    
     
     </style>
   </head>
