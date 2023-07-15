@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <meta name=viewport content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/favicon.png">
     <style>
+
 :root {
   --text: #416;
-  --text-accent: #102;
+  --text-accent: #000;
   --link: #146;
   --link-accent: #012;
   --deco: #84e;
@@ -17,8 +19,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #daf;
-    --text-accent: #ecf;
+    --text: #ecf;
+    --text-accent: #fff;
     --link: #adf;
     --link-accent: #cef;
     --deco: #84e;
@@ -62,7 +64,7 @@ html {
   height: 100%;
 }
 html, body {
-  font-size: 14px;
+  font-size: 16px;
   font-family: cmu, serif;
   margin: 0;
   padding: 0;
@@ -92,9 +94,13 @@ h2 {
 h3 {
   scroll-margin: 3rem;
 }
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
 strong {
   font-weight: normal;
-  text-decoration: dashed underline var(--deco);
+  text-decoration: dotted underline var(--deco);
 }
 
 details {
@@ -103,18 +109,19 @@ details {
   width: 20rem;
   max-width: 100%;
   max-height: 100%;
-  padding: 1rem;
   overflow-y: scroll;
-  top: 0;
+  bottom: 0;
   background: var(--bg-accent);
   z-index: 1000;
 }
 
 summary {
   cursor: pointer;
+  font-weight: bold;
   user-select: none;
   position: sticky;
   top: 0;
+  padding: 1rem 0 0 1rem;
   background: var(--bg-accent);
 }
 
@@ -150,7 +157,10 @@ th, td {
 }
 
 #markdown-toc {
-  padding-left: 0;
+  padding-left: 1rem;
+}
+#markdown-toc > li:first-child {
+  display: none;
 }
 #markdown-toc ul {
   padding-left: 0.2rem;
@@ -158,11 +168,21 @@ th, td {
 #markdown-toc li {
  list-style: none;
 }
-#markdown-toc ul > li {
- font-size: 0.9em;
+#markdown-toc > li > ul li {
  padding-left: 0.2rem;
  border-left: 1px dashed var(--deco);
 }
+#markdown-toc > li {
+  font-weight: bold;
+}
+#markdown-toc > li > ul > li {
+  font-size: 1rem;
+  font-weight: normal;
+}
+#markdown-toc > li > ul > li > ul > li {
+  font-size: 0.8rem;
+}
+    
     
     </style>
   </head>
