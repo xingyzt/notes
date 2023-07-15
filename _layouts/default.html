@@ -170,12 +170,17 @@ th, td {
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        loader: {load: ['ui/lazy']}
-      };
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  loader: {load: ['ui/lazy']}
+};
+
+const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+headings.forEach(heading =>{
+  heading.innerHTML += '<a href="#' + headings[i].id + '">' + # + '</a>';
+})
     </script>
   </body>
 </html>
