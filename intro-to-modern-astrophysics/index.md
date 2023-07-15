@@ -1,11 +1,10 @@
 ---
 title: Xing’s notes on Carroll & Ostlie, Introduction to Modern Astrophysics
+layout: default
 ---
 
 * Table of contents
 {:toc}
-
-{% raw %}
 
 {% include_relative 1.md %}
 {% include_relative 2.md %}
@@ -22,5 +21,3 @@ title: Xing’s notes on Carroll & Ostlie, Introduction to Modern Astrophysics
 {% include_relative 13.md %}
 {% include_relative 14.md %}
 {% include_relative 15.md %}
-
-{% endraw %}
