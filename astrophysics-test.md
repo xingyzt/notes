@@ -114,7 +114,7 @@ Xing’s notes
 * **Stefan–Boltzmann**: $L = 4\pi R^2 \sigma T^4$
   * Where $T$ is effective temperature of the star’s surface,
     and $\sigma = 5.670 \times 10^{-8} \text{ W}\;\text{m}^{-2}\;\text{K}^{-4}$
-* **Planck’s function**: $B(T) = {{2hc^2 / \lambda^5} \over e^{hc / \lambda kT} − 1}$
+* **Planck’s function**: $B(T) = {2hc^2 / \lambda^5 \over e^{hc / \lambda kT} − 1}$
 
 ### Color index
 
@@ -537,7 +537,7 @@ Xing’s notes
 * Temperature, density, and composition of atmospheric layers determine
   spectral features
 * Specific ray intensity:
-  $I(\lambda) \;d\lambda \equiv {\partial I\over\partial\lambda} = {{\partial E\over\partial\lambda} d\lambda  \over d\lambda \;dt\;dA \cos \theta \;d\Omega }$,
+  $I(\lambda) \;d\lambda \equiv {\partial I\over\partial\lambda} = {\frac{\partial E}{\partial\lambda} d\lambda  \over d\lambda \;dt\;dA \cos \theta \;d\Omega }$,
   power transmitted at a certain wavelength within a certain solid angle
 * Mean intensity $\langle I(\lambda) \rangle = I(\lambda)$ for isotropic field; $= B(\lambda)$ for blackbody
 * Specific energy density $u(\lambda) \;d\lambda = {4\pi\over c} \langle I(\lambda) \rangle \;d\lambda$
@@ -1587,7 +1587,7 @@ Xing’s notes
   but results in sinusoidal oscillations with no amplitude information
 * Adiabatic approximation also used to minimize complexity,
   but nonlinear, nonadiabatic models are necessary for some variable stars
-* One-zone linear, adiabatic model: $\Pi = {2\pi \over \sqrt{ {4\pi\over3} G\rho(3\gamma–4) }$
+* One-zone linear, adiabatic model: $\Pi = {2\pi \over \sqrt{\frac{4\pi}3 G\rho(3\gamma–4) }}$
 * **Dynamic stability**: star collapses if $\gamma < {4\over3}$
 
 ### Nonradial pulsation mechanisms
