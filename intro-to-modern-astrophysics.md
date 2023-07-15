@@ -106,7 +106,7 @@ Xing’s notes
   $m − M = 5 \log_{10}d − 5$
 * For equally distant stars, ratio of radiant fluxes equals
   ratio of luminosities, thus ${L_2 \over L_1} = 100^{(M_1 − M_2)/5}$
-* $M__\odot = +4.74, L__\odot = 3.839 \times 10^{26} \text{ W}$
+* $M_\odot = +4.74, L_\odot = 3.839 \times 10^{26} \text{ W}$
 
 ### Light
 
@@ -928,7 +928,7 @@ Xing’s notes
 * **Differential rotation**: Doppler shifts at solar limb and solar oscillations
   show the solar rotation varies by latitude and by radius
   * Period of 25 days at equator lengths to 36 days at poles
-  * **Tachocline**: base of convection zone ($\approx 0.65 R__\odot$) where differing rotation rates converge,
+  * **Tachocline**: base of convection zone ($\approx 0.65 R_\odot$) where differing rotation rates converge,
     resulting in strong shear theorized to create plasma which
     generate the solar magnetic field
 
@@ -962,7 +962,7 @@ Xing’s notes
 * Essentially transparent to most EM radiation
 * Not in local thermodynamic equilibrium thus no strictly definable temperature,
   but estimated to be $\gtrsim 2 \times 10^6 \text{ K}$
-* Parker wind model: not in hydrostatic equilibrium as pressure does not vanish at infinity,
+* **Parker wind model**: not in hydrostatic equilibrium as pressure does not vanish at infinity,
   implying solar wind
 * Kontinuierlich/continuous **K corona**:
   * From free electron scattering of photospheric light primary between $1 \sim 2.3 R_\odot$
