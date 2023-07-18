@@ -33,8 +33,10 @@ Xing’s notes
 {% include_relative 13.md %}
 {% include_relative 14.md %}
 {% include_relative 15.md %}
+{% include_relative 16.md %}
+{% include_relative 17.md %}
+{% include_relative 18.md %}
 
 # III. The Solar System
 
 # IV.  Galaxies and the Universe
-
