@@ -1,11 +1,22 @@
-* [x] Math 53, Multivariable: Guichard, Early Transcendentals, ch.10-16
-* [x] Math 55, Discrete: Rosen, Discrete Mathematics, ch.1-11
-* [ ] Physics 89: Mathematical: Boas, Mathematical Physics, all
-* [x] Astro 7A, Intro Stellar: Carroll & Ostlie, Intro to Astrophysics, ch.1-18
-* [ ] Astro 7B, Intro Cosmo: Carroll & Ostlie, Intro to Astrophysics, ch.24-30
-* [ ] Math 110, Linear Algebra: Axler, Linear Algebra, all
-* [ ] Physics 110, Electrodynamics: Griffith, Intro Electrodynamics, all
-* [ ] Physics 105, Analytical Mechanics: Morin, Classical Mechanics, all (currently ch.1-6)
-* [ ] Physics 105, Analytical Mechanics: Taylor, Classical Mechanics, all
-* [ ] Physics 5C, Quantum: Shankar, Intro to Quantum, all
-* [ ] Physics 5C, Thermo: Blundell, Thermal Physics, all
+## Summer 2023
+
+* [x] _Math 53:_ Guichard, Early Transcendentals, ch.10-16
+* [x] _Math 55:_ Rosen, Discrete Mathematics, ch.1-11
+* [ ] _Physics 89:_ Boas, Mathematical Physics, all
+* [x] _Astro 7A:_ Carroll & Ostlie, Intro to Astrophysics, ch.1-18
+
+## Fall 2023
+
+* [ ] Physics 105: Taylor, Classical Mechanics, all
+* [ ] Math 110: Axler, Linear Algebra, all
+* [ ] _Astro 7B, Intro Cosmo:_ Carroll & Ostlie, Intro to Astrophysics, ch.24-30
+
+## Spring 2024
+
+* [ ] Physics 110A: Griffith, Intro Electrodynamics, all
+* [ ] Physics 5C: Shankar, Intro to Quantum, all
+* [ ] Physics 5C: Blundell, Thermal Physics, all
+
+## Fall 2024 +
+
+* [ ] Physics ?: Morin, Classical Mechanics, all (currently ch.1-6)
