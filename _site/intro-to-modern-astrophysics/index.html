@@ -1,0 +1,3756 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Xing’s notes on Carroll & Ostlie, Introduction to Modern Astrophysics</title>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              delimiters: [
+                  //{left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  //{left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError : false
+            });
+            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+            headings.forEach(heading =>{
+              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+            });
+        });
+    </script>
+    <style>
+
+
+:root {
+  --text: #416;
+  --text-accent: #000;
+  --link: #146;
+  --link-accent: #012;
+  --deco: #84e;
+  --bg: #ecf;
+  --bg-accent: #daf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ecf;
+    --text-accent: #fff;
+    --link: #adf;
+    --link-accent: #cef;
+    --deco: #84e;
+    --bg: #416;
+    --bg-accent: #417;
+  }
+}
+
+@media print {
+  :root {
+    --text: #000;
+    --link: #000;
+    --deco: #000;
+    --bg: #fff;
+  }
+  details {
+    display: none;
+  }
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunrm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunti.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbx.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbi.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+html, body {
+  font-size: 16px;
+  font-family: cmu, serif;
+  margin: 0;
+  padding: 0;
+}
+html * {
+  box-sizing: border-box;
+}
+body {
+  width: 50rem;
+  height: auto;
+  padding: 1rem;
+  max-width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1 {
+  text-align: center;
+}
+h2 {
+  border-bottom: 1px solid var(--deco);
+  background: var(--bg);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+h3 {
+  scroll-margin: 3rem;
+}
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
+strong {
+  font-weight: normal;
+  text-decoration: dotted underline var(--deco);
+}
+
+details {
+  position: fixed;
+  right: 0;
+  width: 20rem;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  bottom: 0;
+  background: var(--bg-accent);
+  z-index: 1000;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0 1rem;
+  background: var(--bg-accent);
+}
+
+a, summary {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover, a:focus, summary:hover, summary:focus {
+  text-decoration: underline;
+  color: var(--link-accent);
+}
+a:active, summary:active {
+  background: var(--link);
+  color: var(--bg-accent);
+}
+
+ul, ol {
+  margin-left: 0rem;
+  padding-left: 1rem;
+}
+li:hover {
+  color: var(--text-accent);
+}
+
+table {
+  border: 1px solid var(--deco);
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px dashed var(--deco);
+  text-align: center;
+}
+
+#markdown-toc {
+  padding-left: 1rem;
+}
+#markdown-toc > li:first-child {
+  display: none;
+}
+#markdown-toc ul {
+  padding-left: 0.2rem;
+}
+#markdown-toc li {
+ list-style: none;
+}
+#markdown-toc > li > ul li {
+ padding-left: 0.2rem;
+ border-left: 1px dashed var(--deco);
+}
+#markdown-toc > li {
+  font-weight: bold;
+}
+#markdown-toc > li > ul > li {
+  font-size: 1rem;
+  font-weight: normal;
+}
+#markdown-toc > li > ul > li > ul > li {
+  font-size: 0.8rem;
+}
+    
+    
+    
+    </style>
+  </head>
+  <body>
+    <h1 id="carroll--ostlie-introduction-to-modern-astrophysics">Carroll &amp; Ostlie, Introduction to Modern Astrophysics</h1>
+
+<p>Xing’s notes</p>
+
+<details>
+  <summary>Table of Contents</summary>
+<ul id="markdown-toc">
+  <li><a href="#carroll--ostlie-introduction-to-modern-astrophysics" id="markdown-toc-carroll--ostlie-introduction-to-modern-astrophysics">Carroll &amp; Ostlie, Introduction to Modern Astrophysics</a></li>
+  <li><a href="#i-the-tools-of-astronomy" id="markdown-toc-i-the-tools-of-astronomy">I. The Tools of Astronomy</a>    <ul>
+      <li><a href="#the-celestial-sphere" id="markdown-toc-the-celestial-sphere">1. The Celestial Sphere</a>        <ul>
+          <li><a href="#altitudeazimuth-coordinate-system" id="markdown-toc-altitudeazimuth-coordinate-system">Altitude–Azimuth Coordinate System</a></li>
+          <li><a href="#equatorial-coordinate-system" id="markdown-toc-equatorial-coordinate-system">Equatorial Coordinate System</a></li>
+          <li><a href="#precession" id="markdown-toc-precession">Precession</a></li>
+          <li><a href="#time-standards" id="markdown-toc-time-standards">Time standards</a></li>
+          <li><a href="#motions" id="markdown-toc-motions">Motions</a></li>
+          <li><a href="#spherical-trigonometry" id="markdown-toc-spherical-trigonometry">Spherical Trigonometry</a></li>
+        </ul>
+      </li>
+      <li><a href="#celestial-mechanics" id="markdown-toc-celestial-mechanics">2. Celestial Mechanics</a>        <ul>
+          <li><a href="#ellipses" id="markdown-toc-ellipses">Ellipses</a></li>
+          <li><a href="#keplers-laws" id="markdown-toc-keplers-laws">Kepler’s Laws</a></li>
+          <li><a href="#orbital-equations" id="markdown-toc-orbital-equations">Orbital equations</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-continuous-spectrum-of-light" id="markdown-toc-the-continuous-spectrum-of-light">3. The Continuous Spectrum of Light</a>        <ul>
+          <li><a href="#parallax-and-parsecs-pc" id="markdown-toc-parallax-and-parsecs-pc">Parallax and parsecs (pc)</a></li>
+          <li><a href="#apparent-magnitude" id="markdown-toc-apparent-magnitude">Apparent magnitude</a></li>
+          <li><a href="#absolute-magnitude" id="markdown-toc-absolute-magnitude">Absolute magnitude</a></li>
+          <li><a href="#light" id="markdown-toc-light">Light</a></li>
+          <li><a href="#blackbody-radiation" id="markdown-toc-blackbody-radiation">Blackbody radiation</a></li>
+          <li><a href="#color-index" id="markdown-toc-color-index">Color index</a></li>
+        </ul>
+      </li>
+      <li><a href="#special-relativity" id="markdown-toc-special-relativity">4. Special Relativity</a>        <ul>
+          <li><a href="#einsteins-postulates" id="markdown-toc-einsteins-postulates">Einstein’s postulates:</a></li>
+          <li><a href="#lorentz-transformations" id="markdown-toc-lorentz-transformations">Lorentz transformations:</a></li>
+          <li><a href="#relativistic-doppler-shifts" id="markdown-toc-relativistic-doppler-shifts">Relativistic doppler shifts</a></li>
+          <li><a href="#relativistic-momentum-and-energy" id="markdown-toc-relativistic-momentum-and-energy">Relativistic momentum and energy</a></li>
+        </ul>
+      </li>
+      <li><a href="#interaction-of-light-and-matter" id="markdown-toc-interaction-of-light-and-matter">5. Interaction of Light and Matter</a>        <ul>
+          <li><a href="#kirchoffs-laws" id="markdown-toc-kirchoffs-laws">Kirchoff’s Laws</a></li>
+          <li><a href="#spectrographs" id="markdown-toc-spectrographs">Spectrographs</a></li>
+          <li><a href="#photoelectric-effect" id="markdown-toc-photoelectric-effect">Photoelectric effect</a></li>
+          <li><a href="#compton-scattering" id="markdown-toc-compton-scattering">Compton scattering</a></li>
+          <li><a href="#bohrs-semiclassical-atom" id="markdown-toc-bohrs-semiclassical-atom">Bohr’s semiclassical atom</a></li>
+          <li><a href="#de-broglie-waves" id="markdown-toc-de-broglie-waves">De Broglie waves</a></li>
+          <li><a href="#heisenbergs-uncertainty-principle" id="markdown-toc-heisenbergs-uncertainty-principle">Heisenberg’s Uncertainty Principle</a></li>
+          <li><a href="#schrdingers-quantum-atom" id="markdown-toc-schrdingers-quantum-atom">Schrödinger's quantum atom</a></li>
+          <li><a href="#normal-zeeman-effect" id="markdown-toc-normal-zeeman-effect">Normal Zeeman effect</a></li>
+          <li><a href="#anomalous-zeeman-effect-and-spin" id="markdown-toc-anomalous-zeeman-effect-and-spin">Anomalous Zeeman effect and Spin</a></li>
+          <li><a href="#fermions-and-bosons" id="markdown-toc-fermions-and-bosons">Fermions and bosons</a></li>
+          <li><a href="#complex-spectra" id="markdown-toc-complex-spectra">Complex spectra</a></li>
+        </ul>
+      </li>
+      <li><a href="#telescopes" id="markdown-toc-telescopes">6. Telescopes</a>        <ul>
+          <li><a href="#basic-optics" id="markdown-toc-basic-optics">Basic optics</a></li>
+          <li><a href="#resolution" id="markdown-toc-resolution">Resolution</a></li>
+          <li><a href="#brightness" id="markdown-toc-brightness">Brightness</a></li>
+          <li><a href="#optical-telescopes" id="markdown-toc-optical-telescopes">Optical telescopes</a></li>
+          <li><a href="#radio-telescopes" id="markdown-toc-radio-telescopes">Radio telescopes</a></li>
+          <li><a href="#iruvx-raygamma-ray-astronomy" id="markdown-toc-iruvx-raygamma-ray-astronomy">IR/UV/X-ray/gamma-ray astronomy</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#ii-the-nature-of-stars" id="markdown-toc-ii-the-nature-of-stars">II. The Nature of Stars</a>    <ul>
+      <li><a href="#binary-systems-and-stellar-parameters" id="markdown-toc-binary-systems-and-stellar-parameters">7. Binary Systems and Stellar Parameters</a>        <ul>
+          <li><a href="#classifications" id="markdown-toc-classifications">Classifications</a></li>
+          <li><a href="#mass-determination-of-visual-binaries" id="markdown-toc-mass-determination-of-visual-binaries">Mass determination of visual binaries</a></li>
+          <li><a href="#mass-determination-of-spectroscopic-binarie" id="markdown-toc-mass-determination-of-spectroscopic-binarie">Mass determination of spectroscopic binarie</a></li>
+          <li><a href="#temperature-ratio-and-radii-determination-of-eclipsing-binaries" id="markdown-toc-temperature-ratio-and-radii-determination-of-eclipsing-binaries">Temperature ratio and radii determination of eclipsing binaries</a></li>
+          <li><a href="#computer-modeling" id="markdown-toc-computer-modeling">Computer modeling</a></li>
+          <li><a href="#extrasolar-planets-exoplanets" id="markdown-toc-extrasolar-planets-exoplanets">Extrasolar planets (exoplanets)</a></li>
+        </ul>
+      </li>
+      <li><a href="#classification-of-stellar-spectra" id="markdown-toc-classification-of-stellar-spectra">8. Classification of Stellar Spectra</a>        <ul>
+          <li><a href="#harvard-spectral-types" id="markdown-toc-harvard-spectral-types">Harvard spectral types</a></li>
+          <li><a href="#spectral-physics" id="markdown-toc-spectral-physics">Spectral physics</a></li>
+          <li><a href="#hertzsprungrussell-diagram" id="markdown-toc-hertzsprungrussell-diagram">Hertzsprung–Russell diagram</a></li>
+          <li><a href="#morgankeenan-luminosity-classes" id="markdown-toc-morgankeenan-luminosity-classes">Morgan−Keenan luminosity classes</a></li>
+        </ul>
+      </li>
+      <li><a href="#stellar-atmospheres" id="markdown-toc-stellar-atmospheres">9. Stellar Atmospheres</a>        <ul>
+          <li><a href="#radiation-field" id="markdown-toc-radiation-field">Radiation field</a></li>
+          <li><a href="#temperature" id="markdown-toc-temperature">Temperature</a></li>
+          <li><a href="#opacity" id="markdown-toc-opacity">Opacity</a></li>
+          <li><a href="#radiative-transfer" id="markdown-toc-radiative-transfer">Radiative transfer</a></li>
+          <li><a href="#spectral-line-profile" id="markdown-toc-spectral-line-profile">Spectral line profile</a></li>
+          <li><a href="#computer-modeling-1" id="markdown-toc-computer-modeling-1">Computer modeling</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-interiors-of-stars" id="markdown-toc-the-interiors-of-stars">10. The Interiors of Stars</a>        <ul>
+          <li><a href="#hydrostatic-equilibrium" id="markdown-toc-hydrostatic-equilibrium">Hydrostatic equilibrium</a></li>
+          <li><a href="#kelvinhelmholtz-mechanism" id="markdown-toc-kelvinhelmholtz-mechanism">Kelvin–Helmholtz mechanism</a></li>
+          <li><a href="#nuclear-fusion" id="markdown-toc-nuclear-fusion">Nuclear fusion</a></li>
+          <li><a href="#nucleosynthesis" id="markdown-toc-nucleosynthesis">Nucleosynthesis</a></li>
+          <li><a href="#energy-transport-and-thermodynamics" id="markdown-toc-energy-transport-and-thermodynamics">Energy transport and thermodynamics</a></li>
+          <li><a href="#stellar-model-building" id="markdown-toc-stellar-model-building">Stellar model building</a></li>
+          <li><a href="#main-sequence" id="markdown-toc-main-sequence">Main sequence</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-sun" id="markdown-toc-the-sun">11. The Sun</a>        <ul>
+          <li><a href="#solar-interior" id="markdown-toc-solar-interior">Solar interior</a></li>
+          <li><a href="#photosphere" id="markdown-toc-photosphere">Photosphere</a></li>
+          <li><a href="#chromosphere" id="markdown-toc-chromosphere">Chromosphere</a></li>
+          <li><a href="#transition-region" id="markdown-toc-transition-region">Transition region</a></li>
+          <li><a href="#corona" id="markdown-toc-corona">Corona</a></li>
+          <li><a href="#solar-wind" id="markdown-toc-solar-wind">Solar wind</a></li>
+          <li><a href="#magnetohydrodynamics-mhd" id="markdown-toc-magnetohydrodynamics-mhd">Magnetohydrodynamics (MHD)</a></li>
+          <li><a href="#sunspots" id="markdown-toc-sunspots">Sunspots</a></li>
+          <li><a href="#plages" id="markdown-toc-plages">Plages</a></li>
+          <li><a href="#flares" id="markdown-toc-flares">Flares</a></li>
+          <li><a href="#prominences" id="markdown-toc-prominences">Prominences</a></li>
+          <li><a href="#coronal-mass-ejections-cmes" id="markdown-toc-coronal-mass-ejections-cmes">Coronal mass ejections (CMEs)</a></li>
+          <li><a href="#magnetic-activity-in-other-stars" id="markdown-toc-magnetic-activity-in-other-stars">Magnetic activity in other stars</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-interstellar-medium-and-star-formation" id="markdown-toc-the-interstellar-medium-and-star-formation">12. The Interstellar Medium and Star Formation</a>        <ul>
+          <li><a href="#interstellar-medium-ism" id="markdown-toc-interstellar-medium-ism">Interstellar medium (ISM)</a></li>
+          <li><a href="#dust" id="markdown-toc-dust">Dust</a></li>
+          <li><a href="#hydrogen" id="markdown-toc-hydrogen">Hydrogen</a></li>
+          <li><a href="#interstellar-cloud-structure" id="markdown-toc-interstellar-cloud-structure">Interstellar cloud structure</a></li>
+          <li><a href="#interstellar-cloud-heating-and-cooling" id="markdown-toc-interstellar-cloud-heating-and-cooling">Interstellar cloud heating and cooling</a></li>
+          <li><a href="#protostar-formation" id="markdown-toc-protostar-formation">Protostar formation</a></li>
+          <li><a href="#protostar-evolution" id="markdown-toc-protostar-evolution">Protostar evolution</a></li>
+          <li><a href="#protostar-observation" id="markdown-toc-protostar-observation">Protostar observation</a></li>
+          <li><a href="#pre-main-sequence-evolution" id="markdown-toc-pre-main-sequence-evolution">Pre-main-sequence evolution</a></li>
+          <li><a href="#stellar-formation-effects-on-medium" id="markdown-toc-stellar-formation-effects-on-medium">Stellar formation effects on medium</a></li>
+          <li><a href="#modifications-to-classical-model" id="markdown-toc-modifications-to-classical-model">Modifications to classical model</a></li>
+        </ul>
+      </li>
+      <li><a href="#main-sequence-and-post-main-sequence-stellar-evolution" id="markdown-toc-main-sequence-and-post-main-sequence-stellar-evolution">13. Main Sequence and Post-Main-Sequence Stellar Evolution</a>        <ul>
+          <li><a href="#main-sequence-ms" id="markdown-toc-main-sequence-ms">Main sequence (MS)</a></li>
+          <li><a href="#subgiant-branch-sgb" id="markdown-toc-subgiant-branch-sgb">Subgiant branch (SGB)</a></li>
+          <li><a href="#red-giant-branch-rgb" id="markdown-toc-red-giant-branch-rgb">Red giant branch (RGB)</a></li>
+          <li><a href="#red-giant-tip--start-of-helium-fusion" id="markdown-toc-red-giant-tip--start-of-helium-fusion">Red giant tip / start of helium fusion</a></li>
+          <li><a href="#horizontal-branch-hb--blue-loop" id="markdown-toc-horizontal-branch-hb--blue-loop">Horizontal branch (HB) / blue loop</a></li>
+          <li><a href="#early-asymptotic-giant-branch-e-agb" id="markdown-toc-early-asymptotic-giant-branch-e-agb">Early asymptotic giant branch (E-AGB)</a></li>
+          <li><a href="#thermally-pulsating-agb-tp-agb" id="markdown-toc-thermally-pulsating-agb-tp-agb">Thermally-pulsating AGB (TP-AGB)</a></li>
+          <li><a href="#late-and-post-agb" id="markdown-toc-late-and-post-agb">Late and post-AGB</a></li>
+          <li><a href="#stellar-populations" id="markdown-toc-stellar-populations">Stellar populations</a></li>
+          <li><a href="#stellar-clusters" id="markdown-toc-stellar-clusters">Stellar clusters</a></li>
+        </ul>
+      </li>
+      <li><a href="#stellar-pulsation" id="markdown-toc-stellar-pulsation">14. Stellar Pulsation</a>        <ul>
+          <li><a href="#observations" id="markdown-toc-observations">Observations</a></li>
+          <li><a href="#radial-pulsation-mechanisms" id="markdown-toc-radial-pulsation-mechanisms">Radial pulsation mechanisms</a></li>
+          <li><a href="#pulsation-model" id="markdown-toc-pulsation-model">Pulsation model</a></li>
+          <li><a href="#nonradial-pulsation-mechanisms" id="markdown-toc-nonradial-pulsation-mechanisms">Nonradial pulsation mechanisms</a></li>
+          <li><a href="#helioseismology-and-asteroseismology" id="markdown-toc-helioseismology-and-asteroseismology">Helioseismology and asteroseismology</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-fate-of-massive-stars" id="markdown-toc-the-fate-of-massive-stars">15. The Fate of Massive Stars</a>        <ul>
+          <li><a href="#post-main-sequence-evolution" id="markdown-toc-post-main-sequence-evolution">Post-main-sequence evolution</a></li>
+          <li><a href="#supernova-observation-and-classification" id="markdown-toc-supernova-observation-and-classification">Supernova observation and classification</a></li>
+          <li><a href="#core-collapse-supernovae" id="markdown-toc-core-collapse-supernovae">Core-collapse supernovae</a></li>
+          <li><a href="#supernova-nucleosynthesis" id="markdown-toc-supernova-nucleosynthesis">Supernova nucleosynthesis</a></li>
+          <li><a href="#gamma-ray-bursts-grb" id="markdown-toc-gamma-ray-bursts-grb">Gamma-ray bursts (GRB)</a></li>
+          <li><a href="#longsoft-grbs" id="markdown-toc-longsoft-grbs">Long–soft GRBs</a></li>
+          <li><a href="#cosmic-rays" id="markdown-toc-cosmic-rays">Cosmic rays</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-degenerate-remnants-of-stars" id="markdown-toc-the-degenerate-remnants-of-stars">16. The Degenerate Remnants of Stars</a>        <ul>
+          <li><a href="#white-dwarfs-wd" id="markdown-toc-white-dwarfs-wd">White dwarfs (WD)</a></li>
+          <li><a href="#degenerate-matter" id="markdown-toc-degenerate-matter">Degenerate matter</a></li>
+          <li><a href="#neutron-stars-ns" id="markdown-toc-neutron-stars-ns">Neutron stars (NS)</a></li>
+          <li><a href="#pulsars" id="markdown-toc-pulsars">Pulsars</a></li>
+          <li><a href="#magnetars" id="markdown-toc-magnetars">Magnetars</a></li>
+        </ul>
+      </li>
+      <li><a href="#general-relativity-and-black-holes" id="markdown-toc-general-relativity-and-black-holes">17. General Relativity and Black Holes</a>        <ul>
+          <li><a href="#general-relativity" id="markdown-toc-general-relativity">General relativity</a></li>
+          <li><a href="#intervals-and-geodesics" id="markdown-toc-intervals-and-geodesics">Intervals and geodesics</a></li>
+          <li><a href="#black-holes-bh" id="markdown-toc-black-holes-bh">Black holes (BH)</a></li>
+        </ul>
+      </li>
+      <li><a href="#closed-binary-star-systems" id="markdown-toc-closed-binary-star-systems">18. Closed Binary Star Systems</a>        <ul>
+          <li><a href="#gravitation" id="markdown-toc-gravitation">Gravitation</a></li>
+          <li><a href="#accretion-disks" id="markdown-toc-accretion-disks">Accretion disks</a></li>
+          <li><a href="#classification" id="markdown-toc-classification">Classification</a></li>
+          <li><a href="#cataclysmic-variable-evolution" id="markdown-toc-cataclysmic-variable-evolution">Cataclysmic variable evolution</a></li>
+          <li><a href="#cataclysmic-variables" id="markdown-toc-cataclysmic-variables">Cataclysmic variables</a></li>
+          <li><a href="#classical-nova-cycle" id="markdown-toc-classical-nova-cycle">Classical nova cycle</a></li>
+          <li><a href="#type-ia-supernovae" id="markdown-toc-type-ia-supernovae">Type Ia supernovae</a></li>
+          <li><a href="#neutron-star-binary-formation-processes" id="markdown-toc-neutron-star-binary-formation-processes">Neutron star binary formation processes</a></li>
+          <li><a href="#x-ray-binaries" id="markdown-toc-x-ray-binaries">X-ray binaries</a></li>
+          <li><a href="#x-ray-binary-remnants" id="markdown-toc-x-ray-binary-remnants">X-ray binary remnants</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#iii-the-solar-system" id="markdown-toc-iii-the-solar-system">III. The Solar System</a></li>
+  <li><a href="#iv--galaxies-and-the-universe" id="markdown-toc-iv--galaxies-and-the-universe">IV.  Galaxies and the Universe</a></li>
+</ul>
+
+</details>
+
+<h1 id="i-the-tools-of-astronomy">I. The Tools of Astronomy</h1>
+
+<section>
+
+  <h2 id="the-celestial-sphere">1. The Celestial Sphere</h2>
+
+  <h3 id="altitudeazimuth-coordinate-system">Altitude–Azimuth Coordinate System</h3>
+
+  <ul>
+    <li>Local to observer location and day of year</li>
+    <li><strong>Altitude</strong> $h$ measured from horizon towards zenith.</li>
+    <li><strong>Zenith</strong> $z = 90^\circ - h$</li>
+    <li><strong>Azimuth</strong> $A$ measured from north on the horizon, clockwise, first towards
+east on the horizon</li>
+  </ul>
+
+  <h3 id="equatorial-coordinate-system">Equatorial Coordinate System</h3>
+
+  <ul>
+    <li><strong>Celestial equator</strong>: plane passing through Earth’s equator</li>
+    <li><strong>Ecliptic</strong>: path of sun across seasons</li>
+    <li><strong>Vernal equinox</strong>: When ecliptic/sun crosses the celestial equator northward</li>
+    <li><strong>Declination</strong> $\delta$ measured in degrees N/S of celestial equator</li>
+    <li><strong>Right ascension</strong> $\alpha$ measured in hour-minute-seconds from vernal equinox
+eastward to hour circle of object</li>
+    <li><strong>Meridian</strong>: great circle intersecting observer and the poles</li>
+    <li><strong>Hour angle</strong> $H$ angle between object and meridian of observer</li>
+    <li><strong>Local sidereal time</strong>: time elapsed since vernal equinox last traversed
+the meridian; hour angle of that intersection</li>
+  </ul>
+
+  <h3 id="precession">Precession</h3>
+
+  <ul>
+    <li>$25\,770$-year cycle of wobbling</li>
+    <li>Necessitates use of epochs in the coordinate system</li>
+    <li><strong>J2000.0</strong>: Standard epoch, zero at noon 2000−01−01 UT
+(universal time, measured from Greenwich)</li>
+    <li>Uses Julian Calendar (365.25 d/yr), without Gregorian corrections</li>
+  </ul>
+
+  <h3 id="time-standards">Time standards</h3>
+
+  <ul>
+    <li><strong>Julian Date</strong> (JD): Days since Noon 4713BC−01−01</li>
+    <li><strong>Heliocentric Julian Date</strong> (HJD): From center of Sun</li>
+    <li><strong>Terrestrial Time</strong> (TT): From surface of Earth factoring in relativity</li>
+  </ul>
+
+  <h3 id="motions">Motions</h3>
+
+  <ul>
+    <li><strong>Radial velocity</strong> $v_r$ (positive is away)</li>
+    <li><strong>Proper motion</strong> $\mu$ (arcseconds/year)</li>
+    <li>Transverse/<strong>tangential velocity</strong> $v_\theta = \mu \cdot r$</li>
+  </ul>
+
+  <h3 id="spherical-trigonometry">Spherical Trigonometry</h3>
+
+  <ul>
+    <li>Sides with arclengths $a, b, c$ meet at angles $A, B, C$</li>
+    <li><strong>Law of sines</strong>: ${ \sin a \over \sin A} = {\sin b \over \sin B} = {\sin c \over \sin C}$</li>
+    <li><strong>Law of cosines for sides</strong>: $\cos a = \cos b \cos c + \sin b \sin c \cos A$</li>
+    <li><strong>Law of cosines for angles</strong>: $\cos A = − \cos B \cos C + \sin B \sin C \cos a$</li>
+    <li>For a proper motion with position angle $\phi$ (direction measured) and
+arclength $\Delta\theta$,
+      <ul>
+        <li>$\Delta\alpha = {\Delta\theta \sin \phi \over \cos \delta}$</li>
+        <li>$\Delta\delta = \Delta\theta \cos \phi$</li>
+        <li>$(\Delta\theta)^2 = (\Delta\alpha \cos \delta)^2 + (\Delta\delta)^2$</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="celestial-mechanics">2. Celestial Mechanics</h2>
+
+  <h3 id="ellipses">Ellipses</h3>
+
+  <ul>
+    <li><strong>Semi−major axis</strong> $a$; <strong>Semi−minor axis</strong> $b$</li>
+    <li><strong>Eccentricity</strong> $e : ae = {d\over2}$, where $d$ is distance between foci</li>
+    <li>$b^2 = a^2 (1 − e^2)$</li>
+    <li>Polar form $r = {a (1 − e^2) \over 1 + e \cos \theta}$</li>
+    <li>Area $A = \pi ab$</li>
+  </ul>
+
+  <h3 id="keplers-laws">Kepler’s Laws</h3>
+
+  <ol>
+    <li>Ellpitical orbits: $r = {L^2/\mu^2 \over GM(1 + e \cos \theta)}$</li>
+    <li>Equal area over equal time: ${dA \over dt} = {L \over 2\mu}$ (constant)</li>
+    <li>Period–axis relation: $P^2 = ka^3$, $k = {4\pi^2 \over G(M+m)} = 1 \text{ year}^2\text{ AU}^{-3}$</li>
+  </ol>
+
+  <h3 id="orbital-equations">Orbital equations</h3>
+
+  <ul>
+    <li><strong>Virial theorem</strong>: $\langle E \rangle = {\langle U \rangle \over 2}$, $\langle U \rangle = −2\langle K\rangle$</li>
+    <li><strong>Vis−viva</strong>: $v^2 = G(M+m)\left({2\over r} − {1 \over a}\right)$</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="the-continuous-spectrum-of-light">3. The Continuous Spectrum of Light</h2>
+
+  <h3 id="parallax-and-parsecs-pc">Parallax and parsecs (pc)</h3>
+
+  <ul>
+    <li>Parallax angle $p''$ (arcseconds), subtended by quarter orbit of Earth (1 AU)</li>
+    <li>Distance $d_\text{AU} = {206,265 \over p''}$, $d_\text{pc} = {1 \over p″}$</li>
+  </ul>
+
+  <h3 id="apparent-magnitude">Apparent magnitude</h3>
+
+  <ul>
+    <li>Originally compiled by Hipparchus: 1 for brightest, 6 for dimmest</li>
+    <li>Modern definition: ${F_2 \over F_1} = 100^{(m_1 − m_2)/5}$
+      <ul>
+        <li>Where radiant flux is density of emitted light: $F = {L\over 4\pi r^2}$</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="absolute-magnitude">Absolute magnitude</h3>
+
+  <ul>
+    <li>$M$ for stars, apparent magnitude measured as if it’s located at 10 pc</li>
+    <li>$H$ for planets, measured if located at 1 AU</li>
+    <li><strong>Distance modulus</strong> $d = 10^{(m − M + 5)/5}$,
+$m − M = 5 \log_{10}d − 5$</li>
+    <li>For equally distant stars, ratio of radiant fluxes equals
+ratio of luminosities, thus ${L_2 \over L_1} = 100^{(M_1 − M_2)/5}$</li>
+    <li>$M_\odot = +4.74, L_\odot = 3.839 \times 10^{26} \text{ W}$</li>
+  </ul>
+
+  <h3 id="light">Light</h3>
+
+  <ul>
+    <li><strong>Wave speed</strong> $c = \lambda\nu$</li>
+    <li><strong>Poyinting vector</strong> $\vec S = {\vec E \times \vec B \over \mu_0}, \langle S \rangle = {E_0B_0 \over 2\mu_0}$</li>
+    <li><strong>Radiation pressure</strong> $P_\text{absorption} = {\langle S \rangle A \cos \theta \over c}$,
+$P_\text{reflection} = {2\langle S \rangle A \cos^2\theta \over c}$</li>
+  </ul>
+
+  <h3 id="blackbody-radiation">Blackbody radiation</h3>
+
+  <ul>
+    <li><strong>Wien’s displacement</strong>: $\max(\lambda) = {0.002898 \text{ m K} \over T}$</li>
+    <li><strong>Stefan–Boltzmann</strong>: $L = 4\pi R^2 \sigma T^4$
+      <ul>
+        <li>Where $T$ is effective temperature of the star’s surface,
+and $\sigma = 5.670 \times 10^{-8} \text{ W}\;\text{m}^{-2}\;\text{K}^{-4}$</li>
+      </ul>
+    </li>
+    <li><strong>Planck’s function</strong>: $B(T) = {2hc^2 / \lambda^5 \over e^{hc / \lambda kT} − 1}$</li>
+  </ul>
+
+  <h3 id="color-index">Color index</h3>
+
+  <ul>
+    <li><strong>Bolumetric magnitudes</strong>: measured over all wavelengths</li>
+    <li>In practice, detectors only measure certain ranges, to varying
+degrees of sensitivity</li>
+    <li>Standard filters:</li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th> </th>
+        <th>name</th>
+        <th>center</th>
+        <th>bandwidth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>U</td>
+        <td>UV</td>
+        <td>365 nm</td>
+        <td>68 nm</td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td>blue</td>
+        <td>440 nm</td>
+        <td>98 nm</td>
+      </tr>
+      <tr>
+        <td>V</td>
+        <td>visual</td>
+        <td>550 nm</td>
+        <td>89 nm</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul>
+    <li>Isolated letters are apparent magnitudes; $M_x$ are absolute</li>
+    <li>U−B color index: $U − B = M_U − M_B$</li>
+    <li><strong>B−V color index</strong>: $B − V = M_B − M_V$ (smaller is bluer)</li>
+    <li><strong>Bolumetric correction</strong>: $BC = m_\text{bol} − V = M_\text{bol} − M_V$</li>
+    <li><strong>Color−color diagrams</strong> graph U−B against B−V,
+showing stars are non−ideal blackbodies</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="special-relativity">4. Special Relativity</h2>
+
+  <ul>
+    <li><em>Notation: prime (′) means observed, unprimed means rest</em></li>
+  </ul>
+
+  <h3 id="einsteins-postulates">Einstein’s postulates:</h3>
+
+  <ol>
+    <li><strong>Principle of relativity</strong>: Laws of physics are the same in all inertial
+reference frames</li>
+    <li><strong>Constancy of the speed of light</strong>: In vacuum, $c$ is independent of the motion
+of the light source</li>
+  </ol>
+
+  <h3 id="lorentz-transformations">Lorentz transformations:</h3>
+
+  <ul>
+    <li><strong>Lorentz factor</strong> $\gamma \equiv {1 \over \sqrt{1 − {u^2 \over c^2}}}$</li>
+    <li><strong>Time dilation</strong> $t' = \gamma t$</li>
+    <li><strong>Length contraction</strong> $x' = x/\gamma$</li>
+    <li><strong>Proper time</strong> $\tau$ and <strong>proper length</strong> measured at rest w.r.t. events ($\gamma = 1$)</li>
+  </ul>
+
+  <h3 id="relativistic-doppler-shifts">Relativistic doppler shifts</h3>
+
+  <ul>
+    <li><strong>Doppler shift</strong> $\nu' = {\nu \over \gamma (1 + {u \cos \theta \over c}) }$
+($\theta = 0^\circ$ away from observer, $180^\circ$ towards observer)</li>
+    <li><strong>Redshift</strong> $z = {\lambda'\over\lambda} − 1 = \sqrt{ 1 + {u \cos \theta \over c} \over 1 − {u \cos \theta \over c} }$</li>
+    <li>Time dilation from redshift ${t' \over t} = z+1$</li>
+  </ul>
+
+  <h3 id="relativistic-momentum-and-energy">Relativistic momentum and energy</h3>
+
+  <ul>
+    <li><strong>Rest mass</strong> $m_0$; <strong>Rest energy</strong> $E_0 = m_0c^2$</li>
+    <li><strong>Relativistic momentum</strong> $p = \gamma m_0v$</li>
+    <li><strong>Relativistic kinetic energy</strong> $K = m_0c^2(\gamma − 1)$</li>
+    <li><strong>Relativistic total energy</strong> $E = \gamma m_0 c^2 = \sqrt{ p^2c^2 + m_0^2c^4 }$</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="interaction-of-light-and-matter">5. Interaction of Light and Matter</h2>
+
+  <ul>
+    <li><strong>Fraunhofer lines</strong>: absorption lines in the Solar spectrum</li>
+  </ul>
+
+  <h3 id="kirchoffs-laws">Kirchoff’s Laws</h3>
+
+  <ol>
+    <li>Hot, dense gas/solid  produces continuous, lineless spectrum</li>
+    <li>Hot, diffuse gas produces emission lines</li>
+    <li>Cold, diffuse gas in front of a continuous spectrum source produces
+absorption lines in the spectrum</li>
+  </ol>
+
+  <h3 id="spectrographs">Spectrographs</h3>
+
+  <ul>
+    <li>Produced via diffraction grating: $d \sin \theta = n\lambda$,
+$d$ is grating separation; $n$ is spectral order</li>
+    <li>Resolving power ${\lambda\over\Delta\lambda} = nN$,
+$\Delta\lambda$ is smallest resolvable wavelength; $N$ is # of gratings illuminated</li>
+    <li>Low−speed Doppler shift approximation: ${\Delta\lambda\over\lambda} = {u \cos \theta\over c}$</li>
+  </ul>
+
+  <h3 id="photoelectric-effect">Photoelectric effect</h3>
+
+  <ul>
+    <li>Shining light onto metal ejects electron with energy proportional to frequency, not intensity</li>
+    <li>Max kinetic energy of an ejected electron $K = h\nu − \phi$</li>
+    <li>Work function $\phi$ is the metal’s min electron binding energy</li>
+    <li>Demonstrates quantization of light into packets of energy $E = h\nu$</li>
+  </ul>
+
+  <h3 id="compton-scattering">Compton scattering</h3>
+
+  <ul>
+    <li>Relativistic scattering of electrons by high−energy photons</li>
+    <li>Photon loses wavelength $\Delta\lambda = {h(1 − \cos \theta)\over m_ec}$, $m_e = 9.109^{-31} \text{ kg}$</li>
+  </ul>
+
+  <h3 id="bohrs-semiclassical-atom">Bohr’s semiclassical atom</h3>
+
+  <ul>
+    <li>Assumes quantization of angular momentum $L = \mu v r = n \hbar$,
+$n$ is principle quantum number</li>
+    <li>However, still puts electrons in classical circular orbits modeled by
+Coulombic attraction</li>
+    <li>Kinetic energy of atom $K = {\mu v^2 \over 2} = {e^2 \over 8 \pi \epsilon_0 r} = {n \hbar^2 \over 2\mu r^2}$</li>
+    <li>Allowed orbital radii $r = a_0n^2$,
+<strong>Bohr radius</strong> $a_0 = {4\pi \epsilon_0 \hbar^2 \over \mu e^2} \approx 5.292^{-11} \text{ m}$</li>
+    <li>Allowed energy levels: $E = -{E_0 \over n^2}$, $E_0 \approx 13.6 \text{ eV}$</li>
+  </ul>
+
+  <h3 id="de-broglie-waves">De Broglie waves</h3>
+
+  <ul>
+    <li>Generalizes photon wavelength-frequency-momentum relation to all partilces</li>
+    <li>$\nu = {E \over h}, \lambda = {h \over p}$</li>
+  </ul>
+
+  <h3 id="heisenbergs-uncertainty-principle">Heisenberg’s Uncertainty Principle</h3>
+
+  <ul>
+    <li>$\Delta x \Delta p \geq {\hbar\over2}$, estimated as $\Delta x \Delta p \approx \hbar$ , equivalent to $\Delta E \Delta t \approx \hbar$</li>
+    <li><strong>Reduced Planck constant</strong>: $\hbar = {h \over 2\pi} = 1.054 \times 10^{-34} \text{ J}\cdot\text{s} = 6.582 \times 10^{-16} \text{ eV}\cdot\text{s}$</li>
+    <li>Allows for quantum tunnelling when barrier is within a few wavelengths wide
+      <ul>
+        <li>e.x. total internal reflection can be disrupted by placing a another prism sufficiently close to the boundary</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="schrdingers-quantum-atom">Schrödinger's quantum atom</h3>
+
+  <ul>
+    <li>Schrödinger equation models particles as probability waves</li>
+    <li>Analytically solvable for H with same result as the Bohr atom</li>
+    <li>Quantum orbitals are probability density clouds</li>
+    <li>Adds additional quantum numbers $l \in [0, n-1]$ and $m_l \in [−l, +l]$</li>
+    <li>Allowed angular momentum magnitudes $L = \hbar \sqrt{ l (l + 1) }$</li>
+    <li>Allowed angular momentum $z$-components $L_z = \hbar m_l$</li>
+    <li>Different orbitals with same $n$ are degenerate
+(i.e. have the same energy) <em>unless</em> under a magnetic field</li>
+  </ul>
+
+  <h3 id="normal-zeeman-effect">Normal Zeeman effect</h3>
+
+  <ul>
+    <li>Previously degenerate orbitals split into slightly different energies</li>
+    <li>3 frequencies: $\nu \in { \nu_0, v_0 \pm {eB \over 4\pi\mu} }$</li>
+    <li>Allows detection of magnetic field strength around e.g. starspots</li>
+    <li>Even if field is too weak to cleanly split,
+different polarizations are still detectable</li>
+  </ul>
+
+  <h3 id="anomalous-zeeman-effect-and-spin">Anomalous Zeeman effect and Spin</h3>
+
+  <ul>
+    <li>Anomalous Zeeman effect: more complex splitting patterns</li>
+    <li>Resulted in discovery of the spin quantum number</li>
+    <li>Allowed spin angular momentum magnitudes $S = \hbar{\sqrt3\over2}$</li>
+    <li>Allowed spin angular momentum z-component $S_z = \hbar m_s$</li>
+  </ul>
+
+  <h3 id="fermions-and-bosons">Fermions and bosons</h3>
+
+  <ul>
+    <li>Dirac's relativistic Schrödinger's equation divided particles
+into fermions and bosons</li>
+    <li>Also predicted <strong>antiparticles</strong>: opposite electric changes and magnetic moments</li>
+    <li><strong>Fermions</strong> have spins of $\text{odd} \times {\hbar\over2}$; <strong>Bosons</strong> have spins of $\text{integer} \times \hbar$</li>
+    <li><strong>Pauli exclusion principle</strong>: No two fermions can share the same set
+of 4 quantum numbers ${n, l, m_l, m_s}$</li>
+  </ul>
+
+  <h3 id="complex-spectra">Complex spectra</h3>
+
+  <ul>
+    <li>Quantum state transitions go from one set of quantum numbers to another</li>
+    <li>Selection rules significantly lower the probabilities of certain transitions</li>
+    <li>Restrictions: $\Delta l = \pm1, \Delta m_l \in { 0, \pm1 }, m_l$ of orbitals cannot both be 0</li>
+    <li>Allowed transitions triggered by collisions or occur spontaneously $\approx 10^{-8} \text{ s}$</li>
+    <li>Some <strong>forbidden transitions</strong> occur in very low gas densities
+      <ul>
+        <li>e.x. diffuse interstellar medium; outer stellar atmospheres</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="telescopes">6. Telescopes</h2>
+
+  <h3 id="basic-optics">Basic optics</h3>
+
+  <ul>
+    <li><strong>Index of refraction</strong> $n(\lambda) \equiv {c \over \nu}$</li>
+    <li><strong>Snell's law</strong>: $n_1 \sin \theta_1 = n_2 \sin \theta_2$</li>
+    <li><strong>Lensmaker's formula</strong>: $P = {1\over f} = (n - 1)\left( {1\over R_1} + {1\over R_2} \right)
+$, 
+$P$ is optical power, $f$ is focal length, $R_n$ are radii of curvature</li>
+    <li>Focal length is wavelength-independent for mirrors</li>
+    <li>A lens projects angular separation onto a plate (focal plane)</li>
+    <li>Linear separation of point sources on focal plane increases with focal length:
+${d\theta \over dy} = {1\over f}$</li>
+  </ul>
+
+  <h3 id="resolution">Resolution</h3>
+
+  <ul>
+    <li>Single-slit diffraction of wavefronts through aperture limits resolving power</li>
+    <li><strong>Airy disk</strong>: bright spot around central maximum</li>
+    <li>Destructive interference creates minimums: $\sin \theta = {m\lambda\over D}, m = 1, 2, 3, …$</li>
+    <li>Images are “unresolved” when one's central maximum overlaps with
+another's 1st minimum</li>
+    <li><strong>Rayleigh criterion</strong> defines arbitrary min resolvable distance
+of a circular aperture $\theta \equiv {1.22\lambda \over D}$, $D$ is aperture diameter
+      <ul>
+        <li>Possible to differentiate sources within Rayleigh criterion through careful
+analysis of diffraction patterns</li>
+      </ul>
+    </li>
+    <li><strong>Seeing</strong>: ctual ground-based optical resolution worse than ideal due to
+refraction from atmospheric turbulence, unless corected by <strong>adaptive optics</strong></li>
+    <li>Only lenses suffer from <strong>chromatic aberration</strong>;
+somewhat reduceable with correcting lenses</li>
+    <li>Spherical lenses and mirrors suffer from <strong>spherical aberration</strong>;
+mitigated by paraboloids, which are harder to produce</li>
+    <li>Paraboloid lenses and mirrors suffer from <strong>coma</strong>: elongation of off-axis images</li>
+    <li><strong>Astigmatism</strong>: different parts of a lens or mirror converge an image
+at different locations; correction may result in curvature of field issues</li>
+  </ul>
+
+  <h3 id="brightness">Brightness</h3>
+
+  <ul>
+    <li>Illumination $J \propto {1 \over F^2}$, the amount of light energy per second focused onto a unit
+area of the resolved image</li>
+    <li>Focal ratio: $F ≡ {f \over D}$
+      <ul>
+        <li>Larger aperture increases resolution and illumination</li>
+        <li>Longer focal length increases image size but decreases illumination</li>
+        <li>For fixed focal ratio, larger telescope diameter increases resolution but
+not illumination</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="optical-telescopes">Optical telescopes</h3>
+
+  <ul>
+    <li><strong>Refracting telescope</strong>:
+      <ul>
+        <li>Objective lens focus as much light as possible onto the focal plane</li>
+        <li>Sensor is placed on focal plane or eyepiece is placed at its focal length away</li>
+        <li><strong>Angular magnification</strong> $m = {f_\text{objective} \over f_\text{eye}}$</li>
+        <li>Issues:
+          <ul>
+            <li>Lens can only be supported near the edge, so gravity deforms heavy ones</li>
+          </ul>
+        </li>
+        <li>Entire volume must be fabricated precisely</li>
+        <li>Slow thermal response and thermal expansion</li>
+        <li>Chromatic aberrations</li>
+      </ul>
+    </li>
+    <li><strong>Reflecting telescope</strong>:
+      <ul>
+        <li>Replaces refractor’s objective lens with a mirror</li>
+        <li>Minimizes weight, support, and distortion issues,
+esp. with active support system</li>
+        <li>Main issue: Prime focus of the mirror is in the path of the incoming light
+          <ul>
+            <li><strong>Newtonian telescope</strong>: flat diagonal secondary mirror;
+suffers from faraway eyepiece that introduces torque</li>
+            <li><strong>Cassegrain telescope</strong>: parabolic (or hyperbolic for <strong>Ritchey-Chrétien telescope</strong>) primary mirror;
+secondary mirror (usually convex to increase focal length) reflects back
+through a hole in the primary’s center</li>
+            <li><strong>Coudé telescope</strong>: mirror system directs light to an instruments room;
+very long focal length</li>
+            <li><strong>Schmidt telescope</strong>: spheroidal primary mirror minimizing coma;
+correcting lens to remove spherical aberrations;
+provides wide field of view (degrees vs arcminutes) with low distortion</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Mounts:
+      <ul>
+        <li>Equatorial: polar axis, easy to adjust, hard to build for massive telecopes</li>
+        <li>Altitude-azimuth: easy to build, generally needs computer adjustments</li>
+      </ul>
+    </li>
+    <li><strong>Adaptive optics</strong>: small deformable mirror with many piezoelectric actuators
+counteract atmospheric distortions, constantly calibrated via a guide star</li>
+    <li><strong>Charge-coupled device</strong> (CCD) detects ~100% of incident photons with a linear
+response across wide wavelength and intensity (dynamic) ranges</li>
+  </ul>
+
+  <h3 id="radio-telescopes">Radio telescopes</h3>
+
+  <ul>
+    <li>Strength measured is spectral flux density $S(\nu)$</li>
+    <li>Typical radio source has $S \approx 1 \text{ jansky (Jy)} = 10^{-26}$ W m$^{-2}$ Hz$^{-1}$;
+weak sources ~mJy</li>
+    <li>Integrate $S$ over area and bandwidth for total power received</li>
+    <li>Long wavelengths require large apertures, but less manufacturing precision</li>
+    <li>Addition of other telescopes enables interferometry;
+reduces side lobes and narrows main lobe of antenna sensitivity pattern</li>
+    <li><strong>Interferometry</strong> determines angle of source from phase difference between antennae</li>
+    <li>Pointing angle $\theta : \sin \theta = {L\over d}$,
+$L$ is difference in wavefront’s distances to the antennae;
+$d$ is baseline distance between antennae</li>
+    <li><strong>Very long baseline interferometry</strong> (VLBI) can span multiple continents</li>
+  </ul>
+
+  <h3 id="iruvx-raygamma-ray-astronomy">IR/UV/X-ray/gamma-ray astronomy</h3>
+
+  <ul>
+    <li>Water vapor is primary contributor to IR absorption; thus low-humidity
+mountain peaks, balloons and aircraft observatories are used</li>
+    <li>IR observation also requires very cold telescopes and detectors</li>
+    <li>Glass is opaque to UV; UV telescopes need very precise reflecting surfaces</li>
+    <li>X-ray and gamma-ray photons penetrate traditional mirrors;
+instead imaged by <strong>graze-incidence</strong> (near 90° incidence) reflections, or by
+<strong>Bragg scattering</strong> through crystal lattice inteference</li>
+  </ul>
+
+</section>
+
+<h1 id="ii-the-nature-of-stars">II. The Nature of Stars</h1>
+
+<section>
+
+  <h2 id="binary-systems-and-stellar-parameters">7. Binary Systems and Stellar Parameters</h2>
+
+  <ul>
+    <li>In many cases, allows the calculation of stellar masses, highlighting a
+well-defined mass-luminosity relation for the large majority of stars</li>
+  </ul>
+
+  <h3 id="classifications">Classifications</h3>
+
+  <ul>
+    <li><strong>Optical double</strong>: Fake binaries that just look close</li>
+    <li>(The rest of the classes are not mutually exclusive)</li>
+    <li><strong>Visual binary</strong>: Both stars are resolved</li>
+    <li><strong>Astrometric binary</strong>: Visual oscillatory motion of one star implies companion</li>
+    <li><strong>Eclipsing binary</strong>: Periodic variation in light curves reveal two stars</li>
+    <li><strong>Spectrum binary</strong>: Different spectral classes / Doppler effect reveal superimposed spectra</li>
+    <li><strong>Spectroscopic binary</strong>: Doppler effect in spectra reveal oscillation of
+radial velocity curves</li>
+  </ul>
+
+  <h3 id="mass-determination-of-visual-binaries">Mass determination of visual binaries</h3>
+
+  <ul>
+    <li>Mass ratio from ratio of subtended angles: ${m_1 \over m_2} = {r_2 \over r_1} = {\alpha_2 \over \alpha_1}$</li>
+    <li>If distance to system and inclination are known, masses can be determined:
+$m_1 + m_2 = {4\pi^2 \over G} {d^3 \over \cos^3 i} {\alpha^3 \over P ^2}$
+      <ul>
+        <li>Where i is the angle of inclination between the orbit and the sky’s planes</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="mass-determination-of-spectroscopic-binarie">Mass determination of spectroscopic binarie</h3>
+
+  <ul>
+    <li>Mainly detected from binaries with high inclinations</li>
+    <li>“<strong>Double-line</strong>” if both spectra are visible; “<strong>single-line</strong>” otherwise</li>
+    <li>Radial velocity curves cross at the radial velocity of the center of mass</li>
+    <li>Radial velocity curve amplitudes scaled uniformly by $\sin i$</li>
+    <li>Eccentricity skews the curves, but close binaries tend to quickly
+circularize from tidal forces</li>
+    <li>Mass ratio: ${m_1 \over m_2} = {v_2 \over v_1}$
+      <ul>
+        <li>Where v are radial velocities</li>
+      </ul>
+    </li>
+    <li>If inclination is known, masses can be determined:
+$m_1 + m_2 = {P \over 2 \pi G} \left(v_1 + v_2 \over \sin i\right)^3$,</li>
+    <li>If only one radial velocity is known (single-line binary),
+then mass ratio cannot be found,
+but the mass function still provides rough constraints:
+${(m_2 \sin i)^3\over(m_1 + m_2)^2} = {P \over 2\pi G} v_1^3$</li>
+  </ul>
+
+  <h3 id="temperature-ratio-and-radii-determination-of-eclipsing-binaries">Temperature ratio and radii determination of eclipsing binaries</h3>
+
+  <ul>
+    <li>Two dips in the light curve:
+      <ul>
+        <li>Primary eclipse: hotter star passes behind cooler one</li>
+        <li>Secondary eclipse: cooler star passes behind warmer one</li>
+        <li>Size doesn’t matter</li>
+      </ul>
+    </li>
+    <li>If smaller star $T_1$ is hotter, temperature ratio from brightness is
+${B_0 − B_1 \over B_0 − B_2} = \left( T_1 \over T_2 \right)^4$</li>
+    <li>Unless extremely close binary, inclination $i \approx 90^\circ$,
+thus allowing accurate mass and velocity determination</li>
+    <li>Radius of star $r = {v\Delta t\over2}$
+      <ul>
+        <li>Where $v$ is relative velocity,
+and $\Delta t$ is transit time for the smaller star, or eclipse time for the larger</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="computer-modeling">Computer modeling</h3>
+
+  <ul>
+    <li>May incorporate tidal deformations, surface tempreature variations,
+flux distributions, etc</li>
+    <li>Generates synthetic light curves to compare against observational data</li>
+  </ul>
+
+  <h3 id="extrasolar-planets-exoplanets">Extrasolar planets (exoplanets)</h3>
+
+  <ul>
+    <li>Direct observation very difficult due to vast luminosity differences</li>
+    <li>Indirect methods: spectral radial velocities, astrometric wobbles, and eclipses</li>
+    <li>First exoplanet around a Sun-like star discovered in 1995</li>
+    <li>Many rapidly followed due to dramatic advances in detector technology,
+large-aperture telescopes, and long-term observing campaigns</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="classification-of-stellar-spectra">8. Classification of Stellar Spectra</h2>
+
+  <ul>
+    <li>Stars emit a continuous spectra (the continuum)
+with absorption lines in certain wavelengths</li>
+  </ul>
+
+  <h3 id="harvard-spectral-types">Harvard spectral types</h3>
+
+  <ul>
+    <li>Pickering and Fleming initially labeled alphabetically by strength of H absorption lines</li>
+    <li>Different strengths due to different temperatures causing different electron
+ionization levels and orbitals
+      <ul>
+        <li>H I (neutral)’s visible spectral (Balmer) lines strongest at A0
+($T_\text{eff} = 9520$ K)</li>
+        <li>He I (neutral)’s visible spectral lines strongest at B2
+($T_\text{eff} = 22\,000$ K)</li>
+        <li>Ca II (singly ionized)’s visible spectral lines strongest at K0
+($T_\text{eff} = 5250$ K)</li>
+      </ul>
+    </li>
+    <li>Cannon rearranged by temperature (OBAFGKM, O hottest)
+and added decimal subdivisions: A0 hotter than A9</li>
+    <li>Additional spectral types for very cool stars and brown dwarfs: <strong>OBAFGKMLT</strong></li>
+  </ul>
+
+  <h3 id="spectral-physics">Spectral physics</h3>
+
+  <ul>
+    <li>Statistical mechanics studies macroscopic behavior of stellar atmospheres</li>
+    <li><strong>Maxwell−Boltzmann velocity distribution</strong> $\rho(v) = \left(m \over 2\pi k T \right)^{3/2} e^{−mv^2/2kT} 4\pi v^2$
+      <ul>
+        <li>Restricted to gasses in thermodynamic equilibrium with $\rho \lesssim 1$ km m$^{-3}$</li>
+        <li>Most probable speed $v_\text{mode} = \sqrt{2kT\over m}$</li>
+        <li>Root-mean-square speed $v_\text{RMS} = \sqrt{3kT \over m}$ due to right-skewed exponential tail</li>
+      </ul>
+    </li>
+    <li>Electrons’ orbital energies are affected by their atoms’ kinetic energies
+through collisions: higher orbitals are less likely to be occupied</li>
+    <li>Probability ratio of electron states: ${P(s_1) \over P(s_2)} = e^{−(E_1−E_2) / kT}$
+      <ul>
+        <li>As thermal energy $kT \to 0$, $P(\text{ higher energy state }) \to 0$; confined to lowest state</li>
+        <li>As $kT \to \infty$, ${P(s_1) \over P(s_2)} \to 1$; all states are equally likely</li>
+      </ul>
+    </li>
+    <li>Statistical weights of some energy levels increased by degenerate orbitals</li>
+    <li><strong>Boltzmann equation</strong>, the probability ratio of electron energies:
+${P(E_1) \over P(E_2)} = {g_1 \over g_2} e^{−(E_1−E_2) / kT}$
+      <ul>
+        <li>Where $g$ is the statistical weight, or number of states with that energy</li>
+      </ul>
+    </li>
+    <li>Balmer lines require exitations from the first excited state $N_2$</li>
+    <li>Greater fraction of H I are in the excited state $N_2$ at higher temperatures;
+However, at the same time, significant fractions of H I are ionized to H IIs</li>
+    <li><strong>Partition function</strong>, the number of possible electron states weighted by energy,
+varies by ionization state of the atom, thus affecting the probability of
+atoms at different ionization states: $Z = \sum_j g_j e^{−(E_j−E_1) / kT}$
+      <ul>
+        <li>For H I, the ground state (with two orbitals $s=\pm{1\over2}$) dominates for most temperatures: $Z \approx 2$</li>
+        <li>For H II, no electrons means only one possible configuration: $Z = 1$</li>
+      </ul>
+    </li>
+    <li><strong>Saha equation</strong>, the probability ratio of ionization states:
+${N_+ \over N} = {2Z_+ \over n_e Z} \left( 2\pi m_e k T \over h^2 \right)^{3/2} e^{−\chi / kT}$
+      <ul>
+        <li>Very sensitive to ionization energy $\chi$, as $kT$ only ranges around 0.5−2 eV</li>
+        <li>Also effected by free electron number density $n$, increased by presence of ionized He II&amp;III</li>
+      </ul>
+    </li>
+    <li>Combining the Boltzmann and Saha equations shows varying narrow partial ionization
+zones for different atoms and ionization states
+      <ul>
+        <li>For H, there is significant fraction of electrons in the first excited state for
+temperatures between 8300−11300 K, matching the peaking of Balmer lines $\sim9900$ K</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="hertzsprungrussell-diagram">Hertzsprung–Russell diagram</h3>
+
+  <ul>
+    <li>Hertzsprung discovered type G and cooler stars had a range of magnitudes;
+termed the brighter ones giants; Russell termed the dimmer ones dwarfs</li>
+    <li>H–R diagram plots absolute magnitude (brighter upward) against
+spectral type (warmer leftward)</li>
+    <li>80–90% of stars lie as dwarfs in a main sequence from upper left to lower right
+      <ul>
+        <li>Width of main sequence due to varying ages and compositions</li>
+      </ul>
+    </li>
+    <li>Initial theory was stars evolved from upper left to lower right;
+terminology of “earlier” (warmer) and “later” (cooler) stars remain</li>
+    <li>Simple luminosity–temperature relation reveals fundamental dependence on mass</li>
+    <li>Iso-radius lines run diagonally roughly parallel to main sequence
+      <ul>
+        <li>Warmer, more massive stars have a lower average density</li>
+      </ul>
+    </li>
+    <li>Supergiants such as Betelgeuse occupy extreme upper right</li>
+  </ul>
+
+  <h3 id="morgankeenan-luminosity-classes">Morgan−Keenan luminosity classes</h3>
+
+  <ul>
+    <li>Maury noted subtle line width variations amongst stars with similar effective
+temperatures and different luminosities; found by Hertzsprung to differentiate
+main-sequence stars and giants</li>
+    <li>Morgan and Keenan published atlas appending Roman numeral luminosity classes
+to Harvard spectral types
+      <ul>
+        <li>Ia/Ib for supergiants</li>
+        <li>V for main requence</li>
+        <li>VI for metal-deficient subdwarfs</li>
+        <li>Excludes white dwarfs, class D</li>
+      </ul>
+    </li>
+    <li>Luminosity classes roughly correlates with absolute magnitudes:
+enables placement of star on H−R diagram entirely from its spectrum</li>
+    <li><strong>Spectroscopic parallax</strong>: calculating distance modulus from the
+spectrally determined absolute magnitude</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="stellar-atmospheres">9. Stellar Atmospheres</h2>
+
+  <ul>
+    <li>Line blanketing: dense series of metallic absorption lines significantly
+decrease intensity relative to ideal blackbody at certain wavelengths</li>
+  </ul>
+
+  <h3 id="radiation-field">Radiation field</h3>
+
+  <ul>
+    <li>Radiation energy originates from thermonuclear reactions,
+gravitational contraction, and core cooling</li>
+    <li>But observed light comes from gasses in atmosphere, not the opaque interior</li>
+    <li>Temperature, density, and composition of atmospheric layers determine
+spectral features</li>
+    <li>Specific ray intensity:
+$I(\lambda) \;d\lambda \equiv {\partial I\over\partial\lambda} = {{\partial E \over \partial\lambda} d\lambda  \over d\lambda \;dt\;dA \cos \theta \;d\Omega }$,
+power transmitted at a certain wavelength within a certain solid angle</li>
+    <li>Mean intensity $\langle I(\lambda) \rangle = I(\lambda)$ for isotropic field; $= B(\lambda)$ for blackbody</li>
+    <li>Specific energy density $u(\lambda) \;d\lambda = {4\pi\over c} \langle I(\lambda) \rangle \;d\lambda$
+      <ul>
+        <li>Total energy density for blackbody $u = {4\sigma T^4 \over c}$</li>
+        <li>Blackbody radiation pressure $P = {u\over3}$</li>
+      </ul>
+    </li>
+    <li>Specific radiative flux
+$F(\lambda) \;d\lambda = \int I(\lambda) \;d\lambda \cos \theta \;d\Omega$,
+net energy at a certain wavelength flowing towards one single direction</li>
+    <li>For a resolved source, specific ray intensity is measured,
+thus detector distance does not affect measured intensity,
+though the angular size decreases</li>
+    <li>For an unresolved source, specific radiative flux is measured,
+falling off with ${1\over r^2}$</li>
+  </ul>
+
+  <h3 id="temperature">Temperature</h3>
+
+  <ul>
+    <li><strong>Mean free path</strong> $l = {1\over n\sigma}$,
+      <ul>
+        <li>Average distance traveled by particles and photonsbetween collisions</li>
+        <li>Where $n$ is atomic number density and $\sigma \equiv \pi(2a_0)^2$ is collision cross section</li>
+      </ul>
+    </li>
+    <li>Multiple descriptions of temperature:
+      <ul>
+        <li><strong>Effective temperature</strong>: obtained from the Stefan–Boltzmann law</li>
+        <li><strong>Excitation temperature</strong>: defined by the Boltzmann equation</li>
+        <li><strong>Ionization temperature</strong>: defined by the Saha equation</li>
+        <li><strong>Kinetic temperature</strong>: defined by the Maxwell–Boltzmann distribution</li>
+        <li><strong>Color temperature</strong>: defined by fitting the Planck function on the spectrum</li>
+      </ul>
+    </li>
+    <li>Effective temperature is a global descriptor;
+rest apply locally, varying by gas location and other conditions</li>
+    <li>All local temperature definitions result in the same value
+at thermodynamic equilibrium</li>
+    <li><strong>Local thermodynamic equilibrium</strong> (LTE) occurs when temperature change is
+very gradual compared to the mean free path length: $H \ll L$
+      <ul>
+        <li>Temperature scale height $H(T) \equiv {T \over \lvert{ dT \over dr }\rvert}$</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="opacity">Opacity</h3>
+
+  <ul>
+    <li>Both scattering and pure absorption reduce the intensity of directed light:
+$\;dI = −\kappa\rho I \;ds$
+      <ul>
+        <li>Where absorption coefficient (opacity) $\kappa$ is dependent on
+ray wavelength and gas composition, density, and temperature</li>
+      </ul>
+    </li>
+    <li>Characteristic distance $l = {1\over k\rho}$ is equivalent to main free path for photons</li>
+    <li>Pure absorption decreases intensity exponentially: $I = I_0 e^{−\tau}$
+      <ul>
+        <li>Where $\tau$ is <strong>optical depth</strong> with $d\tau = −\kappa\rho \;ds$</li>
+      </ul>
+    </li>
+    <li>Optical depth is equivalent to the number of mean free path lengths along the
+path of a ray; gas is “<strong>optically thick</strong>” if $\tau \gg 1$, “<strong>optically thin</strong>” if $\tau \ll 1$</li>
+    <li><strong>Balmer jump</strong>: opacity of stellar material suddenly increases for wavelengths
+below the ionization energy of H I in the first excited state</li>
+    <li>Sources of opacity classified by initial and final quantum states of the
+interacting electrons:
+      <ul>
+        <li><strong>Bound–bound transitions</strong> (excitation and de-excitation)
+          <ul>
+            <li>Small except for wavelengths corresponding to specific excitation energies;</li>
+            <li>If de-excitation returns to the initial state through emission,
+the photon is essentially scattered</li>
+            <li>If multiple photons are emitted from one absorption, the average photon
+energy is reduced</li>
+            <li>If de-excitation is instead triggered by collision, then the energy is
+converted into kinetic/thermal</li>
+          </ul>
+        </li>
+        <li><strong>Bound-free absorption</strong> (photoionization) and <strong>free–bound emission</strong> (recombination)
+          <ul>
+            <li>Wavelength-dependent cross section comparable to that of collisions</li>
+            <li>Adds to continuum opacity, as any photon above an electron’s
+ionization energy may be absorbed</li>
+            <li>Recombination emits one or more photons,
+again reducing average photon energy and scattering</li>
+          </ul>
+        </li>
+        <li><strong>Free–free absorption</strong> and <strong>bremsstrahlung</strong> (“braking radiation”) emission
+          <ul>
+            <li>Free electron gains speed from absorption, or loses speed from emission</li>
+            <li>Must take place next to an ion to conserve both energy and momentum</li>
+            <li>Adds to continuum opacity</li>
+          </ul>
+        </li>
+        <li><strong>Free electron</strong> (Thomson) scattering
+          <ul>
+            <li>Photon is scattered when the electron is made to oscillate in its EM field</li>
+            <li>Very tiny wavelength-independent cross section</li>
+            <li>Only dominates in stellar interiors and the hottest atmospheres,
+where near-total ionization eliminates bound-electron processes</li>
+          </ul>
+        </li>
+        <li><strong>Loosely-bound electron</strong> (Compton/Rayleigh) scattering
+          <ul>
+            <li>Compton if $\lambda \ll a_0$;
+very small change in scattered photon wavelength, much like Thomson</li>
+            <li>Rayleigh if $\lambda \gg a_0$;
+proportional to ${1 \over \lambda^4}$,
+so only significant in UV for supergiant stars’ extended envelopes,
+cool main-sequence stars, and planet atmospheres</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Electron scattering and photoionization of He are primary sources of continuum opacity
+for type O</li>
+    <li>Photoionization of H and free–free absorption primary sources for types B–A</li>
+    <li>Photoionization of H$^-$ is primary source for type F0 and cooler
+      <ul>
+        <li>Very low binding energy of 0.754 eV ($\lambda = 1640 \text{ nm}$) for bound–free opacity</li>
+        <li>Also contributes to free–free absorption at longer wavelengths</li>
+      </ul>
+    </li>
+    <li>Molecules survive in planetary and cooler stellar atmospheres
+      <ul>
+        <li>High opacity from large number of discrete absorption lines</li>
+        <li>May break apart during absorption through photodissociation</li>
+      </ul>
+    </li>
+    <li>Rosseland mean opacity: weighted harmonic mean of opacity across all wavelengths,
+accounting for rate of change of the blackbody spectrum with temperature;
+${1\over\kappa} \equiv {\int {1\over\kappa_\nu} {\partial B_\nu \over \partial T} \;d\nu \over \int {\partial B_\nu \over \partial T} \;d\nu }$
+      <ul>
+        <li>Obeys <strong>Kramer’s opacity law</strong>: $\kappa \propto {\rho\over T^{3.5}}$</li>
+        <li>No analytic solution, but approximations exist for bound–free and free–free opacities</li>
+        <li>$\kappa_\text{bf} \propto {g_\text{bf} \over t} {Z (1+X) \rho \over T^{3.5}}, k_\text{ff} \propto g_\text{ff} {(1−Z)(1+X) \rho \over T^{3.5}}$
+          <ul>
+            <li>$X$, $Y$, and $Z$ are <strong>mass fractions</strong> of H, He, and metals respectively</li>
+            <li>$g_\text{bf}$ and $g_\text{ff}$ are <strong>Gaunt factors</strong> correcting for quantum effects; ~1 for visible and UV</li>
+            <li>t is the <strong>guillotine factor</strong>, typically ranging 1–100</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="radiative-transfer">Radiative transfer</h3>
+
+  <ul>
+    <li>No net energy change occurs in any layer of a star that is in steady-state equilibrium</li>
+    <li>Emission processes complement each of the primary absorption processes,
+resulting in randomly-directed scattering</li>
+    <li>Specific intensity: $dI = −\kappa\rho I \;ds + j\rho \;ds$
+      <ul>
+        <li>Where $\kappa$ is the absorption and $j$ is the emission coefficient; both are $\lambda$-dependent</li>
+      </ul>
+    </li>
+    <li>Equation of radiative transfer: $−{1\over\kappa\rho} {dI\over ds} = {dI\over d\tau} = I − S$
+      <ul>
+        <li>Where source function: $S \equiv {j\over\kappa}$</li>
+        <li>Expresses how light beam composition tends to resemble the local source of photons</li>
+      </ul>
+    </li>
+    <li>In local thermodynamic equilibrium, $S = B$, the blackbody Planck function
+      <ul>
+        <li>Integrating over all wavelengths, $S = B = {\sigma T^4\over\pi}$</li>
+        <li>If $\tau \gg 1, I = B$ as well</li>
+      </ul>
+    </li>
+    <li>Radiation differential “driving” net radiative flux of photons flowing to the surface:
+${dP\over d\tau} = −{F\over c}$</li>
+    <li>Radiative flux throughout star is constant: $F = \sigma T_\text{eff}^4$</li>
+    <li>In a random walk with $N$ steps of average size $I$, $d = l\sqrt N$</li>
+    <li>On average, a photon from optical depth $\tau$ needs $\tau^2$ steps to reach the surface
+      <ul>
+        <li>Photons from $\tau \approx 1$ may escape without scattering</li>
+      </ul>
+    </li>
+    <li><strong>Eddington approximation</strong>: $T^4 \approx {3\over4} T_\text{eff}^4 \left(\tau + {2\over3}\right)$
+      <ul>
+        <li>Star has its effective temperature at optical depth $\tau \approx {2\over3}$</li>
+        <li>Average observed photon is emitted from $\tau \approx {2\over3}$, independent of angle</li>
+      </ul>
+    </li>
+    <li>Higher opacity corresponds to shorter pathlength for the same optical depth,
+thus absorption lines must come from outer, cooler layers</li>
+    <li>Limb darkening: line of sight reaches $\tau = {2\over3}$ in cooler, dimmer layers when
+observing closer to the edge of the disk</li>
+  </ul>
+
+  <h3 id="spectral-line-profile">Spectral line profile</h3>
+
+  <ul>
+    <li>Core of line is formed at higher and cooler layer;
+formation descends down to continuum region at wings of the line</li>
+    <li>Line is <strong>spectrally thin</strong> if radiant flux $F(\lambda)$ is never 0</li>
+    <li><strong>Equivalent width</strong> $W \equiv \int 1 − {F(\lambda) \over F_0} d\lambda$
+      <ul>
+        <li>Where the integrand is the depth of the line at $\lambda$</li>
+      </ul>
+    </li>
+    <li>Broadening processes:
+      <ul>
+        <li><strong>Natural broadening</strong>: uncertainty principle means momentary occupancy of
+an excited state for small $\Delta t$ amplifies uncertainty of orbital energy
+$\Delta E \approx {\hbar \over \Delta t}$, resulting in uncertainty of wavelength
+$\Delta\lambda \approx {\lambda^2 \over 2\pi c} \left( {1 \over \Delta t_0} + {1 \over \Delta t_1} \right)$, where $\Delta t$ are lifetimes in the two states</li>
+        <li><strong>Doppler broadening</strong>: random thermodynamic motion results in nonrelativistic Doppler shift
+$\Delta\lambda \approx {2\lambda \over c} \sqrt{2kT \over m}$
+          <ul>
+            <li>in giant and supergiant stars, random large-scale turbulence increases to
+$\Delta\lambda \approx {2\lambda \over c} \sqrt{2kT\over m + v^2}$, where $v$ is the most probable turbulence speed</li>
+            <li>coherent mass motions such as rotation, pulsation and mass loss also
+substantial factors</li>
+          </ul>
+        </li>
+        <li><strong>Pressure broadening</strong>: collisions with neutral atoms and pressure from nearby
+ion electrical fields may perturb the orbitals with
+$\Delta\lambda = {\lambda^2 \over \pi c \Delta t_0}$, where $\Delta t_0 \approx {1\over n\sigma\sqrt{2kT \over m} }$ is the average collision time
+          <ul>
+            <li>Dependence on atomic number density explains narrower lines of sparser
+giant and supergiant extended atmospheres used for the
+Morgan–Keenan classification</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Damping/<strong>Lorentz profile</strong>: shape of lines from natural and pressure broadening,
+characteristic of radiation from electric charge in damped harmonic motion</li>
+    <li><strong>Voigt profile</strong>: total line profile from both Doppler and damping profiles,
+with Doppler dominating at the core and damping dominating at wings</li>
+    <li><strong>Schuster–Schwarzchild model</strong>: assumes photosphere is a blackbody
+and atoms above it create absorption lines</li>
+    <li>Number of atoms involved in absorption per surface area: $fN$
+      <ul>
+        <li>Where oscillator strength $f$ is the relative likelihood of each transition,
+and column density $N$ is the area density of absorbing atoms in a column from the surface to the observer</li>
+      </ul>
+    </li>
+    <li><strong>Curve of growth</strong> for line width as a function of column density:
+      <ul>
+        <li>Initially optically thin core: $W \propto N$</li>
+        <li>Then, saturated core with optically thin wings: $W \propto \sqrt{\ln N}$</li>
+        <li>For high $N$, pressure-broadening profile dominates wings: $W \propto \sqrt N$</li>
+      </ul>
+    </li>
+    <li>Applying Boltzmann and Saha equations to curve of growth finds total number of atoms above continuum layer
+      <ul>
+        <li>Applying Boltzmann equation also finds excitation temperature</li>
+        <li>Applying Saha equation also finds either e$^-$ pressure or ionization temperature from the other</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="computer-modeling-1">Computer modeling</h3>
+
+  <ul>
+    <li>Construction of an atmospheric model with extensive physics fine-tuned to observations
+can provide information on line profile, chemical composition, effective temperature,
+surface gravity, etc</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="the-interiors-of-stars">10. The Interiors of Stars</h2>
+
+  <ul>
+    <li>Direct observation only possible with neutrinos and the occasional supernovae</li>
+    <li>Study requires physically accurate computer models that match observable surface features</li>
+  </ul>
+
+  <h3 id="hydrostatic-equilibrium">Hydrostatic equilibrium</h3>
+
+  <ul>
+    <li>Equilibrium condition requires pressure gradient to counteract gravity: ${dP \over dr} = −\rho g$
+      <ul>
+        <li><strong>Local gravity</strong> $g \equiv {G M_r \rho \over r^2}$, where $M_r$ is mass enclosed within $r$</li>
+      </ul>
+    </li>
+    <li>Mass conservation ${dM_r \over dr} = 4\pi r^2 \rho$</li>
+    <li>Total pressure $P = {\rho kT \over \mu} + {aT^4\over3}$
+      <ul>
+        <li>Where first term is ideal gas law and second term is radiation pressure</li>
+        <li>With as mean molecular weight</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="kelvinhelmholtz-mechanism">Kelvin–Helmholtz mechanism</h3>
+
+  <ul>
+    <li>Contraction releases gravitational energy $\Delta E \approx {3\over10} {GM^2 \over R}$</li>
+    <li>Gravitational energy contribution $\epsilon = −{dQ \over dt} = −T {dS \over dt}$
+      <ul>
+        <li>Where specific entropy: $dS \equiv {dQ \over T}$</li>
+        <li>Contraction produces heat and decreases entropy;
+vise versa for expansion</li>
+      </ul>
+    </li>
+    <li><strong>Kelvin–Helmholtz timescale</strong> of star $t = {\Delta E\over L}$, $t_\odot \approx 10^7 \text{ years}$</li>
+  </ul>
+
+  <h3 id="nuclear-fusion">Nuclear fusion</h3>
+
+  <ul>
+    <li>Releases difference in strong nuclear force binding energy:
+      <ul>
+        <li>$E = \Delta m_0c^2 = ( Z m_\text{p} + (A−Z) m_\text{n} − m_\text{nucleus} ) c^2$</li>
+      </ul>
+    </li>
+    <li>Timescale $t_\odot \approx 10^{10}$</li>
+    <li>Must overcome Coulombic repulsion between positive nucleons: $\sim10^6$ eV at $r \approx 10^{-15}$ m</li>
+    <li>Thermal energy of gas: $E = {\mu v^2 \over 2} = {p^2 \over 2\mu}$
+      <ul>
+        <li>Where $\mu$ is reduced mass and $v$ is average relative velocity</li>
+      </ul>
+    </li>
+    <li>Requires impossibly high temperatures in classical physics:
+$E = {3\over2} kT = {q_1q_2 \over 4\pi r \epsilon_0} \to T \approx 10^{10} \text{ K}$ for H–H fusion</li>
+    <li>With quantum tunneling (de Broglie $\lambda = {h \over p} \approx r$):
+$E = {(h/\lambda)^2\over2\mu} = {q_1q_2 \over 4\pi\lambda\epsilon_0} \to T \approx 10^7 \text{ K}$, consistent with solar core temperature estimates</li>
+    <li>Reaction rate depends on velocity (wavelength) distribution, densities, and
+cross-sectional area of particles 1 and 2: $r = \int n_1 \; n_2 \; \sigma(E) \; v(E) \; { n(E)\over n} \; dE$
+      <ul>
+        <li>Power-law approximation: $r = r_0 \; X_1 \; X_2 \; \rho^{\alpha'} \; T^\beta$,
+          <ul>
+            <li>Where $X$ are mass fractions, $\alpha' \approx 2$, and $\beta$ ranging from ~1 to ≥40</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Velocity distribution follows Maxwell–Boltzmann</li>
+    <li>Cross section $\sigma(E) = {S \over E} e^{−b/\sqrt E}$
+      <ul>
+        <li>Where de Broglie area is $\pi\lambda^2 \propto {1\over p^2} \propto {1\over E}$,
+and tunneling across barrier of energy $U$ is $e^{‐2\pi^2 U/E} \propto e^{−b/\sqrt E}$,
+with $b \propto q_1q_2\sqrt\mu$</li>
+        <li>$S$ may be slow-varying function of $E$, or may have sharp peaks from resonance of
+specific energy levels within the nucleus</li>
+      </ul>
+    </li>
+    <li><strong>Electron screening</strong> from sea of free e$^-$ partially hides nuclei,
+reducing effective charge and Coulomb barrier,
+sometimes enhancing He production by 10–50%</li>
+    <li>Likelihood of nuclear reaction: $e^{−b/\sqrt E} e^{−E/kT}$
+      <ul>
+        <li>Product of velocity distribution’s high-energy tail and the quantum tunneling terms</li>
+        <li>Most likely energy ("<strong>Gamow peak</strong>") $E_0 = \left(bkT\over2\right)^{2\over3}$</li>
+      </ul>
+    </li>
+    <li><strong>Luminosity gradient</strong> ${dL_r \over dr} = 4\pi r^2\rho$,
+      <ul>
+        <li>Where $L_r$ is luminosity enclosed in $r$,
+and $\epsilon$ is specific power (power released per mass)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="nucleosynthesis">Nucleosynthesis</h3>
+
+  <ul>
+    <li><em>Notation: $^A_Z\text{He}$, where $A$ is atomic mass number and $Z$ is proton number</em></li>
+    <li>Simultaneous 4-body collision $4 {\;}^1_1\text{H} + ? \to {\;}^4_2\text{He} + ?$ extremely unlikely</li>
+    <li>Reaction chain of 2-body interactions more probable</li>
+    <li>Interactions must obey conservation laws:
+electric charge, nucleon number, and lepton number</li>
+    <li><strong>Proton–proton chain</strong> (H burning): $4 {\;}^1_1\text{H} \to {\;}^4_2\text{He} + 2\text{e}^+ + 2\nu + 2\gamma$
+      <ul>
+        <li>Three branches (see Fig. 10.8)</li>
+        <li>In Sun, 69% PP I, 31% PP II, 0.3% PP III</li>
+        <li>Near $T = 1.5 \times 10^7 \text{ K}$, $\epsilon \approx \epsilon_0 \rho X_\text{H}^2 \left(T \over 10^6 \text{ K}\right)^4$
+          <ul>
+            <li>Where $\epsilon_0 = 1.08 \times 10^{-12} \text{ W}\;\text{m}^3\;\text{kg}^{-2}$</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>CNO cycle</strong> (H burning): $\text{C}$, $\text{N}$, and $\text{O}$ are catalysts
+      <ul>
+        <li>Two main branches, with the second only occuring ~0.04% of the time</li>
+        <li>Near $T = 1.5 \times 10^7 \text{ K}$, $\epsilon \approx \epsilon_0 \rho X_\text{H} X_\text{CNO} \left(T \over 10^6 \text{ K}\right)^{20}$
+          <ul>
+            <li>Where $\epsilon_0 = 8.24 \times 10^{-31} \text{ W}\;\text{m}^3\;\text{kg}^{-2}$</li>
+            <li>Much more temperature-dependent, only dominating in more massive stars</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Triple-alpha process</strong> (He burning): $2 {\;}^4_2\text{H} \leftrightarrow {\;}^8_4\text{Be}$, ${\;}^8_4\text{Be} + {\;}^4_2\text{He} \to {\;}^{12}_6\text{C} + \gamma$
+      <ul>
+        <li>First step produces an extremely unstable $^8_4\text{Be}$,
+thus combined is essentially a 3-body interaction: $r \propto (\rho Y)^3$</li>
+        <li>$\epsilon \approx \epsilon_0 \rho^2 Y^3 \left(T \over 10^8 \text{ K}\right)^{41}$
+          <ul>
+            <li>Incredibly strong temperature dependence</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Alpha process</strong> (C &amp; O burning): $^{12}<em>6\text{C} + {\;}^4_2\text{He} → {\;}^{16}_8\text{O} + \gamma$, $^{16}_8\text{O} + {\;}^4_2\text{He} \to {\;}^{20}</em>{10}\text{Ne} + \gamma$
+      <ul>
+        <li>Alpha capture becomes prohibitive at higher $Z$ due to higher Coulomb barrier</li>
+        <li>C–C burning near $6 \times 10^8$ K and O–O burning near $10^9$ K can produce Na, Mg, Si, P, and S;
+some are endothermic but are normally less likely</li>
+      </ul>
+    </li>
+    <li>Binding energy per nucleon ${E\over A}$
+      <ul>
+        <li>Relative to atomic number $A$, local maxima are very stable</li>
+        <li>Magic nuclei: some elements ($^4_2$He, $^{16}_8$O) have unusually high ${E\over A}$</li>
+        <li>Broad peak around $^{56}_{26}$Fe, the most stable nuclei</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="energy-transport-and-thermodynamics">Energy transport and thermodynamics</h3>
+
+  <ul>
+    <li>Three mechanisms: radiation of photons (affected by opacity),
+convection, and conduction (generally insignificant)</li>
+    <li><strong>Radiative temperature gradient</strong> ${dT \over dr} = −{3\over4ac} {\kappa\rho \over T^3} {L\over4\pi r^2}$</li>
+    <li>If temperature gradient becomes too steep, convection takes hold</li>
+    <li>Convection is much more complicated than radiation
+      <ul>
+        <li>Strongly coupled to the star’s dynamic behavior</li>
+        <li>3D Navier–Stokes with turbulence is hard compute</li>
+        <li><strong>Pressure scale height</strong>, convection’s characteristic length scale,
+is big: $H \equiv −P {dr \over dP} \approx {P\over\rho g} \approx {R_*\over 10}$</li>
+      </ul>
+    </li>
+    <li><strong>First law of thermodynamics</strong>: $dU = dQ − dW = dQ − P \;dV$
+      <ul>
+        <li>$U$ is a state function; $Q$ and $W$ are not — $dQ$ and $dW$ are inexact differentials</li>
+      </ul>
+    </li>
+    <li><strong>Specific heat capacity</strong> $C \equiv {\partial Q \over \partial T}$, $C_P = C_V + nR$
+      <ul>
+        <li>$C_P$ is at constant pressure; $C_V$ is at constant volume</li>
+        <li>Heat capacity ratio / <strong>adiabatic index</strong> $\gamma \equiv {C_P \over C_V}$</li>
+        <li>$\gamma = {5\over3}$ for a monoatomic gas;
+approaches 1 in a partial ionization zone as both specific heats increase</li>
+      </ul>
+    </li>
+    <li>Isochoric process ($dV = 0$): $dU = dQ = C_V \;dT$</li>
+    <li>Adiabatic process ($dQ = 0$): $dU = −P \;dV$
+      <ul>
+        <li>Gas law: $P \propto {1 \over V^\gamma} \propto \rho^\gamma \propto T^{\gamma/(\gamma−1)}$</li>
+        <li><strong>Speed of sound</strong> $v = \sqrt{B\over\rho} = \sqrt{\gamma P \over \rho}$
+          <ul>
+            <li>Where bulk modulus $B \equiv −V {\partial P \over \partial V} \;{dQ = 0} $</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Adiabatic temperature gradient</strong> ${dT \over dr} = −\left(1 − {1\over\gamma}\right) {\mu \over k} {GM \over r^2} = −{g \over C_P}$</li>
+    <li>If the surrounding temperature gradient is steeper than the bubble’s,
+even just slightly, the condition becomes <strong>superadiabatic</strong>,
+and nearly all luminosity is transferred outwards adiabatically,
+via convection instead of radiation
+      <ul>
+        <li>Equivalent criterion: ${d(\ln P) \over d(\ln T)} &lt; {\gamma \over \gamma − 1}$, = 2.5 for ideal monoatomic gas</li>
+      </ul>
+    </li>
+    <li>In general, convection occurs if a region
+      <ol>
+        <li>has high opacity (surrounding ${dT \over dr} \propto \kappa$),</li>
+        <li>is ionizing and raising the specific heat capacity (bubble ${dT \over dr} \propto {1 \over C_P}$), or</li>
+        <li>has a highly temperature-dependent fusion process</li>
+      </ol>
+    </li>
+    <li>First two conditions can occur simultaneously;
+third only occurs deep in the interior with the CNO or triple-alpha processes</li>
+    <li>Convective flux under mixing-length theory:
+$F = \rho C_P {k\over\mu} \left({T \over g} \delta\left(dT \over dr\right)\right)^{3/2} \alpha^2 \sqrt\beta$
+      <ul>
+        <li>Where $0.5 \lesssim \alpha \lesssim 3$ and $0 \lesssim \beta \lesssim 1$ are free parameters
+          <ul>
+            <li>$\alpha \equiv {l\over H}$, the ratio of the mixing length
+(distance traveled by bubble before thermaliing with surrounding)
+and the pressure scale height</li>
+            <li>$\beta : \beta v^2$ is the average kinetic energy of the bubble as it travels over $l$</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="stellar-model-building">Stellar model building</h3>
+
+  <ul>
+    <li>Basic stellar models need constructive relations for $P$, $\bar\kappa$, and $\epsilon$:
+expressing them in terms of density, temperature, and composition
+      <ul>
+        <li>$P$ (pressure) generally modelable with ideal gas law and radiation pressure,
+but is more complex in certain stars’ deep interiors</li>
+        <li>$\bar\kappa$ (mean opacity) calculated explicitly from tabular data or fitting functions</li>
+        <li>$\epsilon$ (specific power) calculated analytically from reaction networks</li>
+      </ul>
+    </li>
+    <li>Boundary conditions:
+      <ul>
+        <li>As $r \to 0$, ${M_r, L_r} \to 0$</li>
+        <li>And ignoring extended atmospheres and mass loss:
+as $r \to R_*$, ${T, P, \rho} \to 0$</li>
+      </ul>
+    </li>
+    <li><strong>Vogt–Russell theorem</strong>:
+due to a star’s dependence on nuclear burning,
+its mass and internal composition uniquely determine
+its radius, luminosity, internal structure, and subsequent evolution
+      <ul>
+        <li>Ignores smaller influences such as magnetic fields and rotation</li>
+      </ul>
+    </li>
+    <li>General modeling numeric integrates shell-by-shell
+with the system of differential equations,
+often from from a transition point towards both the surface and the center</li>
+    <li><strong>Polytropes</strong>: simplified stellar models in which $P(\rho) \propto \rho^\gamma$</li>
+    <li><strong>Lane–Emden equation</strong>: ${1\over\xi^2} {d \over d\xi} \left(\xi^2 {d(D_n) \over d\xi}\right) = −D_n^n$
+      <ul>
+        <li>Where the <strong>polytropic index</strong> $n : \gamma \equiv {n+1 \over n}$</li>
+        <li>TODO: too complicated</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="main-sequence">Main sequence</h3>
+
+  <ul>
+    <li>Vast majority of stars have H mass fraction $X \approx 0.7$ and metal mass fraction $0 \lesssim Z \lesssim 0.03$</li>
+    <li>Changes in core composition affects observed surface features</li>
+    <li>Very light stars ($M \lesssim 0.08 M_\odot$) are not hot enough to let fusion
+stabilize against gravitational contraction
+      <ul>
+        <li>Highly opaque and fully convective</li>
+      </ul>
+    </li>
+    <li>Lower-initiation-energy PP chain dominates for low-mass stars
+      <ul>
+        <li>Shallow core thermal gradient leads to radiative core</li>
+        <li>High shell opacity leads to convective shell</li>
+      </ul>
+    </li>
+    <li>Highly-temperature-dependent CNO cycle dominates for high-mass stars ($M \gtrsim 1.2 M_\odot$)
+      <ul>
+        <li>Steep core thermal gradient leads to convective core</li>
+        <li>Low shell opacity leads to radiative shell</li>
+      </ul>
+    </li>
+    <li>Very massive stars ($M \gtrsim 90 M_\odot$) have rapid core thermal oscillations
+affecting fusion rates</li>
+    <li>Very massive stars may also have radiation pressure exceed gas pressure at
+outer layers, with maximum stable luminosity given by <strong>Eddington limit</strong>:
+$L ≤ {4\pi GcM\over\bar\kappa}$</li>
+    <li>Main-sequence lifetimes decrease with increasing luminosity</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="the-sun">11. The Sun</h2>
+
+  <ul>
+    <li>Loosely treated as two parts:
+an optically thin atmosphere and an optically thick core</li>
+    <li>Transition is $\sim600$ km thick</li>
+  </ul>
+
+  <h3 id="solar-interior">Solar interior</h3>
+
+  <ul>
+    <li>Hydrogen burning below $R \lesssim 0.3 \,R_\odot$; convection above $R \gtrsim 0.7 \,R_\odot$</li>
+    <li>Heterogeneous composition due to nucleosynthesis, convection, and elmental diffusion</li>
+    <li>$^4<em>2$He is more abundant than $^1_1$H below $R \lesssim 0.1 \,R</em>\odot$</li>
+    <li>$^3_2$He abundance peaks at the top of the hydrogen-burning region,
+where cooler temperatures slow the $^3_2$He–$^3_2$He reaction</li>
+    <li>Convection zone turbulence creates homogeneous composition</li>
+    <li>Peak energy generation region is shell around $r \approx 0.1\, R_\odot$
+      <ul>
+        <li>${dL\over dr}$ affected by shell volume and fuel availability,
+both smaller at the very center, as well as temperature and pressure</li>
+      </ul>
+    </li>
+    <li>Surface Li abundance somewhat less than expected for the current solar model</li>
+    <li><strong>Mikheyev–Smirnov–Wolfenstein effect</strong>: neutrino oscillation between the
+$\text{e}^-$, $\mu^-$, and $\tau^-$ flavors explains the solar neutrino problem of only ⅓ as many
+$\text{e}^-$ neutrinos as expected being detected from the solar core</li>
+  </ul>
+
+  <h3 id="photosphere">Photosphere</h3>
+
+  <ul>
+    <li>Where optical photons originate</li>
+    <li>Starts 100 km below where $\tau_\text{500 nm} = 1$, extending $\sim600$ km</li>
+    <li>Temperature drops from $\sim9400$ K at base to $\gtrsim4400$ K at top</li>
+    <li>Continuum opacity partly due to H$^-$ near base of photosphere,
+as the far more abundant neutral H I cannot contribute much to the continuum</li>
+    <li>Absorption lines produced in higher, cooler, more opaque regions of the photosphere</li>
+    <li><strong>Granulation</strong>: patches of bright and dark regions ($\sim700$ km) at base of photosphere due to
+underlying convection zone; Doppler shifts ($\sim0.4$ km/s) cause wiggles in absorption lines
+      <ul>
+        <li>Characteristic lifetime ($\sim10$ minutes) corresponds to the time a
+convection eddy takes to rise and fall 1 mixing length</li>
+      </ul>
+    </li>
+    <li><strong>Differential rotation</strong>: Doppler shifts at solar limb and solar oscillations
+show the solar rotation varies by latitude and by radius
+      <ul>
+        <li>Period of 25 days at equator lengths to 36 days at poles</li>
+        <li><strong>Tachocline</strong>: base of convection zone ($\sim 0.65 R_\odot$) where differing rotation rates converge,
+resulting in strong shear theorized to create plasma which
+generate the solar magnetic field</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="chromosphere">Chromosphere</h3>
+
+  <ul>
+    <li>Where temperature begins rising again, from 4400 to $\sim10\,000$ K</li>
+    <li>Starts 525 km above where $\tau_\text{500 nm} = 1$, extending $\sim1600$ km</li>
+    <li>Density and intensity $\sim10^{-4}$ of the photosphere</li>
+    <li>Low density and high temperature produce certain absorption and emission lines,</li>
+    <li>As the blackbody continuum emission peaks $\sim500$ nm, visible-spectrum emission lines are
+only clearly seen in a flash spectrum of the limb near total eclipse</li>
+    <li>Strength of $\text{H}\alpha$ emission line allows filters to selectively observe the chromosphere structure</li>
+    <li><strong>Supergranulation</strong>: patches of $\sim30\,000$ km wide from underlying convection</li>
+    <li><strong>Spicules</strong>: vertical gas filaments extending upwards for $\sim10\,000$ km,
+ejecting mass at $\sim15$ km/s</li>
+  </ul>
+
+  <h3 id="transition-region">Transition region</h3>
+
+  <ul>
+    <li>Starts $\sim2100$ km above $\tau_\text{500 nm} = 1$, extending to the corona</li>
+    <li>Temperature rises rapidly to $\sim10^5$ K in 100 km, then slowly to $\gtrsim10^6$ K</li>
+    <li>Selectively observed in various UV bands (e.g. Lyman $\alpha$ at $\sim20\,000$ K)</li>
+  </ul>
+
+  <h3 id="corona">Corona</h3>
+
+  <ul>
+    <li>Faint region ($\lesssim 10^{15} \text{ particles/m}^3$) with vaguely defined outer boundary</li>
+    <li>High-temperature, high-thermal-conductivity, approximately isothermal plasma</li>
+    <li>Quiet corona near sunspot minimum (low solar activity)
+      <ul>
+        <li>More extended at equator than poles, consistent with nearly dipole magnetic field</li>
+      </ul>
+    </li>
+    <li>Active corona near sunspot maximum
+      <ul>
+        <li>More complex magnetic field shape and structure</li>
+      </ul>
+    </li>
+    <li>Essentially transparent to most EM radiation</li>
+    <li>Not in local thermodynamic equilibrium thus no strictly definable temperature,
+but estimated to be $\gtrsim 2 \times 10^6 \text{ K}$</li>
+    <li><strong>Parker wind model</strong>: not in hydrostatic equilibrium as pressure does not vanish at infinity,
+implying solar wind</li>
+    <li>Kontinuierlich/continuous <strong>K corona</strong>:
+      <ul>
+        <li>From free electron scattering of photospheric light primary between $1 \sim 2.3\, R_\odot$</li>
+        <li>Spectral lines essentially blended into continuum from high-velocity Doppler broadening</li>
+      </ul>
+    </li>
+    <li>Fraunhofer <strong>F corona</strong>:
+      <ul>
+        <li>From  dust scattering of photospheric light beyond $2.3\, R_\odot$</li>
+        <li>Slower dust grains have less Doppler broadening and leave detectable Fraunhofer lines</li>
+        <li>Merges with zodiacal light from interplanetary dust</li>
+      </ul>
+    </li>
+    <li>Emission <strong>E corona</strong>:
+      <ul>
+        <li>From highly ionized coronal atoms, very rich in emission lines in the X-ray spectrum</li>
+        <li>Low number density enable forbidden transitions between metastable energy levels,
+as well as low-energy free-free transitions that produce radio waves</li>
+        <li>Radio waves also produced by relativistic electrons’ synchrotron radiation</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="solar-wind">Solar wind</h3>
+
+  <ul>
+    <li>Stream of escaped ions and electrons</li>
+    <li>Deflects comets’ ion tails differently than pure radiation pressure on their dust tails</li>
+    <li>Trapped into Van Allen belts by planetary magnetospheres and
+create aurorae upon reaching atmosphere</li>
+    <li>Fast solar wind: $\sim750$ km/s, produced from open magnetic fields
+      <ul>
+        <li>Associated with coronal holes — darker, cooler coronal regions</li>
+      </ul>
+    </li>
+    <li>Slow solar wind: $\sim300$ km/s, produced by coronal streamers around closed magnetic fields;
+      <ul>
+        <li>Associated with X-ray bright spots from trapped spiralling charges</li>
+      </ul>
+    </li>
+    <li><strong>Heliopause</strong>: outer limit of the Sun’s EM influence;
+where solar wind meets the interstellar medium and produces a <strong>termination shock</strong></li>
+    <li><strong>Heliosheath</strong>: beyond the termination shock,
+particles slow, magnetic field strengthens, and density increases</li>
+  </ul>
+
+  <h3 id="magnetohydrodynamics-mhd">Magnetohydrodynamics (MHD)</h3>
+
+  <ul>
+    <li>Longitudinal pressure waves propagate outward from top of convection zone</li>
+    <li>Drastic drop in medium density turn waves supersonic, creating shock fronts
+that drastically heat up chromospheric gas as they dissipate</li>
+    <li>Magnetic energy density and pressure $u = P = {B^2\over2\mu_0}$</li>
+    <li>Transverse <strong>Alfvén waves</strong> propagate from oscillations in magnetic field lines</li>
+    <li>Resistive Joule heating from electrical currents in Alfvén waves also
+contributes to temperature rise, in particular the steep gradient of the transition region</li>
+    <li>Open magnetic field lines are dragged by stellar rotation across interplanetary space,
+slowing stars down significantly over their lifetimes</li>
+  </ul>
+
+  <h3 id="sunspots">Sunspots</h3>
+
+  <ul>
+    <li>Zeeman splitting indicates strong magnetic fields,
+which inhibit convective motion below and create dark spots</li>
+    <li>Umbra: darkest portion with vertical field lines; diameter $\lesssim 30\,000 $km</li>
+    <li>Penumbra: border with filament-like structure with field lines becoming horizontal</li>
+    <li>Generally located in groups,
+with one dominant sunspot leading several in the direction of rotation
+      <ul>
+        <li>Lead sunspots in the same hemisphere always have the same polarity
+during an 11-year cycle</li>
+        <li>Opposite polarity in the other hemisphere</li>
+      </ul>
+    </li>
+    <li>Frequency follows 11-year cycle, starting from sunspot minimum</li>
+    <li><strong>Butterfly diagram</strong>: average latitude starts near $\pm40^\circ$, migrating to the equator over cycle</li>
+    <li>Solar polarity reverses during sunspot minimum, thus technically 22-year cycle</li>
+    <li>Long-term variations include the Maunder minimum spanning 1645–1715</li>
+  </ul>
+
+  <h3 id="plages">Plages</h3>
+
+  <ul>
+    <li>Chromospheric regions of higher density and bright H$\alpha$ emission</li>
+    <li>Located near sunspots, forming before they appear and vanishing after they disappear</li>
+    <li>Caused by magnetic fields</li>
+  </ul>
+
+  <h3 id="flares">Flares</h3>
+
+  <ul>
+    <li>Eruptive events releasing $10^{17}\sim10^{25}$ J of energy over timespans from milliseconds to over an hour</li>
+    <li>May reach 100,000 km in length</li>
+    <li>Develop in sunspot groups with intense stored magnetic energy</li>
+    <li>Reconnection of magnetic field lines creates a sheet of current in the plasma,
+Joule heating the gas up to $10^8$ K</li>
+    <li>Charged particles are accelerated away from the reconnection point
+      <ul>
+        <li>$\text{H}\alpha$ line becomes locally in emission from ejected particles
+recombining by the base of the field lines</li>
+        <li>Solar cosmic rays from particles ejected towards outer space</li>
+      </ul>
+    </li>
+    <li>Nonthermal radio waves from synchrotron radiation around field lines</li>
+    <li>Soft X-rays from high temperatures in loop below reconnection point</li>
+    <li>Hard X- and gamma-rays from surface nuclear reactions,
+including <strong>spallation</strong> of heavy nuclei: $^1_1\text{H} + {\;}^{16}_8\text{O} \to {\;}^{12}_6\text{C}+ {\;}^4_2\text{He} + {\;}^1_1\text{H} + \gamma$</li>
+  </ul>
+
+  <h3 id="prominences">Prominences</h3>
+
+  <ul>
+    <li><strong>Quiescent prominence</strong>:
+      <ul>
+        <li>Curtains of cooler ($\sim8000$ K) ionized gas collected along magnetic field lines</li>
+        <li>May be stable for weeks</li>
+        <li>Appear as dark filaments against the disk</li>
+      </ul>
+    </li>
+    <li>Eruptive/<strong>active prominence</strong>:
+      <ul>
+        <li>Suddenly destabilized magnetic field configuration</li>
+        <li>Energy converted into lifting prominence away from the Sun</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="coronal-mass-ejections-cmes">Coronal mass ejections (CMEs)</h3>
+
+  <ul>
+    <li>Ejects $5 \times 10^{12} \sim 5 \times 10^{13} \text{ kg}$ of material at speeds of $400\sim1000$ km/s</li>
+    <li>$\sim1$/day, more frequent near sunspot maximum</li>
+    <li>70% correlated with eruptive prominences; 40% correlated with flares</li>
+  </ul>
+
+  <h3 id="magnetic-activity-in-other-stars">Magnetic activity in other stars</h3>
+
+  <ul>
+    <li><strong>Flare stars</strong>: M-type main-sequence stars whose occasional rapid fluctuation in brightness
+may be due to large flares on their relatively dimr surface</li>
+    <li>Starspots may be used to measure stellar rotation</li>
+    <li>Magnetic field lines measured from Zeeman broadening correlate with luminosity variations</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="the-interstellar-medium-and-star-formation">12. The Interstellar Medium and Star Formation</h2>
+
+  <h3 id="interstellar-medium-ism">Interstellar medium (ISM)</h3>
+
+  <ul>
+    <li>Gas and dust between the stars</li>
+    <li>70% H, ~30% He, rest metals (C, Si, etc)</li>
+    <li>Used in star formation; returned by stellar winds and explosive events</li>
+  </ul>
+
+  <h3 id="dust">Dust</h3>
+
+  <ul>
+    <li>~1% of molecular clouds by mass, but significant in light absorption and cloud chemistry</li>
+    <li>Likely facilitate formation of many molecules besides H$_2$,
+including solid CO, H$_2$O, etc that give the grains icy mantles</li>
+    <li>Formed in dense envelopes of very cool stars, from supernovae and stellar winds</li>
+    <li>Unexpected abundance of large grains an area of active research</li>
+    <li>Responsible for <strong>interstellar extinction</strong>, a $\lambda$-dependent increase in apparent magnitude
+from scattering and absorption of starlight: $A = \Delta m$
+      <ul>
+        <li>Approximately equal to the optical depth: $A \approx 1.086\tau$</li>
+        <li>Visual band extinction commonly used as reference: $A_V$</li>
+      </ul>
+    </li>
+    <li><strong>Mie theory</strong> applies to IR–visible range
+      <ul>
+        <li>Shorter wavelengths are scattered more (though spectral lines go unaltered),
+causing interstellar reddening along direct line of sight,
+and blue tones in reflection nebulae</li>
+        <li>Extinction coefficient: $Q(\lambda) \equiv {\sigma(\lambda)\over\sigma_g}$</li>
+        <li>With dust grain radius: $r$ such that grain cross section: $\sigma_g = \pi r^2$</li>
+        <li>Where photon cross section approaches 0 for $\lambda \gg r$ and a constant for $\lambda \ll r$:
+$\sigma(\lambda) \propto {r^3\over\lambda}$ for $\lambda \gtrsim r$, and $\sigma(\lambda) \propto r^2$ for $\lambda \ll r$</li>
+      </ul>
+    </li>
+    <li>Color excesses relative to Mie prediction grow for shorter wavelengths</li>
+    <li>Bump at 217.5 nm corresponding to resonance of graphite,
+along with IR emission bands corresponding to C–C and C–H bond vibrations,
+indicate presence of polycyclic aromatic hydrocarbons  (PAHs)</li>
+    <li>Near-IR absorption bands indicate presence of silicate grains</li>
+    <li>Slight, $\lambda$-dependent polarization due to anisotropic, somewhat aligned dust grains;
+alignment most likely due to interactions with a weak magnetic field</li>
+  </ul>
+
+  <h3 id="hydrogen">Hydrogen</h3>
+
+  <ul>
+    <li><strong>21-cm line</strong>: anti-aligned spins ↑↓ has slightly less energy than aligned spins ↑↑
+      <ul>
+        <li>Very stable, “forbidden” transition that takes millions of years
+on average to occur per atom</li>
+        <li>Only possible (although still rare) for H I in low-density diffuse ISM</li>
+        <li>Optically thin, thus optical depth $\propto$ H column density</li>
+      </ul>
+    </li>
+    <li>H$_2$ hard to directly observe except for rovibrational bands;
+tracer molecules and their isotopomers used instead</li>
+    <li>Optically thick dust shields H$_2$ from UV photodissociation,
+as well as enhancing H$_2$ formation</li>
+    <li>H I generally proportional in number to dust when $A_V \lesssim 1$;
+displaced by H$_2$ when dust becomes optically thick</li>
+    <li>Shells of H I clouds surround molecular clouds of H$_2$</li>
+  </ul>
+
+  <h3 id="interstellar-cloud-structure">Interstellar cloud structure</h3>
+
+  <ul>
+    <li>Most diffuse ISM are hydrogen clouds of ground state H I,
+only absorbing UV photons and emitting in 21-cm line</li>
+    <li>Transluscent/<strong>diffuse molecular clouds</strong>:
+irregularly shaped; similar in conditions to H I clouds;
+primarily atomic H with regional concentrations of H$_2$</li>
+    <li><strong>Giant molecular clouds</strong> (GMCs): enormous complexes with clumpy structure
+      <ul>
+        <li>Contains slightly denser dark cloud complexes, denser clumps and dense cores,
+and very dense, star-forming hot cores</li>
+      </ul>
+    </li>
+    <li><strong>Bok globules</strong>:
+almost-spherical clouds located outside of larger molecular complexes;
+possibly dense cores stripped of surrounding gas by stellar winds</li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th>thing</th>
+        <th>$T$ (K)</th>
+        <th>$M\;(M_\odot)$</th>
+        <th>$A_V$</th>
+        <th>$n$ (m$^{-3}$</th>
+        <th>$D$ (pc)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>diffuse molecular cloud</td>
+        <td>$15\sim50$</td>
+        <td>$3\sim100$</td>
+        <td>$1\sim5$</td>
+        <td>$5 \times 10^8 \sim 5 \times 10^9$</td>
+        <td>$1\sim10$</td>
+      </tr>
+      <tr>
+        <td>giant molecular cloud</td>
+        <td>$\sim15$</td>
+        <td>$10^5\sim10^6$</td>
+        <td>$\gtrsim1$</td>
+        <td>$1 \times 10^8 \sim 3 \times 10^8$</td>
+        <td>$\sim50$</td>
+      </tr>
+      <tr>
+        <td>· dark cloud complex</td>
+        <td>$\sim10$</td>
+        <td>$\sim10^4$</td>
+        <td>$\sim5$</td>
+        <td>$\sim5 \times 10^8$</td>
+        <td>$\sim10$</td>
+      </tr>
+      <tr>
+        <td>· clump</td>
+        <td>$\sim10$</td>
+        <td>$\sim30$</td>
+        <td>$\sim10$</td>
+        <td>$\sim 1 \times 10^9$</td>
+        <td>$1\sim5$</td>
+      </tr>
+      <tr>
+        <td>· dense core</td>
+        <td>$\sim10$</td>
+        <td>$\sim10$</td>
+        <td>$\gtrsim10$</td>
+        <td>$\sim 1 \times 10^{10}$</td>
+        <td>$\sim0.1$</td>
+      </tr>
+      <tr>
+        <td>· hot core</td>
+        <td>$100\sim300$</td>
+        <td>$10\sim1000$</td>
+        <td>$50\sim1000$</td>
+        <td>$1 \times 10^{13} \sim 1 \times 10^{15}$</td>
+        <td>$0.05\sim0.1$</td>
+      </tr>
+      <tr>
+        <td>Bok globule</td>
+        <td>$10\sim$</td>
+        <td>$1\sim1000$</td>
+        <td>$\sim10$</td>
+        <td>$\gtrsim 1 \times 10^{10}$</td>
+        <td>$\lesssim1$</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="interstellar-cloud-heating-and-cooling">Interstellar cloud heating and cooling</h3>
+
+  <ul>
+    <li>Primarily heated by cosmic ray protons
+      <ul>
+        <li>$E$ ranges $10–10^{14}$ MeV, with $10^3–10^8$ MeV common</li>
+        <li>Ionizes H and H$_2$, ejecting e$^-$’s that distribute thermal energy
+throughout ISM via collisions with molecules</li>
+      </ul>
+    </li>
+    <li>Also heated by UV starlight ionizing C and dust grains,
+X-ray starlight ionizing H, dust grains absorbing starlight,
+and shocks from supernovae and strong stellar winds</li>
+    <li>Primarily cooled by IR radiation from post-collision de-excitations,
+particularly those of C$^+$ and CO after colliding with H and H$_2$, respectively</li>
+  </ul>
+
+  <h3 id="protostar-formation">Protostar formation</h3>
+
+  <ul>
+    <li><strong>Protostars</strong>: pre-nuclear-burning objects formed from molecular clouds</li>
+    <li>Deviation from hydrostatic equilibrium means imbalance in the virial theorem:
+$2K &lt; |U|$ ⇒ gravitational collapse</li>
+    <li>Jeans criterion, minimum necessary for spontaneous collapse:
+      <ul>
+        <li><strong>Jeans mass</strong> $M \approx \sqrt{ \left(5kT \over G\mu\right)^3 {3\over4\pi\rho_0} }$</li>
+        <li><strong>Jeans length</strong> $R \approx \sqrt{ 15kT \over 4\pi G\mu\rho_0}$</li>
+        <li>Neglecting rotation, turbulence, magnetic fields,
+and pressure of surrounding gas</li>
+      </ul>
+    </li>
+    <li>Bonnor–Ebert criterion accounts for external pressure $P_0$
+      <ul>
+        <li><strong>Bonnor–Ebert mass</strong>: $M = { c_BE v^4 \over \sqrt{P_0 G^3} }$</li>
+        <li>Where isothermal sound speed $v \equiv \sqrt{kT\over\mu}$,
+and constant $c_\text{BE} \approx 1.18$</li>
+      </ul>
+    </li>
+    <li>Low-pressure, optically thin first phase of collapse essentially isothermal and in free-fall
+      <ul>
+        <li>Free-fall timescale $t = \sqrt{3\pi \over 32G\rho_0}$</li>
+      </ul>
+    </li>
+    <li><strong>Homologous collapse</strong>:
+Initially uniform spherical cloud would uniformly contract and condense</li>
+    <li>Inside-out collapse:
+Somewhat centrally condensed cloud will have
+shorter free-fall time and thus condense faster near center</li>
+    <li>Significant rotation results in disk-like structure</li>
+    <li>Magnetic pressure keeps clouds balanced; eddy braking slows collapse
+      <ul>
+        <li>Critical mass with magnetic pressure: $M = {c_B \pi R^2 B \over \sqrt G}$</li>
+        <li>Supercritical mass achieved by merger of subcritical clouds,
+or (more commonly) regional lessening of magnetic field</li>
+      </ul>
+    </li>
+    <li><strong>Ambipolar diffusion</strong>: neutral particles drift gravitationally,
+but are slowed by collisions with magnetically-frozen charged particles</li>
+    <li><strong>Fragmentation</strong>: increasing density with constant $T$ reduces Jeans mass,
+causing density inhomogeneities to collapse locally,
+forming large numbers of small protostars in place of a single massive one</li>
+    <li><strong>Initial mass function</strong> (IMF):
+number of stars formed per mass interval strongly mass-dependent,
+with abundance of low-mass stars</li>
+    <li>Increasing density purely adiabatically increases Jeans mass</li>
+    <li>Fragmentation stops as center becomes optically thick when $\sim10^{-10} \text{ kg}\;\text{m}^{-3}$,
+trapping radiation and making collapse more adiabatic</li>
+    <li>Central region reaches near hydrostatic equilibrium and becomes protostar
+      <ul>
+        <li>Larger dust photosphere has radius and effective temperature where $\tau = {2\over3}$,
+putting star on H–R diagram</li>
+        <li>~10 AU wide for collapse from $1 M_\odot$ cloud</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="protostar-evolution">Protostar evolution</h3>
+
+  <ul>
+    <li>Surrounding material still in free-fall until meeting protostellar core,
+releasing significant kinetic energy at shock front as they slow from
+supersonic speeds
+      <ul>
+        <li>Emits blackbody radiation predominantly in IR</li>
+        <li>Luminosity increases with temperature for several thousand years</li>
+      </ul>
+    </li>
+    <li>Dust begins to vaporize and opacity drops ~1000 K
+      <ul>
+        <li>Substatially reduces photosphere radius to nearly the surface of the
+hydrostatic core</li>
+        <li>Increases effective temperature with little change in luminosity</li>
+      </ul>
+    </li>
+    <li>$\text{H}_2$ dissociates ~2000 K,
+absorbing thermal energy otherwise used to maintain hydrostatic equilibrium,
+triggering second collapse</li>
+    <li>Core radius decreases to $\sim1.3 R_\odot$ for collapse from $1 M_\odot$ cloud, while
+core mass $\ll 1 M_\odot$, indicating ongoing accretion at a second shock front</li>
+    <li>Hot core begins burning deuterium ($^2_1\text{H}$), producing ~60% of luminosity,
+which stays roughly constant</li>
+    <li>Deuterium burn-out leads to sharp drop in luminosity with small decrease
+in effective temperature, leading to pre-main-sequence star</li>
+  </ul>
+
+  <h3 id="protostar-observation">Protostar observation</h3>
+
+  <ul>
+    <li>Direct observation shielded by thick dust of molecular cloud,
+and made rare by relatively short free-fall time</li>
+    <li>Small IR sources embedded in dense cores or Bok globules indicate collapse</li>
+    <li>Infalling material around embedded IR objects show twin spectral splitting
+from Doppler effect</li>
+  </ul>
+
+  <h3 id="pre-main-sequence-evolution">Pre-main-sequence evolution</h3>
+
+  <ul>
+    <li>Increasing temperatures lead to H$^-$ opacity dominating in outer layers,
+creating envelope to become deeply convective</li>
+    <li><strong>Hayashi track</strong>: convection constrains H–R path to near vertical line
+      <ul>
+        <li>Luminosity decreases with slight increase in temperature
+as protostar slows collapse and reaches hydrostatic equilibrium</li>
+      </ul>
+    </li>
+    <li>Formation of $\sim1 M_\odot$ stars:
+      <ul>
+        <li>Completely convective from high H$^-$ opacity for the first $\sim10^6$ years of collapse,
+slowed little by scarce deuterium burning</li>
+        <li>Rising central temperature decreases opacity and creates expanding radiative core</li>
+        <li>Core begins generating energy from first steps in the
+  PP I chain ($2 {\;}^1_1\text{H} \to {\;}^3_2\text{He}$) and CNO cycle ($^{12}_6\text{C} + {\;}^1_1\text{H} \to ^{14}_7\text{N}$),</li>
+        <li>Surface luminosity increases with temperature again and moves star off Hayashi track</li>
+        <li>Core burning comes to increasingly dominate luminosity generation</li>
+        <li>CNO reactions give core steep temperature gradient and some convection</li>
+        <li>Core expansion from intense nuclear energy production expends gravitational energy,
+lowering luminosity and effective temperature to main-sequence values</li>
+        <li>After exhaustion of $^{12}_6$C for CNO, core reaches temperature
+for hydrostatic hydrogen burning via the full PP I chain</li>
+      </ul>
+    </li>
+    <li>Formation of $\lesssim 0.5 M_\odot$ stars:
+      <ul>
+        <li>Central temperature never reaches efficient $^{12}_6$C-burning temperatures
+for upward branch between Hayashi track and main sequence</li>
+        <li>Fully convection: temperature stays sufficiently low and opacity sufficiently high
+to never develop radiative core</li>
+      </ul>
+    </li>
+    <li>Formation of brown dwarfs ($0.013 \sim 0.072 M_\odot$):
+      <ul>
+        <li>Low nuclear burning rate cannot form main-sequence star</li>
+        <li>$\text{Li}$ burning $\gtrsim 0.06 M_\odot$</li>
+        <li>Deuterium burning $\gtrsim 0.013 M_\odot$ (~13 Jupiter masses)</li>
+        <li>Spectral types L and T</li>
+      </ul>
+    </li>
+    <li>Formation of massive stars:
+      <ul>
+        <li>High central temperatures leads to early, high-luminosity departure from Hayashi track</li>
+        <li>Evolve nearly horizontally across H–R diagram</li>
+        <li>Full CNO cycle becomes dominant H-burning mechanism,
+with steep thermal gradient keeping core convective</li>
+      </ul>
+    </li>
+    <li><strong>Zero-age main sequence</strong> (ZAMS): when stars begin equilibrium hydrogen burning</li>
+  </ul>
+
+  <h3 id="stellar-formation-effects-on-medium">Stellar formation effects on medium</h3>
+
+  <ul>
+    <li><strong>OB associations</strong>: star groups dominated by O and B main-sequence stars</li>
+    <li>Massive O and B protostars will first vaporize surrounding dust,
+then dissociate molecules, and finally ionize immediate surroundings
+into an $\text{H II}$ region within an $\text{H I}$ region</li>
+    <li><strong>$\text{H II}$ regions</strong>: $\text{H I}$ ionized into $\text{H II}$ by protostar UV radiation fluoresce in visible light
+during recombination, creating emission nebulae
+in the visible spectrum during recombination
+      <ul>
+        <li><strong>Strömgren radius</strong> of $\text{H II}$ region: $r \approx \sqrt[3]{3N \over 4\pi\alpha n^2}$</li>
+        <li>Where $N$ is rate of ionizing photon production,
+$\alpha$ is likelihood of recombination, and n is number density of protons and electrons</li>
+      </ul>
+    </li>
+    <li>Radiation pressure from cluster of highly luminous O and B stars
+drives significant mass loss, disperses surrounding cloud (halting star formation),
+and weakens gravitational bound of star group (generally unbinding them)</li>
+    <li><strong>Circumstellar disks</strong>
+      <ul>
+        <li>Formed by spin-up of cloud transferring angular momentum away from collapsing star,
+possibly via stellar winds coupled to magnetic fields from within the convection zones</li>
+        <li>Continuous spectrum from reflection of protostar light</li>
+        <li>May be accretion or debris disks, possibly forming protoplanets</li>
+        <li><strong>Proplyds</strong>: protoplanetary disks $\gtrsim 10^{25} \text{ kg}$</li>
+      </ul>
+    </li>
+    <li><strong>Herbig–Haro objects</strong>:
+narrow beams of supersonic gas jets ejected from poles of young protostars
+      <ul>
+        <li>Collision with ISM results in excitations, producing bright emission lines</li>
+      </ul>
+    </li>
+    <li><strong>T Tauri stars</strong>:
+low-mass ($0.5\sim2 M_\odot$) pre-main-sequence objects in intermediate phase
+between IR source and main-sequence star
+      <ul>
+        <li>Large irregular variations in luminosity with timescales ~ days</li>
+        <li>Strong H, Ca II, and Fe emission and Li absorption</li>
+        <li>Often forbidden [O I] and [S II] indicative of extremely low gas densities</li>
+        <li>Some lines have a P Cygni profile indicative of significant mass loss $\approx 10^{-8} M_\odot$/year:
+blueshifted absorption trough before an emission peak and
+a redshifted emission tail</li>
+        <li>P Cygni profile sometimes inverts, indicating significant mass accretion in
+a very unstable environment</li>
+      </ul>
+    </li>
+    <li><strong>FU Orionis stars</strong>:
+T Tauri stars undergoing extreme mass accretion ($\approx 10^{-4} M_\odot$/year)
+and increase in luminosity ($\gtrsim4$ magnitudes)
+      <ul>
+        <li>Circumstellar disk instabilities dump $\sim 0.01 M_\odot$ of material
+onto central star over ~100 years</li>
+        <li>Inner disk outshines centural star by $100–1000\times$</li>
+        <li>May occur to a T Tauri star several times over its lifetime</li>
+      </ul>
+    </li>
+    <li><strong>Herbig Ae/Be stars</strong>: type A and B pre-main-sequence stars with strong emission lines</li>
+  </ul>
+
+  <h3 id="modifications-to-classical-model">Modifications to classical model</h3>
+
+  <ul>
+    <li>Classical model neglects rotation, turbulence, magnetic fields,
+initial inhomogeneities, strong stellar winds, ionizing stellar radiation,
+pressure-free protostellar collapse, likely smaller initial radii,
+and upper limits to massive star accretion,</li>
+    <li>Birth line: evolutionary theories with smaller initial radii
+place upper limit on observed protostar luminosity</li>
+    <li>Some observations suggest massive starts $\gtrsim 10 M_\odot$ may
+instead form from mergers or with accretion disk
+due to limiting feedback mechanism on non-rotational accretion</li>
+    <li>Classical model predicts inverse relation of collapse time and mass,
+implying massive stars would disperse surrounding cloud before
+any low-mass stars can form</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="main-sequence-and-post-main-sequence-stellar-evolution">13. Main Sequence and Post-Main-Sequence Stellar Evolution</h2>
+
+  <ul>
+    <li>Generally dominated by nuclear reaction timescale</li>
+    <li>Kelvin–Helmholtz timescale relevant when transitioning between nuclear sources</li>
+  </ul>
+
+  <h3 id="main-sequence-ms">Main sequence (MS)</h3>
+
+  <ul>
+    <li>Stars $0.3\sim1.2 M_\odot$:
+      <ul>
+        <li>Initially, core burns H, predominantly via PP chain
+          <ul>
+            <li>Radiative due to low temperature dependence</li>
+            <li>Core burning radius, density, and temperature rise due to fusion’s increase of
+mean molecular weight causing contraction and release of gravitational energy</li>
+            <li>Surface luminosity, radius, and effective temperature consequently rise over lifetime</li>
+          </ul>
+        </li>
+        <li>Temperature high enough to burn thick H shell around core immediately after core H depletion
+          <ul>
+            <li>Core now isothermal and predominantly He, growing as He ash rains down from shell</li>
+            <li>Shell H burning generates more power than core H burning, but some of it is
+converted into gravitational potential through slow expansion of envelope</li>
+            <li>Effective temperature decreases slightly</li>
+          </ul>
+        </li>
+        <li><strong>Schönberg–Chandrasekhar limit</strong>, max mass fraction of an isothermal core
+in hydrostatic equilibrium supported by ideal gas pressure:
+${M' \over M} \lesssim 0.37 \left(\mu\over\mu'\right)^2$
+          <ul>
+            <li>Where M′ and \mu′ are mass and mean molecular weights of the core</li>
+            <li>Derived from hydrostatic pressure: ${dP \over dM} = -{Gm \over 4\pi r^4}$</li>
+          </ul>
+        </li>
+        <li>After reaching SC limit, core contracts on Kelvin–Helmholtz timescale
+unless mass is low enough to be supported by temperature-independent
+electron degeneracy pressure: $P \propto \rho^{5\over3}$</li>
+      </ul>
+    </li>
+    <li>Stars $\gtrsim 1.2 M_\odot$:
+      <ul>
+        <li>Initially, core nearly homogeneous due to convective mixing</li>
+        <li>Convection zone decreases in mass during H burning
+          <ul>
+            <li>Shrinks faster for more massive stars,
+disappearing entirely before H exhaustion for stars $\gtrsim 10 M_\odot$</li>
+            <li>Leaves slight composition gradient</li>
+          </ul>
+        </li>
+        <li>After near-exhaustion of core H ($X \approx 0.05$ for $M \approx 5 M_\odot$), entire star contracts
+on Kelvin–Helmholtz timescale while increasing luminosity and effective temperature</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="subgiant-branch-sgb">Subgiant branch (SGB)</h3>
+
+  <ul>
+    <li>Low-mass stars:
+      <ul>
+        <li>Rapid core contraction releases gravitational energy,
+expanding envelope and decreasing effective temperature</li>
+        <li>Raised H shell temperature and density rapidly increases power generation,
+again expanding envelope</li>
+      </ul>
+    </li>
+    <li>Massive stars:
+      <ul>
+        <li>Rising temperatures eventually trigger rapid ignition of thick H shell around core,
+forcing slight expansion of star envelope,
+momentarily decreasing luminosity and temperature</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="red-giant-branch-rgb">Red giant branch (RGB)</h3>
+
+  <ul>
+    <li>Low- and intermediate-mass stars:
+      <ul>
+        <li>Near-surface convection zone created for
+due to $\text{H}^-$ ions increasing photospheric opacity</li>
+      </ul>
+    </li>
+    <li>All stars:
+      <ul>
+        <li>Star rises along Hayashi track as convection zone dominates star interior</li>
+        <li><strong>First dredge-up</strong>: convection sinks elements from surface ($\text{Li}$, $^{12}_6\text{C}$, etc)
+and surfaces products of nuclear processes ($^3_2\text{He}$, $^{14}_7\text{N}$, etc)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="red-giant-tip--start-of-helium-fusion">Red giant tip / start of helium fusion</h3>
+
+  <ul>
+    <li>Stars $\lesssim 1.8 M_\odot$:
+      <ul>
+        <li>He core becomes strongly electron-degenerate</li>
+        <li>Significant neutrino losses create negative temperature gradient near center</li>
+        <li><strong>Helium core flash</strong>: explosive initiation of triple-alpha process in He core in seconds
+          <ul>
+            <li>Core is rapidly lifted out of degeneracy outside-in, with
+strong temperature dependence of triple-alpha driving extreme thermal runaway</li>
+            <li>Briefly generates $\approx 10^{11} L_\odot$ of power, but most is absorbed in thermalizing core</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>All stars;
+      <ul>
+        <li>Core expands from He burning, pushing H-burning shell outward</li>
+        <li>Luminosity abruptly decreases due to cooling of H-burning shell</li>
+        <li>Effective temperature begins to increase due to envelope contraction</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="horizontal-branch-hb--blue-loop">Horizontal branch (HB) / blue loop</h3>
+
+  <ul>
+    <li>Stars $\lesssim 15 M_\odot$:
+      <ul>
+        <li>Envelope contraction raises effective temperature
+and compresses H-burning shell, increasing power generation</li>
+        <li>Deep convection zone rises towards surface while triple-\alpha makes core convective as well</li>
+        <li>Many develop instabilities in outer envelope, leading to periodic pulsations</li>
+        <li>Increase in mean molecular mass eventually causes core contraction,
+expanding envelope and lowering effective temperature</li>
+        <li>Depletion of core He rapidly accelerates core contraction
+          <ul>
+            <li>Core now mostly C and O, becoming very degenerate and
+cooling through significant neutrino production</li>
+          </ul>
+        </li>
+        <li>Contraction and heating of surrounding He shell initiates He shell burning,
+in turn forcing expansion and cooling of surrounding H shell,
+temporarily halting H shell burning</li>
+      </ul>
+    </li>
+    <li>Stars $\gtrsim 15 M_\odot$ do not experience the blue loop</li>
+  </ul>
+
+  <h3 id="early-asymptotic-giant-branch-e-agb">Early asymptotic giant branch (E-AGB)</h3>
+
+  <ul>
+    <li>All stars:
+      <ul>
+        <li>He-burning shell generates most power while H-burning shell is nearly inactive</li>
+        <li>Convective envelope absorbs energy and expands, lowering effective temperature</li>
+        <li><strong>Second dredge-up</strong>: convection deepens again,
+bringing He and N from interior onto H-rich envelope</li>
+        <li>Star back on Hayashi track, approaching previous RGB path asymptotically from the left</li>
+        <li>Rapid mass loss due to low surface gravity</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="thermally-pulsating-agb-tp-agb">Thermally-pulsating AGB (TP-AGB)</h3>
+
+  <ul>
+    <li>All stars:
+      <ul>
+        <li>As He-burning shell nears exhaustion, H shell reignites</li>
+        <li>He ash from H-burning shell builds up and makes base of He shell slightly degenerate,
+eventually triggering <strong>helium shell flash</strong></li>
+        <li>Convection zone established between He- and H-burning shells</li>
+        <li>He-burning expands and cools H-burning shell, gradually turning it off</li>
+        <li>Process repeats with growing amplitude after every pulse</li>
+        <li>Cycle evident from abrupt changes in surface luminosity</li>
+        <li>Period ranges from $\sim10^3 \text{ years}$ for stars $\sim5 M_\odot$ to $10^5 \text{ years}$ for stars $\sim0.6 M_\odot$
+          <ul>
+            <li>Long-Period Variables (LPVs) such as Mira have 100-700-day periods</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Stars $\gtrsim 2 M_\odot$
+      <ul>
+        <li><strong>Third dredge-up</strong>: convection envelope merges with inter-shell convection zone
+and surfaces material from C-synthesizing region</li>
+        <li>Inverting number ratio of O and C in stellar atmosphere creates carbon stars,
+with spectral type C overlapping the traditional K and M
+          <ul>
+            <li>Spectral type S inbetween M and C has approximately equal O and C abundances</li>
+          </ul>
+        </li>
+        <li>Mass loss in cool temperatures (~3000 K) expels into ISM
+silicate grains from O-rich atmospheres and graphite grains from C-rich atmospheres</li>
+        <li><strong>S-process nucleosynthesis</strong>:
+nuclei in deep interior capture neutrons produced by nuclear burning,
+at a slow enough rate to radioactively decay before their next capture</li>
+        <li>S and C-type stars dredge up elements with no stable isotopes (e.g. Tc) into atmosphere,
+indicating active s-process</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="late-and-post-agb">Late and post-AGB</h3>
+
+  <ul>
+    <li>Stars $\lesssim 8 M_\odot$:
+      <ul>
+        <li>He-burning increases mass of CO core, causing contraction until
+electron degeneracy pressure dominates</li>
+        <li>Mass loss accelerates with decreasing mass and increasing radius,
+developing $\sim10^{-4} M_\odot$/year superwind
+          <ul>
+            <li>Precise mechanism unknown</li>
+            <li>Energizes shroud of optically thick dust clouds into OH/IR sources:
+the OH molecules emit IR as masers</li>
+          </ul>
+        </li>
+        <li>Mass loss prevents catastrophic core collapse from Chandrasekhar limit,
+allowing stars between $4\sim8 M_\odot$ to additionally synthesize Ne and Mg in cores</li>
+        <li>Surrounding dust cloud eventually becomes optically thin from expansion,
+revealing an F or G supergiant</li>
+        <li>AGB phase ends as envelope is expelled, moving star nearly horizontally blueward</li>
+        <li>Luminosity drops rapidly as H and He-burning shells lose pressure and extinguish,
+revealing hot, degenerate C–O or ONeMg core: a white dwarf</li>
+        <li>Planetary nebula: expanding shell of gas around white dwarf
+          <ul>
+            <li>Emitting visible spectrum due to UV from central star remnant</li>
+            <li>Complex morphologies due to preferentially equatorial ejection</li>
+            <li>Receding at $10\sim30$ km/s, with character length scales of $\sim0.3$ pc</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Stars $\gtrsim 8 M_\odot$: see Ch. 15</li>
+  </ul>
+
+  <h3 id="stellar-populations">Stellar populations</h3>
+
+  <ul>
+    <li>Stars give ISM back material enriched with more heavy elements than given</li>
+    <li><strong>Population III</strong>: stars formed soon after the Big Bang with virtually no metals ($Z = 0$)
+      <ul>
+        <li>Found in extreme deep field observations to primordial galaxies</li>
+      </ul>
+    </li>
+    <li><strong>Population II</strong>: succeeding generations of metal-poor stars ($Z \gtrsim 0$)
+      <ul>
+        <li>Found outside galactic disk and in globular clusters</li>
+      </ul>
+    </li>
+    <li><strong>Population I</strong>: current generations of metal-rich stars ($Z \approx 0.03$)
+      <ul>
+        <li>Found inside galactic disk and in open clusters</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="stellar-clusters">Stellar clusters</h3>
+
+  <ul>
+    <li>Stars formed from the same cloud, with similar compositions and birth times
+      <ul>
+        <li><strong>Globular clusters</strong>: Population II, larger and older</li>
+        <li>Galactic/<strong>open clusters</strong>: Population I, smaller and younger</li>
+      </ul>
+    </li>
+    <li>Graphed onto color-magnitude diagrams:
+H–R diagrams with B–V indices rather than effective temperatures,
+and apparent instead of absolute magnitudes if distance is not known</li>
+    <li>Distance generally calculated with spectroscopic parallax</li>
+    <li><strong>Isochrone</strong>: curve fitting all stars of a cluster at a certain age</li>
+    <li>Main-sequence <strong>turn-off point</strong>:
+color and magnitude where stars are currently leaving main sequence
+      <ul>
+        <li>Reflects age of cluster as point becomes redder and less luminous over time,</li>
+      </ul>
+    </li>
+    <li><strong>Hertzsprung gap</strong>: absence of stars between late main sequence and red giant regions
+due to rapid Kelvin–Helmholtz-timescale intermediate evolution</li>
+    <li><strong>Blue stragglers</strong>: group of stars found above turn-off point, possibly
+due to mass exchange with binary companion or collision between stars</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="stellar-pulsation">14. Stellar Pulsation</h2>
+
+  <h3 id="observations">Observations</h3>
+
+  <ul>
+    <li>Pulsating stars dim and brighten as radius and temperature change</li>
+    <li><strong>Long-Period Variables</strong> (LPVs; prototype: $\omicron$ Ceti / Mira):
+thermally-pulsating asymptotic giants with $100\sim700$-day periods and somewhat irregular light curves
+      <ul>
+        <li>May pulsate in either fundamental or first overtone mode</li>
+      </ul>
+    </li>
+    <li><strong>Classical Cepheids</strong> (prototype: $\delta$ Cephei):
+supergiant Ib stars with 1–50-day periods proportional to their average luminosities
+      <ul>
+        <li><strong>Period–luminosity relation</strong> (Leavitt’s law):
+$V = –2.81 \log_{10} P – 1.43$,
+$H = –3.234 \log_{10} P + 16.079$
+          <ul>
+            <li>Where $P$ is period in days</li>
+            <li>Measuring magnitude in the IR H-band mitigates some interstellar extinction</li>
+          </ul>
+        </li>
+        <li><strong>Period–luminosity–color relation</strong>:
+$H = –3.428 \log_{10} P + 1.54(J – K_s) + 15.637$
+          <ul>
+            <li>Where J–K_s is an IR color index</li>
+            <li>Adding color term improves data fit</li>
+          </ul>
+        </li>
+        <li>Used as “<strong>standard candles</strong>” for measuring intergalactic distances</li>
+        <li>Luminosity variation primarily due to $\sim1000$ K variation in temperature,
+with a phase lag of maximum luminosity occuring behind minimum radius</li>
+        <li>Vast majority pulsate in fundamental mode</li>
+      </ul>
+    </li>
+    <li><strong>W Virginis stars</strong>:
+Population II Cepheids, around $4 \times$ less luminous than classical Cepheids of the same period
+      <ul>
+        <li>Vast majority pulsate in fundamental mode</li>
+      </ul>
+    </li>
+    <li><strong>RR Lyrae stars</strong>:
+horizontal-branch Population II stars with 1.5–24-hour periods,
+all having nearly the same luminosity
+      <ul>
+        <li>May pulsate in either fundamental or first overtone mode</li>
+      </ul>
+    </li>
+    <li><strong>$\delta$ Scuti variables</strong>:
+evolved F stars near the main sequence, with both radial and nonradial oscillations
+on 1–3-hour periods</li>
+    <li><strong>ZZ Ceti stars</strong>: pulsating white dwarfs with 100–1000-second periods</li>
+    <li><strong>Instability strip</strong>: narrow, nearly vertical region on H–R diagram,
+right of the main sequence, where most pulsating stars are found,
+including the above types</li>
+    <li><strong>$\beta$ Cephei stars</strong>: luminous (class III–V) blue variables with 3–7-hour periods;
+found in H–R’s upper left, outside the instability strip</li>
+  </ul>
+
+  <h3 id="radial-pulsation-mechanisms">Radial pulsation mechanisms</h3>
+
+  <ul>
+    <li>Oscillations result from standing sound waves in interior
+      <ul>
+        <li>Sound waves in medium with adiabatic index $\gamma$ travel at $v = \sqrt{\gamma P\over\rho}$</li>
+        <li>No displacement at nodes; maximum displacement at antinodes</li>
+      </ul>
+    </li>
+    <li><strong>Period–mean density relation</strong>: $\Pi \approx \sqrt{3\pi\over2\gamma G\rho}$
+      <ul>
+        <li>Denser stars (e.g. white dwarfs) pulsate faster (than e.g. supergiants)</li>
+      </ul>
+    </li>
+    <li>Modes given by conical harmonics
+      <ul>
+        <li>Fundamental mode: node at star center, antinode at surface</li>
+        <li>Each overtone adds a node between center and surface</li>
+      </ul>
+    </li>
+    <li>Surface amplitudes decreases with overtone:
+ ${\delta r\over R} \approx 0.07$ for fundamental, $\lesssim 0.01$ for first, $\approx 0$ for second</li>
+    <li>Eddington modeled stars as heat engines:
+layers doing positive net work on surroundings drive oscillations;
+those doing negative net work dampen them
+      <ul>
+        <li>Positive work done if layer absorbs heat around max compression;
+releases heat and reaches max pressure during expansion</li>
+      </ul>
+    </li>
+    <li><strong>Nuclear $\epsilon$-mechanism</strong>:
+compressing center raises temperature and density, increasing power generation
+      <ul>
+        <li>Amplitude usually too small to drive pulsation</li>
+        <li>May contribute to preventing formation of $\gtrsim 90 M_\odot$ stars</li>
+      </ul>
+    </li>
+    <li>Opacity $\kappa$ and $\gamma$ mechanisms:
+compressing layer increases opacity and traps heat, driving expansion
+      <ul>
+        <li>For most layers, opacity decreases with increased temperature from compression</li>
+        <li><strong>$\kappa$-mechanism</strong>: in partial ionization zones however,
+some compression energy goes into further ionization instead of direct heating,
+letting opacity increase with the higher density</li>
+        <li><strong>$\gamma$-mechanism</strong>: heat prefers to flow into partial ionization zone in compression
+due to its lower relative temperature, reinforcing the $\kappa$-mechanism</li>
+      </ul>
+    </li>
+    <li>Most stars have two main ionization zones
+      <ul>
+        <li><strong>Hydrogen partial ionization zone</strong>: broader and closer to surface;
+ionizes $\text{H I} \to \text{H II}$ and $\text{He I} \to \text{He II}$ at characteristic temperature of $1–1.5 \times 10^4 \text{ K}$;
+changing depths during pulsation accounts for phase lag in classical Cepheids and RR Lyrae</li>
+        <li><strong>He II partial ionization zone</strong>: narrower and deeper;
+ionizes $\text{He II} \to \text{He III}$ at characterstic temperature of $4 \times 10^4 \text{ K}$;
+primarily responsible for driving oscillations within instability strip</li>
+      </ul>
+    </li>
+    <li>Temperature-dependent depths of ionization zones determine pulsation properties:
+      <ul>
+        <li>Blue edge of instability strip (~7500 K):
+high temperatures puts ionization zone too close to low-density surface,
+where there is insufficient mass to effectively drive oscillations</li>
+        <li>First overtone may be excited ~6500 K</li>
+        <li>Fundamental mode takes hold ~5500 K</li>
+        <li>Red edge of instability strip (~5000 K):
+heat transfer by convection bypasses high-opacity ionization zones
+and quenches pulsation</li>
+      </ul>
+    </li>
+    <li>$\beta$ Cephei stars pulsate due to iron ionization zone
+      <ul>
+        <li>Effective temperature (20,000~30,000 K) too high for H and He ionization zones</li>
+        <li>$\kappa$ and $\gamma$ mechanisms rely on $\text{Fe}$ opacity bump near $10^5 \text{ K}$</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="pulsation-model">Pulsation model</h3>
+
+  <ul>
+    <li>Newton’s second law must be used instead of hydrostatic equilibrium model
+to account for oscillation of mass shells:
+$\rho {d^2r \over dt^2} = - {GM\rho \over r^2} - {dP \over dr}$</li>
+    <li>Nonlinear evaluation can model complex, nonsinusoidal behavior of large-amplitude pulsations,
+but is very computationally expensive</li>
+    <li>Linearizable by approximating with small amplitudes,
+but results in sinusoidal oscillations with no amplitude information</li>
+    <li>Adiabatic approximation also used to minimize complexity,
+but nonlinear, nonadiabatic models are necessary for some variable stars</li>
+    <li>One-zone linear, adiabatic model: $\Pi = {2\pi \over \sqrt{{4\pi \over 3} G\rho(3\gamma–4) }}$</li>
+    <li><strong>Dynamic stability</strong>: star collapses if $\gamma &lt; {4\over3}$</li>
+  </ul>
+
+  <h3 id="nonradial-pulsation-mechanisms">Nonradial pulsation mechanisms</h3>
+
+  <ul>
+    <li>Some regions of surface expand while others contract</li>
+    <li>Oscillations result from standing sound waves with latitudinal nodal circles
+and traveling sound waves with longitudinal nodal circles
+      <ul>
+        <li>No displacement at nodal circles</li>
+      </ul>
+    </li>
+    <li><strong>Angular modes</strong> given by real parts of spherical harmonic functions: $Y^m_l(\theta, \phi)$
+      <ul>
+        <li>There are $l$ nodal circles: $\lvert m\rvert$ longitudes and $l - \lvert m \rvert$ latitudes</li>
+        <li>Where $l \in Z^+$ and $m \in [-l, l]$</li>
+        <li>Traveling waves take $\vert m\rvert\cdot\Pi$ long to travel around star,
+with direction dependent on sign of $m$</li>
+      </ul>
+    </li>
+    <li>Pressure waves: <strong>p-modes</strong>
+      <ul>
+        <li>Confined to low depths, revealing conditions in stellar surface layers</li>
+        <li>Both radial and angular nodes</li>
+        <li>Acoustic frequency $S = \sqrt{\gamma P \over \rho} {\sqrt{l(l+1)} \over r}$</li>
+        <li>Frequencies split by prograde and retrograde wave motion
+proportional to star rotation rate: $\Delta S \propto m\Omega$</li>
+      </ul>
+    </li>
+    <li>Internal gravity waves: <strong>g-modes</strong>
+      <ul>
+        <li>Reveals movement of stellar material in deep interior</li>
+        <li>Only have angular nodes</li>
+        <li><strong>Brunt–Väisälä bouyancy frequency</strong>: $N = \sqrt{–Ag}$</li>
+        <li>Confined to radiative zones, where $A &lt; 0$: $A \equiv {1\over\gamma P} {dP \over dr} – {1\over\rho} {d\rho \over dr}$</li>
+      </ul>
+    </li>
+    <li>Surface gravity waves: <strong>f-modes</strong>
+      <ul>
+        <li>Frequency inbetween p- and g-modes</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="helioseismology-and-asteroseismology">Helioseismology and asteroseismology</h3>
+
+  <ul>
+    <li>All observed solar oscillations are in the p-mode, with 3–8-minute periods and
+very short (high $l$) horizontal wavelengths</li>
+    <li>Likely driven by turbulent energy of convection zone</li>
+    <li>Latitide-dependent rotation rate revealed by m-dependent frequency splitting</li>
+    <li>Depth-dependent rotation rate revealed by $l$-dependent attenuation below convection zone</li>
+    <li>Thick convection zone prevents surface observation of of g-modes</li>
+    <li>$\delta$ Scuti stars tend to pulsate in low-overtone radial modes, low-order p-modes,
+and possibly g-modes</li>
+    <li><strong>Rapidly oscillating peculiar A stars</strong> (roAp) primarily pulsate in higher-order
+p-modes, with the pulsation axis aligned with their strong magnetic fields
+instead of the rotation axis</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="the-fate-of-massive-stars">15. The Fate of Massive Stars</h2>
+
+  <h3 id="post-main-sequence-evolution">Post-main-sequence evolution</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>$M\;(M_\odot)$</th>
+        <th>path to supernova</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$\gtrsim85$</td>
+        <td>O →  Of → LBV → WN → WC → SN</td>
+      </tr>
+      <tr>
+        <td>$40\sim85$</td>
+        <td>O →  Of →  WN → WC → SN</td>
+      </tr>
+      <tr>
+        <td>$25\sim40$</td>
+        <td>O → RSG →  WN → WC → SN</td>
+      </tr>
+      <tr>
+        <td>$20\sim25$</td>
+        <td>o → RSG →  WN → SN</td>
+      </tr>
+      <tr>
+        <td>$10\sim20$</td>
+        <td>O → RSG → BSG → SN</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul>
+    <li><strong>Luminous blue variables</strong> (LBVs; prototype: S Doradus):
+massive stars whose brightness suddenly erupt from time to time
+      <ul>
+        <li>Effective temperatures between $15\,000\sim30\,000$ K, masses $\gtrsim 85 M_\odot$,
+and luminosities $\gtrsim10^6 L_\odot$ approaching the Eddington limit</li>
+        <li>Possible mechanisms behind behavior include
+envelope mass loss from temporarily exceeding Eddington limit,
+atmospheric pulsation instabilities, and binary companions</li>
+      </ul>
+    </li>
+    <li><strong>Wolf–Rayet stars</strong> (WR):
+very hot, rapidly rotating stars with unusually strong broad emission lines and high mass loss
+      <ul>
+        <li>Effective temperatures between $25\,000\sim100\,000$ K, masses $\gtrsim 20 M_\odot$,
+mass loss rates $\gtrsim 10^{-5} M_\odot/\text{year}$, and equatorial rotation speed ~300 km/s</li>
+        <li>Atypical spectral composition due to mass loss progressive stripping away outermost layers:
+WNs emission lines dominate in He and N; WCs in He and C; WOs in O</li>
+      </ul>
+    </li>
+    <li>Blue supergiants (BSG)</li>
+    <li>Red supergiants (RSG)
+      <ul>
+        <li>Humphreys–Davidson luminosity limit: the most massive stars never evolve to RSG portion
+due to max luminosity cutoff</li>
+      </ul>
+    </li>
+    <li>Of stars: O supergiants with pronounced emission lines</li>
+  </ul>
+
+  <h3 id="supernova-observation-and-classification">Supernova observation and classification</h3>
+
+  <ul>
+    <li>Recorded Milky Way supernovae:
+SN 1006, SN 1054 with Crab supernova remnant,
+Tycho’s supernova SN 1572, and Kepler’s supernova SN 1604</li>
+    <li>SN 1987A in Large Magellanic Clouds (50 kpc from Earth) first nearby supernova in age of modern astronomy</li>
+    <li>Classified by spectra at maximum light and light curve shape:
+      <ul>
+        <li><strong>Type I supernova</strong>: no H lines
+          <ul>
+            <li>H envelope already stripped before SN</li>
+            <li>Dimming $\sim 0.065$/day at 20 days, slowing to a constant rate after $\sim50$ days</li>
+            <li>Type Ia: Si II lines
+              <ul>
+                <li>Found in all galaxy types, including low-star-forming ellpticals</li>
+                <li>$M_B \approx -18.4$</li>
+                <li>Dimming $\sim0.015$/day after $\sim50$ days</li>
+              </ul>
+            </li>
+            <li>Type Ib/Ic: no Si II lines
+              <ul>
+                <li>Only found in star-forming H II regions of spirals</li>
+                <li>$M_B \approx -16$</li>
+                <li>Dimming $\sim0.010$/day after $\sim50$ days</li>
+                <li>Type Ib: He lines</li>
+                <li>Type Ic: no He lines</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>Type II supernova</strong>: H lines;
+          <ul>
+            <li>Type II-P: plateau
+              <ul>
+                <li>Temporary plateau in light curve between $30\sim80$ days</li>
+                <li>Occurs $\sim10\times$ as often as Type II-L</li>
+              </ul>
+            </li>
+            <li>Type II-L: linear</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="core-collapse-supernovae">Core-collapse supernovae</h3>
+
+  <ul>
+    <li>Type Ib, Ic, and II involve collapse of massive, evolved stellar core</li>
+    <li>He burning eventually adds enough mass and density to CO core to start burning C, creating O–Ne core</li>
+    <li>O–Ne then starts burning O, creating $^{28}_{14}$Si-dominated core</li>
+    <li>Si burning at $\sim3\times10^9$ K creates iron core with host of heavy nuclei centered near $^{56}_{26}$Fe</li>
+    <li>Onion-like interior: Fe core ) Si-burning ) Si-rich ) O-burning ) O-rich ) C-burning ) C-rich ) He-burning ) He-rich ) H-burning ) H–He envelope</li>
+    <li>Less energy released per mass, thus shorter timescale, with each successive fuel</li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th>core-burning fuel</th>
+        <th>duration for $20 M_\odot$ star</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>H</td>
+        <td>$\sim10^7$ years</td>
+      </tr>
+      <tr>
+        <td>He</td>
+        <td>$\sim10^6$ years</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>$\sim300$ years</td>
+      </tr>
+      <tr>
+        <td>O</td>
+        <td>$\sim200$ days</td>
+      </tr>
+      <tr>
+        <td>Si</td>
+        <td>$\sim2$ days</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul>
+    <li>Extreme core temperature ($T_c\approx8\times10^9$ K) leads to <strong>photodisintegration</strong>: high-energy photons destroy heavy nuclei
+      <ul>
+        <li>$^{56}_{26}\text{Fe}+\gamma\to13{\;}^4_2\text{He}+4\text{n}$, $^4_2\text{He}+\gamma\to2\text{p}^++2\text{n}$</li>
+        <li>Highly endothermic, removing thermal pressure</li>
+      </ul>
+    </li>
+    <li>Extreme core temperature and density ($\rho_c\approx10^{13}$ kg/m$^{3}$) leads to heavy nuclei and photodisintegrated protons capturing free electrons, removing electron degeneracy pressure as well</li>
+    <li>Loss of hydrostatic pressure causes core to collapse rapidly</li>
+    <li>Inner core collapses homologously, decoupling from outer core where velocity becomes locally supersonic</li>
+    <li>Collapse continues until density exceeds $8\times10^{17}$ kg/m$^{3}$ and strong force suddenly becomes repulsive due to neutron degeneracy pressure, sending shock waves to infalling outer core</li>
+    <li>Supersonic outer core collapses in near free-fall $\sim70\,000$ km/s until heating and photodisintegrating upon encountering shock front</li>
+    <li>Shock loses energy and stalls, becoming accretionary</li>
+    <li>Extreme density traps neutrinos below in <strong>neutrinosphere</strong>
+      <ul>
+        <li>If neutrino energy reheats base of shock sufficiently quickly, shock resumes traveling outward</li>
+        <li>Otherwise, material in shock falls back onto core and no explosion occurs</li>
+      </ul>
+    </li>
+    <li>Shock propels nuclear products and envelope material to kinetic energies $\sim10^{44}$ J</li>
+    <li>Material becomes optically thin at $\sim10^3$ m $\approx100$ AU, releasing $\sim10^{42}$ J $\approx 10^9 L_\odot \approx L_\text{galaxy}$ of light</li>
+    <li>$\sim3\times10^{46}$ J of neutrinos released as well
+      <ul>
+        <li>SN 1987A’s neutrinos traveled relativistically and arrived 3 hours before its photons, placing rest mass limit $m_{\nu_e} \leq 16$ eV</li>
+      </ul>
+    </li>
+    <li><strong>Neutron star</strong> forms if remnant of inner core is small enough (neglecting rotation, $m\lesssim2.2M_\odot$ from $M_\text{ZAMS} \lesssim 25M_\odot$) to stablize from neutron degeneracy pressure; collapses into singularity and produces <strong>black hole</strong> otherwise</li>
+    <li>Nebulae emit highly polarized synchotron radiation, with electrons supplied by center pulsar</li>
+    <li>Spectral differencies of types II, Ib, and Ic due to composition and mass of envelope prior to, and radioactive material synthesized during core collapse
+      <ul>
+        <li>Type II usually from RSGs in H–R’s extreme upper left
+          <ul>
+            <li>SN 1987A was <strong>subluminous</strong> by $\sim3.5$ magnitudes relative to typical Type II supernovae due to being a denser BSG in the blue loop</li>
+          </ul>
+        </li>
+        <li>Type Ib and Ic likely from WN and WC Wolf–Rayets, respectively</li>
+      </ul>
+    </li>
+    <li>Light curve plateau of Type II-P largely caused by prolonged recombination of H-rich envelope after shock ionization; further supported by radioactive decay of $^{56}_{28}$Ni in shock front
+      <ul>
+        <li>Light curve slope may be matched to decay of specific radioisotopes</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="supernova-nucleosynthesis">Supernova nucleosynthesis</h3>
+
+  <ul>
+    <li><strong>Solar lithium problem</strong>: solar convection zone predicted by stellar models too shallow to adequately burn Li, yet meteorites show primordial Li was $100\times$ the current solar Li abundance</li>
+    <li>Synthesis of heavy-nuclei by charged particles extremely difficult due to Coulomb barrier, but neutron capture can occur at relatively low temperatures
+      <ul>
+        <li>Insignificant in energy production, but accounts for abundance ratios of nuclei $A&gt;60$</li>
+        <li>Slow <strong>s-process</strong> yielding stable nuclei if $t_{\beta\text{-decay}} \ll t_\text{n-capture}$; tends to occur in normal phases of stellar evolution</li>
+        <li>Rapid <strong>r-process</strong> yielding neutron-rich nuclei if $t_{\beta\text{-decay}} \gg t_\text{n-capture}$; tends to occur in supernovae</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="gamma-ray-bursts-grb">Gamma-ray bursts (GRB)</h3>
+
+  <ul>
+    <li>Brief shower of gamma-ray photons between $1\sim10^6$ keV</li>
+    <li>Rise time of $\sim10^{-4}$ s followed by exponential decay totaling $10^{-2}\sim10^3$ s</li>
+    <li>Characteristic length $l = c\cdot t_\text{rise}$ roughly size of neutron star</li>
+    <li>Emission between $350\sim500$ keV likely gravitationally redshifted pairs of 511-keV photons produced by e$^-$–e$^{+}$ annihilation on neutron star surface</li>
+    <li>Emission between $20\sim60$ keV likely cyclotron lines from pulsar magnetic field $\sim10^8$ T</li>
+    <li>Burst distribution isotropic throughout sky, but has radial edge corresponding to extragalactic distances</li>
+    <li>Total energy released comparable to that of core-collapse supernovae
+      <ul>
+        <li><strong>Fluence</strong> $S$: total energy released per detector surface area</li>
+      </ul>
+    </li>
+    <li><strong>Short–hard GRBs</strong>: $\lesssim2$ s, associated with neutron star–neutron star or neutron star–black hole mergers</li>
+    <li><strong>Long–soft GRBs</strong>: $\gtrsim2$ s, associated with supernovae</li>
+  </ul>
+
+  <h3 id="longsoft-grbs">Long–soft GRBs</h3>
+
+  <ul>
+    <li>Traced to the same locations as some supernovae</li>
+    <li><strong>Relativistic jets</strong>: beams of highly relativistic matter (Lorentz factor $\gamma$ possibly $\gtrsim100$)
+      <ul>
+        <li>For $\gamma\gg1$, beam cone has half-width angle $\theta\propto1/\gamma$</li>
+        <li>Doppler/<strong>relativistic beaming</strong>: if observer within beam, observed energy and collimation will be greater than what is actually emitted</li>
+        <li>Models must avoid slow-down from relativistic speeds after encountering too much (cumulative rest mass $m_0\gtrsim\gamma m_\text{jet}c^2$) baryon-rich material from envelope</li>
+      </ul>
+    </li>
+    <li>Hypernova/<strong>collapsar model</strong>: black hole formed directly from supernova
+      <ul>
+        <li>Debris disk and associated magnetic fields collimate relativistic jets emanating from center of supernova</li>
+        <li>Gamma rays emitted as jets encounter infalling stellar envelope</li>
+      </ul>
+    </li>
+    <li><strong>Supranova model</strong>: rotating neutron star with $M \gtrsim2.2M_\odot$ spins down over weeks to months and collapses into black hole
+      <ul>
+        <li>Stellar envelope has already been cleared away by supernova</li>
+        <li>Debris disk and associated magnetic fields produce both relativistic jets and a GRB</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="cosmic-rays">Cosmic rays</h3>
+
+  <ul>
+    <li>Penetrating radiation of charged particles comprising wide range of classes (), masses, and energies ($10^7\sim10^{20}$ eV)</li>
+    <li>Subatomic particles including e$^\pm$, p$^+$, $\mu^\pm$, and atomic nuclei including C, Ne, Mg, Si, Fe, Ni</li>
+    <li><strong>Solar cosmic rays</strong> relatively low energy, with $\sim750$ km/s protons in fast solar wind having $E\approx 3$ keV, and $\sim0.1c$ protons from CMEs having $E\approx10$ MeV</li>
+    <li>Supernova-origin cosmic rays travel relativistically $\sim c$ with $E\lesssim10^{16}$ eV</li>
+    <li>Charged particles orbit magnetic fields at <strong>Larmor radius</strong> / gyroradius $r = {\gamma m v\over q B}$
+      <ul>
+        <li>While trapped in field, particle is accelerated to relativistic speeds by successive collisions with advancing shock wave</li>
+        <li>With sufficient energy $\sim10^{15}$ eV, $r$ exceeds size scale of supernova remnant $\sim1$ pc and particle is likely ejected</li>
+      </ul>
+    </li>
+    <li>Possible origins for highest-energy cosmic rays;
+      <ul>
+        <li>Acceleration near neutron stars or black holes</li>
+        <li>Collisions involving intergalactic shocks</li>
+        <li>Emission from active galactic nuclei around supermassive black hole</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="the-degenerate-remnants-of-stars">16. The Degenerate Remnants of Stars</h2>
+
+  <h3 id="white-dwarfs-wd">White dwarfs (WD)</h3>
+
+  <ul>
+    <li>Manufactured in cores of low- and intermediate-mass stars ($M_\text{ZAMS}\lesssim8M_\odot$)</li>
+    <li>Low luminosity despite high central temperature indicate lack of fuel for thermonuclear reaction</li>
+    <li>Primarily comprises completedly ionized C and O nuclei, but extreme gravity stratifies interior into CO core ) He layer ) H layer over $\sim100$ years</li>
+    <li>$0.4\sim0.7M_\odot$, $\sim R_\oplus$, $\rho\approx10^9$ kg/m$^3$, $g\approx 10^6$ m/s$^2$, $T\approx5000\sim80\,000$ K</li>
+    <li>Interior nearly isothermal due to energy transfer via highly efficient, degenerate <strong>electron conduction</strong>; steep temperature drop in nondegenerate envelope drive convection mixing in surface layers</li>
+    <li>Thermal energy primarily resides in kinetic energy of nuclei, as nearly all electrons are in degenerate energy levels</li>
+    <li>Core cools at $T_\text{core}(t) = T_0\left(1+{5\over2}{t\over\tau_0}\right)^{-2/5}$
+      <ul>
+        <li>Luminosity $L\propto T_\text{core}^{7/2} \propto T_\text{eff}^4$: interior cools faster than surface</li>
+        <li>At $\sim10^{-4}L_\odot$, nuclei begin crystallizing, slowing cooling</li>
+      </ul>
+    </li>
+    <li>Spectral lines significantly broadened due extreme pressure near surface</li>
+    <li>Spectral type D (dwarf)
+      <ul>
+        <li><strong>DA</strong>: only H absorption lines; $\sim70\%$ of population</li>
+        <li><strong>DB</strong>: only He absorption lines; $\sim8\%$ of population</li>
+        <li><strong>DC</strong>: featureless continuum; $\sim14\%$ of population</li>
+        <li><strong>DQ</strong>: additional C lines</li>
+        <li><strong>DZ</strong>: additional metal lines</li>
+        <li><strong>DO</strong>: in between O type and WD</li>
+        <li><strong>PNN</strong>: planetary nebula nuclei; WD formation phase</li>
+        <li>Convective mixing may transform WD between spectral subtypes</li>
+      </ul>
+    </li>
+    <li><strong>Pulsating white dwarfs</strong>: on instability strip with periods of $100\sim1000$ s
+      <ul>
+        <li>Multiple periods with $3\sim125$ different simultaneous frequencies</li>
+        <li>Nonradial g-modes resonating in H and He layers cause surface temperature variations without much effect on radius</li>
+        <li><strong>DAV stars</strong> (prototype: ZZ Ceti): $T_\text{eff}\approx12\;000$ K; resonance driven by H partial ionization zone</li>
+        <li><strong>DBV stars</strong>: $T_\text{eff}\approx27\;000$ K; resonance driven by He partial ionization zone</li>
+        <li><strong>DOV</strong> and <strong>PNNV</strong> stars: $T_\text{eff}\approx10^5$ K</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="degenerate-matter">Degenerate matter</h3>
+
+  <ul>
+    <li>Degeneracy of electron fermion gas responsible for maintaining hydrostatic equilibrium in white dwarfs</li>
+    <li><strong>Fermion gas</strong>: obeying the Pauli exclusion principle, only one particle is allowed per state
+      <ul>
+        <li>At $T = 0$ K, all energy states below the <strong>Fermi energy</strong> $\varepsilon_F = {\hbar^2\over2m} (3\pi^2n)^{2/3}$ are occupied and the fermion gas is fully degenerate</li>
+        <li>For $T &gt; 0$ K, fermion gases are still approximately degenerate if average thermal energy ${3\over2}kT &lt; \varepsilon_F$; for an electron gas, ${T\over\rho^{2/3}}&lt;1261$ K m$^2$ kg$^{-2/3}$</li>
+      </ul>
+    </li>
+    <li>Nonrelativistic <strong>degeneracy pressure</strong> $P = {(3\pi^2)^{2/3}\over5} {\hbar^2\over m} n^{5/3}$
+      <ul>
+        <li>Dynamically stable: $P\propto \rho^\gamma$ where adiabatic index $\gamma={5\over3}$</li>
+        <li>Yields nonrelativistic <strong>mass–volume relation</strong>: $V\propto {1\over M}$ and $\rho\propto M^2$</li>
+        <li>Largely temperature independent, leading to He flash in degenerate cores</li>
+      </ul>
+    </li>
+    <li>Electrons become relativistic at $\rho\approx10^9$ kg/m$^3$</li>
+    <li>As $v_e\to c$ at high $M$, adiabatic index $\gamma\to{4\over3}$ and WD becomes dynamically unstable</li>
+    <li><strong>Chandrasekhar limit</strong>: maximum mass supported by electron degeneracy, $M_\text{Ch}\approx0.44M_\odot$</li>
+  </ul>
+
+  <h3 id="neutron-stars-ns">Neutron stars (NS)</h3>
+
+  <ul>
+    <li>$\sim10^{57}$ extremely densely packed neutrons with $\sim M_\text{Ch}$ , $R\approx10\sim15$ km , $\rho\approx10^{17}$ kg/m$^3$, $g\approx10^{12}$ m/s$^2$</li>
+    <li>Rapid rotation on order of milliseconds to seconds guaranteed due to role in countering collapse</li>
+    <li>Extremely hot formation temperatures $\sim10^{11}$ K cooled in days to $T_\text{core}\approx 10^9$ K by internal neutron–antineutrino radiation via <strong>URCA process</strong>: $\text{n}\to\text{p}^++\text{e}^-+\overline{\nu}<em>\text{e}$, $\text{p}^++\text{e}^-\to\text{n}+\overline{\nu}</em>\text{e}$</li>
+    <li>Other neutrino emission processes cool $T_\text{core}$ to $\sim10^9$ K over $\sim10^3$ years, then surface photon radiation (primarily in X-ray) cools $T_\text{core}$ to $\sim10^8$ K and $T_\text{eff}$ to $\sim10^6$ K over $\sim10^4$ years</li>
+    <li>Outer crust: for low $\rho$ near surface, iron nuclei minimize nucleon energy and electron degeneracy pressure dominates</li>
+    <li><strong>Neutronization</strong>: above $\rho\gtrsim10^{12}$ kg/m$^3$, capture of relativistic electrons $\text{p}^++\text{e}^-\to\text{n}+\nu_\text{e}$ minimizes nucleon energy and produces increasingly neutron-rich nuclei
+      <ul>
+        <li>Additional neutrons reduce electric repulsion between protons</li>
+      </ul>
+    </li>
+    <li>Inner crust: above $\rho\gtrsim4\times10^{14}$ kg/m$^3$, <strong>neutron drip</strong> minimizes nucleon energy, creating superfluid of free neutrons outside of the nuclei lattice
+      <ul>
+        <li><strong>Superfluid</strong>: free, degenerate fermions pair up into bosons, which flow without viscosity</li>
+      </ul>
+    </li>
+    <li>Above $\rho\gtrsim4\times10^{15}$ kg/m$^3$, neutron degeneracy pressure dominates</li>
+    <li>Core: as  $\rho\to\rho_\text{nucleus}\approx2\times10^{17}$ kg/m$^3$, nuclei effectively dissolve into superfluid of free neutrons, protons, and electrons; as $\rho$ increases further, $\text{n}:\text{p}^+:\text{e}^-\to8:1:1$
+      <ul>
+        <li>Superfluid of charged particles are <strong>superconducting</strong>, flowing without electrical resistance</li>
+        <li>Conducting fluids “freeze-in” magnetic field lines, creating magnetic fields $B\approx10^8\sim10^{10}$ T</li>
+      </ul>
+    </li>
+    <li>Physics poorly understood above $\rho&gt;\rho_\text{nucleus}$ at the deep interior</li>
+    <li>Above $\rho&gt;2\rho_\text{nucleus}$, neutrons spontaneously decay $\text{n}\to\text{p}^++\pi^-$, producing other elementary particles</li>
+  </ul>
+
+  <h3 id="pulsars">Pulsars</h3>
+
+  <ul>
+    <li>First discovered by Bell in 1967: two independent interstellar sources of regularly spaced radio pulses</li>
+    <li>Designated PSR (pulsating source of radio) <em>right ascention</em> + <em>declination</em></li>
+    <li>Most periods range $0.25\sim2$ s, spinning down very gradually with ${\dot P}\approx10^{-15}$
+      <ul>
+        <li>X-ray pulsars have the longest periods and fastest spindown</li>
+        <li>High-energy pulsars emitting radio to IR or higher frequencies have typical periods but faster-than-average spindown</li>
+        <li>Young <strong>millisecond pulsars</strong> ($P\lesssim10$ ms) emit radio to gamma rays and display <strong>glitches</strong>: periods abruptly spinup every several years, possibly from crust shrinking, or separation of core from crust</li>
+        <li>Some pulsars, primarily those in binary systems, are speedin up ($\dot P&lt;0$)</li>
+      </ul>
+    </li>
+    <li>Only explainable by rapidly rotating neutron stars
+      <ul>
+        <li>Oscillation modes of white dwarfs are too long and oscillation modes of neutron stars are too short</li>
+        <li>Rapid period rules out all binary systems larger than neutron stars; increasing period rules out inspiraling radiation of NS binaries</li>
+      </ul>
+    </li>
+    <li>Much faster movements through space than normal stars, and rarity of pulsar binary systems, indicate ejection from asymetric core-collapse supernovae</li>
+    <li>Rotational kinetic energy transformed into accelerating expansion of surrounding nebulae, maintaining strength of magnetic field, and injecting relativistic electrons into the field</li>
+    <li>Acceleration of relativistic electrons along magnetic field lines (<strong>curvature radiation</strong>) or circling around them (<strong>synchotron radiation</strong>) produce light strongly linearly polarized in the plane of acceleration</li>
+    <li>Individual pulses of a pulsar vary substantially, but integrated pulse profile averaged across 100s of pulses is very stable
+      <ul>
+        <li>Each pulse comprises several brief subpulses, either distributed randomly in the main pulse window or drifting across the profile</li>
+        <li>Sharpness disperses with distance in the interstellar medium, as longer wavelengths slow more below $c_\text{vacuum}$</li>
+        <li>Some pulsars abruptly switch between multiple integrated pulse profiles; some pulsars temporarily cease emitting pulses for some periods</li>
+      </ul>
+    </li>
+    <li>Magnetic poles are off-axis and have field strength $B={1\over2\pi R^3\sin\theta}\sqrt{3\mu_0 c^3 I P \dot P\over 2\pi}$
+      <ul>
+        <li>Where $\theta$ is pole inclination relative to axis of rotation and $I$ is moment of inertia</li>
+      </ul>
+    </li>
+    <li>Rotation rapidly changes B field, inducing changes in E field and generating EM waves radiating away from star as <strong>magnetic dipole radiation</strong> $\dot E=-{32\pi^5B^2R^6\sin^2\theta\over3\mu_0c^3P^4}$
+      <ul>
+        <li>Fast-spinning neutron stars lose energy much more quickly</li>
+      </ul>
+    </li>
+    <li>Powerful induced surface E field $\sim6.3\times10^{10}$ V/m rips charged particles from polar regions
+      <ul>
+        <li>Emit energetic curvature radiation, some of which undergo pair production $\gamma\to\text{e}^-+\text{e}^+$ and generate more charged particles, creating a cascade of subpulses beamed in narrow cone around pole</li>
+        <li>Capture by magnetic fields form co-rotating magnetosphere which detaches at <strong>light cylinder</strong> $R_c=c/\omega$ as a pulsar wind, replenishing charged particles and magnetic field in surrounding nebula</li>
+      </ul>
+    </li>
+    <li>Pulse mechanism may turn off when rotation slows down too much to sustain strong magnetic field, or pulses may simply become too faint</li>
+  </ul>
+
+  <h3 id="magnetars">Magnetars</h3>
+
+  <ul>
+    <li>Extremely magnetic neutron stars with $B\approx10^{11}$ T</li>
+    <li>Stresses in magnetic field cause surface to crack, producing super-Eddington ($10^3\sim10^4L_\text{Eddington}$) releases of energy</li>
+    <li>Explains <strong>soft gamma repeaters</strong> (SGRs): objects associated with fairly young ($\sim10^4$ years-old) supernovae emitting bursts of hard X-ray and soft gamma-ray</li>
+    <li>Relatively slow rotation periods ranging $5\sim8$ s: magnetic field primarily governs behavior rather than rotation</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="general-relativity-and-black-holes">17. General Relativity and Black Holes</h2>
+
+  <h3 id="general-relativity">General relativity</h3>
+
+  <ul>
+    <li>Geometric description of how intervals in spacetime are measured in the presence of mass and energy</li>
+    <li>“Mass tell spacetime how to curve, spacetime tells mass how to move”</li>
+    <li>Spacetime curvature increases distance between points and slow down time</li>
+    <li><strong>Weak equivalence principle</strong>: gravitational charge $m_g$, which determines the force of gravity, is directly proportional to inertial mass $m_i$, which exists even without gravity; thus, every object falls with the same acceleration</li>
+    <li><strong>Principle of equivalence</strong>: All locally inertial (freely falling and nonrotating) frames of reference are physically equivalent, related by the Lorentz transformations between their instantaneous relative velocity
+      <ul>
+        <li>Only local, as gravity pulls in different magnitudes and directions in different places</li>
+      </ul>
+    </li>
+    <li><strong>Gravitational bending of light</strong>: in free-fall reference frame, photons travel in straight lines; observed from the ground, photons curve down with the inertial frame</li>
+    <li><strong>Gravitational time dilation</strong> and <strong>gravitational redshift</strong>: in free-fall reference frame, upward photons do not lose energy; observed from the ground, the photon took less time and traveled less distance in the inertial frame
+      <ul>
+        <li>Time dilates and space streches inside gravitational wells</li>
+        <li>${\Delta\nu\over\nu_0}\approx-{gh\over c^2}$ for small $g$</li>
+        <li>${\Delta t_0\over\Delta t_\infty}={\nu_\infty\over\nu_0}=\sqrt{1-{2GM\over r_0c^2}}\approx 1-{GM\over r_0c^2}$</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="intervals-and-geodesics">Intervals and geodesics</h3>
+
+  <ul>
+    <li><strong>Einstein field equations</strong> of form $\mathcal G = -{8\pi G\over c^4} \mathcal T$ calculates the <strong>Einstein tensor</strong> $\mathcal G$, describing the curvature of spacetime, from the <strong>stress–energy tensor</strong> $\mathcal T$, describing the distribution of mass and energy</li>
+    <li><strong>Event</strong> $s$: a point in spacetime with coordinates $(x, y, z, t)$</li>
+    <li><strong>Worldline</strong> $\mathcal W$: path of object moving through spacetime</li>
+    <li><strong>Spacetime interval</strong> $(\Delta s)^2 = c(\Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2$
+      <ul>
+        <li>The “distance” between two events, invariant under Lorentz transformations</li>
+        <li><strong>Timelike</strong> if $(\Delta s)^2 &gt; 0$
+          <ul>
+            <li>Enough time for light to travel between the events</li>
+            <li>Inertial frames exist in which they happen in the same location, separated by <strong>proper time</strong> $\Delta\tau\equiv\Delta s/c$</li>
+          </ul>
+        </li>
+        <li>Null/<strong>lightlike</strong> if $(\Delta s)^2 = 0$
+          <ul>
+            <li>Only light can travel between the events</li>
+          </ul>
+        </li>
+        <li><strong>Spacelike</strong> if $(\Delta s)^2 &lt; 0$
+          <ul>
+            <li>Too much space for light to travel between the events</li>
+            <li>Inertial frames exist in which they happen simultaneously, separated by <strong>proper distance</strong> $\Delta\mathcal L = \sqrt{-(\Delta s)^2}$</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Light cones</strong>: regions of spacetime with causal (timelike/lightlike) connection to an event
+      <ul>
+        <li><strong>Past light cone</strong>: region of past spacetime whose light can reach the event; everything that could influence the event</li>
+        <li><strong>Future light cone</strong>: region of future spacetime reachable by light from the event; everything the event could influence</li>
+        <li>Boundaries are <strong>event horizons</strong>, dividing the knowable from the unknowable</li>
+      </ul>
+    </li>
+    <li><strong>Metric</strong>: formula for measuring differential distance along worldlines, defining $(ds)^2$ such that $\Delta s(\mathcal W) =\int_{\mathcal W}\sqrt{ds)^2}$
+      <ul>
+        <li><strong>Minkowski metric</strong> for flat spacetime: $(ds)^2 = (c\;dt)^2 - (d\ell)^2$, where $(d\ell)^2=(dx)^2+(dy)^2+(dz)^2 = (dr)^2 + (r\; d\theta)^2 + (r \sin\theta \; d\phi)^2$</li>
+        <li><strong>Swarzchild metric</strong> for single, nonrotating mass at origin:  $(ds)^2=\left(c\; dt\sqrt{1-{2GM\over rc^2}}\right)^2-\left(dr\over \sqrt{1-{2GM\over rc^2}}\right)^2 - (r\; d\theta)^2 - (r \sin\theta \; d\phi)^2$
+          <ul>
+            <li>Time dilation in $dt$ term and streching of space in $dr$ term</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Coordinate speed</strong> ${d\ell\over dt}$: rate of change of spatial coordinates</li>
+    <li>All freely-falling particles follow <strong>geodesics</strong>: the straightest, shortest possible worldlines
+      <ul>
+        <li>Massive particles follow timelike geodesics with a locally extremum interval, with either the maximum or minimum $\Delta s$ out of nearby worldlines
+          <ul>
+            <li>Ex: orbiting satellites follow maximum interval geodesics in Schwarzchild metric</li>
+          </ul>
+        </li>
+        <li>Massless particles follow the <strong>null geodesic</strong> with $\Delta s=0$</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="black-holes-bh">Black holes (BH)</h3>
+
+  <ul>
+    <li><strong>Swarzchild radius</strong> $R_S = {2GM\over c^2}$: distance from nonrotating mass where escape speed is $c$</li>
+    <li>At $R_S$, proper time $d\tau$ and coordinate speed of light moving radially ${dr\over dt}$ are $0$: nothing ever happens and light appears to freeze</li>
+    <li><strong>Black hole</strong>: star that collapsed within its $R_S$ , with a physical <strong>singularity</strong> ($V=0, \rho\to\infty$) at the center enclosed by an <strong>event horizon</strong> at $R_S$</li>
+    <li>From distant observer, objects falling into BH emit increasingly time-dilated and redshifted signals</li>
+    <li>From free-falling reference frames, gravitational differential result in tidal stretching</li>
+    <li>Below $r&lt;R_S$, nothing can remain at rest and all worldlines converge at singularity</li>
+    <li><strong>No hair theorem</strong>: any black hole can be completely described by its mass, angular momentum, and electric charge</li>
+    <li><strong>Frame dragging</strong>: rotating masses induce rotation in surrounding spacetime; creates <strong>ergosphere</strong> around rotating black holes within which all particles are forced to move in the direction of rotation</li>
+    <li>Possible upper limit on angular momentum $L\le{GM^2\over c}$, above which a <strong>naked singularity</strong> would be exposed</li>
+    <li><strong>Stellar-mass black holes</strong> ($3\sim5\,M_\odot$)
+      <ul>
+        <li>Formed from direct core-collapse (collapsar), spin-down of neutron star (supranova), or accretion on neutron star from binary companion</li>
+      </ul>
+    </li>
+    <li><strong>Intermediate-mass black holes</strong> (IMBH; $10^2\sim10^4\,M_\odot$)
+      <ul>
+        <li>Formation process unclear; possibly from collapse of supermassive merged star, or merger of stellar-mass BHs</li>
+        <li>Observed as <strong>ultraluminous X-ray sources</strong> (ULXs), correlated with cores of globular clusters and low-mass galaxies</li>
+      </ul>
+    </li>
+    <li><strong>Supermassive black holes</strong> (SMBH; $10^5\sim10^9\, M_\odot$)
+      <ul>
+        <li>Formation process unclear; possibly from galaxy mergers, or growth of IMBHs</li>
+        <li>Located at centers of most galaxies</li>
+      </ul>
+    </li>
+    <li><strong>Primordial black holes</strong> ($10^{-8}$ kg $\sim10^5\,M_\odot$)
+      <ul>
+        <li>May have existed in the earliest instants of the universe</li>
+      </ul>
+    </li>
+    <li><strong>Schwarzchild throat</strong> / Einstein–Rosen bridge: vacuum solution of field equations with a tunnel at event horizon of nonrotating BH
+      <ul>
+        <li>Collapses before anything can cross</li>
+      </ul>
+    </li>
+    <li><strong>Wormhole</strong>: nonvacuum solution to field equations connecting arbitrary points in spacetime with no event horizon and survival tidal forces
+      <ul>
+        <li>Requires exotic material (with negative energy density $\rho c^2&lt;0$) to prevent collapse</li>
+      </ul>
+    </li>
+    <li><strong>Hawking radiation</strong> $\dot E\propto1/M^2$: pair production near event horizon allows gravitational energy to escape, culminating in high-energy burst of gamma rays and elementary particles at death of black hole</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="closed-binary-star-systems">18. Closed Binary Star Systems</h2>
+
+  <h3 id="gravitation">Gravitation</h3>
+
+  <ul>
+    <li>Large majority of stars are in multi-star systems, but most of them are <strong>detached binaries</strong>: sufficiently far apart ($a\gg\max(R_1, R_2)$) to evolve independently</li>
+    <li>In close systems ($a\lesssim\max(R_1,R_2)$), tidal forces induce pulsation, dissipating orbital and rotational energy until tidal lock is achieved</li>
+    <li>In corotating center-of-mass reference frame, effective gravitational potential $\Phi=-G\left({M_1\over s_1}+{M_2\over s_2}\right)-{\omega^2r^2\over 2}$
+      <ul>
+        <li>Where $s_1$ and $s_2$ are distances to the two masses, and angular frequence $\omega={G(M_1+M_2)\over a^3}$</li>
+      </ul>
+    </li>
+    <li>Hydrostatic equilibrium ensures constant pressure and density along <strong>equipotential surfaces</strong>; expanding stars fill successively larger ones</li>
+    <li>Gravitational and centrifugal forces balance at <strong>Lagragian points</strong>, where $\vec F=-m\nabla\Phi=0$
+      <ul>
+        <li>Local minima are stable; local maxima and saddle-points are unstable</li>
+      </ul>
+    </li>
+    <li>Inner Lagrangian point $L_1$ located between the masses with distances to each $\lbrace \ell_1, \ell_2 \rbrace \approx a\left({1\over2}\pm0.227\log_{10}{M_1\over M_2}\right)$
+      <ul>
+        <li>Equipotential surfaces meet at $L_1$ as teardrop-shaped <strong>Roche lobes</strong></li>
+      </ul>
+    </li>
+    <li><strong>Semidetached binary</strong>: secondary star (with $M_2$ not necessarily more massive) fills its Roche lobe and loses mass to the companion primary star</li>
+    <li><strong>Contact binary</strong>: both stars fill (or even expand beyond) their Roche lobes and share a common atmospheric envelope</li>
+    <li><strong>Mass transfer rate</strong> $\dot M\approx\pi R\rho d\sqrt{3kT\over m_\text{H}}$
+      <ul>
+        <li>Where $R$ is maximum Roche lobe radius and $d$ is overfill distance</li>
+        <li>Changes orbital period and orbital separation ${da\over dt}=2a\dot M_1{M_1-M_2\over M_1M_2}$</li>
+      </ul>
+    </li>
+    <li>Infalling material release $\dot E={GM\dot M\over R}$, or $\sim20\%$ of rest mass in energy when falling into neutron stars, compared to $\lesssim1\%$ falling into white dwarfs</li>
+  </ul>
+
+  <h3 id="accretion-disks">Accretion disks</h3>
+
+  <ul>
+    <li>If primary star of semidetached binary has radius $r\lesssim0.05a$, mass stream from secondary will miss its surface and enter orbit at $r_0=a\left(\ell_1\over a\right)^4\left(1+{M_2\over M_1}\right)$</li>
+    <li>Accretion disk develops; further mass stream impacts at disk <strong>hot spot</strong></li>
+    <li>Viscosity converts orbital kinetic energy into random thermal motion, causing disk mass to inspiral and eventually fall to surface
+      <ul>
+        <li>Source of strong viscosity poorly understood; possibly convection turbulence or magnetohydrodynamic instabilities</li>
+      </ul>
+    </li>
+    <li>Radius $R_\text{disk}\approx2r_0$ due to conservation of angular momentum: most disk material spiral inward while some spiral outward</li>
+    <li>If optically thick, temperature $T_\text{disk}(r)=T_\text{0}\sqrt[4]{\left(R\over r\right)^3 \left(1-\sqrt{R-r}\right) }$
+      <ul>
+        <li>Where characteric temperature $T_0\equiv\sqrt[4]{3GM\dot M\over 8\pi\sigma R^3}\approx 2\max (T_\text{disk})$</li>
+      </ul>
+    </li>
+    <li>Luminosity $L_\text{disk}={GM\dot M\over 2R}={1\over2}\dot E$, with the other half delivered to the primary star
+      <ul>
+        <li>White dwarf $L_\text{disk}\approx0.22\,L_\odot$, emitting primarily in UV</li>
+        <li>Neutron star $L_\text{disk}\approx2400\,L_\odot$, emitting primarily in X-ray</li>
+      </ul>
+    </li>
+    <li>Observational evidence: light curves of eclipsing binaries show steadily rising temperatures toward center, and hot spot on one side of disk</li>
+  </ul>
+
+  <h3 id="classification">Classification</h3>
+
+  <ul>
+    <li><strong>Algols</strong>: two main-sequence or subgiant stars in semidetached binary
+      <ul>
+        <li><strong>W Serpens stars</strong>: active Algols, studied for rapid stages of stellar and binary evolution</li>
+        <li>Mass loss may enrich interstellar medium</li>
+      </ul>
+    </li>
+    <li><strong>RS Canum Venaticorum stars</strong> &amp; <strong>BY Draconis stars</strong>: chromospherically active binaries with enhanced magnetic activity; studied for dynamo mechanism in cool (type F and later) stars</li>
+    <li><strong>W Ursae Majoris contact systems</strong>: short-period ($0.2\sim0.8$ days) contact binaries with very high magnetic activity; studied for dynamo mechanism at extreme levels
+      <ul>
+        <li>Magnetic braking may coalesce them into single stars</li>
+      </ul>
+    </li>
+    <li><strong>Cataclysmic variables</strong> (CV) and <strong>nova-like binaries</strong>: white dwarfs and M-type stars in short-period semidetached binaries; studied for final stages of stellar evolution and accretion phenomena</li>
+    <li><strong>X-ray binaries</strong>: neutron stars or black holes accreting gas from nondegenerate companions and emitting energetic X-rays $L\gt10^{28}$ W; evidence for existence of black holes</li>
+    <li><strong>$\zeta$ Aurigae systems</strong> &amp; <strong>VV Cephei systems</strong>: G–M-type supergiants and $\sim$B-type companions in long-period interacting binaries; eclipses studied for supergiant atmospheric properties
+      <ul>
+        <li>Became interacting binaries when more massive star evolved into supergiant</li>
+      </ul>
+    </li>
+    <li><strong>Symbiotic binaries</strong>: M-type giants and hot white dwarf/subdwarf/low-mass main-sequence companions in long-period ($200\sim1500$ days) interacting binaries; studied for accretion of cool wind onto hot companion</li>
+    <li><strong>Barium binaries</strong> &amp; <strong>S-star binaries</strong>: K/M-type giants with cool white dwarf companions that once transferred them nuclear-processed gas; studied for nucleosynthesis and mass loss in evolved stars</li>
+    <li><strong>Post-common-envelope binaries</strong>: cool secondaries and hot white dwarf/subdwarf companions; studied for rapid stages of stellar evolution</li>
+    <li>AM Herculis stars / <strong>polars</strong>: semidetached binaries containing white dwarfs with $B\sim2000$ T
+      <ul>
+        <li>Magnetic torque tidally locks both stars and forms a narrow accretion column with a $\sim10^8$ K shock front emitting hard X-ray at the base</li>
+        <li>Photosphere re-emit some hard X-ray as soft X-ray and UV light</li>
+        <li>Nonrelativistic electrons in white dwarf magnetosphere also emit visible-light cyclotron radiation</li>
+      </ul>
+    </li>
+    <li>DQ Herculis stars / <strong>intermediate polars</strong>: far-apart or weakly magnetic polars missing synchronous rotation but having some accretion flow disruption</li>
+  </ul>
+
+  <h3 id="cataclysmic-variable-evolution">Cataclysmic variable evolution</h3>
+
+  <ul>
+    <li>Let Star 1 and Star 2 be main-sequence stars in a long-period (months to years) detached binary with $M_1&gt;M_2$</li>
+    <li>Binary semidetached as Star 1, evolving more rapidly, overflows its Roche lobe after reaching giant/supergiant phase
+      <ul>
+        <li>Mass transfer where $M_1&gt;M_2$ and $\dot M&lt;0$ enters positive feedback loop with shrinking separation and Roche lobe</li>
+      </ul>
+    </li>
+    <li><strong>First common envelope stage</strong>: binary contacts, transferring angular momentum onto common envelope and spiralling inward
+      <ul>
+        <li>May turn into blue straggler if stellar cores merge</li>
+      </ul>
+    </li>
+    <li>Otherwise, binary detaches as envelope is eventually ejected and Star 1 cools to a white dwarf</li>
+    <li>Binary again semidetached as Star 2 reaches giant phase
+      <ul>
+        <li>Mass transfer where $M_1 &gt; M_2$ and $\dot M&gt;0$ faces negative feedback with expanding separation and Roche lobe</li>
+        <li>Transfer only maintained if secondary expands faster than Roche lobe  or if stellar winds remove sufficient angular momentum</li>
+      </ul>
+    </li>
+    <li><strong>Second common envelope stage</strong>: suppose mass transfer continues, binary contacts again and spiral further inward, becoming a <strong>cataclysmic variable</strong></li>
+  </ul>
+
+  <h3 id="cataclysmic-variables">Cataclysmic variables</h3>
+
+  <ul>
+    <li>$\sim0.86\, M_\odot$ white dwarf primary and less massive main-sequence (type G or later) secondary in periods mostly ranging 78 minutes $\sim$ 12 hours
+      <ul>
+        <li>Gap in periods between $1.5\sim3.25$ hours possibly due to abrupt change in angular momentum transfer</li>
+      </ul>
+    </li>
+    <li>Long quiescent intervals punctuated by luminous outbursts, likely due to sudden increases in mass flow rate</li>
+    <li>Otherwise cool, low-mass, emission-lines-producing accretion disk becomes optically thick with absorption lines during brightening</li>
+    <li><strong>Dwarf novae</strong>: outbursts increase luminosity by $2\sim6$ magnitudes for $5\sim20$ days; separated by quiescent intervals of $30\sim300$ days
+      <ul>
+        <li>Visible wavelengths precede UV in brightening by $\sim1$ day, indicating outbursts start in cooler, outer disk and spread inward</li>
+        <li>Mass transfer rate increases $\sim100\times$ during outburst, possibly due to instability in secondary star or accretion disk</li>
+        <li>H partial ionization zone could dam up in secondary and propel material past $L_1$, or dam up in disk and increase viscosity, causing material to fall</li>
+      </ul>
+    </li>
+    <li><strong>Classical novae</strong>: outbursts increase luminosity by $7\sim20$ magnitudes
+      <ul>
+        <li>Luminosity initially rises rapidly, with a brief standstill $\sim2$ magnitudes from maximum</li>
+        <li><strong>Fast novae</strong> take weeks to dim by 2 visual magnitudes from maximum; <strong>slow novae</strong> take $\sim100$ days, but are also $\sim3$ visual magnitudes dimmer at maximum</li>
+        <li>Bolumetric magnitude remain roughly constant for months: dimming in visual band offset by brightening, first in UV, then in IR</li>
+        <li>Accompanied by ejection of $10^{-5}\sim10^{-4}\,M_\odot$ of hot gasses at $\sim10^3$ km/s, with slow novae ejecting them $\sim3\times$ slower</li>
+        <li>System returns to pre-eruption luminosity of $M_V\sim4.5$ after decades</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="classical-nova-cycle">Classical nova cycle</h3>
+
+  <ul>
+    <li>White dwarf in semidetached binary accretes H-rich gas onto surface at $10^{-8}\sim10^{-9}\, M_\odot$/year</li>
+    <li>Convection enriches H shell with surface C, N, and O; pressure heats shell and turns base degenerate</li>
+    <li>Accumulation of $10^{-4}\sim10^{-5}\, M_\odot$ of H at $\sim10^6$ K triggers runaway CNO cycle at base of shell, reaching $\sim10^8$ K before electrons there are lifted from degeneracy</li>
+    <li><strong>Hydrodynamic ejection phase</strong>, dominant for fast novae: once luminosity exceeds Eddington limit, radiation pressure lifts $\sim10\%$ of H layer into space</li>
+    <li><strong>Hydrostatic burning phase</strong>, dominant or slow novae: CNO cycle stabilizes near Eddington limit and hydrostatic equilibrium is reached; inert layer above H-burning shell becomes fully convective and expands to $\sim10^6$ km</li>
+    <li><strong>Fireball expansion phase</strong>: hydrodynamically ejected gasses form optically thick, glowing “fireball” with $T\approx6000\sim10\,000$ K, resembling a type A/F supergiant; reaches maximum visual brightness in a few days, then becomes optically thin</li>
+    <li><strong>Optically thin phase</strong>: transparent ejecta reveal hydrostatically-burning white dwarf, resembling a blue horizontal-branch giant</li>
+    <li><strong>Dust formation phase</strong>: as $T$ falls below $\lesssim1000$ K, carbon in ejecta condense and form dust shell; turns optically thick $\sim50\%$ of the time and re-radiates energy from white dwarf in IR</li>
+  </ul>
+
+  <h3 id="type-ia-supernovae">Type Ia supernovae</h3>
+
+  <ul>
+    <li>Destruction of white dwarf near Chandrasekhar limit</li>
+    <li>Maximum brightness very consistently $M_B\approx M_V\approx-19.3\pm0.3$</li>
+    <li>Peak brightness–rate of decline relation allow accurate distance measurements to faraway host galaxies
+      <ul>
+        <li>Critical for discovery of dack energy</li>
+      </ul>
+    </li>
+    <li>Absence of H lines indicates evolved nature; P-Cygni profile indicates mass loss; blueshifted absorption lines indicate ejecta speeds $\gtrsim10^4$ km/s $\approx0.1c$</li>
+    <li><strong>Dobule-degenerate models</strong>: two white dwarfs
+      <ul>
+        <li>Radiation of gravitational waves cause orbits to decay</li>
+        <li>Larger and less massive secondary eventually spills over Roche lobe, breaking into thick disk for the primary to accrete</li>
+        <li>As primary nears Chandrasekhar limit, nuclear reactions ignite in deep interior and destroy it</li>
+        <li>Roughly predict the right number of mergers, but ignitions, if off-center, may result in neutron stars instead of supernovae, and predictions of heavy element abundances are inconsistent with spectra</li>
+      </ul>
+    </li>
+    <li><strong>Single-degenerate models</strong>: a C–O white dwarf and an evolving star companion
+      <ul>
+        <li>Helium-triggered model: He gas from secondary settle on surface with base becoming degenerate; He flash sends shockwave into interior and ignites degenerate C and O</li>
+        <li>Direct ignition model: multiple independent ignitions of C and O occur in interior as star nears Chandrasekhar limit</li>
+        <li>Require fine-tuning rate of accretion to prevent dwarf novae or classical novae from taking place instead</li>
+      </ul>
+    </li>
+    <li>Unclear if direct ignition single- and double-degenerate models result in subsonic deflagaration or supersonic detonation in shock front</li>
+  </ul>
+
+  <h3 id="neutron-star-binary-formation-processes">Neutron star binary formation processes</h3>
+
+  <ul>
+    <li>Supernova in existing binary: unbinds system if $\ge{1\over2}$ of total mass is ejected; otherwise, neutron star or black hole now in binary</li>
+    <li><strong>Tidal capture</strong>: neutron star passing within $1\sim3\,R_\text{companion}$ loses significant kinetic energy to tidal dampening and becomes gravitationally bound; most effective in densely populated regions</li>
+    <li>Disruption of multi-star system: neutron star transfers kinetic energy to another star, ejecting that star while itself is captured</li>
+    <li>Direct collision with giant: neutron star penetrates star and enters subsurface orbit with its degenerate core, becoming a <strong>Thorne–Żytkow object</strong> (TŻO); envelope is then quickly expelled, producing neutron star–white dwarf binary</li>
+  </ul>
+
+  <h3 id="x-ray-binaries">X-ray binaries</h3>
+
+  <ul>
+    <li><strong>Low-mass X-ray binaries</strong> (LMXB): short orbital periods ($11$ minutes $\sim35$ days) with low-mass, mostly cool secondary stars</li>
+    <li><strong>Massive X-ray binaries</strong> (MXRB): relatively longer orbital periods ( $0.2\sim580$ days) with O and B giants and supergiants</li>
+    <li><strong>Alfvén radius</strong> $r_A = \sqrt[7]{8\pi^2 B^4 R^{12}\over \mu_0 G M \dot M^2}$
+      <ul>
+        <li>Where magnetic energy density $u_m = {1\over2\mu_0}B^2\propto1/r^6$ equals kinetic energy density $u_K = {1\over2}\rho v^2$</li>
+      </ul>
+    </li>
+    <li>Below disruption radius $r_d\approx0.5r_A$, ionized gas is channeled onto magnetic poles instead of impacting surface
+      <ul>
+        <li>If $r_d\approx r_\text{orbit}$, magnetic field prevents formation of disk and confines accretion to narrow streams directed towards poles</li>
+        <li>If $r_d\lesssim r_\text{disk}$, magnetic field only distrupts accretion disk near star surface</li>
+        <li>Polar-like accretion columns and shock fronts formed above poles</li>
+      </ul>
+    </li>
+    <li><strong>X-ray burster</strong>: LMXB with weak magnetic field
+      <ul>
+        <li>Matter settling on surface of neutron star with weak magnetic field ($\ll10^8$ T) periodically ignites H, He, then possibly C fusion</li>
+        <li>He fusion extremely explosive and releases $\sim10^{32}$ J in seconds, predominantly in X-ray</li>
+        <li>Accretion disk re-emits some X-ray in visible light seconds after the burst</li>
+      </ul>
+    </li>
+    <li>Companion stars of LMXBs become white dwarfs without disturbing the system</li>
+    <li><strong>Binary X-ray pulsar</strong>: strong magnetic field; $\sim50\%$ of XMRBs
+      <ul>
+        <li>Matter accreting on poles of neutron star release up to $\sim10^{31}$ W, predominantly in X-ray</li>
+        <li>Near-Eddington-limit radiation elevates shock front, resulting in large solid angle for emission</li>
+        <li>Period slowly speeding up from transfer of accreting matter’s angular momentum via magnetic torques
+          <ul>
+            <li>Pulse arrival times vary with phase of orbit, allowing determination of orbital radius</li>
+          </ul>
+        </li>
+        <li>Misalignment of magnetic and rotation axes may allow eclipsing of pulses by companion, and thereby complete determination of masses and radii in the system</li>
+      </ul>
+    </li>
+    <li>Some MXRBs ($\gtrsim3\, M_\odot$) may contain a stellar-mass black hole
+      <ul>
+        <li>Most candidates lack developed accretion disks, making mass determination of compact object difficult</li>
+        <li>A0620–00: an <strong>X-ray nova</strong> with sporatic accretion and a $3.82\pm0.24\, M_\odot$ black hole</li>
+        <li>Cygnus X-1: bright MXRB with a $&gt;3.4\, M_\odot$ black hole</li>
+        <li>SS 433: three emission lines, with two posessing significant Doppler shifts attributed to relativistic jets of a precessing accretion disk from a neutron star or black hole</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="x-ray-binary-remnants">X-ray binary remnants</h3>
+
+  <ul>
+    <li>Companion stars of MXRBs may go supernova, either unbinding the system or creating a double neutron star / neutron star–black hole binary</li>
+    <li><strong>Millisecond radio pulsars</strong>: spun up by accretion as LMXBs, but small fraction are missing white dwarf companions</li>
+    <li><strong>Black widow pulsar</strong>: if pulsar beam close to equator, white dwarf may be evaporated</li>
+    <li><strong>Double neutron star binaries</strong>: precise measurements on orbital decay of <strong>Hulse–Taylor pulsar</strong> (PSR 1913+16) confirmed existence of gravitational waves</li>
+    <li><strong>Short–hard gamma ray bursts</strong>: merger of two neutron stars or neutron star and black hole</li>
+  </ul>
+
+</section>
+
+<h1 id="iii-the-solar-system">III. The Solar System</h1>
+
+<h1 id="iv--galaxies-and-the-universe">IV.  Galaxies and the Universe</h1>
+
+
+    <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
+  </body>
+</html>

@@ -1,0 +1,369 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              delimiters: [
+                  //{left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  //{left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError : false
+            });
+            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+            headings.forEach(heading =>{
+              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+            });
+        });
+    </script>
+    <style>
+
+
+:root {
+  --text: #416;
+  --text-accent: #000;
+  --link: #146;
+  --link-accent: #012;
+  --deco: #84e;
+  --bg: #ecf;
+  --bg-accent: #daf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ecf;
+    --text-accent: #fff;
+    --link: #adf;
+    --link-accent: #cef;
+    --deco: #84e;
+    --bg: #416;
+    --bg-accent: #417;
+  }
+}
+
+@media print {
+  :root {
+    --text: #000;
+    --link: #000;
+    --deco: #000;
+    --bg: #fff;
+  }
+  details {
+    display: none;
+  }
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunrm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunti.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbx.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbi.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+html, body {
+  font-size: 16px;
+  font-family: cmu, serif;
+  margin: 0;
+  padding: 0;
+}
+html * {
+  box-sizing: border-box;
+}
+body {
+  width: 50rem;
+  height: auto;
+  padding: 1rem;
+  max-width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1 {
+  text-align: center;
+}
+h2 {
+  border-bottom: 1px solid var(--deco);
+  background: var(--bg);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+h3 {
+  scroll-margin: 3rem;
+}
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
+strong {
+  font-weight: normal;
+  text-decoration: dotted underline var(--deco);
+}
+
+details {
+  position: fixed;
+  right: 0;
+  width: 20rem;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  bottom: 0;
+  background: var(--bg-accent);
+  z-index: 1000;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0 1rem;
+  background: var(--bg-accent);
+}
+
+a, summary {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover, a:focus, summary:hover, summary:focus {
+  text-decoration: underline;
+  color: var(--link-accent);
+}
+a:active, summary:active {
+  background: var(--link);
+  color: var(--bg-accent);
+}
+
+ul, ol {
+  margin-left: 0rem;
+  padding-left: 1rem;
+}
+li:hover {
+  color: var(--text-accent);
+}
+
+table {
+  border: 1px solid var(--deco);
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px dashed var(--deco);
+  text-align: center;
+}
+
+#markdown-toc {
+  padding-left: 1rem;
+}
+#markdown-toc > li:first-child {
+  display: none;
+}
+#markdown-toc ul {
+  padding-left: 0.2rem;
+}
+#markdown-toc li {
+ list-style: none;
+}
+#markdown-toc > li > ul li {
+ padding-left: 0.2rem;
+ border-left: 1px dashed var(--deco);
+}
+#markdown-toc > li {
+  font-weight: bold;
+}
+#markdown-toc > li > ul > li {
+  font-size: 1rem;
+  font-weight: normal;
+}
+#markdown-toc > li > ul > li > ul > li {
+  font-size: 0.8rem;
+}
+    
+    
+    
+    </style>
+  </head>
+  <body>
+    <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    
+<section>
+
+  <h2 id="classification-of-stellar-spectra">8. Classification of Stellar Spectra</h2>
+
+  <ul>
+    <li>Stars emit a continuous spectra (the continuum)
+with absorption lines in certain wavelengths</li>
+  </ul>
+
+  <h3 id="harvard-spectral-types">Harvard spectral types</h3>
+
+  <ul>
+    <li>Pickering and Fleming initially labeled alphabetically by strength of H absorption lines</li>
+    <li>Different strengths due to different temperatures causing different electron
+ionization levels and orbitals
+      <ul>
+        <li>H I (neutral)’s visible spectral (Balmer) lines strongest at A0
+($T_\text{eff} = 9520$ K)</li>
+        <li>He I (neutral)’s visible spectral lines strongest at B2
+($T_\text{eff} = 22\,000$ K)</li>
+        <li>Ca II (singly ionized)’s visible spectral lines strongest at K0
+($T_\text{eff} = 5250$ K)</li>
+      </ul>
+    </li>
+    <li>Cannon rearranged by temperature (OBAFGKM, O hottest)
+and added decimal subdivisions: A0 hotter than A9</li>
+    <li>Additional spectral types for very cool stars and brown dwarfs: <strong>OBAFGKMLT</strong></li>
+  </ul>
+
+  <h3 id="spectral-physics">Spectral physics</h3>
+
+  <ul>
+    <li>Statistical mechanics studies macroscopic behavior of stellar atmospheres</li>
+    <li><strong>Maxwell−Boltzmann velocity distribution</strong> $\rho(v) = \left(m \over 2\pi k T \right)^{3/2} e^{−mv^2/2kT} 4\pi v^2$
+      <ul>
+        <li>Restricted to gasses in thermodynamic equilibrium with $\rho \lesssim 1$ km m$^{-3}$</li>
+        <li>Most probable speed $v_\text{mode} = \sqrt{2kT\over m}$</li>
+        <li>Root-mean-square speed $v_\text{RMS} = \sqrt{3kT \over m}$ due to right-skewed exponential tail</li>
+      </ul>
+    </li>
+    <li>Electrons’ orbital energies are affected by their atoms’ kinetic energies
+through collisions: higher orbitals are less likely to be occupied</li>
+    <li>Probability ratio of electron states: ${P(s_1) \over P(s_2)} = e^{−(E_1−E_2) / kT}$
+      <ul>
+        <li>As thermal energy $kT \to 0$, $P(\text{ higher energy state }) \to 0$; confined to lowest state</li>
+        <li>As $kT \to \infty$, ${P(s_1) \over P(s_2)} \to 1$; all states are equally likely</li>
+      </ul>
+    </li>
+    <li>Statistical weights of some energy levels increased by degenerate orbitals</li>
+    <li><strong>Boltzmann equation</strong>, the probability ratio of electron energies:
+${P(E_1) \over P(E_2)} = {g_1 \over g_2} e^{−(E_1−E_2) / kT}$
+      <ul>
+        <li>Where $g$ is the statistical weight, or number of states with that energy</li>
+      </ul>
+    </li>
+    <li>Balmer lines require exitations from the first excited state $N_2$</li>
+    <li>Greater fraction of H I are in the excited state $N_2$ at higher temperatures;
+However, at the same time, significant fractions of H I are ionized to H IIs</li>
+    <li><strong>Partition function</strong>, the number of possible electron states weighted by energy,
+varies by ionization state of the atom, thus affecting the probability of
+atoms at different ionization states: $Z = \sum_j g_j e^{−(E_j−E_1) / kT}$
+      <ul>
+        <li>For H I, the ground state (with two orbitals $s=\pm{1\over2}$) dominates for most temperatures: $Z \approx 2$</li>
+        <li>For H II, no electrons means only one possible configuration: $Z = 1$</li>
+      </ul>
+    </li>
+    <li><strong>Saha equation</strong>, the probability ratio of ionization states:
+${N_+ \over N} = {2Z_+ \over n_e Z} \left( 2\pi m_e k T \over h^2 \right)^{3/2} e^{−\chi / kT}$
+      <ul>
+        <li>Very sensitive to ionization energy $\chi$, as $kT$ only ranges around 0.5−2 eV</li>
+        <li>Also effected by free electron number density $n$, increased by presence of ionized He II&amp;III</li>
+      </ul>
+    </li>
+    <li>Combining the Boltzmann and Saha equations shows varying narrow partial ionization
+zones for different atoms and ionization states
+      <ul>
+        <li>For H, there is significant fraction of electrons in the first excited state for
+temperatures between 8300−11300 K, matching the peaking of Balmer lines $\sim9900$ K</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="hertzsprungrussell-diagram">Hertzsprung–Russell diagram</h3>
+
+  <ul>
+    <li>Hertzsprung discovered type G and cooler stars had a range of magnitudes;
+termed the brighter ones giants; Russell termed the dimmer ones dwarfs</li>
+    <li>H–R diagram plots absolute magnitude (brighter upward) against
+spectral type (warmer leftward)</li>
+    <li>80–90% of stars lie as dwarfs in a main sequence from upper left to lower right
+      <ul>
+        <li>Width of main sequence due to varying ages and compositions</li>
+      </ul>
+    </li>
+    <li>Initial theory was stars evolved from upper left to lower right;
+terminology of “earlier” (warmer) and “later” (cooler) stars remain</li>
+    <li>Simple luminosity–temperature relation reveals fundamental dependence on mass</li>
+    <li>Iso-radius lines run diagonally roughly parallel to main sequence
+      <ul>
+        <li>Warmer, more massive stars have a lower average density</li>
+      </ul>
+    </li>
+    <li>Supergiants such as Betelgeuse occupy extreme upper right</li>
+  </ul>
+
+  <h3 id="morgankeenan-luminosity-classes">Morgan−Keenan luminosity classes</h3>
+
+  <ul>
+    <li>Maury noted subtle line width variations amongst stars with similar effective
+temperatures and different luminosities; found by Hertzsprung to differentiate
+main-sequence stars and giants</li>
+    <li>Morgan and Keenan published atlas appending Roman numeral luminosity classes
+to Harvard spectral types
+      <ul>
+        <li>Ia/Ib for supergiants</li>
+        <li>V for main requence</li>
+        <li>VI for metal-deficient subdwarfs</li>
+        <li>Excludes white dwarfs, class D</li>
+      </ul>
+    </li>
+    <li>Luminosity classes roughly correlates with absolute magnitudes:
+enables placement of star on H−R diagram entirely from its spectrum</li>
+    <li><strong>Spectroscopic parallax</strong>: calculating distance modulus from the
+spectrally determined absolute magnitude</li>
+  </ul>
+
+</section>
+
+
+  </div>
+
+</article>
+
+
+    <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
+  </body>
+</html>

@@ -1,0 +1,394 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              delimiters: [
+                  //{left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  //{left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError : false
+            });
+            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+            headings.forEach(heading =>{
+              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+            });
+        });
+    </script>
+    <style>
+
+
+:root {
+  --text: #416;
+  --text-accent: #000;
+  --link: #146;
+  --link-accent: #012;
+  --deco: #84e;
+  --bg: #ecf;
+  --bg-accent: #daf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ecf;
+    --text-accent: #fff;
+    --link: #adf;
+    --link-accent: #cef;
+    --deco: #84e;
+    --bg: #416;
+    --bg-accent: #417;
+  }
+}
+
+@media print {
+  :root {
+    --text: #000;
+    --link: #000;
+    --deco: #000;
+    --bg: #fff;
+  }
+  details {
+    display: none;
+  }
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunrm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunti.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbx.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbi.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+html, body {
+  font-size: 16px;
+  font-family: cmu, serif;
+  margin: 0;
+  padding: 0;
+}
+html * {
+  box-sizing: border-box;
+}
+body {
+  width: 50rem;
+  height: auto;
+  padding: 1rem;
+  max-width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1 {
+  text-align: center;
+}
+h2 {
+  border-bottom: 1px solid var(--deco);
+  background: var(--bg);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+h3 {
+  scroll-margin: 3rem;
+}
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
+strong {
+  font-weight: normal;
+  text-decoration: dotted underline var(--deco);
+}
+
+details {
+  position: fixed;
+  right: 0;
+  width: 20rem;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  bottom: 0;
+  background: var(--bg-accent);
+  z-index: 1000;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0 1rem;
+  background: var(--bg-accent);
+}
+
+a, summary {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover, a:focus, summary:hover, summary:focus {
+  text-decoration: underline;
+  color: var(--link-accent);
+}
+a:active, summary:active {
+  background: var(--link);
+  color: var(--bg-accent);
+}
+
+ul, ol {
+  margin-left: 0rem;
+  padding-left: 1rem;
+}
+li:hover {
+  color: var(--text-accent);
+}
+
+table {
+  border: 1px solid var(--deco);
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px dashed var(--deco);
+  text-align: center;
+}
+
+#markdown-toc {
+  padding-left: 1rem;
+}
+#markdown-toc > li:first-child {
+  display: none;
+}
+#markdown-toc ul {
+  padding-left: 0.2rem;
+}
+#markdown-toc li {
+ list-style: none;
+}
+#markdown-toc > li > ul li {
+ padding-left: 0.2rem;
+ border-left: 1px dashed var(--deco);
+}
+#markdown-toc > li {
+  font-weight: bold;
+}
+#markdown-toc > li > ul > li {
+  font-size: 1rem;
+  font-weight: normal;
+}
+#markdown-toc > li > ul > li > ul > li {
+  font-size: 0.8rem;
+}
+    
+    
+    
+    </style>
+  </head>
+  <body>
+    <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    
+<section>
+
+  <h2 id="the-degenerate-remnants-of-stars">16. The Degenerate Remnants of Stars</h2>
+
+  <h3 id="white-dwarfs-wd">White dwarfs (WD)</h3>
+
+  <ul>
+    <li>Manufactured in cores of low- and intermediate-mass stars ($M_\text{ZAMS}\lesssim8M_\odot$)</li>
+    <li>Low luminosity despite high central temperature indicate lack of fuel for thermonuclear reaction</li>
+    <li>Primarily comprises completedly ionized C and O nuclei, but extreme gravity stratifies interior into CO core ) He layer ) H layer over $\sim100$ years</li>
+    <li>$0.4\sim0.7M_\odot$, $\sim R_\oplus$, $\rho\approx10^9$ kg/m$^3$, $g\approx 10^6$ m/s$^2$, $T\approx5000\sim80\,000$ K</li>
+    <li>Interior nearly isothermal due to energy transfer via highly efficient, degenerate <strong>electron conduction</strong>; steep temperature drop in nondegenerate envelope drive convection mixing in surface layers</li>
+    <li>Thermal energy primarily resides in kinetic energy of nuclei, as nearly all electrons are in degenerate energy levels</li>
+    <li>Core cools at $T_\text{core}(t) = T_0\left(1+{5\over2}{t\over\tau_0}\right)^{-2/5}$
+      <ul>
+        <li>Luminosity $L\propto T_\text{core}^{7/2} \propto T_\text{eff}^4$: interior cools faster than surface</li>
+        <li>At $\sim10^{-4}L_\odot$, nuclei begin crystallizing, slowing cooling</li>
+      </ul>
+    </li>
+    <li>Spectral lines significantly broadened due extreme pressure near surface</li>
+    <li>Spectral type D (dwarf)
+      <ul>
+        <li><strong>DA</strong>: only H absorption lines; $\sim70\%$ of population</li>
+        <li><strong>DB</strong>: only He absorption lines; $\sim8\%$ of population</li>
+        <li><strong>DC</strong>: featureless continuum; $\sim14\%$ of population</li>
+        <li><strong>DQ</strong>: additional C lines</li>
+        <li><strong>DZ</strong>: additional metal lines</li>
+        <li><strong>DO</strong>: in between O type and WD</li>
+        <li><strong>PNN</strong>: planetary nebula nuclei; WD formation phase</li>
+        <li>Convective mixing may transform WD between spectral subtypes</li>
+      </ul>
+    </li>
+    <li><strong>Pulsating white dwarfs</strong>: on instability strip with periods of $100\sim1000$ s
+      <ul>
+        <li>Multiple periods with $3\sim125$ different simultaneous frequencies</li>
+        <li>Nonradial g-modes resonating in H and He layers cause surface temperature variations without much effect on radius</li>
+        <li><strong>DAV stars</strong> (prototype: ZZ Ceti): $T_\text{eff}\approx12\;000$ K; resonance driven by H partial ionization zone</li>
+        <li><strong>DBV stars</strong>: $T_\text{eff}\approx27\;000$ K; resonance driven by He partial ionization zone</li>
+        <li><strong>DOV</strong> and <strong>PNNV</strong> stars: $T_\text{eff}\approx10^5$ K</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="degenerate-matter">Degenerate matter</h3>
+
+  <ul>
+    <li>Degeneracy of electron fermion gas responsible for maintaining hydrostatic equilibrium in white dwarfs</li>
+    <li><strong>Fermion gas</strong>: obeying the Pauli exclusion principle, only one particle is allowed per state
+      <ul>
+        <li>At $T = 0$ K, all energy states below the <strong>Fermi energy</strong> $\varepsilon_F = {\hbar^2\over2m} (3\pi^2n)^{2/3}$ are occupied and the fermion gas is fully degenerate</li>
+        <li>For $T &gt; 0$ K, fermion gases are still approximately degenerate if average thermal energy ${3\over2}kT &lt; \varepsilon_F$; for an electron gas, ${T\over\rho^{2/3}}&lt;1261$ K m$^2$ kg$^{-2/3}$</li>
+      </ul>
+    </li>
+    <li>Nonrelativistic <strong>degeneracy pressure</strong> $P = {(3\pi^2)^{2/3}\over5} {\hbar^2\over m} n^{5/3}$
+      <ul>
+        <li>Dynamically stable: $P\propto \rho^\gamma$ where adiabatic index $\gamma={5\over3}$</li>
+        <li>Yields nonrelativistic <strong>mass–volume relation</strong>: $V\propto {1\over M}$ and $\rho\propto M^2$</li>
+        <li>Largely temperature independent, leading to He flash in degenerate cores</li>
+      </ul>
+    </li>
+    <li>Electrons become relativistic at $\rho\approx10^9$ kg/m$^3$</li>
+    <li>As $v_e\to c$ at high $M$, adiabatic index $\gamma\to{4\over3}$ and WD becomes dynamically unstable</li>
+    <li><strong>Chandrasekhar limit</strong>: maximum mass supported by electron degeneracy, $M_\text{Ch}\approx0.44M_\odot$</li>
+  </ul>
+
+  <h3 id="neutron-stars-ns">Neutron stars (NS)</h3>
+
+  <ul>
+    <li>$\sim10^{57}$ extremely densely packed neutrons with $\sim M_\text{Ch}$ , $R\approx10\sim15$ km , $\rho\approx10^{17}$ kg/m$^3$, $g\approx10^{12}$ m/s$^2$</li>
+    <li>Rapid rotation on order of milliseconds to seconds guaranteed due to role in countering collapse</li>
+    <li>Extremely hot formation temperatures $\sim10^{11}$ K cooled in days to $T_\text{core}\approx 10^9$ K by internal neutron–antineutrino radiation via <strong>URCA process</strong>: $\text{n}\to\text{p}^++\text{e}^-+\overline{\nu}<em>\text{e}$, $\text{p}^++\text{e}^-\to\text{n}+\overline{\nu}</em>\text{e}$</li>
+    <li>Other neutrino emission processes cool $T_\text{core}$ to $\sim10^9$ K over $\sim10^3$ years, then surface photon radiation (primarily in X-ray) cools $T_\text{core}$ to $\sim10^8$ K and $T_\text{eff}$ to $\sim10^6$ K over $\sim10^4$ years</li>
+    <li>Outer crust: for low $\rho$ near surface, iron nuclei minimize nucleon energy and electron degeneracy pressure dominates</li>
+    <li><strong>Neutronization</strong>: above $\rho\gtrsim10^{12}$ kg/m$^3$, capture of relativistic electrons $\text{p}^++\text{e}^-\to\text{n}+\nu_\text{e}$ minimizes nucleon energy and produces increasingly neutron-rich nuclei
+      <ul>
+        <li>Additional neutrons reduce electric repulsion between protons</li>
+      </ul>
+    </li>
+    <li>Inner crust: above $\rho\gtrsim4\times10^{14}$ kg/m$^3$, <strong>neutron drip</strong> minimizes nucleon energy, creating superfluid of free neutrons outside of the nuclei lattice
+      <ul>
+        <li><strong>Superfluid</strong>: free, degenerate fermions pair up into bosons, which flow without viscosity</li>
+      </ul>
+    </li>
+    <li>Above $\rho\gtrsim4\times10^{15}$ kg/m$^3$, neutron degeneracy pressure dominates</li>
+    <li>Core: as  $\rho\to\rho_\text{nucleus}\approx2\times10^{17}$ kg/m$^3$, nuclei effectively dissolve into superfluid of free neutrons, protons, and electrons; as $\rho$ increases further, $\text{n}:\text{p}^+:\text{e}^-\to8:1:1$
+      <ul>
+        <li>Superfluid of charged particles are <strong>superconducting</strong>, flowing without electrical resistance</li>
+        <li>Conducting fluids “freeze-in” magnetic field lines, creating magnetic fields $B\approx10^8\sim10^{10}$ T</li>
+      </ul>
+    </li>
+    <li>Physics poorly understood above $\rho&gt;\rho_\text{nucleus}$ at the deep interior</li>
+    <li>Above $\rho&gt;2\rho_\text{nucleus}$, neutrons spontaneously decay $\text{n}\to\text{p}^++\pi^-$, producing other elementary particles</li>
+  </ul>
+
+  <h3 id="pulsars">Pulsars</h3>
+
+  <ul>
+    <li>First discovered by Bell in 1967: two independent interstellar sources of regularly spaced radio pulses</li>
+    <li>Designated PSR (pulsating source of radio) <em>right ascention</em> + <em>declination</em></li>
+    <li>Most periods range $0.25\sim2$ s, spinning down very gradually with ${\dot P}\approx10^{-15}$
+      <ul>
+        <li>X-ray pulsars have the longest periods and fastest spindown</li>
+        <li>High-energy pulsars emitting radio to IR or higher frequencies have typical periods but faster-than-average spindown</li>
+        <li>Young <strong>millisecond pulsars</strong> ($P\lesssim10$ ms) emit radio to gamma rays and display <strong>glitches</strong>: periods abruptly spinup every several years, possibly from crust shrinking, or separation of core from crust</li>
+        <li>Some pulsars, primarily those in binary systems, are speedin up ($\dot P&lt;0$)</li>
+      </ul>
+    </li>
+    <li>Only explainable by rapidly rotating neutron stars
+      <ul>
+        <li>Oscillation modes of white dwarfs are too long and oscillation modes of neutron stars are too short</li>
+        <li>Rapid period rules out all binary systems larger than neutron stars; increasing period rules out inspiraling radiation of NS binaries</li>
+      </ul>
+    </li>
+    <li>Much faster movements through space than normal stars, and rarity of pulsar binary systems, indicate ejection from asymetric core-collapse supernovae</li>
+    <li>Rotational kinetic energy transformed into accelerating expansion of surrounding nebulae, maintaining strength of magnetic field, and injecting relativistic electrons into the field</li>
+    <li>Acceleration of relativistic electrons along magnetic field lines (<strong>curvature radiation</strong>) or circling around them (<strong>synchotron radiation</strong>) produce light strongly linearly polarized in the plane of acceleration</li>
+    <li>Individual pulses of a pulsar vary substantially, but integrated pulse profile averaged across 100s of pulses is very stable
+      <ul>
+        <li>Each pulse comprises several brief subpulses, either distributed randomly in the main pulse window or drifting across the profile</li>
+        <li>Sharpness disperses with distance in the interstellar medium, as longer wavelengths slow more below $c_\text{vacuum}$</li>
+        <li>Some pulsars abruptly switch between multiple integrated pulse profiles; some pulsars temporarily cease emitting pulses for some periods</li>
+      </ul>
+    </li>
+    <li>Magnetic poles are off-axis and have field strength $B={1\over2\pi R^3\sin\theta}\sqrt{3\mu_0 c^3 I P \dot P\over 2\pi}$
+      <ul>
+        <li>Where $\theta$ is pole inclination relative to axis of rotation and $I$ is moment of inertia</li>
+      </ul>
+    </li>
+    <li>Rotation rapidly changes B field, inducing changes in E field and generating EM waves radiating away from star as <strong>magnetic dipole radiation</strong> $\dot E=-{32\pi^5B^2R^6\sin^2\theta\over3\mu_0c^3P^4}$
+      <ul>
+        <li>Fast-spinning neutron stars lose energy much more quickly</li>
+      </ul>
+    </li>
+    <li>Powerful induced surface E field $\sim6.3\times10^{10}$ V/m rips charged particles from polar regions
+      <ul>
+        <li>Emit energetic curvature radiation, some of which undergo pair production $\gamma\to\text{e}^-+\text{e}^+$ and generate more charged particles, creating a cascade of subpulses beamed in narrow cone around pole</li>
+        <li>Capture by magnetic fields form co-rotating magnetosphere which detaches at <strong>light cylinder</strong> $R_c=c/\omega$ as a pulsar wind, replenishing charged particles and magnetic field in surrounding nebula</li>
+      </ul>
+    </li>
+    <li>Pulse mechanism may turn off when rotation slows down too much to sustain strong magnetic field, or pulses may simply become too faint</li>
+  </ul>
+
+  <h3 id="magnetars">Magnetars</h3>
+
+  <ul>
+    <li>Extremely magnetic neutron stars with $B\approx10^{11}$ T</li>
+    <li>Stresses in magnetic field cause surface to crack, producing super-Eddington ($10^3\sim10^4L_\text{Eddington}$) releases of energy</li>
+    <li>Explains <strong>soft gamma repeaters</strong> (SGRs): objects associated with fairly young ($\sim10^4$ years-old) supernovae emitting bursts of hard X-ray and soft gamma-ray</li>
+    <li>Relatively slow rotation periods ranging $5\sim8$ s: magnetic field primarily governs behavior rather than rotation</li>
+  </ul>
+
+</section>
+
+
+  </div>
+
+</article>
+
+
+    <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
+  </body>
+</html>

@@ -1,0 +1,526 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              delimiters: [
+                  //{left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  //{left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError : false
+            });
+            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+            headings.forEach(heading =>{
+              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+            });
+        });
+    </script>
+    <style>
+
+
+:root {
+  --text: #416;
+  --text-accent: #000;
+  --link: #146;
+  --link-accent: #012;
+  --deco: #84e;
+  --bg: #ecf;
+  --bg-accent: #daf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ecf;
+    --text-accent: #fff;
+    --link: #adf;
+    --link-accent: #cef;
+    --deco: #84e;
+    --bg: #416;
+    --bg-accent: #417;
+  }
+}
+
+@media print {
+  :root {
+    --text: #000;
+    --link: #000;
+    --deco: #000;
+    --bg: #fff;
+  }
+  details {
+    display: none;
+  }
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunrm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunti.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbx.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbi.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+html, body {
+  font-size: 16px;
+  font-family: cmu, serif;
+  margin: 0;
+  padding: 0;
+}
+html * {
+  box-sizing: border-box;
+}
+body {
+  width: 50rem;
+  height: auto;
+  padding: 1rem;
+  max-width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1 {
+  text-align: center;
+}
+h2 {
+  border-bottom: 1px solid var(--deco);
+  background: var(--bg);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+h3 {
+  scroll-margin: 3rem;
+}
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
+strong {
+  font-weight: normal;
+  text-decoration: dotted underline var(--deco);
+}
+
+details {
+  position: fixed;
+  right: 0;
+  width: 20rem;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  bottom: 0;
+  background: var(--bg-accent);
+  z-index: 1000;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0 1rem;
+  background: var(--bg-accent);
+}
+
+a, summary {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover, a:focus, summary:hover, summary:focus {
+  text-decoration: underline;
+  color: var(--link-accent);
+}
+a:active, summary:active {
+  background: var(--link);
+  color: var(--bg-accent);
+}
+
+ul, ol {
+  margin-left: 0rem;
+  padding-left: 1rem;
+}
+li:hover {
+  color: var(--text-accent);
+}
+
+table {
+  border: 1px solid var(--deco);
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px dashed var(--deco);
+  text-align: center;
+}
+
+#markdown-toc {
+  padding-left: 1rem;
+}
+#markdown-toc > li:first-child {
+  display: none;
+}
+#markdown-toc ul {
+  padding-left: 0.2rem;
+}
+#markdown-toc li {
+ list-style: none;
+}
+#markdown-toc > li > ul li {
+ padding-left: 0.2rem;
+ border-left: 1px dashed var(--deco);
+}
+#markdown-toc > li {
+  font-weight: bold;
+}
+#markdown-toc > li > ul > li {
+  font-size: 1rem;
+  font-weight: normal;
+}
+#markdown-toc > li > ul > li > ul > li {
+  font-size: 0.8rem;
+}
+    
+    
+    
+    </style>
+  </head>
+  <body>
+    <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    
+<section>
+
+  <h2 id="main-sequence-and-post-main-sequence-stellar-evolution">13. Main Sequence and Post-Main-Sequence Stellar Evolution</h2>
+
+  <ul>
+    <li>Generally dominated by nuclear reaction timescale</li>
+    <li>Kelvin–Helmholtz timescale relevant when transitioning between nuclear sources</li>
+  </ul>
+
+  <h3 id="main-sequence-ms">Main sequence (MS)</h3>
+
+  <ul>
+    <li>Stars $0.3\sim1.2 M_\odot$:
+      <ul>
+        <li>Initially, core burns H, predominantly via PP chain
+          <ul>
+            <li>Radiative due to low temperature dependence</li>
+            <li>Core burning radius, density, and temperature rise due to fusion’s increase of
+mean molecular weight causing contraction and release of gravitational energy</li>
+            <li>Surface luminosity, radius, and effective temperature consequently rise over lifetime</li>
+          </ul>
+        </li>
+        <li>Temperature high enough to burn thick H shell around core immediately after core H depletion
+          <ul>
+            <li>Core now isothermal and predominantly He, growing as He ash rains down from shell</li>
+            <li>Shell H burning generates more power than core H burning, but some of it is
+converted into gravitational potential through slow expansion of envelope</li>
+            <li>Effective temperature decreases slightly</li>
+          </ul>
+        </li>
+        <li><strong>Schönberg–Chandrasekhar limit</strong>, max mass fraction of an isothermal core
+in hydrostatic equilibrium supported by ideal gas pressure:
+${M' \over M} \lesssim 0.37 \left(\mu\over\mu'\right)^2$
+          <ul>
+            <li>Where M′ and \mu′ are mass and mean molecular weights of the core</li>
+            <li>Derived from hydrostatic pressure: ${dP \over dM} = -{Gm \over 4\pi r^4}$</li>
+          </ul>
+        </li>
+        <li>After reaching SC limit, core contracts on Kelvin–Helmholtz timescale
+unless mass is low enough to be supported by temperature-independent
+electron degeneracy pressure: $P \propto \rho^{5\over3}$</li>
+      </ul>
+    </li>
+    <li>Stars $\gtrsim 1.2 M_\odot$:
+      <ul>
+        <li>Initially, core nearly homogeneous due to convective mixing</li>
+        <li>Convection zone decreases in mass during H burning
+          <ul>
+            <li>Shrinks faster for more massive stars,
+disappearing entirely before H exhaustion for stars $\gtrsim 10 M_\odot$</li>
+            <li>Leaves slight composition gradient</li>
+          </ul>
+        </li>
+        <li>After near-exhaustion of core H ($X \approx 0.05$ for $M \approx 5 M_\odot$), entire star contracts
+on Kelvin–Helmholtz timescale while increasing luminosity and effective temperature</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="subgiant-branch-sgb">Subgiant branch (SGB)</h3>
+
+  <ul>
+    <li>Low-mass stars:
+      <ul>
+        <li>Rapid core contraction releases gravitational energy,
+expanding envelope and decreasing effective temperature</li>
+        <li>Raised H shell temperature and density rapidly increases power generation,
+again expanding envelope</li>
+      </ul>
+    </li>
+    <li>Massive stars:
+      <ul>
+        <li>Rising temperatures eventually trigger rapid ignition of thick H shell around core,
+forcing slight expansion of star envelope,
+momentarily decreasing luminosity and temperature</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="red-giant-branch-rgb">Red giant branch (RGB)</h3>
+
+  <ul>
+    <li>Low- and intermediate-mass stars:
+      <ul>
+        <li>Near-surface convection zone created for
+due to $\text{H}^-$ ions increasing photospheric opacity</li>
+      </ul>
+    </li>
+    <li>All stars:
+      <ul>
+        <li>Star rises along Hayashi track as convection zone dominates star interior</li>
+        <li><strong>First dredge-up</strong>: convection sinks elements from surface ($\text{Li}$, $^{12}_6\text{C}$, etc)
+and surfaces products of nuclear processes ($^3_2\text{He}$, $^{14}_7\text{N}$, etc)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="red-giant-tip--start-of-helium-fusion">Red giant tip / start of helium fusion</h3>
+
+  <ul>
+    <li>Stars $\lesssim 1.8 M_\odot$:
+      <ul>
+        <li>He core becomes strongly electron-degenerate</li>
+        <li>Significant neutrino losses create negative temperature gradient near center</li>
+        <li><strong>Helium core flash</strong>: explosive initiation of triple-alpha process in He core in seconds
+          <ul>
+            <li>Core is rapidly lifted out of degeneracy outside-in, with
+strong temperature dependence of triple-alpha driving extreme thermal runaway</li>
+            <li>Briefly generates $\approx 10^{11} L_\odot$ of power, but most is absorbed in thermalizing core</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>All stars;
+      <ul>
+        <li>Core expands from He burning, pushing H-burning shell outward</li>
+        <li>Luminosity abruptly decreases due to cooling of H-burning shell</li>
+        <li>Effective temperature begins to increase due to envelope contraction</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="horizontal-branch-hb--blue-loop">Horizontal branch (HB) / blue loop</h3>
+
+  <ul>
+    <li>Stars $\lesssim 15 M_\odot$:
+      <ul>
+        <li>Envelope contraction raises effective temperature
+and compresses H-burning shell, increasing power generation</li>
+        <li>Deep convection zone rises towards surface while triple-\alpha makes core convective as well</li>
+        <li>Many develop instabilities in outer envelope, leading to periodic pulsations</li>
+        <li>Increase in mean molecular mass eventually causes core contraction,
+expanding envelope and lowering effective temperature</li>
+        <li>Depletion of core He rapidly accelerates core contraction
+          <ul>
+            <li>Core now mostly C and O, becoming very degenerate and
+cooling through significant neutrino production</li>
+          </ul>
+        </li>
+        <li>Contraction and heating of surrounding He shell initiates He shell burning,
+in turn forcing expansion and cooling of surrounding H shell,
+temporarily halting H shell burning</li>
+      </ul>
+    </li>
+    <li>Stars $\gtrsim 15 M_\odot$ do not experience the blue loop</li>
+  </ul>
+
+  <h3 id="early-asymptotic-giant-branch-e-agb">Early asymptotic giant branch (E-AGB)</h3>
+
+  <ul>
+    <li>All stars:
+      <ul>
+        <li>He-burning shell generates most power while H-burning shell is nearly inactive</li>
+        <li>Convective envelope absorbs energy and expands, lowering effective temperature</li>
+        <li><strong>Second dredge-up</strong>: convection deepens again,
+bringing He and N from interior onto H-rich envelope</li>
+        <li>Star back on Hayashi track, approaching previous RGB path asymptotically from the left</li>
+        <li>Rapid mass loss due to low surface gravity</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="thermally-pulsating-agb-tp-agb">Thermally-pulsating AGB (TP-AGB)</h3>
+
+  <ul>
+    <li>All stars:
+      <ul>
+        <li>As He-burning shell nears exhaustion, H shell reignites</li>
+        <li>He ash from H-burning shell builds up and makes base of He shell slightly degenerate,
+eventually triggering <strong>helium shell flash</strong></li>
+        <li>Convection zone established between He- and H-burning shells</li>
+        <li>He-burning expands and cools H-burning shell, gradually turning it off</li>
+        <li>Process repeats with growing amplitude after every pulse</li>
+        <li>Cycle evident from abrupt changes in surface luminosity</li>
+        <li>Period ranges from $\sim10^3 \text{ years}$ for stars $\sim5 M_\odot$ to $10^5 \text{ years}$ for stars $\sim0.6 M_\odot$
+          <ul>
+            <li>Long-Period Variables (LPVs) such as Mira have 100-700-day periods</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Stars $\gtrsim 2 M_\odot$
+      <ul>
+        <li><strong>Third dredge-up</strong>: convection envelope merges with inter-shell convection zone
+and surfaces material from C-synthesizing region</li>
+        <li>Inverting number ratio of O and C in stellar atmosphere creates carbon stars,
+with spectral type C overlapping the traditional K and M
+          <ul>
+            <li>Spectral type S inbetween M and C has approximately equal O and C abundances</li>
+          </ul>
+        </li>
+        <li>Mass loss in cool temperatures (~3000 K) expels into ISM
+silicate grains from O-rich atmospheres and graphite grains from C-rich atmospheres</li>
+        <li><strong>S-process nucleosynthesis</strong>:
+nuclei in deep interior capture neutrons produced by nuclear burning,
+at a slow enough rate to radioactively decay before their next capture</li>
+        <li>S and C-type stars dredge up elements with no stable isotopes (e.g. Tc) into atmosphere,
+indicating active s-process</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="late-and-post-agb">Late and post-AGB</h3>
+
+  <ul>
+    <li>Stars $\lesssim 8 M_\odot$:
+      <ul>
+        <li>He-burning increases mass of CO core, causing contraction until
+electron degeneracy pressure dominates</li>
+        <li>Mass loss accelerates with decreasing mass and increasing radius,
+developing $\sim10^{-4} M_\odot$/year superwind
+          <ul>
+            <li>Precise mechanism unknown</li>
+            <li>Energizes shroud of optically thick dust clouds into OH/IR sources:
+the OH molecules emit IR as masers</li>
+          </ul>
+        </li>
+        <li>Mass loss prevents catastrophic core collapse from Chandrasekhar limit,
+allowing stars between $4\sim8 M_\odot$ to additionally synthesize Ne and Mg in cores</li>
+        <li>Surrounding dust cloud eventually becomes optically thin from expansion,
+revealing an F or G supergiant</li>
+        <li>AGB phase ends as envelope is expelled, moving star nearly horizontally blueward</li>
+        <li>Luminosity drops rapidly as H and He-burning shells lose pressure and extinguish,
+revealing hot, degenerate C–O or ONeMg core: a white dwarf</li>
+        <li>Planetary nebula: expanding shell of gas around white dwarf
+          <ul>
+            <li>Emitting visible spectrum due to UV from central star remnant</li>
+            <li>Complex morphologies due to preferentially equatorial ejection</li>
+            <li>Receding at $10\sim30$ km/s, with character length scales of $\sim0.3$ pc</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Stars $\gtrsim 8 M_\odot$: see Ch. 15</li>
+  </ul>
+
+  <h3 id="stellar-populations">Stellar populations</h3>
+
+  <ul>
+    <li>Stars give ISM back material enriched with more heavy elements than given</li>
+    <li><strong>Population III</strong>: stars formed soon after the Big Bang with virtually no metals ($Z = 0$)
+      <ul>
+        <li>Found in extreme deep field observations to primordial galaxies</li>
+      </ul>
+    </li>
+    <li><strong>Population II</strong>: succeeding generations of metal-poor stars ($Z \gtrsim 0$)
+      <ul>
+        <li>Found outside galactic disk and in globular clusters</li>
+      </ul>
+    </li>
+    <li><strong>Population I</strong>: current generations of metal-rich stars ($Z \approx 0.03$)
+      <ul>
+        <li>Found inside galactic disk and in open clusters</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="stellar-clusters">Stellar clusters</h3>
+
+  <ul>
+    <li>Stars formed from the same cloud, with similar compositions and birth times
+      <ul>
+        <li><strong>Globular clusters</strong>: Population II, larger and older</li>
+        <li>Galactic/<strong>open clusters</strong>: Population I, smaller and younger</li>
+      </ul>
+    </li>
+    <li>Graphed onto color-magnitude diagrams:
+H–R diagrams with B–V indices rather than effective temperatures,
+and apparent instead of absolute magnitudes if distance is not known</li>
+    <li>Distance generally calculated with spectroscopic parallax</li>
+    <li><strong>Isochrone</strong>: curve fitting all stars of a cluster at a certain age</li>
+    <li>Main-sequence <strong>turn-off point</strong>:
+color and magnitude where stars are currently leaving main sequence
+      <ul>
+        <li>Reflects age of cluster as point becomes redder and less luminous over time,</li>
+      </ul>
+    </li>
+    <li><strong>Hertzsprung gap</strong>: absence of stars between late main sequence and red giant regions
+due to rapid Kelvin–Helmholtz-timescale intermediate evolution</li>
+    <li><strong>Blue stragglers</strong>: group of stars found above turn-off point, possibly
+due to mass exchange with binary companion or collision between stars</li>
+  </ul>
+
+</section>
+
+
+  </div>
+
+</article>
+
+
+    <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
+  </body>
+</html>

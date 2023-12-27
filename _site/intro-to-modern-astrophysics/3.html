@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <title></title>
     <meta name=viewport content='width=device-width, initial-scale=1'>
     <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
@@ -222,7 +222,126 @@ th, td {
     </style>
   </head>
   <body>
-    {{ content }}
+    <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    
+<section>
+
+  <h2 id="the-continuous-spectrum-of-light">3. The Continuous Spectrum of Light</h2>
+
+  <h3 id="parallax-and-parsecs-pc">Parallax and parsecs (pc)</h3>
+
+  <ul>
+    <li>Parallax angle $p''$ (arcseconds), subtended by quarter orbit of Earth (1 AU)</li>
+    <li>Distance $d_\text{AU} = {206,265 \over p''}$, $d_\text{pc} = {1 \over p″}$</li>
+  </ul>
+
+  <h3 id="apparent-magnitude">Apparent magnitude</h3>
+
+  <ul>
+    <li>Originally compiled by Hipparchus: 1 for brightest, 6 for dimmest</li>
+    <li>Modern definition: ${F_2 \over F_1} = 100^{(m_1 − m_2)/5}$
+      <ul>
+        <li>Where radiant flux is density of emitted light: $F = {L\over 4\pi r^2}$</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="absolute-magnitude">Absolute magnitude</h3>
+
+  <ul>
+    <li>$M$ for stars, apparent magnitude measured as if it’s located at 10 pc</li>
+    <li>$H$ for planets, measured if located at 1 AU</li>
+    <li><strong>Distance modulus</strong> $d = 10^{(m − M + 5)/5}$,
+$m − M = 5 \log_{10}d − 5$</li>
+    <li>For equally distant stars, ratio of radiant fluxes equals
+ratio of luminosities, thus ${L_2 \over L_1} = 100^{(M_1 − M_2)/5}$</li>
+    <li>$M_\odot = +4.74, L_\odot = 3.839 \times 10^{26} \text{ W}$</li>
+  </ul>
+
+  <h3 id="light">Light</h3>
+
+  <ul>
+    <li><strong>Wave speed</strong> $c = \lambda\nu$</li>
+    <li><strong>Poyinting vector</strong> $\vec S = {\vec E \times \vec B \over \mu_0}, \langle S \rangle = {E_0B_0 \over 2\mu_0}$</li>
+    <li><strong>Radiation pressure</strong> $P_\text{absorption} = {\langle S \rangle A \cos \theta \over c}$,
+$P_\text{reflection} = {2\langle S \rangle A \cos^2\theta \over c}$</li>
+  </ul>
+
+  <h3 id="blackbody-radiation">Blackbody radiation</h3>
+
+  <ul>
+    <li><strong>Wien’s displacement</strong>: $\max(\lambda) = {0.002898 \text{ m K} \over T}$</li>
+    <li><strong>Stefan–Boltzmann</strong>: $L = 4\pi R^2 \sigma T^4$
+      <ul>
+        <li>Where $T$ is effective temperature of the star’s surface,
+and $\sigma = 5.670 \times 10^{-8} \text{ W}\;\text{m}^{-2}\;\text{K}^{-4}$</li>
+      </ul>
+    </li>
+    <li><strong>Planck’s function</strong>: $B(T) = {2hc^2 / \lambda^5 \over e^{hc / \lambda kT} − 1}$</li>
+  </ul>
+
+  <h3 id="color-index">Color index</h3>
+
+  <ul>
+    <li><strong>Bolumetric magnitudes</strong>: measured over all wavelengths</li>
+    <li>In practice, detectors only measure certain ranges, to varying
+degrees of sensitivity</li>
+    <li>Standard filters:</li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th> </th>
+        <th>name</th>
+        <th>center</th>
+        <th>bandwidth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>U</td>
+        <td>UV</td>
+        <td>365 nm</td>
+        <td>68 nm</td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td>blue</td>
+        <td>440 nm</td>
+        <td>98 nm</td>
+      </tr>
+      <tr>
+        <td>V</td>
+        <td>visual</td>
+        <td>550 nm</td>
+        <td>89 nm</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul>
+    <li>Isolated letters are apparent magnitudes; $M_x$ are absolute</li>
+    <li>U−B color index: $U − B = M_U − M_B$</li>
+    <li><strong>B−V color index</strong>: $B − V = M_B − M_V$ (smaller is bluer)</li>
+    <li><strong>Bolumetric correction</strong>: $BC = m_\text{bol} − V = M_\text{bol} − M_V$</li>
+    <li><strong>Color−color diagrams</strong> graph U−B against B−V,
+showing stars are non−ideal blackbodies</li>
+  </ul>
+
+</section>
+
+
+  </div>
+
+</article>
+
 
     <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
   </body>

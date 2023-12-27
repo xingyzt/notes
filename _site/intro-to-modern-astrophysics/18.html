@@ -1,0 +1,499 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              delimiters: [
+                  //{left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  //{left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError : false
+            });
+            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+            headings.forEach(heading =>{
+              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+            });
+        });
+    </script>
+    <style>
+
+
+:root {
+  --text: #416;
+  --text-accent: #000;
+  --link: #146;
+  --link-accent: #012;
+  --deco: #84e;
+  --bg: #ecf;
+  --bg-accent: #daf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ecf;
+    --text-accent: #fff;
+    --link: #adf;
+    --link-accent: #cef;
+    --deco: #84e;
+    --bg: #416;
+    --bg-accent: #417;
+  }
+}
+
+@media print {
+  :root {
+    --text: #000;
+    --link: #000;
+    --deco: #000;
+    --bg: #fff;
+  }
+  details {
+    display: none;
+  }
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunrm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunti.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbx.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbi.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+html, body {
+  font-size: 16px;
+  font-family: cmu, serif;
+  margin: 0;
+  padding: 0;
+}
+html * {
+  box-sizing: border-box;
+}
+body {
+  width: 50rem;
+  height: auto;
+  padding: 1rem;
+  max-width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1 {
+  text-align: center;
+}
+h2 {
+  border-bottom: 1px solid var(--deco);
+  background: var(--bg);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+h3 {
+  scroll-margin: 3rem;
+}
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
+strong {
+  font-weight: normal;
+  text-decoration: dotted underline var(--deco);
+}
+
+details {
+  position: fixed;
+  right: 0;
+  width: 20rem;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  bottom: 0;
+  background: var(--bg-accent);
+  z-index: 1000;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0 1rem;
+  background: var(--bg-accent);
+}
+
+a, summary {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover, a:focus, summary:hover, summary:focus {
+  text-decoration: underline;
+  color: var(--link-accent);
+}
+a:active, summary:active {
+  background: var(--link);
+  color: var(--bg-accent);
+}
+
+ul, ol {
+  margin-left: 0rem;
+  padding-left: 1rem;
+}
+li:hover {
+  color: var(--text-accent);
+}
+
+table {
+  border: 1px solid var(--deco);
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px dashed var(--deco);
+  text-align: center;
+}
+
+#markdown-toc {
+  padding-left: 1rem;
+}
+#markdown-toc > li:first-child {
+  display: none;
+}
+#markdown-toc ul {
+  padding-left: 0.2rem;
+}
+#markdown-toc li {
+ list-style: none;
+}
+#markdown-toc > li > ul li {
+ padding-left: 0.2rem;
+ border-left: 1px dashed var(--deco);
+}
+#markdown-toc > li {
+  font-weight: bold;
+}
+#markdown-toc > li > ul > li {
+  font-size: 1rem;
+  font-weight: normal;
+}
+#markdown-toc > li > ul > li > ul > li {
+  font-size: 0.8rem;
+}
+    
+    
+    
+    </style>
+  </head>
+  <body>
+    <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    
+<section>
+
+  <h2 id="closed-binary-star-systems">18. Closed Binary Star Systems</h2>
+
+  <h3 id="gravitation">Gravitation</h3>
+
+  <ul>
+    <li>Large majority of stars are in multi-star systems, but most of them are <strong>detached binaries</strong>: sufficiently far apart ($a\gg\max(R_1, R_2)$) to evolve independently</li>
+    <li>In close systems ($a\lesssim\max(R_1,R_2)$), tidal forces induce pulsation, dissipating orbital and rotational energy until tidal lock is achieved</li>
+    <li>In corotating center-of-mass reference frame, effective gravitational potential $\Phi=-G\left({M_1\over s_1}+{M_2\over s_2}\right)-{\omega^2r^2\over 2}$
+      <ul>
+        <li>Where $s_1$ and $s_2$ are distances to the two masses, and angular frequence $\omega={G(M_1+M_2)\over a^3}$</li>
+      </ul>
+    </li>
+    <li>Hydrostatic equilibrium ensures constant pressure and density along <strong>equipotential surfaces</strong>; expanding stars fill successively larger ones</li>
+    <li>Gravitational and centrifugal forces balance at <strong>Lagragian points</strong>, where $\vec F=-m\nabla\Phi=0$
+      <ul>
+        <li>Local minima are stable; local maxima and saddle-points are unstable</li>
+      </ul>
+    </li>
+    <li>Inner Lagrangian point $L_1$ located between the masses with distances to each $\lbrace \ell_1, \ell_2 \rbrace \approx a\left({1\over2}\pm0.227\log_{10}{M_1\over M_2}\right)$
+      <ul>
+        <li>Equipotential surfaces meet at $L_1$ as teardrop-shaped <strong>Roche lobes</strong></li>
+      </ul>
+    </li>
+    <li><strong>Semidetached binary</strong>: secondary star (with $M_2$ not necessarily more massive) fills its Roche lobe and loses mass to the companion primary star</li>
+    <li><strong>Contact binary</strong>: both stars fill (or even expand beyond) their Roche lobes and share a common atmospheric envelope</li>
+    <li><strong>Mass transfer rate</strong> $\dot M\approx\pi R\rho d\sqrt{3kT\over m_\text{H}}$
+      <ul>
+        <li>Where $R$ is maximum Roche lobe radius and $d$ is overfill distance</li>
+        <li>Changes orbital period and orbital separation ${da\over dt}=2a\dot M_1{M_1-M_2\over M_1M_2}$</li>
+      </ul>
+    </li>
+    <li>Infalling material release $\dot E={GM\dot M\over R}$, or $\sim20\%$ of rest mass in energy when falling into neutron stars, compared to $\lesssim1\%$ falling into white dwarfs</li>
+  </ul>
+
+  <h3 id="accretion-disks">Accretion disks</h3>
+
+  <ul>
+    <li>If primary star of semidetached binary has radius $r\lesssim0.05a$, mass stream from secondary will miss its surface and enter orbit at $r_0=a\left(\ell_1\over a\right)^4\left(1+{M_2\over M_1}\right)$</li>
+    <li>Accretion disk develops; further mass stream impacts at disk <strong>hot spot</strong></li>
+    <li>Viscosity converts orbital kinetic energy into random thermal motion, causing disk mass to inspiral and eventually fall to surface
+      <ul>
+        <li>Source of strong viscosity poorly understood; possibly convection turbulence or magnetohydrodynamic instabilities</li>
+      </ul>
+    </li>
+    <li>Radius $R_\text{disk}\approx2r_0$ due to conservation of angular momentum: most disk material spiral inward while some spiral outward</li>
+    <li>If optically thick, temperature $T_\text{disk}(r)=T_\text{0}\sqrt[4]{\left(R\over r\right)^3 \left(1-\sqrt{R-r}\right) }$
+      <ul>
+        <li>Where characteric temperature $T_0\equiv\sqrt[4]{3GM\dot M\over 8\pi\sigma R^3}\approx 2\max (T_\text{disk})$</li>
+      </ul>
+    </li>
+    <li>Luminosity $L_\text{disk}={GM\dot M\over 2R}={1\over2}\dot E$, with the other half delivered to the primary star
+      <ul>
+        <li>White dwarf $L_\text{disk}\approx0.22\,L_\odot$, emitting primarily in UV</li>
+        <li>Neutron star $L_\text{disk}\approx2400\,L_\odot$, emitting primarily in X-ray</li>
+      </ul>
+    </li>
+    <li>Observational evidence: light curves of eclipsing binaries show steadily rising temperatures toward center, and hot spot on one side of disk</li>
+  </ul>
+
+  <h3 id="classification">Classification</h3>
+
+  <ul>
+    <li><strong>Algols</strong>: two main-sequence or subgiant stars in semidetached binary
+      <ul>
+        <li><strong>W Serpens stars</strong>: active Algols, studied for rapid stages of stellar and binary evolution</li>
+        <li>Mass loss may enrich interstellar medium</li>
+      </ul>
+    </li>
+    <li><strong>RS Canum Venaticorum stars</strong> &amp; <strong>BY Draconis stars</strong>: chromospherically active binaries with enhanced magnetic activity; studied for dynamo mechanism in cool (type F and later) stars</li>
+    <li><strong>W Ursae Majoris contact systems</strong>: short-period ($0.2\sim0.8$ days) contact binaries with very high magnetic activity; studied for dynamo mechanism at extreme levels
+      <ul>
+        <li>Magnetic braking may coalesce them into single stars</li>
+      </ul>
+    </li>
+    <li><strong>Cataclysmic variables</strong> (CV) and <strong>nova-like binaries</strong>: white dwarfs and M-type stars in short-period semidetached binaries; studied for final stages of stellar evolution and accretion phenomena</li>
+    <li><strong>X-ray binaries</strong>: neutron stars or black holes accreting gas from nondegenerate companions and emitting energetic X-rays $L\gt10^{28}$ W; evidence for existence of black holes</li>
+    <li><strong>$\zeta$ Aurigae systems</strong> &amp; <strong>VV Cephei systems</strong>: G–M-type supergiants and $\sim$B-type companions in long-period interacting binaries; eclipses studied for supergiant atmospheric properties
+      <ul>
+        <li>Became interacting binaries when more massive star evolved into supergiant</li>
+      </ul>
+    </li>
+    <li><strong>Symbiotic binaries</strong>: M-type giants and hot white dwarf/subdwarf/low-mass main-sequence companions in long-period ($200\sim1500$ days) interacting binaries; studied for accretion of cool wind onto hot companion</li>
+    <li><strong>Barium binaries</strong> &amp; <strong>S-star binaries</strong>: K/M-type giants with cool white dwarf companions that once transferred them nuclear-processed gas; studied for nucleosynthesis and mass loss in evolved stars</li>
+    <li><strong>Post-common-envelope binaries</strong>: cool secondaries and hot white dwarf/subdwarf companions; studied for rapid stages of stellar evolution</li>
+    <li>AM Herculis stars / <strong>polars</strong>: semidetached binaries containing white dwarfs with $B\sim2000$ T
+      <ul>
+        <li>Magnetic torque tidally locks both stars and forms a narrow accretion column with a $\sim10^8$ K shock front emitting hard X-ray at the base</li>
+        <li>Photosphere re-emit some hard X-ray as soft X-ray and UV light</li>
+        <li>Nonrelativistic electrons in white dwarf magnetosphere also emit visible-light cyclotron radiation</li>
+      </ul>
+    </li>
+    <li>DQ Herculis stars / <strong>intermediate polars</strong>: far-apart or weakly magnetic polars missing synchronous rotation but having some accretion flow disruption</li>
+  </ul>
+
+  <h3 id="cataclysmic-variable-evolution">Cataclysmic variable evolution</h3>
+
+  <ul>
+    <li>Let Star 1 and Star 2 be main-sequence stars in a long-period (months to years) detached binary with $M_1&gt;M_2$</li>
+    <li>Binary semidetached as Star 1, evolving more rapidly, overflows its Roche lobe after reaching giant/supergiant phase
+      <ul>
+        <li>Mass transfer where $M_1&gt;M_2$ and $\dot M&lt;0$ enters positive feedback loop with shrinking separation and Roche lobe</li>
+      </ul>
+    </li>
+    <li><strong>First common envelope stage</strong>: binary contacts, transferring angular momentum onto common envelope and spiralling inward
+      <ul>
+        <li>May turn into blue straggler if stellar cores merge</li>
+      </ul>
+    </li>
+    <li>Otherwise, binary detaches as envelope is eventually ejected and Star 1 cools to a white dwarf</li>
+    <li>Binary again semidetached as Star 2 reaches giant phase
+      <ul>
+        <li>Mass transfer where $M_1 &gt; M_2$ and $\dot M&gt;0$ faces negative feedback with expanding separation and Roche lobe</li>
+        <li>Transfer only maintained if secondary expands faster than Roche lobe  or if stellar winds remove sufficient angular momentum</li>
+      </ul>
+    </li>
+    <li><strong>Second common envelope stage</strong>: suppose mass transfer continues, binary contacts again and spiral further inward, becoming a <strong>cataclysmic variable</strong></li>
+  </ul>
+
+  <h3 id="cataclysmic-variables">Cataclysmic variables</h3>
+
+  <ul>
+    <li>$\sim0.86\, M_\odot$ white dwarf primary and less massive main-sequence (type G or later) secondary in periods mostly ranging 78 minutes $\sim$ 12 hours
+      <ul>
+        <li>Gap in periods between $1.5\sim3.25$ hours possibly due to abrupt change in angular momentum transfer</li>
+      </ul>
+    </li>
+    <li>Long quiescent intervals punctuated by luminous outbursts, likely due to sudden increases in mass flow rate</li>
+    <li>Otherwise cool, low-mass, emission-lines-producing accretion disk becomes optically thick with absorption lines during brightening</li>
+    <li><strong>Dwarf novae</strong>: outbursts increase luminosity by $2\sim6$ magnitudes for $5\sim20$ days; separated by quiescent intervals of $30\sim300$ days
+      <ul>
+        <li>Visible wavelengths precede UV in brightening by $\sim1$ day, indicating outbursts start in cooler, outer disk and spread inward</li>
+        <li>Mass transfer rate increases $\sim100\times$ during outburst, possibly due to instability in secondary star or accretion disk</li>
+        <li>H partial ionization zone could dam up in secondary and propel material past $L_1$, or dam up in disk and increase viscosity, causing material to fall</li>
+      </ul>
+    </li>
+    <li><strong>Classical novae</strong>: outbursts increase luminosity by $7\sim20$ magnitudes
+      <ul>
+        <li>Luminosity initially rises rapidly, with a brief standstill $\sim2$ magnitudes from maximum</li>
+        <li><strong>Fast novae</strong> take weeks to dim by 2 visual magnitudes from maximum; <strong>slow novae</strong> take $\sim100$ days, but are also $\sim3$ visual magnitudes dimmer at maximum</li>
+        <li>Bolumetric magnitude remain roughly constant for months: dimming in visual band offset by brightening, first in UV, then in IR</li>
+        <li>Accompanied by ejection of $10^{-5}\sim10^{-4}\,M_\odot$ of hot gasses at $\sim10^3$ km/s, with slow novae ejecting them $\sim3\times$ slower</li>
+        <li>System returns to pre-eruption luminosity of $M_V\sim4.5$ after decades</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="classical-nova-cycle">Classical nova cycle</h3>
+
+  <ul>
+    <li>White dwarf in semidetached binary accretes H-rich gas onto surface at $10^{-8}\sim10^{-9}\, M_\odot$/year</li>
+    <li>Convection enriches H shell with surface C, N, and O; pressure heats shell and turns base degenerate</li>
+    <li>Accumulation of $10^{-4}\sim10^{-5}\, M_\odot$ of H at $\sim10^6$ K triggers runaway CNO cycle at base of shell, reaching $\sim10^8$ K before electrons there are lifted from degeneracy</li>
+    <li><strong>Hydrodynamic ejection phase</strong>, dominant for fast novae: once luminosity exceeds Eddington limit, radiation pressure lifts $\sim10\%$ of H layer into space</li>
+    <li><strong>Hydrostatic burning phase</strong>, dominant or slow novae: CNO cycle stabilizes near Eddington limit and hydrostatic equilibrium is reached; inert layer above H-burning shell becomes fully convective and expands to $\sim10^6$ km</li>
+    <li><strong>Fireball expansion phase</strong>: hydrodynamically ejected gasses form optically thick, glowing “fireball” with $T\approx6000\sim10\,000$ K, resembling a type A/F supergiant; reaches maximum visual brightness in a few days, then becomes optically thin</li>
+    <li><strong>Optically thin phase</strong>: transparent ejecta reveal hydrostatically-burning white dwarf, resembling a blue horizontal-branch giant</li>
+    <li><strong>Dust formation phase</strong>: as $T$ falls below $\lesssim1000$ K, carbon in ejecta condense and form dust shell; turns optically thick $\sim50\%$ of the time and re-radiates energy from white dwarf in IR</li>
+  </ul>
+
+  <h3 id="type-ia-supernovae">Type Ia supernovae</h3>
+
+  <ul>
+    <li>Destruction of white dwarf near Chandrasekhar limit</li>
+    <li>Maximum brightness very consistently $M_B\approx M_V\approx-19.3\pm0.3$</li>
+    <li>Peak brightness–rate of decline relation allow accurate distance measurements to faraway host galaxies
+      <ul>
+        <li>Critical for discovery of dack energy</li>
+      </ul>
+    </li>
+    <li>Absence of H lines indicates evolved nature; P-Cygni profile indicates mass loss; blueshifted absorption lines indicate ejecta speeds $\gtrsim10^4$ km/s $\approx0.1c$</li>
+    <li><strong>Dobule-degenerate models</strong>: two white dwarfs
+      <ul>
+        <li>Radiation of gravitational waves cause orbits to decay</li>
+        <li>Larger and less massive secondary eventually spills over Roche lobe, breaking into thick disk for the primary to accrete</li>
+        <li>As primary nears Chandrasekhar limit, nuclear reactions ignite in deep interior and destroy it</li>
+        <li>Roughly predict the right number of mergers, but ignitions, if off-center, may result in neutron stars instead of supernovae, and predictions of heavy element abundances are inconsistent with spectra</li>
+      </ul>
+    </li>
+    <li><strong>Single-degenerate models</strong>: a C–O white dwarf and an evolving star companion
+      <ul>
+        <li>Helium-triggered model: He gas from secondary settle on surface with base becoming degenerate; He flash sends shockwave into interior and ignites degenerate C and O</li>
+        <li>Direct ignition model: multiple independent ignitions of C and O occur in interior as star nears Chandrasekhar limit</li>
+        <li>Require fine-tuning rate of accretion to prevent dwarf novae or classical novae from taking place instead</li>
+      </ul>
+    </li>
+    <li>Unclear if direct ignition single- and double-degenerate models result in subsonic deflagaration or supersonic detonation in shock front</li>
+  </ul>
+
+  <h3 id="neutron-star-binary-formation-processes">Neutron star binary formation processes</h3>
+
+  <ul>
+    <li>Supernova in existing binary: unbinds system if $\ge{1\over2}$ of total mass is ejected; otherwise, neutron star or black hole now in binary</li>
+    <li><strong>Tidal capture</strong>: neutron star passing within $1\sim3\,R_\text{companion}$ loses significant kinetic energy to tidal dampening and becomes gravitationally bound; most effective in densely populated regions</li>
+    <li>Disruption of multi-star system: neutron star transfers kinetic energy to another star, ejecting that star while itself is captured</li>
+    <li>Direct collision with giant: neutron star penetrates star and enters subsurface orbit with its degenerate core, becoming a <strong>Thorne–Żytkow object</strong> (TŻO); envelope is then quickly expelled, producing neutron star–white dwarf binary</li>
+  </ul>
+
+  <h3 id="x-ray-binaries">X-ray binaries</h3>
+
+  <ul>
+    <li><strong>Low-mass X-ray binaries</strong> (LMXB): short orbital periods ($11$ minutes $\sim35$ days) with low-mass, mostly cool secondary stars</li>
+    <li><strong>Massive X-ray binaries</strong> (MXRB): relatively longer orbital periods ( $0.2\sim580$ days) with O and B giants and supergiants</li>
+    <li><strong>Alfvén radius</strong> $r_A = \sqrt[7]{8\pi^2 B^4 R^{12}\over \mu_0 G M \dot M^2}$
+      <ul>
+        <li>Where magnetic energy density $u_m = {1\over2\mu_0}B^2\propto1/r^6$ equals kinetic energy density $u_K = {1\over2}\rho v^2$</li>
+      </ul>
+    </li>
+    <li>Below disruption radius $r_d\approx0.5r_A$, ionized gas is channeled onto magnetic poles instead of impacting surface
+      <ul>
+        <li>If $r_d\approx r_\text{orbit}$, magnetic field prevents formation of disk and confines accretion to narrow streams directed towards poles</li>
+        <li>If $r_d\lesssim r_\text{disk}$, magnetic field only distrupts accretion disk near star surface</li>
+        <li>Polar-like accretion columns and shock fronts formed above poles</li>
+      </ul>
+    </li>
+    <li><strong>X-ray burster</strong>: LMXB with weak magnetic field
+      <ul>
+        <li>Matter settling on surface of neutron star with weak magnetic field ($\ll10^8$ T) periodically ignites H, He, then possibly C fusion</li>
+        <li>He fusion extremely explosive and releases $\sim10^{32}$ J in seconds, predominantly in X-ray</li>
+        <li>Accretion disk re-emits some X-ray in visible light seconds after the burst</li>
+      </ul>
+    </li>
+    <li>Companion stars of LMXBs become white dwarfs without disturbing the system</li>
+    <li><strong>Binary X-ray pulsar</strong>: strong magnetic field; $\sim50\%$ of XMRBs
+      <ul>
+        <li>Matter accreting on poles of neutron star release up to $\sim10^{31}$ W, predominantly in X-ray</li>
+        <li>Near-Eddington-limit radiation elevates shock front, resulting in large solid angle for emission</li>
+        <li>Period slowly speeding up from transfer of accreting matter’s angular momentum via magnetic torques
+          <ul>
+            <li>Pulse arrival times vary with phase of orbit, allowing determination of orbital radius</li>
+          </ul>
+        </li>
+        <li>Misalignment of magnetic and rotation axes may allow eclipsing of pulses by companion, and thereby complete determination of masses and radii in the system</li>
+      </ul>
+    </li>
+    <li>Some MXRBs ($\gtrsim3\, M_\odot$) may contain a stellar-mass black hole
+      <ul>
+        <li>Most candidates lack developed accretion disks, making mass determination of compact object difficult</li>
+        <li>A0620–00: an <strong>X-ray nova</strong> with sporatic accretion and a $3.82\pm0.24\, M_\odot$ black hole</li>
+        <li>Cygnus X-1: bright MXRB with a $&gt;3.4\, M_\odot$ black hole</li>
+        <li>SS 433: three emission lines, with two posessing significant Doppler shifts attributed to relativistic jets of a precessing accretion disk from a neutron star or black hole</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="x-ray-binary-remnants">X-ray binary remnants</h3>
+
+  <ul>
+    <li>Companion stars of MXRBs may go supernova, either unbinding the system or creating a double neutron star / neutron star–black hole binary</li>
+    <li><strong>Millisecond radio pulsars</strong>: spun up by accretion as LMXBs, but small fraction are missing white dwarf companions</li>
+    <li><strong>Black widow pulsar</strong>: if pulsar beam close to equator, white dwarf may be evaporated</li>
+    <li><strong>Double neutron star binaries</strong>: precise measurements on orbital decay of <strong>Hulse–Taylor pulsar</strong> (PSR 1913+16) confirmed existence of gravitational waves</li>
+    <li><strong>Short–hard gamma ray bursts</strong>: merger of two neutron stars or neutron star and black hole</li>
+  </ul>
+
+</section>
+
+
+  </div>
+
+</article>
+
+
+    <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
+  </body>
+</html>

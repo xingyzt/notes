@@ -1,0 +1,521 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              delimiters: [
+                  //{left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  //{left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError : false
+            });
+            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+            headings.forEach(heading =>{
+              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+            });
+        });
+    </script>
+    <style>
+
+
+:root {
+  --text: #416;
+  --text-accent: #000;
+  --link: #146;
+  --link-accent: #012;
+  --deco: #84e;
+  --bg: #ecf;
+  --bg-accent: #daf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ecf;
+    --text-accent: #fff;
+    --link: #adf;
+    --link-accent: #cef;
+    --deco: #84e;
+    --bg: #416;
+    --bg-accent: #417;
+  }
+}
+
+@media print {
+  :root {
+    --text: #000;
+    --link: #000;
+    --deco: #000;
+    --bg: #fff;
+  }
+  details {
+    display: none;
+  }
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunrm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunti.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbx.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbi.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+html, body {
+  font-size: 16px;
+  font-family: cmu, serif;
+  margin: 0;
+  padding: 0;
+}
+html * {
+  box-sizing: border-box;
+}
+body {
+  width: 50rem;
+  height: auto;
+  padding: 1rem;
+  max-width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1 {
+  text-align: center;
+}
+h2 {
+  border-bottom: 1px solid var(--deco);
+  background: var(--bg);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+h3 {
+  scroll-margin: 3rem;
+}
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
+strong {
+  font-weight: normal;
+  text-decoration: dotted underline var(--deco);
+}
+
+details {
+  position: fixed;
+  right: 0;
+  width: 20rem;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  bottom: 0;
+  background: var(--bg-accent);
+  z-index: 1000;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0 1rem;
+  background: var(--bg-accent);
+}
+
+a, summary {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover, a:focus, summary:hover, summary:focus {
+  text-decoration: underline;
+  color: var(--link-accent);
+}
+a:active, summary:active {
+  background: var(--link);
+  color: var(--bg-accent);
+}
+
+ul, ol {
+  margin-left: 0rem;
+  padding-left: 1rem;
+}
+li:hover {
+  color: var(--text-accent);
+}
+
+table {
+  border: 1px solid var(--deco);
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px dashed var(--deco);
+  text-align: center;
+}
+
+#markdown-toc {
+  padding-left: 1rem;
+}
+#markdown-toc > li:first-child {
+  display: none;
+}
+#markdown-toc ul {
+  padding-left: 0.2rem;
+}
+#markdown-toc li {
+ list-style: none;
+}
+#markdown-toc > li > ul li {
+ padding-left: 0.2rem;
+ border-left: 1px dashed var(--deco);
+}
+#markdown-toc > li {
+  font-weight: bold;
+}
+#markdown-toc > li > ul > li {
+  font-size: 1rem;
+  font-weight: normal;
+}
+#markdown-toc > li > ul > li > ul > li {
+  font-size: 0.8rem;
+}
+    
+    
+    
+    </style>
+  </head>
+  <body>
+    <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    
+<section>
+
+  <h2 id="the-fate-of-massive-stars">15. The Fate of Massive Stars</h2>
+
+  <h3 id="post-main-sequence-evolution">Post-main-sequence evolution</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>$M\;(M_\odot)$</th>
+        <th>path to supernova</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$\gtrsim85$</td>
+        <td>O →  Of → LBV → WN → WC → SN</td>
+      </tr>
+      <tr>
+        <td>$40\sim85$</td>
+        <td>O →  Of →  WN → WC → SN</td>
+      </tr>
+      <tr>
+        <td>$25\sim40$</td>
+        <td>O → RSG →  WN → WC → SN</td>
+      </tr>
+      <tr>
+        <td>$20\sim25$</td>
+        <td>o → RSG →  WN → SN</td>
+      </tr>
+      <tr>
+        <td>$10\sim20$</td>
+        <td>O → RSG → BSG → SN</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul>
+    <li><strong>Luminous blue variables</strong> (LBVs; prototype: S Doradus):
+massive stars whose brightness suddenly erupt from time to time
+      <ul>
+        <li>Effective temperatures between $15\,000\sim30\,000$ K, masses $\gtrsim 85 M_\odot$,
+and luminosities $\gtrsim10^6 L_\odot$ approaching the Eddington limit</li>
+        <li>Possible mechanisms behind behavior include
+envelope mass loss from temporarily exceeding Eddington limit,
+atmospheric pulsation instabilities, and binary companions</li>
+      </ul>
+    </li>
+    <li><strong>Wolf–Rayet stars</strong> (WR):
+very hot, rapidly rotating stars with unusually strong broad emission lines and high mass loss
+      <ul>
+        <li>Effective temperatures between $25\,000\sim100\,000$ K, masses $\gtrsim 20 M_\odot$,
+mass loss rates $\gtrsim 10^{-5} M_\odot/\text{year}$, and equatorial rotation speed ~300 km/s</li>
+        <li>Atypical spectral composition due to mass loss progressive stripping away outermost layers:
+WNs emission lines dominate in He and N; WCs in He and C; WOs in O</li>
+      </ul>
+    </li>
+    <li>Blue supergiants (BSG)</li>
+    <li>Red supergiants (RSG)
+      <ul>
+        <li>Humphreys–Davidson luminosity limit: the most massive stars never evolve to RSG portion
+due to max luminosity cutoff</li>
+      </ul>
+    </li>
+    <li>Of stars: O supergiants with pronounced emission lines</li>
+  </ul>
+
+  <h3 id="supernova-observation-and-classification">Supernova observation and classification</h3>
+
+  <ul>
+    <li>Recorded Milky Way supernovae:
+SN 1006, SN 1054 with Crab supernova remnant,
+Tycho’s supernova SN 1572, and Kepler’s supernova SN 1604</li>
+    <li>SN 1987A in Large Magellanic Clouds (50 kpc from Earth) first nearby supernova in age of modern astronomy</li>
+    <li>Classified by spectra at maximum light and light curve shape:
+      <ul>
+        <li><strong>Type I supernova</strong>: no H lines
+          <ul>
+            <li>H envelope already stripped before SN</li>
+            <li>Dimming $\sim 0.065$/day at 20 days, slowing to a constant rate after $\sim50$ days</li>
+            <li>Type Ia: Si II lines
+              <ul>
+                <li>Found in all galaxy types, including low-star-forming ellpticals</li>
+                <li>$M_B \approx -18.4$</li>
+                <li>Dimming $\sim0.015$/day after $\sim50$ days</li>
+              </ul>
+            </li>
+            <li>Type Ib/Ic: no Si II lines
+              <ul>
+                <li>Only found in star-forming H II regions of spirals</li>
+                <li>$M_B \approx -16$</li>
+                <li>Dimming $\sim0.010$/day after $\sim50$ days</li>
+                <li>Type Ib: He lines</li>
+                <li>Type Ic: no He lines</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>Type II supernova</strong>: H lines;
+          <ul>
+            <li>Type II-P: plateau
+              <ul>
+                <li>Temporary plateau in light curve between $30\sim80$ days</li>
+                <li>Occurs $\sim10\times$ as often as Type II-L</li>
+              </ul>
+            </li>
+            <li>Type II-L: linear</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="core-collapse-supernovae">Core-collapse supernovae</h3>
+
+  <ul>
+    <li>Type Ib, Ic, and II involve collapse of massive, evolved stellar core</li>
+    <li>He burning eventually adds enough mass and density to CO core to start burning C, creating O–Ne core</li>
+    <li>O–Ne then starts burning O, creating $^{28}_{14}$Si-dominated core</li>
+    <li>Si burning at $\sim3\times10^9$ K creates iron core with host of heavy nuclei centered near $^{56}_{26}$Fe</li>
+    <li>Onion-like interior: Fe core ) Si-burning ) Si-rich ) O-burning ) O-rich ) C-burning ) C-rich ) He-burning ) He-rich ) H-burning ) H–He envelope</li>
+    <li>Less energy released per mass, thus shorter timescale, with each successive fuel</li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th>core-burning fuel</th>
+        <th>duration for $20 M_\odot$ star</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>H</td>
+        <td>$\sim10^7$ years</td>
+      </tr>
+      <tr>
+        <td>He</td>
+        <td>$\sim10^6$ years</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>$\sim300$ years</td>
+      </tr>
+      <tr>
+        <td>O</td>
+        <td>$\sim200$ days</td>
+      </tr>
+      <tr>
+        <td>Si</td>
+        <td>$\sim2$ days</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul>
+    <li>Extreme core temperature ($T_c\approx8\times10^9$ K) leads to <strong>photodisintegration</strong>: high-energy photons destroy heavy nuclei
+      <ul>
+        <li>$^{56}_{26}\text{Fe}+\gamma\to13{\;}^4_2\text{He}+4\text{n}$, $^4_2\text{He}+\gamma\to2\text{p}^++2\text{n}$</li>
+        <li>Highly endothermic, removing thermal pressure</li>
+      </ul>
+    </li>
+    <li>Extreme core temperature and density ($\rho_c\approx10^{13}$ kg/m$^{3}$) leads to heavy nuclei and photodisintegrated protons capturing free electrons, removing electron degeneracy pressure as well</li>
+    <li>Loss of hydrostatic pressure causes core to collapse rapidly</li>
+    <li>Inner core collapses homologously, decoupling from outer core where velocity becomes locally supersonic</li>
+    <li>Collapse continues until density exceeds $8\times10^{17}$ kg/m$^{3}$ and strong force suddenly becomes repulsive due to neutron degeneracy pressure, sending shock waves to infalling outer core</li>
+    <li>Supersonic outer core collapses in near free-fall $\sim70\,000$ km/s until heating and photodisintegrating upon encountering shock front</li>
+    <li>Shock loses energy and stalls, becoming accretionary</li>
+    <li>Extreme density traps neutrinos below in <strong>neutrinosphere</strong>
+      <ul>
+        <li>If neutrino energy reheats base of shock sufficiently quickly, shock resumes traveling outward</li>
+        <li>Otherwise, material in shock falls back onto core and no explosion occurs</li>
+      </ul>
+    </li>
+    <li>Shock propels nuclear products and envelope material to kinetic energies $\sim10^{44}$ J</li>
+    <li>Material becomes optically thin at $\sim10^3$ m $\approx100$ AU, releasing $\sim10^{42}$ J $\approx 10^9 L_\odot \approx L_\text{galaxy}$ of light</li>
+    <li>$\sim3\times10^{46}$ J of neutrinos released as well
+      <ul>
+        <li>SN 1987A’s neutrinos traveled relativistically and arrived 3 hours before its photons, placing rest mass limit $m_{\nu_e} \leq 16$ eV</li>
+      </ul>
+    </li>
+    <li><strong>Neutron star</strong> forms if remnant of inner core is small enough (neglecting rotation, $m\lesssim2.2M_\odot$ from $M_\text{ZAMS} \lesssim 25M_\odot$) to stablize from neutron degeneracy pressure; collapses into singularity and produces <strong>black hole</strong> otherwise</li>
+    <li>Nebulae emit highly polarized synchotron radiation, with electrons supplied by center pulsar</li>
+    <li>Spectral differencies of types II, Ib, and Ic due to composition and mass of envelope prior to, and radioactive material synthesized during core collapse
+      <ul>
+        <li>Type II usually from RSGs in H–R’s extreme upper left
+          <ul>
+            <li>SN 1987A was <strong>subluminous</strong> by $\sim3.5$ magnitudes relative to typical Type II supernovae due to being a denser BSG in the blue loop</li>
+          </ul>
+        </li>
+        <li>Type Ib and Ic likely from WN and WC Wolf–Rayets, respectively</li>
+      </ul>
+    </li>
+    <li>Light curve plateau of Type II-P largely caused by prolonged recombination of H-rich envelope after shock ionization; further supported by radioactive decay of $^{56}_{28}$Ni in shock front
+      <ul>
+        <li>Light curve slope may be matched to decay of specific radioisotopes</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="supernova-nucleosynthesis">Supernova nucleosynthesis</h3>
+
+  <ul>
+    <li><strong>Solar lithium problem</strong>: solar convection zone predicted by stellar models too shallow to adequately burn Li, yet meteorites show primordial Li was $100\times$ the current solar Li abundance</li>
+    <li>Synthesis of heavy-nuclei by charged particles extremely difficult due to Coulomb barrier, but neutron capture can occur at relatively low temperatures
+      <ul>
+        <li>Insignificant in energy production, but accounts for abundance ratios of nuclei $A&gt;60$</li>
+        <li>Slow <strong>s-process</strong> yielding stable nuclei if $t_{\beta\text{-decay}} \ll t_\text{n-capture}$; tends to occur in normal phases of stellar evolution</li>
+        <li>Rapid <strong>r-process</strong> yielding neutron-rich nuclei if $t_{\beta\text{-decay}} \gg t_\text{n-capture}$; tends to occur in supernovae</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="gamma-ray-bursts-grb">Gamma-ray bursts (GRB)</h3>
+
+  <ul>
+    <li>Brief shower of gamma-ray photons between $1\sim10^6$ keV</li>
+    <li>Rise time of $\sim10^{-4}$ s followed by exponential decay totaling $10^{-2}\sim10^3$ s</li>
+    <li>Characteristic length $l = c\cdot t_\text{rise}$ roughly size of neutron star</li>
+    <li>Emission between $350\sim500$ keV likely gravitationally redshifted pairs of 511-keV photons produced by e$^-$–e$^{+}$ annihilation on neutron star surface</li>
+    <li>Emission between $20\sim60$ keV likely cyclotron lines from pulsar magnetic field $\sim10^8$ T</li>
+    <li>Burst distribution isotropic throughout sky, but has radial edge corresponding to extragalactic distances</li>
+    <li>Total energy released comparable to that of core-collapse supernovae
+      <ul>
+        <li><strong>Fluence</strong> $S$: total energy released per detector surface area</li>
+      </ul>
+    </li>
+    <li><strong>Short–hard GRBs</strong>: $\lesssim2$ s, associated with neutron star–neutron star or neutron star–black hole mergers</li>
+    <li><strong>Long–soft GRBs</strong>: $\gtrsim2$ s, associated with supernovae</li>
+  </ul>
+
+  <h3 id="longsoft-grbs">Long–soft GRBs</h3>
+
+  <ul>
+    <li>Traced to the same locations as some supernovae</li>
+    <li><strong>Relativistic jets</strong>: beams of highly relativistic matter (Lorentz factor $\gamma$ possibly $\gtrsim100$)
+      <ul>
+        <li>For $\gamma\gg1$, beam cone has half-width angle $\theta\propto1/\gamma$</li>
+        <li>Doppler/<strong>relativistic beaming</strong>: if observer within beam, observed energy and collimation will be greater than what is actually emitted</li>
+        <li>Models must avoid slow-down from relativistic speeds after encountering too much (cumulative rest mass $m_0\gtrsim\gamma m_\text{jet}c^2$) baryon-rich material from envelope</li>
+      </ul>
+    </li>
+    <li>Hypernova/<strong>collapsar model</strong>: black hole formed directly from supernova
+      <ul>
+        <li>Debris disk and associated magnetic fields collimate relativistic jets emanating from center of supernova</li>
+        <li>Gamma rays emitted as jets encounter infalling stellar envelope</li>
+      </ul>
+    </li>
+    <li><strong>Supranova model</strong>: rotating neutron star with $M \gtrsim2.2M_\odot$ spins down over weeks to months and collapses into black hole
+      <ul>
+        <li>Stellar envelope has already been cleared away by supernova</li>
+        <li>Debris disk and associated magnetic fields produce both relativistic jets and a GRB</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="cosmic-rays">Cosmic rays</h3>
+
+  <ul>
+    <li>Penetrating radiation of charged particles comprising wide range of classes (), masses, and energies ($10^7\sim10^{20}$ eV)</li>
+    <li>Subatomic particles including e$^\pm$, p$^+$, $\mu^\pm$, and atomic nuclei including C, Ne, Mg, Si, Fe, Ni</li>
+    <li><strong>Solar cosmic rays</strong> relatively low energy, with $\sim750$ km/s protons in fast solar wind having $E\approx 3$ keV, and $\sim0.1c$ protons from CMEs having $E\approx10$ MeV</li>
+    <li>Supernova-origin cosmic rays travel relativistically $\sim c$ with $E\lesssim10^{16}$ eV</li>
+    <li>Charged particles orbit magnetic fields at <strong>Larmor radius</strong> / gyroradius $r = {\gamma m v\over q B}$
+      <ul>
+        <li>While trapped in field, particle is accelerated to relativistic speeds by successive collisions with advancing shock wave</li>
+        <li>With sufficient energy $\sim10^{15}$ eV, $r$ exceeds size scale of supernova remnant $\sim1$ pc and particle is likely ejected</li>
+      </ul>
+    </li>
+    <li>Possible origins for highest-energy cosmic rays;
+      <ul>
+        <li>Acceleration near neutron stars or black holes</li>
+        <li>Collisions involving intergalactic shocks</li>
+        <li>Emission from active galactic nuclei around supermassive black hole</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+
+  </div>
+
+</article>
+
+
+    <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
+  </body>
+</html>

@@ -1,0 +1,374 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              delimiters: [
+                  //{left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  //{left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError : false
+            });
+            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+            headings.forEach(heading =>{
+              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+            });
+        });
+    </script>
+    <style>
+
+
+:root {
+  --text: #416;
+  --text-accent: #000;
+  --link: #146;
+  --link-accent: #012;
+  --deco: #84e;
+  --bg: #ecf;
+  --bg-accent: #daf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ecf;
+    --text-accent: #fff;
+    --link: #adf;
+    --link-accent: #cef;
+    --deco: #84e;
+    --bg: #416;
+    --bg-accent: #417;
+  }
+}
+
+@media print {
+  :root {
+    --text: #000;
+    --link: #000;
+    --deco: #000;
+    --bg: #fff;
+  }
+  details {
+    display: none;
+  }
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunrm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunti.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbx.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbi.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+html, body {
+  font-size: 16px;
+  font-family: cmu, serif;
+  margin: 0;
+  padding: 0;
+}
+html * {
+  box-sizing: border-box;
+}
+body {
+  width: 50rem;
+  height: auto;
+  padding: 1rem;
+  max-width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1 {
+  text-align: center;
+}
+h2 {
+  border-bottom: 1px solid var(--deco);
+  background: var(--bg);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+h3 {
+  scroll-margin: 3rem;
+}
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
+strong {
+  font-weight: normal;
+  text-decoration: dotted underline var(--deco);
+}
+
+details {
+  position: fixed;
+  right: 0;
+  width: 20rem;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  bottom: 0;
+  background: var(--bg-accent);
+  z-index: 1000;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0 1rem;
+  background: var(--bg-accent);
+}
+
+a, summary {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover, a:focus, summary:hover, summary:focus {
+  text-decoration: underline;
+  color: var(--link-accent);
+}
+a:active, summary:active {
+  background: var(--link);
+  color: var(--bg-accent);
+}
+
+ul, ol {
+  margin-left: 0rem;
+  padding-left: 1rem;
+}
+li:hover {
+  color: var(--text-accent);
+}
+
+table {
+  border: 1px solid var(--deco);
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px dashed var(--deco);
+  text-align: center;
+}
+
+#markdown-toc {
+  padding-left: 1rem;
+}
+#markdown-toc > li:first-child {
+  display: none;
+}
+#markdown-toc ul {
+  padding-left: 0.2rem;
+}
+#markdown-toc li {
+ list-style: none;
+}
+#markdown-toc > li > ul li {
+ padding-left: 0.2rem;
+ border-left: 1px dashed var(--deco);
+}
+#markdown-toc > li {
+  font-weight: bold;
+}
+#markdown-toc > li > ul > li {
+  font-size: 1rem;
+  font-weight: normal;
+}
+#markdown-toc > li > ul > li > ul > li {
+  font-size: 0.8rem;
+}
+    
+    
+    
+    </style>
+  </head>
+  <body>
+    <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    
+<section>
+
+  <h2 id="general-relativity-and-black-holes">17. General Relativity and Black Holes</h2>
+
+  <h3 id="general-relativity">General relativity</h3>
+
+  <ul>
+    <li>Geometric description of how intervals in spacetime are measured in the presence of mass and energy</li>
+    <li>“Mass tell spacetime how to curve, spacetime tells mass how to move”</li>
+    <li>Spacetime curvature increases distance between points and slow down time</li>
+    <li><strong>Weak equivalence principle</strong>: gravitational charge $m_g$, which determines the force of gravity, is directly proportional to inertial mass $m_i$, which exists even without gravity; thus, every object falls with the same acceleration</li>
+    <li><strong>Principle of equivalence</strong>: All locally inertial (freely falling and nonrotating) frames of reference are physically equivalent, related by the Lorentz transformations between their instantaneous relative velocity
+      <ul>
+        <li>Only local, as gravity pulls in different magnitudes and directions in different places</li>
+      </ul>
+    </li>
+    <li><strong>Gravitational bending of light</strong>: in free-fall reference frame, photons travel in straight lines; observed from the ground, photons curve down with the inertial frame</li>
+    <li><strong>Gravitational time dilation</strong> and <strong>gravitational redshift</strong>: in free-fall reference frame, upward photons do not lose energy; observed from the ground, the photon took less time and traveled less distance in the inertial frame
+      <ul>
+        <li>Time dilates and space streches inside gravitational wells</li>
+        <li>${\Delta\nu\over\nu_0}\approx-{gh\over c^2}$ for small $g$</li>
+        <li>${\Delta t_0\over\Delta t_\infty}={\nu_\infty\over\nu_0}=\sqrt{1-{2GM\over r_0c^2}}\approx 1-{GM\over r_0c^2}$</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="intervals-and-geodesics">Intervals and geodesics</h3>
+
+  <ul>
+    <li><strong>Einstein field equations</strong> of form $\mathcal G = -{8\pi G\over c^4} \mathcal T$ calculates the <strong>Einstein tensor</strong> $\mathcal G$, describing the curvature of spacetime, from the <strong>stress–energy tensor</strong> $\mathcal T$, describing the distribution of mass and energy</li>
+    <li><strong>Event</strong> $s$: a point in spacetime with coordinates $(x, y, z, t)$</li>
+    <li><strong>Worldline</strong> $\mathcal W$: path of object moving through spacetime</li>
+    <li><strong>Spacetime interval</strong> $(\Delta s)^2 = c(\Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2$
+      <ul>
+        <li>The “distance” between two events, invariant under Lorentz transformations</li>
+        <li><strong>Timelike</strong> if $(\Delta s)^2 &gt; 0$
+          <ul>
+            <li>Enough time for light to travel between the events</li>
+            <li>Inertial frames exist in which they happen in the same location, separated by <strong>proper time</strong> $\Delta\tau\equiv\Delta s/c$</li>
+          </ul>
+        </li>
+        <li>Null/<strong>lightlike</strong> if $(\Delta s)^2 = 0$
+          <ul>
+            <li>Only light can travel between the events</li>
+          </ul>
+        </li>
+        <li><strong>Spacelike</strong> if $(\Delta s)^2 &lt; 0$
+          <ul>
+            <li>Too much space for light to travel between the events</li>
+            <li>Inertial frames exist in which they happen simultaneously, separated by <strong>proper distance</strong> $\Delta\mathcal L = \sqrt{-(\Delta s)^2}$</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Light cones</strong>: regions of spacetime with causal (timelike/lightlike) connection to an event
+      <ul>
+        <li><strong>Past light cone</strong>: region of past spacetime whose light can reach the event; everything that could influence the event</li>
+        <li><strong>Future light cone</strong>: region of future spacetime reachable by light from the event; everything the event could influence</li>
+        <li>Boundaries are <strong>event horizons</strong>, dividing the knowable from the unknowable</li>
+      </ul>
+    </li>
+    <li><strong>Metric</strong>: formula for measuring differential distance along worldlines, defining $(ds)^2$ such that $\Delta s(\mathcal W) =\int_{\mathcal W}\sqrt{ds)^2}$
+      <ul>
+        <li><strong>Minkowski metric</strong> for flat spacetime: $(ds)^2 = (c\;dt)^2 - (d\ell)^2$, where $(d\ell)^2=(dx)^2+(dy)^2+(dz)^2 = (dr)^2 + (r\; d\theta)^2 + (r \sin\theta \; d\phi)^2$</li>
+        <li><strong>Swarzchild metric</strong> for single, nonrotating mass at origin:  $(ds)^2=\left(c\; dt\sqrt{1-{2GM\over rc^2}}\right)^2-\left(dr\over \sqrt{1-{2GM\over rc^2}}\right)^2 - (r\; d\theta)^2 - (r \sin\theta \; d\phi)^2$
+          <ul>
+            <li>Time dilation in $dt$ term and streching of space in $dr$ term</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Coordinate speed</strong> ${d\ell\over dt}$: rate of change of spatial coordinates</li>
+    <li>All freely-falling particles follow <strong>geodesics</strong>: the straightest, shortest possible worldlines
+      <ul>
+        <li>Massive particles follow timelike geodesics with a locally extremum interval, with either the maximum or minimum $\Delta s$ out of nearby worldlines
+          <ul>
+            <li>Ex: orbiting satellites follow maximum interval geodesics in Schwarzchild metric</li>
+          </ul>
+        </li>
+        <li>Massless particles follow the <strong>null geodesic</strong> with $\Delta s=0$</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="black-holes-bh">Black holes (BH)</h3>
+
+  <ul>
+    <li><strong>Swarzchild radius</strong> $R_S = {2GM\over c^2}$: distance from nonrotating mass where escape speed is $c$</li>
+    <li>At $R_S$, proper time $d\tau$ and coordinate speed of light moving radially ${dr\over dt}$ are $0$: nothing ever happens and light appears to freeze</li>
+    <li><strong>Black hole</strong>: star that collapsed within its $R_S$ , with a physical <strong>singularity</strong> ($V=0, \rho\to\infty$) at the center enclosed by an <strong>event horizon</strong> at $R_S$</li>
+    <li>From distant observer, objects falling into BH emit increasingly time-dilated and redshifted signals</li>
+    <li>From free-falling reference frames, gravitational differential result in tidal stretching</li>
+    <li>Below $r&lt;R_S$, nothing can remain at rest and all worldlines converge at singularity</li>
+    <li><strong>No hair theorem</strong>: any black hole can be completely described by its mass, angular momentum, and electric charge</li>
+    <li><strong>Frame dragging</strong>: rotating masses induce rotation in surrounding spacetime; creates <strong>ergosphere</strong> around rotating black holes within which all particles are forced to move in the direction of rotation</li>
+    <li>Possible upper limit on angular momentum $L\le{GM^2\over c}$, above which a <strong>naked singularity</strong> would be exposed</li>
+    <li><strong>Stellar-mass black holes</strong> ($3\sim5\,M_\odot$)
+      <ul>
+        <li>Formed from direct core-collapse (collapsar), spin-down of neutron star (supranova), or accretion on neutron star from binary companion</li>
+      </ul>
+    </li>
+    <li><strong>Intermediate-mass black holes</strong> (IMBH; $10^2\sim10^4\,M_\odot$)
+      <ul>
+        <li>Formation process unclear; possibly from collapse of supermassive merged star, or merger of stellar-mass BHs</li>
+        <li>Observed as <strong>ultraluminous X-ray sources</strong> (ULXs), correlated with cores of globular clusters and low-mass galaxies</li>
+      </ul>
+    </li>
+    <li><strong>Supermassive black holes</strong> (SMBH; $10^5\sim10^9\, M_\odot$)
+      <ul>
+        <li>Formation process unclear; possibly from galaxy mergers, or growth of IMBHs</li>
+        <li>Located at centers of most galaxies</li>
+      </ul>
+    </li>
+    <li><strong>Primordial black holes</strong> ($10^{-8}$ kg $\sim10^5\,M_\odot$)
+      <ul>
+        <li>May have existed in the earliest instants of the universe</li>
+      </ul>
+    </li>
+    <li><strong>Schwarzchild throat</strong> / Einstein–Rosen bridge: vacuum solution of field equations with a tunnel at event horizon of nonrotating BH
+      <ul>
+        <li>Collapses before anything can cross</li>
+      </ul>
+    </li>
+    <li><strong>Wormhole</strong>: nonvacuum solution to field equations connecting arbitrary points in spacetime with no event horizon and survival tidal forces
+      <ul>
+        <li>Requires exotic material (with negative energy density $\rho c^2&lt;0$) to prevent collapse</li>
+      </ul>
+    </li>
+    <li><strong>Hawking radiation</strong> $\dot E\propto1/M^2$: pair production near event horizon allows gravitational energy to escape, culminating in high-energy burst of gamma rays and elementary particles at death of black hole</li>
+  </ul>
+
+</section>
+
+
+  </div>
+
+</article>
+
+
+    <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
+  </body>
+</html>

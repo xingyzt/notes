@@ -1,0 +1,538 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              delimiters: [
+                  //{left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  //{left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError : false
+            });
+            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+            headings.forEach(heading =>{
+              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+            });
+        });
+    </script>
+    <style>
+
+
+:root {
+  --text: #416;
+  --text-accent: #000;
+  --link: #146;
+  --link-accent: #012;
+  --deco: #84e;
+  --bg: #ecf;
+  --bg-accent: #daf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ecf;
+    --text-accent: #fff;
+    --link: #adf;
+    --link-accent: #cef;
+    --deco: #84e;
+    --bg: #416;
+    --bg-accent: #417;
+  }
+}
+
+@media print {
+  :root {
+    --text: #000;
+    --link: #000;
+    --deco: #000;
+    --bg: #fff;
+  }
+  details {
+    display: none;
+  }
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunrm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunti.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbx.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbi.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+html, body {
+  font-size: 16px;
+  font-family: cmu, serif;
+  margin: 0;
+  padding: 0;
+}
+html * {
+  box-sizing: border-box;
+}
+body {
+  width: 50rem;
+  height: auto;
+  padding: 1rem;
+  max-width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1 {
+  text-align: center;
+}
+h2 {
+  border-bottom: 1px solid var(--deco);
+  background: var(--bg);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+h3 {
+  scroll-margin: 3rem;
+}
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
+strong {
+  font-weight: normal;
+  text-decoration: dotted underline var(--deco);
+}
+
+details {
+  position: fixed;
+  right: 0;
+  width: 20rem;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  bottom: 0;
+  background: var(--bg-accent);
+  z-index: 1000;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0 1rem;
+  background: var(--bg-accent);
+}
+
+a, summary {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover, a:focus, summary:hover, summary:focus {
+  text-decoration: underline;
+  color: var(--link-accent);
+}
+a:active, summary:active {
+  background: var(--link);
+  color: var(--bg-accent);
+}
+
+ul, ol {
+  margin-left: 0rem;
+  padding-left: 1rem;
+}
+li:hover {
+  color: var(--text-accent);
+}
+
+table {
+  border: 1px solid var(--deco);
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px dashed var(--deco);
+  text-align: center;
+}
+
+#markdown-toc {
+  padding-left: 1rem;
+}
+#markdown-toc > li:first-child {
+  display: none;
+}
+#markdown-toc ul {
+  padding-left: 0.2rem;
+}
+#markdown-toc li {
+ list-style: none;
+}
+#markdown-toc > li > ul li {
+ padding-left: 0.2rem;
+ border-left: 1px dashed var(--deco);
+}
+#markdown-toc > li {
+  font-weight: bold;
+}
+#markdown-toc > li > ul > li {
+  font-size: 1rem;
+  font-weight: normal;
+}
+#markdown-toc > li > ul > li > ul > li {
+  font-size: 0.8rem;
+}
+    
+    
+    
+    </style>
+  </head>
+  <body>
+    <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    
+<section>
+
+  <h2 id="the-interiors-of-stars">10. The Interiors of Stars</h2>
+
+  <ul>
+    <li>Direct observation only possible with neutrinos and the occasional supernovae</li>
+    <li>Study requires physically accurate computer models that match observable surface features</li>
+  </ul>
+
+  <h3 id="hydrostatic-equilibrium">Hydrostatic equilibrium</h3>
+
+  <ul>
+    <li>Equilibrium condition requires pressure gradient to counteract gravity: ${dP \over dr} = −\rho g$
+      <ul>
+        <li><strong>Local gravity</strong> $g \equiv {G M_r \rho \over r^2}$, where $M_r$ is mass enclosed within $r$</li>
+      </ul>
+    </li>
+    <li>Mass conservation ${dM_r \over dr} = 4\pi r^2 \rho$</li>
+    <li>Total pressure $P = {\rho kT \over \mu} + {aT^4\over3}$
+      <ul>
+        <li>Where first term is ideal gas law and second term is radiation pressure</li>
+        <li>With as mean molecular weight</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="kelvinhelmholtz-mechanism">Kelvin–Helmholtz mechanism</h3>
+
+  <ul>
+    <li>Contraction releases gravitational energy $\Delta E \approx {3\over10} {GM^2 \over R}$</li>
+    <li>Gravitational energy contribution $\epsilon = −{dQ \over dt} = −T {dS \over dt}$
+      <ul>
+        <li>Where specific entropy: $dS \equiv {dQ \over T}$</li>
+        <li>Contraction produces heat and decreases entropy;
+vise versa for expansion</li>
+      </ul>
+    </li>
+    <li><strong>Kelvin–Helmholtz timescale</strong> of star $t = {\Delta E\over L}$, $t_\odot \approx 10^7 \text{ years}$</li>
+  </ul>
+
+  <h3 id="nuclear-fusion">Nuclear fusion</h3>
+
+  <ul>
+    <li>Releases difference in strong nuclear force binding energy:
+      <ul>
+        <li>$E = \Delta m_0c^2 = ( Z m_\text{p} + (A−Z) m_\text{n} − m_\text{nucleus} ) c^2$</li>
+      </ul>
+    </li>
+    <li>Timescale $t_\odot \approx 10^{10}$</li>
+    <li>Must overcome Coulombic repulsion between positive nucleons: $\sim10^6$ eV at $r \approx 10^{-15}$ m</li>
+    <li>Thermal energy of gas: $E = {\mu v^2 \over 2} = {p^2 \over 2\mu}$
+      <ul>
+        <li>Where $\mu$ is reduced mass and $v$ is average relative velocity</li>
+      </ul>
+    </li>
+    <li>Requires impossibly high temperatures in classical physics:
+$E = {3\over2} kT = {q_1q_2 \over 4\pi r \epsilon_0} \to T \approx 10^{10} \text{ K}$ for H–H fusion</li>
+    <li>With quantum tunneling (de Broglie $\lambda = {h \over p} \approx r$):
+$E = {(h/\lambda)^2\over2\mu} = {q_1q_2 \over 4\pi\lambda\epsilon_0} \to T \approx 10^7 \text{ K}$, consistent with solar core temperature estimates</li>
+    <li>Reaction rate depends on velocity (wavelength) distribution, densities, and
+cross-sectional area of particles 1 and 2: $r = \int n_1 \; n_2 \; \sigma(E) \; v(E) \; { n(E)\over n} \; dE$
+      <ul>
+        <li>Power-law approximation: $r = r_0 \; X_1 \; X_2 \; \rho^{\alpha'} \; T^\beta$,
+          <ul>
+            <li>Where $X$ are mass fractions, $\alpha' \approx 2$, and $\beta$ ranging from ~1 to ≥40</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Velocity distribution follows Maxwell–Boltzmann</li>
+    <li>Cross section $\sigma(E) = {S \over E} e^{−b/\sqrt E}$
+      <ul>
+        <li>Where de Broglie area is $\pi\lambda^2 \propto {1\over p^2} \propto {1\over E}$,
+and tunneling across barrier of energy $U$ is $e^{‐2\pi^2 U/E} \propto e^{−b/\sqrt E}$,
+with $b \propto q_1q_2\sqrt\mu$</li>
+        <li>$S$ may be slow-varying function of $E$, or may have sharp peaks from resonance of
+specific energy levels within the nucleus</li>
+      </ul>
+    </li>
+    <li><strong>Electron screening</strong> from sea of free e$^-$ partially hides nuclei,
+reducing effective charge and Coulomb barrier,
+sometimes enhancing He production by 10–50%</li>
+    <li>Likelihood of nuclear reaction: $e^{−b/\sqrt E} e^{−E/kT}$
+      <ul>
+        <li>Product of velocity distribution’s high-energy tail and the quantum tunneling terms</li>
+        <li>Most likely energy ("<strong>Gamow peak</strong>") $E_0 = \left(bkT\over2\right)^{2\over3}$</li>
+      </ul>
+    </li>
+    <li><strong>Luminosity gradient</strong> ${dL_r \over dr} = 4\pi r^2\rho$,
+      <ul>
+        <li>Where $L_r$ is luminosity enclosed in $r$,
+and $\epsilon$ is specific power (power released per mass)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="nucleosynthesis">Nucleosynthesis</h3>
+
+  <ul>
+    <li><em>Notation: $^A_Z\text{He}$, where $A$ is atomic mass number and $Z$ is proton number</em></li>
+    <li>Simultaneous 4-body collision $4 {\;}^1_1\text{H} + ? \to {\;}^4_2\text{He} + ?$ extremely unlikely</li>
+    <li>Reaction chain of 2-body interactions more probable</li>
+    <li>Interactions must obey conservation laws:
+electric charge, nucleon number, and lepton number</li>
+    <li><strong>Proton–proton chain</strong> (H burning): $4 {\;}^1_1\text{H} \to {\;}^4_2\text{He} + 2\text{e}^+ + 2\nu + 2\gamma$
+      <ul>
+        <li>Three branches (see Fig. 10.8)</li>
+        <li>In Sun, 69% PP I, 31% PP II, 0.3% PP III</li>
+        <li>Near $T = 1.5 \times 10^7 \text{ K}$, $\epsilon \approx \epsilon_0 \rho X_\text{H}^2 \left(T \over 10^6 \text{ K}\right)^4$
+          <ul>
+            <li>Where $\epsilon_0 = 1.08 \times 10^{-12} \text{ W}\;\text{m}^3\;\text{kg}^{-2}$</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>CNO cycle</strong> (H burning): $\text{C}$, $\text{N}$, and $\text{O}$ are catalysts
+      <ul>
+        <li>Two main branches, with the second only occuring ~0.04% of the time</li>
+        <li>Near $T = 1.5 \times 10^7 \text{ K}$, $\epsilon \approx \epsilon_0 \rho X_\text{H} X_\text{CNO} \left(T \over 10^6 \text{ K}\right)^{20}$
+          <ul>
+            <li>Where $\epsilon_0 = 8.24 \times 10^{-31} \text{ W}\;\text{m}^3\;\text{kg}^{-2}$</li>
+            <li>Much more temperature-dependent, only dominating in more massive stars</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Triple-alpha process</strong> (He burning): $2 {\;}^4_2\text{H} \leftrightarrow {\;}^8_4\text{Be}$, ${\;}^8_4\text{Be} + {\;}^4_2\text{He} \to {\;}^{12}_6\text{C} + \gamma$
+      <ul>
+        <li>First step produces an extremely unstable $^8_4\text{Be}$,
+thus combined is essentially a 3-body interaction: $r \propto (\rho Y)^3$</li>
+        <li>$\epsilon \approx \epsilon_0 \rho^2 Y^3 \left(T \over 10^8 \text{ K}\right)^{41}$
+          <ul>
+            <li>Incredibly strong temperature dependence</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Alpha process</strong> (C &amp; O burning): $^{12}<em>6\text{C} + {\;}^4_2\text{He} → {\;}^{16}_8\text{O} + \gamma$, $^{16}_8\text{O} + {\;}^4_2\text{He} \to {\;}^{20}</em>{10}\text{Ne} + \gamma$
+      <ul>
+        <li>Alpha capture becomes prohibitive at higher $Z$ due to higher Coulomb barrier</li>
+        <li>C–C burning near $6 \times 10^8$ K and O–O burning near $10^9$ K can produce Na, Mg, Si, P, and S;
+some are endothermic but are normally less likely</li>
+      </ul>
+    </li>
+    <li>Binding energy per nucleon ${E\over A}$
+      <ul>
+        <li>Relative to atomic number $A$, local maxima are very stable</li>
+        <li>Magic nuclei: some elements ($^4_2$He, $^{16}_8$O) have unusually high ${E\over A}$</li>
+        <li>Broad peak around $^{56}_{26}$Fe, the most stable nuclei</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="energy-transport-and-thermodynamics">Energy transport and thermodynamics</h3>
+
+  <ul>
+    <li>Three mechanisms: radiation of photons (affected by opacity),
+convection, and conduction (generally insignificant)</li>
+    <li><strong>Radiative temperature gradient</strong> ${dT \over dr} = −{3\over4ac} {\kappa\rho \over T^3} {L\over4\pi r^2}$</li>
+    <li>If temperature gradient becomes too steep, convection takes hold</li>
+    <li>Convection is much more complicated than radiation
+      <ul>
+        <li>Strongly coupled to the star’s dynamic behavior</li>
+        <li>3D Navier–Stokes with turbulence is hard compute</li>
+        <li><strong>Pressure scale height</strong>, convection’s characteristic length scale,
+is big: $H \equiv −P {dr \over dP} \approx {P\over\rho g} \approx {R_*\over 10}$</li>
+      </ul>
+    </li>
+    <li><strong>First law of thermodynamics</strong>: $dU = dQ − dW = dQ − P \;dV$
+      <ul>
+        <li>$U$ is a state function; $Q$ and $W$ are not — $dQ$ and $dW$ are inexact differentials</li>
+      </ul>
+    </li>
+    <li><strong>Specific heat capacity</strong> $C \equiv {\partial Q \over \partial T}$, $C_P = C_V + nR$
+      <ul>
+        <li>$C_P$ is at constant pressure; $C_V$ is at constant volume</li>
+        <li>Heat capacity ratio / <strong>adiabatic index</strong> $\gamma \equiv {C_P \over C_V}$</li>
+        <li>$\gamma = {5\over3}$ for a monoatomic gas;
+approaches 1 in a partial ionization zone as both specific heats increase</li>
+      </ul>
+    </li>
+    <li>Isochoric process ($dV = 0$): $dU = dQ = C_V \;dT$</li>
+    <li>Adiabatic process ($dQ = 0$): $dU = −P \;dV$
+      <ul>
+        <li>Gas law: $P \propto {1 \over V^\gamma} \propto \rho^\gamma \propto T^{\gamma/(\gamma−1)}$</li>
+        <li><strong>Speed of sound</strong> $v = \sqrt{B\over\rho} = \sqrt{\gamma P \over \rho}$
+          <ul>
+            <li>Where bulk modulus $B \equiv −V {\partial P \over \partial V} \;{dQ = 0} $</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Adiabatic temperature gradient</strong> ${dT \over dr} = −\left(1 − {1\over\gamma}\right) {\mu \over k} {GM \over r^2} = −{g \over C_P}$</li>
+    <li>If the surrounding temperature gradient is steeper than the bubble’s,
+even just slightly, the condition becomes <strong>superadiabatic</strong>,
+and nearly all luminosity is transferred outwards adiabatically,
+via convection instead of radiation
+      <ul>
+        <li>Equivalent criterion: ${d(\ln P) \over d(\ln T)} &lt; {\gamma \over \gamma − 1}$, = 2.5 for ideal monoatomic gas</li>
+      </ul>
+    </li>
+    <li>In general, convection occurs if a region
+      <ol>
+        <li>has high opacity (surrounding ${dT \over dr} \propto \kappa$),</li>
+        <li>is ionizing and raising the specific heat capacity (bubble ${dT \over dr} \propto {1 \over C_P}$), or</li>
+        <li>has a highly temperature-dependent fusion process</li>
+      </ol>
+    </li>
+    <li>First two conditions can occur simultaneously;
+third only occurs deep in the interior with the CNO or triple-alpha processes</li>
+    <li>Convective flux under mixing-length theory:
+$F = \rho C_P {k\over\mu} \left({T \over g} \delta\left(dT \over dr\right)\right)^{3/2} \alpha^2 \sqrt\beta$
+      <ul>
+        <li>Where $0.5 \lesssim \alpha \lesssim 3$ and $0 \lesssim \beta \lesssim 1$ are free parameters
+          <ul>
+            <li>$\alpha \equiv {l\over H}$, the ratio of the mixing length
+(distance traveled by bubble before thermaliing with surrounding)
+and the pressure scale height</li>
+            <li>$\beta : \beta v^2$ is the average kinetic energy of the bubble as it travels over $l$</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="stellar-model-building">Stellar model building</h3>
+
+  <ul>
+    <li>Basic stellar models need constructive relations for $P$, $\bar\kappa$, and $\epsilon$:
+expressing them in terms of density, temperature, and composition
+      <ul>
+        <li>$P$ (pressure) generally modelable with ideal gas law and radiation pressure,
+but is more complex in certain stars’ deep interiors</li>
+        <li>$\bar\kappa$ (mean opacity) calculated explicitly from tabular data or fitting functions</li>
+        <li>$\epsilon$ (specific power) calculated analytically from reaction networks</li>
+      </ul>
+    </li>
+    <li>Boundary conditions:
+      <ul>
+        <li>As $r \to 0$, ${M_r, L_r} \to 0$</li>
+        <li>And ignoring extended atmospheres and mass loss:
+as $r \to R_*$, ${T, P, \rho} \to 0$</li>
+      </ul>
+    </li>
+    <li><strong>Vogt–Russell theorem</strong>:
+due to a star’s dependence on nuclear burning,
+its mass and internal composition uniquely determine
+its radius, luminosity, internal structure, and subsequent evolution
+      <ul>
+        <li>Ignores smaller influences such as magnetic fields and rotation</li>
+      </ul>
+    </li>
+    <li>General modeling numeric integrates shell-by-shell
+with the system of differential equations,
+often from from a transition point towards both the surface and the center</li>
+    <li><strong>Polytropes</strong>: simplified stellar models in which $P(\rho) \propto \rho^\gamma$</li>
+    <li><strong>Lane–Emden equation</strong>: ${1\over\xi^2} {d \over d\xi} \left(\xi^2 {d(D_n) \over d\xi}\right) = −D_n^n$
+      <ul>
+        <li>Where the <strong>polytropic index</strong> $n : \gamma \equiv {n+1 \over n}$</li>
+        <li>TODO: too complicated</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="main-sequence">Main sequence</h3>
+
+  <ul>
+    <li>Vast majority of stars have H mass fraction $X \approx 0.7$ and metal mass fraction $0 \lesssim Z \lesssim 0.03$</li>
+    <li>Changes in core composition affects observed surface features</li>
+    <li>Very light stars ($M \lesssim 0.08 M_\odot$) are not hot enough to let fusion
+stabilize against gravitational contraction
+      <ul>
+        <li>Highly opaque and fully convective</li>
+      </ul>
+    </li>
+    <li>Lower-initiation-energy PP chain dominates for low-mass stars
+      <ul>
+        <li>Shallow core thermal gradient leads to radiative core</li>
+        <li>High shell opacity leads to convective shell</li>
+      </ul>
+    </li>
+    <li>Highly-temperature-dependent CNO cycle dominates for high-mass stars ($M \gtrsim 1.2 M_\odot$)
+      <ul>
+        <li>Steep core thermal gradient leads to convective core</li>
+        <li>Low shell opacity leads to radiative shell</li>
+      </ul>
+    </li>
+    <li>Very massive stars ($M \gtrsim 90 M_\odot$) have rapid core thermal oscillations
+affecting fusion rates</li>
+    <li>Very massive stars may also have radiation pressure exceed gas pressure at
+outer layers, with maximum stable luminosity given by <strong>Eddington limit</strong>:
+$L ≤ {4\pi GcM\over\bar\kappa}$</li>
+    <li>Main-sequence lifetimes decrease with increasing luminosity</li>
+  </ul>
+
+</section>
+
+
+  </div>
+
+</article>
+
+
+    <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
+  </body>
+</html>

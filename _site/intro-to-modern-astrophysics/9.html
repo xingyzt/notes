@@ -1,0 +1,528 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              delimiters: [
+                  //{left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  //{left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError : false
+            });
+            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+            headings.forEach(heading =>{
+              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+            });
+        });
+    </script>
+    <style>
+
+
+:root {
+  --text: #416;
+  --text-accent: #000;
+  --link: #146;
+  --link-accent: #012;
+  --deco: #84e;
+  --bg: #ecf;
+  --bg-accent: #daf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ecf;
+    --text-accent: #fff;
+    --link: #adf;
+    --link-accent: #cef;
+    --deco: #84e;
+    --bg: #416;
+    --bg-accent: #417;
+  }
+}
+
+@media print {
+  :root {
+    --text: #000;
+    --link: #000;
+    --deco: #000;
+    --bg: #fff;
+  }
+  details {
+    display: none;
+  }
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunrm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunti.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbx.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbi.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+html, body {
+  font-size: 16px;
+  font-family: cmu, serif;
+  margin: 0;
+  padding: 0;
+}
+html * {
+  box-sizing: border-box;
+}
+body {
+  width: 50rem;
+  height: auto;
+  padding: 1rem;
+  max-width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1 {
+  text-align: center;
+}
+h2 {
+  border-bottom: 1px solid var(--deco);
+  background: var(--bg);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+h3 {
+  scroll-margin: 3rem;
+}
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
+strong {
+  font-weight: normal;
+  text-decoration: dotted underline var(--deco);
+}
+
+details {
+  position: fixed;
+  right: 0;
+  width: 20rem;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  bottom: 0;
+  background: var(--bg-accent);
+  z-index: 1000;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0 1rem;
+  background: var(--bg-accent);
+}
+
+a, summary {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover, a:focus, summary:hover, summary:focus {
+  text-decoration: underline;
+  color: var(--link-accent);
+}
+a:active, summary:active {
+  background: var(--link);
+  color: var(--bg-accent);
+}
+
+ul, ol {
+  margin-left: 0rem;
+  padding-left: 1rem;
+}
+li:hover {
+  color: var(--text-accent);
+}
+
+table {
+  border: 1px solid var(--deco);
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px dashed var(--deco);
+  text-align: center;
+}
+
+#markdown-toc {
+  padding-left: 1rem;
+}
+#markdown-toc > li:first-child {
+  display: none;
+}
+#markdown-toc ul {
+  padding-left: 0.2rem;
+}
+#markdown-toc li {
+ list-style: none;
+}
+#markdown-toc > li > ul li {
+ padding-left: 0.2rem;
+ border-left: 1px dashed var(--deco);
+}
+#markdown-toc > li {
+  font-weight: bold;
+}
+#markdown-toc > li > ul > li {
+  font-size: 1rem;
+  font-weight: normal;
+}
+#markdown-toc > li > ul > li > ul > li {
+  font-size: 0.8rem;
+}
+    
+    
+    
+    </style>
+  </head>
+  <body>
+    <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    
+<section>
+
+  <h2 id="stellar-atmospheres">9. Stellar Atmospheres</h2>
+
+  <ul>
+    <li>Line blanketing: dense series of metallic absorption lines significantly
+decrease intensity relative to ideal blackbody at certain wavelengths</li>
+  </ul>
+
+  <h3 id="radiation-field">Radiation field</h3>
+
+  <ul>
+    <li>Radiation energy originates from thermonuclear reactions,
+gravitational contraction, and core cooling</li>
+    <li>But observed light comes from gasses in atmosphere, not the opaque interior</li>
+    <li>Temperature, density, and composition of atmospheric layers determine
+spectral features</li>
+    <li>Specific ray intensity:
+$I(\lambda) \;d\lambda \equiv {\partial I\over\partial\lambda} = {{\partial E \over \partial\lambda} d\lambda  \over d\lambda \;dt\;dA \cos \theta \;d\Omega }$,
+power transmitted at a certain wavelength within a certain solid angle</li>
+    <li>Mean intensity $\langle I(\lambda) \rangle = I(\lambda)$ for isotropic field; $= B(\lambda)$ for blackbody</li>
+    <li>Specific energy density $u(\lambda) \;d\lambda = {4\pi\over c} \langle I(\lambda) \rangle \;d\lambda$
+      <ul>
+        <li>Total energy density for blackbody $u = {4\sigma T^4 \over c}$</li>
+        <li>Blackbody radiation pressure $P = {u\over3}$</li>
+      </ul>
+    </li>
+    <li>Specific radiative flux
+$F(\lambda) \;d\lambda = \int I(\lambda) \;d\lambda \cos \theta \;d\Omega$,
+net energy at a certain wavelength flowing towards one single direction</li>
+    <li>For a resolved source, specific ray intensity is measured,
+thus detector distance does not affect measured intensity,
+though the angular size decreases</li>
+    <li>For an unresolved source, specific radiative flux is measured,
+falling off with ${1\over r^2}$</li>
+  </ul>
+
+  <h3 id="temperature">Temperature</h3>
+
+  <ul>
+    <li><strong>Mean free path</strong> $l = {1\over n\sigma}$,
+      <ul>
+        <li>Average distance traveled by particles and photonsbetween collisions</li>
+        <li>Where $n$ is atomic number density and $\sigma \equiv \pi(2a_0)^2$ is collision cross section</li>
+      </ul>
+    </li>
+    <li>Multiple descriptions of temperature:
+      <ul>
+        <li><strong>Effective temperature</strong>: obtained from the Stefan–Boltzmann law</li>
+        <li><strong>Excitation temperature</strong>: defined by the Boltzmann equation</li>
+        <li><strong>Ionization temperature</strong>: defined by the Saha equation</li>
+        <li><strong>Kinetic temperature</strong>: defined by the Maxwell–Boltzmann distribution</li>
+        <li><strong>Color temperature</strong>: defined by fitting the Planck function on the spectrum</li>
+      </ul>
+    </li>
+    <li>Effective temperature is a global descriptor;
+rest apply locally, varying by gas location and other conditions</li>
+    <li>All local temperature definitions result in the same value
+at thermodynamic equilibrium</li>
+    <li><strong>Local thermodynamic equilibrium</strong> (LTE) occurs when temperature change is
+very gradual compared to the mean free path length: $H \ll L$
+      <ul>
+        <li>Temperature scale height $H(T) \equiv {T \over \lvert{ dT \over dr }\rvert}$</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="opacity">Opacity</h3>
+
+  <ul>
+    <li>Both scattering and pure absorption reduce the intensity of directed light:
+$\;dI = −\kappa\rho I \;ds$
+      <ul>
+        <li>Where absorption coefficient (opacity) $\kappa$ is dependent on
+ray wavelength and gas composition, density, and temperature</li>
+      </ul>
+    </li>
+    <li>Characteristic distance $l = {1\over k\rho}$ is equivalent to main free path for photons</li>
+    <li>Pure absorption decreases intensity exponentially: $I = I_0 e^{−\tau}$
+      <ul>
+        <li>Where $\tau$ is <strong>optical depth</strong> with $d\tau = −\kappa\rho \;ds$</li>
+      </ul>
+    </li>
+    <li>Optical depth is equivalent to the number of mean free path lengths along the
+path of a ray; gas is “<strong>optically thick</strong>” if $\tau \gg 1$, “<strong>optically thin</strong>” if $\tau \ll 1$</li>
+    <li><strong>Balmer jump</strong>: opacity of stellar material suddenly increases for wavelengths
+below the ionization energy of H I in the first excited state</li>
+    <li>Sources of opacity classified by initial and final quantum states of the
+interacting electrons:
+      <ul>
+        <li><strong>Bound–bound transitions</strong> (excitation and de-excitation)
+          <ul>
+            <li>Small except for wavelengths corresponding to specific excitation energies;</li>
+            <li>If de-excitation returns to the initial state through emission,
+the photon is essentially scattered</li>
+            <li>If multiple photons are emitted from one absorption, the average photon
+energy is reduced</li>
+            <li>If de-excitation is instead triggered by collision, then the energy is
+converted into kinetic/thermal</li>
+          </ul>
+        </li>
+        <li><strong>Bound-free absorption</strong> (photoionization) and <strong>free–bound emission</strong> (recombination)
+          <ul>
+            <li>Wavelength-dependent cross section comparable to that of collisions</li>
+            <li>Adds to continuum opacity, as any photon above an electron’s
+ionization energy may be absorbed</li>
+            <li>Recombination emits one or more photons,
+again reducing average photon energy and scattering</li>
+          </ul>
+        </li>
+        <li><strong>Free–free absorption</strong> and <strong>bremsstrahlung</strong> (“braking radiation”) emission
+          <ul>
+            <li>Free electron gains speed from absorption, or loses speed from emission</li>
+            <li>Must take place next to an ion to conserve both energy and momentum</li>
+            <li>Adds to continuum opacity</li>
+          </ul>
+        </li>
+        <li><strong>Free electron</strong> (Thomson) scattering
+          <ul>
+            <li>Photon is scattered when the electron is made to oscillate in its EM field</li>
+            <li>Very tiny wavelength-independent cross section</li>
+            <li>Only dominates in stellar interiors and the hottest atmospheres,
+where near-total ionization eliminates bound-electron processes</li>
+          </ul>
+        </li>
+        <li><strong>Loosely-bound electron</strong> (Compton/Rayleigh) scattering
+          <ul>
+            <li>Compton if $\lambda \ll a_0$;
+very small change in scattered photon wavelength, much like Thomson</li>
+            <li>Rayleigh if $\lambda \gg a_0$;
+proportional to ${1 \over \lambda^4}$,
+so only significant in UV for supergiant stars’ extended envelopes,
+cool main-sequence stars, and planet atmospheres</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Electron scattering and photoionization of He are primary sources of continuum opacity
+for type O</li>
+    <li>Photoionization of H and free–free absorption primary sources for types B–A</li>
+    <li>Photoionization of H$^-$ is primary source for type F0 and cooler
+      <ul>
+        <li>Very low binding energy of 0.754 eV ($\lambda = 1640 \text{ nm}$) for bound–free opacity</li>
+        <li>Also contributes to free–free absorption at longer wavelengths</li>
+      </ul>
+    </li>
+    <li>Molecules survive in planetary and cooler stellar atmospheres
+      <ul>
+        <li>High opacity from large number of discrete absorption lines</li>
+        <li>May break apart during absorption through photodissociation</li>
+      </ul>
+    </li>
+    <li>Rosseland mean opacity: weighted harmonic mean of opacity across all wavelengths,
+accounting for rate of change of the blackbody spectrum with temperature;
+${1\over\kappa} \equiv {\int {1\over\kappa_\nu} {\partial B_\nu \over \partial T} \;d\nu \over \int {\partial B_\nu \over \partial T} \;d\nu }$
+      <ul>
+        <li>Obeys <strong>Kramer’s opacity law</strong>: $\kappa \propto {\rho\over T^{3.5}}$</li>
+        <li>No analytic solution, but approximations exist for bound–free and free–free opacities</li>
+        <li>$\kappa_\text{bf} \propto {g_\text{bf} \over t} {Z (1+X) \rho \over T^{3.5}}, k_\text{ff} \propto g_\text{ff} {(1−Z)(1+X) \rho \over T^{3.5}}$
+          <ul>
+            <li>$X$, $Y$, and $Z$ are <strong>mass fractions</strong> of H, He, and metals respectively</li>
+            <li>$g_\text{bf}$ and $g_\text{ff}$ are <strong>Gaunt factors</strong> correcting for quantum effects; ~1 for visible and UV</li>
+            <li>t is the <strong>guillotine factor</strong>, typically ranging 1–100</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="radiative-transfer">Radiative transfer</h3>
+
+  <ul>
+    <li>No net energy change occurs in any layer of a star that is in steady-state equilibrium</li>
+    <li>Emission processes complement each of the primary absorption processes,
+resulting in randomly-directed scattering</li>
+    <li>Specific intensity: $dI = −\kappa\rho I \;ds + j\rho \;ds$
+      <ul>
+        <li>Where $\kappa$ is the absorption and $j$ is the emission coefficient; both are $\lambda$-dependent</li>
+      </ul>
+    </li>
+    <li>Equation of radiative transfer: $−{1\over\kappa\rho} {dI\over ds} = {dI\over d\tau} = I − S$
+      <ul>
+        <li>Where source function: $S \equiv {j\over\kappa}$</li>
+        <li>Expresses how light beam composition tends to resemble the local source of photons</li>
+      </ul>
+    </li>
+    <li>In local thermodynamic equilibrium, $S = B$, the blackbody Planck function
+      <ul>
+        <li>Integrating over all wavelengths, $S = B = {\sigma T^4\over\pi}$</li>
+        <li>If $\tau \gg 1, I = B$ as well</li>
+      </ul>
+    </li>
+    <li>Radiation differential “driving” net radiative flux of photons flowing to the surface:
+${dP\over d\tau} = −{F\over c}$</li>
+    <li>Radiative flux throughout star is constant: $F = \sigma T_\text{eff}^4$</li>
+    <li>In a random walk with $N$ steps of average size $I$, $d = l\sqrt N$</li>
+    <li>On average, a photon from optical depth $\tau$ needs $\tau^2$ steps to reach the surface
+      <ul>
+        <li>Photons from $\tau \approx 1$ may escape without scattering</li>
+      </ul>
+    </li>
+    <li><strong>Eddington approximation</strong>: $T^4 \approx {3\over4} T_\text{eff}^4 \left(\tau + {2\over3}\right)$
+      <ul>
+        <li>Star has its effective temperature at optical depth $\tau \approx {2\over3}$</li>
+        <li>Average observed photon is emitted from $\tau \approx {2\over3}$, independent of angle</li>
+      </ul>
+    </li>
+    <li>Higher opacity corresponds to shorter pathlength for the same optical depth,
+thus absorption lines must come from outer, cooler layers</li>
+    <li>Limb darkening: line of sight reaches $\tau = {2\over3}$ in cooler, dimmer layers when
+observing closer to the edge of the disk</li>
+  </ul>
+
+  <h3 id="spectral-line-profile">Spectral line profile</h3>
+
+  <ul>
+    <li>Core of line is formed at higher and cooler layer;
+formation descends down to continuum region at wings of the line</li>
+    <li>Line is <strong>spectrally thin</strong> if radiant flux $F(\lambda)$ is never 0</li>
+    <li><strong>Equivalent width</strong> $W \equiv \int 1 − {F(\lambda) \over F_0} d\lambda$
+      <ul>
+        <li>Where the integrand is the depth of the line at $\lambda$</li>
+      </ul>
+    </li>
+    <li>Broadening processes:
+      <ul>
+        <li><strong>Natural broadening</strong>: uncertainty principle means momentary occupancy of
+an excited state for small $\Delta t$ amplifies uncertainty of orbital energy
+$\Delta E \approx {\hbar \over \Delta t}$, resulting in uncertainty of wavelength
+$\Delta\lambda \approx {\lambda^2 \over 2\pi c} \left( {1 \over \Delta t_0} + {1 \over \Delta t_1} \right)$, where $\Delta t$ are lifetimes in the two states</li>
+        <li><strong>Doppler broadening</strong>: random thermodynamic motion results in nonrelativistic Doppler shift
+$\Delta\lambda \approx {2\lambda \over c} \sqrt{2kT \over m}$
+          <ul>
+            <li>in giant and supergiant stars, random large-scale turbulence increases to
+$\Delta\lambda \approx {2\lambda \over c} \sqrt{2kT\over m + v^2}$, where $v$ is the most probable turbulence speed</li>
+            <li>coherent mass motions such as rotation, pulsation and mass loss also
+substantial factors</li>
+          </ul>
+        </li>
+        <li><strong>Pressure broadening</strong>: collisions with neutral atoms and pressure from nearby
+ion electrical fields may perturb the orbitals with
+$\Delta\lambda = {\lambda^2 \over \pi c \Delta t_0}$, where $\Delta t_0 \approx {1\over n\sigma\sqrt{2kT \over m} }$ is the average collision time
+          <ul>
+            <li>Dependence on atomic number density explains narrower lines of sparser
+giant and supergiant extended atmospheres used for the
+Morgan–Keenan classification</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Damping/<strong>Lorentz profile</strong>: shape of lines from natural and pressure broadening,
+characteristic of radiation from electric charge in damped harmonic motion</li>
+    <li><strong>Voigt profile</strong>: total line profile from both Doppler and damping profiles,
+with Doppler dominating at the core and damping dominating at wings</li>
+    <li><strong>Schuster–Schwarzchild model</strong>: assumes photosphere is a blackbody
+and atoms above it create absorption lines</li>
+    <li>Number of atoms involved in absorption per surface area: $fN$
+      <ul>
+        <li>Where oscillator strength $f$ is the relative likelihood of each transition,
+and column density $N$ is the area density of absorbing atoms in a column from the surface to the observer</li>
+      </ul>
+    </li>
+    <li><strong>Curve of growth</strong> for line width as a function of column density:
+      <ul>
+        <li>Initially optically thin core: $W \propto N$</li>
+        <li>Then, saturated core with optically thin wings: $W \propto \sqrt{\ln N}$</li>
+        <li>For high $N$, pressure-broadening profile dominates wings: $W \propto \sqrt N$</li>
+      </ul>
+    </li>
+    <li>Applying Boltzmann and Saha equations to curve of growth finds total number of atoms above continuum layer
+      <ul>
+        <li>Applying Boltzmann equation also finds excitation temperature</li>
+        <li>Applying Saha equation also finds either e$^-$ pressure or ionization temperature from the other</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="computer-modeling">Computer modeling</h3>
+
+  <ul>
+    <li>Construction of an atmospheric model with extensive physics fine-tuned to observations
+can provide information on line profile, chemical composition, effective temperature,
+surface gravity, etc</li>
+  </ul>
+
+</section>
+
+
+  </div>
+
+</article>
+
+
+    <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <title></title>
     <meta name=viewport content='width=device-width, initial-scale=1'>
     <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
@@ -222,7 +222,74 @@ th, td {
     </style>
   </head>
   <body>
-    {{ content }}
+    <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    
+<section>
+
+  <h2 id="the-expanding-universe">2. The expanding universe</h2>
+
+  <p>According to general relativity, particles in the absence of any forces move in <strong>geodesics</strong> such that
+\[
+\frac{d^2 x^\alpha}{d\lambda^2} = 0
+\]
+for some parameter $\lambda$ that monotonically increases along the particle’s path (such as proper time for massive particles).
+Under a change of coordinates $x^\alpha\mapsto x^{\prime\nu}$, this becomes
+\[\begin{aligned}
+0 &amp;= \frac{d}{d\lambda}\left[ \frac{d x^{\prime\nu}}{d\lambda} \right] \\
+&amp;= \frac{d}{d\lambda}\left[ \frac{\partial x^{\prime\nu}}{\partial x^{\alpha}} \frac{d x^{\alpha}}{d\lambda} \right] \\
+&amp;= \frac{d}{d\lambda}\left[ \frac{\partial x^{\prime\nu}}{\partial x^\alpha} \right] \frac{d x^\alpha}{d\lambda} + \underline{
+\frac{\partial x^{\prime\nu}}{\partial x^\alpha} \frac{d^2 x^\alpha}{d\lambda^2}
+}_{*} \\
+&amp;= \frac{\partial}{\partial x^\alpha}\left[ \frac{dx^{\prime\nu}}{d\lambda} \right] \frac{d x^\alpha}{d\lambda} +
+*\\
+&amp;= \frac{\partial}{\partial x^\alpha}\left[ \frac{\partial x^{\prime\nu}}{\partial x^\beta}\frac{dx^\beta}{d\lambda} \right] \frac{d x^\alpha}{d\lambda} +
+*\\
+&amp;= \left[ \frac{\partial^2 x^{\prime\nu}}{\partial x^\alpha \partial x^\beta}\frac{dx^\beta}{d\lambda} + \frac{\partial x^{\prime\nu}}{\partial x^\beta} \underline{\frac{d}{d\lambda}\left(\frac{\partial x^\beta}{\partial x^\alpha}\right)}_0\right]\frac{d x^\alpha}{d\lambda} +
+*\\
+&amp;= \frac{\partial^2 x^{\prime\nu}}{\partial x^\alpha \partial x^\beta}\frac{dx^\beta}{d\lambda}\frac{d x^\alpha}{d\lambda} +
+\frac{\partial x^{\prime\nu}}{\partial x^\alpha} \frac{d^2 x^\alpha}{d\lambda^2}.
+\end{aligned}\]
+Applying the inverse transform $x^{\prime\nu}\mapsto x^\mu$ to both sides yields
+\[
+0 = \underbrace{\frac{\partial x^\mu}{\partial x^{\prime\nu}} \frac{\partial^2 x^{\prime\nu}}{\partial x^\alpha \partial x^\beta}}
+_{\displaystyle {\Gamma^\mu}_{\alpha\beta}} \frac{dx^\beta}{d\lambda}\frac{d x^\alpha}{d\lambda} +
+ \frac{d^2 x^{\mu}}{d\lambda^2},
+\]
+where ${\Gamma^\mu}_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, related to the metric by
+\[
+{\Gamma^\mu}_{\alpha\beta} = \frac{g^{\mu\nu}}{2}
+\left[
+\frac{\partial g_{\alpha\nu}}{\partial x^\beta} +
+\frac{\partial g_{\beta\nu}}{\partial x^\alpha} -
+\frac{\partial g_{\alpha\beta}}{\partial x^\nu}
+\right].
+\]</p>
+
+  <p>In the flat, expanding ΛCDM universe, distances in spacetime are described with the <strong>Friedmann–Lamaître–Robertson–Walker (FLRW) metric</strong>
+\[
+g_{\mu\nu} = \begin{pmatrix}
+-1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; a^2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; a^2 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; a^2
+\end{pmatrix},
+\]</p>
+
+  <p>which is time-dependent from the ever-increasing scale factor $a$.</p>
+
+</section>
+
+
+  </div>
+
+</article>
+
 
     <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
   </body>

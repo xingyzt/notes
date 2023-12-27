@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Xing’s notes on Dodelson & Schmidt, Modern Cosmology</title>
+    <meta name=viewport content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              delimiters: [
+                  //{left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  //{left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError : false
+            });
+            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+            headings.forEach(heading =>{
+              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+            });
+        });
+    </script>
+    <style>
+
+
+:root {
+  --text: #416;
+  --text-accent: #000;
+  --link: #146;
+  --link-accent: #012;
+  --deco: #84e;
+  --bg: #ecf;
+  --bg-accent: #daf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ecf;
+    --text-accent: #fff;
+    --link: #adf;
+    --link-accent: #cef;
+    --deco: #84e;
+    --bg: #416;
+    --bg-accent: #417;
+  }
+}
+
+@media print {
+  :root {
+    --text: #000;
+    --link: #000;
+    --deco: #000;
+    --bg: #fff;
+  }
+  details {
+    display: none;
+  }
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunrm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunti.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbx.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'cmu';
+    src: url('/notes/assets/cmunbi.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+html, body {
+  font-size: 16px;
+  font-family: cmu, serif;
+  margin: 0;
+  padding: 0;
+}
+html * {
+  box-sizing: border-box;
+}
+body {
+  width: 50rem;
+  height: auto;
+  padding: 1rem;
+  max-width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1 {
+  text-align: center;
+}
+h2 {
+  border-bottom: 1px solid var(--deco);
+  background: var(--bg);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+h3 {
+  scroll-margin: 3rem;
+}
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
+strong {
+  font-weight: normal;
+  text-decoration: dotted underline var(--deco);
+}
+
+details {
+  position: fixed;
+  right: 0;
+  width: 20rem;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  bottom: 0;
+  background: var(--bg-accent);
+  z-index: 1000;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0 1rem;
+  background: var(--bg-accent);
+}
+
+a, summary {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover, a:focus, summary:hover, summary:focus {
+  text-decoration: underline;
+  color: var(--link-accent);
+}
+a:active, summary:active {
+  background: var(--link);
+  color: var(--bg-accent);
+}
+
+ul, ol {
+  margin-left: 0rem;
+  padding-left: 1rem;
+}
+li:hover {
+  color: var(--text-accent);
+}
+
+table {
+  border: 1px solid var(--deco);
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px dashed var(--deco);
+  text-align: center;
+}
+
+#markdown-toc {
+  padding-left: 1rem;
+}
+#markdown-toc > li:first-child {
+  display: none;
+}
+#markdown-toc ul {
+  padding-left: 0.2rem;
+}
+#markdown-toc li {
+ list-style: none;
+}
+#markdown-toc > li > ul li {
+ padding-left: 0.2rem;
+ border-left: 1px dashed var(--deco);
+}
+#markdown-toc > li {
+  font-weight: bold;
+}
+#markdown-toc > li > ul > li {
+  font-size: 1rem;
+  font-weight: normal;
+}
+#markdown-toc > li > ul > li > ul > li {
+  font-size: 0.8rem;
+}
+    
+    
+    
+    </style>
+  </head>
+  <body>
+    <h1 id="dodelson--schmidt-modern-cosmology">Dodelson &amp; Schmidt, <em>Modern Cosmology</em></h1>
+
+<p>Xing’s notes</p>
+
+<details>
+  <summary>Table of Contents</summary>
+<ul id="markdown-toc">
+  <li><a href="#dodelson--schmidt-modern-cosmology" id="markdown-toc-dodelson--schmidt-modern-cosmology">Dodelson &amp; Schmidt, <em>Modern Cosmology</em></a>    <ul>
+      <li><a href="#notation" id="markdown-toc-notation">0. Notation</a></li>
+      <li><a href="#the-concordance-model-of-cosmology" id="markdown-toc-the-concordance-model-of-cosmology">1. The concordance model of cosmology</a></li>
+      <li><a href="#the-expanding-universe" id="markdown-toc-the-expanding-universe">2. The expanding universe</a></li>
+      <li><a href="#the-fundamental-equations-of-cosmology" id="markdown-toc-the-fundamental-equations-of-cosmology">3. The fundamental equations of cosmology</a></li>
+      <li><a href="#the-origin-of-species" id="markdown-toc-the-origin-of-species">4. The origin of species</a></li>
+    </ul>
+  </li>
+</ul>
+
+</details>
+
+<section>
+
+  <h2 id="notation">0. Notation</h2>
+
+  <ul>
+    <li><strong>Natural units</strong>: $\hbar = c = k_B = 1$.</li>
+    <li><strong>Tensor indices</strong>: Upper indices are contravariant. Lower indices are covariant.</li>
+    <li><strong>Einstein summation</strong>: Repeated indices are implicitly summed over. Latin indices range $1,2,3$. Greek indices range $0,1,2,3$.</li>
+  </ul>
+
+</section>
+
+<section>
+
+  <h2 id="the-concordance-model-of-cosmology">1. The concordance model of cosmology</h2>
+
+  <p>The expansion of the universe is the expansion of space <em>itself</em>: at the largest scales, objects are physically drifting farther apart because the grid markings are, in a sense, becoming denser. We parameterize this with the <strong>scale factor</strong> $a(t)$ such that the <strong>physical distance</strong> between objects is $d\equiv ax$, where $x$ is the <strong>comoving distance</strong>. This allows the physical velocities of (non-relativistic) objects to be separated into 
+\[
+v \equiv \dot d = \dot ax + a\dot x,
+\] 
+where the first term is due to the expansion of space, and the second term is due to a <strong>peculiar velocity</strong> of the object.</p>
+
+  <p>The effect of expansion is most apparent in the <strong>cosmological redshift</strong> of photons. Defining the present-day scale factor $a(t_0)=1$, it can be related to the redshift parameter $z$ via 
+\[
+1 + z \equiv \frac{\lambda_\text{obs}}{\lambda_\text{emit}} = \frac1{a_\text{emit}}.
+\]
+Through black-body radiation, it can also be related to temperature via $T(t) = \frac{T(t_0)}{a(t)}$.</p>
+
+  <p>The <strong>Hubble rate</strong> $H(t) \equiv \frac{\dot a}{a}$ measures the rapidity of expansion, with the present-day Hubble rate $H_0 \equiv H(t_0)$ referred to as <strong>Hubble’s constant</strong>. From the Friedmann equation, 
+\[
+H(t)^2 = \rho(t) + \frac{\rho_c - \rho(t_0)}{a(t)^2},
+\] 
+where $\rho$ is the average density of the universe, and $\rho_c$ is the <strong>critical density</strong> at which the universe is flat.</p>
+
+  <p>Due to tensions in measurements of $H_0$, we parameterize it with a dimensionless number $h$ such that $H_0 \equiv 100\, h$ km/s/Mpc, with $h\approx 0.7$. This way, $H_0$ can be eliminated from calculations by using $h^{-1}$ Mpc as the unit of length, $h^{-1}\, M_\odot$ as the unit of mass, etc.</p>
+
+  <p>The ΛCDM model is the <strong>concordance model of cosmology</strong>, describing a flat universe which grew out of inflationary perturbations, and is presently dominanted by cold dark matter (CDM) and the cosmological constant $\Lambda$.</p>
+
+</section>
+
+<section>
+
+  <h2 id="the-expanding-universe">2. The expanding universe</h2>
+
+  <p>According to general relativity, particles in the absence of any forces move in <strong>geodesics</strong> such that
+\[
+\frac{d^2 x^\alpha}{d\lambda^2} = 0
+\]
+for some parameter $\lambda$ that monotonically increases along the particle’s path (such as proper time for massive particles).
+Under a change of coordinates $x^\alpha\mapsto x^{\prime\nu}$, this becomes
+\[\begin{aligned}
+0 &amp;= \frac{d}{d\lambda}\left[ \frac{d x^{\prime\nu}}{d\lambda} \right] \\
+&amp;= \frac{d}{d\lambda}\left[ \frac{\partial x^{\prime\nu}}{\partial x^{\alpha}} \frac{d x^{\alpha}}{d\lambda} \right] \\
+&amp;= \frac{d}{d\lambda}\left[ \frac{\partial x^{\prime\nu}}{\partial x^\alpha} \right] \frac{d x^\alpha}{d\lambda} + \underline{
+\frac{\partial x^{\prime\nu}}{\partial x^\alpha} \frac{d^2 x^\alpha}{d\lambda^2}
+}_{*} \\
+&amp;= \frac{\partial}{\partial x^\alpha}\left[ \frac{dx^{\prime\nu}}{d\lambda} \right] \frac{d x^\alpha}{d\lambda} +
+*\\
+&amp;= \frac{\partial}{\partial x^\alpha}\left[ \frac{\partial x^{\prime\nu}}{\partial x^\beta}\frac{dx^\beta}{d\lambda} \right] \frac{d x^\alpha}{d\lambda} +
+*\\
+&amp;= \left[ \frac{\partial^2 x^{\prime\nu}}{\partial x^\alpha \partial x^\beta}\frac{dx^\beta}{d\lambda} + \frac{\partial x^{\prime\nu}}{\partial x^\beta} \underline{\frac{d}{d\lambda}\left(\frac{\partial x^\beta}{\partial x^\alpha}\right)}_0\right]\frac{d x^\alpha}{d\lambda} +
+*\\
+&amp;= \frac{\partial^2 x^{\prime\nu}}{\partial x^\alpha \partial x^\beta}\frac{dx^\beta}{d\lambda}\frac{d x^\alpha}{d\lambda} +
+\frac{\partial x^{\prime\nu}}{\partial x^\alpha} \frac{d^2 x^\alpha}{d\lambda^2}.
+\end{aligned}\]
+Applying the inverse transform $x^{\prime\nu}\mapsto x^\mu$ to both sides yields
+\[
+0 = \underbrace{\frac{\partial x^\mu}{\partial x^{\prime\nu}} \frac{\partial^2 x^{\prime\nu}}{\partial x^\alpha \partial x^\beta}}
+_{\displaystyle {\Gamma^\mu}_{\alpha\beta}} \frac{dx^\beta}{d\lambda}\frac{d x^\alpha}{d\lambda} +
+ \frac{d^2 x^{\mu}}{d\lambda^2},
+\]
+where ${\Gamma^\mu}_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, related to the metric by
+\[
+{\Gamma^\mu}_{\alpha\beta} = \frac{g^{\mu\nu}}{2}
+\left[
+\frac{\partial g_{\alpha\nu}}{\partial x^\beta} +
+\frac{\partial g_{\beta\nu}}{\partial x^\alpha} -
+\frac{\partial g_{\alpha\beta}}{\partial x^\nu}
+\right].
+\]</p>
+
+  <p>In the flat, expanding ΛCDM universe, distances in spacetime are described with the <strong>Friedmann–Lamaître–Robertson–Walker (FLRW) metric</strong>
+\[
+g_{\mu\nu} = \begin{pmatrix}
+-1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; a^2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; a^2 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; a^2
+\end{pmatrix},
+\]</p>
+
+  <p>which is time-dependent from the ever-increasing scale factor $a$.</p>
+
+</section>
+
+<section>
+
+  <h2 id="the-fundamental-equations-of-cosmology">3. The fundamental equations of cosmology</h2>
+
+  <p>Under construction!</p>
+
+</section>
+
+<section>
+
+  <h2 id="the-origin-of-species">4. The origin of species</h2>
+
+  <p>Under construction!</p>
+</section>
+
+
+
+    <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
+  </body>
+</html>
