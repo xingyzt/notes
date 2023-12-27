@@ -279,9 +279,46 @@ g_{\mu\nu} = \begin{pmatrix}
 0 &amp; 0 &amp; a^2 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; a^2
 \end{pmatrix},
-\]</p>
+\]
+with the inverse (contravariant) metric
+\[
+g^{\mu\nu} = \begin{pmatrix}
+-1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; a^{-2} &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; a^{-2} &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; a^{-2}
+\end{pmatrix}
+\]
+satisfying the identity $g^{\nu\beta}g_{\beta\alpha} = \delta^\nu_\alpha$.</p>
 
-  <p>which is time-dependent from the ever-increasing scale factor $a$.</p>
+  <p>The FLRW metric is independent of the spatial coordinates but dependent on time ($x^0$) due to the $a^2$ terms.
+This lets us compute its Christoffel symbol
+\[\begin{aligned}
+{\Gamma^0}_{ij} &amp;= \frac{g^{0\nu}}{2}
+\left[
+\frac{\partial g_{i\nu}}{\partial x^j} +
+\frac{\partial g_{j\nu}}{\partial x^i} -
+\frac{\partial g_{ij}}{\partial x^\nu}
+\right] \\
+&amp;= \frac{g^{00}}{2}
+\left[
+\underline{\frac{\partial g_{i0}}{\partial x^j}}_0 +
+\underline{\frac{\partial g_{j0}}{\partial x^i}}_0 -
+\frac{\partial g_{ij}}{\partial x^0}
+\right] \\
+&amp;= \frac{1}{2}
+\frac{\partial g_{ij}}{\partial x^0} \\
+&amp;= \delta_{ij} a\dot a, \\
+{\Gamma^i}_{j0} = {\Gamma^i}_{0j} &amp;= \frac{g^{i\nu}}{2}
+\left[
+\frac{\partial g_{j\nu}}{\partial x^0} +
+\underline{\frac{\partial g_{0\nu}}{\partial x^j}}_0 -
+\underline{\frac{\partial g_{j0}}{\partial x^\nu}}_0
+\right] \\
+&amp;= \delta^{i\nu}a^{-2}\delta_{j\nu}a\dot a \\
+&amp;= \delta^{ij}\frac{\dot a}a, \\
+{\Gamma^i}_{\alpha\beta} &amp;= 0 \text{ elsewhere}.
+\end{aligned}\]</p>
 
 </section>
 
