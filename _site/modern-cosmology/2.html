@@ -265,11 +265,19 @@ where ${\Gamma^\mu}_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, r
 \[
 {\Gamma^\mu}_{\alpha\beta} = \frac{g^{\mu\nu}}{2}
 \left[
-\frac{\partial g_{\alpha\nu}}{\partial x^\beta} +
-\frac{\partial g_{\beta\nu}}{\partial x^\alpha} -
-\frac{\partial g_{\alpha\beta}}{\partial x^\nu}
+\partial_\beta g_{\alpha\nu} +
+\partial_\alpha g_{\beta\nu} -
+\partial_\nu g_{\alpha\beta}
 \right].
 \]</p>
+
+  <p>The Christoffel symbol is used in defining the covariant derivative $\nabla_\mu$:
+\[\begin{aligned}
+\text{scalar} &amp;&amp; \nabla_\mu\phi &amp;\equiv \partial_\mu\phi\\
+\text{vector} &amp;&amp; \nabla_\mu A^\nu &amp;\equiv \partial_\mu A^\nu + {\Gamma^\nu}_{\mu\alpha} A^\alpha\\
+\text{tensor} &amp;&amp; \nabla_\mu {T_\nu}^\kappa &amp;\equiv \partial_\mu {T_\nu}^\kappa - {\Gamma^\lambda}_{\mu\nu}{T_\lambda}^\kappa + {\Gamma^\kappa}_{\mu\lambda}{T_\nu}^\lambda
+\end{aligned}\]
+as the partial derivative $\partial_\mu$ only transforms covariantly when acting on scalars.</p>
 
   <p>In the flat, expanding ΛCDM universe, distances in spacetime are described with the <strong>Friedmann–Lamaître–Robertson–Walker (FLRW) metric</strong>
 \[
@@ -291,32 +299,31 @@ g^{\mu\nu} = \begin{pmatrix}
 \]
 satisfying the identity $g^{\nu\beta}g_{\beta\alpha} = \delta^\nu_\alpha$.</p>
 
-  <p>The FLRW metric is independent of the spatial coordinates but dependent on time ($x^0$) due to the $a^2$ terms.
+  <p>The FLRW metric is independent of the spatial coordinates ($\partial_i$) but dependent on time ($\partial_0$) due to the $a^2$ terms.
 This lets us compute its Christoffel symbol
 \[\begin{aligned}
 {\Gamma^0}_{ij} &amp;= \frac{g^{0\nu}}{2}
 \left[
-\frac{\partial g_{i\nu}}{\partial x^j} +
-\frac{\partial g_{j\nu}}{\partial x^i} -
-\frac{\partial g_{ij}}{\partial x^\nu}
+\partial_j g_{i\nu} +
+\partial_i g_{j\nu} -
+\partial_\nu g_{ij}
 \right] \\
 &amp;= \frac{g^{00}}{2}
 \left[
-\underline{\frac{\partial g_{i0}}{\partial x^j}}_0 +
-\underline{\frac{\partial g_{j0}}{\partial x^i}}_0 -
-\frac{\partial g_{ij}}{\partial x^0}
+\underline{\partial_j g_{i0}}_0 +
+\underline{\partial_i g_{j0}}_0 -
+\partial_0 g_{ij}
 \right] \\
-&amp;= \frac{1}{2}
-\frac{\partial g_{ij}}{\partial x^0} \\
-&amp;= \delta_{ij} a\dot a, \\
+&amp;= \frac12\partial_0 g_{ij}
+= \delta_{ij} a\dot a, \\
 {\Gamma^i}_{j0} = {\Gamma^i}_{0j} &amp;= \frac{g^{i\nu}}{2}
 \left[
-\frac{\partial g_{j\nu}}{\partial x^0} +
-\underline{\frac{\partial g_{0\nu}}{\partial x^j}}_0 -
-\underline{\frac{\partial g_{j0}}{\partial x^\nu}}_0
+\partial_0 g_{j\nu} +
+\underline{\partial_j g_{0\nu}}_0 -
+\underline{\partial_\nu g_{j0}}_0
 \right] \\
-&amp;= \delta^{i\nu}a^{-2}\delta_{j\nu}a\dot a \\
-&amp;= \delta^{ij}\frac{\dot a}a, \\
+&amp;= \delta^{i\nu}a^{-2}\delta_{j\nu}a\dot a
+= \delta^{ij}\frac{\dot a}a, \\
 {\Gamma^i}_{\alpha\beta} &amp;= 0 \text{ elsewhere}.
 \end{aligned}\]</p>
 
