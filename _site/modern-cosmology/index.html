@@ -232,7 +232,12 @@ th, td {
   <li><a href="#dodelson--schmidt-modern-cosmology" id="markdown-toc-dodelson--schmidt-modern-cosmology">Dodelson &amp; Schmidt, <em>Modern Cosmology</em></a>    <ul>
       <li><a href="#notation" id="markdown-toc-notation">0. Notation</a></li>
       <li><a href="#the-concordance-model-of-cosmology" id="markdown-toc-the-concordance-model-of-cosmology">1. The concordance model of cosmology</a></li>
-      <li><a href="#the-expanding-universe" id="markdown-toc-the-expanding-universe">2. The expanding universe</a></li>
+      <li><a href="#the-expanding-universe" id="markdown-toc-the-expanding-universe">2. The expanding universe</a>        <ul>
+          <li><a href="#geodesics-and-the-flrw-metric" id="markdown-toc-geodesics-and-the-flrw-metric">Geodesics and the FLRW metric</a></li>
+          <li><a href="#energy-of-a-particle" id="markdown-toc-energy-of-a-particle">Energy of a particle</a></li>
+          <li><a href="#energy-of-the-medium" id="markdown-toc-energy-of-the-medium">Energy of the medium</a></li>
+        </ul>
+      </li>
       <li><a href="#the-fundamental-equations-of-cosmology" id="markdown-toc-the-fundamental-equations-of-cosmology">3. The fundamental equations of cosmology</a></li>
       <li><a href="#the-origin-of-species" id="markdown-toc-the-origin-of-species">4. The origin of species</a></li>
     </ul>
@@ -248,6 +253,7 @@ th, td {
   <ul>
     <li><strong>Natural units</strong>: $\hbar = c = k_B = 1$.</li>
     <li><strong>Tensor indices</strong>: Upper indices are contravariant. Lower indices are covariant.</li>
+    <li><strong>Metric signature</strong>: – + + +.</li>
     <li><strong>Einstein summation</strong>: Repeated indices are implicitly summed over. Latin indices range $1,2,3$. Greek indices range $0,1,2,3$.</li>
     <li><strong>Partial derivatives</strong>: $\partial_\mu \equiv \partial/\partial x^\mu$. For instance, $\partial_\mu x^\nu = \delta_\mu^\nu$.</li>
   </ul>
@@ -285,6 +291,8 @@ where $\rho$ is the average density of the universe, and $\rho_c$ is the <strong
 <section>
 
   <h2 id="the-expanding-universe">2. The expanding universe</h2>
+
+  <h3 id="geodesics-and-the-flrw-metric">Geodesics and the FLRW metric</h3>
 
   <p>According to general relativity, particles in the absence of any forces move in <strong>geodesics</strong> such that
 \[
@@ -325,11 +333,14 @@ where ${\Gamma^\mu}_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, r
 
   <p>The Christoffel symbol is used in defining the covariant derivative $\nabla_\mu$:
 \[\begin{aligned}
-\text{scalar} &amp;&amp; \nabla_\mu\phi &amp;\equiv \partial_\mu\phi\\
-\text{vector} &amp;&amp; \nabla_\mu A^\nu &amp;\equiv \partial_\mu A^\nu + {\Gamma^\nu}_{\mu\alpha} A^\alpha\\
-\text{tensor} &amp;&amp; \nabla_\mu {T_\nu}^\kappa &amp;\equiv \partial_\mu {T_\nu}^\kappa - {\Gamma^\lambda}_{\mu\nu}{T_\lambda}^\kappa + {\Gamma^\kappa}_{\mu\lambda}{T_\nu}^\lambda
+\text{scalar} &amp;&amp; \nabla_\mu\phi &amp;\equiv \partial_\mu\phi,\\
+\text{vector} &amp;&amp; \nabla_\mu A^\nu &amp;\equiv \partial_\mu A^\nu + {\Gamma^\nu}_{\mu\alpha} A^\alpha,\\
+\text{tensor} &amp;&amp; \nabla_\mu {T_\nu}^\kappa &amp;\equiv \partial_\mu {T_\nu}^\kappa - {\Gamma^\lambda}_{\mu\nu}{T_\lambda}^\kappa + {\Gamma^\kappa}_{\mu\lambda}{T_\nu}^\lambda.
 \end{aligned}\]
-as the partial derivative $\partial_\mu$ only transforms covariantly when acting on scalars.</p>
+This is necessary because the partial derivative $\partial_\mu$ only transforms covariantly when acting on scalars. For instance, the geodesic equation can be rewritten in covariant form as 
+\[
+\frac{dx^\alpha}{d\lambda} \nabla_\alpha \frac{dx^\mu}{d\lambda} = 0.
+\]</p>
 
   <p>In the flat, expanding ΛCDM universe, distances in spacetime are described with the <strong>Friedmann–Lamaître–Robertson–Walker (FLRW) metric</strong>
 \[
@@ -370,8 +381,10 @@ Its Christoffel symbol is thus
 \right] \\
 &amp;= \delta^{i\nu}a^{-2}\delta_{j\nu}a\dot a
 = \delta^i_j\frac{\dot a}a, \\
-{\Gamma^0}_{\alpha0} &amp;= {\Gamma^0}_{0\alpha} = 0
+{\Gamma^\alpha}_{00} &amp;= {\Gamma^0}_{\alpha0} = {\Gamma^0}_{0\alpha} = 0.
 \end{aligned}\]</p>
+
+  <h3 id="energy-of-a-particle">Energy of a particle</h3>
 
   <p>To examine the effects of cosmological expansion on a free particle’s energy, define the path parameter $\lambda$ such that the four-momentum $P^\alpha = (E, \vec p) = \frac{dx^\alpha}{d\lambda}$. This way,
 \[
@@ -398,14 +411,33 @@ E\dot E &amp;= -{\Gamma^0}_{ij} P^i P^j \\
 
   <p>For a massless particle, 
 \[
-\frac{\dot E}{E} = -\frac{\dot a}{a} \implies E(t) = \frac{E(t_0)}a.
+m = 0 \implies \frac{\dot E}{E} = -\frac{\dot a}{a} \implies E(t) = \frac{E(t_0)}a,
 \]
-For a non-relativistic massive particle, the approximation 
+and for a non-relativistic massive particle,
+\[
+E \simeq m \implies \dot E \simeq 0 \implies E(t) \simeq E(t_0).
+\]
+This demonstrates that only relativistic particles lose significant energy through cosmological expansion.</p>
+
+  <h3 id="energy-of-the-medium">Energy of the medium</h3>
+
+  <p>A similar method of analysis can be applied to the homogeneous, isotropic background of the universe, characterized by the mean energy density $\rho$ and the mean pressure $\mathcal P$. Its energy-momentum tensor is
+\[
+\renewcommand{\P}{{\mathcal P}}
+{T^\mu}_\nu = \begin{pmatrix}
+-\rho &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; \P &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; \P &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; \P
+\end{pmatrix}
+\] 
+in the rest frame and obeys the conservation of local energy-momentum $\nabla_\mu {T^\mu}_\nu = 0$, whose $\nu=0$ component tells us that
 \[\begin{aligned}
-E &amp;\simeq \frac{\delta_{ij}P^iP^j}{2m} + m\\
-\implies E\dot E &amp;\simeq 2a\dot am(m - E)\\
-\implies \frac{E\dot E}{m - E} &amp;\simeq 2a\dot a m\\
-\implies \frac{E\dot E}{m - E} &amp;\simeq 2a\dot a m???\\
+0 &amp;= \partial_\mu {T^\mu}_0 + {\Gamma^\mu}_{\alpha\mu}{T^\alpha}_0 - {\Gamma^\alpha}_{0\mu}{T^\mu}_\alpha\\
+&amp;= \partial_0 {T^0}_0 + {\Gamma^i}_{0i}{T^0}_0 - {\Gamma^i}_{0j}{T^j}_i\\
+&amp;= -\partial_t \rho - \delta^i_i \frac{\dot a}{a} \rho - \delta^i_j \frac{\dot a}{a} \delta^j_i \mathcal P\\
+\iff 0&amp;= \partial_t \rho + 3\frac{\dot a}{a}\left[\rho + \mathcal P\right]\\
+\iff \frac{\partial_t(\rho a^3)}{a^3} &amp;= -3\frac{\dot a}{a}\mathcal P.
 \end{aligned}\]</p>
 
 </section>
