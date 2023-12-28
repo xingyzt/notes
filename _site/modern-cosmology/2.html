@@ -300,21 +300,15 @@ g^{\mu\nu} = \begin{pmatrix}
 satisfying the identity $g^{\nu\beta}g_{\beta\alpha} = \delta^\nu_\alpha$.</p>
 
   <p>The FLRW metric is independent of the spatial coordinates ($\partial_i$) but dependent on time ($\partial_0$) due to the $a^2$ terms.
-This lets us compute its Christoffel symbol
+Its Christoffel symbol is thus
 \[\begin{aligned}
 {\Gamma^0}_{ij} &amp;= \frac{g^{0\nu}}{2}
 \left[
-\partial_j g_{i\nu} +
-\partial_i g_{j\nu} -
-\partial_\nu g_{ij}
-\right] \\
-&amp;= \frac{g^{00}}{2}
-\left[
-\underline{\partial_j g_{i0}}_0 +
-\underline{\partial_i g_{j0}}_0 -
+\underline{\partial_j g_{i\nu}}_0 +
+\underline{\partial_i g_{j\nu}}_0 -
 \partial_0 g_{ij}
 \right] \\
-&amp;= \frac12\partial_0 g_{ij}
+&amp;= -\frac{g^{00}}2\partial_0 g_{ij}
 = \delta_{ij} a\dot a, \\
 {\Gamma^i}_{j0} = {\Gamma^i}_{0j} &amp;= \frac{g^{i\nu}}{2}
 \left[
@@ -323,8 +317,43 @@ This lets us compute its Christoffel symbol
 \underline{\partial_\nu g_{j0}}_0
 \right] \\
 &amp;= \delta^{i\nu}a^{-2}\delta_{j\nu}a\dot a
-= \delta^{ij}\frac{\dot a}a, \\
-{\Gamma^i}_{\alpha\beta} &amp;= 0 \text{ elsewhere}.
+= \delta^i_j\frac{\dot a}a, \\
+{\Gamma^0}_{\alpha0} &amp;= {\Gamma^0}_{0\alpha} = 0
+\end{aligned}\]</p>
+
+  <p>To examine the effects of cosmological expansion on a free particle’s energy, define the path parameter $\lambda$ such that the four-momentum $P^\alpha = (E, \vec p) = \frac{dx^\alpha}{d\lambda}$. This way,
+\[
+\frac{d}{d\lambda} = \frac{dx^0}{d\lambda}\frac{d}{dx^0} = E\frac{d}{dt}.
+\]
+In addition, note that (as apparent in the rest frame of the particle,)
+\[
+g_{\mu\nu}P^\mu P^\nu = -E^2 + \delta_{ij} a^2 P^i P^j = -m^2.
+\]</p>
+
+  <p>The geodesic equation for the particle thus simplifies as
+\[\begin{aligned}
+\frac{d^2 x^\mu}{d\lambda^2} 
+&amp;= -{\Gamma^\mu}_{\alpha\beta} \frac{dx^\alpha}{d\lambda} \frac{dx^\beta}{d\lambda} \\
+= \frac{dP^\mu}{d\lambda}= E\dot P^\mu
+&amp;= -{\Gamma^\mu}_{ij} P^i P^j,
+\end{aligned}\]
+with the $\mu=0$ component
+\[\begin{aligned}
+E\dot E &amp;= -{\Gamma^0}_{ij} P^i P^j \\
+&amp;= -a\dot a \delta_{ij} P^i P^j\\
+&amp;= \frac{\dot a}{a} (m^2 - E^2)
+\end{aligned}\]</p>
+
+  <p>For a massless particle, 
+\[
+\frac{\dot E}{E} = -\frac{\dot a}{a} \implies E(t) = \frac{E(t_0)}a.
+\]
+For a non-relativistic massive particle, the approximation 
+\[\begin{aligned}
+E &amp;\simeq \frac{\delta_{ij}P^iP^j}{2m} + m\\
+\implies E\dot E &amp;\simeq 2a\dot am(m - E)\\
+\implies \frac{E\dot E}{m - E} &amp;\simeq 2a\dot a m\\
+\implies \frac{E\dot E}{m - E} &amp;\simeq 2a\dot a m???\\
 \end{aligned}\]</p>
 
 </section>
