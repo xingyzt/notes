@@ -273,7 +273,7 @@ where ${\Gamma^\mu}_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, r
 \right].
 \]</p>
 
-  <p>The Christoffel symbol is used in defining the covariant derivative $\nabla_\mu$:
+  <p>The Christoffel symbol is used in defining the <strong>covariant derivative</strong> $\nabla_\mu$:
 \[\begin{aligned}
 \text{scalar} &amp;&amp; \nabla_\mu\phi &amp;\equiv \partial_\mu\phi,\\
 \text{vector} &amp;&amp; \nabla_\mu A^\nu &amp;\equiv \partial_\mu A^\nu + {\Gamma^\nu}_{\mu\alpha} A^\alpha,\\
@@ -359,7 +359,7 @@ and for a non-relativistic massive particle,
 \[
 E \simeq m \implies \dot E \simeq 0 \implies E(t) \simeq E(t_0).
 \]
-This demonstrates that only relativistic particles lose significant energy through cosmological expansion.</p>
+This demonstrates that only relativistic particles (i.e. radiation) lose significant energy through cosmological expansion.</p>
 
   <h3 id="energy-of-the-medium">Energy of the medium</h3>
 
@@ -381,6 +381,20 @@ in the rest frame and obeys the conservation of local energy-momentum $\nabla_\m
 \iff 0&amp;= \partial_t \rho + 3\frac{\dot a}{a}\left[\rho + \mathcal P\right]\\
 \iff \frac{\partial_t(\rho a^3)}{a^3} &amp;= -3\frac{\dot a}{a}\mathcal P.
 \end{aligned}\]</p>
+
+  <p>In general, the density of a medium with a constant <strong>equation of state</strong> $w \equiv \mathcal P / \rho$ evolves as $\rho_s \propto a^{-3-3w}$. For radiation, $\mathcal P_r \simeq \rho_r/3 \implies \rho_r \propto a^{-4}$, whereas for nonrelativistic matter, $\mathcal P_m \simeq 0 \implies \rho_m \propto a^{-3}$. The cosmological constant, with $w_\Lambda = -1$, is thus constant through time.</p>
+
+  <h3 id="distances-and-conformal-time">Distances and conformal time</h3>
+
+  <p>In a small time interval $dt$, light travels a comoving distance $dx = dt/a$, thus the total comoving distance $\chi$ traversed by a light emitted at time $t$ is 
+\[
+\chi(t) = \int_t^{t_0} \frac{dt'}{a(t')} = \int_{a(t)}^1 \frac{da'}{a'^2 H(a')} = \int_0^z \frac{dz'}{H(z')}.
+\]
+And the maximum comoving distance $\eta$ that may be causally connected to a point in time $t$ is 
+\[
+\eta(t) \equiv \int_0^t \frac{dt'}{a(t')}.
+\]
+This is known as the <strong>comoving horizon</strong>, or also as the <strong>conformal time</strong>, seeing it monotonically increases with $t$.</p>
 
 </section>
 
