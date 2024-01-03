@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Xing’s notes on Dodelson & Schmidt, Modern Cosmology</title>
     <meta name=viewport content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="shortcut icon" type=image/png href="https://xingyzt.net/notes/assets/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
@@ -17,6 +17,11 @@
                   //{left: '\\(', right: '\\)', display: false},
                   {left: '\\[', right: '\\]', display: true}
               ],
+              macros: {
+                "\\vec": "\\mathbf",
+                "\\d": "\\mathrm{d}",
+                "\\p": "\\partial",
+              },
               throwOnError : false
             });
             const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
@@ -231,18 +236,24 @@ th, td {
 <ul id="markdown-toc">
   <li><a href="#dodelson--schmidt-modern-cosmology" id="markdown-toc-dodelson--schmidt-modern-cosmology">Dodelson &amp; Schmidt, <em>Modern Cosmology</em></a>    <ul>
       <li><a href="#notation" id="markdown-toc-notation">0. Notation</a></li>
+    </ul>
+  </li>
+  <li><a href="#i-mostly-homogenous" id="markdown-toc-i-mostly-homogenous">I. Mostly Homogenous</a>    <ul>
       <li><a href="#the-concordance-model-of-cosmology" id="markdown-toc-the-concordance-model-of-cosmology">1. The concordance model of cosmology</a></li>
       <li><a href="#the-expanding-universe" id="markdown-toc-the-expanding-universe">2. The expanding universe</a>        <ul>
           <li><a href="#geodesics-and-the-flrw-metric" id="markdown-toc-geodesics-and-the-flrw-metric">Geodesics and the FLRW metric</a></li>
           <li><a href="#energy-of-a-particle" id="markdown-toc-energy-of-a-particle">Energy of a particle</a></li>
           <li><a href="#energy-of-the-medium" id="markdown-toc-energy-of-the-medium">Energy of the medium</a></li>
           <li><a href="#distances-and-conformal-time" id="markdown-toc-distances-and-conformal-time">Distances and conformal time</a></li>
+          <li><a href="#distribution-statistics" id="markdown-toc-distribution-statistics">Distribution statistics</a></li>
+          <li><a href="#cosmic-inventory" id="markdown-toc-cosmic-inventory">Cosmic inventory</a></li>
         </ul>
       </li>
       <li><a href="#the-fundamental-equations-of-cosmology" id="markdown-toc-the-fundamental-equations-of-cosmology">3. The fundamental equations of cosmology</a></li>
       <li><a href="#the-origin-of-species" id="markdown-toc-the-origin-of-species">4. The origin of species</a></li>
     </ul>
   </li>
+  <li><a href="#ii-perturbations" id="markdown-toc-ii-perturbations">II. Perturbations</a></li>
 </ul>
 
 </details>
@@ -253,13 +264,17 @@ th, td {
 
   <ul>
     <li><strong>Natural units</strong>: $\hbar = c = k_B = 1$.</li>
+    <li><strong>Vectors</strong>: 3-vectors are bolded $\vec p$. 4-vectors are represented by their components $P^\mu$.</li>
     <li><strong>Tensor indices</strong>: Upper indices are contravariant. Lower indices are covariant.</li>
     <li><strong>Metric signature</strong>: – + + +.</li>
     <li><strong>Einstein summation</strong>: Repeated indices are implicitly summed over. Latin indices range $1,2,3$. Greek indices range $0,1,2,3$.</li>
+    <li><strong>Dot time derivative</strong>: $\dot x \equiv \d x/\d t$.</li>
     <li><strong>Partial derivatives</strong>: $\partial_\mu \equiv \partial/\partial x^\mu$. For instance, $\partial_\mu x^\nu = \delta_\mu^\nu$.</li>
   </ul>
 
 </section>
+
+<h1 id="i-mostly-homogenous">I. Mostly Homogenous</h1>
 
 <section>
 
@@ -297,50 +312,50 @@ where $\rho$ is the average density of the universe, and $\rho_c$ is the <strong
 
   <p>According to general relativity, particles in the absence of any forces move in <strong>geodesics</strong> such that
 \[
-\frac{d^2 x^\alpha}{d\lambda^2} = 0
+\frac{\d ^2 x^\alpha}{\d \lambda^2} = 0
 \]
 for some parameter $\lambda$ that monotonically increases along the particle’s path (such as proper time for massive particles).
 Under a change of coordinates $x^\alpha\mapsto x^{\prime\nu}$, this becomes
 \[\begin{aligned}
-0 &amp;= \frac{d}{d\lambda}\left[ \frac{d x^{\prime\nu}}{d\lambda} \right] \\
-&amp;= \frac{d}{d\lambda}\left[ \frac{\partial x^{\prime\nu}}{\partial x^{\alpha}} \frac{d x^{\alpha}}{d\lambda} \right] \\
-&amp;= \frac{d}{d\lambda}\left[ \frac{\partial x^{\prime\nu}}{\partial x^\alpha} \right] \frac{d x^\alpha}{d\lambda} + \underline{
-\frac{\partial x^{\prime\nu}}{\partial x^\alpha} \frac{d^2 x^\alpha}{d\lambda^2}
+0 &amp;= \frac{\d }{\d \lambda}\left[ \frac{\d  x^{\prime\nu}}{\d \lambda} \right] \\
+&amp;= \frac{\d }{\d \lambda}\left[ \frac{\p x^{\prime\nu}}{\p x^{\alpha}} \frac{\d  x^{\alpha}}{\d \lambda} \right] \\
+&amp;= \frac{\d }{\d \lambda}\left[ \frac{\p x^{\prime\nu}}{\p x^\alpha} \right] \frac{\d  x^\alpha}{\d \lambda} + \underline{
+\frac{\p x^{\prime\nu}}{\p x^\alpha} \frac{\d ^2 x^\alpha}{\d \lambda^2}
 }_{*} \\
-&amp;= \frac{\partial}{\partial x^\alpha}\left[ \frac{dx^{\prime\nu}}{d\lambda} \right] \frac{d x^\alpha}{d\lambda} +
+&amp;= \frac{\p}{\p x^\alpha}\left[ \frac{\d x^{\prime\nu}}{\d \lambda} \right] \frac{\d  x^\alpha}{\d \lambda} +
 *\\
-&amp;= \frac{\partial}{\partial x^\alpha}\left[ \frac{\partial x^{\prime\nu}}{\partial x^\beta}\frac{dx^\beta}{d\lambda} \right] \frac{d x^\alpha}{d\lambda} +
+&amp;= \frac{\p}{\p x^\alpha}\left[ \frac{\p x^{\prime\nu}}{\p x^\beta}\frac{\d x^\beta}{\d \lambda} \right] \frac{\d  x^\alpha}{\d \lambda} +
 *\\
-&amp;= \left[ \frac{\partial^2 x^{\prime\nu}}{\partial x^\alpha \partial x^\beta}\frac{dx^\beta}{d\lambda} + \frac{\partial x^{\prime\nu}}{\partial x^\beta} \underline{\frac{d}{d\lambda}\left(\frac{\partial x^\beta}{\partial x^\alpha}\right)}_0\right]\frac{d x^\alpha}{d\lambda} +
+&amp;= \left[ \frac{\p^2 x^{\prime\nu}}{\p x^\alpha \p x^\beta}\frac{\d x^\beta}{\d \lambda} + \frac{\p x^{\prime\nu}}{\p x^\beta} \underline{\frac{\d }{\d \lambda}\left(\frac{\p x^\beta}{\p x^\alpha}\right)}_0\right]\frac{\d  x^\alpha}{\d \lambda} +
 *\\
-&amp;= \frac{\partial^2 x^{\prime\nu}}{\partial x^\alpha \partial x^\beta}\frac{dx^\alpha}{d\lambda}\frac{d x^\beta}{d\lambda} +
-\frac{\partial x^{\prime\nu}}{\partial x^\alpha} \frac{d^2 x^\alpha}{d\lambda^2}.
+&amp;= \frac{\p^2 x^{\prime\nu}}{\p x^\alpha \p x^\beta}\frac{\d x^\alpha}{\d \lambda}\frac{\d  x^\beta}{\d \lambda} +
+\frac{\p x^{\prime\nu}}{\p x^\alpha} \frac{\d ^2 x^\alpha}{\d \lambda^2}.
 \end{aligned}\]
 Applying the inverse transform $x^{\prime\nu}\mapsto x^\mu$ to both sides yields
 \[
-0 = \underbrace{\frac{\partial x^\mu}{\partial x^{\prime\nu}} \frac{\partial^2 x^{\prime\nu}}{\partial x^\alpha \partial x^\beta}}
-_{\displaystyle {\Gamma^\mu}_{\alpha\beta}} \frac{dx^\alpha}{d\lambda}\frac{d x^\beta}{d\lambda} +
- \frac{d^2 x^{\mu}}{d\lambda^2},
+0 = \underbrace{\frac{\p x^\mu}{\p x^{\prime\nu}} \frac{\p^2 x^{\prime\nu}}{\p x^\alpha \p x^\beta}}
+_{\displaystyle {\Gamma^\mu}_{\alpha\beta}} \frac{\d x^\alpha}{\d \lambda}\frac{\d  x^\beta}{\d \lambda} +
+ \frac{\d ^2 x^{\mu}}{\d \lambda^2},
 \]
 where ${\Gamma^\mu}_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, related to the metric by
 \[
 {\Gamma^\mu}_{\alpha\beta} = \frac{g^{\mu\nu}}{2}
 \left[
-\partial_\beta g_{\alpha\nu} +
-\partial_\alpha g_{\beta\nu} -
-\partial_\nu g_{\alpha\beta}
+\p_\beta g_{\alpha\nu} +
+\p_\alpha g_{\beta\nu} -
+\p_\nu g_{\alpha\beta}
 \right].
 \]</p>
 
   <p>The Christoffel symbol is used in defining the <strong>covariant derivative</strong> $\nabla_\mu$:
 \[\begin{aligned}
-\text{scalar} &amp;&amp; \nabla_\mu\phi &amp;\equiv \partial_\mu\phi,\\
-\text{vector} &amp;&amp; \nabla_\mu A^\nu &amp;\equiv \partial_\mu A^\nu + {\Gamma^\nu}_{\mu\alpha} A^\alpha,\\
-\text{tensor} &amp;&amp; \nabla_\mu {T_\nu}^\kappa &amp;\equiv \partial_\mu {T_\nu}^\kappa - {\Gamma^\lambda}_{\mu\nu}{T_\lambda}^\kappa + {\Gamma^\kappa}_{\mu\lambda}{T_\nu}^\lambda.
+\text{scalar} &amp;&amp; \nabla_\mu\phi &amp;\equiv \p_\mu\phi,\\
+\text{vector} &amp;&amp; \nabla_\mu A^\nu &amp;\equiv \p_\mu A^\nu + {\Gamma^\nu}_{\mu\alpha} A^\alpha,\\
+\text{tensor} &amp;&amp; \nabla_\mu {T_\nu}^\kappa &amp;\equiv \p_\mu {T_\nu}^\kappa - {\Gamma^\lambda}_{\mu\nu}{T_\lambda}^\kappa + {\Gamma^\kappa}_{\mu\lambda}{T_\nu}^\lambda.
 \end{aligned}\]
-This is necessary because the partial derivative $\partial_\mu$ only transforms covariantly when acting on scalars. For instance, the geodesic equation can be rewritten in covariant form as 
+This is necessary because the partial derivative $\p_\mu$ only transforms covariantly when acting on scalars. For instance, the geodesic equation can be rewritten in covariant form as 
 \[
-\frac{dx^\alpha}{d\lambda} \nabla_\alpha \frac{dx^\mu}{d\lambda} = 0.
+\frac{\d x^\alpha}{\d \lambda} \nabla_\alpha \frac{\d x^\mu}{\d \lambda} = 0.
 \]</p>
 
   <p>In the flat, expanding ΛCDM universe, distances in spacetime are described with the <strong>Friedmann–Lamaître–Robertson–Walker (FLRW) metric</strong>
@@ -363,22 +378,22 @@ g^{\mu\nu} = \begin{pmatrix}
 \]
 satisfying the identity $g^{\nu\beta}g_{\beta\alpha} = \delta^\nu_\alpha$.</p>
 
-  <p>The FLRW metric is independent of the spatial coordinates ($\partial_i$) but dependent on time ($\partial_0$) due to the $a^2$ terms.
+  <p>The FLRW metric is independent of the spatial coordinates ($\p_i$) but dependent on time ($\p_0$) due to the $a^2$ terms.
 Its Christoffel symbol is thus
 \[\begin{aligned}
 {\Gamma^0}_{ij} &amp;= \frac{g^{0\nu}}{2}
 \left[
-\underline{\partial_j g_{i\nu}}_0 +
-\underline{\partial_i g_{j\nu}}_0 -
-\partial_0 g_{ij}
+\underline{\p_j g_{i\nu}}_0 +
+\underline{\p_i g_{j\nu}}_0 -
+\p_0 g_{ij}
 \right] \\
-&amp;= -\frac{g^{00}}2\partial_0 g_{ij}
+&amp;= -\frac{g^{00}}2\p_0 g_{ij}
 = \delta_{ij} a\dot a, \\
 {\Gamma^i}_{j0} = {\Gamma^i}_{0j} &amp;= \frac{g^{i\nu}}{2}
 \left[
-\partial_0 g_{j\nu} +
-\underline{\partial_j g_{0\nu}}_0 -
-\underline{\partial_\nu g_{j0}}_0
+\p_0 g_{j\nu} +
+\underline{\p_j g_{0\nu}}_0 -
+\underline{\p_\nu g_{j0}}_0
 \right] \\
 &amp;= \delta^{i\nu}a^{-2}\delta_{j\nu}a\dot a
 = \delta^i_j\frac{\dot a}a, \\
@@ -387,9 +402,9 @@ Its Christoffel symbol is thus
 
   <h3 id="energy-of-a-particle">Energy of a particle</h3>
 
-  <p>To examine the effects of cosmological expansion on a free particle’s energy, define the path parameter $\lambda$ such that the four-momentum $P^\alpha = (E, \vec p) = \frac{dx^\alpha}{d\lambda}$. This way,
+  <p>To examine the effects of cosmological expansion on a free particle’s energy, define the path parameter $\lambda$ such that the four-momentum $P^\alpha = (E, \vec p) = \frac{\d x^\alpha}{\d \lambda}$. This way,
 \[
-\frac{d}{d\lambda} = \frac{dx^0}{d\lambda}\frac{d}{dx^0} = E\frac{d}{dt}.
+\frac{\d }{\d \lambda} = \frac{\d x^0}{\d \lambda}\frac{\d}{\d x^0} = E\frac{\d}{\d t}.
 \]
 In addition, note that (as apparent in the rest frame of the particle,)
 \[
@@ -398,9 +413,9 @@ g_{\mu\nu}P^\mu P^\nu = -E^2 + \delta_{ij} a^2 P^i P^j = -m^2.
 
   <p>The geodesic equation for the particle thus simplifies as
 \[\begin{aligned}
-\frac{d^2 x^\mu}{d\lambda^2} 
-&amp;= -{\Gamma^\mu}_{\alpha\beta} \frac{dx^\alpha}{d\lambda} \frac{dx^\beta}{d\lambda} \\
-= \frac{dP^\mu}{d\lambda}= E\dot P^\mu
+\frac{\d ^2 x^\mu}{\d \lambda^2} 
+&amp;= -{\Gamma^\mu}_{\alpha\beta} \frac{\d x^\alpha}{\d \lambda} \frac{\d x^\beta}{\d \lambda} \\
+= \frac{\d P^\mu}{\d \lambda}= E\dot P^\mu
 &amp;= -{\Gamma^\mu}_{ij} P^i P^j,
 \end{aligned}\]
 with the $\mu=0$ component
@@ -434,26 +449,75 @@ This demonstrates that only relativistic particles (i.e. radiation) lose signifi
 \] 
 in the rest frame and obeys the conservation of local energy-momentum $\nabla_\mu {T^\mu}_\nu = 0$, whose $\nu=0$ component tells us that
 \[\begin{aligned}
-0 &amp;= \partial_\mu {T^\mu}_0 + {\Gamma^\mu}_{\alpha\mu}{T^\alpha}_0 - {\Gamma^\alpha}_{0\mu}{T^\mu}_\alpha\\
-&amp;= \partial_0 {T^0}_0 + {\Gamma^i}_{0i}{T^0}_0 - {\Gamma^i}_{0j}{T^j}_i\\
-&amp;= -\partial_t \rho - \delta^i_i \frac{\dot a}{a} \rho - \delta^i_j \frac{\dot a}{a} \delta^j_i \mathcal P\\
-\iff 0&amp;= \partial_t \rho + 3\frac{\dot a}{a}\left[\rho + \mathcal P\right]\\
-\iff \frac{\partial_t(\rho a^3)}{a^3} &amp;= -3\frac{\dot a}{a}\mathcal P.
+0 &amp;= \p_\mu {T^\mu}_0 + {\Gamma^\mu}_{\alpha\mu}{T^\alpha}_0 - {\Gamma^\alpha}_{0\mu}{T^\mu}_\alpha\\
+&amp;= \p_0 {T^0}_0 + {\Gamma^i}_{0i}{T^0}_0 - {\Gamma^i}_{0j}{T^j}_i\\
+&amp;= -\p_t \rho - \delta^i_i \frac{\dot a}{a} \rho - \delta^i_j \frac{\dot a}{a} \delta^j_i \mathcal P\\
+\iff 0&amp;= \p_t \rho + 3\frac{\dot a}{a}\left[\rho + \mathcal P\right]\\
+\iff \frac{\p_t(\rho a^3)}{a^3} &amp;= -3\frac{\dot a}{a}\mathcal P.
 \end{aligned}\]</p>
 
   <p>In general, the density of a medium with a constant <strong>equation of state</strong> $w \equiv \mathcal P / \rho$ evolves as $\rho_s \propto a^{-3-3w}$. For radiation, $\mathcal P_r \simeq \rho_r/3 \implies \rho_r \propto a^{-4}$, whereas for nonrelativistic matter, $\mathcal P_m \simeq 0 \implies \rho_m \propto a^{-3}$. The cosmological constant, with $w_\Lambda = -1$, is thus constant through time.</p>
 
   <h3 id="distances-and-conformal-time">Distances and conformal time</h3>
 
-  <p>In a small time interval $dt$, light travels a comoving distance $dx = dt/a$, thus the total comoving distance $\chi$ traversed by a light emitted at time $t$ is 
+  <p>In a small time interval $dt$, light travels a comoving distance $dx = dt/a$, thus the total comoving distance $\chi$ traversed by a light emitted at time $t$ (i.e. the comoving distance from us to an object we observe at time $t$) is 
 \[
-\chi(t) = \int_t^{t_0} \frac{dt'}{a(t')} = \int_{a(t)}^1 \frac{da'}{a'^2 H(a')} = \int_0^z \frac{dz'}{H(z')}.
+\chi(t) = \int_t^{t_0} \frac{\d t'}{a(t')} = \int_{a(t)}^1 \frac{\d a'}{a'^2 H(a')} = \int_0^z \frac{\d z'}{H(z')}.
 \]
 And the maximum comoving distance $\eta$ that may be causally connected to a point in time $t$ is 
 \[
-\eta(t) \equiv \int_0^t \frac{dt'}{a(t')}.
+\eta(t) \equiv \int_0^t \frac{\d t'}{a(t')}.
 \]
-This is known as the <strong>comoving horizon</strong>, or also as the <strong>conformal time</strong>, seeing it monotonically increases with $t$.</p>
+This is also known as the <strong>comoving horizon</strong>, or as the <strong>conformal time</strong>, seeing it monotonically increases with $t$.</p>
+
+  <p>TODO: Angular sizes and curvature. For the time being, see <a href="https://xkcd.com/2622/">this xkcd comic</a> for an illustration of this concept.</p>
+
+  <h3 id="distribution-statistics">Distribution statistics</h3>
+
+  <p>The number distribution function $f_s(\vec x, \vec p, t)$ counts the number of particles of a given species $s$ in the infinitesimal phase-volume $\d^3 x \d^3 p$ around $(\vec x, \vec p, t)$. 
+Under thermal equilibrium, the number distribution function for every species is only dependent on the momentum magnitude $p$ through the energy $E_s(p) = \sqrt{p^2 + m_s^2}$, 
+with bosons following the <strong>Bose–Einstein distribution</strong>
+\[
+f_\text{BE}(E_s) = \frac1{e^{(E_s - \mu)/T} - 1}
+\]
+and fermions following the <strong>Fermi–Dirac distribution</strong>
+\[
+f_\text{FD}(E_s) = \frac1{e^{(E_s - \mu)/T} + 1},
+\]
+where $\mu$ is the chemical potential and $T$ is the equilibrium temperature. For photons and neutrinos, $\mu \ll T$.</p>
+
+  <p>By Heisenberg’s uncertainty principle, within every infinitesimal phase-volume $\d^3x \d^3p$, there are 
+$\d^3 x \d^3 p/(2\pi)^3$
+fundamental phase-space elements. Thus the number distribution $f_s(\vec x, \vec p, t)$ corresponds to a number density
+\[
+n_s(\vec x, \vec p, t) = \frac{g_s f_s(\vec x, \vec p, t)}{(2\pi)^3 \d^3 x},
+\]
+where $g_s$ is the <a href="https://en.wikipedia.org/wiki/Degenerate_energy_levels">degeneracy</a> of the species.</p>
+
+  <p>Convolving some function $G_s(\vec x, \vec p)$ with $n_s(\vec x, \vec p, t)$ over all possible momenta $\vec p$ inside the infinitesimal physical volume $\d^3 x$ gives
+\[\begin{aligned}
+(G_s * n_s)(\vec x, t) &amp;= \int_p (\d^3 x \d^3 p) \, n_s(\vec x, \vec p, t) \, G_s(\vec x, \vec p)\\
+&amp;= \frac{g_s}{(2\pi)^3} \int_p \d^3 p \, f_s(\vec x, \vec p, t) \, G_s(\vec x, \vec p).
+\end{aligned}\]</p>
+
+  <p>Different functions $G_s$ can tell us different microscopic properties of the species at $(\vec x, t)$. For instance, convolving with the energy function $E_s(p)$ gives the energy density
+\[
+\rho_s(\vec x, t) = \frac{g_s}{(2\pi)^3} \int_p \d^3 p \, f_s(\vec x, \vec p, t) \, E_s(p),
+\]
+and convolving with the pressure-energy $\mathbb P_s(p) = p^3/3E_s(p)$ gives the pressure
+\[
+\mathcal{P}_s(\vec x, t) = \frac{g_s}{(2\pi)^3} \int_p \d^3 p \, f_s(\vec x, \vec p, t) \, \frac{p^2}{3E_s(p)}.
+\]</p>
+
+  <p>Evaluating this for photons and neutrinos in thermal equilibrium (i.e. for a Bose–Einstein distribution with $\mu\ll T$) gives
+\[
+\frac{\p\mathcal{P}_s}{\p T} = \frac{\rho_s + \mathcal{P}_s}{T} \propto a^{-3}.
+\]
+Thus the entropy density of the universe $s \equiv (\rho + \mathcal P)/T$ scales as $a^{-3}$ in thermal equilibrium.</p>
+
+  <h3 id="cosmic-inventory">Cosmic inventory</h3>
+
+  <p>TODO</p>
 
 </section>
 
@@ -472,6 +536,7 @@ This is known as the <strong>comoving horizon</strong>, or also as the <strong>c
   <p>Under construction!</p>
 </section>
 
+<h1 id="ii-perturbations">II. Perturbations</h1>
 
 
     <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>

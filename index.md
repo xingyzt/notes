@@ -1,3 +1,8 @@
+---
+title: bespoke artisanal notes
+layout: default
+---
+
 Writing things down helps with memorization or something.
 
 - [Dodelson & Schmidt, Modern Cosmology](modern-cosmology) (WIP)

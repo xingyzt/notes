@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <meta name=viewport content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="shortcut icon" type=image/png href="https://xingyzt.net/notes/assets/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
@@ -17,6 +17,11 @@
                   //{left: '\\(', right: '\\)', display: false},
                   {left: '\\[', right: '\\]', display: true}
               ],
+              macros: {
+                "\\vec": "\\mathbf",
+                "\\d": "\\mathrm{d}",
+                "\\p": "\\partial",
+              },
               throwOnError : false
             });
             const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
@@ -236,9 +241,11 @@ th, td {
 
   <ul>
     <li><strong>Natural units</strong>: $\hbar = c = k_B = 1$.</li>
+    <li><strong>Vectors</strong>: 3-vectors are bolded $\vec p$. 4-vectors are represented by their components $P^\mu$.</li>
     <li><strong>Tensor indices</strong>: Upper indices are contravariant. Lower indices are covariant.</li>
     <li><strong>Metric signature</strong>: – + + +.</li>
     <li><strong>Einstein summation</strong>: Repeated indices are implicitly summed over. Latin indices range $1,2,3$. Greek indices range $0,1,2,3$.</li>
+    <li><strong>Dot time derivative</strong>: $\dot x \equiv \d x/\d t$.</li>
     <li><strong>Partial derivatives</strong>: $\partial_\mu \equiv \partial/\partial x^\mu$. For instance, $\partial_\mu x^\nu = \delta_\mu^\nu$.</li>
   </ul>
 

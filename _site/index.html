@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>bespoke artisanal notes</title>
     <meta name=viewport content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" type=image/png href="https://x-ing.space/notes/assets/favicon.png">
+    <link rel="shortcut icon" type=image/png href="https://xingyzt.net/notes/assets/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
@@ -17,6 +17,11 @@
                   //{left: '\\(', right: '\\)', display: false},
                   {left: '\\[', right: '\\]', display: true}
               ],
+              macros: {
+                "\\vec": "\\mathbf",
+                "\\d": "\\mathrm{d}",
+                "\\p": "\\partial",
+              },
               throwOnError : false
             });
             const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
@@ -222,7 +227,7 @@ th, td {
     </style>
   </head>
   <body>
-    <div class="home"><p>Writing things down helps with memorization or something.</p>
+    <p>Writing things down helps with memorization or something.</p>
 
 <ul>
   <li><a href="modern-cosmology">Dodelson &amp; Schmidt, Modern Cosmology</a> (WIP)</li>
@@ -232,7 +237,6 @@ th, td {
 <p>Want PDF versions? <code class="language-plaintext highlighter-rouge">ctrl-p</code> is your friend!</p>
 
 <p>These notes are hereby released to the public domain under the Creative Commons CC0 license.</p>
-</div>
 
 
     <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
