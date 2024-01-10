@@ -405,42 +405,57 @@ This is also known as the <strong>comoving horizon</strong>, or as the <strong>c
 
   <h3 id="distribution-statistics">Distribution statistics</h3>
 
-  <p>The number distribution function $f_s(\vec x, \vec p, t)$ counts the number of particles of a given species $s$ in the infinitesimal phase-volume $\d^3 x \d^3 p$ around $(\vec x, \vec p, t)$. 
-Under thermal equilibrium, the number distribution function for every species is only dependent on the momentum magnitude $p$ through the energy $E_s(p) = \sqrt{p^2 + m_s^2}$, 
-with bosons following the <strong>Bose–Einstein distribution</strong>
-\[
-f_\text{BE}(E_s) = \frac1{e^{(E_s - \mu)/T} - 1}
-\]
-and fermions following the <strong>Fermi–Dirac distribution</strong>
-\[
-f_\text{FD}(E_s) = \frac1{e^{(E_s - \mu)/T} + 1},
-\]
-where $\mu$ is the chemical potential and $T$ is the equilibrium temperature. For photons and neutrinos, $\mu \ll T$.</p>
+  <p>Many macroscopic statistics of a system are derived from how its particles are distributed in <a href="https://en.wikipedia.org/wiki/Phase_space">phase-space</a>.
+We can calculate this phase-space distribution using some quantum mechanics!</p>
 
-  <p>By Heisenberg’s uncertainty principle, within every infinitesimal phase-volume $\d^3x \d^3p$, there are 
-$\d^3 x \d^3 p/(2\pi)^3$
-fundamental phase-space elements. Thus the number distribution $f_s(\vec x, \vec p, t)$ corresponds to a number density
-\[
-n_s(\vec x, \vec p, t) = \frac{g_s f_s(\vec x, \vec p, t)}{(2\pi)^3 \d^3 x},
-\]
-where $g_s$ is the <a href="https://en.wikipedia.org/wiki/Degenerate_energy_levels">degeneracy</a> of the species.</p>
+  <p>First, let us calculate how many particles there are within every infinitesimal phase-space volume $\d^3x\, \d^3p$:</p>
 
-  <p>Convolving some function $G_s(\vec x, \vec p)$ with $n_s(\vec x, \vec p, t)$ over all possible momenta $\vec p$ inside the infinitesimal physical volume $\d^3 x$ gives
+  <p><a href="https://en.wikipedia.org/wiki/Uncertainty_principle">Heisenberg’s uncertainty principle</a>
+tells us that every such volume contains
+$\d^3 x\, \d^3 p/(2\pi)^3$
+indivisible <strong>fundamental phase-space elements</strong>.
+Then, the distribution function $f_s(\vec x, \vec p, t)$ counts the number of particles of a given species $s$ per such element around $(\vec x, \vec p, t)$. 
+However, $f_s$ does not distinguish degenerate states, so we also have to multiply by the <strong>degeneracy factor</strong> $g_s$. 
+For example, photons have $g_\gamma = 2$ due to their two spin states.</p>
+
+  <p>Thus, every infinitesimal volume $\d^3x\, \d^3p$ in phase-space contains
+\[
+\frac{\d^3 x \, \d^3 p}{(2\pi)^3} g_s f_s(\vec x, \vec p, t)
+\]
+particles.</p>
+
+  <p>Consider some phase-space function $A_s(\vec x, \vec p)$. 
+Integrating it over the phase-space around $\vec x$, 
+weighing with the number of particles per infinitesimal phase-space volume,
+and dividing by the infinitesimal physical volume $\d x^3$,
+we obtain its corresponding physical-space density
 \[\begin{aligned}
-(G_s * n_s)(\vec x, t) &amp;= \int_p (\d^3 x \d^3 p) \, n_s(\vec x, \vec p, t) \, G_s(\vec x, \vec p)\\
-&amp;= \frac{g_s}{(2\pi)^3} \int_p \d^3 p \, f_s(\vec x, \vec p, t) \, G_s(\vec x, \vec p).
+\hat A_s(\vec x, t) &amp;= \frac{g_s}{(2\pi)^3}\int \d^3 p\, f_s(\vec x, \vec p, t) A_s(\vec x, \vec p)
 \end{aligned}\]</p>
 
-  <p>Different functions $G_s$ can tell us different microscopic properties of the species at $(\vec x, t)$. For instance, convolving with the energy function $E_s(p)$ gives the energy density
+  <p>Different phase-space functions $A_s$ can tell us different microscopic properties of the species at $(\vec x, t)$. 
+For instance, energy function $E_s(p)$ gives the energy density
 \[
-\rho_s(\vec x, t) = \frac{g_s}{(2\pi)^3} \int_p \d^3 p \, f_s(\vec x, \vec p, t) \, E_s(p),
+\rho_s(\vec x, t) = \frac{g_s}{(2\pi)^3} \int \d^3 p \, f_s(\vec x, \vec p, t) \, E_s(p),
 \]
-and convolving with the pressure-energy $\mathbb P_s(p) = p^3/3E_s(p)$ gives the pressure
+and the pressure-energy $\mathbb P_s(p) = p^3/3E_s(p)$ gives the pressure
 \[
 \mathcal{P}_s(\vec x, t) = \frac{g_s}{(2\pi)^3} \int_p \d^3 p \, f_s(\vec x, \vec p, t) \, \frac{p^2}{3E_s(p)}.
 \]</p>
 
-  <p>Evaluating this for photons and neutrinos in thermal equilibrium (i.e. for a Bose–Einstein distribution with $\mu\ll T$) gives
+  <p>Under thermal equilibrium, 
+the distribution function $f_s$ for every species is only dependent on the momentum magnitude $p$ through the energy $E_s(p) = \sqrt{p^2 + m_s^2}$, 
+with bosons following the <strong>Bose–Einstein distribution</strong>
+\[
+f_\text{BE}(E_s) = \frac1{e^{(E_s - \mu_s)/T} - 1}
+\]
+and fermions following the <strong>Fermi–Dirac distribution</strong>
+\[
+f_\text{FD}(E_s) = \frac1{e^{(E_s - \mu_s)/T} + 1},
+\]
+where $\mu_s$ is the chemical potential and $T$ is the equilibrium temperature. 
+For photons and neutrinos, $\mu_\gamma, \mu_\nu \ll T$.
+Evaluating $\mathcal{P}_s$ for photons and neutrinos in thermal equilibrium (i.e. for a Bose–Einstein distribution with $\mu\ll T$) thus gives
 \[
 \frac{\p\mathcal{P}_s}{\p T} = \frac{\rho_s + \mathcal{P}_s}{T} \propto a^{-3}.
 \]
@@ -448,7 +463,17 @@ Thus the entropy density of the universe $s \equiv (\rho + \mathcal P)/T$ scales
 
   <h3 id="cosmic-inventory">Cosmic inventory</h3>
 
-  <p>TODO</p>
+  <p>Define the dimensionless <strong>density parameter</strong> of a species $s$ to be
+\[
+\Omega_s \equiv \frac{\rho_s(t_0)}{\rho_{cr}},
+\]
+i.e. its present-day density as a fraction of the universe’s critical density $\rho_{cr}$, we can write the physical density as 
+\[
+\rho_s(a) = \Omega_s \rho_{cr} a^{-3(1 + w_s)},
+\]
+where $a$ is the scale factor and $w_s$ is the equation of state for $s$.</p>
+
+  <p>TODO: photons, baryons, and dark energy</p>
 
 </section>
 

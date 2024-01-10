@@ -3,9 +3,9 @@ title: Xing’s notes on Carroll & Ostlie, Introduction to Modern Astrophysics
 layout: default
 ---
 
-# Carroll & Ostlie, Introduction to Modern Astrophysics
+# Carroll & Ostlie: Introduction to Modern Astrophysics
 
-Xing’s notes
+[Xing’s notes](/notes/). Bullet-point summaries of the Big Orange Book, including most of the significant formulas. Unfortunately, I don’t plan on notetaking part III in the foreseeable future.
 
 <details markdown="1">
   <summary>Table of Contents</summary>
@@ -40,3 +40,6 @@ Xing’s notes
 # III. The Solar System
 
 # IV.  Galaxies and the Universe
+
+{% include_relative 24.md %}
+{% include_relative 25.md %}
