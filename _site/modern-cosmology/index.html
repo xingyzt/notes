@@ -289,15 +289,22 @@ where the first term is due to the expansion of space, and the second term is du
 
   <p>The effect of expansion is most apparent in the <strong>cosmological redshift</strong> of photons. Defining the present-day scale factor $a(t_0)=1$, it can be related to the redshift parameter $z$ via 
 \[
-1 + z(t) \equiv \frac{\lambda(t_0)}{\lambda(t)} = \frac1{a(t)}.
+1 + z(t) \equiv \frac{\lambda(t_0)}{\lambda(t)} = \frac1{a(t)}. 
+\tag{1.1}
 \]
 Through black-body radiation, it can also be related to temperature via $T(t) = \frac{T(t_0)}{a(t)}$.</p>
 
   <p>The <strong>Hubble rate</strong> $H(t) \equiv \dot a/a$ measures the rapidity of expansion, with the present-day Hubble rate $H_0 \equiv H(t_0)$ referred to as <strong>Hubble’s constant</strong>. From the Friedmann equation, 
 \[
-H(t)^2 = \rho(t) + \frac{\rho_{cr} - \rho(t_0)}{a(t)^2},
+\frac{H(t)^2}{8\pi G} = \rho(t) + \frac{\rho_{cr} - \rho(t_0)}{a(t)^2},
+\tag{1.3}
 \] 
-where $\rho$ is the average density of the universe, and $\rho_{cr}$ is the <strong>critical density</strong> at which the universe is flat.</p>
+where $\rho$ is the average density of the universe, and
+\[
+\rho_{cr} \equiv \frac{3H_0^2}{8\pi G}
+\tag{1.4}
+\]
+is the <strong>critical density</strong> at which the universe is flat.</p>
 
   <p>Due to tensions in measurements of $H_0$, we parameterize it with a dimensionless number $h$ such that $H_0 \equiv 100\, h$ km/s/Mpc, with $h\sim 0.7$. This way, $H_0$ can be eliminated from calculations by using $h^{-1}$ Mpc as the unit of length, $h^{-1}\, M_\odot$ as the unit of mass, etc.</p>
 
@@ -314,6 +321,7 @@ where $\rho$ is the average density of the universe, and $\rho_{cr}$ is the <str
   <p>According to general relativity, particles in the absence of any forces move in <strong>geodesics</strong> such that
 \[
 \frac{\d ^2 x^\alpha}{\d \lambda^2} = 0
+\tag{2.13}
 \]
 for some parameter $\lambda$ that monotonically increases along the particle’s path (such as proper time for massive particles).
 Under a change of coordinates $x^\alpha\mapsto x^{\prime\nu}$, this becomes
@@ -331,12 +339,14 @@ Under a change of coordinates $x^\alpha\mapsto x^{\prime\nu}$, this becomes
 *\\
 &amp;= \frac{\p^2 x^{\prime\nu}}{\p x^\alpha \p x^\beta}\frac{\d x^\alpha}{\d \lambda}\frac{\d  x^\beta}{\d \lambda} +
 \frac{\p x^{\prime\nu}}{\p x^\alpha} \frac{\d ^2 x^\alpha}{\d \lambda^2}.
+\tag{2.18}
 \end{aligned}\]
 Applying the inverse transform $x^{\prime\nu}\mapsto x^\mu$ to both sides yields
 \[
 0 = \underbrace{\frac{\p x^\mu}{\p x^{\prime\nu}} \frac{\p^2 x^{\prime\nu}}{\p x^\alpha \p x^\beta}}
 _{\displaystyle {\Gamma^\mu}_{\alpha\beta}} \frac{\d x^\alpha}{\d \lambda}\frac{\d  x^\beta}{\d \lambda} +
  \frac{\d ^2 x^{\mu}}{\d \lambda^2},
+ \tag{2.19}
 \]
 where ${\Gamma^\mu}_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, related to the metric by
 \[
@@ -346,6 +356,7 @@ where ${\Gamma^\mu}_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, r
 \p_\alpha g_{\beta\nu} -
 \p_\nu g_{\alpha\beta}
 \right].
+\tag{2.21}
 \]</p>
 
   <p>The Christoffel symbol is used in defining the <strong>covariant derivative</strong> $\nabla_\mu$:
@@ -353,13 +364,15 @@ where ${\Gamma^\mu}_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, r
 \text{scalar} &amp;&amp; \nabla_\mu\phi &amp;\equiv \p_\mu\phi,\\
 \text{vector} &amp;&amp; \nabla_\mu A^\nu &amp;\equiv \p_\mu A^\nu + {\Gamma^\nu}_{\mu\alpha} A^\alpha,\\
 \text{tensor} &amp;&amp; \nabla_\mu {T_\nu}^\kappa &amp;\equiv \p_\mu {T_\nu}^\kappa - {\Gamma^\lambda}_{\mu\nu}{T_\lambda}^\kappa + {\Gamma^\kappa}_{\mu\lambda}{T_\nu}^\lambda.
+\tag{2.52}
 \end{aligned}\]
 This is necessary because the partial derivative $\p_\mu$ only transforms covariantly when acting on scalars. For instance, the geodesic equation can be rewritten in covariant form as 
 \[
 \frac{\d x^\alpha}{\d \lambda} \nabla_\alpha \frac{\d x^\mu}{\d \lambda} = 0.
+\tag{2.53}
 \]</p>
 
-  <p>In the flat, expanding ΛCDM universe, distances in spacetime are described with the <strong>Friedmann–Lamaître–Robertson–Walker (FLRW) metric</strong>
+  <p>In the flat, expanding ΛCDM universe, distances in spacetime are described with the Euclidean <strong>Friedmann–Lamaître–Robertson–Walker (FLRW) metric</strong>
 \[
 g_{\mu\nu} = \begin{pmatrix}
 -1 &amp; 0 &amp; 0 &amp; 0\\
@@ -367,6 +380,7 @@ g_{\mu\nu} = \begin{pmatrix}
 0 &amp; 0 &amp; a^2 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; a^2
 \end{pmatrix},
+\tag{2.12}
 \]
 with the inverse (contravariant) metric
 \[
@@ -399,6 +413,7 @@ Its Christoffel symbol is thus
 &amp;= \delta^{i\nu}a^{-2}\delta_{j\nu}a\dot a
 = \delta^i_j\frac{\dot a}a, \\
 {\Gamma^\alpha}_{00} &amp;= {\Gamma^0}_{\alpha0} = {\Gamma^0}_{0\alpha} = 0.
+\tag{2.25}
 \end{aligned}\]</p>
 
   <h3 id="energy-of-a-particle">Energy of a particle</h3>
@@ -406,10 +421,12 @@ Its Christoffel symbol is thus
   <p>To examine the effects of cosmological expansion on a free particle’s energy, define the path parameter $\lambda$ such that the four-momentum $P^\alpha = (E, \vec p) = \frac{\d x^\alpha}{\d \lambda}$. This way,
 \[
 \frac{\d }{\d \lambda} = \frac{\d x^0}{\d \lambda}\frac{\d}{\d x^0} = E\frac{\d}{\d t}.
+\tag{2.27}
 \]
 In addition, note that (as apparent in the rest frame of the particle,)
 \[
 g_{\mu\nu}P^\mu P^\nu = -E^2 + \delta_{ij} a^2 P^i P^j = -m^2.
+\tag{2.29}
 \]</p>
 
   <p>The geodesic equation for the particle thus simplifies as
@@ -429,6 +446,7 @@ E\dot E &amp;= -{\Gamma^0}_{ij} P^i P^j \\
   <p>For a massless particle, 
 \[
 m = 0 \implies \frac{\dot E}{E} = -\frac{\dot a}{a} \implies E(t) = \frac{E(t_0)}a,
+\tag{2.31}
 \]
 and for a non-relativistic massive particle,
 \[
@@ -447,6 +465,7 @@ This demonstrates that only relativistic particles (i.e. radiation) lose signifi
 0 &amp; 0 &amp; \P &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; \P
 \end{pmatrix}
+\tag{2.44}
 \] 
 in the rest frame and obeys the conservation of local energy-momentum $\nabla_\mu {T^\mu}_\nu = 0$, whose $\nu=0$ component tells us that
 \[\begin{aligned}
@@ -455,19 +474,22 @@ in the rest frame and obeys the conservation of local energy-momentum $\nabla_\m
 &amp;= -\p_t \rho - \delta^i_i \frac{\dot a}{a} \rho - \delta^i_j \frac{\dot a}{a} \delta^j_i \mathcal P\\
 \iff 0&amp;= \p_t \rho + 3\frac{\dot a}{a}\left[\rho + \mathcal P\right]\\
 \iff \frac{\p_t(\rho a^3)}{a^3} &amp;= -3\frac{\dot a}{a}\mathcal P.
+\tag{2.57}
 \end{aligned}\]</p>
 
-  <p>In general, the density of a medium with a constant <strong>equation of state</strong> $w \equiv \mathcal P / \rho$ evolves as $\rho_s \propto a^{-3-3w}$. For radiation, $\mathcal P_r \simeq \rho_r/3 \implies \rho_r \propto a^{-4}$, whereas for nonrelativistic matter, $\mathcal P_m \simeq 0 \implies \rho_m \propto a^{-3}$. The cosmological constant, with $w_\Lambda = -1$, is thus constant through time.</p>
+  <p>In general, the density of a medium with a constant <strong>equation of state</strong> $w \equiv \mathcal P / \rho$ evolves as $\rho \propto a^{-3-3w}$. For radiation, $\mathcal P_r \simeq \rho_r/3 \implies \rho_r \propto a^{-4}$, whereas for nonrelativistic matter, $\mathcal P_m \simeq 0 \implies \rho_m \propto a^{-3}$. The cosmological constant, with $w_\Lambda = -1$, is thus constant through time.</p>
 
   <h3 id="distances-and-conformal-time">Distances and conformal time</h3>
 
   <p>In a small time interval $dt$, light travels a comoving distance $dx = dt/a$, thus the total comoving distance $\chi$ traversed by a light emitted at time $t$ (i.e. the comoving distance from us to an object we observe at time $t$) is 
 \[
 \chi(t) = \int_t^{t_0} \frac{\d t'}{a(t')} = \int_{a(t)}^1 \frac{\d a'}{a'^2 H(a')} = \int_0^z \frac{\d z'}{H(z')}.
+\tag{2.34}
 \]
 And the maximum comoving distance $\eta$ that may be causally connected to a point in time $t$ is 
 \[
 \eta(t) \equiv \int_0^t \frac{\d t'}{a(t')}.
+\tag{2.35}
 \]
 This is also known as the <strong>comoving horizon</strong>, or as the <strong>conformal time</strong>, seeing it monotonically increases with $t$.</p>
 
@@ -507,10 +529,12 @@ we obtain its corresponding physical-space density
 For instance, energy function $E_s(p)$ gives the energy density
 \[
 \rho_s(\vec x, t) = \frac{g_s}{(2\pi)^3} \int \d^3 p \, f_s(\vec x, \vec p, t) \, E_s(p),
+\tag{2.62}
 \]
 and the pressure-energy $\mathbb P_s(p) = p^3/3E_s(p)$ gives the pressure
 \[
-\mathcal{P}_s(\vec x, t) = \frac{g_s}{(2\pi)^3} \int_p \d^3 p \, f_s(\vec x, \vec p, t) \, \frac{p^2}{3E_s(p)}.
+\mathcal{P}_s(\vec x, t) = \frac{g_s}{(2\pi)^3} \int \d^3 p \, f_s(\vec x, \vec p, t) \, \frac{p^2}{3E_s(p)}.
+\tag{2.64}
 \]</p>
 
   <p>Under thermal equilibrium, 
@@ -518,16 +542,19 @@ the distribution function $f_s$ for every species is only dependent on the momen
 with bosons following the <strong>Bose–Einstein distribution</strong>
 \[
 f_\text{BE}(E_s) = \frac1{e^{(E_s - \mu_s)/T} - 1}
+\tag{2.65}
 \]
 and fermions following the <strong>Fermi–Dirac distribution</strong>
 \[
 f_\text{FD}(E_s) = \frac1{e^{(E_s - \mu_s)/T} + 1},
+\tag{2.66}
 \]
 where $\mu_s$ is the chemical potential and $T$ is the equilibrium temperature. 
-For photons and neutrinos, $\mu_\gamma, \mu_\nu \ll T$.
-Evaluating $\mathcal{P}_s$ for photons and neutrinos in thermal equilibrium (i.e. for a Bose–Einstein distribution with $\mu\ll T$) thus gives
+For photons and neutrinos, $\mu_r \ll T$.
+Evaluating $\mathcal{P}_r$ in thermal equilibrium thus gives
 \[
-\frac{\p\mathcal{P}_s}{\p T} = \frac{\rho_s + \mathcal{P}_s}{T} \propto a^{-3}.
+\frac{\p\mathcal{P}_r}{\p T} = \frac{\rho_r + \mathcal{P}_r}{T} \propto a^{-3}.
+\tag{2.67}
 \]
 Thus the entropy density of the universe $s \equiv (\rho + \mathcal P)/T$ scales as $a^{-3}$ in thermal equilibrium.</p>
 
@@ -536,14 +563,36 @@ Thus the entropy density of the universe $s \equiv (\rho + \mathcal P)/T$ scales
   <p>Define the dimensionless <strong>density parameter</strong> of a species $s$ to be
 \[
 \Omega_s \equiv \frac{\rho_s(t_0)}{\rho_{cr}},
+\tag{2.71}
 \]
 i.e. its present-day density as a fraction of the universe’s critical density $\rho_{cr}$, we can write the physical density as 
 \[
 \rho_s(a) = \Omega_s \rho_{cr} a^{-3(1 + w_s)},
+\tag{2.72}
 \]
 where $a$ is the scale factor and $w_s$ is the equation of state for $s$.</p>
 
-  <p>TODO: photons, baryons, and dark energy</p>
+  <p>For photons ($g_\gamma = 2, \mu_\gamma \ll T, E_\gamma(p) = p$), we have
+\[\begin{aligned}
+\rho_\gamma &amp;= \frac{2}{(2\pi)^3} \int \d^3 p \, \frac{p}{e^{p/T} - 1}\\
+&amp;= \frac{2}{(2\pi)^3} \frac{4\pi}3 \int_0^\infty \d(p^3) \, \frac{p}{e^{p/T} - 1}\\
+&amp;= \frac{8\pi}{(2\pi)^3} \int_0^\infty \d p \, \frac{p^3}{e^{p/T} - 1}\\
+&amp;= \frac{8\pi T^4}{(2\pi)^3} \int_0^\infty \d u \, \frac{u^3}{e^{u} - 1}\\
+&amp;= \frac{8\pi T^4}{(2\pi)^3} \, 3!\zeta(4)\\
+&amp;= \frac{\pi^2}{15} T^4
+\tag{2.75}
+\end{aligned}\]
+where the <strong>Riemann Zeta function</strong>
+\[\begin{aligned}
+\zeta(n) &amp;= \sum_{j=1}^\infty \frac1{j^n} \\
+&amp;= \frac1{(n-1)!} \int_0^\infty \d x \frac{x^{n-1}}{e^x - 1}\\
+&amp;= \frac1{(n-1)!(1 - 2^{1-n})} \int_0^\infty \d x \frac{x^{n-1}}{e^x + 1},
+\tag{C.29}
+\end{aligned}\]
+with $\zeta(4) = \pi^4/90$.
+Since $\rho_r \propto a^{-4}$ <strong>(2.57)</strong>, the temperature of photon radiation, including the CMB, must scale as $a^{-1}$. Furthermore, since $E_r$ also scales as $a^{-1}$ <strong>(2.31)</strong>, the photon distribution function is unaffected by the cosmic expansion.</p>
+
+  <p>TODO: baryons and dark energy</p>
 
 </section>
 
