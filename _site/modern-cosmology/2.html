@@ -363,7 +363,7 @@ with the $\mu=0$ component
 \[\begin{aligned}
 E\dot E &amp;= -{\Gamma^0}_{ij} P^i P^j \\
 &amp;= -a\dot a \delta_{ij} P^i P^j\\
-&amp;= \frac{\dot a}{a} (m^2 - E^2)
+&amp;= \frac{\dot a}{a} \big[m^2 - E^2\big]
 \end{aligned}\]</p>
 
   <p>For a massless particle, 
@@ -427,7 +427,7 @@ We can calculate this phase-space distribution using some quantum mechanics!</p>
 
   <p><a href="https://en.wikipedia.org/wiki/Uncertainty_principle">Heisenberg’s uncertainty principle</a>
 tells us that every such volume contains
-$\d^3 x\, \d^3 p/(2\pi)^3$
+$\d^3 x\, \d^3 p/[2\pi]^3$
 indivisible <strong>fundamental phase-space elements</strong>.
 Then, the distribution function $f_s(\vec x, \vec p, t)$ counts the number of particles of a given species $s$ per such element around $(\vec x, \vec p, t)$. 
 However, $f_s$ does not distinguish degenerate states, so we also have to multiply by the <strong>degeneracy factor</strong> $g_s$. 
@@ -435,7 +435,7 @@ For example, photons have $g_\gamma = 2$ due to their two spin states.</p>
 
   <p>Thus, every infinitesimal volume $\d^3x\, \d^3p$ in phase-space contains
 \[
-\frac{\d^3 x \, \d^3 p}{(2\pi)^3} g_s f_s(\vec x, \vec p, t)
+\frac{\d^3 x \, \d^3 p}{[2\pi]^3} g_s f_s(\vec x, \vec p, t)
 \]
 particles.</p>
 
@@ -445,18 +445,18 @@ weighing with the number of particles per infinitesimal phase-space volume,
 and dividing by the infinitesimal physical volume $\d x^3$,
 we obtain its corresponding physical-space density
 \[\begin{aligned}
-\hat A_s(\vec x, t) &amp;= \frac{g_s}{(2\pi)^3}\int \d^3 p\, f_s(\vec x, \vec p, t) A_s(\vec x, \vec p)
+\hat A_s(\vec x, t) &amp;= \frac{g_s}{[2\pi]^3}\int \d^3 p\, f_s(\vec x, \vec p, t) A_s(\vec x, \vec p)
 \end{aligned}\]</p>
 
   <p>Different phase-space functions $A_s$ can tell us different microscopic properties of the species at $(\vec x, t)$. 
 For instance, energy function $E_s(p)$ gives the energy density
 \[
-\rho_s(\vec x, t) = \frac{g_s}{(2\pi)^3} \int \d^3 p \, f_s(\vec x, \vec p, t) \, E_s(p),
+\rho_s(\vec x, t) = \frac{g_s}{[2\pi]^3} \int \d^3 p \, f_s(\vec x, \vec p, t) \, E_s(p),
 \tag{2.62}
 \]
 and the pressure-energy $\mathbb P_s(p) = p^3/3E_s(p)$ gives the pressure
 \[
-\mathcal{P}_s(\vec x, t) = \frac{g_s}{(2\pi)^3} \int \d^3 p \, f_s(\vec x, \vec p, t) \, \frac{p^2}{3E_s(p)}.
+\mathcal{P}_s(\vec x, t) = \frac{g_s}{[2\pi]^3} \int \d^3 p \, f_s(\vec x, \vec p, t) \, \frac{p^2}{3E_s(p)}.
 \tag{2.64}
 \]</p>
 
@@ -464,12 +464,12 @@ and the pressure-energy $\mathbb P_s(p) = p^3/3E_s(p)$ gives the pressure
 the distribution function $f_s$ for every species is only dependent on the momentum magnitude $p$ through the energy $E_s(p) = \sqrt{p^2 + m_s^2}$, 
 with bosons following the <strong>Bose–Einstein distribution</strong>
 \[
-f_\text{BE}(E_s) = \frac1{e^{(E_s - \mu_s)/T} - 1}
+f_\text{BE}(E_s) = \frac1{e^{[E_s - \mu_s]/T} - 1}
 \tag{2.65}
 \]
 and fermions following the <strong>Fermi–Dirac distribution</strong>
 \[
-f_\text{FD}(E_s) = \frac1{e^{(E_s - \mu_s)/T} + 1},
+f_\text{FD}(E_s) = \frac1{e^{[E_s - \mu_s]/T} + 1},
 \tag{2.66}
 \]
 where $\mu_s$ is the chemical potential and $T$ is the equilibrium temperature. 
@@ -490,18 +490,18 @@ Thus the entropy density of the universe $s \equiv (\rho + \mathcal P)/T$ scales
 \]
 i.e. its present-day density as a fraction of the universe’s critical density $\rho_{cr}$, we can write the physical density as 
 \[
-\rho_s(a) = \Omega_s \rho_{cr} a^{-3(1 + w_s)},
+\rho_s(a) = \Omega_s \rho_{cr} a^{-3[1 + w_s]},
 \tag{2.72}
 \]
 where $a$ is the scale factor and $w_s$ is the equation of state for $s$.</p>
 
   <p>For photons ($g_\gamma = 2, \mu_\gamma \ll T, E_\gamma(p) = p$), we have
 \[\begin{aligned}
-\rho_\gamma &amp;= \frac{2}{(2\pi)^3} \int \d^3 p \, \frac{p}{e^{p/T} - 1}\\
-&amp;= \frac{2}{(2\pi)^3} \frac{4\pi}3 \int_0^\infty \d(p^3) \, \frac{p}{e^{p/T} - 1}\\
-&amp;= \frac{8\pi}{(2\pi)^3} \int_0^\infty \d p \, \frac{p^3}{e^{p/T} - 1}\\
-&amp;= \frac{8\pi T^4}{(2\pi)^3} \int_0^\infty \d u \, \frac{u^3}{e^{u} - 1}\\
-&amp;= \frac{8\pi T^4}{(2\pi)^3} \, 3!\zeta(4)\\
+\rho_\gamma &amp;= \frac{2}{[2\pi]^3} \int \d^3 p \, \frac{p}{e^{p/T} - 1}\\
+&amp;= \frac{2}{[2\pi]^3} \frac{4\pi}3 \int_0^\infty \d(p^3) \, \frac{p}{e^{p/T} - 1}\\
+&amp;= \frac{8\pi}{[2\pi]^3} \int_0^\infty \d p \, \frac{p^3}{e^{p/T} - 1}\\
+&amp;= \frac{8\pi T^4}{[2\pi]^3} \int_0^\infty \d u \, \frac{u^3}{e^{u} - 1}\\
+&amp;= \frac{8\pi T^4}{[2\pi]^3} \, 3!\zeta(4)\\
 &amp;= \frac{\pi^2}{15} T^4
 \tag{2.75}
 \end{aligned}\]
@@ -513,9 +513,25 @@ where the <strong>Riemann Zeta function</strong>
 \tag{C.29}
 \end{aligned}\]
 with $\zeta(4) = \pi^4/90$.
-Since $\rho_r \propto a^{-4}$ <strong>(2.57)</strong>, the temperature of photon radiation, including the CMB, must scale as $a^{-1}$. Furthermore, since $E_r$ also scales as $a^{-1}$ <strong>(2.31)</strong>, the photon distribution function is unaffected by the cosmic expansion.</p>
+This lets us calculate the present-day photon density parameter
+\[
+\Omega_\gamma = 2.47 \times 10^{-5} h^{-2}
+\]
+from the present-day temperature of the CMB. This is very insignificant.</p>
 
-  <p>TODO: baryons and dark energy</p>
+  <p>Because $\rho_r \propto a^{-4}$ <strong>(2.57)</strong>, the temperature of photon radiation must scale as $a^{-1}$. Since $E_r$ also scales as $a^{-1}$ <strong>(2.31)</strong>, the equilibrium photon distribution function is unaffected by the cosmic expansion. Note that in reality, there are small perturbations around this equilibrium, corresponding to anisotropies in the CMB.</p>
+
+  <p>Baryons (i.e. nucleons and electrons), on the other hand, come in many different phases (e.g. diffuse gas, ionized plasma, compact objects, etc.) throughout cosmic history, thus cannot be modeled by an equilibrium distribution. 
+Instead, their density parameter is estimated with methods such as starcounting, mapping of the intergalactic medium, comparisons of light elements abundances, and measurements of baryon acoustic oscillations (BAOs). 
+Elemental abundances and BAO measurements constrains the present-day baryon density parameter to
+\[
+\Omega_b = 0.0222(5) h^{-2},\, 0.0225(3) h^{-2}
+\]
+respectively. Thus $\rho_b \simeq 0.05\rho_{cr}$, hinting a significant amount of non-baryonic matter.</p>
+
+  <p>TODO Dark matter: Anisopies in the CMB. Late universe distance-redshift. LSS.</p>
+
+  <p>TODO: neutrinos, dark energy</p>
 
 </section>
 
