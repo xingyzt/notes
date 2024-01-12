@@ -243,12 +243,14 @@ th, td {
 
   <h2 id="the-fundamental-equations-of-cosmology">3. The fundamental equations of cosmology</h2>
 
-  <p>The <strong>Einstein equation</strong>
+  <h3 id="einstein-equations">Einstein equations</h3>
+
+  <p>The <strong>Einstein equations</strong> (plural because each tensor entry was considered a separate “equation”)
 \[
-G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}
+G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G \tilde T_{\mu\nu}
 \tag{3.1}
 \]
-relates Newton’s gravitational constant $G$, the stress-energy tensor $T_{\mu\nu}$, the cosmological constant $\Lambda$, the metric tensor $g_{\mu\nu}$, and the <strong>Einstein tensor</strong>
+relates Newton’s gravitational constant $G$, the stress-energy tensor $\tilde T_{\mu\nu}$, the cosmological constant $\Lambda$, the metric tensor $g_{\mu\nu}$, and the <strong>Einstein tensor</strong>
 \[
 G_{\mu\nu} \equiv R_{\mu\nu} - \f12 g_{\mu\nu}R,
 \tag{3.2}
@@ -263,6 +265,26 @@ R_{\mu\nu} =
 \tag{3.3}
 \]
 is the <strong>Ricci tensor</strong>, and $R\equiv g^{\mu\nu}R_{\mu\nu}$ is the <strong>Ricci scalar</strong>.</p>
+
+  <p>We can reinterpret the cosmological constant as a “dark energy” by redefining the energy-momentum tensor as
+$T_{\mu\nu} \equiv \tilde T_{\mu\nu} + \hat T_{\mu\nu}$,
+where the dark energy’s energy-momentum tensor
+\[
+\hat T_{\mu\nu} \equiv -\f{\Lambda}{8\pi G} g_{\mu\nu}.
+\]
+Under this interpretation, the Einstein equation simplifies to 
+$G_{\mu\nu} = 8\pi G T_{\mu\nu}$.
+Furthermore, matching
+\[
+{\hat T^\mu}_\nu = -g^{\mu\alpha} \hat T_{\alpha\nu} = -\f{\Lambda}{8\pi G} \delta^\mu_\nu
+\]
+with <strong>(2.44)</strong> gives
+\[
+\rho_\Lambda = -\mathcal{P}_\Lambda = \f{\Lambda}{8\pi G},
+\tag{3.10}
+\]
+proving that the dark-energy equation of state $w_\Lambda = -1$.
+This notation will also facilitate the generalization of $\Lambda$ to a time-varying “quintessence”.</p>
 
   <p>In the Euclidean FLRW metric, the Christoffel symbol ${\Gamma^\mu}_{\alpha\beta}$ is given by <strong>(2.25)</strong>.
 Note that it is independent of the spatial cordinates ($\p_i$).
@@ -367,8 +389,48 @@ With the corresponding Ricci scalar
 \[\begin{aligned}
 R &amp;= g^{00} R_{00} + g^{ij}R_{ij} \\
 &amp;= 3\f{\ddot a}a + \f{\delta^{ij}}{a^2} \delta_{ij} \brk{a\ddot a + 2\dot a^2} \\
-&amp;= 6 \brk{a\ddot a + \prn{\f{\dot a}a}^2}.
+&amp;= 6 \brk{\f{\ddot a}a + \brk{\f{\dot a}a}^2}.
 \end{aligned}\]</p>
+
+  <h3 id="friedmann-equations">Friedmann equations</h3>
+
+  <p>The $00$-component of the Einstein equation gives the <strong>first Friedmann equation</strong>
+\[\begin{aligned}
+G_{00} = R_{00} - \f12 g_{00} R &amp;= 8\pi G g_{00} {T^0}_0
+\\
+\iff -3\f{\ddot a}{a} + 3\brk{\f{\ddot a}a + \brk{\f{\dot a}a}^2} &amp;= 8\pi G\rho
+\\
+\iff \brk{\f{\dot a}a}^2 &amp;= \f{8\pi G}3 \rho,
+\tag{3.12}
+\end{aligned}\]
+and any $ii$-component gives the <strong>second Friedmann equation</strong>
+\[\begin{aligned}
+{G^1}_1 = g^{11} R_{11} - \f12 R &amp;= 8\pi G {T^1}_1
+\\
+\iff \f{\ddot a}a + 2\brk{\f{\dot a}{a}}^2 - 3\brk{\f{\ddot a}a + \brk{\f{\dot a}a}^2} &amp;= 8\pi G\mathcal{P}
+\\
+\iff -2\f{\ddot a}a &amp;= 8\pi G\mathcal{P} + \brk{\f{\dot a}a}^2
+\\
+\iff \f{\ddot a}a &amp;= -\f{4\pi G}3 \brk{\rho + 3\mathcal{P}}.
+\tag{3.90}
+\end{aligned}\]</p>
+
+  <p>Written in terms of the Hubble rate and the density parameters,
+the first Friedmann equation becomes
+\[
+\brk{\f{H(t)}{H_0}}^2 = \f{\rho(t)}{\rho_{cr}} = \sum_s a^{-3[1+w_s]} \Omega_s.
+\tag{3.13}
+\]</p>
+
+  <p>In a curved FLRW universe, there is an additional curvature parameter $\Omega_K \equiv 1 - \Omega(t_0)$ in the Friedmann equations. For instance, <strong>(3.13)</strong> becomes
+\[
+\brk{\f{H(t)}{H_0}}^2 = a^{-2}\Omega_K + \sum_s a^{-3[1+w_s]} \Omega_s.
+\tag{3.14}
+\]</p>
+
+  <h3 id="boltzmann-equation">Boltzmann equation</h3>
+
+  <p>TODO</p>
 
 </section>
 
