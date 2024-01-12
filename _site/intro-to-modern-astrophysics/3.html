@@ -18,9 +18,13 @@
                   {left: '\\[', right: '\\]', display: true}
               ],
               macros: {
-                "\\vec": "\\mathbf",
+                "\\vec": "\\mathbf{#1}",
+                "\\f": "\\frac{#1}{#2}",
                 "\\d": "\\mathrm{d}",
                 "\\p": "\\partial",
+                "\\zero": "\\underline{#1}\_0",
+                "\\prn": "\\left({#1}\\right)",
+                "\\brk": "\\left[{#1}\\right]",
               },
               throwOnError : false
             });
