@@ -244,14 +244,16 @@ It builds upon the lectures of Professor Ori Ganor.</p>
 
 <h2 id="background">Background</h2>
 
-<p><em>(This section is meant as a brief review for those familiar with the basics of special relativity.
+<p><em>(This section is included as a brief review for those familiar with the basics of special relativity.
 For a much more thorough introduction, I highly recommend 
 <a href="https://www.youtube.com/watch?v=bEtBncTEc6k&amp;list=PLJHszsWbB6hqlw73QjgZcFh4DrkQLSCQa">Eigenchris’s YouTube series on relativity</a>
 and
 <a href="https://www.youtube.com/watch?v=8ptMTLzV4-I&amp;list=PLJHszsWbB6hrkmmq57lX8BV-o-YIOFsiG">tensor algebra</a>,
 as well as the first part of
 <a href="https://arxiv.org/abs/gr-qc/9712019">Sean Carroll’s lecture notes on general relativity</a>.
-Conversely, feel free to skip this section if you want to get right to the derivations.)</em></p>
+Conversely, feel free to 
+<a href="#derivations">skip this section</a>
+if you want to get right to the derivations.)</em></p>
 
 <p>A key postulate of special relativity is</p>
 
@@ -362,7 +364,7 @@ If we know that the four–velocity $\vec u$ has components $u^\alpha$ in $K$, t
     \gamma_v \equiv \frac1{\sqrt{1 - v^2}}.
 \end{align*}\]
 
-<p>(This section is unfinished because I have a midterm coming up lol)</p>
+<p>(This subsection is unfinished because I gotta study for midterms lol)</p>
 
 <h3 id="summary-of-the-notation">Summary of the notation</h3>
 
@@ -376,16 +378,83 @@ If we know that the four–velocity $\vec u$ has components $u^\alpha$ in $K$, t
 
 <p>With these things in mind, let’s get dusty!</p>
 
-<h2 id="derivation">Derivation</h2>
+<h2 id="intuitions">Intuitions</h2>
 
-<p>A fluid is a macroscopic phenomenon composed of mass–energy packets traveling at significant speeds relative to neighboring mass–energy packets.
+<p>A fluid is a macroscopic phenomenon composed of particles 
+— packets of mass–energy — 
+traveling at significant speeds relative to neighboring particles.
 It has emergent properties, such as density and pressure, which are not well-defined for its individual constituents.
 Examples include water, neutron star interiors, and photons scattering in a sparse medium (but not, for instance, photons concentrated in a laser beam).</p>
 
 <p>In particular, we are interested in the behavior of perfect fluids, which are isotropic in their rest frame, and have 
-negligible particle–particle interactions (except some scattering to keep them isotropic).</p>
+negligible interactions (except some scattering to keep them isotropic).</p>
 
-<h2 id="intuition">Intuition</h2>
+<p>Fluids are locally modeled by a stress–energy–momentum tensor, which qualitatively means</p>
+
+\[T^{\alpha\beta} \to \begin{pmatrix}
+    \text{energy density} &amp; \text{momentum density in }\beta \\
+    \text{energy flux flowing}\to\alpha &amp; \text{momentum flux flowing }\alpha\to\beta
+\end{pmatrix}.\]
+
+<p>At first glance, this looks rather asymmetric. But</p>
+
+<p>(This section is unfinished)</p>
+
+<h2 id="derivations">Derivations</h2>
+
+<p>We want to find the stress–energy–momentum tensor for a small volume $\Delta V$ of a perfect fluid.</p>
+
+<p>Because tensors components of the same inertial reference frame are additive, 
+our method of attack is as follows:</p>
+<ol>
+  <li>Find the stress–energy–momentum tensor of each constituent particle in their respective rest frames.</li>
+  <li>Lorentz boost every constituent tensor to the rest frame of the fluid volume.</li>
+  <li>Add their components up.</li>
+</ol>
+
+<p>Let’s do this!</p>
+
+<h3 id="1-dust">1. Dust</h3>
+
+<p>As noted in the <a href="#intuitions">previous section</a>, fluids are composed of many particles.</p>
+
+\[\begin{align*}
+T^{\alpha\beta} &amp;= \sum_\# T_\#^{\alpha\beta}
+\\
+&amp;= \sum_\# \rho_\# U_\#^{\alpha} U_\#^{\beta}
+\\
+&amp;= \sum_\# \f{m_\#}{\Delta V_\#} U_\#^{\alpha} U_\#^{\beta}
+\\
+&amp;= \f1{\Delta V} \sum_\# \f{m_\#}{\gamma_\#} U_\#^{\alpha} U_\#^{\beta}
+\\
+&amp;= \f1{\Delta V} \sum_\# \f{m_\#}{\gamma_\#}
+\begin{bmatrix}
+\gamma_\# \\ \gamma_\# u^1_\# \\ \gamma_\# u^2_\# \\ \gamma_\# u^3_\#
+\end{bmatrix}^{\!\alpha}
+\begin{bmatrix}
+\gamma_\# \\ \gamma_\# u^1_\# \\ \gamma_\# u^2_\# \\ \gamma_\# u^3_\#
+\end{bmatrix}^{\!\beta}
+\\
+&amp;= \f1{\Delta V} \sum_\# m_\# \gamma_\#
+\begin{bmatrix}
+ 1 \\ u^1_\# \\  u^2_\# \\  u^3_\#
+\end{bmatrix}^{\!\alpha}
+\begin{bmatrix}
+ 1 \\ u^1_\# \\  u^2_\# \\  u^3_\#
+\end{bmatrix}^{\!\beta}
+\\
+&amp;= \f1{\Delta V} \sum_\# m_\# \gamma_\#
+\begin{bmatrix}
+1 &amp; u^1_\# &amp; u^2_\# &amp; u^3_\# \\
+u^1_\# &amp; u^1_\# u^1_\# &amp; u^2_\# u^1_\# &amp; u^3_\# u^1_\# \\
+u^2_\# &amp; u^1_\# u^2_\# &amp; u^2_\# u^2_\# &amp; u^3_\# u^2_\# \\
+u^3_\# &amp; u^1_\# u^3_\# &amp; u^2_\# u^3_\# &amp; u^3_\# u^3_\# \\
+\end{bmatrix}^{\!\alpha\beta}
+\\
+\end{align*}\]
+
+<p>Suppose we have a fluid volume $\Delta V$.</p>
+
 
   </div>
 

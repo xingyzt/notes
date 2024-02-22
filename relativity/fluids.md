@@ -8,14 +8,16 @@ It builds upon the lectures of Professor Ori Ganor.
 
 ## Background
 
-*(This section is meant as a brief review for those familiar with the basics of special relativity.
+*(This section is included as a brief review for those familiar with the basics of special relativity.
 For a much more thorough introduction, I highly recommend 
 [Eigenchris’s YouTube series on relativity](https://www.youtube.com/watch?v=bEtBncTEc6k&list=PLJHszsWbB6hqlw73QjgZcFh4DrkQLSCQa)
 and
 [tensor algebra](https://www.youtube.com/watch?v=8ptMTLzV4-I&list=PLJHszsWbB6hrkmmq57lX8BV-o-YIOFsiG),
 as well as the first part of
 [Sean Carroll’s lecture notes on general relativity](https://arxiv.org/abs/gr-qc/9712019).
-Conversely, feel free to skip this section if you want to get right to the derivations.)*
+Conversely, feel free to 
+[skip this section](#derivations)
+if you want to get right to the derivations.)*
 
 A key postulate of special relativity is
 
@@ -122,7 +124,7 @@ $$\begin{align*}
     \gamma_v \equiv \frac1{\sqrt{1 - v^2}}.
 \end{align*}$$
 
-(This section is unfinished because I have a midterm coming up lol)
+(This subsection is unfinished because I gotta study for midterms lol)
 
 ### Summary of the notation
 
@@ -134,13 +136,78 @@ $$\begin{align*}
 
 With these things in mind, let’s get dusty!
 
-## Derivation
+## Intuitions
 
-A fluid is a macroscopic phenomenon composed of mass--energy packets traveling at significant speeds relative to neighboring mass--energy packets.
+A fluid is a macroscopic phenomenon composed of particles 
+--- packets of mass--energy --- 
+traveling at significant speeds relative to neighboring particles.
 It has emergent properties, such as density and pressure, which are not well-defined for its individual constituents.
 Examples include water, neutron star interiors, and photons scattering in a sparse medium (but not, for instance, photons concentrated in a laser beam).
 
 In particular, we are interested in the behavior of perfect fluids, which are isotropic in their rest frame, and have 
-negligible particle--particle interactions (except some scattering to keep them isotropic).
+negligible interactions (except some scattering to keep them isotropic).
 
-## Intuition
+Fluids are locally modeled by a stress--energy--momentum tensor, which qualitatively means
+
+$$ T^{\alpha\beta} \to \begin{pmatrix}
+    \text{energy density} & \text{momentum density in }\beta \\
+    \text{energy flux flowing}\to\alpha & \text{momentum flux flowing }\alpha\to\beta
+\end{pmatrix}. $$
+
+At first glance, this looks rather asymmetric. But 
+
+(This section is unfinished)
+
+## Derivations
+
+We want to find the stress--energy--momentum tensor for a small volume $\Delta V$ of a perfect fluid.
+
+Because tensors components of the same inertial reference frame are additive, 
+our method of attack is as follows: 
+1. Find the stress--energy--momentum tensor of each constituent particle in their respective rest frames.
+2. Lorentz boost every constituent tensor to the rest frame of the fluid volume.
+3. Add their components up.
+
+Let’s do this!
+
+### 1. Dust
+
+As noted in the [previous section](#intuitions), fluids are composed of many particles. 
+
+$$\begin{align*}
+T^{\alpha\beta} &= \sum_\# T_\#^{\alpha\beta}
+\\
+&= \sum_\# \rho_\# U_\#^{\alpha} U_\#^{\beta}
+\\
+&= \sum_\# \f{m_\#}{\Delta V_\#} U_\#^{\alpha} U_\#^{\beta}
+\\
+&= \f1{\Delta V} \sum_\# \f{m_\#}{\gamma_\#} U_\#^{\alpha} U_\#^{\beta}
+\\
+&= \f1{\Delta V} \sum_\# \f{m_\#}{\gamma_\#}
+\begin{bmatrix}
+\gamma_\# \\ \gamma_\# u^1_\# \\ \gamma_\# u^2_\# \\ \gamma_\# u^3_\#
+\end{bmatrix}^{\!\alpha}
+\begin{bmatrix}
+\gamma_\# \\ \gamma_\# u^1_\# \\ \gamma_\# u^2_\# \\ \gamma_\# u^3_\#
+\end{bmatrix}^{\!\beta}
+\\
+&= \f1{\Delta V} \sum_\# m_\# \gamma_\#
+\begin{bmatrix}
+ 1 \\ u^1_\# \\  u^2_\# \\  u^3_\#
+\end{bmatrix}^{\!\alpha}
+\begin{bmatrix}
+ 1 \\ u^1_\# \\  u^2_\# \\  u^3_\#
+\end{bmatrix}^{\!\beta}
+\\
+&= \f1{\Delta V} \sum_\# m_\# \gamma_\#
+\begin{bmatrix}
+1 & u^1_\# & u^2_\# & u^3_\# \\
+u^1_\# & u^1_\# u^1_\# & u^2_\# u^1_\# & u^3_\# u^1_\# \\
+u^2_\# & u^1_\# u^2_\# & u^2_\# u^2_\# & u^3_\# u^2_\# \\
+u^3_\# & u^1_\# u^3_\# & u^2_\# u^3_\# & u^3_\# u^3_\# \\
+\end{bmatrix}^{\!\alpha\beta}
+\\
+\end{align*}$$
+
+Suppose we have a fluid volume $\Delta V$.
+
