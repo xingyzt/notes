@@ -1,0 +1,611 @@
+<h1 id="dodelson--schmidt-modern-cosmology">Dodelson &amp; Schmidt: Modern Cosmology</h1>
+
+<p><a href="/notes/">Xing’s notes</a>. Compared to the textbook, I try to be clearer on the derivations of certain formulas, and more terse on conceptual knowledge. No guarantees when I’ll finish the whole thing.</p>
+
+<details>
+  <summary>Table of Contents</summary>
+<ul id="markdown-toc">
+  <li><a href="#dodelson--schmidt-modern-cosmology" id="markdown-toc-dodelson--schmidt-modern-cosmology">Dodelson &amp; Schmidt: Modern Cosmology</a>    <ul>
+      <li><a href="#notation" id="markdown-toc-notation">0. Notation</a></li>
+    </ul>
+  </li>
+  <li><a href="#i-mostly-homogenous" id="markdown-toc-i-mostly-homogenous">I. Mostly Homogenous</a>    <ul>
+      <li><a href="#the-concordance-model-of-cosmology" id="markdown-toc-the-concordance-model-of-cosmology">1. The concordance model of cosmology</a></li>
+      <li><a href="#the-expanding-universe" id="markdown-toc-the-expanding-universe">2. The expanding universe</a>        <ul>
+          <li><a href="#geodesics-and-the-flrw-metric" id="markdown-toc-geodesics-and-the-flrw-metric">Geodesics and the FLRW metric</a></li>
+          <li><a href="#energy-of-a-particle" id="markdown-toc-energy-of-a-particle">Energy of a particle</a></li>
+          <li><a href="#energy-of-the-medium" id="markdown-toc-energy-of-the-medium">Energy of the medium</a></li>
+          <li><a href="#distances-and-conformal-time" id="markdown-toc-distances-and-conformal-time">Distances and conformal time</a></li>
+          <li><a href="#distribution-statistics" id="markdown-toc-distribution-statistics">Distribution statistics</a></li>
+          <li><a href="#cosmic-inventory" id="markdown-toc-cosmic-inventory">Cosmic inventory</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-fundamental-equations-of-cosmology" id="markdown-toc-the-fundamental-equations-of-cosmology">3. The fundamental equations of cosmology</a>        <ul>
+          <li><a href="#einstein-equations" id="markdown-toc-einstein-equations">Einstein equations</a></li>
+          <li><a href="#friedmann-equations" id="markdown-toc-friedmann-equations">Friedmann equations</a></li>
+          <li><a href="#boltzmann-equation" id="markdown-toc-boltzmann-equation">Boltzmann equation</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-origin-of-species" id="markdown-toc-the-origin-of-species">4. The origin of species</a></li>
+    </ul>
+  </li>
+  <li><a href="#ii-perturbations" id="markdown-toc-ii-perturbations">II. Perturbations</a></li>
+</ul>
+
+</details>
+
+<section>
+
+  <h2 id="notation">0. Notation</h2>
+
+  <ul>
+    <li><strong>Natural units</strong>: $\hbar = c = k_B = 1$.</li>
+    <li><strong>Vectors</strong>: 3-vectors are bolded $\vec p$. 4-vectors are represented by their components $P^\mu$.</li>
+    <li><strong>Tensor indices</strong>: Upper indices are contravariant. Lower indices are covariant.</li>
+    <li><strong>Metric signature</strong>: – + + +.</li>
+    <li><strong>Einstein summation</strong>: Repeated indices are implicitly summed over. Latin indices range $1,2,3$. Greek indices range $0,1,2,3$.</li>
+    <li><strong>Dot time derivative</strong>: $\dot x \equiv \d x/\d t$.</li>
+    <li><strong>Partial derivatives</strong>: $\partial_\mu \equiv \partial/\partial x^\mu$. For instance, $\partial_\mu x^\nu = \delta_\mu^\nu$.</li>
+    <li><strong>Species subscripts</strong>: $s$ stands for any constituent species of the universe; $c$ for cold dark matter, $b$ for baryons, $m$ for all matter ($b$ and $c$); $\gamma$ for photons, $\nu$ for neutrinos, $r$ for radiation ($\gamma$ and $\nu$); and $\Lambda$ for dark energy.</li>
+    <li><strong>Brackets</strong>: Square brackets $[\cdots]$ group terms together; parentheses $f(\cdots)$ evaluate terms with a function or operator on the left side.</li>
+  </ul>
+
+</section>
+
+<h1 id="i-mostly-homogenous">I. Mostly Homogenous</h1>
+
+<section>
+
+  <h2 id="the-concordance-model-of-cosmology">1. The concordance model of cosmology</h2>
+
+  <p>The expansion of the universe is the expansion of space <em>itself</em>: at the largest scales, objects are physically drifting farther apart because the grid markings are, in a sense, becoming denser. We parameterize this with the <strong>scale factor</strong> $a=a(t)$ such that the <strong>physical distance</strong> between objects is $d\equiv ax$, where $x$ is the <strong>comoving distance</strong>. This allows the physical velocities of (non-relativistic) objects to be separated into 
+\[
+v \equiv \dot d = \dot ax + a\dot x,
+\] 
+where the first term is due to the expansion of space, and the second term is due to a <strong>peculiar velocity</strong> of the object.</p>
+
+  <p>The effect of expansion is most apparent in the <strong>cosmological redshift</strong> of photons. Defining the present-day scale factor $a(t_0)=1$, it can be related to the redshift parameter $z$ via 
+\[
+1 + z(t) \equiv \frac{\lambda(t_0)}{\lambda(t)} = \frac1{a(t)}. 
+\tag{1.1}
+\]
+Through black-body radiation, it can also be related to temperature via $T(t) = \frac{T(t_0)}{a(t)}$.</p>
+
+  <p>The <strong>Hubble rate</strong> $H(t) \equiv \dot a/a$ measures the rapidity of expansion, with the present-day Hubble rate $H_0 \equiv H(t_0)$ referred to as <strong>Hubble’s constant</strong>. From the Friedmann equation, 
+\[
+\frac{H(t)^2}{8\pi G} = \rho(t) + \frac{\rho_{cr} - \rho(t_0)}{a(t)^2},
+\tag{1.3}
+\] 
+where $\rho$ is the average density of the universe, and
+\[
+\rho_{cr} \equiv \frac{3H_0^2}{8\pi G}
+\tag{1.4}
+\]
+is the <strong>critical density</strong> at which the universe is flat.</p>
+
+  <p>Due to tensions in measurements of $H_0$, we parameterize it with a dimensionless number $h$ such that $H_0 \equiv 100\, h$ km/s/Mpc, with $h\sim 0.7$. This way, $H_0$ can be eliminated from calculations by using $h^{-1}$ Mpc as the unit of length, $h^{-1}\, M_\odot$ as the unit of mass, etc.</p>
+
+  <p>The ΛCDM model is the <strong>concordance model of cosmology</strong>, describing a flat universe which grew out of inflationary perturbations, and is presently dominanted by cold dark matter (CDM) and the cosmological constant $\Lambda$.</p>
+
+</section>
+
+<section>
+
+  <h2 id="the-expanding-universe">2. The expanding universe</h2>
+
+  <h3 id="geodesics-and-the-flrw-metric">Geodesics and the FLRW metric</h3>
+
+  <p>According to general relativity, particles in the absence of any forces move in <strong>geodesics</strong> such that
+in Minkowski coordinates,
+\[
+\f{\d ^2 x^\alpha}{\d \lambda^2} = 0
+\tag{2.13}
+\]
+for some parameter $\lambda$ that monotonically increases along the particle’s path (such as proper time for massive particles).
+Under a change of coordinates $x^\alpha\mapsto x^{\prime\nu}$, this becomes
+\[\begin{aligned}
+0 &amp;= \f{\d }{\d \lambda}\brk{  \f{\d  x^{\prime\nu}}{\d \lambda}  } \\
+&amp;= \f{\d }{\d \lambda}\brk{  \f{\p x^{\prime\nu}}{\p x^{\alpha}} \f{\d  x^{\alpha}}{\d \lambda}  } \\
+&amp;= \f{\d }{\d \lambda}\brk{  \f{\p x^{\prime\nu}}{\p x^\alpha}  } \f{\d  x^\alpha}{\d \lambda} + \underline{
+\f{\p x^{\prime\nu}}{\p x^\alpha} \f{\d ^2 x^\alpha}{\d \lambda^2}
+}_{*} \\
+&amp;= \f{\p}{\p x^\alpha}\brk{  \f{\d x^{\prime\nu}}{\d \lambda}  } \f{\d  x^\alpha}{\d \lambda} +
+*\\
+&amp;= \f{\p}{\p x^\alpha}\brk{  \f{\p x^{\prime\nu}}{\p x^\beta}\f{\d x^\beta}{\d \lambda}  } \f{\d  x^\alpha}{\d \lambda} +
+*\\
+&amp;= \brk{  \f{\p^2 x^{\prime\nu}}{\p x^\alpha \p x^\beta}\f{\d x^\beta}{\d \lambda} + \f{\p x^{\prime\nu}}{\p x^\beta} \underline{\f{\d }{\d \lambda}\left(\f{\p x^\beta}{\p x^\alpha}\right)}_0 }\f{\d  x^\alpha}{\d \lambda} +
+*\\
+&amp;= \f{\p^2 x^{\prime\nu}}{\p x^\alpha \p x^\beta}\f{\d x^\alpha}{\d \lambda}\f{\d  x^\beta}{\d \lambda} +
+\f{\p x^{\prime\nu}}{\p x^\alpha} \f{\d ^2 x^\alpha}{\d \lambda^2}.
+\tag{2.18}
+\end{aligned}\]
+Applying the inverse transform $x^{\prime\nu}\mapsto x^\mu$ to both sides yields
+\[
+0 = \underbrace{\f{\p x^\mu}{\p x^{\prime\nu}} \f{\p^2 x^{\prime\nu}}{\p x^\alpha \p x^\beta}}
+_{\displaystyle {\Gamma^\mu}_{\alpha\beta}} \f{\d x^\alpha}{\d \lambda}\f{\d  x^\beta}{\d \lambda} +
+ \f{\d ^2 x^{\mu}}{\d \lambda^2},
+ \tag{2.19}
+\]
+where ${\Gamma^\mu}_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, related to the metric by
+\[
+{\Gamma^\mu}_{\alpha\beta} = \f{g^{\mu\nu}}{2}
+\left[
+\p_\beta g_{\alpha\nu} +
+\p_\alpha g_{\beta\nu} -
+\p_\nu g_{\alpha\beta}
+\right].
+\tag{2.21}
+\]</p>
+
+  <p>The Christoffel symbol is used in defining the <strong>covariant derivative</strong> $\nabla_\mu$:
+\[\begin{aligned}
+\text{scalar} &amp;&amp; \nabla_\mu\phi &amp;\equiv \p_\mu\phi,\\
+\text{vector} &amp;&amp; \nabla_\mu A^\nu &amp;\equiv \p_\mu A^\nu + {\Gamma^\nu}_{\mu\alpha} A^\alpha,\\
+\text{tensor} &amp;&amp; \nabla_\mu {T_\nu}^\kappa &amp;\equiv \p_\mu {T_\nu}^\kappa - {\Gamma^\lambda}_{\mu\nu}{T_\lambda}^\kappa + {\Gamma^\kappa}_{\mu\lambda}{T_\nu}^\lambda.
+\tag{2.52}
+\end{aligned}\]
+This is necessary because the partial derivative $\p_\mu$ only transforms covariantly when acting on scalars. For instance, the geodesic equation can be rewritten in covariant form as 
+\[
+\f{\d x^\alpha}{\d \lambda} \nabla_\alpha \f{\d x^\mu}{\d \lambda} = 0.
+\tag{2.53}
+\]</p>
+
+  <p>In the flat, expanding ΛCDM universe, distances in spacetime are described with the Euclidean <strong>Friedmann–Lamaître–Robertson–Walker (FLRW) metric</strong>
+\[
+g_{\mu\nu} = \begin{pmatrix}
+-1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; a^2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; a^2 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; a^2
+\end{pmatrix},
+\tag{2.12}
+\]
+with the inverse (contravariant) metric
+\[
+g^{\mu\nu} = \begin{pmatrix}
+-1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; a^{-2} &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; a^{-2} &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; a^{-2}
+\end{pmatrix}
+\]
+satisfying the identity $g^{\nu\beta}g_{\beta\alpha} = \delta^\nu_\alpha$.</p>
+
+  <p>The FLRW metric is independent of the spatial coordinates ($\p_i$) as a consequence of spatial isotropy and homogeneity,
+but dependent on time ($\p_0$) due to the $a^2$ expansion terms.
+Its Christoffel symbol is thus
+\[\begin{aligned}
+{\Gamma^0}_{ij} &amp;= \f{g^{0\nu}}{2}
+\left[
+\zero{ \p_j g_{i\nu} } +
+\zero{ \p_i g_{j\nu} } -
+\p_0 g_{ij}
+\right] \\
+&amp;= -\f{g^{00}}2\p_0 g_{ij}
+= \delta_{ij} a\dot a, \\
+{\Gamma^i}_{j0} = {\Gamma^i}_{0j} &amp;= \f{g^{i\nu}}{2}
+\left[
+\p_0 g_{j\nu} +
+\zero{ \p_j g_{0\nu} } -
+\zero{ \p_\nu g_{j0} }
+\right] \\
+&amp;= \delta^{i\nu}a^{-2}\delta_{j\nu}a\dot a
+= \delta^i_j\f{\dot a}a, \\
+{\Gamma^\alpha}_{00} &amp;= {\Gamma^0}_{\alpha0} = {\Gamma^0}_{0\alpha} = {\Gamma^i}_{jk} = 0.
+\tag{2.25}
+\end{aligned}\]
+Verify for yourself that these equations together resolve every entry of the symbol.</p>
+
+  <h3 id="energy-of-a-particle">Energy of a particle</h3>
+
+  <p>To examine the effects of cosmological expansion on a free particle’s energy, define the path parameter $\lambda$ such that the four-momentum $P^\alpha = (E, \vec p) = \f{\d x^\alpha}{\d \lambda}$. This way,
+\[
+\f{\d }{\d \lambda} = \f{\d x^0}{\d \lambda}\f{\d}{\d x^0} = E\f{\d}{\d t}.
+\tag{2.27}
+\]
+In addition, note that (as apparent in the rest frame of the particle,)
+\[
+g_{\mu\nu}P^\mu P^\nu = -E^2 + \delta_{ij} a^2 P^i P^j = -m^2.
+\tag{2.29}
+\]</p>
+
+  <p>The geodesic equation for the particle thus simplifies as
+\[\begin{aligned}
+\f{\d ^2 x^\mu}{\d \lambda^2} 
+&amp;= -{\Gamma^\mu}_{\alpha\beta} \f{\d x^\alpha}{\d \lambda} \f{\d x^\beta}{\d \lambda} \\
+= \f{\d P^\mu}{\d \lambda}= E\dot P^\mu
+&amp;= -{\Gamma^\mu}_{ij} P^i P^j,
+\end{aligned}\]
+with the $\mu=0$ component
+\[\begin{aligned}
+E\dot E &amp;= -{\Gamma^0}_{ij} P^i P^j \\
+&amp;= -a\dot a \delta_{ij} P^i P^j\\
+&amp;= \f{\dot a}{a} \big[m^2 - E^2\big]
+\end{aligned}\]</p>
+
+  <p>For a massless particle, 
+\[
+m = 0 \implies \f{\dot E}{E} = -\f{\dot a}{a} \implies E(t) = \f{E(t_0)}a,
+\tag{2.31}
+\]
+and for a non-relativistic massive particle,
+\[
+E \simeq m \implies \dot E \simeq 0 \implies E(t) \simeq E(t_0).
+\]
+This demonstrates that only relativistic particles (i.e. radiation) lose significant energy through cosmological expansion.</p>
+
+  <h3 id="energy-of-the-medium">Energy of the medium</h3>
+
+  <p>A similar method of analysis can be applied to the homogeneous, isotropic background of the universe, characterized by the mean energy density $\rho$ and the mean pressure $\mathcal P$. Its energy-momentum tensor is
+\[
+\renewcommand{\P}{{\mathcal P}}
+{T^\mu}_\nu = \begin{pmatrix}
+-\rho &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; \P &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; \P &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; \P
+\end{pmatrix}
+\tag{2.44}
+\] 
+in the rest frame and obeys the conservation of local energy-momentum $\nabla_\mu {T^\mu}_\nu = 0$, whose $\nu=0$ component tells us that
+\[\begin{aligned}
+0 &amp;= \p_\mu {T^\mu}_0 + {\Gamma^\mu}_{\alpha\mu}{T^\alpha}_0 - {\Gamma^\alpha}_{0\mu}{T^\mu}_\alpha\\
+&amp;= \p_0 {T^0}_0 + {\Gamma^i}_{0i}{T^0}_0 - {\Gamma^i}_{0j}{T^j}_i\\
+&amp;= -\p_t \rho - \delta^i_i \f{\dot a}{a} \rho - \delta^i_j \f{\dot a}{a} \delta^j_i \mathcal P\\
+\iff 0&amp;= \p_t \rho + 3\f{\dot a}{a}\brk{ \rho + \mathcal P }\\
+\iff \f{\p_t(\rho a^3)}{a^3} &amp;= -3\f{\dot a}{a}\mathcal P.
+\tag{2.57}
+\end{aligned}\]</p>
+
+  <p>In general, the density of a medium with a constant <strong>equation of state</strong> $w \equiv \mathcal P / \rho$ evolves as $\rho \propto a^{-3-3w}$. For radiation, $\mathcal P_r \simeq \rho_r/3 \implies \rho_r \propto a^{-4}$, whereas for nonrelativistic matter, $\mathcal P_m \simeq 0 \implies \rho_m \propto a^{-3}$. The cosmological constant, with $w_\Lambda = -1$, is thus constant through time.</p>
+
+  <h3 id="distances-and-conformal-time">Distances and conformal time</h3>
+
+  <p>In a small time interval $dt$, light travels a comoving distance $dx = dt/a$, thus the total comoving distance $\chi$ traversed by a light emitted at time $t$ (i.e. the comoving distance from us to an object we observe at time $t$) is 
+\[
+\chi(t) = \int_t^{t_0} \f{\d t’}{a(t’)} = \int_{a(t)}^1 \f{\d a’}{a’^2 H(a’)} = \int_0^z \f{\d z’}{H(z’)}.
+\tag{2.34}
+\]
+And the maximum comoving distance $\eta$ that may be causally connected to a point in time $t$ is 
+\[
+\eta(t) \equiv \int_0^t \f{\d t’}{a(t’)}.
+\tag{2.35}
+\]
+This is also known as the <strong>comoving horizon</strong>, or as the <strong>conformal time</strong>, seeing it monotonically increases with $t$.</p>
+
+  <p>TODO: Angular sizes and curvature. For the time being, see <a href="https://xkcd.com/2622/">this xkcd comic</a> for an illustration of this concept.</p>
+
+  <h3 id="distribution-statistics">Distribution statistics</h3>
+
+  <p>Many macroscopic statistics of a system are derived from how its particles are distributed in <a href="https://en.wikipedia.org/wiki/Phase_space">phase-space</a>.
+We can calculate this phase-space distribution using some quantum mechanics!</p>
+
+  <p>First, let us calculate how many particles there are within every infinitesimal phase-space volume $\d^3x\, \d^3p$:</p>
+
+  <p><a href="https://en.wikipedia.org/wiki/Uncertainty_principle">Heisenberg’s uncertainty principle</a>
+tells us that every such volume contains
+$\d^3 x\, \d^3 p/[2\pi]^3$
+indivisible <strong>fundamental phase-space elements</strong>.
+Then, the distribution function $f_s(\vec x, \vec p, t)$ counts the number of particles of a given species $s$ per such element around $(\vec x, \vec p, t)$. 
+However, $f_s$ does not distinguish degenerate states, so we also have to multiply by the <strong>degeneracy factor</strong> $g_s$. 
+For example, photons have $g_\gamma = 2$ due to their two spin states.</p>
+
+  <p>Thus, every infinitesimal volume $\d^3x\, \d^3p$ in phase-space contains
+\[
+\f{\d^3 x \, \d^3 p}{[2\pi]^3} g_s f_s(\vec x, \vec p, t)
+\]
+particles.</p>
+
+  <p>Consider some phase-space function $A_s(\vec x, \vec p)$. 
+Integrating it over the phase-space around $\vec x$, 
+weighing with the number of particles per infinitesimal phase-space volume,
+and dividing by the infinitesimal physical volume $\d x^3$,
+we obtain its corresponding physical-space density
+\[\begin{aligned}
+\hat A_s(\vec x, t) &amp;= \f{g_s}{[2\pi]^3}\int \d^3 p\, f_s(\vec x, \vec p, t) A_s(\vec x, \vec p)
+\end{aligned}\]</p>
+
+  <p>Different phase-space functions $A_s$ can tell us different microscopic properties of the species at $(\vec x, t)$. 
+For instance, energy function $E_s(p)$ gives the energy density
+\[
+\rho_s(\vec x, t) = \f{g_s}{[2\pi]^3} \int \d^3 p \, f_s(\vec x, \vec p, t) \, E_s(p),
+\tag{2.62}
+\]
+and the pressure-energy $\mathbb P_s(p) = p^3/3E_s(p)$ gives the pressure
+\[
+\mathcal{P}_s(\vec x, t) = \f{g_s}{[2\pi]^3} \int \d^3 p \, f_s(\vec x, \vec p, t) \, \f{p^2}{3E_s(p)}.
+\tag{2.64}
+\]</p>
+
+  <p>Under thermal equilibrium, 
+the distribution function $f_s$ for every species is only dependent on the momentum magnitude $p$ through the energy $E_s(p) = \sqrt{p^2 + m_s^2}$, 
+with bosons following the <strong>Bose–Einstein distribution</strong>
+\[
+f_\text{BE}(E_s) = \f1{e^{[E_s - \mu_s]/T} - 1}
+\tag{2.65}
+\]
+and fermions following the <strong>Fermi–Dirac distribution</strong>
+\[
+f_\text{FD}(E_s) = \f1{e^{[E_s - \mu_s]/T} + 1},
+\tag{2.66}
+\]
+where $\mu_s$ is the chemical potential and $T$ is the equilibrium temperature. 
+For photons and neutrinos, $\mu_r \ll T$.
+Evaluating $\mathcal{P}_r$ in thermal equilibrium thus gives
+\[
+\f{\p\mathcal{P}_r}{\p T} = \f{\rho_r + \mathcal{P}_r}{T} \propto a^{-3}.
+\tag{2.67}
+\]
+Thus the entropy density of the universe $s \equiv (\rho + \mathcal P)/T$ scales as $a^{-3}$ in thermal equilibrium.</p>
+
+  <h3 id="cosmic-inventory">Cosmic inventory</h3>
+
+  <p>Define the dimensionless <strong>density parameter</strong> of a species $s$ to be
+\[
+\Omega_s \equiv \f{\rho_s(t_0)}{\rho_{cr}},
+\tag{2.71}
+\]
+i.e. its present-day density as a fraction of the universe’s critical density $\rho_{cr}$, we can write the physical density as 
+\[
+\rho_s(a) = \Omega_s \rho_{cr} a^{-3[1 + w_s]},
+\tag{2.72}
+\]
+where $a$ is the scale factor and $w_s$ is the equation of state for $s$.</p>
+
+  <p>For photons ($g_\gamma = 2, \mu_\gamma \ll T, E_\gamma(p) = p$), we have
+\[\begin{aligned}
+\rho_\gamma &amp;= \f{2}{[2\pi]^3} \int \d^3 p \, \f{p}{e^{p/T} - 1}\\
+&amp;= \f{2}{[2\pi]^3} \f{4\pi}3 \int_0^\infty \d(p^3) \, \f{p}{e^{p/T} - 1}\\
+&amp;= \f{8\pi}{[2\pi]^3} \int_0^\infty \d p \, \f{p^3}{e^{p/T} - 1}\\
+&amp;= \f{8\pi T^4}{[2\pi]^3} \int_0^\infty \d u \, \f{u^3}{e^{u} - 1}\\
+&amp;= \f{8\pi T^4}{[2\pi]^3} \, 3!\zeta(4)\\
+&amp;= \f{\pi^2}{15} T^4
+\tag{2.75}
+\end{aligned}\]
+where the <strong>Riemann Zeta function</strong>
+\[\begin{aligned}
+\zeta(n) &amp;\equiv \sum_{j=1}^\infty \f1{j^n} \\
+&amp;= \f1{[n-1]!} \int_0^\infty \d x \f{x^{n-1}}{e^x - 1}\\
+&amp;= \f1{[n-1]![1 - 2^{1-n}]} \int_0^\infty \d x \f{x^{n-1}}{e^x + 1},
+\tag{C.29}
+\end{aligned}\]
+with $\zeta(4) = \pi^4/90$.
+This lets us calculate the present-day photon density parameter
+\[
+\Omega_\gamma = 2.47 \times 10^{-5} h^{-2}
+\]
+from the present-day temperature of the CMB. This is very insignificant.</p>
+
+  <p>Because $\rho_r \propto a^{-4}$ <strong>(2.57)</strong>, the temperature of photon radiation must scale as $a^{-1}$. Since $E_r$ also scales as $a^{-1}$ <strong>(2.31)</strong>, the equilibrium photon distribution function is unaffected by the cosmic expansion. Note that in reality, there are small perturbations around this equilibrium, corresponding to anisotropies in the CMB.</p>
+
+  <p>Baryons (i.e. nucleons and electrons), on the other hand, come in many different phases (e.g. diffuse gas, ionized plasma, compact objects, etc.) throughout cosmic history, thus cannot be modeled by an equilibrium distribution. 
+Instead, their density parameter is estimated with methods such as starcounting, mapping of the intergalactic medium, comparisons of light elements abundances, and measurements of baryon acoustic oscillations (BAOs). 
+Elemental abundances and BAO measurements constrains the present-day baryon density parameter to
+\[
+\Omega_b = 0.0222(5) h^{-2},\, 0.0225(3) h^{-2}
+\]
+respectively. Thus $\rho_b \simeq 0.05\rho_{cr}$, hinting a significant amount of non-baryonic matter.</p>
+
+  <p>TODO Dark matter: Anisopies in the CMB. Late universe distance-redshift. LSS.</p>
+
+  <p>TODO: neutrinos, dark energy</p>
+
+</section>
+
+<section>
+
+  <h2 id="the-fundamental-equations-of-cosmology">3. The fundamental equations of cosmology</h2>
+
+  <h3 id="einstein-equations">Einstein equations</h3>
+
+  <p>The <strong>Einstein equations</strong> (plural because each tensor entry was considered a separate “equation”)
+\[
+G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G \tilde T_{\mu\nu}
+\tag{3.1}
+\]
+relates Newton’s gravitational constant $G$, the stress-energy tensor $\tilde T_{\mu\nu}$, the cosmological constant $\Lambda$, the metric tensor $g_{\mu\nu}$, and the <strong>Einstein tensor</strong>
+\[
+G_{\mu\nu} \equiv R_{\mu\nu} - \f12 g_{\mu\nu}R,
+\tag{3.2}
+\]
+where 
+\[
+R_{\mu\nu} = 
+\p_{\alpha} {\Gamma^\alpha}_{\mu\nu} -
+\p_{\nu} {\Gamma^\alpha}_{\mu\alpha} +
+{\Gamma^\alpha}_{\beta\alpha} {\Gamma^\beta}_{\mu\nu} -
+{\Gamma^\alpha}_{\beta\nu} {\Gamma^\beta}_{\mu\alpha}.
+\tag{3.3}
+\]
+is the <strong>Ricci tensor</strong>, and $R\equiv g^{\mu\nu}R_{\mu\nu}$ is the <strong>Ricci scalar</strong>.</p>
+
+  <p>We can reinterpret the cosmological constant as a “dark energy” by redefining the energy-momentum tensor as
+$T_{\mu\nu} \equiv \tilde T_{\mu\nu} + \hat T_{\mu\nu}$,
+where the dark energy’s energy-momentum tensor
+\[
+\hat T_{\mu\nu} \equiv -\f{\Lambda}{8\pi G} g_{\mu\nu}.
+\]
+Under this interpretation, the Einstein equation simplifies to 
+$G_{\mu\nu} = 8\pi G T_{\mu\nu}$.
+Furthermore, matching
+\[
+{\hat T^\mu}_\nu = -g^{\mu\alpha} \hat T_{\alpha\nu} = -\f{\Lambda}{8\pi G} \delta^\mu_\nu
+\]
+with <strong>(2.44)</strong> gives
+\[
+\rho_\Lambda = -\mathcal{P}_\Lambda = \f{\Lambda}{8\pi G},
+\tag{3.10}
+\]
+proving that the dark-energy equation of state $w_\Lambda = -1$.
+This notation will also facilitate the generalization of $\Lambda$ to a time-varying “quintessence”.</p>
+
+  <p>In the Euclidean FLRW metric, the Christoffel symbol ${\Gamma^\mu}_{\alpha\beta}$ is given by <strong>(2.25)</strong>.
+Note that it is independent of the spatial cordinates ($\p_i$).
+The Euclidean FLRW Ricci tensor is thus
+\[\begin{aligned}
+R_{00} &amp;= 
+\p_{\alpha} \zero{{\Gamma^\alpha}_{00}} -
+\p_{0} {\Gamma^\alpha}_{0\alpha} +
+{\Gamma^\alpha}_{\beta\alpha} \zero{{\Gamma^\beta}_{00}} -
+{\Gamma^\alpha}_{\beta0} {\Gamma^\beta}_{0\alpha}
+\\
+&amp;= -\p_0\prn{ \zero{{\Gamma^0}_{00}} + {\Gamma^a}_{0a} }
+\\
+&amp;\quad -
+\brk{ 
+\zero{{\Gamma^0}_{00}} \zero{{\Gamma^0}_{00}} +
+\zero{{\Gamma^a}_{00}} \zero{{\Gamma^0}_{0a}} +
+\zero{{\Gamma^0}_{b0}} \zero{{\Gamma^b}_{00}} +
+{\Gamma^a}_{b0} {\Gamma^b}_{0a}
+}
+\\
+&amp;= -\p_0\prn{\delta^a_a \f{\dot a}{a}} -
+\delta^a_b \f{\dot a}a
+\delta^b_a \f{\dot a}a
+\\
+&amp;= -3\brk{\frac{a\ddot a + \dot a^2 - \dot a^2}{a^2}}
+= -3\frac{\ddot a}{a},
+\\
+R_{0j} = R_{j0} &amp;=
+\p_{\alpha} {\Gamma^\alpha}_{0j} -
+\zero{\p_{j} {\Gamma^\alpha}_{0\alpha}} +
+{\Gamma^\alpha}_{\beta\alpha} {\Gamma^\beta}_{0j} -
+{\Gamma^\alpha}_{\beta j} {\Gamma^\beta}_{0\alpha}
+\\
+&amp;= \brk{
+\p_{0} \zero{{\Gamma^0}_{0j}} +
+\zero{\p_{a} {\Gamma^a}_{0j}}
+}
+\\
+&amp;\quad -\brk{
+\zero{{\Gamma^0}_{00}} \zero{{\Gamma^0}_{0j}} +
+{\Gamma^a}_{0a} \zero{{\Gamma^0}_{0j}} +
+\zero{{\Gamma^0}_{b0}} {\Gamma^b}_{0j} +
+\zero{{\Gamma^a}_{ba}} {\Gamma^b}_{0j}
+}
+\\
+&amp;\quad -\brk{
+\zero{{\Gamma^0}_{0j}} \zero{{\Gamma^0}_{00}} +
+{\Gamma^a}_{0j} \zero{{\Gamma^0}_{0a}} +
+{\Gamma^0}_{bj} \zero{{\Gamma^b}_{00}} +
+\zero{{\Gamma^a}_{bj}} {\Gamma^b}_{0a}
+}
+\\
+&amp;= 0,
+\\
+R_{ij} &amp;= 
+\p_{\alpha} {\Gamma^\alpha}_{ij} -
+\zero{\p_{j} {\Gamma^\alpha}_{i\alpha}} +
+{\Gamma^\alpha}_{\beta\alpha} {\Gamma^\beta}_{ij} -
+{\Gamma^\alpha}_{\beta j} {\Gamma^\beta}_{i\alpha}
+\\
+&amp;= \brk{
+\p_{0} {\Gamma^0}_{ij} +
+\zero{\p_{a} {\Gamma^a}_{ij}}
+}
+\\
+&amp;\quad +\brk{
+\zero{{\Gamma^0}_{00}} {\Gamma^0}_{ij} +
+{\Gamma^a}_{0a} {\Gamma^0}_{ij} +
+\zero{{\Gamma^0}_{b0}} \zero{{\Gamma^b}_{ij}} +
+\zero{{\Gamma^a}_{ba}} \zero{{\Gamma^b}_{ij}}
+}
+\\
+&amp;\quad -\brk{
+\zero{{\Gamma^0}_{0j}} \zero{{\Gamma^0}_{i0}} +
+{\Gamma^a}_{0j} {\Gamma^0}_{ia} +
+{\Gamma^0}_{bj} {\Gamma^b}_{i0} +
+\zero{{\Gamma^a}_{bj}} \zero{{\Gamma^b}_{ia}}
+}
+\\
+&amp;= \p_0\prn{ \delta_{ij} a\dot a } +
+\delta^a_a \f{\dot a}a \delta_{ij} a\dot a -
+\delta^a_j \f{\dot a}a \delta_{ia} a\dot a -
+\delta_{bj} a\dot a \delta^b_i \f{\dot a}a
+\\
+&amp;= \delta_{ij}\brk{a\ddot a + \dot a^2} +
+3 \delta_{ij} \dot a^2 - 
+\delta_{ij} \dot a^2 -
+\delta_{ij} \dot a^2
+\\
+&amp;= \delta_{ij}\brk{ a\ddot a + 2\dot a^2  }.
+\\
+\implies R_{\mu\nu} &amp;= \begin{pmatrix}
+-3\ddot a/a &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; a\ddot a + 2\dot a^2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; a\ddot a + 2\dot a^2 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; a\ddot a + 2\dot a^2
+\end{pmatrix}.
+\tag{3.7}
+\end{aligned}\]
+With the corresponding Ricci scalar
+\[\begin{aligned}
+R &amp;= g^{00} R_{00} + g^{ij}R_{ij} \\
+&amp;= 3\f{\ddot a}a + \f{\delta^{ij}}{a^2} \delta_{ij} \brk{a\ddot a + 2\dot a^2} \\
+&amp;= 6 \brk{\f{\ddot a}a + \brk{\f{\dot a}a}^2}.
+\end{aligned}\]</p>
+
+  <h3 id="friedmann-equations">Friedmann equations</h3>
+
+  <p>The $00$-component of the Einstein equation gives the <strong>first Friedmann equation</strong>
+\[\begin{aligned}
+G_{00} = R_{00} - \f12 g_{00} R &amp;= 8\pi G g_{00} {T^0}_0
+\\
+\iff -3\f{\ddot a}{a} + 3\brk{\f{\ddot a}a + \brk{\f{\dot a}a}^2} &amp;= 8\pi G\rho
+\\
+\iff \brk{\f{\dot a}a}^2 &amp;= \f{8\pi G}3 \rho,
+\tag{3.12}
+\end{aligned}\]
+and any $ii$-component gives the <strong>second Friedmann equation</strong>
+\[\begin{aligned}
+{G^1}_1 = g^{11} R_{11} - \f12 R &amp;= 8\pi G {T^1}_1
+\\
+\iff \f{\ddot a}a + 2\brk{\f{\dot a}{a}}^2 - 3\brk{\f{\ddot a}a + \brk{\f{\dot a}a}^2} &amp;= 8\pi G\mathcal{P}
+\\
+\iff -2\f{\ddot a}a &amp;= 8\pi G\mathcal{P} + \brk{\f{\dot a}a}^2
+\\
+\iff \f{\ddot a}a &amp;= -\f{4\pi G}3 \brk{\rho + 3\mathcal{P}}.
+\tag{3.90}
+\end{aligned}\]</p>
+
+  <p>Written in terms of the Hubble rate and the density parameters,
+the first Friedmann equation becomes
+\[
+\brk{\f{H(t)}{H_0}}^2 = \f{\rho(t)}{\rho_{cr}} = \sum_s a^{-3[1+w_s]} \Omega_s.
+\tag{3.13}
+\]</p>
+
+  <p>In a curved FLRW universe, there is an additional curvature parameter $\Omega_K \equiv 1 - \Omega(t_0)$ in the Friedmann equations. For instance, <strong>(3.13)</strong> becomes
+\[
+\brk{\f{H(t)}{H_0}}^2 = a^{-2}\Omega_K + \sum_s a^{-3[1+w_s]} \Omega_s.
+\tag{3.14}
+\]</p>
+
+  <h3 id="boltzmann-equation">Boltzmann equation</h3>
+
+  <p>The four-momentum 
+$P^\mu = \f{\d x^\mu}{\d\lambda}$
+obeys the <strong>mass-shell constraint</strong>
+\[
+P^2 \equiv g_{\mu\nu} P^\mu P^\nu = -m^2.
+\tag{3.27}
+\]
+Written in terms of mass and the three-momentum magnitude
+$p^2 \equiv g_{ij} P^i P^j$,
+the constraint becomes 
+\[
+E^2 \equiv \prn{P^0}^2 = p^2 + m^2.
+\tag{3.29}
+\]
+This form is more compatible with a six-dimensional phase space.</p>
+
+</section>
+
+<section>
+
+  <h2 id="the-origin-of-species">4. The origin of species</h2>
+
+  <p>Under construction!</p>
+</section>
+
+<h1 id="ii-perturbations">II. Perturbations</h1>
