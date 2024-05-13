@@ -21,6 +21,7 @@
                 "\\vec": "\\mathbf{#1}",
                 "\\f": "\\frac{#1}{#2}",
                 "\\d": "\\mathrm{d}",
+                "\\D": "\\mathrm{D}",
                 "\\p": "\\partial",
                 "\\zero": "\\underline{#1}\_0",
                 "\\prn": "\\left({#1}\\right)",
@@ -74,14 +75,14 @@
 
 @font-face {
     font-family: 'cmu';
-    src: url('/notes/assets/cmunrm.woff') format('woff');
+    src: url('/notes/assets/garamx.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'cmu';
-    src: url('/notes/assets/cmunti.woff') format('woff');
+    src: url('/notes/assets/garami.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
@@ -89,7 +90,7 @@
 
 @font-face {
     font-family: 'cmu';
-    src: url('/notes/assets/cmunbx.woff') format('woff');
+    src: url('/notes/assets/garabx.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -97,7 +98,7 @@
 
 @font-face {
     font-family: 'cmu';
-    src: url('/notes/assets/cmunbi.woff') format('woff');
+    src: url('/notes/assets/garabi.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
@@ -107,7 +108,7 @@ html {
   height: 100%;
 }
 html, body {
-  font-size: 16px;
+  font-size: 20px;
   font-family: cmu, serif;
   margin: 0;
   padding: 0;
@@ -197,6 +198,10 @@ table {
 th, td {
   border: 1px dashed var(--deco);
   text-align: center;
+}
+
+.katex {
+  font-size: 1em;
 }
 
 #markdown-toc {
