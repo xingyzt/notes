@@ -372,13 +372,13 @@ Under a change of coordinates from Minkowski $x^\alpha\mapsto x^{\nu'}$, the geo
 Applying the inverse transform $x^{\nu'}\mapsto x^\mu$ to both sides yields
 \[
 0 = \underbrace{\f{\p x^\mu}{\p x^{\nu'}} \f{\p^2 x^{\nu'}}{\p x^\alpha \p x^\beta}}
-_{\displaystyle {\Gamma^\mu}_{\alpha\beta}} \f{\d x^\alpha}{\d \lambda}\f{\d  x^\beta}{\d \lambda} +
+_{\displaystyle \Gamma^\mu_{\alpha\beta}} \f{\d x^\alpha}{\d \lambda}\f{\d  x^\beta}{\d \lambda} +
  \f{\d ^2 x^{\mu}}{\d \lambda^2},
  \tag{2.19}
 \]
-where ${\Gamma^\mu}_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, related to the metric by
+where $\Gamma^\mu_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, related to the metric by
 \[
-{\Gamma^\mu}_{\alpha\beta} = \f{g^{\mu\nu}}{2}
+\Gamma^\mu_{\alpha\beta} = \f{g^{\mu\nu}}{2}
 \left[
 \p_\beta g_{\alpha\nu} +
 \p_\alpha g_{\beta\nu} -
@@ -388,14 +388,14 @@ where ${\Gamma^\mu}_{\alpha\beta}$ is the <strong>Christoffel symbol</strong>, r
 \]
 The <strong>geodesic equation</strong> which holds true for all coordinate systems is therefore
 \[
-\f{\d^2 x^\mu}{\d\lambda^2} = -{\Gamma^\mu}_{\alpha\beta} \f{\d x^\alpha}{\d\lambda} \f{\d x^\beta}{\d\lambda}.
+\f{\d^2 x^\mu}{\d\lambda^2} = -\Gamma^\mu_{\alpha\beta} \f{\d x^\alpha}{\d\lambda} \f{\d x^\beta}{\d\lambda}.
 \]</p>
 
   <p>The Christoffel symbol is used in defining the <strong>covariant derivative</strong> $\nabla_\mu$:
 \[\begin{aligned}
 \text{scalar} &amp;&amp; \nabla_\mu\phi &amp;\equiv \p_\mu\phi,\\
-\text{vector} &amp;&amp; \nabla_\mu A^\nu &amp;\equiv \p_\mu A^\nu + {\Gamma^\nu}_{\mu\alpha} A^\alpha,\\
-\text{tensor} &amp;&amp; \nabla_\mu {T_\nu}^\kappa &amp;\equiv \p_\mu {T_\nu}^\kappa - {\Gamma^\lambda}_{\mu\nu}{T_\lambda}^\kappa + {\Gamma^\kappa}_{\mu\lambda}{T_\nu}^\lambda.
+\text{vector} &amp;&amp; \nabla_\mu A^\nu &amp;\equiv \p_\mu A^\nu + \Gamma^\nu_{\mu\alpha} A^\alpha,\\
+\text{tensor} &amp;&amp; \nabla_\mu {T_\nu}^\kappa &amp;\equiv \p_\mu {T_\nu}^\kappa - \Gamma^\lambda_{\mu\nu}{T_\lambda}^\kappa + \Gamma^\kappa_{\mu\lambda}{T_\nu}^\lambda.
 \tag{2.52}
 \end{aligned}\]
 This is necessary because the partial derivative $\p_\mu$ only transforms covariantly when acting on scalars. For instance, the geodesic equation can be rewritten in covariant form as 
@@ -429,7 +429,7 @@ satisfying the identity $g^{\nu\beta}g_{\beta\alpha} = \delta^\nu_\alpha$.</p>
 but dependent on time ($\p_0$) due to the $a^2$ expansion terms.
 Its Christoffel symbol is thus
 \[\begin{aligned}
-{\Gamma^0}_{ij} &amp;= \f{g^{0\nu}}{2}
+\Gamma^0_{ij} &amp;= \f{g^{0\nu}}{2}
 \left[
 \zero{ \p_j g_{i\nu} } +
 \zero{ \p_i g_{j\nu} } -
@@ -437,7 +437,7 @@ Its Christoffel symbol is thus
 \right] \\
 &amp;= -\f{g^{00}}2\p_0 g_{ij}
 = \delta_{ij} a\dot a, \\
-{\Gamma^i}_{j0} = {\Gamma^i}_{0j} &amp;= \f{g^{i\nu}}{2}
+\Gamma^i_{j0} = \Gamma^i_{0j} &amp;= \f{g^{i\nu}}{2}
 \left[
 \p_0 g_{j\nu} +
 \zero{ \p_j g_{0\nu} } -
@@ -445,7 +445,7 @@ Its Christoffel symbol is thus
 \right] \\
 &amp;= \delta^{i\nu}a^{-2}\delta_{j\nu}a\dot a
 = \delta^i_j\f{\dot a}a, \\
-{\Gamma^\alpha}_{00} &amp;= {\Gamma^0}_{\alpha0} = {\Gamma^0}_{0\alpha} = {\Gamma^i}_{jk} = 0.
+\Gamma^\alpha_{00} &amp;= \Gamma^0_{\alpha0} = \Gamma^0_{0\alpha} = \Gamma^i_{jk} = 0.
 \tag{2.25}
 \end{aligned}\]
 Verify for yourself that these equations together resolve every entry of the symbol.</p>
@@ -489,13 +489,13 @@ $-E^2 + \delta_{ij} p^i p^j = m^2$.</p>
   <p>The geodesic equation for the particle thus simplifies as
 \[\begin{aligned}
 \f{\d ^2 x^\mu}{\d \lambda^2} 
-&amp;= -{\Gamma^\mu}_{\alpha\beta} \f{\d x^\alpha}{\d \lambda} \f{\d x^\beta}{\d \lambda} \\
+&amp;= -\Gamma^\mu_{\alpha\beta} \f{\d x^\alpha}{\d \lambda} \f{\d x^\beta}{\d \lambda} \\
 = \f{\d P^\mu}{\d \lambda}= E\dot P^\mu
-&amp;= -{\Gamma^\mu}_{ij} P^i P^j,
+&amp;= -\Gamma^\mu_{ij} P^i P^j,
 \end{aligned}\]
 with the $\mu=0$ component
 \[\begin{aligned}
-E\dot E &amp;= -{\Gamma^0}_{ij} P^i P^j \\
+E\dot E &amp;= -\Gamma^0_{ij} P^i P^j \\
 &amp;= -a\dot a \delta_{ij} P^i P^j\\
 &amp;= \f{\dot a}{a} \big[m^2 - E^2\big].
 \end{aligned}\]</p>
@@ -526,8 +526,8 @@ This demonstrates that only relativistic particles (i.e. radiation) lose signifi
 \] 
 in the rest frame and obeys the conservation of local energy-momentum $\nabla_\mu {T^\mu}_\nu = 0$, whose $\nu=0$ component tells us that
 \[\begin{aligned}
-0 &amp;= \p_\mu {T^\mu}_0 + {\Gamma^\mu}_{\alpha\mu}{T^\alpha}_0 - {\Gamma^\alpha}_{0\mu}{T^\mu}_\alpha\\
-&amp;= \p_0 {T^0}_0 + {\Gamma^i}_{0i}{T^0}_0 - {\Gamma^i}_{0j}{T^j}_i\\
+0 &amp;= \p_\mu {T^\mu}_0 + \Gamma^\mu_{\alpha\mu}{T^\alpha}_0 - \Gamma^\alpha_{0\mu}{T^\mu}_\alpha\\
+&amp;= \p_0 {T^0}_0 + \Gamma^i_{0i}{T^0}_0 - \Gamma^i_{0j}{T^j}_i\\
 &amp;= -\p_t \rho - \delta^i_i \f{\dot a}{a} \rho - \delta^i_j \f{\dot a}{a} \delta^j_i \mathcal P\\
 \iff 0&amp;= \p_t \rho + 3\f{\dot a}{a}\brk{ \rho + \mathcal P }\\
 \iff \f{\p_t(\rho a^3)}{a^3} &amp;= -3\f{\dot a}{a}\mathcal P.
@@ -1053,8 +1053,8 @@ at which point a fully relativistic and quantum treatment is necessary.</p>
   <h3 id="quantum-relativistic-collisions">Quantum-relativistic collisions</h3>
 
   <p>In relativity, the phase space of comoving momenta is four-dimensional. 
-But because all real particles obey the dispersion relation $-m_s^2 = g_{\mu\nu} P^\mu P^\nu = -E_s^2 + p^2$,
-for any given rest mass $m_s$, 
+But because all real particles obey the dispersion relation $-m^2 = g_{\mu\nu} P^\mu P^\nu = -E^2 + p^2$,
+for any given rest mass $m$, 
 the set of physically possible comoving momenta is confined to a relativistically invariant, hyperbolic three-manifold in this phase space,
 known as the <strong>mass shell</strong>. (Real particles are thus said to be “<strong>on the mass-shell</strong>”.)</p>
 
@@ -1072,14 +1072,42 @@ Its infinitesimal elements measure the three-volumes of the on-shell slices of $
 \tag{3.47}
 \end{aligned}\]
 Factoring in $1/[2\pi]^3$ from Heisenberg’ uncertainty principle,
-the relativistically invariant fundamental integration measure is thus
+the relativistically invariant fundamental phase-space element is thus
 \[
 \f{\d^3 p}{[2\pi]^3 \cdot 2E(p)}.
 \]</p>
 
-  <p>At high densities, the differing spin statistics of bosonic and fermionic particles start to significantly affect
-their distributions as well.
-Pauli exclusion principle</p>
+  <p>When product particles are concentrated at high densities ($f \gtrsim 1/e$, i.e., high likelihood of occupancy in some fundamental phase-space elements), 
+their interparticle quantum effects strengthen, 
+and the differing spin statistics of bosons and fermions start to significantly affect the reaction rates as well.
+For fermions, the Pauli exclusion principle suppresses reactions when there is a high density, 
+adding a factor of $[1-f_s]$ to the reaction that produces a fermonic species $s$ in $(3.46)$.
+Bosonic reactions, on the other hand, are enhanced at high density (this is the cause of stimulated emissions), 
+requiring an factor of $[1+f_s]$ instead.</p>
+
+  <p>When corrected for relativistic and quantum effects, the collision factor is thus
+\[\begin{aligned}
+C[f_1(\vec p_1)] &amp;= 
+\f1{2E_1(p_1)}
+\int\f{\d^3 p_2}{[2\pi]^3 \cdot 2E_2(p_2)}
+\int\f{\d^3 p_3'}{[2\pi]^3 \cdot 2E_3(p_3)}
+\int\f{\d^3 p_4'}{[2\pi]^3 \cdot 2E_4(p_4)}
+\\
+&amp;\quad\cdot [2\pi]^4
+\cdot \delta_D^{(3)}(\vec p_3' + \vec p_4' - \vec p_1 - \vec p_2)
+\\
+&amp;\quad\cdot \delta_D^{(1)}(E_3(p_3') + E_4(p_4') - E_1(p_1) - E_2(p_2))
+\\
+&amp;\quad \cdot |\mathcal M(\vec p_1, \vec p_2, \vec p_3', \vec p_4')|^2
+\\
+&amp;\quad\cdot \Big[
+f_3(\vec p_3')\, f_4(\vec p_4')\, [1 \pm f_1(\vec p_1)] \, [1 \pm f_2(\vec p_2)] 
+\\
+&amp;\quad\quad - f_1(\vec p_1)\, f_2(\vec p_2) \, [1 \pm f_3(\vec p_3')] \, [1 \pm f_4(\vec p_4')]
+\Big].
+\tag{3.48}
+\end{aligned}\]
+(I have no idea why the $[2\pi]^4$ is there. The textbook doesn't explain it. I've emailed the authors)</p>
 
 </section>
 
