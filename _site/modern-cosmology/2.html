@@ -149,8 +149,8 @@ h3 {
   color: var(--bg);
 }
 strong {
-  font-weight: normal;
   text-decoration: dotted underline var(--deco);
+  color: var(--text-accent);
 }
 
 details {
@@ -193,9 +193,6 @@ ul, ol {
   margin-left: 0rem;
   padding-left: 1rem;
 }
-li:hover {
-  color: var(--text-accent);
-}
 
 table {
   border: 1px solid var(--deco);
@@ -207,7 +204,7 @@ th, td {
 }
 
 .katex {
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 #markdown-toc {
@@ -491,8 +488,12 @@ weighing with the number of particles per infinitesimal phase-space volume,
 and dividing by the infinitesimal physical volume $\d x^3$,
 we obtain its corresponding physical-space density
 \[\begin{aligned}
-\hat A_s(\vec x, t) &amp;= g_s \int \f{\d^3 p}{[2\pi]^3}\, f_s(\vec x, \vec p, t) A_s(\vec x, \vec p)
-\end{aligned}\]</p>
+\mathcal A_s(\vec x, t) &amp;= g_s \int \f{\d^3 p}{[2\pi]^3}\, f_s(\vec x, \vec p, t) A_s(\vec x, \vec p).
+\end{aligned}\]
+(Dimensionally, 
+this correspondence between phase-space total and physical-space density can be seen through the
+$[\text{momentum}] = [\text{energy}] = [\text{time}]^{-1} = [\text{length}]^{-1}$
+equivalence in natural units.)</p>
 
   <p>Different phase-space functions $A_s$ can tell us different microscopic properties of the species at $(\vec x, t)$. 
 For instance, energy function $E_s(p)$ gives the energy density
@@ -554,7 +555,7 @@ Evaluating $\mathcal{P}_r$ in thermal equilibrium thus gives
 \f{\p\mathcal{P}_r}{\p T} = \f{\rho_r + \mathcal{P}_r}{T} \propto a^{-3}.
 \tag{2.67}
 \]
-Thus the entropy density of the universe $s \equiv (\rho + \mathcal P)/T$ scales as $a^{-3}$ in thermal equilibrium.</p>
+Thus the entropy density of the universe $S \equiv (\rho + \mathcal P)/T$ scales as $a^{-3}$ in thermal equilibrium.</p>
 
   <h3 id="cosmic-inventory">Cosmic inventory</h3>
 

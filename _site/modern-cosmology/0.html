@@ -149,8 +149,8 @@ h3 {
   color: var(--bg);
 }
 strong {
-  font-weight: normal;
   text-decoration: dotted underline var(--deco);
+  color: var(--text-accent);
 }
 
 details {
@@ -193,9 +193,6 @@ ul, ol {
   margin-left: 0rem;
   padding-left: 1rem;
 }
-li:hover {
-  color: var(--text-accent);
-}
 
 table {
   border: 1px solid var(--deco);
@@ -207,7 +204,7 @@ th, td {
 }
 
 .katex {
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 #markdown-toc {
@@ -258,7 +255,7 @@ th, td {
     <li><strong>Natural units</strong>: $\hbar = c = k_B = 1$.</li>
     <li><strong>Vectors</strong>: Physical vectors are bolded $\vec p$. Comoving vectors (and higher-rank tensors) are represented by their components $P^\mu$.</li>
     <li><strong>Tensor indices</strong>: Upper indices are contravariant. Lower indices are covariant.</li>
-    <li><strong>Metric signature</strong>: $- + + +$.</li>
+    <li><strong>Metric signature</strong>: ${-} {+} {+} {+}$.</li>
     <li><strong>Einstein summation</strong>: Repeated indices are implicitly summed over. Latin indices range $1,2,3$. Greek indices range $0,1,2,3$.</li>
     <li><strong>Dot time derivative</strong>: $\dot x \equiv \d x/\d t$.</li>
     <li><strong>Partial derivatives</strong>: $\partial_\mu \equiv \partial/\partial x^\mu$. For instance, $\partial_\mu x^\nu = \delta_\mu^\nu$.</li>
