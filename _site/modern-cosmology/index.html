@@ -5,9 +5,9 @@
     <title>Xing’s notes on Dodelson & Schmidt, Modern Cosmology</title>
     <meta name=viewport content='width=device-width, initial-scale=1'>
     <link rel="shortcut icon" type=image/png href="https://xingyzt.net/notes/assets/favicon.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/notes/assets/katex.min.css">
+    <script defer src="/notes/assets/katex.min.js"></script>
+    <script defer src="/notes/assets/auto-render.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             renderMathInElement(document.body, {
@@ -27,7 +27,7 @@
                 "\\prn": "\\left({#1}\\right)",
                 "\\brk": "\\left[{#1}\\right]",
               },
-              throwOnError : false
+              throwOnError : true
             });
             const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
             headings.forEach(heading =>{
@@ -70,35 +70,41 @@
   details {
     display: none;
   }
+  .katex {
+	  font-size: 1em;
+  }
+  html, body {
+	  font-size: 16px;
+  }
 }
 
 
 @font-face {
-    font-family: 'cmu';
-    src: url('/notes/assets/garamx.ttf') format('truetype');
+    font-family: 'garamond';
+    src: url('/notes/assets/fonts/garamond_regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'cmu';
-    src: url('/notes/assets/garami.ttf') format('truetype');
+    font-family: 'garamond';
+    src: url('/notes/assets/fonts/garamond_italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 
 @font-face {
-    font-family: 'cmu';
-    src: url('/notes/assets/garabx.ttf') format('truetype');
+    font-family: 'garamond';
+    src: url('/notes/assets/fonts/garamond_bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 
 @font-face {
-    font-family: 'cmu';
-    src: url('/notes/assets/garabi.ttf') format('truetype');
+    font-family: 'garamond';
+    src: url('/notes/assets/fonts/garamond_bold_italic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
@@ -109,7 +115,7 @@ html {
 }
 html, body {
   font-size: 20px;
-  font-family: cmu, serif;
+  font-family: garamond, serif;
   margin: 0;
   padding: 0;
 }
@@ -251,7 +257,7 @@ th, td {
       <li><a href="#the-concordance-model-of-cosmology" id="markdown-toc-the-concordance-model-of-cosmology">1. The concordance model of cosmology</a></li>
       <li><a href="#the-expanding-universe" id="markdown-toc-the-expanding-universe">2. The expanding universe</a>        <ul>
           <li><a href="#geodesics-and-the-flrw-metric" id="markdown-toc-geodesics-and-the-flrw-metric">Geodesics and the FLRW metric</a></li>
-          <li><a href="#energy-of-a-particle" id="markdown-toc-energy-of-a-particle">Energy of a particle</a></li>
+          <li><a href="#energy-and-momentum-of-a-particle" id="markdown-toc-energy-and-momentum-of-a-particle">Energy and momentum of a particle</a></li>
           <li><a href="#energy-of-the-medium" id="markdown-toc-energy-of-the-medium">Energy of the medium</a></li>
           <li><a href="#distances-and-conformal-time" id="markdown-toc-distances-and-conformal-time">Distances and conformal time</a></li>
           <li><a href="#nonrelativistic-distribution-statistics" id="markdown-toc-nonrelativistic-distribution-statistics">Nonrelativistic distribution statistics</a></li>
@@ -264,6 +270,7 @@ th, td {
           <li><a href="#einstein-equations" id="markdown-toc-einstein-equations">Einstein equations</a></li>
           <li><a href="#friedmann-equations" id="markdown-toc-friedmann-equations">Friedmann equations</a></li>
           <li><a href="#boltzmann-equation" id="markdown-toc-boltzmann-equation">Boltzmann equation</a></li>
+          <li><a href="#collisions" id="markdown-toc-collisions">Collisions</a></li>
         </ul>
       </li>
       <li><a href="#the-origin-of-species" id="markdown-toc-the-origin-of-species">4. The origin of species</a></li>
@@ -280,14 +287,14 @@ th, td {
 
   <ul>
     <li><strong>Natural units</strong>: $\hbar = c = k_B = 1$.</li>
-    <li><strong>Vectors</strong>: Three-vectors are bolded $\vec p$. Four-vectors are represented by their components $P^\mu$.</li>
+    <li><strong>Vectors</strong>: Physical vectors are bolded $\vec p$. Comoving vectors (and higher-rank tensors) are represented by their components $P^\mu$.</li>
     <li><strong>Tensor indices</strong>: Upper indices are contravariant. Lower indices are covariant.</li>
     <li><strong>Metric signature</strong>: $- + + +$.</li>
     <li><strong>Einstein summation</strong>: Repeated indices are implicitly summed over. Latin indices range $1,2,3$. Greek indices range $0,1,2,3$.</li>
     <li><strong>Dot time derivative</strong>: $\dot x \equiv \d x/\d t$.</li>
     <li><strong>Partial derivatives</strong>: $\partial_\mu \equiv \partial/\partial x^\mu$. For instance, $\partial_\mu x^\nu = \delta_\mu^\nu$.</li>
     <li><strong>Species subscripts</strong>: $s$ stands for any constituent species of the universe; $c$ for cold dark matter, $b$ for baryons, $m$ for all matter ($b$ and $c$); $\gamma$ for photons, $\nu$ for neutrinos, $r$ for radiation ($\gamma$ and $\nu$); and $\Lambda$ for dark energy.</li>
-    <li><strong>Brackets</strong>: Square brackets $[\cdots]$ group terms together; parentheses $f(\cdots)$ evaluate terms with a function or operator on the left side.</li>
+    <li><strong>Brackets</strong>: Parentheses $f(\cdots)$ evaluate terms with a function or operator on the left side; Square brackets $[\cdots]$ group terms together, or evaluate functions with a functional $C[\cdots]$.</li>
   </ul>
 
 </section>
@@ -441,18 +448,41 @@ Its Christoffel symbol is thus
 \end{aligned}\]
 Verify for yourself that these equations together resolve every entry of the symbol.</p>
 
-  <h3 id="energy-of-a-particle">Energy of a particle</h3>
+  <h3 id="energy-and-momentum-of-a-particle">Energy and momentum of a particle</h3>
 
-  <p>To examine the effects of cosmological expansion on a free particle’s energy, define the path parameter $\lambda$ such that the four-momentum $P^\alpha = (E, \vec p) = \f{\d x^\alpha}{\d \lambda}$. This way,
+  <p>We wish to calculate the effects of cosmic expansion on the energy of a free particle.</p>
+
+  <p>If we choose to parameterize a massive particle’s path by $\lambda = \tau/m$, 
+where $\tau$ is the particle’s proper time, then we can write the particle’s <strong>comoving momentum</strong> as 
+\[
+P^\alpha 
+= m\f{\d x^\alpha}{\d\tau}
+= \f{\d x^\alpha}{\d\lambda}.
+\tag{2.26}
+\]
+This relation in fact holds in the massless limit as well, 
+when $\tau/m$ converges to the comoving time $x^0 = t$.</p>
+
+  <p>For a free particle, $P^0$ is conserved along its geodesic. 
+We identify this as the particle’s energy $E$, so
 \[
 \f{\d }{\d \lambda} = \f{\d x^0}{\d \lambda}\f{\d}{\d x^0} = E\f{\d}{\d t}.
 \tag{2.27}
-\]
-In addition, note that (as apparent in the rest frame of the particle,)
+\]</p>
+
+  <p>In the rest frame of the particle, $E = m$ while $P^i = 0$, giving the FLRW <strong>dispersion relation</strong>
 \[
 g_{\mu\nu}P^\mu P^\nu = -E^2 + \delta_{ij} a^2 P^i P^j = -m^2.
 \tag{2.29}
-\]</p>
+\]
+This motivates defining
+\[
+\vec p^i = a P^i
+\tag{2.32}
+\]
+as the <strong>physical momentum</strong> $\vec p$ of the particle, 
+since it satisifies the Minkowskian dispersion relation
+$-E^2 + \delta_{ij} p^i p^j = m^2$.</p>
 
   <p>The geodesic equation for the particle thus simplifies as
 \[\begin{aligned}
@@ -465,7 +495,7 @@ with the $\mu=0$ component
 \[\begin{aligned}
 E\dot E &amp;= -{\Gamma^0}_{ij} P^i P^j \\
 &amp;= -a\dot a \delta_{ij} P^i P^j\\
-&amp;= \f{\dot a}{a} \big[m^2 - E^2\big]
+&amp;= \f{\dot a}{a} \big[m^2 - E^2\big].
 \end{aligned}\]</p>
 
   <p>For a massless particle, 
@@ -522,12 +552,12 @@ This is also known as the <strong>comoving horizon</strong>, or as the <strong>c
 
   <h3 id="nonrelativistic-distribution-statistics">Nonrelativistic distribution statistics</h3>
 
-  <p>Many macroscopic statistics of a system are derived from how its particles are distributed in <a href="https://en.wikipedia.org/wiki/Phase_space">phase-space</a>.
+  <p>Many macroscopic statistics of a system are derived from how its particles are distributed in <a href="https://en.wikipedia.org/wiki/Phase\_space">phase-space</a>.
 We can calculate this phase-space distribution using some quantum mechanics!</p>
 
   <p>First, let us calculate how many particles there are within every infinitesimal phase-space volume $\d^3x\, \d^3p$:</p>
 
-  <p><a href="https://en.wikipedia.org/wiki/Uncertainty_principle">Heisenberg’s uncertainty principle</a>
+  <p><a href="https://en.wikipedia.org/wiki/Uncertainty\_principle">Heisenberg’s uncertainty principle</a>
 tells us that every such volume contains
 $\d^3 x\, \d^3 p/[2\pi]^3$
 indivisible <strong>fundamental phase-space elements</strong>.
@@ -566,8 +596,8 @@ and the pressure-energy $\mathbb P_s(p) = p^3/3E_s(p)$ gives the pressure
 
   <p>To model relativistic particles, 
 we have to convert the density and pressure scalar fields in <a href="#nonrelativistic-distribution-statistics">Nonrelativistic distribution statistics</a> to a energy-momentum tensor field $T{^\mu}_\nu(\vec x, t)$.
-This is done by substituting the three-momentum and energy with the four-momentum $P^\alpha = (E, \vec p)$
-in a comoving reference frame (which flows locally with the particles). 
+This is done by substituting the energy $E$ and physical momentum $\vec p$ in the above equations 
+with the comoving momentum $P^\alpha = (E, \vec p/a)$ in a reference frame which flows locally with the particles. 
 The comoving mass density is then
 \[
 \rho_s(\vec x, t)
@@ -579,7 +609,7 @@ while the comoving pressures are
 = \f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^i P_j}{P^0} f_s(\vec x, \vec p, t),
 \]
 where $|g|$ is the determinant of the metric
-and $\d^3 P \equiv \d P_1 \d P_2 \d P_3$ is the four-momentum's spatial volume element.
+and $\d^3 P \equiv \d P_1 \d P_2 \d P_3$ is the comoving momentum's spatial volume element.
 Together, they give the energy-momentum tensor
 \[
 T{^\mu}_\nu
@@ -859,7 +889,7 @@ the first Friedmann equation becomes
 
   <p>When particle number is locally conserved in some phase-space distribution $f(\vec x, \vec p, t)$,
 the continuity equation
-$\f{\d f}{\d t} = 0$
+$\d f / \d t = 0$
 holds, where
 \[
 \f{\d}{\d t} = \f{\p}{\p t} + \dot{\vec x}\cdot\nabla_x + \dot{\vec p}\cdot\nabla_p
@@ -874,18 +904,144 @@ we introduce a collision term
 \]
 This is the most general form of the Boltzmann equation.</p>
 
-  <p>Every real particle’s four-momentum 
-$P^\mu = \f{\d x^\mu}{\d\lambda}$
-obeys the <strong>mass-shell constraint</strong>
+  <p>To solve this equation for the FRLW metric, we note that every real particle’s comoving momentum 
+$P^\mu = \f{\d x^\mu}{\d\lambda}$ obeys the <strong>mass-shell constraint</strong>
 \[
-P^2 \equiv g_{\mu\nu} P^\mu P^\nu = -m^2.
+P^2 \equiv g_{\mu\nu} P^\mu P^\nu = -E^2 + p^2 = -m^2,
 \tag{3.27}
 \]
-The spatial components are related to the three-momentum magnitude $p \equiv \sqrt{g_{ij} P^i P^j}$ and unit vectors $\hat p^i$ by
+where, in the FRLW metric, the physical momentum has magnitude $p \equiv \sqrt{g_{ij} P^i P^j}$ and unit vectors $\hat p^i$, related to the comoving momentum by
 \[
-P^i = \f{p}{a}\hat p^i
+P^i = \f{p\hat p^i}a.
 \tag{3.32}
+\]
+From the geodesic equation and the mass-shell constraint, we obtain
+\[\begin{aligned}
+\f{\d P^0}{\d\lambda}
+&amp;= \f1{2 P^0} \f{\d(P^0 P^0)}{\d t} \f{\d t}{\d\lambda}
+= \f12\f{\d(E^2)}{\d t}
+\\
+&amp;= -\f12\f{\d(p^2)}{\d t}
+= -p\f{\d p}{\d t},
+\\
+\f{\d P^0}{\d\lambda} 
+&amp;= -\Gamma^0_{\alpha\beta} P^\alpha P^\beta
+= a\dot a\delta_{ij} P^i P^j
+\\
+&amp;= \f{\dot a}a g_{ij} P^i P^j
+= H p^2
+\\
+\implies \f{\d p}{\d t} &amp;= -Hp,
+\tag{3.37}
+\end{aligned} \]
+while from homogeneity and isotropy, we obtain $\p f / \p x^i = \d\hat p^i / \d t = 0$.
+To facilitate calculations of perturbation, we will keep a small $\p f / p x^i$.
+In the (weakly perturbed) FRLW metric, the Boltzmann equation thus simplifies to
+\[\begin{aligned}
+\f{\d f}{\d t}
+&amp;= \f{\p f}{\p t} + \f{\p f}{\p x^i} \f{\d x^i}{\d t} + \f{\p f}{\p p^i} \f{\d p^i}{\d t}
+\\
+&amp;= \f{\p f}{\p t} + \f{\p f}{\p x^i} \f{\d x^i}{\d\lambda} \f{\d\lambda}{\d t} + \f{\p f}{\p(p\hat p^i)} \f{\d (p\hat p^i)}{\d t}
+\\
+&amp;= \f{\p f}{\p t} + \f{\p f}{\p x^i} \f{P^i}{P^0} + \f{\p f}{\p p} \f{\d p}{\d t}
+\\
+&amp;= \f{\p f}{\p t} + \f{p}{E} \f{\p f}{\p x^i} \f{\hat p^i}{a} - Hp \f{\p f}{\p p} = C[f].
+\tag{3.38}
+\end{aligned}\]</p>
+
+  <p>In the relativistic limit ($p \gg m$), we have $E \simeq p$ and thus
+\[
+\f{\p f}{\p t} + \f{\hat p^i}a \f{\p f}{\p x^i} - Hp\f{\p f}{\p p} = C[f],
+\tag{3.39}
+\]
+while in the nonrelativistic limit ($p \ll m$), we have $E\simeq m$ and thus
+\[
+\f{\p f}{\p t} + \f p m \f{\hat p^i}a \f{\p f}{\p x^i} - Hp\f{\p f}{\p p} = C[f],
+\tag{3.40}
+\]
+with a very suppressed $\p f / \p x^i$ term.</p>
+
+  <p>We will first approach the fully homogenous/nonrelativistic case ($\p f / \p x^i = 0$).
+Integrating the Boltzmann equation over all physical momenta, we obtain
+\[\begin{aligned}
+&amp;\quad \int \f{\d^3 p}{[2\pi]^3} \f{\p f}{\p t} - H \int \f{\d^3 p}{[2\pi]^3} p \f{\p f}{\p p}
+\\
+&amp;= \f{\p}{\p t}\int \f{\d^3 p}{[2\pi]^3} f - H \brk{
+    \int \f{\d^2 \hat p}{[2\pi]^3} p^3 f\Bigg|_{p=0}^{p=\infty} - 3\int \f{\d^3 p}{[2\pi]^3} f
+}
+\\
+&amp;= \f{\p n}{\p t} + 3 H n
+= \int \f{\d^3 p}{[2\pi]^3} C[f].
+\tag{3.43}
+\end{aligned}\]
+In the absence of collisions $(C[f] = 0)$, this confirms the $n\propto a^{-3}$ relation from earlier.
+However, collisions can alter the dynamics of $n$.</p>
+
+  <h3 id="collisions">Collisions</h3>
+
+  <p>A collision is an umbrella term for any sort of direct particle-particle interaction, 
+including scattering, pair production, annihilation, and decay.</p>
+
+  <p>Consider, for instance, a reversible reaction
+\[
+(1) + (2)
+\leftrightarrow (3) + (4)
+\tag{3.44}
+\]
+between species $1$, $2$, $3$, and $4$. 
+Its net effect on the dynamics of species $1$ can be broken down into 
+its effect on the set of possible species $1$ physical momenta
+\[
+\f{\d f_1}{\d t} 
+= C[f_1]
+= \int \f{\d^3 p_1}{[2\pi]^3} C[f_1(\vec p_1)] \, f_1(\vec p_1).
 \]</p>
+
+  <p>Now, for a given species $1$ physical momentum $\vec p_1$, 
+the other species’ physical momenta $\vec p_2$, $\vec p_3'$, and $\vec p_4'$
+are constrained by the the conservation of net comoving momentum
+\[
+(P_1)^\alpha + (P_2)^\alpha = (P_3')^\alpha + (P_4')^\alpha,
+\]
+which is component-wise equivalent to
+\[\begin{aligned}
+\vec p_1 + \vec p_2 &amp;= \vec p_3' + \vec p_4',
+\\
+E_1(\vec p_1) + E_2(\vec p_2) &amp;= E_3(\vec p_3') + E_4(\vec p_4'),
+\tag{3.45}
+\end{aligned}\]
+where $E_s(p) = \sqrt{p^2 + m_s^2}$ is the dispersion relation for species $s$.
+When integrating over all possible $\vec p_2$, $\vec p'_3$, and $\vec p'_4$, 
+we will use Dirac delta functions to enforce these constraints.</p>
+
+  <p>Then, given these physically possible momenta, 
+their reaction rate is controlled by the square of the scattering amplitude
+$\mathcal M(\vec p_1, \vec p_2, \vec p'_3, \vec p'_4)$, 
+which is computed via Feynman diagrams.
+In the integrand, this is weighted by the probabilities: $-f_1(\vec p_1)\, f_2(\vec \p_2)$ for the forward reaction
+and $+f_3(\vec p'_4)\, f_4(\vec p'_4)$ for the reverse reaction, 
+with the signs respectively corresponding to the annihilation and creation of species $1$.</p>
+
+  <p>Putting it all together, the collision term for a species $1$ particle traveling with momentum $\vec p_1$ is
+\[\begin{aligned}
+C[f_1(\vec p_1)] &amp;= 
+\int\f{\d^3 p_2}{[2\pi]^3}
+\int\f{\d^3 p_3'}{[2\pi]^3}
+\int\f{\d^3 p_4'}{[2\pi]^3}
+\\
+&amp;\quad\cdot \delta_D^{(3)}(\vec p_3' + \vec p_4' - \vec p_1 - \vec p_2)
+\\
+&amp;\quad\cdot \delta_D^{(1)}(E_3(\vec p_3') + E_4(\vec p_4') - E_1(\vec p_1) - E_2(\vec p_2))
+\\
+&amp;\quad \cdot |\mathcal M(\vec p_1, \vec p_2, \vec p_3', \vec p_4')|^2
+\\
+&amp;\quad\cdot \brk{
+f_3(\vec p_3')\, f_4(\vec p_4') - f_1(\vec p_1)\, f_2(\vec p_2)
+}.
+\tag{3.46}
+\end{aligned}\]</p>
+
+  <p>But this is non-relativistic and does not account for the peculiarities of spin statistics.</p>
 
 </section>
 

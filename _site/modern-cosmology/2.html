@@ -5,9 +5,9 @@
     <title></title>
     <meta name=viewport content='width=device-width, initial-scale=1'>
     <link rel="shortcut icon" type=image/png href="https://xingyzt.net/notes/assets/favicon.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/notes/assets/katex.min.css">
+    <script defer src="/notes/assets/katex.min.js"></script>
+    <script defer src="/notes/assets/auto-render.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             renderMathInElement(document.body, {
@@ -27,7 +27,7 @@
                 "\\prn": "\\left({#1}\\right)",
                 "\\brk": "\\left[{#1}\\right]",
               },
-              throwOnError : false
+              throwOnError : true
             });
             const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
             headings.forEach(heading =>{
@@ -70,35 +70,41 @@
   details {
     display: none;
   }
+  .katex {
+	  font-size: 1em;
+  }
+  html, body {
+	  font-size: 16px;
+  }
 }
 
 
 @font-face {
-    font-family: 'cmu';
-    src: url('/notes/assets/garamx.ttf') format('truetype');
+    font-family: 'garamond';
+    src: url('/notes/assets/fonts/garamond_regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'cmu';
-    src: url('/notes/assets/garami.ttf') format('truetype');
+    font-family: 'garamond';
+    src: url('/notes/assets/fonts/garamond_italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 
 @font-face {
-    font-family: 'cmu';
-    src: url('/notes/assets/garabx.ttf') format('truetype');
+    font-family: 'garamond';
+    src: url('/notes/assets/fonts/garamond_bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 
 @font-face {
-    font-family: 'cmu';
-    src: url('/notes/assets/garabi.ttf') format('truetype');
+    font-family: 'garamond';
+    src: url('/notes/assets/fonts/garamond_bold_italic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
@@ -109,7 +115,7 @@ html {
 }
 html, body {
   font-size: 20px;
-  font-family: cmu, serif;
+  font-family: garamond, serif;
   margin: 0;
   padding: 0;
 }
@@ -356,18 +362,41 @@ Its Christoffel symbol is thus
 \end{aligned}\]
 Verify for yourself that these equations together resolve every entry of the symbol.</p>
 
-  <h3 id="energy-of-a-particle">Energy of a particle</h3>
+  <h3 id="energy-and-momentum-of-a-particle">Energy and momentum of a particle</h3>
 
-  <p>To examine the effects of cosmological expansion on a free particle’s energy, define the path parameter $\lambda$ such that the four-momentum $P^\alpha = (E, \vec p) = \f{\d x^\alpha}{\d \lambda}$. This way,
+  <p>We wish to calculate the effects of cosmic expansion on the energy of a free particle.</p>
+
+  <p>If we choose to parameterize a massive particle’s path by $\lambda = \tau/m$, 
+where $\tau$ is the particle’s proper time, then we can write the particle’s <strong>comoving momentum</strong> as 
+\[
+P^\alpha 
+= m\f{\d x^\alpha}{\d\tau}
+= \f{\d x^\alpha}{\d\lambda}.
+\tag{2.26}
+\]
+This relation in fact holds in the massless limit as well, 
+when $\tau/m$ converges to the comoving time $x^0 = t$.</p>
+
+  <p>For a free particle, $P^0$ is conserved along its geodesic. 
+We identify this as the particle’s energy $E$, so
 \[
 \f{\d }{\d \lambda} = \f{\d x^0}{\d \lambda}\f{\d}{\d x^0} = E\f{\d}{\d t}.
 \tag{2.27}
-\]
-In addition, note that (as apparent in the rest frame of the particle,)
+\]</p>
+
+  <p>In the rest frame of the particle, $E = m$ while $P^i = 0$, giving the FLRW <strong>dispersion relation</strong>
 \[
 g_{\mu\nu}P^\mu P^\nu = -E^2 + \delta_{ij} a^2 P^i P^j = -m^2.
 \tag{2.29}
-\]</p>
+\]
+This motivates defining
+\[
+\vec p^i = a P^i
+\tag{2.32}
+\]
+as the <strong>physical momentum</strong> $\vec p$ of the particle, 
+since it satisifies the Minkowskian dispersion relation
+$-E^2 + \delta_{ij} p^i p^j = m^2$.</p>
 
   <p>The geodesic equation for the particle thus simplifies as
 \[\begin{aligned}
@@ -380,7 +409,7 @@ with the $\mu=0$ component
 \[\begin{aligned}
 E\dot E &amp;= -{\Gamma^0}_{ij} P^i P^j \\
 &amp;= -a\dot a \delta_{ij} P^i P^j\\
-&amp;= \f{\dot a}{a} \big[m^2 - E^2\big]
+&amp;= \f{\dot a}{a} \big[m^2 - E^2\big].
 \end{aligned}\]</p>
 
   <p>For a massless particle, 
@@ -437,12 +466,12 @@ This is also known as the <strong>comoving horizon</strong>, or as the <strong>c
 
   <h3 id="nonrelativistic-distribution-statistics">Nonrelativistic distribution statistics</h3>
 
-  <p>Many macroscopic statistics of a system are derived from how its particles are distributed in <a href="https://en.wikipedia.org/wiki/Phase_space">phase-space</a>.
+  <p>Many macroscopic statistics of a system are derived from how its particles are distributed in <a href="https://en.wikipedia.org/wiki/Phase\_space">phase-space</a>.
 We can calculate this phase-space distribution using some quantum mechanics!</p>
 
   <p>First, let us calculate how many particles there are within every infinitesimal phase-space volume $\d^3x\, \d^3p$:</p>
 
-  <p><a href="https://en.wikipedia.org/wiki/Uncertainty_principle">Heisenberg’s uncertainty principle</a>
+  <p><a href="https://en.wikipedia.org/wiki/Uncertainty\_principle">Heisenberg’s uncertainty principle</a>
 tells us that every such volume contains
 $\d^3 x\, \d^3 p/[2\pi]^3$
 indivisible <strong>fundamental phase-space elements</strong>.
@@ -481,8 +510,8 @@ and the pressure-energy $\mathbb P_s(p) = p^3/3E_s(p)$ gives the pressure
 
   <p>To model relativistic particles, 
 we have to convert the density and pressure scalar fields in <a href="#nonrelativistic-distribution-statistics">Nonrelativistic distribution statistics</a> to a energy-momentum tensor field $T{^\mu}_\nu(\vec x, t)$.
-This is done by substituting the three-momentum and energy with the four-momentum $P^\alpha = (E, \vec p)$
-in a comoving reference frame (which flows locally with the particles). 
+This is done by substituting the energy $E$ and physical momentum $\vec p$ in the above equations 
+with the comoving momentum $P^\alpha = (E, \vec p/a)$ in a reference frame which flows locally with the particles. 
 The comoving mass density is then
 \[
 \rho_s(\vec x, t)
@@ -494,7 +523,7 @@ while the comoving pressures are
 = \f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^i P_j}{P^0} f_s(\vec x, \vec p, t),
 \]
 where $|g|$ is the determinant of the metric
-and $\d^3 P \equiv \d P_1 \d P_2 \d P_3$ is the four-momentum's spatial volume element.
+and $\d^3 P \equiv \d P_1 \d P_2 \d P_3$ is the comoving momentum's spatial volume element.
 Together, they give the energy-momentum tensor
 \[
 T{^\mu}_\nu

@@ -5,9 +5,9 @@
     <title>Xing’s notes on Carroll & Ostlie, Introduction to Modern Astrophysics</title>
     <meta name=viewport content='width=device-width, initial-scale=1'>
     <link rel="shortcut icon" type=image/png href="https://xingyzt.net/notes/assets/favicon.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/notes/assets/katex.min.css">
+    <script defer src="/notes/assets/katex.min.js"></script>
+    <script defer src="/notes/assets/auto-render.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             renderMathInElement(document.body, {
@@ -27,7 +27,7 @@
                 "\\prn": "\\left({#1}\\right)",
                 "\\brk": "\\left[{#1}\\right]",
               },
-              throwOnError : false
+              throwOnError : true
             });
             const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
             headings.forEach(heading =>{
@@ -70,35 +70,41 @@
   details {
     display: none;
   }
+  .katex {
+	  font-size: 1em;
+  }
+  html, body {
+	  font-size: 16px;
+  }
 }
 
 
 @font-face {
-    font-family: 'cmu';
-    src: url('/notes/assets/garamx.ttf') format('truetype');
+    font-family: 'garamond';
+    src: url('/notes/assets/fonts/garamond_regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'cmu';
-    src: url('/notes/assets/garami.ttf') format('truetype');
+    font-family: 'garamond';
+    src: url('/notes/assets/fonts/garamond_italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 
 @font-face {
-    font-family: 'cmu';
-    src: url('/notes/assets/garabx.ttf') format('truetype');
+    font-family: 'garamond';
+    src: url('/notes/assets/fonts/garamond_bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 
 @font-face {
-    font-family: 'cmu';
-    src: url('/notes/assets/garabi.ttf') format('truetype');
+    font-family: 'garamond';
+    src: url('/notes/assets/fonts/garamond_bold_italic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
@@ -109,7 +115,7 @@ html {
 }
 html, body {
   font-size: 20px;
-  font-family: cmu, serif;
+  font-family: garamond, serif;
   margin: 0;
   padding: 0;
 }
