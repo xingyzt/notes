@@ -592,7 +592,8 @@ f_3(\vec p_3')\, f_4(\vec p_4') - f_1(\vec p_1)\, f_2(\vec p_2)
 }.
 \tag{3.46}
 \end{aligned}\]
-However, this breaks down at high speeds and high densities, 
+This derivation can be easily generalized for other types of collisions.
+However, it breaks down at high speeds and high densities, 
 at which point a fully relativistic and quantum treatment is necessary.</p>
 
   <h3 id="quantum-relativistic-collisions">Quantum-relativistic collisions</h3>
@@ -635,8 +636,8 @@ requiring an factor of $[1+f_s]$ instead.</p>
 C[f_1(\vec p_1)] &amp;= 
 \f1{2E_1(p_1)}
 \int\f{\d^3 p_2}{[2\pi]^3 \cdot 2E_2(p_2)}
-\int\f{\d^3 p_3'}{[2\pi]^3 \cdot 2E_3(p_3)}
-\int\f{\d^3 p_4'}{[2\pi]^3 \cdot 2E_4(p_4)}
+\int\f{\d^3 p_3'}{[2\pi]^3 \cdot 2E_3(p_3')}
+\int\f{\d^3 p_4'}{[2\pi]^3 \cdot 2E_4(p_4')}
 \\
 &amp;\quad\cdot [2\pi]^4
 \cdot \delta_D^{(3)}(\vec p_3' + \vec p_4' - \vec p_1 - \vec p_2)
@@ -652,7 +653,29 @@ f_3(\vec p_3')\, f_4(\vec p_4')\, [1 \pm f_1(\vec p_1)] \, [1 \pm f_2(\vec p_2)]
 \Big].
 \tag{3.48}
 \end{aligned}\]
-(I have no idea why the $[2\pi]^4$ is there. The textbook doesn't explain it. I've emailed the authors)</p>
+(I have no idea why the $[2\pi]^4$ is there. The textbook doesn't explain it. I've emailed the authors)
+This derivation can again be easily generalized to other types of collisions.</p>
+
+  <h3 id="perturbed-spacetime">Perturbed spacetime</h3>
+
+  <p>Inhomogeneities and anisotropies in spacetime, either due to uneven distributions of mass-energy, 
+or due to gravitational waves in spacetime itself, are reflected in perturbations $h_{\mu\nu}$ to the FLRW metric $g^{(0)}_{\mu\nu}$.</p>
+
+  <p>The perturbed metric $g_{\mu\nu} = g^{(0)}_{\mu\nu} + h_{\mu\nu}$ is still symmetric, 
+so $h_{\mu\nu}$ carries $10$ independent components in total. 
+They can be rewritten as a combination of two $3$-scalars (rank $0$), two $3$-vectors (rank $1$), and one $3$-tensor (rank $2$)
+via a <strong>scalar-vector-tensor decomposition</strong>.
+Custom constraints (<strong>gauge choices</strong>) can be imposed on the decomposition to reduce them back to $10$ degrees of freedom.</p>
+
+  <p>Under any three-dimensional spatial rotation with matrix $\hat R$,
+the <strong>scalar perturbations</strong> are invariant,
+the <strong>vector perturbations</strong> each transform as $\vec v \to \hat R\vec v$,
+and the <strong>tensor perturbation</strong> transforms as $\hat h \to \hat R \hat h \hat R^T$.
+There are few physical mechanisms that can generate vector perturbations,
+while scalar perturbations correspond to simple spacetime curvature, 
+and tensor perturbations correspond to gravitational waves.</p>
+
+  <p>We will focus on scalar perturbations for now, and delay the discussion of tensor perturbations to Chapter 6.</p>
 
 </section>
 
