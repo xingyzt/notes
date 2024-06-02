@@ -145,8 +145,8 @@ h3 {
   scroll-margin: 3rem;
 }
 ::selection {
-  background: var(--text);
-  color: var(--bg);
+  background: var(--deco);
+  color: var(--text-accent);
 }
 strong {
   text-decoration: dotted underline var(--deco);
@@ -653,13 +653,14 @@ f_3(\vec p_3')\, f_4(\vec p_4')\, [1 \pm f_1(\vec p_1)] \, [1 \pm f_2(\vec p_2)]
 \Big].
 \tag{3.48}
 \end{aligned}\]
-(I have no idea why the $[2\pi]^4$ is there. The textbook doesn't explain it. I've emailed the authors)
+(I have no idea why the $[2\pi]^4$ is there. The textbook doesn't explain it. I've emailed the authors.)
 This derivation can again be easily generalized to other types of collisions.</p>
 
   <h3 id="perturbed-spacetime">Perturbed spacetime</h3>
 
-  <p>Inhomogeneities and anisotropies in spacetime, either due to uneven distributions of mass-energy, 
-or due to gravitational waves in spacetime itself, are reflected in perturbations $h_{\mu\nu}$ to the FLRW metric $g^{(0)}_{\mu\nu}$.</p>
+  <p>Small inhomogeneities and anisotropies in spacetime, either due to slightly uneven distributions of mass-energy, 
+or due to gravitational waves in spacetime itself, 
+are reflected in small perturbations $h_{\mu\nu}$ to the FLRW metric $g^{(0)}_{\mu\nu}$.</p>
 
   <p>The perturbed metric $g_{\mu\nu} = g^{(0)}_{\mu\nu} + h_{\mu\nu}$ is still symmetric, 
 so $h_{\mu\nu}$ carries $10$ independent components in total. 
@@ -672,10 +673,75 @@ the <strong>scalar perturbations</strong> are invariant,
 the <strong>vector perturbations</strong> each transform as $\vec v \to \hat R\vec v$,
 and the <strong>tensor perturbation</strong> transforms as $\hat h \to \hat R \hat h \hat R^T$.
 There are few physical mechanisms that can generate vector perturbations,
-while scalar perturbations correspond to simple spacetime curvature, 
+while scalar perturbations correspond to concentrated mass-energy,
 and tensor perturbations correspond to gravitational waves.</p>
 
-  <p>We will focus on scalar perturbations for now, and delay the discussion of tensor perturbations to Chapter 6.</p>
+  <p>We will focus on scalar perturbations for now, and delay the discussion of tensor perturbations to Chapter 6.
+In the <strong>conformal Newtonian gauge</strong>, the scalar-perturbed FLRW metric is
+\[
+g_{\mu\nu} = \begin{pmatrix}
+-[1 + 2\Psi] &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; a^2 [1 + 2\Phi] &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; a^2 [1 + 2\Phi] &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; a^2 [1 + 2\Phi]
+\end{pmatrix},
+\tag{3.49}
+\]
+where $\Psi$ and $\Phi$ are functions of spacetime. 
+With this choice of gauge, 
+the temporal perturbation $\Psi$ corresponds to the Newtonian potential $-GM/r$, and governs the motion of all particles,
+while the spatial perturbation $\Phi$ corresponds to a local perturbation in the spatial curvature (or equivalently, in the scale factor)
+and predominantly affects the motion of relativistic particles.
+In general, $\Psi$ and $\Phi$ are tightly coupled to each other, and for static solutions, $\Phi = -\Psi$.
+Because they are typically small and slow-varying, with magnitudes within $10^{-4}$ in most of our universe,
+we will calculate anything involving them or their derivatives to linear order only.</p>
+
+  <p>To linear order, the inverse metric is
+\[
+g^{\mu\nu} = \begin{pmatrix}
+-[1 - 2\Psi] &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; a^{-2} [1 - 2\Phi] &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; a^{-2} [1 - 2\Phi] &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; a^{-2} [1 - 2\Phi]
+\end{pmatrix}.
+\]
+The Christoffel symbol is thus
+\[\begin{aligned}
+\Gamma^0_{00} 
+&amp;= g^{00} \p_0 g_{00} \\
+&amp;= [1 - 2\Psi] \dot\Psi
+\simeq \dot\Psi,
+\\
+\Gamma^0_{i0} = \Gamma^0_{0i} 
+&amp;= \f{g^{00}}2 \brk{ \zero{\p_0 g_{0i}} + \p_i g_{00} - \zero{\p_0 g_{0i}} } \\
+&amp;= [1 - 2\Psi] \p_i \Psi
+\simeq \p_i\Psi,
+\\
+\Gamma^0_{ij} 
+&amp;= \f{g^{00}}2 \brk{ \zero{\p_i g_{j0}} + \zero{\p_j g_{0i}} - \p_0 g_{ij} } \\
+&amp;= \f{1 - 2\Psi}2 \p_0(a^2[1 + 2\Phi] \delta_{ij}) \\
+&amp;\simeq \brk{ a\dot a [1 + 2\Phi] + a^2 \dot\Phi -2a\dot a\Psi } \delta_{ij} \\
+&amp;= a^2 \brk{ H + 2H[\Phi - \Psi] + \dot\Phi } \delta_{ij},
+\\
+\Gamma^i_{00}
+&amp;= \f{g^{ii}}2 \brk{ \zero{\p_0 g_{0i}} + \zero{\p_0 g_{i0}} - \p_i g_{00} } \\
+&amp;= \f{1 - 2\Phi}{a^2} \p_i \Psi
+\simeq \f{\p_i \Psi}{a^2},
+\\
+\Gamma^i_{j0} = \Gamma^i_{0j}
+&amp;= \f{g^{ii}}2 \brk{ \p_0 g_{ji} + \zero{\p_j g_{0i}} - \zero{\p_i g_{0j}}  } \\
+&amp;= \f{1 - 2\Phi}{a^2} \p_0(a^2[1 + 2\Phi] \delta_{ij}) \\
+&amp;\simeq a^{-2} \brk{ a\dot a [1 + 2\Phi] + a^2\dot\Phi - 2a\dot a\Phi } \delta_{ij} \\
+&amp;= \brk{ H + \dot\Phi }\delta_{ij},
+\\
+\Gamma^i_{jk}
+&amp;= \f{g^{ii}}2 \brk{ \p_j g_{ik} + \p_k g_{ij} - \p_i g_{jk} } \\
+&amp;= [1 - 2\Phi] \brk{ \p_j\Phi\delta_{ik} + \p_k\Phi \delta_{ij} - \p_i\Phi \delta_{jk} } \\
+&amp;\simeq \brk{ \delta_{ik}\p_j + \delta_{ij}\p_k - \delta_{jk}\p_i }\Phi.
+\tag{3.56}
+\end{aligned}\]</p>
+
+  <h3 id="geodesic-equation">Geodesic equation</h3>
 
 </section>
 
