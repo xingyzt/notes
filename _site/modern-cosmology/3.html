@@ -30,6 +30,9 @@
               },
               throwOnError : true
             });
+		[...document.getElementsByClassName("tag")].forEach(tag => {
+			tag.parentNode.parentNode.parentNode.id = "tag-" + tag.textContent.slice(1,-1)
+		});
         });
     </script>
     <style>
@@ -67,11 +70,11 @@
   details {
     display: none;
   }
-  .katex {
-	  font-size: 1em;
-  }
   html, body {
 	  font-size: 16px;
+  }
+  h2, #markdown-toc {
+	position: static;
   }
 }
 
@@ -118,6 +121,7 @@ html, body {
 }
 html * {
   box-sizing: border-box;
+  scroll-margin: 3rem;
 }
 body {
   width: 50rem;
@@ -138,15 +142,21 @@ h2 {
   z-index: 100;
   top: 0;
 }
-h3 {
-  scroll-margin: 3rem;
+p {
+  margin: 0;
+  text-indent: 1em;
 }
+
 ::selection {
   background: var(--deco);
   color: var(--text-accent);
 }
 strong {
   text-decoration: dotted underline var(--deco);
+  color: var(--text-accent);
+}
+:target {
+  background-color: var(--bg-accent);
   color: var(--text-accent);
 }
 
@@ -173,12 +183,15 @@ summary {
 }
 
 a, summary {
-  text-decoration: dotted underline var(--link);
   color: var(--link);
 }
+a {
+  text-decoration: dotted underline var(--link);
+}
 
-a:hover, a:focus, summary:hover, summary:focus {
-  text-decoration: underline var(--link-accent);
+a:hover, a:focus, 
+summary:hover, summary:focus {
+  text-decoration: underline var(--link-accent) !important;
   color: var(--link-accent);
 }
 a:active, summary:active {
@@ -203,9 +216,35 @@ th, td {
 .katex {
   font-size: 0.9em;
 }
+.katex-display {
+  padding: 0.2rem 0;
+  margin: 0;
+  width: inherit;
+  height: fit-content;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.katex-display > .katex, 
+.katex-display > .katex > .katex-html {
+  min-width: fit-content;
+  height: fit-content;
+  width: inherit;
+}
+.katex-display > .katex > .katex-html {
+  position: relative;
+  padding-right: 3rem;
+}
+.katex-display > .katex > .katex-html > .tag {
+  position: absolute;
+  right: 0;
+  color: var(--deco);
+}
 
 #markdown-toc {
   padding-left: 1rem;
+}
+#markdown-toc a {
+  text-decoration: none;
 }
 #markdown-toc > li:first-child {
   display: none;
@@ -230,7 +269,6 @@ th, td {
 #markdown-toc > li > ul > li > ul > li {
   font-size: 0.8rem;
 }
-    
     
     
     </style>
@@ -283,7 +321,7 @@ Furthermore, matching
 \[
 {\hat T^\mu}_\nu = -g^{\mu\alpha} \hat T_{\alpha\nu} = -\f{\Lambda}{8\pi G} \delta^\mu_\nu
 \]
-with <strong>(2.44)</strong> gives
+with <a href="#tag-2.44">(2.44)</a> gives
 \[
 \rho_\Lambda = -\mathcal{P}_\Lambda = \f{\Lambda}{8\pi G},
 \tag{3.10}
@@ -291,7 +329,7 @@ with <strong>(2.44)</strong> gives
 proving that the dark-energy equation of state $w_\Lambda = -1$.
 This notation will also facilitate the generalization of $\Lambda$ to a time-varying “quintessence”.</p>
 
-  <p>In the Euclidean FLRW metric, the Christoffel symbol $\Gamma^\mu_{\alpha\beta}$ is given by <strong>(2.25)</strong>.
+  <p>In the Euclidean FLRW metric, the Christoffel symbol $\Gamma^\mu_{\alpha\beta}$ is given by <a href="#tag-2.25">(2.25)</a>.
 Note that it is independent of the spatial cordinates ($\p_i$).
 The Euclidean FLRW Ricci tensor is thus
 \[\begin{aligned}
@@ -427,7 +465,7 @@ the first Friedmann equation becomes
 \tag{3.13}
 \]</p>
 
-  <p>In a curved FLRW universe, there is an additional curvature parameter $\Omega_K \equiv 1 - \Omega(t_0)$ in the Friedmann equations. For instance, <strong>(3.13)</strong> becomes
+  <p>In a curved FLRW universe, there is an additional curvature parameter $\Omega_K \equiv 1 - \Omega(t_0)$ in the Friedmann equations. For instance, <a href="#tag-3.13">(3.13)</a> becomes
 \[
 \brk{\f{H(t)}{H_0}}^2 = a^{-2}\Omega_K + \sum_s a^{-3[1+w_s]} \Omega_s.
 \tag{3.14}
@@ -625,7 +663,7 @@ the set of physically possible comoving momenta is confined to a relativisticall
 known as the <strong>mass shell</strong>. (Real particles are thus said to be “<strong>on the mass-shell</strong>”.)</p>
 
   <p>Because the infinitesimal elements of three-dimensional phase space $\d^3 p$ change volume under Lorentz transformations, 
-the integrals in $(3.46)$ are not relativistically invariant.
+the integrals in <a href="#tag-3.46">(3.46)</a> are not relativistically invariant.
 To obtain an invariant integral measure, we have to work on the mass shell embedded in four-dimensional phase space instead.
 Its infinitesimal elements measure the three-volumes of the on-shell slices of $\d^4 p$:
 \[\begin{aligned}
@@ -647,7 +685,7 @@ the relativistically invariant fundamental phase-space element is thus
 their interparticle quantum effects strengthen, 
 and the differing spin statistics of bosons and fermions start to significantly affect the reaction rates as well.
 For fermions, the Pauli exclusion principle suppresses reactions when there is a high density, 
-adding a factor of $[1-f_s]$ to the reaction that produces a fermonic species $s$ in $(3.46)$.
+adding a factor of $[1-f_s]$ to the reaction that produces a fermonic species $s$ in <a href="#tag-3.46">(3.46)</a>.
 Bosonic reactions, on the other hand, are enhanced at high density (this is the cause of stimulated emissions), 
 requiring an factor of $[1+f_s]$ instead.</p>
 
@@ -807,10 +845,10 @@ Applying the geodesic equation then gives
     + \f1{P^0} \Gamma^i_{jk} P^j P^k
 }
 \\
-&amp;\simeq -\Bigg[
-    \f E{a^2} [1 - \Psi]\p_i\Psi + \f{2}a [H + \dot\Phi] [1 - \Phi] p^i \\
-&amp;\quad\quad + \f1E [1+\Psi]\brk{\f{1-\Phi}a}^2 \brk{ 2p^i p^k \p_k- \delta_{jk} p^j p^k \p_i}\Phi
-\Bigg]
+&amp;\simeq -\brk{
+    \f E{a^2} [1 - \Psi]\p_i\Psi + \f{2}a [H + \dot\Phi] [1 - \Phi] p^i
+    + \f1E [1+\Psi]\brk{\f{1-\Phi}a}^2 \brk{ 2p^i p^k \p_k- \delta_{jk} p^j p^k \p_i}\Phi
+}
 \\
 &amp;\rightsquigarrow -\brk{
     \f E{a^2} \nabla\Psi
@@ -844,8 +882,8 @@ the equations of motion are thus
 \f{\d \vec p}{\d t}
 &amp;\leftarrow \f{\d }{\d t}\prn{ a[1+\Phi]P^i } \\
 &amp;= \brk{ \dot a[1 + \Phi] + a\dot\Phi + \f1E [\vec p\cdot\nabla]\Phi } P^i  +a[1+\Phi] \f{\d P^i}{\d t} \\
-&amp;\rightsquigarrow [ H + \dot\Phi ]\vec p + \f{p^2}{aE} \nabla_\parallel\Phi \\
-&amp;\quad -\brk{
+&amp;\rightsquigarrow [ H + \dot\Phi ]\vec p + \f{p^2}{aE} \nabla_\parallel\Phi
+    -\brk{
     \f Ea \nabla\Psi
     + 2[ H + \dot\Phi ]\vec p
     + \f{p^2}{aE} \brk{ 2\nabla_\parallel - \nabla }\Phi
