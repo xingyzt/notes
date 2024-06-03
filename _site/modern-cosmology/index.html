@@ -317,7 +317,19 @@ and for patiently answering my questions wherever I got stuck on this subject.</
       <li><a href="#the-origin-of-species" id="markdown-toc-the-origin-of-species">4. The origin of species</a></li>
     </ul>
   </li>
-  <li><a href="#ii-perturbations" id="markdown-toc-ii-perturbations">II. Perturbations</a></li>
+  <li><a href="#ii-perturbations" id="markdown-toc-ii-perturbations">II. Perturbations</a>    <ul>
+      <li><a href="#the-inhomogenous-universe-matter--radiation" id="markdown-toc-the-inhomogenous-universe-matter--radiation">5. The inhomogenous universe: matter &amp; radiation</a></li>
+      <li><a href="#the-inhomogenous-universe-gravity" id="markdown-toc-the-inhomogenous-universe-gravity">6. The inhomogenous universe: gravity</a></li>
+      <li><a href="#initial-conditions" id="markdown-toc-initial-conditions">7. Initial conditions</a></li>
+      <li><a href="#growth-of-structure-linear-theory" id="markdown-toc-growth-of-structure-linear-theory">8. Growth of structure: linear theory</a></li>
+      <li><a href="#the-cosmic-microwave-background" id="markdown-toc-the-cosmic-microwave-background">9. The cosmic microwave background</a></li>
+      <li><a href="#the-polarized-cmb" id="markdown-toc-the-polarized-cmb">10: The polarized CMB</a></li>
+      <li><a href="#probes-of-structure-tracers" id="markdown-toc-probes-of-structure-tracers">11. Probes of structure: tracers</a></li>
+      <li><a href="#growth-of-structure-beyond-linear-thery" id="markdown-toc-growth-of-structure-beyond-linear-thery">12. Growth of structure: beyond linear thery</a></li>
+      <li><a href="#probes-of-structure-lensing" id="markdown-toc-probes-of-structure-lensing">13. Probes of structure: lensing</a></li>
+      <li><a href="#analysis-and-inference" id="markdown-toc-analysis-and-inference">14. Analysis and inference</a></li>
+    </ul>
+  </li>
 </ul>
 
 </details>
@@ -576,7 +588,7 @@ in the rest frame and obeys the conservation of local energy-momentum $\nabla_\m
 \tag{2.57}
 \end{aligned}\]</p>
 
-  <p>In general, the density of a medium with a constant <strong>equation of state</strong> $w \equiv \mathcal P / \rho$ evolves as $\rho \propto a^{-3-3w}$. For radiation, $\mathcal P_r \simeq \rho_r/3 \implies \rho_r \propto a^{-4}$, whereas for nonrelativistic matter, $\mathcal P_m \simeq 0 \implies \rho_m \propto a^{-3}$. The cosmological constant, with $w_\Lambda = -1$, is thus constant through time.</p>
+  <p>In general, the density of a medium with a constant <strong>equation of state</strong> $w \equiv \mathcal P / \rho$ evolves as $\rho \propto a^{-3-3w}$. For radiation, $\mathcal P_{\text r} \simeq \rho_{\text r}/3 \implies \rho_{\text r} \propto a^{-4}$, whereas for nonrelativistic matter, $\mathcal P_{\text m} \simeq 0 \implies \rho_{\text m} \propto a^{-3}$. The cosmological constant, with $w_\Lambda = -1$, is thus constant through time.</p>
 
   <h3 id="distances-and-conformal-time">Distances and conformal time</h3>
 
@@ -682,10 +694,10 @@ f_\text{FD}(E_s) = \f1{e^{[E_s - \mu_s]/T} + 1},
 \tag{2.66}
 \]
 where $\mu_s$ is the chemical potential and $T$ is the equilibrium temperature. 
-For photons and neutrinos, $\mu_r \ll T$.
-Evaluating $\mathcal{P}_r$ in thermal equilibrium thus gives
+For photons and neutrinos, $\mu_{\text r} \ll T$.
+Evaluating $\mathcal{P}_{\text r}$ in thermal equilibrium thus gives
 \[
-\f{\p\mathcal{P}_r}{\p T} = \f{\rho_r + \mathcal{P}_r}{T} \propto a^{-3}.
+\f{\p\mathcal{P}_{\text r}}{\p T} = \f{\rho_{\text r} + \mathcal{P}_{\text r}}{T} \propto a^{-3}.
 \tag{2.67}
 \]
 Thus the entropy density of the universe $S \equiv (\rho + \mathcal P)/T$ scales as $a^{-3}$ in thermal equilibrium.</p>
@@ -694,12 +706,12 @@ Thus the entropy density of the universe $S \equiv (\rho + \mathcal P)/T$ scales
 
   <p>Define the dimensionless <strong>density parameter</strong> of a species $s$ to be
 \[
-\Omega_s \equiv \f{\rho_s(t_0)}{\rho_{cr}},
+\Omega_s \equiv \f{\rho_s(t_0)}{\rho_{\text{cr}}},
 \tag{2.71}
 \]
-i.e. its present-day density as a fraction of the universe’s critical density $\rho_{cr}$, we can write the physical density as 
+i.e. its present-day density as a fraction of the universe’s critical density $\rho_{\text{cr}}$, we can write the physical density as 
 \[
-\rho_s(a) = \Omega_s \rho_{cr} a^{-3[1 + w_s]},
+\rho_s(a) = \Omega_s \rho_{\text{cr}} a^{-3[1 + w_s]},
 \tag{2.72}
 \]
 where $a$ is the scale factor and $w_s$ is the equation of state for $s$.</p>
@@ -728,15 +740,15 @@ This lets us calculate the present-day photon density parameter
 \]
 from the present-day temperature of the CMB. This is very insignificant.</p>
 
-  <p>Because $\rho_r \propto a^{-4}$ <a href="#tag-2.57">(2.57)</a>, the temperature of photon radiation must scale as $a^{-1}$. Since $E_r$ also scales as $a^{-1}$ <a href="#tag-2.31">(2.31)</a>, the equilibrium photon distribution function is unaffected by the cosmic expansion. Note that in reality, there are small perturbations around this equilibrium, corresponding to anisotropies in the CMB.</p>
+  <p>Because $\rho_{\text r} \propto a^{-4}$ <a href="#tag-2.57">(2.57)</a>, the temperature of photon radiation must scale as $a^{-1}$. Since $E_{\text r}$ also scales as $a^{-1}$ <a href="#tag-2.31">(2.31)</a>, the equilibrium photon distribution function is unaffected by the cosmic expansion. Note that in reality, there are small perturbations around this equilibrium, corresponding to anisotropies in the CMB.</p>
 
   <p>Baryons (i.e. nucleons and electrons), on the other hand, come in many different phases (e.g. diffuse gas, ionized plasma, compact objects, etc.) throughout cosmic history, thus cannot be modeled by an equilibrium distribution. 
 Instead, their density parameter is estimated with methods such as starcounting, mapping of the intergalactic medium, comparisons of light elements abundances, and measurements of baryon acoustic oscillations (BAOs). 
 Elemental abundances and BAO measurements constrains the present-day baryon density parameter to
 \[
-\Omega_b = 0.0222(5) h^{-2},\, 0.0225(3) h^{-2}
+\Omega_{\text b} = 0.0222(5) h^{-2},\, 0.0225(3) h^{-2}
 \]
-respectively. Thus $\rho_b \simeq 0.05\rho_{cr}$, hinting a significant amount of non-baryonic matter.</p>
+respectively. Thus $\rho_{\text b} \simeq 0.05\rho_{\text{cr}}$, hinting a significant amount of non-baryonic matter.</p>
 
   <p>TODO Dark matter: Anisopies in the CMB. Late universe distance-redshift. LSS.</p>
 
@@ -1446,10 +1458,92 @@ while in the non-relativistic limit ($E \simeq m$), this reduces to
 
   <h2 id="the-origin-of-species">4. The origin of species</h2>
 
-  <p>Under construction!</p>
+  <p>TODO: later!</p>
+
 </section>
 
 <h1 id="ii-perturbations">II. Perturbations</h1>
+
+<section>
+
+  <h2 id="the-inhomogenous-universe-matter--radiation">5. The inhomogenous universe: matter &amp; radiation</h2>
+
+  <p>Under construction!</p>
+
+</section>
+
+<section>
+
+  <h2 id="the-inhomogenous-universe-gravity">6. The inhomogenous universe: gravity</h2>
+
+  <p>Under construction!</p>
+
+</section>
+
+<section>
+
+  <h2 id="initial-conditions">7. Initial conditions</h2>
+
+  <p>TODO: later!</p>
+
+</section>
+
+<section>
+
+  <h2 id="growth-of-structure-linear-theory">8. Growth of structure: linear theory</h2>
+
+  <p>Under construction!</p>
+
+</section>
+
+<section>
+
+  <h2 id="the-cosmic-microwave-background">9. The cosmic microwave background</h2>
+
+  <p>TODO: later!</p>
+
+</section>
+
+<section>
+
+  <h2 id="the-polarized-cmb">10: The polarized CMB</h2>
+
+  <p>TODO: later!</p>
+
+</section>
+
+<section>
+
+  <h2 id="probes-of-structure-tracers">11. Probes of structure: tracers</h2>
+
+  <p>Under construction!</p>
+
+</section>
+
+<section>
+
+  <h2 id="growth-of-structure-beyond-linear-thery">12. Growth of structure: beyond linear thery</h2>
+
+  <p>TODO: later!</p>
+
+</section>
+
+<section>
+
+  <h2 id="probes-of-structure-lensing">13. Probes of structure: lensing</h2>
+
+  <p>TODO: later!</p>
+
+</section>
+
+<section>
+
+  <h2 id="analysis-and-inference">14. Analysis and inference</h2>
+
+  <p>TODO: later!</p>
+
+</section>
+
 
 
     <a href="https://xingyzt.net">by <img src="https://xingyzt.net/notes/assets/favicon.png" title="Xing" width="50px"></a>
