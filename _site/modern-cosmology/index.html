@@ -267,6 +267,7 @@ and for patiently answering my questions wherever I got stuck on this subject.</
       <li><a href="#the-fundamental-equations-of-cosmology" id="markdown-toc-the-fundamental-equations-of-cosmology">3. The fundamental equations of cosmology</a>        <ul>
           <li><a href="#einstein-equations" id="markdown-toc-einstein-equations">Einstein equations</a></li>
           <li><a href="#friedmann-equations" id="markdown-toc-friedmann-equations">Friedmann equations</a></li>
+          <li><a href="#equations-of-motion" id="markdown-toc-equations-of-motion">Equations of motion</a></li>
           <li><a href="#boltzmann-equation" id="markdown-toc-boltzmann-equation">Boltzmann equation</a></li>
           <li><a href="#classical-collisions" id="markdown-toc-classical-collisions">Classical collisions</a></li>
           <li><a href="#quantum-relativistic-collisions" id="markdown-toc-quantum-relativistic-collisions">Quantum-relativistic collisions</a></li>
@@ -891,26 +892,10 @@ the first Friedmann equation becomes
 \tag{3.14}
 \]</p>
 
-  <h3 id="boltzmann-equation">Boltzmann equation</h3>
+  <h3 id="equations-of-motion">Equations of motion</h3>
 
-  <p>When particle number is locally conserved in some phase-space distribution $f(\vec x, \vec p, t)$,
-the continuity equation
-$\d f / \d t = 0$
-holds, where
-\[
-\f{\d}{\d t} = \f{\p}{\p t} + \dot{\vec x}\cdot\nabla_x + \dot{\vec p}\cdot\nabla_p
-\tag{3.17}
-\]
-is the total time derivative.
-When there are particle-particle interactions that do not conserve particle number,
-we introduce a collision term 
-\[
-\f{\d f}{\d t} = C[f].
-\tag{3.19}
-\]
-This is the most general form of the Boltzmann equation.</p>
-
-  <p>To solve this equation for the FRLW metric, we use the dispersion relation
+  <p>The physical trajectory of a particle can be computed from the time evolution of its physical momentum $\vec p$.
+We start with the dispersion relation,
 \[
 P^2 \equiv g_{\mu\nu} P^\mu P^\nu = -E^2 + p^2 = -m^2,
 \tag{3.27}
@@ -921,6 +906,8 @@ such that the physical momentum vector $\vec p = p\uvec p$ has components
 p^i \equiv p\hat p^i = \sqrt{g_{ii}} P^i = aP^i.
 \tag{3.32}
 \]
+While the direction of motion $\uvec p$ is constant in a homogenous and isotropic universe,
+the momentum magnitude can vary over time owing to the background expansion.
 From the geodesic equation and the dispersion relation, we obtain
 \[\begin{aligned}
 \f{\d P^0}{\d\lambda}
@@ -937,37 +924,74 @@ From the geodesic equation and the dispersion relation, we obtain
 &amp;= \f{\dot a}a g_{ij} P^i P^j
 = H p^2
 \\
-\implies \f{\d p}{\d t} &amp;= -Hp,
+\implies \f{\d p}{\d t} &amp;= -Hp.
 \tag{3.37}
 \end{aligned} \]
-while from homogeneity and isotropy, we obtain $\p f / \p x^i = \d\hat p^i / \d t = 0$.
-To facilitate calculations of perturbation, we will keep a small $\p f / p x^i$.
-In the (weakly perturbed) FRLW metric, the Boltzmann equation thus simplifies to
+Since
+\[
+\f{\d x^i}{\d t}
+= \f{\d x^i}{\d\lambda} \f{\d\lambda}{\d t}
+= \f{P^i}{P^0}
+= \f{p^i}{aE},
+\]
+the equations of motion are thus
 \[\begin{aligned}
-\f{\d f}{\d t}
-&amp;= \f{\p f}{\p t} + \f{\p f}{\p x^i} \f{\d x^i}{\d t} + \f{\p f}{\p p^i} \f{\d p^i}{\d t}
+\f{\d\vec x}{\d t}
+&amp;= \f{\d\vec x}{\d\lambda} \f{\d\lambda}{\d t}
+= \f{\vec p}{aE},
 \\
-&amp;= \f{\p f}{\p t} + \f{\p f}{\p x^i} \f{\d x^i}{\d\lambda} \f{\d\lambda}{\d t} + \f{\p f}{\p(p\hat p^i)} \f{\d (p\hat p^i)}{\d t}
+\f{\d\vec p}{\d t}
+&amp;= \f{\d p}{\d t}\uvec p
+= -H\vec p.
+\end{aligned}\]</p>
+
+  <h3 id="boltzmann-equation">Boltzmann equation</h3>
+
+  <p>When particle number is locally conserved in some phase-space distribution $f(\vec x, \vec p, t)$,
+the continuity equation
+$\d f / \d t = 0$
+holds, where
+\[\begin{aligned}
+\f{\d}{\d t} 
+&amp;= \f{\p}{\p t} + \f{\d\vec x}{\d t}\cdot\f{\p}{\p\vec x} + \f{\d\vec p}{\d t}\cdot\f{\p}{\p\vec p}
 \\
-&amp;= \f{\p f}{\p t} + \f{\p f}{\p x^i} \f{P^i}{P^0} + \f{\p f}{\p p} \f{\d p}{\d t}
+&amp;= \f{\p}{\p t} + \f{\d\vec x}{\d t}\cdot\f{\p}{\p\vec x} + \f{\d p}{\d t}\f{\p}{\p p} + \f{\d\uvec p}{\d t}\cdot\f{\p}{\p\uvec p}
 \\
-&amp;= \f{\p f}{\p t} + \f{p}{E} \f{\p f}{\p x^i} \f{\hat p^i}{a} - Hp \f{\p f}{\p p} = C[f].
+\tag{3.17}
+\end{aligned}\]
+is the total time derivative.
+When there are particle-particle interactions that do not conserve particle number,
+we introduce a collision term 
+\[
+\f{\d f}{\d t} = C[f].
+\tag{3.19}
+\]
+This is the most general form of the Boltzmann equation.</p>
+
+  <p>Although homogeneity and isotropy together means $\p f / \p\vec x = \p f/\p\uvec p = 0$,
+in order to facilitate later calculations of perturbation, we will still keep a small $\p f / \p \vec x$.
+In the (slightly inhomogenous) FRLW metric, the Boltzmann equation thus simplifies to
+\[\begin{aligned}
+\f{\d f}{\d t} 
+&amp;= \f{\p f}{\p t} + \f{\d\vec x}{\d t}\cdot\f{\p f}{\p\vec x} + \f{\d p}{\d t}\f{\p f}{\p p} + \f{\d\uvec p}{\d t}\cdot\zero{\f{\p f}{\p\uvec p}}
+\\
+&amp;= \f{\p f}{\p t} + \f{p}{aE} [\uvec p\cdot\nabla]f - Hp \f{\p f}{\p p} = C[f].
 \tag{3.38}
 \end{aligned}\]</p>
 
   <p>In the relativistic limit ($p \gg m$), we have $E \simeq p$ and thus
 \[
-\f{\p f}{\p t} + \f{\hat p^i}a \f{\p f}{\p x^i} - Hp\f{\p f}{\p p} = C[f],
+\f{\p f}{\p t} + \f1a [\uvec p\cdot\nabla]f - Hp\f{\p f}{\p p} = C[f],
 \tag{3.39}
 \]
 while in the nonrelativistic limit ($p \ll m$), we have $E\simeq m$ and thus
 \[
-\f{\p f}{\p t} + \f p m \f{\hat p^i}a \f{\p f}{\p x^i} - Hp\f{\p f}{\p p} = C[f],
+\f{\p f}{\p t} + \f p{am} [\uvec p\cdot\nabla]f - Hp\f{\p f}{\p p} = C[f],
 \tag{3.40}
 \]
-with a very suppressed $\p f / \p x^i$ term.</p>
+with a very suppressed $\p f / \p\vec x$ term.</p>
 
-  <p>We will first approach the fully homogenous/nonrelativistic case ($\p f / \p x^i = 0$).
+  <p>We will first approach the fully homogenous/nonrelativistic case ($\p f / \p\vec x = 0$).
 Integrating the Boltzmann equation over all physical momenta, we obtain
 \[\begin{aligned}
 &amp;\quad \int \f{\d^3 p}{[2\pi]^3} \f{\p f}{\p t} - H \int \f{\d^3 p}{[2\pi]^3} p \f{\p f}{\p p}
@@ -1340,6 +1364,21 @@ the contribution from $\Phi$ is responsible for radiation being deflected approx
 as much by gravitational lensing as the Newtonian potential $\Psi$ alone would predict.</p>
 
   <h3 id="perturbed-boltzmann-equations">Perturbed Boltzmann equations</h3>
+
+  <p>In the original FLRW metric,
+\[
+\f{\p f}{\p\vec p}
+\]
+In the perturbed spacetime, 
+the distribution function may have small anisotropies $\p f / \p\uvec p$ 
+of the same order as the metric perturbations.
+Approximating to linear order in all these perturbations, we have
+\[\begin{aligned}
+\f{\d f}{\d t}
+&amp;= \f{\p f}{\p t} + \f{\p f}{\p\vec x} \cdot \f{\d\vec x}{\d t} + \f{\p f}{\p\vec p} \cdot \f{\d\vec p}{\d t} 
+\\
+&amp;= \f{\p f}{\p t} + \f{\p f}{\p x^i} \f{\d x^i}{\d t} + \f{\p f}{\p p^i} \f{\d p^i}{\d t}
+\end{aligned}\]</p>
 
 </section>
 
