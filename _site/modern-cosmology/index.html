@@ -334,7 +334,10 @@ and for patiently answering my questions wherever I got stuck on this subject.</
     <li><strong>Einstein summation</strong>: Repeated indices are implicitly summed over. Latin indices range $1,2,3$. Greek indices range $0,1,2,3$.</li>
     <li><strong>Partial derivatives</strong>: $\partial_\mu \equiv \partial/\partial x^\mu$. For instance, $\partial_\mu x^\nu = \delta_\mu^\nu$.</li>
     <li><strong>Dot time derivative</strong>: $\dot x \equiv \p_0 x = \p x/\p t$.</li>
-    <li><strong>Species subscripts</strong>: $s$ stands for any constituent species of the universe; $c$ for cold dark matter, $b$ for baryons, $m$ for all matter ($b$ and $c$); $\gamma$ for photons, $\nu$ for neutrinos, $r$ for radiation ($\gamma$ and $\nu$); and $\Lambda$ for dark energy.</li>
+    <li><strong>Species subscripts</strong>: $s$ stands for any constituent species of the universe; 
+$\text m$ for all matter and $\Lambda$ for dark energy; 
+Of the matter: $\text c$ for cold dark matter and $\text b$ for baryons;
+Of the baryons: $\gamma$ for photons, $\nu$ for neutrinos, $r$ for radiation ($\gamma$ and early $\nu$).</li>
     <li><strong>Brackets</strong>: Parentheses $f(\cdots)$ evaluate terms with a function or operator on the left side; Square brackets $[\cdots]$ group terms together, or evaluate functions with a functional $C[\cdots]$.</li>
     <li><strong>Equalities</strong>: $\equiv$ is by definition. $\simeq$ is to first-order approximation (e.g. $\sin x\simeq x$). $\to$ projects tensor components (e.g., $\p_i \to \nabla$).</li>
   </ul>
@@ -749,10 +752,10 @@ respectively. Thus $\rho_b \simeq 0.05\rho_{cr}$, hinting a significant amount o
 
   <p>The <strong>Einstein equations</strong> (plural because each tensor entry was considered a separate “equation”)
 \[
-G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G \tilde T_{\mu\nu}
+G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T^{(\text m)}_{\mu\nu}
 \tag{3.1}
 \]
-relates Newton’s gravitational constant $G$, the stress-energy tensor $\tilde T_{\mu\nu}$, the cosmological constant $\Lambda$, the metric tensor $g_{\mu\nu}$, and the <strong>Einstein tensor</strong>
+relates Newton’s gravitational constant $G$, the matter energy-momentum tensor $T^{(\text m)}_{\mu\nu}$, the cosmological constant $\Lambda$, the metric tensor $g_{\mu\nu}$, and the <strong>Einstein tensor</strong>
 \[
 G_{\mu\nu} \equiv R_{\mu\nu} - \f12 g_{\mu\nu}R,
 \tag{3.2}
@@ -768,24 +771,24 @@ R_{\mu\nu} =
 \]
 is the <strong>Ricci tensor</strong>, and $R\equiv g^{\mu\nu}R_{\mu\nu}$ is the <strong>Ricci scalar</strong>.</p>
 
-  <p>We can reinterpret the cosmological constant as a “dark energy” by redefining the energy-momentum tensor as
-$T_{\mu\nu} \equiv \tilde T_{\mu\nu} + \hat T_{\mu\nu}$,
+  <p>We can reinterpret the cosmological constant as a “dark energy” by folding it into an overall energy-momentum tensor
+$T_{\mu\nu} \equiv T^{(\text m)}_{\mu\nu} + T^{(\Lambda)}_{\mu\nu}$,
 where the dark energy’s energy-momentum tensor
 \[
-\hat T_{\mu\nu} \equiv -\f{\Lambda}{8\pi G} g_{\mu\nu}.
+T^{(\Lambda)}_{\mu\nu} \equiv -\f{\Lambda}{8\pi G} g_{\mu\nu}.
 \]
 Under this interpretation, the Einstein equation simplifies to 
 $G_{\mu\nu} = 8\pi G T_{\mu\nu}$.
 Furthermore, matching
 \[
-{\hat T^\mu}_\nu = -g^{\mu\alpha} \hat T_{\alpha\nu} = -\f{\Lambda}{8\pi G} \delta^\mu_\nu
+{(T^{(\Lambda)})^\mu}_\nu = -g^{\mu\alpha} T^{(\Lambda)}_{\alpha\nu} = -\f{\Lambda}{8\pi G} \delta^\mu_\nu
 \]
 with <a href="#tag-2.44">(2.44)</a> gives
 \[
 \rho_\Lambda = -\mathcal{P}_\Lambda = \f{\Lambda}{8\pi G},
 \tag{3.10}
 \]
-proving that the dark-energy equation of state $w_\Lambda = -1$.
+constraining the dark-energy equation of state $w_\Lambda$ to exactly $-1$.
 This notation will also facilitate the generalization of $\Lambda$ to a time-varying “quintessence”.</p>
 
   <p>In the Euclidean FLRW metric, the Christoffel symbol $\Gamma^\mu_{\alpha\beta}$ is given by <a href="#tag-2.25">(2.25)</a>.
