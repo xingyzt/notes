@@ -276,8 +276,9 @@ th, td {
   <body>
     <h1 id="dodelson--schmidt-modern-cosmology">Dodelson &amp; Schmidt: Modern Cosmology</h1>
 
-<p><a href="/notes/">Xing’s notes</a>. I try to fill in the details of some derivations that the textbook skips for brevity, 
-and explain the conceptual intuition behind some formulas that the textbook takes as granted. 
+<p><a href="/notes/">Xing’s notes</a> on the 2021 edition of the excellent Modern Cosmology textbook by Scott Dodelson and Fabian Schmidt. 
+I try to fill in the details of some derivations that the they skipped for brevity, 
+and explain the conceptual intuition behind some formulas that they presented outright.
 No guarantees when I’ll finish the whole thing.
 Deepest thanks to Chien-I Chiang and Ori Ganor for teaching me the prerequisite knowledge for tackling cosmology (namely, Lagrangian mechanics and general relativity), 
 and for patiently answering my questions wherever I got stuck on this subject.</p>
@@ -346,10 +347,10 @@ and for patiently answering my questions wherever I got stuck on this subject.</
     <li><strong>Einstein summation</strong>: Repeated indices are implicitly summed over. Latin indices range $1,2,3$. Greek indices range $0,1,2,3$.</li>
     <li><strong>Partial derivatives</strong>: $\partial_\mu \equiv \partial/\partial x^\mu$. For instance, $\partial_\mu x^\nu = \delta_\mu^\nu$.</li>
     <li><strong>Dot time derivative</strong>: $\dot x \equiv \p_0 x = \p x/\p t$.</li>
-    <li><strong>Species subscripts</strong>: $s$ stands for any constituent species of the universe; 
-$\text m$ for all matter and $\Lambda$ for dark energy; 
-Of the matter: $\text c$ for cold dark matter and $\text b$ for baryons;
-Of the baryons: $\gamma$ for photons, $\nu$ for neutrinos, $r$ for radiation ($\gamma$ and early $\nu$).</li>
+    <li><strong>Species subscripts</strong>: $s$ stands for any constituent species of the universe,
+$\text m$ for all matter, and $\Lambda$ for dark energy. 
+Of the matter: $\text c$ for cold dark matter and $\text b$ for baryons.
+Of the baryons: $\gamma$ for photons, $\nu$ for neutrinos, $\text r$ for radiation ($\gamma$ and early $\nu$).</li>
     <li><strong>Brackets</strong>: Parentheses $f(\cdots)$ evaluate terms with a function or operator on the left side; Square brackets $[\cdots]$ group terms together, or evaluate functions with a functional $C[\cdots]$.</li>
     <li><strong>Equalities</strong>: $\equiv$ is by definition. $\simeq$ is to first-order approximation (e.g. $\sin x\simeq x$). $\to$ projects tensor components (e.g., $\p_i \to \nabla$).</li>
   </ul>
@@ -373,7 +374,7 @@ where the first term is due to the expansion of space, and the second term is du
 1 + z(t) \equiv \frac{\lambda(t_0)}{\lambda(t)} = \frac1{a(t)}. 
 \tag{1.1}
 \]
-Through black-body radiation, it can also be related to temperature via $T(t) = \frac{T(t_0)}{a(t)}$.</p>
+Through black-body radiation, it can also be related to temperature via $T(t) = T(t_0) / a(t)$.</p>
 
   <p>The <strong>Hubble rate</strong> $H(t) \equiv \dot a/a$ measures the rapidity of expansion, with the present-day Hubble rate $H_0 \equiv H(t_0)$ referred to as <strong>Hubble’s constant</strong>. From the Friedmann equation, 
 \[
@@ -668,7 +669,7 @@ while the comoving pressures are
 \mathcal P(\vec x, t)\, \delta^i_j
 = \f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^i P_j}{P^0} f_s(\vec x, \vec p, t),
 \]
-where $|g|$ is the determinant of the metric
+where $|g|$ is the determinant of the metric (for diagonal metrics such as the FLRW, $|g| = g_{00} g_{11} g_{22} g_{33}$),
 and $\d^3 P \equiv \d P_1 \d P_2 \d P_3$ is the comoving momentum's spatial volume element.
 Together, they give the energy-momentum tensor
 \[
@@ -1408,10 +1409,10 @@ while the time evolution of momentum direction is
 }.
 \tag{3.72}
 \end{aligned}\]
-Notice how the curvature in $\Psi$ deflect nonrelativistic particles ($p \ll E$)
+Notice how the curvature in $\Psi$ deflects nonrelativistic particles ($p \ll E$)
 significantly more than relativistic particles ($p \simeq E$),
-while the curvature in $\Phi$ only significantly deflect relativistic particles.
-Because $\Phi \simeq -\Phi$, 
+while the curvature in $\Phi$ only significantly deflects relativistic particles.
+Because $\Phi \simeq -\Psi$, 
 the contribution from $\Phi$ is responsible for radiation being deflected approximately twice 
 as much by gravitational lensing as the Newtonian potential $\Psi$ alone would predict.</p>
 

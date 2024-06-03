@@ -5,8 +5,9 @@ layout: default
 
 # Dodelson & Schmidt: Modern Cosmology
 
-[Xing’s notes](/notes/). I try to fill in the details of some derivations that the textbook skips for brevity, 
-and explain the conceptual intuition behind some formulas that the textbook takes as granted. 
+[Xing’s notes](/notes/) on the 2021 edition of the excellent Modern Cosmology textbook by Scott Dodelson and Fabian Schmidt. 
+I try to fill in the details of some derivations that the they skipped for brevity, 
+and explain the conceptual intuition behind some formulas that they presented outright.
 No guarantees when I’ll finish the whole thing.
 Deepest thanks to Chien-I Chiang and Ori Ganor for teaching me the prerequisite knowledge for tackling cosmology (namely, Lagrangian mechanics and general relativity), 
 and for patiently answering my questions wherever I got stuck on this subject.
