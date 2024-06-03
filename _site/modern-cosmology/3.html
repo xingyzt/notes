@@ -706,8 +706,7 @@ C[f_1(\vec p_1)] &amp;=
 \\
 &amp;\quad\cdot \Big[
 f_3(\vec p_3')\, f_4(\vec p_4')\, [1 \pm f_1(\vec p_1)] \, [1 \pm f_2(\vec p_2)] 
-\\
-&amp;\quad\quad - f_1(\vec p_1)\, f_2(\vec p_2) \, [1 \pm f_3(\vec p_3')] \, [1 \pm f_4(\vec p_4')]
+    - f_1(\vec p_1)\, f_2(\vec p_2) \, [1 \pm f_3(\vec p_3')] \, [1 \pm f_4(\vec p_4')]
 \Big].
 \tag{3.48}
 \end{aligned}\]
@@ -877,7 +876,7 @@ the equations of motion are thus
 \f{\d\vec x}{\d t}
 &amp;\leftarrow \f{\d x^i}{\d\lambda} \f{\d \lambda}{\d t}
 = \f{P^i}{P^0}
-\rightsquigarrow \f1{aE} [1 - \Phi + \Psi] \vec p;
+\rightsquigarrow \f1{aE} [1 - \Phi + \Psi] \vec p,
 \\
 \f{\d \vec p}{\d t}
 &amp;\leftarrow \f{\d }{\d t}\prn{ a[1+\Phi]P^i } \\
@@ -910,9 +909,9 @@ where $\nabla_\perp \equiv \nabla - \nabla_\parallel$ gives the gradient vector 
 }
 \\
 &amp;= - \brk{ 
-    \f Ea [\uvec p\cdot\nabla]\Psi 
-    + [H + \dot\Phi]p
-    },
+    \f E{ap} [\uvec p\cdot\nabla]\Psi 
+    + H + \dot\Phi
+    }p,
 \tag{3.71}
 \end{aligned}\]
 while the time evolution of momentum direction is
@@ -942,22 +941,42 @@ Because $\Phi \simeq -\Phi$,
 the contribution from $\Phi$ is responsible for radiation being deflected approximately twice 
 as much by gravitational lensing as the Newtonian potential $\Psi$ alone would predict.</p>
 
-  <h3 id="perturbed-boltzmann-equations">Perturbed Boltzmann equations</h3>
+  <h3 id="perturbed-boltzmann-equation">Perturbed Boltzmann equation</h3>
 
-  <p>In the original FLRW metric,
-\[
-\f{\p f}{\p\vec p}
-\]
-In the perturbed spacetime, 
-the distribution function may have small anisotropies $\p f / \p\uvec p$ 
-of the same order as the metric perturbations.
-Approximating to linear order in all these perturbations, we have
+  <p>To linear order in the perturbations, the Boltzmann equation is
 \[\begin{aligned}
 \f{\d f}{\d t}
-&amp;= \f{\p f}{\p t} + \f{\p f}{\p\vec x} \cdot \f{\d\vec x}{\d t} + \f{\p f}{\p\vec p} \cdot \f{\d\vec p}{\d t} 
+&amp;= \f{\p f}{\p t} 
+    + \f{\d\vec x}{\d t} \cdot \f{\p f}{\p\vec x} 
+    + \f{\d p}{\d t} \f{\p f}{\p p} 
+    + \zero{\f{\d\uvec p}{\d t} \cdot \f{\p f}{\p\uvec p}}
 \\
-&amp;= \f{\p f}{\p t} + \f{\p f}{\p x^i} \f{\d x^i}{\d t} + \f{\p f}{\p p^i} \f{\d p^i}{\d t}
-\end{aligned}\]</p>
+&amp;= \f{\p f}{\p t} 
+    + \f{p}{aE} [\uvec p\cdot\nabla]f 
+    - \brk{ \f E{ap} [\uvec p\cdot\nabla]\Psi + H + \dot\Phi }p \f{\p f}{\p p}
+= C[f].
+\end{aligned}\]
+Note that although the distribution function may contain small anisotropies $\p f / \p\uvec p$,
+they are of the same order as the metric perturbations. 
+The $[\d\uvec p/\d t]\cdot[\p f/\p\uvec p]$ term is thus quadratic order in overall perturbations,
+and consequently vanishes in our approximation.</p>
+
+  <p>In the relativistic limit ($E\simeq p$), this reduces to
+\[
+\f{\p f}{\p t} 
+    + \f1a [\uvec p\cdot\nabla]f 
+    - \brk{ \f 1a [\uvec p\cdot\nabla]\Psi + H + \dot\Phi } p \f{\p f}{\p p}
+    = C[f],
+    \tag{3.74}
+\]
+while in the non-relativistic limit ($E \simeq m$), this reduces to
+\[
+\f{\p f}{\p t} 
+    + \f p{am} [\uvec p\cdot\nabla]f 
+    - \brk{ \f m{ap} [\uvec p\cdot\nabla]\Psi + H + \dot\Phi } p \f{\p f}{\p p}
+    = C[f].
+    \tag{3.76}
+\]</p>
 
 </section>
 
