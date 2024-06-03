@@ -19,6 +19,7 @@
               ],
               macros: {
                 "\\vec": "\\mathbf{#1}",
+	        "\\uvec": "\\hat{\\mathbf{#1}}",
                 "\\f": "\\frac{#1}{#2}",
                 "\\d": "\\mathrm{d}",
                 "\\D": "\\mathrm{D}",
@@ -29,10 +30,6 @@
               },
               throwOnError : true
             });
-            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
-            headings.forEach(heading =>{
-              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
-            });
         });
     </script>
     <style>
@@ -41,7 +38,7 @@
 :root {
   --text: #416;
   --text-accent: #000;
-  --link: #146;
+  --link: #14a;
   --link-accent: #012;
   --deco: #84e;
   --bg: #ecf;
@@ -176,12 +173,12 @@ summary {
 }
 
 a, summary {
-  text-decoration: none;
+  text-decoration: dotted underline var(--link);
   color: var(--link);
 }
 
 a:hover, a:focus, summary:hover, summary:focus {
-  text-decoration: underline;
+  text-decoration: underline var(--link-accent);
   color: var(--link-accent);
 }
 a:active, summary:active {
@@ -315,7 +312,7 @@ This is necessary because the partial derivative $\p_\mu$ only transforms covari
 
   <p>In the flat, expanding ΛCDM universe, distances in spacetime are described with the Euclidean <strong>Friedmann–Lamaître–Robertson–Walker (FLRW) metric</strong>
 \[
-g_{\mu\nu} = \begin{pmatrix}
+g_{\mu\nu} \to \begin{pmatrix}
 -1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; a^2 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; a^2 &amp; 0\\
@@ -325,7 +322,7 @@ g_{\mu\nu} = \begin{pmatrix}
 \]
 with the inverse (contravariant) metric
 \[
-g^{\mu\nu} = \begin{pmatrix}
+g^{\mu\nu} \to \begin{pmatrix}
 -1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; a^{-2} &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; a^{-2} &amp; 0\\
@@ -371,7 +368,8 @@ P^\alpha
 = \f{\d x^\alpha}{\d\lambda}.
 \tag{2.26}
 \]
-In the massless limit, we redefine $\lambda$ such that the de Broglie relation $P^0 = \nu$ holds.</p>
+We write the same for a massless particle by setting $\lambda = \nu t$,
+where $\nu$ is the particle’s de Broglie frequency.</p>
 
   <p>For a free particle, $P^0$ is conserved along its geodesic. 
 We identify this as the particle’s energy $E$, so
@@ -424,7 +422,7 @@ This demonstrates that only relativistic particles (i.e. radiation) lose signifi
   <p>A similar method of analysis can be applied to the homogeneous, isotropic background of the universe, characterized by the mean energy density $\rho$ and the mean pressure $\mathcal P$. Its energy-momentum tensor is
 \[
 \renewcommand{\P}{{\mathcal P}}
-{T^\mu}_\nu = \begin{pmatrix}
+{T^\mu}_\nu \to \begin{pmatrix}
 -\rho &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; \P &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; \P &amp; 0\\

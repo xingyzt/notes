@@ -19,6 +19,7 @@
               ],
               macros: {
                 "\\vec": "\\mathbf{#1}",
+	        "\\uvec": "\\hat{\\mathbf{#1}}",
                 "\\f": "\\frac{#1}{#2}",
                 "\\d": "\\mathrm{d}",
                 "\\D": "\\mathrm{D}",
@@ -29,10 +30,6 @@
               },
               throwOnError : true
             });
-            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
-            headings.forEach(heading =>{
-              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
-            });
         });
     </script>
     <style>
@@ -41,7 +38,7 @@
 :root {
   --text: #416;
   --text-accent: #000;
-  --link: #146;
+  --link: #14a;
   --link-accent: #012;
   --deco: #84e;
   --bg: #ecf;
@@ -176,12 +173,12 @@ summary {
 }
 
 a, summary {
-  text-decoration: none;
+  text-decoration: dotted underline var(--link);
   color: var(--link);
 }
 
 a:hover, a:focus, summary:hover, summary:focus {
-  text-decoration: underline;
+  text-decoration: underline var(--link-accent);
   color: var(--link-accent);
 }
 a:active, summary:active {
@@ -385,7 +382,7 @@ R_{ij} &amp;=
 \\
 &amp;= \delta_{ij}\brk{ a\ddot a + 2\dot a^2  }.
 \\
-\implies R_{\mu\nu} &amp;= \begin{pmatrix}
+\implies R_{\mu\nu} &amp;\to \begin{pmatrix}
 -3\ddot a/a &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; a\ddot a + 2\dot a^2 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; a\ddot a + 2\dot a^2 &amp; 0\\
@@ -455,18 +452,18 @@ we introduce a collision term
 \]
 This is the most general form of the Boltzmann equation.</p>
 
-  <p>To solve this equation for the FRLW metric, we note that every real particle’s comoving momentum 
-$P^\mu = \f{\d x^\mu}{\d\lambda}$ obeys the <strong>mass-shell constraint</strong>
+  <p>To solve this equation for the FRLW metric, we use the dispersion relation
 \[
 P^2 \equiv g_{\mu\nu} P^\mu P^\nu = -E^2 + p^2 = -m^2,
 \tag{3.27}
 \]
-where, in the FRLW metric, the physical momentum has magnitude $p \equiv \sqrt{g_{ij} P^i P^j}$ and unit vectors $\hat p^i$, related to the comoving momentum by
+where we have identified $p \equiv \sqrt{g_{ij} P^i P^j}$ as the physical momentum magnitude,
+such that the physical momentum vector $\vec p = p\uvec p$ has components
 \[
-P^i = \f{p\hat p^i}a.
+p^i \equiv p\hat p^i = \sqrt{g_{ii}} P^i = aP^i.
 \tag{3.32}
 \]
-From the geodesic equation and the mass-shell constraint, we obtain
+From the geodesic equation and the dispersion relation, we obtain
 \[\begin{aligned}
 \f{\d P^0}{\d\lambda}
 &amp;= \f1{2 P^0} \f{\d(P^0 P^0)}{\d t} \f{\d t}{\d\lambda}
@@ -679,7 +676,7 @@ and tensor perturbations correspond to gravitational waves.</p>
   <p>We will focus on scalar perturbations for now, and delay the discussion of tensor perturbations to Chapter 6.
 In the <strong>conformal Newtonian gauge</strong>, the scalar-perturbed FLRW metric is
 \[
-g_{\mu\nu} = \begin{pmatrix}
+g_{\mu\nu} \to \begin{pmatrix}
 -[1 + 2\Psi] &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; a^2 [1 + 2\Phi] &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; a^2 [1 + 2\Phi] &amp; 0\\
@@ -698,7 +695,7 @@ we will calculate anything involving them or their derivatives to linear order o
 
   <p>To linear order, the inverse metric is
 \[
-g^{\mu\nu} = \begin{pmatrix}
+g^{\mu\nu} \to \begin{pmatrix}
 -[1 - 2\Psi] &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; a^{-2} [1 - 2\Phi] &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; a^{-2} [1 - 2\Phi] &amp; 0\\
@@ -732,16 +729,104 @@ The Christoffel symbol is thus
 &amp;= \f{g^{ii}}2 \brk{ \p_0 g_{ji} + \zero{\p_j g_{0i}} - \zero{\p_i g_{0j}}  } \\
 &amp;= \f{1 - 2\Phi}{a^2} \p_0(a^2[1 + 2\Phi] \delta_{ij}) \\
 &amp;\simeq a^{-2} \brk{ a\dot a [1 + 2\Phi] + a^2\dot\Phi - 2a\dot a\Phi } \delta_{ij} \\
-&amp;= \brk{ H + \dot\Phi }\delta_{ij},
+&amp;= [ H + \dot\Phi ]\delta_{ij},
 \\
 \Gamma^i_{jk}
 &amp;= \f{g^{ii}}2 \brk{ \p_j g_{ik} + \p_k g_{ij} - \p_i g_{jk} } \\
 &amp;= [1 - 2\Phi] \brk{ \p_j\Phi\delta_{ik} + \p_k\Phi \delta_{ij} - \p_i\Phi \delta_{jk} } \\
-&amp;\simeq \brk{ \delta_{ik}\p_j + \delta_{ij}\p_k - \delta_{jk}\p_i }\Phi.
+&amp;\simeq \brk{ \delta_{ik}\p_j + \delta_{ij}\p_k - \delta_{jk}\p_i }\Phi,
 \tag{3.56}
-\end{aligned}\]</p>
+\end{aligned}\]
+where $H = \dot a/a$ is the Hubble rate.</p>
 
-  <h3 id="geodesic-equation">Geodesic equation</h3>
+  <h3 id="perturbed-equations-of-motion">Perturbed equations of motion</h3>
+
+  <p>With the Christoffel symbol computed, 
+we can determine the paths of geodesics in this peturbed spacetime.</p>
+
+  <p>For a particle with comoving momentum $P^\mu$, 
+we again identify its physical momentum magnitude as $p = \sqrt{g_{ij} P^i P^j}$,
+and its energy as $E = \sqrt{ m^2 + p^2 }$.
+The spatial components of its comoving momentum can thus be written as
+\[
+P^i 
+= \f{p^i}{\sqrt{ g_{ii}}}
+\simeq \f{1 - \Phi}a p^i,
+\tag{3.60}
+\]
+where $p^i$ are the components of $\vec p = p\uvec p$.
+(And conversely, $p^i \simeq a [1 + \Phi] P^i$.)
+Contracting this comoving momentum,
+\[
+-m^2 = g_{\mu\nu} P^\mu P^\nu
+= -[1 + 2\Psi] [P^0]^2 + p^2,
+\tag{3.57}
+\]
+we also find its temporal component
+\[
+P^0 = \f{E}{\sqrt{1 + 2\Psi}}
+\simeq [1 - \Psi] E.
+\tag{3.59}
+\]
+(And conversely, $1/P^0 \simeq [1 + \Psi]/E$.)</p>
+
+  <p>Recall from <a href="#energy-and-momentum-of-a-particle">Energy and momentum of a particle</a>
+that we can always choose a path parametrization $\lambda$ such that $P^\alpha = \d x^\alpha / \d\lambda$.
+Applying the geodesic equation then gives
+\[\begin{aligned}
+\f{\d P^i}{\d t}
+&amp;= \f{\d\lambda}{\d t} \f{\d P^i}{\d\lambda}
+= -\f1{P^0} \Gamma^i_{\alpha\beta} P^\alpha P^\beta
+\\
+&amp;= -\brk{
+    \Gamma^i_{00} P^0
+    + 2\Gamma^i_{0j} P^j
+    + \f1{P^0} \Gamma^i_{jk} P^j P^k
+}
+\\
+&amp;\simeq -\Bigg[
+    \f E{a^2} [1 - \Psi]\p_i\Psi + \f{2}a [H + \dot\Phi] [1 - \Phi] p^i \\
+&amp;\quad\quad + \f1E [1+\Psi]\brk{\f{1-\Phi}a}^2 \brk{ 2p^i p^k \p_k- \delta_{jk} p^j p^k \p_i}\Phi
+\Bigg]
+\\
+&amp;\rightsquigarrow -\brk{
+    \f E{a^2} \nabla\Psi
+    + \f{2}a [H + \dot\Phi - H\Phi] \vec p
+    + \f1{a^2 E} \brk{ 2\vec p [\vec p\cdot\nabla] - p^2 \nabla }\Phi
+}.
+\tag{3.66}
+\end{aligned}\]
+Since
+\[\begin{aligned}
+\f{\d \Phi}{\d t}
+&amp;= \p_0\Phi + \f{\d\lambda}{\d t} \f{\d x^i}{\d\lambda} \p_i\Phi \\
+&amp;= \dot\Phi + \f{P^i}{P^0} \p_i\Phi
+\simeq \dot\Phi + \f1{aE} [\vec p\cdot\nabla] \Phi,
+\end{aligned}\]
+the equations of motion are thus
+\[\begin{aligned}
+\f{\d x^i}{\d t}
+&amp;= \f{\d x^i}{\d\lambda} \f{\d \lambda}{\d t}
+= \f{P^i}{P^0}
+\rightsquigarrow \f1{aE} [1 - \Phi + \Psi] \vec p;
+\\
+\f{\d p^i}{\d t}
+&amp;\simeq \f{\d}{\d t}\prn{ a[1+\Phi]P^i } \\
+&amp;= \brk{ \dot a[1 + \Phi] + a\dot\Phi + \f1E [\vec p\cdot\nabla]\Phi } P^i  +a[1+\Phi] \f{\d P^i}{\d t} \\
+&amp;\rightsquigarrow [ H + \dot\Phi + \f1{aE} [\vec p\cdot\nabla]\Phi ] \vec p \\
+&amp;\quad -\brk{
+    \f Ea \nabla\Psi
+    + 2[ H + \dot\Phi ]\vec p
+    + \f1{aE} \brk{ 2\vec p[\vec p\cdot\nabla] - p^2 \nabla }\Phi
+}
+\\
+&amp;= - \brk{ 
+    \f Ea \nabla\Psi 
+    + [H + \dot\Phi]\vec p 
+    + \f1{aE} \brk{ \vec p[\vec p\cdot\nabla] - p^2\nabla }\Phi
+}.
+\tag{3.69}
+\end{aligned}\]</p>
 
 </section>
 

@@ -19,6 +19,7 @@
               ],
               macros: {
                 "\\vec": "\\mathbf{#1}",
+	        "\\uvec": "\\hat{\\mathbf{#1}}",
                 "\\f": "\\frac{#1}{#2}",
                 "\\d": "\\mathrm{d}",
                 "\\D": "\\mathrm{D}",
@@ -29,10 +30,6 @@
               },
               throwOnError : true
             });
-            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
-            headings.forEach(heading =>{
-              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
-            });
         });
     </script>
     <style>
@@ -41,7 +38,7 @@
 :root {
   --text: #416;
   --text-accent: #000;
-  --link: #146;
+  --link: #14a;
   --link-accent: #012;
   --deco: #84e;
   --bg: #ecf;
@@ -176,12 +173,12 @@ summary {
 }
 
 a, summary {
-  text-decoration: none;
+  text-decoration: dotted underline var(--link);
   color: var(--link);
 }
 
 a:hover, a:focus, summary:hover, summary:focus {
-  text-decoration: underline;
+  text-decoration: underline var(--link-accent);
   color: var(--link-accent);
 }
 a:active, summary:active {

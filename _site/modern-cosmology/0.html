@@ -19,6 +19,7 @@
               ],
               macros: {
                 "\\vec": "\\mathbf{#1}",
+	        "\\uvec": "\\hat{\\mathbf{#1}}",
                 "\\f": "\\frac{#1}{#2}",
                 "\\d": "\\mathrm{d}",
                 "\\D": "\\mathrm{D}",
@@ -29,10 +30,6 @@
               },
               throwOnError : true
             });
-            const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
-            headings.forEach(heading =>{
-              heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
-            });
         });
     </script>
     <style>
@@ -41,7 +38,7 @@
 :root {
   --text: #416;
   --text-accent: #000;
-  --link: #146;
+  --link: #14a;
   --link-accent: #012;
   --deco: #84e;
   --bg: #ecf;
@@ -176,12 +173,12 @@ summary {
 }
 
 a, summary {
-  text-decoration: none;
+  text-decoration: dotted underline var(--link);
   color: var(--link);
 }
 
 a:hover, a:focus, summary:hover, summary:focus {
-  text-decoration: underline;
+  text-decoration: underline var(--link-accent);
   color: var(--link-accent);
 }
 a:active, summary:active {
@@ -257,10 +254,11 @@ th, td {
     <li><strong>Tensor indices</strong>: Upper indices are contravariant. Lower indices are covariant.</li>
     <li><strong>Metric signature</strong>: ${-} {+} {+} {+}$.</li>
     <li><strong>Einstein summation</strong>: Repeated indices are implicitly summed over. Latin indices range $1,2,3$. Greek indices range $0,1,2,3$.</li>
-    <li><strong>Dot time derivative</strong>: $\dot x \equiv \d x/\d t$.</li>
     <li><strong>Partial derivatives</strong>: $\partial_\mu \equiv \partial/\partial x^\mu$. For instance, $\partial_\mu x^\nu = \delta_\mu^\nu$.</li>
+    <li><strong>Dot time derivative</strong>: $\dot x \equiv \p_0 x = \p x/\p t$.</li>
     <li><strong>Species subscripts</strong>: $s$ stands for any constituent species of the universe; $c$ for cold dark matter, $b$ for baryons, $m$ for all matter ($b$ and $c$); $\gamma$ for photons, $\nu$ for neutrinos, $r$ for radiation ($\gamma$ and $\nu$); and $\Lambda$ for dark energy.</li>
     <li><strong>Brackets</strong>: Parentheses $f(\cdots)$ evaluate terms with a function or operator on the left side; Square brackets $[\cdots]$ group terms together, or evaluate functions with a functional $C[\cdots]$.</li>
+    <li><strong>Equalities</strong>: $\equiv$ is by definition. $\simeq$ is to first-order approximation (e.g. $\sin x\simeq x$). $\to$ projects tensor components (e.g., $\p_i \to \nabla$).</li>
   </ul>
 
 </section>
