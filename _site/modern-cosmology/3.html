@@ -755,7 +755,7 @@ P^i
 \tag{3.60}
 \]
 where $p^i$ are the components of $\vec p = p\uvec p$.
-(And conversely, $p^i \simeq a [1 + \Phi] P^i$.)
+(And conversely, $p^i = a [1 + \Phi] P^i$.)
 Contracting this comoving momentum,
 \[
 -m^2 = g_{\mu\nu} P^\mu P^\nu
@@ -793,10 +793,18 @@ Applying the geodesic equation then gives
     \f E{a^2} \nabla\Psi
     + \f{2}a [H + \dot\Phi - H\Phi] \vec p
     + \f1{a^2 E} \brk{ 2\vec p [\vec p\cdot\nabla] - p^2 \nabla }\Phi
-}.
+}
+\\
+&amp;= -\brk{
+    \f E{a^2} \nabla\Psi
+    + \f{2}a [H + \dot\Phi - H\Phi] \vec p
+    + \f{p^2}{a^2 E} \brk{ 2 \nabla_\parallel - \nabla }\Phi
+},
 \tag{3.66}
 \end{aligned}\]
-Since
+where $\nabla_\parallel \equiv \uvec p[\uvec p\cdot\nabla]$ gives the gradient vector in the direction of motion.</p>
+
+  <p>Since
 \[\begin{aligned}
 \f{\d \Phi}{\d t}
 &amp;= \p_0\Phi + \f{\d\lambda}{\d t} \f{\d x^i}{\d\lambda} \p_i\Phi \\
@@ -805,28 +813,75 @@ Since
 \end{aligned}\]
 the equations of motion are thus
 \[\begin{aligned}
-\f{\d x^i}{\d t}
-&amp;= \f{\d x^i}{\d\lambda} \f{\d \lambda}{\d t}
+\f{\d\vec x}{\d t}
+&amp;\leftarrow \f{\d x^i}{\d\lambda} \f{\d \lambda}{\d t}
 = \f{P^i}{P^0}
 \rightsquigarrow \f1{aE} [1 - \Phi + \Psi] \vec p;
 \\
-\f{\d p^i}{\d t}
-&amp;\simeq \f{\d}{\d t}\prn{ a[1+\Phi]P^i } \\
+\f{\d \vec p}{\d t}
+&amp;\leftarrow \f{\d }{\d t}\prn{ a[1+\Phi]P^i } \\
 &amp;= \brk{ \dot a[1 + \Phi] + a\dot\Phi + \f1E [\vec p\cdot\nabla]\Phi } P^i  +a[1+\Phi] \f{\d P^i}{\d t} \\
-&amp;\rightsquigarrow [ H + \dot\Phi + \f1{aE} [\vec p\cdot\nabla]\Phi ] \vec p \\
+&amp;\rightsquigarrow [ H + \dot\Phi ]\vec p + \f{p^2}{aE} \nabla_\parallel\Phi \\
 &amp;\quad -\brk{
     \f Ea \nabla\Psi
     + 2[ H + \dot\Phi ]\vec p
-    + \f1{aE} \brk{ 2\vec p[\vec p\cdot\nabla] - p^2 \nabla }\Phi
+    + \f{p^2}{aE} \brk{ 2\nabla_\parallel - \nabla }\Phi
 }
 \\
 &amp;= - \brk{ 
     \f Ea \nabla\Psi 
     + [H + \dot\Phi]\vec p 
-    + \f1{aE} \brk{ \vec p[\vec p\cdot\nabla] - p^2\nabla }\Phi
-}.
+    - \f{p^2}{aE} \nabla_\perp\Phi
+},
 \tag{3.69}
-\end{aligned}\]</p>
+\end{aligned}\]
+where $\nabla_\perp \equiv \nabla - \nabla_\parallel$ gives the gradient vector transverse to the direction of motion.</p>
+
+  <p>As corollaries, the time evolution of momentum magnitude is
+\[\begin{aligned}
+\f{\d p}{\d t}
+&amp;= \uvec p\cdot\f{\d \vec p}{\d t}
+\\
+&amp;\simeq - \brk{ 
+    \f Ea [\uvec p\cdot\nabla]\Psi 
+    + [H + \dot\Phi]p
+    - \f{p^2}{aE} [\zero{ \uvec p\cdot\nabla_\perp}] \Phi
+}
+\\
+&amp;= - \brk{ 
+    \f Ea [\uvec p\cdot\nabla]\Psi 
+    + [H + \dot\Phi]p
+    },
+\tag{3.71}
+\end{aligned}\]
+while the time evolution of momentum direction is
+\[\begin{aligned}
+\f{\d\uvec p}{\d t}
+&amp;= \f{\d}{\d t} \f{\vec p}p
+= \f1p \brk{\f{\d\vec p}{\d t} - \uvec p\f{\d p}{\d t}}
+\\
+&amp;\simeq - \brk{ 
+    \f E{ap}\nabla\Psi + [H + \dot\Phi]\uvec p
+    - \f{p}{aE} \nabla_\perp \Phi
+} \\
+&amp;\quad + \brk{ 
+    \f E{ap} \nabla_\parallel\Psi
+    + [H + \dot\Phi]\uvec p
+}
+\\
+&amp;= -\f1a \brk{
+    \f Ep \nabla_\perp\Psi - \f pE \nabla_\perp \Phi
+}.
+\tag{3.72}
+\end{aligned}\]
+Notice how the curvature in $\Psi$ deflect nonrelativistic particles ($p \ll E$)
+significantly more than relativistic particles ($p \simeq E$),
+while the curvature in $\Phi$ only significantly deflect relativistic particles.
+Because $\Phi \simeq -\Phi$, 
+the contribution from $\Phi$ is responsible for radiation being deflected approximately twice 
+as much by gravitational lensing as the Newtonian potential $\Psi$ alone would predict.</p>
+
+  <h3 id="perturbed-boltzmann-equations">Perturbed Boltzmann equations</h3>
 
 </section>
 
