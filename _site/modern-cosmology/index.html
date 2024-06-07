@@ -322,7 +322,13 @@ and for patiently answering my questions wherever I got stuck on this subject.</
     </ul>
   </li>
   <li><a href="#ii-perturbations" id="markdown-toc-ii-perturbations">II. Perturbations</a>    <ul>
-      <li><a href="#the-inhomogenous-universe-matter--radiation" id="markdown-toc-the-inhomogenous-universe-matter--radiation">5. The inhomogenous universe: matter &amp; radiation</a></li>
+      <li><a href="#the-inhomogenous-universe-matter--radiation" id="markdown-toc-the-inhomogenous-universe-matter--radiation">5. The inhomogenous universe: matter &amp; radiation</a>        <ul>
+          <li><a href="#boltzmann-equation-for-photons" id="markdown-toc-boltzmann-equation-for-photons">Boltzmann equation for photons</a></li>
+          <li><a href="#boltzmann-equation-for-cold-dark-matter" id="markdown-toc-boltzmann-equation-for-cold-dark-matter">Boltzmann equation for cold dark matter</a></li>
+          <li><a href="#boltzmann-equation-for-baryons" id="markdown-toc-boltzmann-equation-for-baryons">Boltzmann equation for baryons</a></li>
+          <li><a href="#boltzmann-equation-for-neutrinos" id="markdown-toc-boltzmann-equation-for-neutrinos">Boltzmann equation for neutrinos</a></li>
+        </ul>
+      </li>
       <li><a href="#the-inhomogenous-universe-gravity" id="markdown-toc-the-inhomogenous-universe-gravity">6. The inhomogenous universe: gravity</a></li>
       <li><a href="#initial-conditions" id="markdown-toc-initial-conditions">7. Initial conditions</a></li>
       <li><a href="#growth-of-structure-linear-theory" id="markdown-toc-growth-of-structure-linear-theory">8. Growth of structure: linear theory</a></li>
@@ -719,14 +725,14 @@ the energy-momentum tensor field for some arbitrary species $s$ with distributio
 = \f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^\mu P_\nu}{P^0} f(\vec x, \vec p, t).
 \tag{3.20}
 \]
-As corollaries, the relativistic energy density is then
+Identifying with the components of <a href="#tag-2.44">(2.44)</a>, the relativistic energy density is then
 \[
 \rho_s(\vec x, t)
 = -\f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^0 P_0}{P^0} f_s(\vec x, \vec p, t),
 \]
 while the relativistic spatial stress-shear tensor (whose diagonal elements are the pressures) is
 \[
-\mathcal P(\vec x, t)\, \delta^i_j
+{(\mathcal P_s)^i}_j(\vec x, t)
 = \f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^i P_j}{P^0} f_s(\vec x, \vec p, t).
 \]</p>
 
@@ -1456,8 +1462,7 @@ while the time evolution of momentum direction is
 &amp;\simeq - \brk{ 
     \f E{ap}\nabla\Psi + [H + \dot\Phi]\uvec p
     - \f{p}{aE} \nabla_\perp \Phi
-} \\
-&amp;\quad + \brk{ 
+} + \brk{ 
     \f E{ap} \nabla_\parallel\Psi
     + [H + \dot\Phi]\uvec p
 }
@@ -1527,7 +1532,29 @@ while in the non-relativistic limit ($E \simeq m$), this reduces to
 
   <h2 id="the-inhomogenous-universe-matter--radiation">5. The inhomogenous universe: matter &amp; radiation</h2>
 
-  <p>Under construction!</p>
+  <h3 id="boltzmann-equation-for-photons">Boltzmann equation for photons</h3>
+
+  <p>Since they are bosons, photons obey the Bose-Einstein distribution <a href="#tag-2.65">(2.65)</a> when in thermal equilibrium,
+\[
+f^{(0)}(p, t)
+= \brk{ \exp\brk{\f{p}{ T(t)}} }^{-1}.
+\]
+With a perturbation
+$
+\Theta(\vec x, \uvec p, t) \equiv \delta T(\vec x, \uvec p, t) / T(t)
+$
+to the temperature,
+we introduce small inhomogeneities and anisotropies into the distribution 
+\[
+f(\vec x, p, \uvec p, t)
+= \brk{ \exp\brk{\f{p}{ T(t) \brk{ 1 + \Theta(\vec x, \uvec p, t) } }} }^{-1}.
+\]</p>
+
+  <h3 id="boltzmann-equation-for-cold-dark-matter">Boltzmann equation for cold dark matter</h3>
+
+  <h3 id="boltzmann-equation-for-baryons">Boltzmann equation for baryons</h3>
+
+  <h3 id="boltzmann-equation-for-neutrinos">Boltzmann equation for neutrinos</h3>
 
 </section>
 
