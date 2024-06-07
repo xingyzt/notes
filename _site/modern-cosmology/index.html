@@ -341,7 +341,7 @@ and for patiently answering my questions wherever I got stuck on this subject.</
 
   <ul>
     <li><strong>Natural units</strong>: $\hbar = c = k_B = 1$.</li>
-    <li><strong>Vectors</strong>: Physical vectors are bolded $\vec p$. Comoving vectors (and higher-rank tensors) are represented by their components $P^\mu$.</li>
+    <li><strong>Vectors</strong>: Physical vectors are bolded $\vec p$. Relativistic/comoving vectors (and higher-rank tensors) are represented by their components $P^\mu$.</li>
     <li><strong>Tensor indices</strong>: Upper indices are contravariant. Lower indices are covariant.</li>
     <li><strong>Metric signature</strong>: ${-} {+} {+} {+}$.</li>
     <li><strong>Einstein summation</strong>: Repeated indices are implicitly summed over. Latin indices range $1,2,3$. Greek indices range $0,1,2,3$.</li>
@@ -568,7 +568,7 @@ This demonstrates that only relativistic particles (i.e. radiation) lose signifi
 
   <h3 id="energy-of-the-medium">Energy of the medium</h3>
 
-  <p>A similar method of analysis can be applied to the homogeneous, isotropic background of the universe, characterized by the mean energy density $\rho$ and the mean pressure $\mathcal P$. Its energy-momentum tensor is
+  <p>A similar method of analysis can be applied to the homogeneous, isotropic background of the universe, characterized by the mean energy density $\rho$ and the mean pressure $\mathcal P$. As with any such ideal fluid, its energy-momentum tensor <a href="/notes/relativistic-fluids">can be derived</a> to be
 \[
 \renewcommand{\P}{{\mathcal P}}
 {T^\mu}_\nu \to \begin{pmatrix}
@@ -628,26 +628,26 @@ For example, photons have $g_\gamma = 2$ due to their two spin states.</p>
 \]
 particles.</p>
 
-  <p>Consider some phase-space function $A_s(\vec x, \vec p)$. 
+  <p>Consider some property $A_s$ of a particle which depends on its physical momentum $\vec p$. 
 Integrating it over the phase-space around $\vec x$, 
 weighing with the number of particles per infinitesimal phase-space volume,
 and dividing by the infinitesimal physical volume $\d x^3$,
-we obtain its corresponding physical-space density
+we obtain the property’s density in physical space
 \[\begin{aligned}
-\mathcal A_s(\vec x, t) &amp;= g_s \int \f{\d^3 p}{[2\pi]^3}\, f_s(\vec x, \vec p, t) A_s(\vec x, \vec p).
+\mathcal A_s(\vec x, t) &amp;= g_s \int \f{\d^3 p}{[2\pi]^3}\, f_s(\vec x, \vec p, t)\, A_s(\vec p).
 \end{aligned}\]
 (Dimensionally, 
 this correspondence between phase-space total and physical-space density can be seen through the
 $[\text{momentum}] = [\text{energy}] = [\text{time}]^{-1} = [\text{length}]^{-1}$
 equivalence in natural units.)</p>
 
-  <p>Different phase-space functions $A_s$ can tell us different microscopic properties of the species at $(\vec x, t)$. 
-For instance, energy function $E_s(p)$ gives the energy density
+  <p>Different properties $A_s$ can tell us different microscopic properties of the species at $(\vec x, t)$. 
+For instance, integrating the energy $E_s(p)$ of a particle gives the energy density
 \[
 \rho_s(\vec x, t) =  g_s \int \f{\d^3 p}{[2\pi]^3} \, f_s(\vec x, \vec p, t) \, E_s(p),
 \tag{2.62}
 \]
-and the pressure-energy $\mathbb P_s(p) = p^3/3E_s(p)$ gives the pressure
+and integrating two-thirds (by the equipartition principle) of the kinetic energy $K_s(p) = p^2/2E_s(p)$ of a particle gives the pressure
 \[
 \mathcal{P}_s(\vec x, t) = g_s \int \f{\d^3 p}{[2\pi]^3} \, f_s(\vec x, \vec p, t) \, \f{p^2}{3E_s(p)}.
 \tag{2.64}
@@ -656,10 +656,53 @@ and the pressure-energy $\mathbb P_s(p) = p^3/3E_s(p)$ gives the pressure
   <h3 id="relativistic-distribution-statistics">Relativistic distribution statistics</h3>
 
   <p>To model relativistic particles, 
-we have to convert the density and pressure scalar fields in <a href="#nonrelativistic-distribution-statistics">Nonrelativistic distribution statistics</a> to a energy-momentum tensor field $T{^\mu}_\nu(\vec x, t)$.
-This is done by substituting the energy $E$ and physical momentum $\vec p$ in the above equations 
-with the comoving momentum $P^\alpha = (E, \vec p/a)$ in a reference frame which flows locally with the particles. 
-The comoving mass density is then
+we have to rewrite the nonrelativistic energy density, momentum density, and pressure fields, derived above,
+in a relativistically-covariant form.
+While these properties do not themselves transform covariantly,
+they can be combined into a energy-momentum tensor field $T{^\mu}_\nu(\vec x, t)$ which does.</p>
+
+  <p>As with the non-relativistic case, 
+we will build up the field expressions from the properties of single particles.
+However, we now have to account for relativistic covariance.</p>
+
+  <p>Consider a particle with rest energy $E_0$, located at position $\vec x_0$. 
+In the rest frame, we can always find a Minkowskian coordinate system (by the local flatness theorem)
+such that the metric is $g_{\mu\nu} = \eta_{\mu\nu}$.
+In this coordinate system, particle's relativistic momentum is $P^\mu \to (E_0, 0, 0, 0)$, 
+and its energy-momentum tensor field surrounding a physical-space volume $\d\mathcal V = \d^3 x$ about $\vec x_0$ is
+\[
+{T^\mu}_\nu(\vec x_0)\,\d\mathcal V \to \begin{pmatrix}
+-E_0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}.
+\] 
+The tensor field at $\vec x_0$ can thus be written covariantly as
+\[
+T{^\mu}_{\nu}(\vec x_0, t)\, \d\mathcal V = \f{P^\mu(t) P_\nu(t)}{E_0}.
+\]</p>
+
+  <p>The physical-space volume $\d\mathcal V$ transforms due to Lorentz contraction and changes to the metric,
+\[
+\d\mathcal V = \d^3 x \cdot \sqrt{-|g|} \cdot \gamma,
+\]
+where $\gamma \equiv [1 - v^2]^{-1/2}$ is the Lorentz factor, 
+and $|g| \equiv |\mathrm{det}(g_{\mu\nu})|$ is the metric determinant.
+(Note that for diagonal, pseudo-Riemannian metrics such as the FLRW, $|g| = g_{00} \cdot g_{11} \cdot g_{22} \cdot g_{33} &lt; 0$.)
+The field at any point in spacetime, under any reference frame, is thus
+\[
+T{^\mu}_{\nu}(\vec x, t) = \f{\delta_D^{(3)} (\vec x - \vec x_0)}{\sqrt{|g|}} \f{P^\mu P_\nu}{P^0},
+\]
+where the temporal component of relativistic momentum transforms as $P^0 = \gamma E^0$.</p>
+
+  <p>The energy-momentum tensor field for some arbitrary species $s$ with distribution function $f_s$ and degeneracy $g_s$ is therefore
+\[
+(T_s){^\mu}_\nu(\vec x, t)
+= \f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^\mu P_\nu}{P^0} f(\vec x, \vec p, t).
+\tag{3.20}
+\]
+As corollaries, the comoving mass density is then
 \[
 \rho_s(\vec x, t)
 = -\f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^0 P_0}{P^0} f_s(\vec x, \vec p, t),
@@ -667,18 +710,8 @@ The comoving mass density is then
 while the comoving pressures are
 \[
 \mathcal P(\vec x, t)\, \delta^i_j
-= \f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^i P_j}{P^0} f_s(\vec x, \vec p, t),
-\]
-where $|g|$ is the determinant of the metric (for diagonal metrics such as the FLRW, $|g| = g_{00} g_{11} g_{22} g_{33}$),
-and $\d^3 P \equiv \d P_1 \d P_2 \d P_3$ is the comoving momentum's spatial volume element.
-Together, they give the energy-momentum tensor
-\[
-T{^\mu}_\nu
-= \f{g_s}{-|g|} \int \f{\d^3 P}{[2\pi]^3} \f{P^\mu P_\nu}{P^0} f(\vec x, \vec p, t).
-\tag{3.20}
-\]
-Since this is a tensor equation that holds true in a comoving reference frame, 
-it must hold true for all reference frames.</p>
+= \f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^i P_j}{P^0} f_s(\vec x, \vec p, t).
+\]</p>
 
   <h3 id="species-in-thermal-equilibrium">Species in thermal equilibrium</h3>
 
