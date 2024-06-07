@@ -677,15 +677,15 @@ they can be combined into a energy-momentum tensor field $T{^\mu}_\nu(\vec x, t)
 we will build up the field expressions from the properties of single particles.
 However, we now have to account for relativistic covariance.</p>
 
-  <p>Consider a particle with rest energy $E_0$, located at position $\vec x_0$. 
+  <p>Consider a particle with rest mass $m$ located at position $\vec x_0$. 
 In the rest frame, we can always find a Minkowskian coordinate system (by the local flatness theorem), in which we will mark indices with a hat ($\hat{\ }$).
 In this coordinate system, 
 the metric is $g_{\hat\mu\hat\nu} \to \mathrm{diag}(-1,1,1,1)$,
-the particle's relativistic momentum is $P^{\hat \mu} \to (E_0, 0, 0, 0)$, 
+the particle's relativistic momentum is $P^{\hat \mu} \to (m, 0, 0, 0)$, 
 and its energy-momentum tensor field surrounding a physical-space volume $\d\mathcal V = \d x^{\hat 1} \d x^{\hat 2} \d x^{\hat 3}$ about $\vec x_0$ is
 \[
 {T^{\hat \mu}}_{\hat \nu}(\vec x_0)\,\d\mathcal V \to \begin{pmatrix}
--E_0 &amp; 0 &amp; 0 &amp; 0\\
+-m &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 0
@@ -693,21 +693,24 @@ and its energy-momentum tensor field surrounding a physical-space volume $\d\mat
 \] 
 The tensor field at $\vec x_0$ can thus be written covariantly as
 \[
-T{^\mu}_{\nu}(\vec x_0, t)\, \d\mathcal V = \f{P^\mu(t) P_\nu(t)}{E_0}.
-\]</p>
+T{^\mu}_{\nu}(\vec x_0, t)\, \d\mathcal V 
+= \f{P^\mu(t) P_\nu(t)}{m}
+= \gamma\cdot\f{P^\mu(t) P_\nu(t)}{P^0}.
+\]
+where $\gamma \equiv [1 - v^2]^{-1/2}$ is the Lorentz factor, 
+transforming energy component of relativistic momentum as $P^0 = \gamma m$.
+Note that this equation holds in the massless limit as well.</p>
 
   <p>The physical-space volume $\d\mathcal V$ transforms due to Lorentz contraction and changes to the metric,
 \[
 \d\mathcal V = \d^3 x \cdot \sqrt{-|g|} \cdot \gamma,
 \]
-where $\gamma \equiv [1 - v^2]^{-1/2}$ is the Lorentz factor, 
-and $|g| \equiv |\mathrm{det}(g_{\mu\nu})|$ is the metric determinant.
+where $|g| \equiv |\mathrm{det}(g_{\mu\nu})|$ is the metric determinant.
 (Note that for diagonal, pseudo-Riemannian metrics such as the FLRW, $|g| = g_{00} \cdot g_{11} \cdot g_{22} \cdot g_{33} &lt; 0$.)
 The field at any point in spacetime, under any reference frame, is thus
 \[
-T{^\mu}_{\nu}(\vec x, t) = \f{\delta_D^{(3)} (\vec x - \vec x_0)}{\sqrt{|g|}} \f{P^\mu P_\nu}{P^0},
-\]
-where the temporal component of relativistic momentum transforms as $P^0 = \gamma E_0$.</p>
+T{^\mu}_{\nu}(\vec x, t) = \f{\delta_D^{(3)} (\vec x - \vec x_0)}{\sqrt{|g|}} \f{P^\mu P_\nu}{P^0}.
+\]</p>
 
   <p>Generalizing from single particles, 
 the energy-momentum tensor field for some arbitrary species $s$ with distribution function $f_s$ and degeneracy $g_s$ is therefore
