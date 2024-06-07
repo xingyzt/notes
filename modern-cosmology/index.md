@@ -5,12 +5,15 @@ layout: default
 
 # Dodelson & Schmidt: Modern Cosmology
 
-[Xing’s notes](/notes/) on the 2021 edition of the excellent Modern Cosmology textbook by Scott Dodelson and Fabian Schmidt. 
+My notes on the [second edition of the excellent Modern Cosmology textbook](https://shop.elsevier.com/books/modern-cosmology/dodelson/978-0-12-815948-4)
+by Scott Dodelson and Fabian Schmidt. 
 I try to fill in the details of some derivations that the they skipped for brevity, 
 and explain the conceptual intuition behind some formulas that they presented outright.
 No guarantees when I’ll finish the whole thing.
 Deepest thanks to Chien-I Chiang and Ori Ganor for teaching me the prerequisite knowledge for tackling cosmology (namely, Lagrangian mechanics and general relativity), 
 and for patiently answering my questions wherever I got stuck on this subject.
+
+[List of my notes on other astrophysics stuff](/notes/).
 
 <details markdown="1">
   <summary>Table of Contents</summary>
