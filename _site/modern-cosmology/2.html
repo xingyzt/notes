@@ -415,7 +415,7 @@ We identify this as the particle’s energy $E$, so
 \tag{2.27}
 \]</p>
 
-  <p>In the rest frame of the particle, $E = m$ while $P^i = 0$, giving the FLRW <strong>dispersion relation</strong>
+  <p>In the rest frame of the particle, $P^{\hat 0} = E_0 = m$ while $P^{\hat i} = 0$, giving the FLRW <strong>dispersion relation</strong>
 \[
 g_{\mu\nu}P^\mu P^\nu = -E^2 + \delta_{ij} a^2 P^i P^j = -m^2.
 \tag{2.29}
@@ -563,12 +563,13 @@ we will build up the field expressions from the properties of single particles.
 However, we now have to account for relativistic covariance.</p>
 
   <p>Consider a particle with rest energy $E_0$, located at position $\vec x_0$. 
-In the rest frame, we can always find a Minkowskian coordinate system (by the local flatness theorem)
-such that the metric is $g_{\mu\nu} = \eta_{\mu\nu}$.
-In this coordinate system, particle's relativistic momentum is $P^\mu \to (E_0, 0, 0, 0)$, 
-and its energy-momentum tensor field surrounding a physical-space volume $\d\mathcal V = \d^3 x$ about $\vec x_0$ is
+In the rest frame, we can always find a Minkowskian coordinate system (by the local flatness theorem), in which we will mark indices with a hat ($\hat{\ }$).
+In this coordinate system, 
+the metric is $g_{\hat\mu\hat\nu} \to \mathrm{diag}(-1,1,1,1)$,
+the particle's relativistic momentum is $P^{\hat \mu} \to (E_0, 0, 0, 0)$, 
+and its energy-momentum tensor field surrounding a physical-space volume $\d\mathcal V = \d x^{\hat 1} \d x^{\hat 2} \d x^{\hat 3}$ about $\vec x_0$ is
 \[
-{T^\mu}_\nu(\vec x_0)\,\d\mathcal V \to \begin{pmatrix}
+{T^{\hat \mu}}_{\hat \nu}(\vec x_0)\,\d\mathcal V \to \begin{pmatrix}
 -E_0 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 0\\
@@ -600,12 +601,12 @@ the energy-momentum tensor field for some arbitrary species $s$ with distributio
 = \f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^\mu P_\nu}{P^0} f(\vec x, \vec p, t).
 \tag{3.20}
 \]
-As corollaries, the comoving mass density is then
+As corollaries, the relativistic energy density is then
 \[
 \rho_s(\vec x, t)
 = -\f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^0 P_0}{P^0} f_s(\vec x, \vec p, t),
 \]
-while the comoving pressures are
+while the relativistic spatial stress-shear tensor (whose diagonal elements are the pressures) is
 \[
 \mathcal P(\vec x, t)\, \delta^i_j
 = \f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^i P_j}{P^0} f_s(\vec x, \vec p, t).
