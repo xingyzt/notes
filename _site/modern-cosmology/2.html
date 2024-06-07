@@ -502,17 +502,26 @@ We can calculate this phase-space distribution using some quantum mechanics!</p>
 
   <p>First, let us calculate how many particles there are within every infinitesimal phase-space volume $\d^3x\, \d^3p$:</p>
 
-  <p><a href="https://en.wikipedia.org/wiki/Uncertainty\_principle">Heisenberg’s uncertainty principle</a>
-tells us that every such volume contains
-$\d^3 x\, \d^3 p/[2\pi]^3$
-indivisible <strong>fundamental phase-space elements</strong>.
-Then, the distribution function $f_s(\vec x, \vec p, t)$ counts the number of particles of a given species $s$ per such element around $(\vec x, \vec p, t)$. 
-However, $f_s$ does not distinguish degenerate states, so we also have to multiply by the <strong>degeneracy factor</strong> $g_s$. 
+  <p><a href="https://en.wikipedia.org/wiki/Uncertainty_principle">Heisenberg’s uncertainty principle</a>
+tells us that we cannot distinguish phase-space coordinates less than
+$
+\Delta x \Delta p &lt; [2\pi]^3
+$
+in separation. (Recall that we work in units where $\hbar = 1$.)
+Thus, every such phase-space volume in contains
+\[
+\f{\d^3 x\, \d^3 p}{[2\pi]^3}
+\]
+indivisible <strong>fundamental phase-space elements</strong>.</p>
+
+  <p>The distribution function $f_s(\vec x, \vec p, t)$ counts the number of particles of a given species $s$ per such fundamental element around $(\vec x, \vec p, t)$. 
+However, $f_s$ does not distinguish degenerate states in quantum mechanics, 
+so we also have to multiply by the <strong>degeneracy factor</strong> $g_s$. 
 For example, photons have $g_\gamma = 2$ due to their two spin states.</p>
 
   <p>Thus, every infinitesimal volume $\d^3x\, \d^3p$ in phase-space contains
 \[
-\f{\d^3 x \, \d^3 p}{[2\pi]^3} g_s f_s(\vec x, \vec p, t)
+g_s \f{\d^3 x \, \d^3 p}{[2\pi]^3} f_s(\vec x, \vec p, t)
 \]
 particles.</p>
 

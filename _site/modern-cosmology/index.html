@@ -614,17 +614,26 @@ We can calculate this phase-space distribution using some quantum mechanics!</p>
 
   <p>First, let us calculate how many particles there are within every infinitesimal phase-space volume $\d^3x\, \d^3p$:</p>
 
-  <p><a href="https://en.wikipedia.org/wiki/Uncertainty\_principle">Heisenberg’s uncertainty principle</a>
-tells us that every such volume contains
-$\d^3 x\, \d^3 p/[2\pi]^3$
-indivisible <strong>fundamental phase-space elements</strong>.
-Then, the distribution function $f_s(\vec x, \vec p, t)$ counts the number of particles of a given species $s$ per such element around $(\vec x, \vec p, t)$. 
-However, $f_s$ does not distinguish degenerate states, so we also have to multiply by the <strong>degeneracy factor</strong> $g_s$. 
+  <p><a href="https://en.wikipedia.org/wiki/Uncertainty_principle">Heisenberg’s uncertainty principle</a>
+tells us that we cannot distinguish phase-space coordinates less than
+$
+\Delta x \Delta p &lt; [2\pi]^3
+$
+in separation. (Recall that we work in units where $\hbar = 1$.)
+Thus, every such phase-space volume in contains
+\[
+\f{\d^3 x\, \d^3 p}{[2\pi]^3}
+\]
+indivisible <strong>fundamental phase-space elements</strong>.</p>
+
+  <p>The distribution function $f_s(\vec x, \vec p, t)$ counts the number of particles of a given species $s$ per such fundamental element around $(\vec x, \vec p, t)$. 
+However, $f_s$ does not distinguish degenerate states in quantum mechanics, 
+so we also have to multiply by the <strong>degeneracy factor</strong> $g_s$. 
 For example, photons have $g_\gamma = 2$ due to their two spin states.</p>
 
   <p>Thus, every infinitesimal volume $\d^3x\, \d^3p$ in phase-space contains
 \[
-\f{\d^3 x \, \d^3 p}{[2\pi]^3} g_s f_s(\vec x, \vec p, t)
+g_s \f{\d^3 x \, \d^3 p}{[2\pi]^3} f_s(\vec x, \vec p, t)
 \]
 particles.</p>
 
@@ -1164,30 +1173,39 @@ at which point a fully relativistic and quantum treatment is necessary.</p>
 
   <h3 id="quantum-relativistic-collisions">Quantum-relativistic collisions</h3>
 
-  <p>In relativity, the phase space of comoving momenta is four-dimensional. 
+  <p>In relativity, the space of momenta is four-dimensional. 
 But because all real particles obey the dispersion relation $-m^2 = g_{\mu\nu} P^\mu P^\nu = -E^2 + p^2$,
 for any given rest mass $m$, 
-the set of physically possible comoving momenta is confined to a relativistically invariant, hyperbolic three-manifold in this phase space,
+the set of physically possible relativistic momenta is confined to a relativistically invariant, hyperbolic three-manifold in this phase space,
 known as the <strong>mass shell</strong>. (Real particles are thus said to be “<strong>on the mass-shell</strong>”.)</p>
 
-  <p>Because the infinitesimal elements of three-dimensional phase space $\d^3 p$ change volume under Lorentz transformations, 
+  <p>Because the fundamental elements of physical momentum space $\d^3 p / [2\pi]^3$ change volume under Lorentz transformations, 
 the integrals in <a href="#tag-3.46">(3.46)</a> are not relativistically invariant.
-To obtain an invariant integral measure, we have to work on the mass shell embedded in four-dimensional phase space instead.
-Its infinitesimal elements measure the three-volumes of the on-shell slices of $\d^4 p$:
+To obtain an invariant integral measure, we have to work on the mass shell embedded in relativistic momentum space instead.</p>
+
+  <p>Since energy and time, like physical position and momentum, are canonical conjugates in quantum mechanics, 
+they also obey the Heisenberg uncertainty principle. 
+So, like physical position and momentum, we cannot distinguish four-dimensional phase-space coordinates less than
+$\Delta E\Delta t &lt; 2\pi$
+in separation.
+The fundamental elements of relativistic momentum space are thus
+\[
+\f{\d^3 p\, \d E}{[2\pi]^4}.
+\]
+To constrain ourselves to the mass-shell of this space, 
+we integrate over the dispersion relation,
+finding that the fundamental element of physical momentum space is really
 \[\begin{aligned}
-[\d^3 p]\Big|_\text{shell}
-&amp;= \int_\text{shell} \d^4 p
-\propto \d^3 p \int_0^\infty \d E\, \delta^{(1)}_D(E^2 - p^2 - m^2)
+\f{\d^3 p}{[2\pi]^3}\Bigg|_\text{shell}
+&amp;= \int_\text{shell} \f{\d^3 p\, \d E}{[2\pi]^4}
 \\
-&amp;= \d^3 p \int_0^\infty \d E\, \f{\delta^{(1)}_D(E - \sqrt{p^2 + m^2})}{2E}
-= \frac{\d^3 p}{2E(p)}.
+&amp;= \f{\d^3 p}{[2\pi]^3} \int_0^\infty \f{\d E}{2\pi} \cdot 2\pi \delta^{(1)}_D(E^2 - p^2 - m^2)
+\\
+&amp;= \f{\d^3 p}{[2\pi]^3} \int_0^\infty \d E\, \f{\delta^{(1)}_D(E - \sqrt{p^2 + m^2})}{2E}
+= \frac{\d^3 p}{[2\pi]^3 \cdot 2E(p)},
 \tag{3.47}
 \end{aligned}\]
-Factoring in $1/[2\pi]^3$ from Heisenberg’ uncertainty principle,
-the relativistically invariant fundamental phase-space element is thus
-\[
-\f{\d^3 p}{[2\pi]^3 \cdot 2E(p)}.
-\]</p>
+where the additional $2\pi$ factor in front of the Dirac delta accounts for the uncertainty in energy.</p>
 
   <p>When product particles are concentrated at high densities ($f \gtrsim 1/e$, i.e., high likelihood of occupancy in some fundamental phase-space elements), 
 their interparticle quantum effects strengthen, 
@@ -1206,7 +1224,7 @@ C[f_1(\vec p_1)] &amp;=
 \int\f{\d^3 p_4'}{[2\pi]^3 \cdot 2E_4(p_4')}
 \\
 &amp;\quad\cdot [2\pi]^4
-\cdot \delta_D^{(3)}(\vec p_3' + \vec p_4' - \vec p_1 - \vec p_2)
+\delta_D^{(3)}(\vec p_3' + \vec p_4' - \vec p_1 - \vec p_2)
 \\
 &amp;\quad\cdot \delta_D^{(1)}(E_3(p_3') + E_4(p_4') - E_1(p_1) - E_2(p_2))
 \\
@@ -1218,7 +1236,6 @@ f_3(\vec p_3')\, f_4(\vec p_4')\, [1 \pm f_1(\vec p_1)] \, [1 \pm f_2(\vec p_2)]
 \Big].
 \tag{3.48}
 \end{aligned}\]
-(I have no idea why the $[2\pi]^4$ is there. The textbook doesn't explain it. I've emailed the authors.)
 This derivation can again be easily generalized to other types of collisions.</p>
 
   <h3 id="perturbed-spacetime">Perturbed spacetime</h3>
