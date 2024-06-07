@@ -71,7 +71,7 @@
     display: none;
   }
   html, body {
-	  font-size: 16px;
+	  font-size: 12px;
   }
   h2, #markdown-toc {
 	position: static;
@@ -706,9 +706,10 @@ The field at any point in spacetime, under any reference frame, is thus
 \[
 T{^\mu}_{\nu}(\vec x, t) = \f{\delta_D^{(3)} (\vec x - \vec x_0)}{\sqrt{|g|}} \f{P^\mu P_\nu}{P^0},
 \]
-where the temporal component of relativistic momentum transforms as $P^0 = \gamma E^0$.</p>
+where the temporal component of relativistic momentum transforms as $P^0 = \gamma E_0$.</p>
 
-  <p>The energy-momentum tensor field for some arbitrary species $s$ with distribution function $f_s$ and degeneracy $g_s$ is therefore
+  <p>Generalizing from single particles, 
+the energy-momentum tensor field for some arbitrary species $s$ with distribution function $f_s$ and degeneracy $g_s$ is therefore
 \[
 (T_s){^\mu}_\nu(\vec x, t)
 = \f{g_s}{\sqrt{-|g|}} \int \f{\d^3 P}{[2\pi]^3} \f{P^\mu P_\nu}{P^0} f(\vec x, \vec p, t).
@@ -1188,7 +1189,7 @@ To obtain an invariant integral measure, we have to work on the mass shell embed
 
   <p>Since energy and time, like physical position and momentum, are canonical conjugates in quantum mechanics, 
 they also obey the Heisenberg uncertainty principle. 
-So, like physical position and momentum, we cannot distinguish four-dimensional phase-space coordinates less than
+so we cannot distinguish relativistic phase space coordinates less than
 $\Delta E\Delta t &lt; 2\pi$
 in separation.
 The fundamental elements of relativistic momentum space are thus
@@ -1390,7 +1391,7 @@ Applying the geodesic equation then gives
 },
 \tag{3.66}
 \end{aligned}\]
-where $\nabla_\parallel \equiv \uvec p[\uvec p\cdot\nabla]$ gives the gradient vector in the direction of motion.</p>
+where $\nabla_\parallel \equiv \uvec p[\uvec p\cdot\nabla] = p^i p^k \p_k / p^2$ gives the gradient vector in the direction of motion.</p>
 
   <p>Since
 \[\begin{aligned}
