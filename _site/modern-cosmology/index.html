@@ -311,7 +311,7 @@ and for patiently answering my questions wherever I got stuck on this subject.</
           <li><a href="#friedmann-equations" id="markdown-toc-friedmann-equations">Friedmann equations</a></li>
           <li><a href="#equations-of-motion" id="markdown-toc-equations-of-motion">Equations of motion</a></li>
           <li><a href="#boltzmann-equation" id="markdown-toc-boltzmann-equation">Boltzmann equation</a></li>
-          <li><a href="#classical-collisions" id="markdown-toc-classical-collisions">Classical collisions</a></li>
+          <li><a href="#semi-classical-collisions" id="markdown-toc-semi-classical-collisions">Semi-classical collisions</a></li>
           <li><a href="#quantum-relativistic-collisions" id="markdown-toc-quantum-relativistic-collisions">Quantum-relativistic collisions</a></li>
           <li><a href="#perturbed-spacetime" id="markdown-toc-perturbed-spacetime">Perturbed spacetime</a></li>
           <li><a href="#perturbed-equations-of-motion" id="markdown-toc-perturbed-equations-of-motion">Perturbed equations of motion</a></li>
@@ -711,11 +711,11 @@ Note that this equation holds in the massless limit as well.</p>
 \[
 \d\mathcal V = \d^3 x \cdot \sqrt{-|g|} \cdot \gamma,
 \]
-where $|g| \equiv |\mathrm{det}(g_{\mu\nu})|$ is the metric determinant.
+where $|g| \equiv \mathrm{det}(g_{\mu\nu})$ is the metric determinant.
 (Note that for diagonal, pseudo-Riemannian metrics such as the FLRW, $|g| = g_{00} \cdot g_{11} \cdot g_{22} \cdot g_{33} &lt; 0$.)
 The field at any point in spacetime, under any reference frame, is thus
 \[
-T{^\mu}_{\nu}(\vec x, t) = \f{\delta_D^{(3)} (\vec x - \vec x_0)}{\sqrt{|g|}} \f{P^\mu P_\nu}{P^0}.
+T{^\mu}_{\nu}(\vec x, t) = \f{\delta_D^{(3)} (\vec x - \vec x_0)}{\sqrt{-|g|}} \f{P^\mu P_\nu}{P^0}.
 \]</p>
 
   <p>Generalizing from single particles, 
@@ -1117,7 +1117,7 @@ Integrating the Boltzmann equation over all physical momenta, we obtain
 In the absence of collisions $(C[f] = 0)$, this confirms the $n\propto a^{-3}$ relation from earlier.
 However, collisions can alter the dynamics of $n$.</p>
 
-  <h3 id="classical-collisions">Classical collisions</h3>
+  <h3 id="semi-classical-collisions">Semi-classical collisions</h3>
 
   <p>A collision is an umbrella term for any sort of direct particle-particle interaction, 
 including scattering, pair production, annihilation, and decay.</p>
@@ -1153,7 +1153,10 @@ E_1(p_1) + E_2(p_2) &amp;= E_3(p_3') + E_4(p_4'),
 \end{aligned}\]
 where $E_s(p) = \sqrt{p^2 + m_s^2}$ is the dispersion relation for species $s$.
 When integrating over all possible $\vec p_2$, $\vec p'_3$, and $\vec p'_4$, 
-we will use Dirac delta functions to enforce these constraints.</p>
+we will use Dirac delta functions to enforce these constraints.
+Note to satistify the normalization condition, every $n$-dimensional Dirac delta function $\delta_D^{(n)}$
+carries with it a prefactor of $[2\pi]^n$. 
+One can think of it as accounting for the uncertainty in the constraint.</p>
 
   <p>Then, given these physically possible momenta, 
 their reaction rate is controlled by the square of the scattering amplitude
@@ -1163,16 +1166,16 @@ In the integrand, this is weighted by the probabilities: $-f_1(\vec p_1)\, f_2(\
 and $+f_3(\vec p'_4)\, f_4(\vec p'_4)$ for the reverse reaction, 
 with the signs respectively corresponding to the annihilation and creation of species $1$.</p>
 
-  <p>Putting it all together, the collision term for a species $1$ particle traveling with momentum $\vec p_1$ is classically
+  <p>Putting it all together, the collision term for a species $1$ particle traveling with momentum $\vec p_1$ is semi-classically
 \[\begin{aligned}
 C[f_1(\vec p_1)] &amp;= 
 \int\f{\d^3 p_2}{[2\pi]^3}
 \int\f{\d^3 p_3'}{[2\pi]^3}
 \int\f{\d^3 p_4'}{[2\pi]^3}
 \\
-&amp;\quad\cdot \delta_D^{(3)}(\vec p_3' + \vec p_4' - \vec p_1 - \vec p_2)
+&amp;\quad\cdot [2\pi]^3\, \delta_D^{(3)}(\vec p_3' + \vec p_4' - \vec p_1 - \vec p_2)
 \\
-&amp;\quad\cdot \delta_D^{(1)}(E_3(p_3') + E_4(p_4') - E_1(p_1) - E_2(p_2))
+&amp;\quad\cdot 2\pi\, \delta_D^{(1)}(E_3(p_3') + E_4(p_4') - E_1(p_1) - E_2(p_2))
 \\
 &amp;\quad \cdot |\mathcal M(\vec p_1, \vec p_2, \vec p_3', \vec p_4')|^2
 \\
@@ -1219,7 +1222,8 @@ finding that the fundamental element of physical momentum space is really
 = \frac{\d^3 p}{[2\pi]^3 \cdot 2E(p)},
 \tag{3.47}
 \end{aligned}\]
-where the additional $2\pi$ factor in front of the Dirac delta accounts for the uncertainty in energy.</p>
+where the additional $2\pi$ factor in front of the Dirac delta again follows from the normalization condition, 
+accounting the uncertainty in energy.</p>
 
   <p>When product particles are concentrated at high densities ($f \gtrsim 1/e$, i.e., high likelihood of occupancy in some fundamental phase-space elements), 
 their interparticle quantum effects strengthen, 
@@ -1237,10 +1241,9 @@ C[f_1(\vec p_1)] &amp;=
 \int\f{\d^3 p_3'}{[2\pi]^3 \cdot 2E_3(p_3')}
 \int\f{\d^3 p_4'}{[2\pi]^3 \cdot 2E_4(p_4')}
 \\
-&amp;\quad\cdot [2\pi]^4
-\delta_D^{(3)}(\vec p_3' + \vec p_4' - \vec p_1 - \vec p_2)
+&amp;\quad\cdot [2\pi]^3\, \delta_D^{(3)}(\vec p_3' + \vec p_4' - \vec p_1 - \vec p_2)
 \\
-&amp;\quad\cdot \delta_D^{(1)}(E_3(p_3') + E_4(p_4') - E_1(p_1) - E_2(p_2))
+&amp;\quad\cdot [2\pi]\, \delta_D^{(1)}(E_3(p_3') + E_4(p_4') - E_1(p_1) - E_2(p_2))
 \\
 &amp;\quad \cdot |\mathcal M(\vec p_1, \vec p_2, \vec p_3', \vec p_4')|^2
 \\
