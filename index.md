@@ -11,4 +11,5 @@ Writing things down helps with memorization or something.
 
 Want PDF versions? `ctrl-p` is your friend!
 
-These notes are hereby released to the public domain under the Creative Commons CC0 license.
+These notes are hereby released under the 
+[Creative Commons Attribution-Noncommercial (CC BY-NC 4.0) license](https://www.creativecommons.org/licenses/by-nc/4.0/deed.en).
