@@ -5,15 +5,26 @@ layout: default
 
 # Dodelson & Schmidt: Modern Cosmology
 
-My notes on the [second edition of the excellent Modern Cosmology textbook](https://shop.elsevier.com/books/modern-cosmology/dodelson/978-0-12-815948-4)
+My notes on the [second edition of the excellent *Modern Cosmology* textbook](https://shop.elsevier.com/books/modern-cosmology/dodelson/978-0-12-815948-4)
 by Scott Dodelson and Fabian Schmidt. 
 I try to fill in the details of some derivations that the they skipped for brevity, 
 and explain the conceptual intuition behind some formulas that they presented outright.
 No guarantees when I’ll finish the whole thing.
+
+Additional texts used in these notes are
+Sean Carroll’s [*Spacetime and Geometry*](https://www.preposterousuniverse.com/spacetimeandgeometry/),
+Michael Peskin and Daniel Shroeder’s [*An Introduction to Quantum Field Theory*](https://www.taylorfrancis.com/books/mono/10.1201/9780429503559/introduction-quantum-field-theory-michael-peskin),
+and Donald Clayton’s [*Principles of Stellar Evolution and Nucleosynthesis*](https://press.uchicago.edu/ucp/books/book/chicago/P/bo24324962.html).
+Astrophysics is truly an applied science; 
+to really understand some of the theoretical bases, you must look elsewhere.
+
 Deepest thanks to Chien-I Chiang and Ori Ganor for teaching me the prerequisite knowledge for tackling cosmology (namely, Lagrangian mechanics and general relativity), 
 and for patiently answering my questions wherever I got stuck on this subject.
 
-[List of my notes on other astrophysics stuff](/notes/).
+You may also be interested in 
+[Chung-Pei Ma’s lecture notes for the course at Berkeley](https://casper.astro.berkeley.edu/astrobaki/index.php/Cosmology),
+and [David Tong’s lecture notes for the course at Cambridge](https://www.damtp.cam.ac.uk/user/tong/cosmo.html).
+Besides this, I have [notes on some other astrophysics stuff](/notes/) as well.
 
 <details markdown="1">
   <summary>Table of Contents</summary>
