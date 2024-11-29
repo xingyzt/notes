@@ -98,15 +98,6 @@ $$ p^\alpha = mu^\alpha \to \begin{pmatrix}m\\0\\0\\0\end{pmatrix}. $$
 *(We can create new **four-vectors** by multiplying them with scalar invariants.
 Here, $m$ always refers to “the mass as measured in the rest frame,” which is by-definition invariant.)*
 
-* When we multiply this baseball’s four-momentum by its rest-frame number density $n$,
-  we obtain its **four-momentum flux**. In the rest frame, this is just
-
-$$ n p^\alpha \to \begin{pmatrix}n m\\0\\0\\0\end{pmatrix}. $$
-
-  In other words, the time component of four-momentum flux is mass-energy density!
-
-<br>
-
 These intertwined interpretations are key to understanding the stress-energy-momentum tensor. More on that in a bit.
 
 For now, notice that we have only defined these quantities in the rest frames of their respective objects.
@@ -132,7 +123,7 @@ Here's what we know about $\Lambda$:
   since boosting from $K$ to $K'$ back to $K'$ should not change anything.
 
 If you work through the algebra,
-these conditions uniquely constrain the components of the Lorentz boost by $v$ in the $\vec e\_1$ direction to be
+these conditions uniquely constrain the components of the Lorentz boost by $v$ in the $\vec e_1$ direction to be
 
 $$\begin{align*}
     \Lambda{^{\alpha^\prime}}_\alpha
@@ -145,9 +136,6 @@ $$\begin{align*}
     \end{pmatrix},\quad
     \gamma \equiv \frac1{\sqrt{1 - v^2}}.
 \end{align*}$$
-
-Try acting this on some 4-vectors. 
-Notice how it mixes components of time ($\vec e\_0$) and space ($\vec e\_1$)!
 
 Similarly, the Lorentz boost when $K'$ is moving in the $\vec e_2$ direction relative to $K$ is
 
@@ -186,35 +174,18 @@ Examples include water, neutron star interiors, and photons scattering in a spar
 In particular, we are interested in the behavior of perfect fluids, which are isotropic in their rest frame, and have 
 negligible interactions (except some scattering to keep them isotropic).
 
-Fluid volumes are locally modeled by a stress-energy-momentum tensor, which qualitatively means
+Fluids are locally modeled by a stress-energy-momentum tensor, which qualitatively means
 
 $$ T^{\alpha\beta} \to \begin{pmatrix}
-    \text{mass-energy density} & \text{mass-energy flux flowing next to }\beta \\
-    \text{momentum density in }\alpha & \text{momentum flux in }\alpha\text{ flowing next to }\beta
+    \text{energy density} & \text{momentum density in }\beta \\
+    \text{energy flux flowing to }\alpha & \text{momentum flux in }\alpha\text{ flowing to }\beta
 \end{pmatrix}. $$
 
-At first glance, this looks rather convoluted,
-but that's only because we aren't treating space and time on an equal footing yet.
-When we start thinking of density as the time component of flux,
-and mass-energy as the time component of four-momentum, 
-all of this reduces to
+At first glance, this looks rather asymmetric,
+but let's treat space and time on an equal footing.
+every component is just the 4-momentum flux in $\alpha$ flowing to $\beta$.
 
-$$ T^{\alpha\beta} \to \prn{\text{momentum flux in }\alpha\text{ flowing next to }\beta}. $$
-
-In mechanics class,
-you may have stumbled upon the fact that pressure, shear, and energy density all have the same dimensions.
-In fact, all of them are in this tensor!
-The diagonal entries, representing the $\alpha$-component of four-momentum flowing next to the $\alpha$ normal vector,
-are nothing but pressure, created by particles transmitting momentum directly against the fluid volume’s surface.
-While the off-diagonal entries, representing the components of four-momentum flowing in directions $\alpha$ orthogonal to the $\beta$ normal vector, 
-are nothing but shear, transmitting force parallel to the surface.
-
-Still, there seems to be an asymmetry between the $\alpha$ and $\beta$ directions here.
-But this inbalance is also illusory.
-If we consider fluid elements to always hold the same amount of rest mass,
-then any flux in $\alpha$ going to $\beta$ must equal any flux in $\beta$ going to $\alpha$,
-lest they accumulate.
-Thus $T^{\alpha\beta} = T^{\beta\alpha}$: the stress-energy-momentum tensor is fully symmetric!
+(This section is unfinished)
 
 ## Derivations
 

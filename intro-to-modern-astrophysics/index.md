@@ -5,7 +5,8 @@ layout: default
 
 # Carroll & Ostlie: Introduction to Modern Astrophysics
 
-[Xing’s notes](/notes/). Bullet-point summaries of the Big Orange Book, including most of the significant formulas. Unfortunately, I don’t plan on notetaking part III in the foreseeable future.
+Bullet-point summaries of the Big Orange Book, including most of the significant formulas. Unfortunately, I don’t plan on notetaking part III in the foreseeable future.
+[*See my other notes here*](/notes/). 
 
 <details markdown="1">
   <summary>Table of Contents</summary>
