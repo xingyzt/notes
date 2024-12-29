@@ -11,14 +11,14 @@ known as **spontaneous symmetry breaking**,
 can lead to a field taking on different vacuum expectation values $\braket\phi\equiv\braket{0|\phi|0}$ at different regions in spacetime below the critical temperature.
 
 <figure id="fig-ssb">
-<iframe src="https://www.desmos.com/calculator/kli7acornh?embed" style="border: 1px solid #ccc; width: 100%; height: 70vmin" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/gteb6dgoar?embed" style="border: 1px solid #ccc; width: 100%; height: 70vmin" frameborder=0></iframe>
 <figcaption>
 <em>Figure 1:</em> Drag the temperature slider across $T_\text{crit}$ to break or restore the symmetry in the field $\phi$.
 In this 1D example, $V_\text{eff}$ has two points in its minima when $T < T_\text{crit}$,
 corresponding to a vacuum manifold of topology $S^0$.
 As the universe cools below the critical temperature,
 different regions of spacetime can enter different vacua.
-<em><a href="https://www.desmos.com/calculator/npsldxjukr">Play around with this on Desmos!</a></em>
+<em><a href="https://www.desmos.com/calculator/gteb6dgoar">Play around with this on Desmos!</a></em>
 </figcaption>
 </figure>
 
@@ -68,7 +68,7 @@ so we say all the gauge symmetries in our theory is **manifest**.
 
 Should we instead pick the more interesting $V_-$ solution,
 then when the temperature $T=0$,
-the field's vacuum expectation value $\braket{\phi}$ settles down at a nonzero value constrained by $\braket{\phi}^2 = \mu^2$, where $\mu \equiv m/\lambda$.
+the field’s vacuum expectation value $\braket{\phi}$ settles down at a nonzero value constrained by $\braket{\phi}^2 = \mu^2$, where $\mu \equiv m/\lambda$.
 But any nonzero element of $\R^N$ is only invariant under $O(N-1)$,[^4]
 not the full Lagrangian symmetry $O(N)$,
 so we say our field **breaks** or **hides** a symmetry of our theory.[^5]
@@ -93,15 +93,15 @@ $$\begin{equation}
 
 [^5]: This may be the first time you encounter the phrase *symmetry-breaking*,
     but it is not exclusively a field-theory phenomenon.
-    For example, Newton's law of universal gravitation is rotationally symmetric,
+    For example, Newton’s law of universal gravitation is rotationally symmetric,
     but planetary orbits can be eccentric ellipses.
     These orbits break/hide the rotational symmetry of the theory.
 
-Let's see why this makes sense.
+Let’s see why this makes sense.
 For an $(N=1)$-component scalar field, 
 every physical point in spacetime picks either $\braket\phi = +\mu$ or $\braket\phi = -\mu$ as its vacuum,
 so the manifold of degenerate vacua is the set of two disconnected points corresponding to the two minima in [Fig 1](#fig-ssb).
-This indeed agrees with Eqn (\ref{os})'s prediction that $\mathcal M$ is the zero-sphere.
+This indeed agrees with Eqn (2)’s prediction that $\mathcal M$ is the zero-sphere.
 For an $(N=2)$-component real scalar field $\phi = (\phi_1, \phi_2)$ 
 (or equivalently, a complex scalar field),
 the manifold $\mathcal M = S^1$ is a circle of degenerate vacua constrained by $|\\!\braket\phi\\!| = \mu$.
