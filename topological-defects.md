@@ -1,5 +1,5 @@
 ---
-title:  "Topological Defects from Spontaneous Symmetry Breaking"
+title:  "Spontaneous Symmetry Breaking and the Topology of its Topological Defects"
 ---
 
 Many fields in particle physics and statistical field theory 
@@ -55,7 +55,7 @@ $$\begin{equation}
 
 [^3]: This gives our theory an $O(N)$ gauge symmetry,
     meaning $\mathcal L$ is unaffected by any local transformation $\phi_i(x) \mapsto R_{ij}(x)\, \phi_j(x)$, 
-    where $R: \mathcal S\to O(N)$ \textbf{fixes a gauge}
+    where $R: \mathcal S\to O(N)$ **fixes a gauge**
     at every point in spacetime $x\in\mathcal S$.
 
 Should we pick the $V_+$ solution, then the only minimum exists at the origin.
@@ -158,7 +158,7 @@ neighboring spins like to be aligned because an anti-alignment would raise the e
 
 We can prove the existence of this high-energy region with homotopy, 
 the study of contracting manifolds on other manifolds.
-\textit{Proof:}
+*Proof:*
 Supposing instead that $V(\braket\phi)$ is minimized everywhere in space,
 then any point in space, 
 the $\braket\phi$ can be identified with a single point in $\mathcal M$.
@@ -182,7 +182,7 @@ this $N=1$-component field produces $K=2$-dimensional **domain walls** in $D=3$-
 [^6]: The time dimension is busy heating and cooling the system---topological defects are a non-equilibrium phenomenon.
 
 Indeed, if we observe $\phi$ as temperature is quickly lowered from above $T_\text{crit}$ to zero,
-then its random thermal fluctuations at high temperature are almost \textit{guaranteed} to create regions of different $\braket\phi$ at $T<T_\text{crit}$,
+then its random thermal fluctuations at high temperature are almost *guaranteed* to create regions of different $\braket\phi$ at $T<T_\text{crit}$,
 with domain walls marking the boundaries between them.
 
 And as we will see, this $K = D-N$ relation holds for other topological defects in the $\R^N$-field model as well.
@@ -218,7 +218,7 @@ This means that during the contraction of this test loop in space,
 the corresponding loop of $\braket\phi$ values must exit $\mathcal M$,
 with one point on the loop passing through a region of high energy.
 Because this high-energy region holds for any contracting motion of the loop,
-it is $K = D - N = 1$-dimensional:
+it is $(K = D - N = 1)$-dimensional:
 we found a **(cosmic) string**![^7]
 
 [^7]: Cosmic in the context of high-energy theories,
@@ -226,9 +226,12 @@ we found a **(cosmic) string**![^7]
 
 ## Monopoles
 
-We can play this game again with $N=3$,
-finding that because $\pi_2(S^2)$ is nontrivial,
-contractions of a test sphere in space can cross a $K=D-N$=0-dimensional region of high energy: a \textbf{monopole}.
+The power of homotopy is that we can play this game with arbitrary-dimensional fields and spacetimes,
+and exhaustively search for systems where topological defects may be present, 
+even if the dimensions are too large for us to visualize the contractions.
+With $N=3$,
+we find that because $\pi_2(S^2)$ is nontrivial,
+contractions of a test sphere in space can cross a $K=D-N$=0-dimensional region of high energy: a **monopole**.
 
 I think this has to do with magnetic monopoles.
 Story for another time.
