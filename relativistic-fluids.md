@@ -354,7 +354,7 @@ but you can see the symmetries if you look carefully!
 
 ### 3. Summing together: stress-energy-momentum tensor for fluids
 
-The components of the stress-energy-momentum tensor are all intensive quantities,
+The components of the stress-energy-momentum tensor are all **intensive** quantities,
 so it makes physical sense to add them together 
 *if* we premultiply each with their particle’s Lorentz-contracted volume in $\mathcal K$,
 
@@ -362,7 +362,7 @@ $$
 \Delta V_\# = \f{m_\#}{\rho_\# \gamma_\#},
 $$
 
-thereby making an extensive tensor
+thereby making an **extensive** tensor
 
 $$\begin{align*}
 T_\#^{\alpha\beta}
@@ -384,7 +384,6 @@ $$\begin{align*}
 T^{\alpha\beta} &= \f1{\Delta V} \sum_\# T_\#^{\alpha\beta} \Delta V_\#
 \\
 &\to 
-\boxed{
 \f1{\Delta V} \sum_\# 
 m_\# \gamma_\# 
 \begin{pmatrix}
@@ -393,25 +392,40 @@ v^1_\# & |v^1_\#|^2 & v^2_\# v^1_\# & v^3_\# v^1_\# \\
 v^2_\# & v^1_\# v^2_\# & |v^2_\#|^2 & v^3_\# v^2_\# \\
 v^3_\# & v^1_\# v^3_\# & v^2_\# v^3_\# & |v^3_\#|^2 \\
 \end{pmatrix}
+\\
+&=
+\boxed{
+\f{N}{\Delta V} \ang
+m_\# \gamma_\# 
+\begin{pmatrix}
+1 & v^1_\# & v^2_\# & v^3_\# \\
+v^1_\# & |v^1_\#|^2 & v^2_\# v^1_\# & v^3_\# v^1_\# \\
+v^2_\# & v^1_\# v^2_\# & |v^2_\#|^2 & v^3_\# v^2_\# \\
+v^3_\# & v^1_\# v^3_\# & v^2_\# v^3_\# & |v^3_\#|^2 \\
+\end{pmatrix}
+}
 }.
 \end{align*}$$
 
+where the angle brackets $\ang{\cdots}$ denote an average over the ensemble of $N$ particles.
 This is the formula of $\vec T$ for an arbitrary relativistic fluid composed of dust!
 If we make some assumptions about this dust, then we can simplify the expression some more.
-Suppose we have $N$ dust particles, each with mass $m$, then
+Suppose every particle has the same rest mass $m$, then
 
 $$\begin{align*}
 T^{\alpha\beta} \to \f{Nm}{\Delta V}
-\sum_\# \gamma_\# 
+\ang{
+\gamma_\# 
 \begin{pmatrix}
 1 & v^1_\# & v^2_\# & v^3_\# \\
 v^1_\# & (v^1_\#)^2 & v^2_\# v^1_\# & v^3_\# v^1_\# \\
 v^2_\# & v^1_\# v^2_\# & (v^2_\#)^2 & v^3_\# v^2_\# \\
 v^3_\# & v^1_\# v^3_\# & v^2_\# v^3_\# & (v^3_\#)^2 \\
-\end{pmatrix}.
+\end{pmatrix}
+},
 \end{align*}$$
 
-And if the particle velocities are isotropic --- that is, uniformly distributed in direction ---
+Furthermore, if the particle velocities are isotropic --- that is, uniformly distributed in direction ---
 then the average value of every velocity component vanishes:
 $\ang{ v^1 } =\ang{ v^2 } =\ang{ v^3 } = 0$,
 as do products of independent components.
@@ -421,13 +435,15 @@ Then
 
 $$\begin{align*}
 T^{\alpha\beta} \to \f{Nm}{\Delta V}
-\sum_\# \gamma_\# 
+\ang{
+\gamma_\#
 \begin{pmatrix}
 1 & \\
 & \tfrac13|v_\#|^2 & \\
 & & \tfrac13|v_\#|^2 \\
 & & & \tfrac13|v_\#|^2 \\
-\end{pmatrix}.
+\end{pmatrix}
+}.
 \end{align*}$$
 
 To make further simplifications, we would need to know the distribution of velocity magnitudes $v_\\#$.
