@@ -22,12 +22,12 @@ if you want to get right to the derivations.)*
 
 A key postulate of special relativity is
 
-### 1. The speed of light in vacuum is constant in every inertial reference frame.
+### 1. The speed of light in vacuum is constant in every reference frame.
 
 In other words, $c$ is **invariant**. 
 This motivates the definition of invariant **spacetime intervals**:
 \\[
-(\d s)^2 \equiv -(c\,\d t)^2 + (\d x)^2 + (\d y)^2 + (\d z)^2.
+|\d s|^2 \equiv -|c\,\d t|^2 + |\d x|^2 + |\d y|^2 + |\d z|^2.
 \\]
 Just like how the lengths of everyday objects do not change under spatial rotations,
 the spacetime interval between events do not change under Lorentz boosts.
@@ -36,14 +36,15 @@ moving relative to each other near the speed of light, the spacetime interval st
 It’s like having a new and improved, *relativistic* ruler.
 
 To produce the invariant spacetime interval with this ruler, it must be able to measure time alongside the spatial lengths.
-Geometrically, this motivates adding a zeroth $t$ element to our vectors’ existing three $x$, $y$, and $z$.
+Geometrically, this motivates adding a zeroth $t$ element to our vectors’ existing three $x$, $y$, and $z$ components.
 For example, a position vector is now
 
-$$ \vec r = r^\alpha \vec e_\alpha. $$
+$$ \vec r = r^\alpha \vec e_\alpha, $$
 
+where $\vec e_\alpha \to (\uvec t\ \uvec x\ \uvec y\ \uvec z)$ are the temporal and spatial **basis vectors**.
 (To simplify the writing, Greek-letter indices like $\alpha, \beta, \mu, \nu$ implicitly range over 0, 1, 2, 3;
 Repeated upper-lower index pairs like ${^\beta}{_\beta}$ are implicitly summed over. 
-Do not confuse them with exponents, which will always be outside parentheses!
+Do not confuse them with exponential powers, which will always be outside vertical brackets $|v|^2$.
 This notation is known as the **Einstein summation convention**.)
 
 This way, a spacetime displacement
@@ -83,7 +84,8 @@ I strongly believe that to fully understand special relativity,
 it must feel natural to mix quantities derived from space and those derived from time.
 For example:
 * Velocity is both motion through space and motion through time.
-  In your **rest frame** $K$, you are stationary in space, but still traveling in time.
+  In your **inertial reference frame** $\mathcal K$ (also known as your **rest frame**), 
+  you are stationary in space, but still traveling in time.
   Your **four-velocity** $\vec u$ thus has rest-frame components
 
 $$ u^\alpha \to \begin{pmatrix}1\\0\\0\\0\end{pmatrix}. $$
@@ -115,12 +117,16 @@ when we are moving relative to these objects near the speed of light? Luckily,
 
 ### 3. We can transform between any inertial reference frames via Lorentz boosts
 
-Suppose another inertial reference frame $K'$ is traveling with (ordinary) velocity $v\vec e_1$ as measured in $K$.
-Given some four-vector $\vec a$, it will have a set of components $a^\alpha$ in $K$, 
-and another set $a^{\alpha^\prime}$ in $K'$.
-We can try to relate them by a *Lorentz boost* $\Lambda$:
+Suppose another inertial reference frame $\mathcal K'$ is traveling with (ordinary) velocity $v\vec e_1$ 
+as measured in $\mathcal K$.
+Given some four-vector $\vec a$, it will have a set of components $a^\alpha$ in $\mathcal K$, 
+and another set $a^{\alpha^\prime}$ in $\mathcal K'$.
+We can try to relate them by a **Lorentz boost** $\Lambda$:
 
 $$ a^{\alpha^\prime} = \Lambda{^{\alpha^\prime}}_\alpha a^\alpha $$
+
+(Notice how in the primed reference frame $\mathcal K'$,
+the indices are annotated with $'$ as well.)
 
 Here's what we know about $\Lambda$:
 - It must be a *linear transformation* on the components of $\vec a$,
@@ -129,7 +135,7 @@ Here's what we know about $\Lambda$:
   since the speed of light is the same in every reference frame.
 - It must be *invertible by the reverse boost*
   (in other words, $(\Lambda^{-1}){^{\alpha}}_{\alpha^\prime} = \Lambda{\_{\alpha^\prime}}^\alpha$),
-  since boosting from $K$ to $K'$ back to $K'$ should not change anything.
+  since boosting from $\mathcal K$ to $\mathcal K'$ then back to $\mathcal K'$ again should not change anything.
 
 If you work through the algebra,
 these conditions uniquely constrain the components of the Lorentz boost by $v$ in the $\vec e\_1$ direction to be
@@ -143,13 +149,13 @@ $$\begin{align*}
         & & 1\\\
         & & & 1
     \end{pmatrix},\quad
-    \gamma \equiv \frac1{\sqrt{1 - v^2}}.
+    \gamma \equiv \frac1{\sqrt{1 - |v|^2}}.
 \end{align*}$$
 
-Try acting this on some 4-vectors. 
+Try acting this on some four-vectors. 
 Notice how it mixes components of time ($\vec e\_0$) and space ($\vec e\_1$)!
 
-Similarly, the Lorentz boost when $K'$ is moving in the $\vec e_2$ direction relative to $K$ is
+Similarly, the Lorentz boost when $\mathcal K'$ is moving in the $\vec e_2$ direction relative to $\mathcal K$ is
 
 $$\begin{align*}
     \Lambda{^{\alpha^\prime}}_\alpha
@@ -162,14 +168,17 @@ $$\begin{align*}
 \end{align*}.
 $$
 
-Can you figure out what it should look like when $K'$ is moving in the $\vec e_3$ direction?
+Can you figure out what it should look like when $\mathcal K'$ is moving in the $\vec e_3$ direction?
 
 
 ### Summary of the notation
 
 * We work in natural units, where the speed of light $c=1$. 
-* The metric is spacelike: 
-* Greek indices ($\alpha,\beta,\mu,\nu,\cdots$) range 0, 1, 2, 3.
+* The metric $\vec\eta$ is spacelike: 
+a spacetime displacement $\d\vec s$ has a positive interval $(\d\vec s)^2$
+if its spatial displacement exceeds its temporal displacement in magnitude.
+* Greek indices ($\alpha,\beta,\mu,\nu,\cdots$) ranging 0, 1, 2, 3 cover the four spacetime dimensions.
+They are annotated according to the reference frame.
 * Contravariant components have upper indices; covariant components have lower indices.
 * Implicit Einstein summation convention is assumed for matching upper-lower indices.
 
@@ -186,14 +195,17 @@ Examples include water, neutron star interiors, and photons scattering in a spar
 In particular, we are interested in the behavior of perfect fluids, which are isotropic in their rest frame, and have 
 negligible interactions (except some scattering to keep them isotropic).
 
-Fluid volumes are locally modeled by a stress-energy-momentum tensor, which qualitatively means
+Fluid volumes are locally modeled by a stress-energy-momentum tensor $\vec T$, 
+whose components qualitatively mean
 
 $$ T^{\alpha\beta} \to \begin{pmatrix}
     \text{mass-energy density} & \text{mass-energy flux flowing next to }\beta \\
     \text{momentum density in }\alpha & \text{momentum flux in }\alpha\text{ flowing next to }\beta
 \end{pmatrix}. $$
 
-At first glance, this looks rather convoluted,
+This is a four-by-four, **rank-two tensor** (four-vectors are rank-one tensors),
+which we can build out of products and sums of scalars and four-vectors.
+At first glance, it looks rather convoluted,
 but that's only because we aren't treating space and time on an equal footing yet.
 When we start thinking of density as the time component of flux,
 and mass-energy as the time component of four-momentum, 
@@ -204,10 +216,13 @@ $$ T^{\alpha\beta} \to \prn{\text{momentum flux in }\alpha\text{ flowing next to
 In mechanics class,
 you may have stumbled upon the fact that pressure, shear, and energy density all have the same dimensions.
 In fact, all of them are in this tensor!
-The diagonal entries, representing the $\alpha$-component of four-momentum flowing next to the $\alpha$ normal vector,
+The diagonal components, representing the $\alpha$-component of four-momentum flowing next to the $\alpha$ normal vector,
 are nothing but pressure, created by particles transmitting momentum directly against the fluid volume’s surface.
-While the off-diagonal entries, representing the components of four-momentum flowing in directions $\alpha$ orthogonal to the $\beta$ normal vector, 
+While the off-diagonal components, representing the components of four-momentum flowing in directions $\alpha$ orthogonal to the $\beta$ normal vector, 
 are nothing but shear, transmitting force parallel to the surface.
+This is why we need to describe stress-energy-momentum as a rank-two tensor:
+it measures the interaction of *two* directed quantities, 
+while a rank-one four-vector only measures one direction.
 
 Still, there seems to be an asymmetry between the $\alpha$ and $\beta$ directions here.
 But this inbalance is also illusory.
@@ -220,52 +235,202 @@ Thus $T^{\alpha\beta} = T^{\beta\alpha}$: the stress-energy-momentum tensor is f
 
 We want to find the stress-energy-momentum tensor for a small volume $\Delta V$ of a perfect fluid.
 
-Because tensors components of the same inertial reference frame are additive, 
+Because extensive quantities of the same inertial reference frame are additive, 
 our method of attack is as follows: 
 1. Find the stress-energy-momentum tensor of each constituent particle in their respective rest frames.
 2. Lorentz boost every constituent tensor to the rest frame of the fluid volume.
-3. Add their components up.
+3. Make their components extensive, then add them up.
 
 Let’s do this!
 
-### 1. Dust
+### 1. The building block: stress-energy-momentum tensor for dust
 
-As noted in the [previous section](#intuitions), fluids are composed of many particles. 
+As noted in the previous section, fluids are composed of many particles,
+each with their own stress-energy-momentum tensor.
+Since we are using letter indices to denote Lorentz geometry already,
+we will use the $\\#$ symbol to index these particles.
+
+In the inertial reference frame $\mathcal K^\\#$ of some particle $\\#$,
+it is completely stationary, 
+so all flux components in its stress-energy-momentum tensor
+$T_{\\#}^{\alpha^\\#\beta^\\#}$ vanishes.
+(We annotate indices in $\mathcal K^\\#$ with $^\\#$.)
+Because it exerts no intrinsic pressure on its surroundings, we call this particle **dust**.
+Only the mass-energy density component is nonzero:
+$T_\\#^{0^\\#0^\\#} = \rho_\\# = m_\\# / V_\\#$,
+the particle’s rest mass divided by its rest volume.
+Only when we transform to some other reference frame $\mathcal K$ 
+do we see the momentum flux components in $T_\\#^{\alpha\beta}$ emerge.
+
+How can we find out how the components of $\vec T_\\#$ transform?
+Well, we know how four-vectors transform, 
+so we should try to write this stress-energy-momentum tensor in terms of those things.
+A good candidate is the particle’s four-velocity $\vec u_\\#$,
+whose components are $(1\ 0\ 0\ 0)$ in its rest frame.
+Since only the time-time component of $\vec T_\\#$ is nonzero in its rest frame,
+we can therefore write
 
 $$\begin{align*}
-T^{\alpha\beta} &= \sum_\# T_\#^{\alpha\beta}
-\\
-&= \sum_\# \rho_\# U_\#^{\alpha} U_\#^{\beta}
-\\
-&= \sum_\# \f{m_\#}{\Delta V_\#} U_\#^{\alpha} U_\#^{\beta}
-\\
-&= \f1{\Delta V} \sum_\# \f{m_\#}{\gamma_\#} U_\#^{\alpha} U_\#^{\beta}
-\\
-&= \f1{\Delta V} \sum_\# \f{m_\#}{\gamma_\#}
-\begin{bmatrix}
-\gamma_\# \\ \gamma_\# u^1_\# \\ \gamma_\# u^2_\# \\ \gamma_\# u^3_\#
-\end{bmatrix}^{\!\alpha}
-\begin{bmatrix}
-\gamma_\# \\ \gamma_\# u^1_\# \\ \gamma_\# u^2_\# \\ \gamma_\# u^3_\#
-\end{bmatrix}^{\!\beta}
-\\
-&= \f1{\Delta V} \sum_\# m_\# \gamma_\#
-\begin{bmatrix}
- 1 \\ u^1_\# \\  u^2_\# \\  u^3_\#
-\end{bmatrix}^{\!\alpha}
-\begin{bmatrix}
- 1 \\ u^1_\# \\  u^2_\# \\  u^3_\#
-\end{bmatrix}^{\!\beta}
-\\
-&= \f1{\Delta V} \sum_\# m_\# \gamma_\#
-\begin{bmatrix}
-1 & u^1_\# & u^2_\# & u^3_\# \\
-u^1_\# & u^1_\# u^1_\# & u^2_\# u^1_\# & u^3_\# u^1_\# \\
-u^2_\# & u^1_\# u^2_\# & u^2_\# u^2_\# & u^3_\# u^2_\# \\
-u^3_\# & u^1_\# u^3_\# & u^2_\# u^3_\# & u^3_\# u^3_\# \\
-\end{bmatrix}^{\!\alpha\beta}
-\\
+T_\#^{\alpha^\#\beta^\#} = \rho_\#\, u_\#^{\alpha^\#} u_\#^{\beta^\#}
+\to \begin{pmatrix}
+\rho_\#\\
+& 0\\
+& & 0\\
+& & & 0
+\end{pmatrix},
 \end{align*}$$
 
-Suppose we have a fluid volume $\Delta V$.
+or equivalently,
+
+$$
+\vec T_\# = \rho_\# \vec u_\#\otimes\vec u_\#.
+$$
+
+### 2. Putting dust in the fluid frame
+
+If particle $\\#$ moves with three-velocity $v_\\#\vec e_1$ in the rest frame of its fluid element $\mathcal K$,
+then the components of its four-velocity $\vec u_\\#$ in $\mathcal K$ are boosted to
+
+$$\begin{align*}
+u_\#^\alpha
+&= \Lambda{^{\alpha}}_{\alpha^\#} u_\#^{\alpha^\#}
+\to \begin{pmatrix}
+\gamma & \gamma v\\
+\gamma v & \gamma\\
+& & 1\\
+& & & 1
+\end{pmatrix}
+\begin{pmatrix}
+1\\ 0\\ 0\\ 0
+\end{pmatrix}
+= \gamma_\# \begin{pmatrix}
+1\\ v_\#\\ 0\\ 0
+\end{pmatrix}.
+\end{align*}$$
+
+It is too tedious to derive here,
+but for an arbitrary relative three-velocity $v\_\\#^1\vec e\_1 + v\_\\#^2 \vec e\_2 + v\_\\#^3\vec e_3$
+with total three-magnitude $v_\\#$,
+the four-velocity components in $\mathcal K$ are
+
+$$\begin{align*}
+u_\#^\alpha
+\to \gamma_\# \begin{pmatrix}
+1\\ v^1_\#\\ v^2_\#\\ v^3_\#
+\end{pmatrix},\quad
+\gamma_\# \equiv \f1{
+\sqrt{1 - |v_\#|^2}
+}.
+\end{align*}$$
+
+And since $\rho_\\#$ is a scalar invariant,
+the entire stress-energy-momentum tensor has components
+
+$$\begin{align*}
+T_\#^{\alpha\beta}
+&\to \rho_\#\ 
+\gamma_\# 
+\begin{pmatrix}
+1 \\ v^1_\# \\ v^2_\# \\ v^3_\#
+\end{pmatrix}
+\otimes
+\gamma_\# 
+\begin{pmatrix}
+1 \\ v^1_\# \\ v^2_\# \\ v^3_\#
+\end{pmatrix}
+\\
+&=
+\rho_\# (\gamma_\#)^2
+\begin{pmatrix}
+1 & v^1_\# & v^2_\# & v^3_\# \\
+v^1_\# & |v^1_\#|^2 & v^2_\# v^1_\# & v^3_\# v^1_\# \\
+v^2_\# & v^1_\# v^2_\# & |v^2_\#|^2 & v^3_\# v^2_\# \\
+v^3_\# & v^1_\# v^3_\# & v^2_\# v^3_\# & |v^3_\#|^2 \\
+\end{pmatrix}.
+\end{align*}$$
+
+Pretty busy at first glance, 
+but you can see the symmetries if you look carefully!
+
+### 3. Summing together: stress-energy-momentum tensor for fluids
+
+The components of the stress-energy-momentum tensor are all intensive quantities,
+so it makes physical sense to add them together 
+*if* we premultiply each with their particle’s Lorentz-contracted volume in $\mathcal K$,
+
+$$
+\Delta V_\# = \f{m_\#}{\rho_\# \gamma_\#},
+$$
+
+thereby making an extensive tensor
+
+$$\begin{align*}
+T_\#^{\alpha\beta}
+\Delta V_\#
+&\to 
+m_\# \gamma_\# 
+\begin{pmatrix}
+1 & v^1_\# & v^2_\# & v^3_\# \\
+v^1_\# & |v^1_\#|^2 & v^2_\# v^1_\# & v^3_\# v^1_\# \\
+v^2_\# & v^1_\# v^2_\# & |v^2_\#|^2 & v^3_\# v^2_\# \\
+v^3_\# & v^1_\# v^3_\# & v^2_\# v^3_\# & |v^3_\#|^2 \\
+\end{pmatrix}.
+\end{align*}$$
+
+After summation, we then divide by the fluid element volume $\Delta V$
+to recover the intensive stress-energy-momentum tensor for the fluid:
+
+$$\begin{align*}
+T^{\alpha\beta} &= \f1{\Delta V} \sum_\# T_\#^{\alpha\beta} \Delta V_\#
+\\
+&\to 
+\boxed{
+\f1{\Delta V} \sum_\# 
+m_\# \gamma_\# 
+\begin{pmatrix}
+1 & v^1_\# & v^2_\# & v^3_\# \\
+v^1_\# & |v^1_\#|^2 & v^2_\# v^1_\# & v^3_\# v^1_\# \\
+v^2_\# & v^1_\# v^2_\# & |v^2_\#|^2 & v^3_\# v^2_\# \\
+v^3_\# & v^1_\# v^3_\# & v^2_\# v^3_\# & |v^3_\#|^2 \\
+\end{pmatrix}
+}.
+\end{align*}$$
+
+This is the formula of $\vec T$ for an arbitrary relativistic fluid composed of dust!
+If we make some assumptions about this dust, then we can simplify the expression some more.
+Suppose we have $N$ dust particles, each with mass $m$, then
+
+$$\begin{align*}
+T^{\alpha\beta} \to \f{Nm}{\Delta V}
+\sum_\# \gamma_\# 
+\begin{pmatrix}
+1 & v^1_\# & v^2_\# & v^3_\# \\
+v^1_\# & (v^1_\#)^2 & v^2_\# v^1_\# & v^3_\# v^1_\# \\
+v^2_\# & v^1_\# v^2_\# & (v^2_\#)^2 & v^3_\# v^2_\# \\
+v^3_\# & v^1_\# v^3_\# & v^2_\# v^3_\# & (v^3_\#)^2 \\
+\end{pmatrix}.
+\end{align*}$$
+
+And if the particle velocities are isotropic --- that is, uniformly distributed in direction ---
+then the average value of every velocity component vanishes:
+$\ang{ v^1 } =\ang{ v^2 } =\ang{ v^3 } = 0$,
+as do products of independent components.
+Their magnitudes are equipartitioned between the three spatial directions:
+$\ang{ |v^1\_\\#|^2 } = \ang{ |v^2\_\\#|^2 } = \ang{ |v^3\_\\#|^2 } = \tfrac13\ang{|v\_\\#|^2} $.
+Then
+
+$$\begin{align*}
+T^{\alpha\beta} \to \f{Nm}{\Delta V}
+\sum_\# \gamma_\# 
+\begin{pmatrix}
+1 & \\
+& \tfrac13|v_\#|^2 & \\
+& & \tfrac13|v_\#|^2 \\
+& & & \tfrac13|v_\#|^2 \\
+\end{pmatrix}.
+\end{align*}$$
+
+To make further simplifications, we would need to know the distribution of velocity magnitudes $v_\\#$.
+That is a problem for relativistic statistical mechanics.
+
 
