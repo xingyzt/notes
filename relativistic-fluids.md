@@ -53,26 +53,26 @@ $$ \d\vec s = s^\alpha \vec e_\alpha \equiv \d t\,\vec e_0 + \d x\,\vec e_1 + \d
 
 with components 
 
-$$ s^\alpha \to 
-\begin{pmatrix} s^0 \\ s^1 \\ s^2 \\ s^3 \end{pmatrix} \equiv
+$$ \d s^\alpha \to 
+\begin{pmatrix} \d s^0 \\ \d s^1 \\ \d s^2 \\ \d s^3 \end{pmatrix} \equiv
 \begin{pmatrix} \d t \\ \d x \\ \d y \\ \d z \end{pmatrix} $$
 
 has the spacetime interval (again, summing over repeated index pairs)
 
-$$ (\d\vec s)^2 = \eta_{\alpha\beta} s^\alpha s^\beta, $$
+$$ (\d\vec s)^2 =  g_{\alpha\beta} \d s^\alpha \d s^\beta, $$
 
 where
 
-$$ \vec\eta = \eta_{\alpha\beta} \ (\vec e^\alpha \otimes \vec e^\beta) $$
+$$ \vec g =  g_{\alpha\beta} \ (\vec e^\alpha \otimes \vec e^\beta) $$
 
 is the **Minkowskian metric** with components
 
-$$ \eta_{\alpha\beta} \to \begin{pmatrix}
+$$  g_{\alpha\beta} \to \begin{pmatrix}
 -1 \\ & 1 \\ & & 1 \\ & & & 1
 \end{pmatrix}. $$
 
 (When dealing with objects having two indices, the left index corresponds to the row, 
-and the right index the column. For instance, because the metric is symmetric, $\eta_{\alpha\beta} = \eta_{\beta\alpha}$.)
+and the right index the column. For instance, because the metric is symmetric, $ g_{\alpha\beta} =  g_{\beta\alpha}$.)
 
 The metric is useful for a lot of things (see the links above for more details), but most fundamentally, 
 it underscores *an interweaving of space and time* that is thematic throughout
@@ -174,7 +174,7 @@ Can you figure out what it should look like when $\mathcal K'$ is moving in the 
 ### Summary of the notation
 
 * We work in natural units, where the speed of light $c=1$. 
-* The metric $\vec\eta$ is spacelike: 
+* The metric $\vec g$ is spacelike: 
 a spacetime displacement $\d\vec s$ has a positive interval $(\d\vec s)^2$
 if its spatial displacement exceeds its temporal displacement in magnitude.
 * Greek indices ($\alpha,\beta,\mu,\nu,\cdots$) ranging 0, 1, 2, 3 cover the four spacetime dimensions.
@@ -395,7 +395,7 @@ v^3_\# & v^1_\# v^3_\# & v^2_\# v^3_\# & |v^3_\#|^2 \\
 \\
 &=
 \boxed{
-\f{N}{\Delta V} \ang
+\f{N}{\Delta V} \ang{
 m_\# \gamma_\# 
 \begin{pmatrix}
 1 & v^1_\# & v^2_\# & v^3_\# \\
@@ -409,6 +409,9 @@ v^3_\# & v^1_\# v^3_\# & v^2_\# v^3_\# & |v^3_\#|^2 \\
 
 where the angle brackets $\ang{\cdots}$ denote an average over the ensemble of $N$ particles.
 This is the formula of $\vec T$ for an arbitrary relativistic fluid composed of dust!
+
+### 4. The case for a perfect fluid
+
 If we make some assumptions about this dust, then we can simplify the expression some more.
 Suppose every particle has the same rest mass $m$, then
 
@@ -431,7 +434,6 @@ $\ang{ v^1 } =\ang{ v^2 } =\ang{ v^3 } = 0$,
 as do products of independent components.
 Their magnitudes are equipartitioned between the three spatial directions:
 $\ang{ |v^1\_\\#|^2 } = \ang{ |v^2\_\\#|^2 } = \ang{ |v^3\_\\#|^2 } = \tfrac13\ang{|v\_\\#|^2} $.
-Then
 
 $$\begin{align*}
 T^{\alpha\beta} \to \f{Nm}{\Delta V}
@@ -446,7 +448,50 @@ T^{\alpha\beta} \to \f{Nm}{\Delta V}
 }.
 \end{align*}$$
 
+We can identify the 00 component as the energy-momentum density
+
+$$\begin{align*}
+\boxed{
+\rho = \f{Nm}{\Delta V}\ang{\gamma_\#}
+},
+\end{align*}$$
+
+and the 11, 22, 33 components as the isotropic pressure
+
+$$\begin{align*}
+\boxed{
+P = \f{Nm}{3\Delta V}\ang{\gamma_\# |v_\#|^2}
+}.
+\end{align*}$$
+
+The off-diagonal entries are zero: **A perfect fluid has no shear!**.
+It can be completely described by $\rho$ and $P$.
+In tensor form,
+
+$$\begin{align*}
+\boxed{
+\vec T = (\rho + P)\vec u\otimes\vec u + P\vec g
+},
+\end{align*}$$
+
+where $\vec u$ is the four-velocity of the fluid element and $\vec g$ is the metric.
+In the fluid element’s rest frame, this combination of $\vec u$ and $\vec g$ produces the components
+
+$$\begin{align*}
+T^{\alpha\beta}
+&= (P + \rho) u^\alpha u^\beta + P g^{\alpha\beta}
+\to \begin{pmatrix}
+\rho\\
+& P\\
+& & P\\
+& & & P
+\end{pmatrix},
+\end{align*}$$
+
+exactly what we had before.
+
 To make further simplifications, we would need to know the distribution of velocity magnitudes $v_\\#$.
-That is a problem for relativistic statistical mechanics.
+That is a problem for statistical mechanics.
+Then, we can determine the fluid’s **equation of state** $w \equiv P/\rho$.
 
 
