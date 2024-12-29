@@ -18,7 +18,7 @@ In this 1D example, $V_\text{eff}$ has two points in its minima when $T < T_\tex
 corresponding to a vacuum manifold of topology $S^0$.
 As the universe cools below the critical temperature,
 different regions of spacetime can enter different vacua.
-<em><a href="https://www.desmos.com/calculator/npsldxjukr">I made this on Desmos.</a></em>
+<em><a href="https://www.desmos.com/calculator/npsldxjukr">Play around with this on Desmos!</a></em>
 </figcaption>
 </figure>
 
@@ -104,7 +104,7 @@ so the manifold of degenerate vacua is the set of two disconnected points corres
 This indeed agrees with Eqn (\ref{os})'s prediction that $\mathcal M$ is the zero-sphere.
 For an $(N=2)$-component real scalar field $\phi = (\phi_1, \phi_2)$ 
 (or equivalently, a complex scalar field),
-the manifold $\mathcal M = S^1$ is a circle of degenerate vacua constrained by $|\!\braket\phi\!| = \mu$.
+the manifold $\mathcal M = S^1$ is a circle of degenerate vacua constrained by $|\\!\braket\phi\\!| = \mu$.
 For $N=3$, $\mathcal M = S^2$, and so on.
 
 So far, 
@@ -206,7 +206,7 @@ $S^1$ is not homotopic to a point in $S^1$,
 i.e. $\pi_1(S^1)$, the fundamental homotopy group on $S^1$, is nontrivial.
 
 <figure id="fig-homotopy">
-<img src="assets/homotopy.jpg" style="border: 1px solid #ccc; width: 100%; height: 70vmin">
+<img src="figures/homotopy.jpg" style="border: 1px solid #ccc; width: 100%; height: 70vmin">
 <figcaption>
 <em>Figure 2:</em> 
 Contracting a test loop to a point in space would correspond to the same action in the degenerate vacua if $\braket\phi^2 = \mu^2$ everywhere in space. 
