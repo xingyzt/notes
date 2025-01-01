@@ -48,29 +48,29 @@ Do not confuse them with exponential powers, which will always be outside vertic
 This notation is known as the **Einstein summation convention**.)
 
 This way, a spacetime displacement
-
-$$ \d\vec s = s^\alpha \vec e_\alpha \equiv \d t\,\vec e_0 + \d x\,\vec e_1 + \d y\,\vec e_2 + \d z\,\vec e_3 $$
-
+\\[
+\d\vec s = s^\alpha \vec e_\alpha \equiv \d t\,\vec e_0 + \d x\,\vec e_1 + \d y\,\vec e_2 + \d z\,\vec e_3
+\\]
 with components 
-
-$$ \d s^\alpha \to 
+\\[
+\d s^\alpha \to 
 \begin{pmatrix} \d s^0 \\ \d s^1 \\ \d s^2 \\ \d s^3 \end{pmatrix} \equiv
-\begin{pmatrix} \d t \\ \d x \\ \d y \\ \d z \end{pmatrix} $$
-
+\begin{pmatrix} \d t \\ \d x \\ \d y \\ \d z \end{pmatrix}
+\\]
 has the spacetime interval (again, summing over repeated index pairs)
-
-$$ (\d\vec s)^2 =  g_{\alpha\beta} \d s^\alpha \d s^\beta, $$
-
+\\[
+(\d\vec s)^2 =  g_{\alpha\beta} \d s^\alpha \d s^\beta,
+\\]
 where
-
-$$ \vec g =  g_{\alpha\beta} \ (\vec e^\alpha \otimes \vec e^\beta) $$
-
+\\[ 
+\vec g =  g_{\alpha\beta} \ (\vec e^\alpha \otimes \vec e^\beta)
+\\]
 is the **Minkowskian metric** with components
-
-$$  g_{\alpha\beta} \to \begin{pmatrix}
--1 \\ & 1 \\ & & 1 \\ & & & 1
-\end{pmatrix}. $$
-
+\\[
+g_{\alpha\beta} \to \begin{pmatrix}
+-1 \\\ & 1 \\\ & & 1 \\\ & & & 1
+\end{pmatrix}.
+\\]
 (When dealing with objects having two indices, the left index corresponds to the row, 
 and the right index the column. For instance, because the metric is symmetric, $ g_{\alpha\beta} =  g_{\beta\alpha}$.)
 
@@ -87,23 +87,25 @@ For example:
   In your **inertial reference frame** $\mathcal K$ (also known as your **rest frame**), 
   you are stationary in space, but still traveling in time.
   Your **four-velocity** $\vec u$ thus has rest-frame components
-
-$$ u^\alpha \to \begin{pmatrix}1\\0\\0\\0\end{pmatrix}. $$
+\\[
+u^\alpha \to \begin{pmatrix}1\\\0\\\0\\\0\end{pmatrix}.
+\\]
 
 * Likewise, momentum is the motion of mass-energy through space and through time.
   A baseball flying through space can pack a punch with its spatial momentum components,
   but sitting on a table, it is still carrying all of its mass-energy in its flight through time.
   In the baseball’s rest frame, its **four-momentum** is thus
-
-$$ p^\alpha = mu^\alpha \to \begin{pmatrix}m\\0\\0\\0\end{pmatrix}. $$
-
+\\[
+p^\alpha = mu^\alpha \to \begin{pmatrix}m\\\0\\\0\\\0\end{pmatrix}.
+\\]
 *(We can create new **four-vectors** by multiplying them with scalar invariants.
 Here, $m$ always refers to “the mass as measured in the rest frame,” which is by-definition invariant.)*
 
 * When we multiply this baseball’s four-momentum by its rest-frame number density $n$,
   we obtain its **four-momentum flux**. In the rest frame, this is just
-
-$$ n p^\alpha \to \begin{pmatrix}n m\\0\\0\\0\end{pmatrix}. $$
+\\[
+n p^\alpha \to \begin{pmatrix}n m\\\0\\\0\\\0\end{pmatrix}.
+\\]
 
   In other words, the time component of four-momentum flux is mass-energy density!
 
@@ -122,9 +124,9 @@ as measured in $\mathcal K$.
 Given some four-vector $\vec a$, it will have a set of components $a^\alpha$ in $\mathcal K$, 
 and another set $a^{\alpha^\prime}$ in $\mathcal K'$.
 We can try to relate them by a **Lorentz boost** $\Lambda$:
-
-$$ a^{\alpha^\prime} = \Lambda{^{\alpha^\prime}}_\alpha a^\alpha $$
-
+\\[
+a^{\alpha^\prime} = \Lambda{^{\alpha^\prime}}_\alpha a^\alpha
+\\]
 (Notice how in the primed reference frame $\mathcal K'$,
 the indices are annotated with $'$ as well.)
 
@@ -139,34 +141,23 @@ Here's what we know about $\Lambda$:
 
 If you work through the algebra,
 these conditions uniquely constrain the components of the Lorentz boost by $v$ in the $\vec e\_1$ direction to be
-
-$$\begin{align*}
-    \Lambda{^{\alpha^\prime}}_\alpha
+\\[
+\begin{align\*}
+    \Lambda{^{\alpha^\prime}}\_\alpha
     \equiv \frac{\d x^{\alpha^\prime}}{\d x^\alpha} 
-    \to \begin{pmatrix}
-        \gamma & -\gamma v\\\
-        -\gamma v & \gamma\\\
-        & & 1\\\
-        & & & 1
-    \end{pmatrix},\quad
-    \gamma \equiv \frac1{\sqrt{1 - |v|^2}}.
-\end{align*}$$
+    \to \begin{pmatrix} \gamma & -\gamma v\\\ -\gamma v & \gamma\\\ & & 1\\\ & & & 1 \end{pmatrix},\quad
+    \gamma \equiv \f1{\sqrt{1 - |v|^2}}.
+\end{align\*}
+\\]
 
 Try acting this on some four-vectors. 
 Notice how it mixes components of time ($\vec e\_0$) and space ($\vec e\_1$)!
 
 Similarly, the Lorentz boost when $\mathcal K'$ is moving in the $\vec e_2$ direction relative to $\mathcal K$ is
-
-$$\begin{align*}
-    \Lambda{^{\alpha^\prime}}_\alpha
-    \to \begin{pmatrix}
-        \gamma & & -\gamma v\\\
-        & 1\\\
-        -\gamma v & & \gamma\\\
-        & & & 1
-    \end{pmatrix}
-\end{align*}.
-$$
+\\[\begin{align\*}
+    \Lambda{^{\alpha^\prime}}\_\alpha
+    \to \begin{pmatrix} \gamma & & -\gamma v\\\ & 1\\\ -\gamma v & & \gamma\\\ & & & 1 \end{pmatrix}
+\end{align*}.\\]
 
 Can you figure out what it should look like when $\mathcal K'$ is moving in the $\vec e_3$ direction?
 
@@ -197,11 +188,11 @@ negligible interactions (except some scattering to keep them isotropic).
 
 Fluid volumes are locally modeled by a stress-energy-momentum tensor $\vec T$, 
 whose components qualitatively mean
-
-$$ T^{\alpha\beta} \to \begin{pmatrix}
-    \text{mass-energy density} & \text{mass-energy flux flowing next to }\beta \\
-    \text{momentum density in }\alpha & \text{momentum flux in }\alpha\text{ flowing next to }\beta
-\end{pmatrix}. $$
+\\[
+T^{\alpha\beta} \to \begin{pmatrix} \text{mass-energy density} 
+& \text{mass-energy flux flowing next to }\beta \\\ \text{momentum density in }\alpha 
+& \text{momentum flux in }\alpha\text{ flowing next to }\beta \end{pmatrix}.
+\\]
 
 This is a four-by-four, **rank-two tensor** (four-vectors are rank-one tensors),
 which we can build out of products and sums of scalars and four-vectors.
@@ -210,8 +201,9 @@ but that's only because we aren't treating space and time on an equal footing ye
 When we start thinking of density as the time component of flux,
 and mass-energy as the time component of four-momentum, 
 all of this reduces to
-
-$$ T^{\alpha\beta} \to \prn{\text{momentum flux in }\alpha\text{ flowing next to }\beta}. $$
+\\[
+T^{\alpha\beta} \to \prn{\text{momentum flux in }\alpha\text{ flowing next to }\beta}.
+\\]
 
 In mechanics class,
 you may have stumbled upon the fact that pressure, shear, and energy density all have the same dimensions.
@@ -269,22 +261,14 @@ A good candidate is the particle’s four-velocity $\vec u_\\#$,
 whose components are $(1\ 0\ 0\ 0)$ in its rest frame.
 Since only the time-time component of $\vec T_\\#$ is nonzero in its rest frame,
 we can therefore write
-
-$$\begin{align*}
-T_\#^{\alpha^\#\beta^\#} = \rho_\#\, u_\#^{\alpha^\#} u_\#^{\beta^\#}
-\to \begin{pmatrix}
-\rho_\#\\
-& 0\\
-& & 0\\
-& & & 0
-\end{pmatrix},
-\end{align*}$$
-
+\\[
+T\_\\#^{\alpha^\\#\beta^\\#} = \rho\_\\#\, u\_\\#^{\alpha^\\#} u\_\\#^{\beta^\\#}
+\to \begin{pmatrix} \rho\_\\#\\\ & 0\\\ & & 0\\\ & & & 0 \end{pmatrix},
+\\]
 or equivalently,
-
-$$
-\vec T_\# = \rho_\# \vec u_\#\otimes\vec u_\#.
-$$
+\\[
+\vec T_\\# = \rho_\\# \vec u_\\#\otimes\vec u_\\#.
+\\]
 
 ### 2. Putting dust in the fluid frame
 
@@ -357,56 +341,33 @@ but you can see the symmetries if you look carefully!
 The components of the stress-energy-momentum tensor are all **intensive** quantities,
 so it makes physical sense to add them together 
 *if* we premultiply each with their particle’s Lorentz-contracted volume in $\mathcal K$,
-
-$$
-\Delta V_\# = \f{m_\#}{\rho_\# \gamma_\#},
-$$
-
+\\[
+\Delta V\_\\# = \f{m\_\\#}{\rho\_\\# \gamma\_\\#},
+\\]
 thereby making an **extensive** tensor
-
-$$\begin{align*}
-T_\#^{\alpha\beta}
-\Delta V_\#
-&\to 
-m_\# \gamma_\# 
-\begin{pmatrix}
-1 & v^1_\# & v^2_\# & v^3_\# \\
-v^1_\# & |v^1_\#|^2 & v^2_\# v^1_\# & v^3_\# v^1_\# \\
-v^2_\# & v^1_\# v^2_\# & |v^2_\#|^2 & v^3_\# v^2_\# \\
-v^3_\# & v^1_\# v^3_\# & v^2_\# v^3_\# & |v^3_\#|^2 \\
-\end{pmatrix}.
-\end{align*}$$
+\\[
+T_\\#^{\alpha\beta}
+\Delta V\_\\#
+\to 
+m_\\# \gamma\_\\# 
+\begin{pmatrix} 1 & v^1\_\\# & v^2\_\\# & v^3\_\\# \\\ v^1\_\\# & |v^1\_\\#|^2 & v^2\_\\# v^1\_\\# & v^3\_\\# v^1\_\\# \\\ v^2\_\\# & v^1\_\\# v^2\_\\# & |v^2\_\\#|^2 & v^3\_\\# v^2\_\\# \\\ v^3\_\\# & v^1\_\\# v^3\_\\# & v^2\_\\# v^3\_\\# & |v^3\_\\#|^2 \\ \end{pmatrix}.
+\\]
 
 After summation, we then divide by the fluid element volume $\Delta V$
 to recover the intensive stress-energy-momentum tensor for the fluid:
-
-$$\begin{align*}
-T^{\alpha\beta} &= \f1{\Delta V} \sum_\# T_\#^{\alpha\beta} \Delta V_\#
-\\
-&\to 
-\f1{\Delta V} \sum_\# 
-m_\# \gamma_\# 
-\begin{pmatrix}
-1 & v^1_\# & v^2_\# & v^3_\# \\
-v^1_\# & |v^1_\#|^2 & v^2_\# v^1_\# & v^3_\# v^1_\# \\
-v^2_\# & v^1_\# v^2_\# & |v^2_\#|^2 & v^3_\# v^2_\# \\
-v^3_\# & v^1_\# v^3_\# & v^2_\# v^3_\# & |v^3_\#|^2 \\
-\end{pmatrix}
-\\
-&=
+\\[\begin{align\*}
+T^{\alpha\beta} &= \f1{\Delta V} \sum\_\\# T\_\\#^{\alpha\beta} \Delta V\_\\# \\\ &\to 
+\f1{\Delta V} \sum\_\\# 
+m\_\\# \gamma\_\\# 
+\begin{pmatrix} 1 & v^1\_\\# & v^2\_\\# & v^3\_\\# \\\ v^1\_\\# & |v^1\_\\#|^2 & v^2\_\\# v^1\_\\# & v^3\_\\# v^1\_\\# \\\ v^2\_\\# & v^1\_\\# v^2\_\\# & |v^2\_\\#|^2 & v^3\_\\# v^2\_\\# \\\ v^3\_\\# & v^1\_\\# v^3\_\\# & v^2\_\\# v^3\_\\# & |v^3\_\\#|^2 \end{pmatrix}
+\\\ &=
 \boxed{
 \f{N}{\Delta V} \ang{
-m_\# \gamma_\# 
-\begin{pmatrix}
-1 & v^1_\# & v^2_\# & v^3_\# \\
-v^1_\# & |v^1_\#|^2 & v^2_\# v^1_\# & v^3_\# v^1_\# \\
-v^2_\# & v^1_\# v^2_\# & |v^2_\#|^2 & v^3_\# v^2_\# \\
-v^3_\# & v^1_\# v^3_\# & v^2_\# v^3_\# & |v^3_\#|^2 \\
-\end{pmatrix}
+m\_\\# \gamma\_\\# 
+\begin{pmatrix} 1 & v^1\_\\# & v^2\_\\# & v^3\_\\# \\\ v^1\_\\# & |v^1\_\\#|^2 & v^2\_\\# v^1\_\\# & v^3\_\\# v^1\_\\# \\\ v^2\_\\# & v^1\_\\# v^2\_\\# & |v^2\_\\#|^2 & v^3\_\\# v^2\_\\# \\\ v^3\_\\# & v^1\_\\# v^3\_\\# & v^2\_\\# v^3\_\\# & |v^3\_\\#|^2 \end{pmatrix}
 }
 }.
-\end{align*}$$
-
+\end{align\*}\\]
 where the angle brackets $\ang{\cdots}$ denote an average over the ensemble of $N$ particles.
 This is the formula of $\vec T$ for an arbitrary relativistic fluid composed of dust!
 
@@ -449,45 +410,32 @@ T^{\alpha\beta} \to \f{Nm}{\Delta V}
 \end{align*}$$
 
 We can identify the 00 component as the energy-momentum density
-
-$$\begin{align*}
+\\[
 \boxed{
-\rho = \f{Nm}{\Delta V}\ang{\gamma_\#}
+\rho = \f{Nm}{\Delta V}\ang{\gamma_\\#}
 },
-\end{align*}$$
-
+\\]
 and the 11, 22, 33 components as the isotropic pressure
-
-$$\begin{align*}
+\\[
 \boxed{
-P = \f{Nm}{3\Delta V}\ang{\gamma_\# |v_\#|^2}
+P = \f{Nm}{3\Delta V}\ang{\gamma_\\# |v_\\#|^2}
 }.
-\end{align*}$$
-
-The off-diagonal entries are zero: **A perfect fluid has no shear!**.
+\\]
+The off-diagonal entries are zero: **A perfect fluid has no shear!**
 It can be completely described by $\rho$ and $P$.
 In tensor form,
-
-$$\begin{align*}
+\\[
 \boxed{
 \vec T = (\rho + P)\vec u\otimes\vec u + P\vec g
 },
-\end{align*}$$
-
+\\]
 where $\vec u$ is the four-velocity of the fluid element and $\vec g$ is the metric.
 In the fluid element’s rest frame, this combination of $\vec u$ and $\vec g$ produces the components
-
-$$\begin{align*}
+\\[
 T^{\alpha\beta}
-&= (P + \rho) u^\alpha u^\beta + P g^{\alpha\beta}
-\to \begin{pmatrix}
-\rho\\
-& P\\
-& & P\\
-& & & P
-\end{pmatrix},
-\end{align*}$$
-
+= (P + \rho) u^\alpha u^\beta + P g^{\alpha\beta}
+\to \begin{pmatrix} \rho\\\ & P\\\ & & P\\\ & & & P \end{pmatrix},
+\\]
 exactly what we had before.
 
 To make further simplifications, we would need to know the distribution of velocity magnitudes $v_\\#$.

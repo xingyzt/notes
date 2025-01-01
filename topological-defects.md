@@ -44,11 +44,10 @@ If we demand the Lagrangian of $\phi$ to be renormalizable[^2]
 as well as invariant under local $O(N)$ transformations[^3]
 (which restricts $\phi$ and its derivatives to always come in contracted pairs, e.g. $\phi^2 \equiv \phi_i \phi_i$),
 then the most general Lagrangian for this field looks like
-
-$$\begin{equation}
+\\[\begin{equation}
     \mathcal L = \f12(\p_\mu \phi)^2 - V_\pm,\quad \text{where }
     V_\pm = \pm\f12 m^2 \phi^2 + \f14\lambda \phi^4.
-\end{equation}$$
+\end{equation}\\]
 
 
 [^2]: So that the theory is UV-complete, i.e. does not diverge at high energies.
@@ -78,13 +77,12 @@ $\mathcal M$,
 which is the orbit of $\braket\phi$ under $O(N)$.
 This manifold is an $(N-1)$-sphere
 because by the orbit-stabilizer theorem,
-
-$$\begin{equation}
+\\[\begin{equation}
     \mathcal M 
     = \mathrm{Orb}\brk{O(N)}
     = \f{O(N)}{\mathrm{Stab}\brk{O(N)}}
     = \f{O(N)}{O(N-1)} = S^{N-1}.
-\end{equation}$$
+\end{equation}\\]
 
 [^4]: For example,
     given any point in $\R^3$,
@@ -112,17 +110,13 @@ we have characterized the vacuum at absolute zero temperature.
 However, if we raise the temperature,
 then the system minimizes free energy instead of total energy,
 and the potential effectively becomes
-
-$$\begin{equation}
+\\[\begin{equation}
     V_\text{eff} = -\f12 m^2\phi^2 + \f14\lambda\phi^4 + \f{N+2}{24}\, T^2 \phi^2.
-\end{equation}$$
-
+\end{equation}\\]
 A short calculation shows that the hidden symmetry of the theory is restored in $\braket\phi$ above the critical temperature
-
-$$\begin{equation}
+\\[\begin{equation}
     T_\text{crit} = \mu\sqrt{\f{12}{N+2}},
-\end{equation}$$
-
+\end{equation}\\]
 when $V_\text{eff}$ returns to having one single minimum at $\braket\phi=0$.
 
 ## Topological defects
