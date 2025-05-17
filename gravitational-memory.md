@@ -12,8 +12,7 @@ we present a pedagogical derivation of their arguments in [Section 1](#1-gravita
 However, 
 detailed analyses of nonlinear general relativity 
 by Christodoulou, Blanchet, and Damour
-in the 90s
-uncovered an additional memory contribution from the gravitational wave radiation itself,
+in the 1990s uncovered an additional memory contribution from the gravitational wave radiation itself,
 which we discuss in [Section 2](#2-nonlinear-memory) [[Ch91]](#ref-Ch91) [[Bl92]](#ref-Bl92).
 Astonishingly,
 in the case of binary black holes,
@@ -27,7 +26,7 @@ future observational prospects are promising
 
 On the theoretical side,
 gravitational memory also turns out to possess very deep connections to the physics of quantum gravity and black hole information theory.
-In the 10s,
+In the 2010s,
 five decades after
 the early studies by Bondi, van der Burg, Metzner, and Sachs (BMS)
 on the structure of asymptotically-flat spacetime
@@ -118,7 +117,7 @@ the characteristic length-scale of gravitational waves,
 set by the orbital period,
 is typically much larger than the radii of the masses themselves.
 As such, we can approximate the number distribution as a thin world-line,
-$1/V \simeq \delta^3 = \int \d\tau\, \delta^4$.
+$1/V \simeq \gamma\delta^3 = \int \d\tau\, \delta^4$.
 For multiple masses indexed by $A$,
 we then have
 
@@ -126,7 +125,7 @@ $$
 \tag{6}
     T^{jk}(\tilde x^\mu) = 
     \sum_A 
-    M_A
+    \f1{M_A}
     \int \d\tau\,
     \delta^4(\tilde x^\mu - x^\mu_A(\tau)) \,
     P^j_A(\tau) \, P^k_A(\tau)
@@ -138,7 +137,7 @@ $$
     =
     \brk{
     8
-    \sum_A M_A
+    \sum_A \f1{M_A}
     \int\d\tau\,
     \Theta(x^0 - x_A^0(\tau))\,
     \delta((x^\nu - x_A^\nu(\tau))^2)\,
@@ -289,7 +288,7 @@ would produce a memory $\sim 10^{-21}$
 
 Although ground-based laser interferometers like LIGO 
 have maximum strain sensitivities between $10^{-20}\sim10^{-22}$,
-they are only designed for high-frequency signals between $10\sim00$ Hz
+they are only designed for high-frequency signals between $10\sim1000$ Hz
 --- among many confounding factors,
 their mirror pendulums strongly dampen lower-frequency signals.
 Conversely,
@@ -330,7 +329,7 @@ plunging into a merger
 as the orbits become gravitationally unstable,
 and concluding with the _ringdown_ of quasi-normal modes
 from the newborn black hole [[Bu07]](#ref-Bu07) [[Fa09]](#ref-Fa09).
-The merger and ringdown last around $\sim 70M \sim (M/00M_\odot)$ seconds,
+The merger and ringdown last around $\sim 70M \sim (M/3000M_\odot)$ seconds,
 falling into the frequency ranges of both space- and ground-based interferometers,
 [[Fa09]](#ref-Fa09).
 On the other hand,
