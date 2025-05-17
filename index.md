@@ -9,11 +9,8 @@ Writing things down helps with memorization or something.
 - [Notes on Carroll & Ostlie, *Introduction to Modern Astrophysics*](intro-to-modern-astrophysics) (Parts I & II)
 - [Relativistic fluids from relativistic dust](relativistic-fluids)
 - [What’s “topological” about topological defects?](topological-defects)
-- [The background of the universe](medium) (WIP)
+- [Introduction to gravitational memory](gravitational-memory)
 - [The wave optics of gravitational lensing](gravitational-lensing) (WIP)
-- [What is the Hubble Tension?](hubble-tension)
-- [Why quantum field theory?](why-qft) (WIP)
-- [The standard model’s strong CP problem](strong-cp) (WIP)
 
 Want PDF versions? `ctrl-p` is your friend!
 
