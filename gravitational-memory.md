@@ -431,7 +431,7 @@ The metric on the unit Riemann sphere is given by
     \tag{15}
 \\]
 
-and we compute its differential properties in Appendix \ref{appendix:sphere}.
+and we compute its differential properties in the [appendix](#appendix-differential-geometry-on-the-riemann-sphere).
 
 Now,
 to make precise the notions of ‘interior’ versus an ‘asymptotic infinity’,
@@ -694,7 +694,7 @@ $$
 \tag{27}
 $$
 
-with $D\cdot D$ as the spherical Laplacian (see Appendix \ref{appendix:sphere}),
+with $D\cdot D$ as the spherical Laplacian (see the [appendix](#appendix-differential-geometry-on-the-riemann-sphere)),
 is solved by $\xi^r = \frac12(D\cdot D) f + \O(1/r)$.
 We have thus found the generators of ‘supertranslations’,
 
