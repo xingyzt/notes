@@ -2,6 +2,8 @@
 title: Gravitational memory, a brief introduction
 ---
 
+_This was originally a term paper I wrote for Prof. Ori Ganor’s general relativity class at UC Berkeley._
+
 The changing mass-energy quadrupole moments in a gravitational scattering or merger event can be decomposed into an oscillatory _AC_ component, and a monotonic _DC_ one.
 While the AC component sources the transient gravitational waves that are now heard on a weekly basis,
 the DC component is theorized to imprint an additional, permanent _gravitational memory_ on spacetime, which has so far escaped detection.
@@ -881,7 +883,7 @@ An interesting exercise would be finding the spherical harmonics in these coordi
 
 1. <span id="ref-Bu07"> Alessandra Buonanno, Gregory B. Cook, and Frans Pretorius. “Inspiral, merger and ring-down of equal-mass black-hole binaries”. In: _Phys. Rev. D_ 75 (2007), p. 124018. doi: [10.1103/PhysRevD.75.124018](https://doi.org/10.1103/PhysRevD.75.124018). arXiv: [gr-qc/0610122](https://arxiv.org/abs/gr-qc/0610122).
 
-1. <span id="ref-Mi23"> Prahar Mitra. </span> “Derivation of Bondi metric”. Physics Stack Exchange. (version: 2023-06- 22). url: [https://physics.stackexchange.com/q/636961].
+1. <span id="ref-Mi23"> Prahar Mitra. </span> “Derivation of Bondi metric”. Physics Stack Exchange. (version: 2023-06- 22). url: [https://physics.stackexchange.com/q/636961](https://physics.stackexchange.com/q/636961).
 
 1. <span id="ref-Wa84"> Robert M. Wald. </span> General Relativity. Chicago, USA: Chicago Univ. Pr., 1984. Chap. 11. doi: [10.7208/chicago/9780226870373.001.0001](https://doi.org/10.7208/chicago/9780226870373.001.0001).
 
