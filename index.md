@@ -5,7 +5,7 @@ layout: default
 
 Writing things down helps with memorization or something.
 
-- [Axions + using MESA to simulate the lives of stars](axions-mesa) (WIP, 2025)
+- [Axions + using MESA to simulate the lives of stars](axions-mesa) (2025)
 - [Gravitational memory, a brief introduction](gravitational-memory) (2025)
 - [What’s “topological” about topological defects?](topological-defects) (2024)
 - [Notes on Dodelson & Schmidt, *Modern Cosmology*](modern-cosmology) (WIP, 2023--)

@@ -59,5 +59,13 @@ Electron Capture, and Core-collapse Supernova Progenitors”. In: Astrophys. J. 
 Supernovae: Effects of Updated Electron-capture Rate”. In: 886.1, 22 (Nov. 2019), p. 22.
 doi: [10.3847/1538-4357/ab4b4b](https://doi.org/10.3847/1538-4357/ab4b4b). arXiv: [1907.04184 [astro-ph.HE]](https://arxiv.org/abs/1907.04184).
 
+1. <span id="ref-Ca24"> Francesca Calore et al. </span> “Uncovering axionlike particles in supernova gamma-ray spec-
+tra”. In: Phys. Rev. D 109.4 (2024), p. 043010. doi: [10.1103/PhysRevD.109.043010](https://doi.org/10.1103/PhysRevD.109.043010).
+arXiv: [2306.03925 [astro-ph.HE]](https://arxiv.org/abs/2306.03925).
+
 1. <span id="ref-Pr09"> Dina Prialnik.</span> *An Introduction to the Theory of Stellar Structure and Evolution.* 2nd ed.
 Cambridge University Press, 2009. isbn: 9780521866040
+
+1. <span id="ref-Sc17"> Josiah Schwab, Lars Bildsten, and Eliot Quataert. </span> “The importance of Urca-process
+cooling in accreting ONe white dwarfs”. In: 472.3 (Dec. 2017), pp. 3390–3406. doi:
+[10.1093/mnras/stx2169](https://doi.org/10.1093/mnras/stx2169). arXiv: [1708.07514 [astro-ph.SR]](https://arxiv.org/abs/1708.07514).
