@@ -4,9 +4,9 @@ title: Gravitational memory, a brief introduction
 
 _This was originally a term paper I wrote for Prof. Ori Ganor’s general relativity class at UC Berkeley._
 
-The changing mass-energy quadrupole moments in a gravitational scattering or merger event can be decomposed into an oscillatory _AC_ component, and a monotonic _DC_ one.
+The changing mass-energy quadrupole moments in a gravitational scattering or merger event can be decomposed into an oscillatory __AC__ component, and a monotonic __DC__ one.
 While the AC component sources the transient gravitational waves that are now heard on a weekly basis,
-the DC component is theorized to imprint an additional, permanent _gravitational memory_ on spacetime, which has so far escaped detection.
+the DC component is theorized to imprint an additional, permanent __gravitational memory__ on spacetime, which has so far escaped detection.
 
 Zel'dovich, Polnarev, Braginsky, and Grischuk
 first discovered gravitational memory in the framework of linearized gravity;
@@ -33,7 +33,7 @@ five decades after
 the early studies by Bondi, van der Burg, Metzner, and Sachs (BMS)
 on the structure of asymptotically-flat spacetime
 ([Section 3](#3-bms-coordinates)) [[Bo62]](#ref-Bo62) [[Sa62]](#ref-Sa62)
-Strominger and Zhiboedov demonstrated the DC effect as a _supertranslation_ on the BMS vacuum
+Strominger and Zhiboedov demonstrated the DC effect as a __supertranslation__ on the BMS vacuum
 [[St14]](#ref-St14) [[Bo15]](#ref-Bo15)
 which we review in [Section 4](#4-supertranslations-and-memory).
 Finally,
@@ -41,7 +41,7 @@ in [Section 5](#5-a-soft-theorem),
 we discuss the ensuing works
 which link gravitational memory to Weinberg's soft graviton theorem
 [[We65]](#ref-We65) [[St16]](#ref-St16) [[St17]](#ref-St17)
-completing the first of many _IR triangles_ 
+completing the first of many __IR triangles__
 in the study of asymptotic gauge symmetries.
 
 _Notation:_
@@ -217,7 +217,7 @@ can permanently deform the metric by
 \tag{9}
 \\]
 
-This is what Braginsky \& Grischuk termed _gravitational memory_
+This is what Braginsky & Grischuk termed __gravitational memory__
 [[Br85]](#ref-Br85).
 Intuitively speaking,
 spacetime is not 'elastic' as the electromagnetic fields are;
@@ -275,7 +275,7 @@ chance alignments of the velocity vector towards the line-of-sight ($|\theta_A|\
 For non-relativistic matter,
 [Eq. 11](#tag-11) reduces to $(8/\sqrt5)(\Delta E_\text{kin}/r)$,
 where $E_\text{kin}$ is the matter's total center-of-mass kinetic energy.
-Thorne \& Braginsky use this expression in their initial order-of-magnitude estimates [[Br87]](#ref-Br87).
+Thorne & Braginsky use this expression in their initial order-of-magnitude estimates [[Br87]](#ref-Br87).
 They assume a significant fraction of $E_\text{kin}$ is transformed during the recoil interaction,
 so that the memory strain is of order $\Delta h_+ \sim (0.1\text{ to }1)E_\text{kin}/r$.
 A supernova,
@@ -315,7 +315,7 @@ The immense amount of AC gravitational radiation emitted in the final moments of
 of order $\Delta E_\text{rad} \sim (0.01\text{ to }0.1)\, M$,
 therefore incite DC gravitational memory _of the same order_.
 This is rather remarkable ---
-as the name _nonlinear memory_ implies,
+as the name __nonlinear memory__ implies,
 Chrisdoulou, Blanchet, and Damour only discovered the effect
 as they systematically examined wave propagation beyond linear post-Newtonian order,
 and encountered the contributions from gravitational wave energy of order $h\p h$
@@ -329,7 +329,7 @@ we can divide their interactions into three phases:
 the inspiral from hydrodynamic friction and gravitational radiation,
 plunging into a merger
 as the orbits become gravitationally unstable,
-and concluding with the _ringdown_ of quasi-normal modes
+and concluding with the __ringdown__ of quasi-normal modes
 from the newborn black hole [[Bu07]](#ref-Bu07) [[Fa09]](#ref-Fa09).
 The merger and ringdown last around $\sim 70M \sim (M/3000M_\odot)$ seconds,
 falling into the frequency ranges of both space- and ground-based interferometers,
@@ -341,7 +341,7 @@ This is particularly exciting for PTAs,
 which are typically insensitive to the orbital-period-timescale AC effects [[Fa09]](#ref-Fa09).
 
 In their updated analysis,
-Braginsky \& Thorne take [Eq. 10](#tag-10)'s discrete sum [[Th92]](#ref-Th92) literally,
+Braginsky & Thorne take [Eq. 10](#tag-10)'s discrete sum [[Th92]](#ref-Th92) literally,
 and connect this nonlinear effect to the graviton emission terms that they had initially overlooked.
 Taking the sum's continuum limit,
 we can also interpret the overlooked term classically as the piece of quadrupole moment carried away by the gravitational waves,
@@ -386,7 +386,7 @@ where capital Latin indices range $2,3$.
 Bondi uses the final gauge freedom to demand flux to fall off as $1/r^2$, 
 constraining $\p_r\det(g_{AB}/r^2) = 0$.
 With $U \equiv g^{rr}$ and $U^A \equiv g^{rA}$ as arbitrary functions of the coordinates,
-we can therefore cast all Lorenztian metrics into the _retarded Bondi gauge_,
+we can therefore cast all Lorenztian metrics into the __retarded Bondi gauge__,
 
 \\[
     \d s^2
@@ -402,12 +402,12 @@ we can therefore cast all Lorenztian metrics into the _retarded Bondi gauge_,
 
 If we foliate with past light-cones instead,
 parametrized by the advanced time coordinate $x^{\hat 0} \equiv v$,
-we can also write these metrics in the _advanced Bondi gauge_,
+we can also write these metrics in the __advanced Bondi gauge__,
 
 \\[
     \d s^2
     = -U\d v^2
-    - 2e^{2\beta}\d u\d r
+    - 2e^{2\beta}\d v\d r
     + g_{AB}\prn{
     \d x^A + \tfrac12 U^A\d v
     }\prn{
@@ -468,7 +468,7 @@ prefer to state this constraint using the conformally-invariant Weyl tensor
     \equiv
     R_{\rho\sigma\mu\nu}
     -
-    (g_{\rho[[\mu} R_{\nu]]\sigma} - g_{\sigma[[\mu} R_{\nu]]\rho})
+    (g_{\rho[\mu} R_{\nu]\sigma} - g_{\sigma[\mu} R_{\nu]\rho})
     + \f13 R g_{\rho[[\mu} g_{\nu]]\sigma}
     \tag{17}
 \\]
@@ -574,10 +574,10 @@ Directly reading this against the metric of linear theory,
 we can identify $m$ as the mass term,
 and changes in $(c_{zz} + c_{\bar z\bar z})/{2r}$, $(c_{zz} - c_{\bar z\bar z})/{2ir}$ 
 as the linear gravitational wave modes.
-In fact, $m$, termed the _Bondi mass aspect_,
+In fact, $m$, termed the __Bondi mass aspect__,
 does behave like mass in Kerr-Newmann metrics;
 While the retarded time derivatives of $c_{zz}$ and $c_{\bar z\bar z}$,
-termed the _Bondi news tensor_ $N_{AB} \equiv \p_u c_{AB}$,
+termed the __Bondi news tensor__ $N_{AB} \equiv \p_u c_{AB}$,
 correspond to the two circular gravitational wave modes [[St17]](#ref-St17).
 
 Notice that, just as in the post-Newtonian linear theory
@@ -592,7 +592,7 @@ it suffices to say that $N_A$ corresponds to angular momentum [[St17]](#ref-St17
 
 Because $m$, $c_{AB}$, and $N_A$ are all theoretically measurable using inertial test masses at null infinity,
 and moreover can combine to describe any metric in the Bondi gauges which satisfies the BMS asymptotic flatness criterion up to $\O(1/r^3)$,
-they are together known as the metric's _asymptotic data_ up to $\O(1/r^3)$
+they are together known as the metric's __asymptotic data__ up to $\O(1/r^3)$
 [[St14]](#ref-St14) [[Bo15]](#ref-Bo15).
 Spacetimes with different asymptotic data are therefore physically inequivalent.
 However, the arrival of gravitational radiation (in the form of ‘Bondi news’) can change the asymptotic data,
@@ -615,13 +615,13 @@ However,
 since our role in the BMS metric ([Eq. 19](#tag-19)) are only as observers at infinity,
 so we can relax the isometry requirement and examine diffeomorphisms which,
 though not necessarily symmetries in the spacetime interior,
-are still _asymptotic symmetries_ in that
+are still __asymptotic symmetries__ in that
 they preserve the metric's flatness at infinity.
 As they are not necessarily isometries,
 there is no demand that they leave the physical system invariant.
 The group of asymptotic symmetries of the BMS metric,
 quotiented up to Bondi gauge invariance and other physically trivial transformations,
-form the _BMS group_ [[Sa62]](#ref-Sa62) [[Bo15]](#ref-Bo15) [[St14]](#ref-St14).
+form the __BMS group__ [[Sa62]](#ref-Sa62) [[Bo15]](#ref-Bo15) [[St14]](#ref-St14).
 It exhibits far greater complexity
 than the Poincar\'e group's action on globally flat spacetime.
 This strange behavior is key to revealing gravitational memory's
@@ -718,14 +718,14 @@ $$\begin{align*}
 \end{align*}$$
 
 To model the passage of a transient gravitational wave,
-Strominger \& Zhiboedov suppose that outside some time interval $u_i < u < u_f$ 
+Strominger & Zhiboedov suppose that outside some time interval $u_i < u < u_f$ 
 at null future infinity $\mathcal I^+$,
-we are in some _BMS vacuum_ free of gravitational radiation ---
+we are in some __BMS vacuum__ free of gravitational radiation ---
 equivalently, with vanishing Bondi news $N_{AB}$.
 Earlier, BMS had shown that the lack of news implies the conservation of Bondi mass $m$,
 and that BMS vacuums are related by supertranslations
 [[Bo62]](#ref-Bo62).
-Building upon their work, Strominger \& Zhiboedov demonstrate how
+Building upon their work, Strominger & Zhiboedov demonstrate how
 the arrival of Bondi news then heralds the transition from one vacuum to another,
 and imprints any permanent change it brings in the perturbations $c_{AB}$ as gravitational memory
 [[St16]](#ref-St16),
@@ -761,7 +761,7 @@ Generically then,
     \tag{30}
 \\]
 
-where the _form factors_ $F_n$ 
+where the __form factors__ $F_n$ 
 are functions of the invariant quantities $q_\rho p^\rho$ and $q_\rho q^\rho$.
 Combined with the on-shell graviton propagator,
 the modified process would read
@@ -803,7 +803,7 @@ For mathematical physicists,
 the existence of soft theorems for other gauge theories --- notably QED and QCD ---
 have inspired searches for similar asymptotic symmetries and memory effects.
 Within classical relativity,
-Pasterski, Strominger, Zhiboedov have also found a higher-order _gravitational spin memory_
+Pasterski, Strominger, Zhiboedov have also found a higher-order __gravitational spin memory__
 associated with angular momentum conservation ---
 the puzzling nature of angular momentum in general relativity makes this the more intriguing.
 At the same time,
