@@ -58,3 +58,6 @@ Electron Capture, and Core-collapse Supernova Progenitors”. In: Astrophys. J. 
 “Evolution of ONeMg Core in Super-AGB Stars toward Electron-capture
 Supernovae: Effects of Updated Electron-capture Rate”. In: 886.1, 22 (Nov. 2019), p. 22.
 doi: [10.3847/1538-4357/ab4b4b](https://doi.org/10.3847/1538-4357/ab4b4b). arXiv: [1907.04184 [astro-ph.HE]](https://arxiv.org/abs/1907.04184).
+
+1. <span id="ref-Pr09"> Dina Prialnik.</span> *An Introduction to the Theory of Stellar Structure and Evolution.* 2nd ed.
+Cambridge University Press, 2009. isbn: 9780521866040
