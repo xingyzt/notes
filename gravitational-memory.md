@@ -1,5 +1,6 @@
 ---
 title: Gravitational memory, a brief introduction
+date: 2025-05-17
 ---
 
 _This was originally a term paper I wrote for Prof. Ori Ganor’s general relativity class at UC Berkeley._
@@ -32,9 +33,9 @@ In the 2010s,
 five decades after
 the early studies by Bondi, van der Burg, Metzner, and Sachs (BMS)
 on the structure of asymptotically-flat spacetime
-([Section 3](#3-bms-coordinates)) [[Bo62]](#ref-Bo62) [[Sa62]](#ref-Sa62)
+([Section 3](#3-bms-coordinates)) [[Bo62]](#ref-Bo62) [[Sa62]](#ref-Sa62),
 Strominger and Zhiboedov demonstrated the DC effect as a __supertranslation__ on the BMS vacuum
-[[St14]](#ref-St14) [[Bo15]](#ref-Bo15)
+[[St14]](#ref-St14) [[Bo16]](#ref-Bo16)
 which we review in [Section 4](#4-supertranslations-and-memory).
 Finally,
 in [Section 5](#5-a-soft-theorem),
@@ -593,7 +594,7 @@ it suffices to say that $N_A$ corresponds to angular momentum [[St17]](#ref-St17
 Because $m$, $c_{AB}$, and $N_A$ are all theoretically measurable using inertial test masses at null infinity,
 and moreover can combine to describe any metric in the Bondi gauges which satisfies the BMS asymptotic flatness criterion up to $\O(1/r^3)$,
 they are together known as the metric's __asymptotic data__ up to $\O(1/r^3)$
-[[St14]](#ref-St14) [[Bo15]](#ref-Bo15).
+[[St14]](#ref-St14) [[Bo16]](#ref-Bo16).
 Spacetimes with different asymptotic data are therefore physically inequivalent.
 However, the arrival of gravitational radiation (in the form of ‘Bondi news’) can change the asymptotic data,
 and physically shift us from one spacetime to another
@@ -621,7 +622,7 @@ As they are not necessarily isometries,
 there is no demand that they leave the physical system invariant.
 The group of asymptotic symmetries of the BMS metric,
 quotiented up to Bondi gauge invariance and other physically trivial transformations,
-form the __BMS group__ [[Sa62]](#ref-Sa62) [[Bo15]](#ref-Bo15) [[St14]](#ref-St14).
+form the __BMS group__ [[Sa62]](#ref-Sa62) [[Bo16]](#ref-Bo16) [[St14]](#ref-St14).
 It exhibits far greater complexity
 than the Poincar\'e group's action on globally flat spacetime.
 This strange behavior is key to revealing gravitational memory's
